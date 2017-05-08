@@ -1,0 +1,185 @@
+#YamlMime:PythonReference
+api_name: []
+items:
+- _type: module
+  children:
+  - cntk.internal.utils.eval
+  - cntk.internal.utils.get_data_type
+  - cntk.internal.utils.get_python_function_arguments
+  - cntk.internal.utils.map_function_arguments
+  fullName: cntk.internal.utils
+  langs:
+  - python
+  module: cntk.internal.utils
+  name: utils
+  source:
+    id: utils
+    path: \cntk\internal\utils.py
+    remote:
+      branch: master
+      path: \cntk\internal\utils.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: Namespace
+  uid: cntk.internal.utils
+- _type: function
+  fullName: cntk.internal.utils.eval
+  langs:
+  - python
+  module: cntk.internal.utils
+  name: eval
+  source:
+    id: eval
+    path: \cntk\internal\utils.py
+    remote:
+      branch: master
+      path: \cntk\internal\utils.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 137
+  summary: It evaluates `op` on the data provided by the reader. This is useful mainly
+    to explore the operators and for convenient unit testing.
+  syntax:
+    content: eval(op, arguments=None, precision=None, device=None, backward_pass=False,
+      expected_backward=None)
+    parameters:
+    - description: operation to evaluate
+      id: op
+      type:
+      - Function
+    - defaultValue: None
+      description: "maps variables to their input data. The interpretation depends\
+        \ on the input type:\n\n   * *dict*: keys are input variable or names, and\
+        \ values are the input data.\n\n   * any other type: if node has a unique\
+        \ input, `arguments` is mapped to this input. For nodes with more than one\
+        \ input, only *dict* is allowed.\n\nIn both cases, every sample in the data\
+        \ will be interpreted as a new sequence. To mark samples as continuations\
+        \ of the previous sequence, specify `arguments` as *tuple*: the first element\
+        \ will be used as `arguments`, and the second one will be used as a list of\
+        \ bools, denoting whether a sequence is a new one (*True*) or a continuation\
+        \ of the previous one (*False*). Data should be either NumPy arrays or a `MinibatchData`\
+        \ instance."
+      id: arguments
+    - defaultValue: 'False'
+      description: if None, every sequence is treated as a new sequence. Otherwise,
+        it is interpreted as a list of Booleans that tell whether a sequence is a
+        new sequence (*True*) or a continuation of the sequence in the same slot of
+        the previous minibatch (*False*)
+      id: seq_starts
+      type:
+      - list of bools or None
+    - defaultValue: None
+      description: precision being 'float32', 'float64', or None, in which case it
+        will be determined by inspecting the operator (costly)
+      id: precision
+      type:
+      - str or None
+    - defaultValue: None
+      description: device this value should be put on
+      id: device
+      type:
+      - DeviceDescriptor, default None
+    - defaultValue: None
+      description: whether a backward pass is performed
+      id: backward_pass
+      type:
+      - bool, optional
+    return:
+      description: mapping of output variables to their values.
+  type: Method
+  uid: cntk.internal.utils.eval
+- _type: function
+  fullName: cntk.internal.utils.get_data_type
+  langs:
+  - python
+  module: cntk.internal.utils
+  name: get_data_type
+  source:
+    id: get_data_type
+    path: \cntk\internal\utils.py
+    remote:
+      branch: master
+      path: \cntk\internal\utils.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 12
+  summary: Calculates the highest precision numpy data type of the provided parameters.
+    If the parameter is a Function instance, it calculates it based on its inputs.
+    placeholders are ignored in the type determination.
+  syntax:
+    content: get_data_type()
+    parameters:
+    - description: input
+      id: args
+      type:
+      - number, list, NumPy array, Variable, or Function
+    return:
+      description: np.float32, np.float64, or None
+  type: Method
+  uid: cntk.internal.utils.get_data_type
+- _type: function
+  fullName: cntk.internal.utils.get_python_function_arguments
+  langs:
+  - python
+  module: cntk.internal.utils
+  name: get_python_function_arguments
+  source:
+    id: get_python_function_arguments
+    path: \cntk\internal\utils.py
+    remote:
+      branch: master
+      path: \cntk\internal\utils.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 74
+  summary: Helper to get the parameter names and annotations of a Python function.
+  syntax:
+    content: get_python_function_arguments(f)
+    parameters:
+    - id: f
+  type: Method
+  uid: cntk.internal.utils.get_python_function_arguments
+- _type: function
+  fullName: cntk.internal.utils.map_function_arguments
+  langs:
+  - python
+  module: cntk.internal.utils
+  name: map_function_arguments
+  source:
+    id: map_function_arguments
+    path: \cntk\internal\utils.py
+    remote:
+      branch: master
+      path: \cntk\internal\utils.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 101
+  summary: Helper to determine the argument map for use with various call operations.
+    Returns a dictionary from parameters to whatever arguments are passed. Accepted
+    are both positional and keyword arguments. This mimics Python's argument interpretation,
+    except that keyword arguments are not optional. This does not require the arguments
+    to be Variables or Functions. It is also called by train_minibatch() and @Signature.
+  syntax:
+    content: map_function_arguments(params, params_dict)
+    parameters:
+    - id: params
+    - id: params_dict
+  type: Method
+  uid: cntk.internal.utils.map_function_arguments
+references:
+- fullName: cntk.internal.utils.eval
+  isExternal: false
+  name: eval
+  parent: cntk.internal.utils
+  uid: cntk.internal.utils.eval
+- fullName: cntk.internal.utils.get_data_type
+  isExternal: false
+  name: get_data_type
+  parent: cntk.internal.utils
+  uid: cntk.internal.utils.get_data_type
+- fullName: cntk.internal.utils.get_python_function_arguments
+  isExternal: false
+  name: get_python_function_arguments
+  parent: cntk.internal.utils
+  uid: cntk.internal.utils.get_python_function_arguments
+- fullName: cntk.internal.utils.map_function_arguments
+  isExternal: false
+  name: map_function_arguments
+  parent: cntk.internal.utils
+  uid: cntk.internal.utils.map_function_arguments

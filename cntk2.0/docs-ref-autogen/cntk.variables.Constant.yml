@@ -1,0 +1,91 @@
+#YamlMime:PythonReference
+api_name: []
+items:
+- _type: class
+  children:
+  - cntk.variables.Constant.value
+  class: cntk.variables.Constant
+  fullName: cntk.variables.Constant
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: cntk.variables.VariableMixin
+  - inheritance:
+    - type: builtins.object
+    type: cntk.tensor.TensorOpsMixin
+  - inheritance:
+    - inheritance:
+      - type: builtins.object
+      type: cntk.cntk_py.Variable
+    type: cntk.cntk_py.Constant
+  langs:
+  - python
+  module: cntk.variables
+  name: Constant
+  source:
+    id: Constant
+    path: \cntk\variables.py
+    remote:
+      branch: master
+      path: \cntk\variables.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 376
+  summary: "Bases: `cntk.variables.VariableMixin`, [cntk.tensor.TensorOpsMixin](cntk.tensor.html.md#cntk.tensor.TensorOpsMixin.md),\
+    \ `cntk.cntk_py.Constant`\nA constant value. It can be a scalar, vector, matrix,\
+    \ or tensor of floating point numbers that cannot be modified.\nA Constant is\
+    \ a `Variable` and therefore inherits all its methods.\n-[ Example ]-\n>>> c =\
+    \ C.Constant(1, (2,3))\n>>> c.value\n    array([[ 1.,  1.,  1.],\n           [\
+    \ 1.,  1.,  1.]], dtype=float32)\n<SYSTEM MESSAGE: D:\\work\\git-code\\cntk\\\
+    CNTK\\bindings\\python\\cntk_test\\cntk.variables.rst:22: (INFO/1) No directive\
+    \ entry for \"todo\" in module \"docutils.parsers.rst.languages.en\". Trying \"\
+    todo\" as canonical directive name.>\n<SYSTEM MESSAGE: c:\\local\\anaconda3-4.1.1-windows-x86_64\\\
+    lib\\site-packages\\cntk\\variables.py:docstring of cntk.variables.Constant:22:\
+    \ (ERROR/3) Unknown directive type \"todo\".  .. todo:: Document initializers\
+    \ for `value` parameter.  >\n"
+  syntax:
+    content: Constant(self, value=None, shape=None, dtype=<cntk.default_options.default_override_or
+      object at 0x000001E874308F28>, device=None, name="")
+    parameters:
+    - description: Initial value.
+      id: value
+      type:
+      - np.ndarray or list or float or int
+    - description: data type to store the values as.
+      id: dtype
+      type:
+      - np.float32 or np.float64
+    - description: the device on which the values should reside.
+      id: device
+      type:
+      - DeviceDescriptor
+    - description: an optional name for this constant.
+      id: name
+      type:
+      - str
+  type: Class
+  uid: cntk.variables.Constant
+- _type: attribute
+  class: cntk.variables.Constant
+  fullName: cntk.variables.Constant.value
+  langs:
+  - python
+  module: cntk.variables
+  name: value
+  source:
+    id: value
+    path: null
+    remote:
+      branch: master
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: NumPy array of the value
+  syntax: {}
+  type: Property
+  uid: cntk.variables.Constant.value
+references:
+- fullName: cntk.variables.Constant.value
+  isExternal: false
+  name: value
+  parent: cntk.variables.Constant
+  uid: cntk.variables.Constant.value

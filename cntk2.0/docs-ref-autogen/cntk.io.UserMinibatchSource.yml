@@ -1,0 +1,139 @@
+#YamlMime:PythonReference
+api_name: []
+items:
+- _type: class
+  children:
+  - cntk.io.UserMinibatchSource.next_minibatch
+  - cntk.io.UserMinibatchSource.stream_info
+  - cntk.io.UserMinibatchSource.stream_infos
+  class: cntk.io.UserMinibatchSource
+  fullName: cntk.io.UserMinibatchSource
+  inheritance:
+  - inheritance:
+    - inheritance:
+      - type: builtins.object
+      type: cntk.cntk_py.MinibatchSource
+    type: cntk.cntk_py.SwigMinibatchSource
+  langs:
+  - python
+  module: cntk.io
+  name: UserMinibatchSource
+  source:
+    id: UserMinibatchSource
+    path: \cntk\io\__init__.py
+    remote:
+      branch: master
+      path: \cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 447
+  summary: 'Bases: `cntk.cntk_py.SwigMinibatchSource`
+
+    Base class of all user minibatch sources.
+
+
+
+    '
+  syntax:
+    content: UserMinibatchSource(self)
+  type: Class
+  uid: cntk.io.UserMinibatchSource
+- _type: method
+  class: cntk.io.UserMinibatchSource
+  fullName: cntk.io.UserMinibatchSource.next_minibatch
+  langs:
+  - python
+  module: cntk.io
+  name: next_minibatch
+  source:
+    id: next_minibatch
+    path: \cntk\io\__init__.py
+    remote:
+      branch: master
+      path: \cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 479
+  summary: Function to be implemented by the user.
+  syntax:
+    content: next_minibatch(self, num_samples, number_of_workers, worker_rank, device=None)
+    parameters:
+    - description: number of samples to return
+      id: num_samples
+      type:
+      - int
+    - description: number of workers in total
+      id: number_of_workers
+      type:
+      - int
+    - defaultValue: None
+      description: worker for which the data is to be returned
+      id: worker_rank
+      type:
+      - int
+    return:
+      description: mapping of @cntk.io.StreamInformation to @cntk.io.MinibatchData
+  type: Method
+  uid: cntk.io.UserMinibatchSource.next_minibatch
+- _type: method
+  class: cntk.io.UserMinibatchSource
+  fullName: cntk.io.UserMinibatchSource.stream_info
+  langs:
+  - python
+  module: cntk.io
+  name: stream_info
+  source:
+    id: stream_info
+    path: \cntk\io\__init__.py
+    remote:
+      branch: master
+      path: \cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 471
+  summary: Gets the description of the stream with given name. Throws an exception
+    if there are none or multiple streams with this same name.
+  syntax:
+    content: stream_info(self, name)
+    parameters:
+    - id: self
+    - id: name
+  type: Method
+  uid: cntk.io.UserMinibatchSource.stream_info
+- _type: method
+  class: cntk.io.UserMinibatchSource
+  fullName: cntk.io.UserMinibatchSource.stream_infos
+  langs:
+  - python
+  module: cntk.io
+  name: stream_infos
+  source:
+    id: stream_infos
+    path: \cntk\io\__init__.py
+    remote:
+      branch: master
+      path: \cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 457
+  summary: Function to be implemented by the user.
+  syntax:
+    content: stream_infos(self)
+    parameters:
+    - id: self
+    return:
+      description: list of @cntk.io.StreamInformation instances
+  type: Method
+  uid: cntk.io.UserMinibatchSource.stream_infos
+references:
+- fullName: cntk.io.UserMinibatchSource.next_minibatch
+  isExternal: false
+  name: next_minibatch
+  parent: cntk.io.UserMinibatchSource
+  uid: cntk.io.UserMinibatchSource.next_minibatch
+- fullName: cntk.io.UserMinibatchSource.stream_info
+  isExternal: false
+  name: stream_info
+  parent: cntk.io.UserMinibatchSource
+  uid: cntk.io.UserMinibatchSource.stream_info
+- fullName: cntk.io.UserMinibatchSource.stream_infos
+  isExternal: false
+  name: stream_infos
+  parent: cntk.io.UserMinibatchSource
+  uid: cntk.io.UserMinibatchSource.stream_infos
