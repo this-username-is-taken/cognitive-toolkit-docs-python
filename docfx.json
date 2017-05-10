@@ -5,13 +5,22 @@
         "files": [
           "**/*.md"
         ],
+        "src": "cntk2.0/docs-ref-conceptual",
+        "dest": "cntk",
         "exclude": [
           "**/obj/**",
-          "**/includes/**",
-          "README.md",
-          "LICENSE",
-          "LICENSE-CODE",
-          "ThirdPartyNotices"
+          "**/includes/**"
+        ]
+      },
+      {
+        "files": [
+          "**/*.yml"
+        ],
+        "src": "cntk2.0/docs-ref-autogen",
+        "dest": "api",
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
         ]
       }
     ],
@@ -32,6 +41,6 @@
     "globalMetadata": {},
     "fileMetadata": {},
     "template": [],
-    "dest": "cntktest"
+    "dest": "cntk"
   }
 }
