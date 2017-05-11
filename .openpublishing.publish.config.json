@@ -16,6 +16,10 @@
       },
       "build_entry_point": "docs",
       "template_folder": "_themes",
+      "customized_template_paths": [
+         "_dependentPackages/uref/content",
+         "templates"
+      ],
       "version": 0
     }
   ],
@@ -29,6 +33,15 @@
       "url": "https://github.com/Microsoft/templates.docs.msft",
       "branch": "master",
       "branch_mapping": {}
+    }
+  ],
+  "dependent_packages": [
+    {
+      "id": "uref",
+      "nuget_feed": "https://www.myget.org/F/docfx-dev/api/v2",
+      "path_to_root": "_dependentPackages/uref",
+      "target_framework": "net45",
+      "version": "latest-prerelease"
     }
   ],
   "need_generate_pdf_url_template": false
