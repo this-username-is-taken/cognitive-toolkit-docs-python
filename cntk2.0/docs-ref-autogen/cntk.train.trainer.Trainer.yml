@@ -37,9 +37,7 @@ items:
       path: \cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 19
-  summary: 'Bases: `cntk.cntk_py.Trainer`
-
-    Class for training the model parameters of a models'' specified loss function,
+  summary: 'Class for training the model parameters of a models'' specified loss function,
     using the specified set of `parameter_learners` for updating the model''s parameters
     using computed gradients. An optional specified metric function, which can be
     non-differentiable, can be used for tracking the trained model''s quality.

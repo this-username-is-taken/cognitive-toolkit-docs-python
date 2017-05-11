@@ -22,10 +22,8 @@ items:
       path: \cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 176
-  summary: 'Bases: `cntk.cntk_py.Learner`
-
-    Base class of all user-defined learners. To implement your own learning algorithm,
-    derive from this class and override the @cntk.learners.UserLearner.update.
+  summary: 'Base class of all user-defined learners. To implement your own learning
+    algorithm, derive from this class and override the @cntk.learners.UserLearner.update.
 
     Certain optimizers (such as AdaGrad) require additional storage. This can be allocated
     and initialized during construction.

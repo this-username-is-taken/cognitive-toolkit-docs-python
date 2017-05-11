@@ -88,7 +88,7 @@ items:
   syntax:
     content: debug_model(model, in_stream=<_io.TextIOWrapper name='<stdin>' mode='r'
       encoding='cp936'>, out_stream=<colorama.ansitowin32.StreamWrapper object at
-      0x000001E86ED5D2B0>, exit_func=<built-in function exit>)
+      0x00000275A78BD2B0>, exit_func=<built-in function exit>)
     parameters:
     - description: root node until which the nodes are to be debugged
       id: model
@@ -99,7 +99,7 @@ items:
       id: in_stream
       type:
       - object behaving like sys.stdin, default stdin
-    - defaultValue: <colorama.ansitowin32.StreamWrapper object at 0x000001E86ED5D2B0>
+    - defaultValue: <colorama.ansitowin32.StreamWrapper object at 0x00000275A78BD2B0>
       description: '*write()* and *flush()* will be called on it to output debug info
         to the user'
       id: out_stream

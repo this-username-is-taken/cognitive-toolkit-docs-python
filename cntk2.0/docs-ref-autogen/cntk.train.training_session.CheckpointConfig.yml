@@ -21,9 +21,7 @@ items:
       path: \cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 15
-  summary: 'Bases: `cntk.cntk_py.CheckpointConfig`
-
-    A checkpoint configuration for the training session.'
+  summary: A checkpoint configuration for the training session.
   syntax:
     content: CheckpointConfig(self, filename, frequency=None, restore=True, preserve_all=False)
     parameters:

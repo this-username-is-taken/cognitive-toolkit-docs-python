@@ -55,9 +55,9 @@ items:
     \  ---t---  --(t+1)--"
   syntax:
     content: Delay(T=1, initial_state=<cntk.default_options.default_override_or object
-      at 0x000001E8743EED30>, name="")
+      at 0x00000275ACF4DE10>, name="")
     parameters:
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000001E8743EED30>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000275ACF4DE10>
       description: the number of time steps to look into the past, where negative
         values mean to look into the future, and 0 means a no-op (default 1).
       id: T
@@ -120,8 +120,8 @@ items:
     \  8.]], dtype=float32)"
   syntax:
     content: Fold(folder_function, go_backwards=<cntk.default_options.default_override_or
-      object at 0x000001E8743EEE48>, initial_state=<cntk.default_options.default_override_or
-      object at 0x000001E8743EEE80>, return_full_state=False, name="")
+      object at 0x00000275ACF4DF28>, initial_state=<cntk.default_options.default_override_or
+      object at 0x00000275ACF4DF60>, return_full_state=False, name="")
     parameters:
     - description: This function must have N+1 inputs and N outputs, where N is the
         number of state variables (typically 1 for GRU and plain RNNs, and 2 for LSTMs).
@@ -142,7 +142,7 @@ items:
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000001E8743EEE80>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000275ACF4DF60>
       description: if `True` and the step function has more than one state variable,
         then the layer returns the final value of a all state variables (a tuple of
         sequences); whereas if not given or `False`, only the final value of the first
@@ -150,7 +150,7 @@ items:
       id: return_full_state
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000001E8743EEE48>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000275ACF4DF28>
       description: the name of the Function instance in the network
       id: name
       type:
@@ -199,9 +199,9 @@ items:
     array([[[ 1.],\n        [ 1.],\n        [ 1.],\n        [ 0.]]], dtype=float32)"
   syntax:
     content: PastValueWindow(window_size, axis, go_backwards=<cntk.default_options.default_override_or
-      object at 0x000001E8743EED68>, name="")
+      object at 0x00000275ACF4DE48>, name="")
     parameters:
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000001E8743EED68>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000275ACF4DE48>
       id: window_size
     - description: maximum number of items in sequences. The *axis* will have this
         dimension.
@@ -280,8 +280,8 @@ items:
     \  16. ,   44.5],\n        [ -84. ,  144.5]], dtype=float32)]"
   syntax:
     content: Recurrence(step_function, go_backwards=<cntk.default_options.default_override_or
-      object at 0x000001E8743EEDD8>, initial_state=<cntk.default_options.default_override_or
-      object at 0x000001E8743EEE10>, return_full_state=False, name="")
+      object at 0x00000275ACF4DEB8>, initial_state=<cntk.default_options.default_override_or
+      object at 0x00000275ACF4DEF0>, return_full_state=False, name="")
     parameters:
     - description: This function must have N+1 inputs and N outputs, where N is the
         number of state variables (typically 1 for GRU and plain RNNs, and 2 for LSTMs).
@@ -302,7 +302,7 @@ items:
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000001E8743EEE10>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000275ACF4DEF0>
       description: if `True` and the step function has more than one state variable,
         then the layer returns a all state variables (a tuple of sequences); whereas
         if not given or `False`, only the first state variable is returned to the
@@ -310,7 +310,7 @@ items:
       id: return_full_state
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000001E8743EEDD8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000275ACF4DEB8>
       description: the name of the Function instance in the network
       id: name
       type:
@@ -384,7 +384,7 @@ items:
     >>> loss = C.cross_entropy_with_softmax(z, fr)'
   syntax:
     content: RecurrenceFrom(step_function, go_backwards=<cntk.default_options.default_override_or
-      object at 0x000001E8743EEDA0>, return_full_state=False, name="")
+      object at 0x00000275ACF4DE80>, return_full_state=False, name="")
     parameters:
     - description: This function must have N+1 inputs and N outputs, where N is the
         number of state variables (typically 1 for GRU and plain RNNs, and 2 for LSTMs).
@@ -405,7 +405,7 @@ items:
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000001E8743EEDA0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000275ACF4DE80>
       description: if `True` and the step function has more than one state variable,
         then the layer returns a all state variables (a tuple of sequences); whereas
         if not given or `False`, only the first state variable is returned to the

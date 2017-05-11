@@ -23,9 +23,8 @@ items:
       path: \cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 116
-  summary: 'Bases: `cntk.cntk_py.TrainingSession`
-
-    The instance of the class should be created by using `training_session()` function.
+  summary: 'The instance of the class should be created by using `training_session()`
+    function.
 
     A training session trains a model using the specified `trainer` and configs. Different
     aspects of training such as data sources, checkpointing, cross validation, progress

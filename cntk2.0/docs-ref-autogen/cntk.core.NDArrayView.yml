@@ -30,11 +30,9 @@ items:
       path: \cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 26
-  summary: 'Bases: `cntk.cntk_py.NDArrayView`
-
-    Creates an empty dense internal data representation of a `Value` object. To create
-    an NDArrayView from a NumPy array, use @cntk.core.NDArrayView.from_dense. To create
-    an NDArrayView from a sparse array, use @cntk.core.NDArrayView.from_csr.
+  summary: 'Creates an empty dense internal data representation of a `Value` object.
+    To create an NDArrayView from a NumPy array, use @cntk.core.NDArrayView.from_dense.
+    To create an NDArrayView from a sparse array, use @cntk.core.NDArrayView.from_csr.
 
 
 

@@ -27,9 +27,7 @@ items:
       path: \cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1166
-  summary: 'Bases: @cntk.ops.functions.Function
-
-    Base class of all user extension functions.
+  summary: 'Base class of all user extension functions.
 
     If it has only one output, one can invoke Variable methods on it, which it will
     relay to its only output.

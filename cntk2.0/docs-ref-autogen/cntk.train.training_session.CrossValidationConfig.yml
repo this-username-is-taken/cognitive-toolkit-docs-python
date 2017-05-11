@@ -21,9 +21,7 @@ items:
       path: \cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 53
-  summary: 'Bases: `cntk.cntk_py.CrossValidationConfig`
-
-    A cross validation configuration for the training session.'
+  summary: A cross validation configuration for the training session.
   syntax:
     content: CrossValidationConfig(self, source=None, mb_size=None, frequency=None,
       callback=None)

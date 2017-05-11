@@ -19,10 +19,8 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: 'Bases: `object`
-
-    Meta class to denote a parameter tensor (no batch axis). Use with dimensions,
-    e.g. `ParameterTensor[512,256]`.'
+  summary: Meta class to denote a parameter tensor (no batch axis). Use with dimensions,
+    e.g. `ParameterTensor[512,256]`.
   syntax:
     content: ParameterTensor()
   type: Class
