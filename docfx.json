@@ -6,7 +6,8 @@
           "**/*.md",
           "**/*.yml"
         ],
-        "src": "cntk2.0/docs-ref-conceptual",
+        "src": "docs-ref-conceptual/2.0",
+        "version": "cntk-2.0",
         "dest": "cognitive-toolkit",
         "exclude": [
           "**/obj/**",
@@ -17,7 +18,8 @@
         "files": [
           "**/*.yml"
         ],
-        "src": "cntk2.0/docs-ref-autogen",
+        "src": "docs-ref-autogen/2.0",
+        "version": "cntk-2.0",
         "dest": "api",
         "exclude": [
           "**/obj/**",
@@ -37,6 +39,11 @@
         ]
       }
     ],
+    "versions": {
+      "cntk-2.0": {
+        "dest": "cntk-2.0"
+      }
+    },
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {},
