@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.variables.Constant
   - cntk.variables.Parameter
   - cntk.variables.Record
@@ -15,13 +14,13 @@ items:
   name: variables
   source:
     id: variables
-    path: \cntk\variables.py
+    path: /bindings/python\cntk\variables.py
     remote:
       branch: master
-      path: \cntk\variables.py
+      path: /bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: Namespace
+  type: module
   uid: cntk.variables
 references:
 - fullName: cntk.variables.Constant

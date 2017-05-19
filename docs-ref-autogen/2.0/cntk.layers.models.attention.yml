@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.layers.models.attention.AttentionModel
   fullName: cntk.layers.models.attention
   langs:
@@ -11,27 +10,26 @@ items:
   name: attention
   source:
     id: attention
-    path: \cntk\layers\models\attention.py
+    path: /bindings/python\cntk\layers\models\attention.py
     remote:
       branch: master
-      path: \cntk\layers\models\attention.py
+      path: /bindings/python\cntk\layers\models\attention.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   summary: Standard attention model.
-  type: Namespace
+  type: module
   uid: cntk.layers.models.attention
-- _type: function
-  fullName: cntk.layers.models.attention.AttentionModel
+- fullName: cntk.layers.models.attention.AttentionModel
   langs:
   - python
   module: cntk.layers.models.attention
   name: AttentionModel
   source:
     id: AttentionModel
-    path: \cntk\layers\models\attention.py
+    path: /bindings/python\cntk\layers\models\attention.py
     remote:
       branch: master
-      path: \cntk\layers\models\attention.py
+      path: /bindings/python\cntk\layers\models\attention.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 18
   summary: Layer factory function to create a function object that implements an attention
@@ -39,25 +37,25 @@ items:
     learning to align and translate."
   syntax:
     content: AttentionModel(attention_dim, attention_span=None, attention_axis=None,
-      init=<cntk.default_options.default_override_or object at 0x00000275ACF62CC0>,
-      go_backwards=<cntk.default_options.default_override_or object at 0x00000275ACF62CF8>,
+      init=<cntk.default_options.default_override_or object at 0x0000026624483828>,
+      go_backwards=<cntk.default_options.default_override_or object at 0x0000026624483860>,
       enable_self_stabilization=<cntk.default_options.default_override_or object at
-      0x00000275ACF62D30>, name="")
+      0x0000026624483898>, name="")
     parameters:
     - id: attention_dim
     - defaultValue: ''
       id: attention_span
-    - defaultValue: <cntk.default_options.default_override_or object at 0x00000275ACF62D30>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000026624483898>
       id: attention_axis
-    - defaultValue: <cntk.default_options.default_override_or object at 0x00000275ACF62CF8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000026624483860>
       id: init
-    - defaultValue: <cntk.default_options.default_override_or object at 0x00000275ACF62CC0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000026624483828>
       id: go_backwards
     - defaultValue: None
       id: enable_self_stabilization
     - defaultValue: None
       id: name
-  type: Method
+  type: function
   uid: cntk.layers.models.attention.AttentionModel
 references:
 - fullName: cntk.layers.models.attention.AttentionModel

@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.tensor.ArrayMixin
   - cntk.tensor.TensorOpsMixin
   fullName: cntk.tensor
@@ -12,13 +11,13 @@ items:
   name: tensor
   source:
     id: tensor
-    path: \cntk\tensor.py
+    path: /bindings/python\cntk\tensor.py
     remote:
       branch: master
-      path: \cntk\tensor.py
+      path: /bindings/python\cntk\tensor.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: Namespace
+  type: module
   uid: cntk.tensor
 references:
 - fullName: cntk.tensor.ArrayMixin

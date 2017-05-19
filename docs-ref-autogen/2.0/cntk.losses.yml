@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.losses.binary_cross_entropy
   - cntk.losses.cosine_distance
   - cntk.losses.cosine_distance_with_negative_samples
@@ -17,26 +16,25 @@ items:
   name: losses
   source:
     id: losses
-    path: \cntk\losses\__init__.py
+    path: /bindings/python\cntk\losses\__init__.py
     remote:
       branch: master
-      path: \cntk\losses\__init__.py
+      path: /bindings/python\cntk\losses\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: Namespace
+  type: module
   uid: cntk.losses
-- _type: function
-  fullName: cntk.losses.binary_cross_entropy
+- fullName: cntk.losses.binary_cross_entropy
   langs:
   - python
   module: cntk.losses
   name: binary_cross_entropy
   source:
     id: binary_cross_entropy
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 90
   summary: 'Computes the binary cross entropy (aka logistic loss) between the `output`
@@ -59,28 +57,27 @@ items:
       - str, optional
     return:
       description: '`Function`'
-  type: Method
+  type: function
   uid: cntk.losses.binary_cross_entropy
-- _type: function
-  fullName: cntk.losses.cosine_distance
+- fullName: cntk.losses.cosine_distance
   langs:
   - python
   module: cntk.losses
   name: cosine_distance
   source:
     id: cosine_distance
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 18
-  summary: "Computes the cosine distance between `x` and `y`:\n-[ Example ]-\n>>>\
-    \ a = np.asarray([-1, -1, -1, 1, 1, -1, 1, 1, -1, 1, 1, -1]).reshape(3,2,2)\n\
+  summary: "Computes the cosine distance between `x` and `y`:\n-[ Example ]-\n```\n\
+    \n>>> a = np.asarray([-1, -1, -1, 1, 1, -1, 1, 1, -1, 1, 1, -1]).reshape(3,2,2)\n\
     >>> b = np.asarray([1, 1, -1, 1, 1, -1, 1, -1, -1, -1, -1, 1]).reshape(3,2,2)\n\
     >>> x = C.sequence.input(shape=(2,))\n>>> y = C.sequence.input(shape=(2,))\n>>>\
     \ np.round(C.cosine_distance(x,y).eval({x:a,y:b}),5)\narray([[-1.,  1.],\n   \
-    \    [ 1.,  0.],\n       [ 0., -1.]], dtype=float32)"
+    \    [ 1.,  0.],\n       [ 0., -1.]], dtype=float32)\n```"
   syntax:
     content: cosine_distance()
     parameters:
@@ -92,20 +89,19 @@ items:
       - str, optional
     return:
       description: '`Function`'
-  type: Method
+  type: function
   uid: cntk.losses.cosine_distance
-- _type: function
-  fullName: cntk.losses.cosine_distance_with_negative_samples
+- fullName: cntk.losses.cosine_distance_with_negative_samples
   langs:
   - python
   module: cntk.losses
   name: cosine_distance_with_negative_samples
   source:
     id: cosine_distance_with_negative_samples
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 47
   summary: "Given minibatches for `x` and `y`, this function computes for each element\
@@ -119,13 +115,14 @@ items:
     \ how many samples in `y` one should shift while forming each negative sample\
     \ pair. It is often chosen to be 1. As the name suggests `num_negative_samples`\
     \ indicates how many negative samples one would want to generate.\n-[ Example\
-    \ ]-\n>>> qry = np.asarray([1., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 1.], dtype=np.float32).reshape(3,\
-    \ 1, 4)\n>>> doc = np.asarray([1., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 1.],\
-    \ dtype=np.float32).reshape(3, 1, 4)\n>>> x = C.sequence.input(shape=(4,))\n>>>\
-    \ y = C.sequence.input(shape=(4,))\n>>> model = C.cosine_distance_with_negative_samples(x,\
-    \ y, shift=1, num_negative_samples=2)\n>>> np.round(model.eval({x: qry, y: doc}),\
-    \ decimals=4)\narray([[[ 1. ,  0.5,  0. ]],\n<BLANKLINE>\n       [[ 1. ,  0.5,\
-    \  0.5]],\n<BLANKLINE>\n       [[ 1. ,  0. ,  0.5]]], dtype=float32)"
+    \ ]-\n```\n\n>>> qry = np.asarray([1., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1.,\
+    \ 1.], dtype=np.float32).reshape(3, 1, 4)\n>>> doc = np.asarray([1., 1., 0., 0.,\
+    \ 0., 1., 1., 0., 0., 0., 1., 1.], dtype=np.float32).reshape(3, 1, 4)\n>>> x =\
+    \ C.sequence.input(shape=(4,))\n>>> y = C.sequence.input(shape=(4,))\n>>> model\
+    \ = C.cosine_distance_with_negative_samples(x, y, shift=1, num_negative_samples=2)\n\
+    >>> np.round(model.eval({x: qry, y: doc}), decimals=4)\narray([[[ 1. ,  0.5, \
+    \ 0. ]],\n<BLANKLINE>\n       [[ 1. ,  0.5,  0.5]],\n<BLANKLINE>\n       [[ 1.\
+    \ ,  0. ,  0.5]]], dtype=float32)\n```"
   syntax:
     content: cosine_distance_with_negative_samples()
     parameters:
@@ -144,20 +141,19 @@ items:
       - str, optional
     return:
       description: '`Function`'
-  type: Method
+  type: function
   uid: cntk.losses.cosine_distance_with_negative_samples
-- _type: function
-  fullName: cntk.losses.cross_entropy_with_softmax
+- fullName: cntk.losses.cross_entropy_with_softmax
   langs:
   - python
   module: cntk.losses
   name: cross_entropy_with_softmax
   source:
     id: cross_entropy_with_softmax
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 134
   summary: 'This operation computes the cross entropy between the `target_vector`
@@ -172,13 +168,23 @@ items:
 
     -[ Example ]-
 
+    ```
+
+
     >>> C.cross_entropy_with_softmax([[1., 1., 1., 50.]], [[0., 0., 0., 1.]]).eval()
 
     array([[ 0.]], dtype=float32)
 
+    ```
+
+    ```
+
+
     >>> C.cross_entropy_with_softmax([[1., 2., 3., 4.]], [[0.35, 0.15, 0.05, 0.45]]).eval()
 
-    array([[ 1.84019]], dtype=float32)'
+    array([[ 1.84019]], dtype=float32)
+
+    ```'
   syntax:
     content: cross_entropy_with_softmax()
     parameters:
@@ -197,20 +203,19 @@ items:
       - str, optional
     return:
       description: '`Function`'
-  type: Method
+  type: function
   uid: cntk.losses.cross_entropy_with_softmax
-- _type: function
-  fullName: cntk.losses.lambda_rank
+- fullName: cntk.losses.lambda_rank
   langs:
   - python
   module: cntk.losses
   name: lambda_rank
   source:
     id: lambda_rank
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 206
   summary: "Groups samples according to `group`, sorts them within each group based\
@@ -222,13 +227,13 @@ items:
     \ group must appear in order of decreasing gain.\nIt returns 1 minus the average\
     \ NDCG across all the groups in the minibatch multiplied by 100 times the number\
     \ of samples in the minibatch.\nIn the backward direction it back-propagates LambdaRank\
-    \ gradients.\n-[ Example ]-\n>>> group = C.input((1,))\n>>> score = C.input((1,),\
+    \ gradients.\n-[ Example ]-\n```\n\n>>> group = C.input((1,))\n>>> score = C.input((1,),\
     \ needs_gradient=True)\n>>> gain  = C.input((1,))\n>>> g = np.array([1, 1, 2,\
     \ 2], dtype=np.float32).reshape(4,1)\n>>> s = np.array([1, 2, 3, 4], dtype=np.float32).reshape(4,1)\n\
     >>> n = np.array([7, 1, 3, 1], dtype=np.float32).reshape(4,1)\n>>> f = C.lambda_rank(score,\
     \ gain, group)\n>>> np.round(f.grad({score:s, gain:n, group: g}, wrt=[score]),4)\n\
     array([[-0.2121],\n<BLANKLINE>\n       [ 0.2121],\n<BLANKLINE>\n       [-0.1486],\n\
-    <BLANKLINE>\n       [ 0.1486]], dtype=float32)"
+    <BLANKLINE>\n       [ 0.1486]], dtype=float32)\n```"
   syntax:
     content: lambda_rank()
     parameters:
@@ -244,20 +249,19 @@ items:
       - str, optional
     return:
       description: '`Function`'
-  type: Method
+  type: function
   uid: cntk.losses.lambda_rank
-- _type: function
-  fullName: cntk.losses.squared_error
+- fullName: cntk.losses.squared_error
   langs:
   - python
   module: cntk.losses
   name: squared_error
   source:
     id: squared_error
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 176
   summary: 'This operation computes the sum of the squared difference between elements
@@ -265,6 +269,9 @@ items:
     is often used as a training criterion.
 
     -[ Example ]-
+
+    ```
+
 
     >>> i1 = C.input((1,2))
 
@@ -275,10 +282,17 @@ items:
 
     array([ 29.], dtype=float32)
 
+    ```
+
+    ```
+
+
     >>> C.squared_error(i1,i2).eval({i1:np.asarray([[[1., 2.]]], dtype=np.float32),
     i2:np.asarray([[[1., 2.]]], dtype=np.float32)})
 
-    array([ 0.], dtype=float32)'
+    array([ 0.], dtype=float32)
+
+    ```'
   syntax:
     content: squared_error()
     parameters:
@@ -293,20 +307,19 @@ items:
       - str, optional
     return:
       description: '`Function`'
-  type: Method
+  type: function
   uid: cntk.losses.squared_error
-- _type: function
-  fullName: cntk.losses.weighted_binary_cross_entropy
+- fullName: cntk.losses.weighted_binary_cross_entropy
   langs:
   - python
   module: cntk.losses
   name: weighted_binary_cross_entropy
   source:
     id: weighted_binary_cross_entropy
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 111
   summary: 'This operation computes the weighted binary cross entropy (aka logistic
@@ -330,7 +343,7 @@ items:
       - str, optional
     return:
       description: '`Function`'
-  type: Method
+  type: function
   uid: cntk.losses.weighted_binary_cross_entropy
 references:
 - fullName: cntk.losses.binary_cross_entropy

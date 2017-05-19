@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.eval.evaluator.Evaluator.evaluation_function
   - cntk.eval.evaluator.Evaluator.summarize_test_progress
   - cntk.eval.evaluator.Evaluator.test_minibatch
@@ -18,10 +17,10 @@ items:
   name: Evaluator
   source:
     id: Evaluator
-    path: \cntk\eval\evaluator.py
+    path: /bindings/python\cntk\eval\evaluator.py
     remote:
       branch: master
-      path: \cntk\eval\evaluator.py
+      path: /bindings/python\cntk\eval\evaluator.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 15
   summary: 'Class for evaluation of minibatches against the specified evaluation function.
@@ -41,10 +40,9 @@ items:
       id: progress_writers
       type:
       - list
-  type: Class
+  type: class
   uid: cntk.eval.evaluator.Evaluator
-- _type: attribute
-  class: cntk.eval.evaluator.Evaluator
+- class: cntk.eval.evaluator.Evaluator
   fullName: cntk.eval.evaluator.Evaluator.evaluation_function
   langs:
   - python
@@ -60,10 +58,9 @@ items:
     startLine: null
   summary: The evaluation function that the evaluator is using.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.eval.evaluator.Evaluator.evaluation_function
-- _type: method
-  class: cntk.eval.evaluator.Evaluator
+- class: cntk.eval.evaluator.Evaluator
   fullName: cntk.eval.evaluator.Evaluator.summarize_test_progress
   langs:
   - python
@@ -71,10 +68,10 @@ items:
   name: summarize_test_progress
   source:
     id: summarize_test_progress
-    path: \cntk\eval\evaluator.py
+    path: /bindings/python\cntk\eval\evaluator.py
     remote:
       branch: master
-      path: \cntk\eval\evaluator.py
+      path: /bindings/python\cntk\eval\evaluator.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 86
   summary: Updates the progress writers with the summary of test progress since start
@@ -83,10 +80,9 @@ items:
     content: summarize_test_progress(self)
     parameters:
     - id: self
-  type: Method
+  type: method
   uid: cntk.eval.evaluator.Evaluator.summarize_test_progress
-- _type: method
-  class: cntk.eval.evaluator.Evaluator
+- class: cntk.eval.evaluator.Evaluator
   fullName: cntk.eval.evaluator.Evaluator.test_minibatch
   langs:
   - python
@@ -94,10 +90,10 @@ items:
   name: test_minibatch
   source:
     id: test_minibatch
-    path: \cntk\eval\evaluator.py
+    path: /bindings/python\cntk\eval\evaluator.py
     remote:
       branch: master
-      path: \cntk\eval\evaluator.py
+      path: /bindings/python\cntk\eval\evaluator.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 38
   summary: 'Test the evaluation function on the specified batch of samples.
@@ -115,7 +111,7 @@ items:
         minibatch.
       type:
       - float
-  type: Method
+  type: method
   uid: cntk.eval.evaluator.Evaluator.test_minibatch
 references:
 - fullName: cntk.eval.evaluator.Evaluator.evaluation_function

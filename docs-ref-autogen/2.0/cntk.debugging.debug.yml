@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.debugging.debug.debug_model
   - cntk.debugging.debug.save_as_legacy_model
   - cntk.debugging.debug.set_computation_network_trace_level
@@ -14,10 +13,10 @@ items:
   name: debug
   source:
     id: debug
-    path: \cntk\debugging\debug.py
+    path: /bindings/python\cntk\debugging\debug.py
     remote:
       branch: master
-      path: \cntk\debugging\debug.py
+      path: /bindings/python\cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   summary: 'In order to debug a graph one simply needs to wrap the root node as follows::
@@ -67,20 +66,19 @@ items:
     is a unique reference within the graph  * shape having the format [dynamic axis](static
     axes). E.g. ``[*,*](2,)``    means that the node''s output has two dynamic axes
     (batch and sequence) and    one static axis (2 dimensions)'
-  type: Namespace
+  type: module
   uid: cntk.debugging.debug
-- _type: function
-  fullName: cntk.debugging.debug.debug_model
+- fullName: cntk.debugging.debug.debug_model
   langs:
   - python
   module: cntk.debugging.debug
   name: debug_model
   source:
     id: debug_model
-    path: \cntk\debugging\debug.py
+    path: /bindings/python\cntk\debugging\debug.py
     remote:
       branch: master
-      path: \cntk\debugging\debug.py
+      path: /bindings/python\cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 401
   summary: Returns a cloned model that has debug nodes inserted everywhere. When the
@@ -88,7 +86,7 @@ items:
   syntax:
     content: debug_model(model, in_stream=<_io.TextIOWrapper name='<stdin>' mode='r'
       encoding='cp936'>, out_stream=<colorama.ansitowin32.StreamWrapper object at
-      0x00000275A78BD2B0>, exit_func=<built-in function exit>)
+      0x000002661F4384A8>, exit_func=<built-in function exit>)
     parameters:
     - description: root node until which the nodes are to be debugged
       id: model
@@ -99,7 +97,7 @@ items:
       id: in_stream
       type:
       - object behaving like sys.stdin, default stdin
-    - defaultValue: <colorama.ansitowin32.StreamWrapper object at 0x00000275A78BD2B0>
+    - defaultValue: <colorama.ansitowin32.StreamWrapper object at 0x000002661F4384A8>
       description: '*write()* and *flush()* will be called on it to output debug info
         to the user'
       id: out_stream
@@ -113,20 +111,19 @@ items:
       - callable, default sys.exit
     return:
       description: a clone of the model that has debugging enabled
-  type: Method
+  type: function
   uid: cntk.debugging.debug.debug_model
-- _type: function
-  fullName: cntk.debugging.debug.save_as_legacy_model
+- fullName: cntk.debugging.debug.save_as_legacy_model
   langs:
   - python
   module: cntk.debugging.debug
   name: save_as_legacy_model
   source:
     id: save_as_legacy_model
-    path: \cntk\debugging\debug.py
+    path: /bindings/python\cntk\debugging\debug.py
     remote:
       branch: master
-      path: \cntk\debugging\debug.py
+      path: /bindings/python\cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 86
   summary: Save the network of `root_op` in `filename`. For debugging purposes only,
@@ -142,20 +139,19 @@ items:
       id: filename
       type:
       - str
-  type: Method
+  type: function
   uid: cntk.debugging.debug.save_as_legacy_model
-- _type: function
-  fullName: cntk.debugging.debug.set_computation_network_trace_level
+- fullName: cntk.debugging.debug.set_computation_network_trace_level
   langs:
   - python
   module: cntk.debugging.debug
   name: set_computation_network_trace_level
   source:
     id: set_computation_network_trace_level
-    path: \cntk\debugging\debug.py
+    path: /bindings/python\cntk\debugging\debug.py
     remote:
       branch: master
-      path: \cntk\debugging\debug.py
+      path: /bindings/python\cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 120
   summary: "Set trace level to the computation network. Currently supported values:\n\
@@ -170,20 +166,19 @@ items:
       id: level
       type:
       - int
-  type: Method
+  type: function
   uid: cntk.debugging.debug.set_computation_network_trace_level
-- _type: function
-  fullName: cntk.debugging.debug.set_computation_network_track_gap_nans
+- fullName: cntk.debugging.debug.set_computation_network_track_gap_nans
   langs:
   - python
   module: cntk.debugging.debug
   name: set_computation_network_track_gap_nans
   source:
     id: set_computation_network_track_gap_nans
-    path: \cntk\debugging\debug.py
+    path: /bindings/python\cntk\debugging\debug.py
     remote:
       branch: master
-      path: \cntk\debugging\debug.py
+      path: /bindings/python\cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 109
   summary: Fill in NaNs in gaps of sequences to track unmasked uninitialized data.
@@ -195,7 +190,7 @@ items:
       id: enable
       type:
       - bool
-  type: Method
+  type: function
   uid: cntk.debugging.debug.set_computation_network_track_gap_nans
 references:
 - fullName: cntk.debugging.debug.debug_model

@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.layers.higher_order_layers.For
   - cntk.layers.higher_order_layers.LayerStack
   - cntk.layers.higher_order_layers.ResNetBlock
@@ -15,53 +14,53 @@ items:
   name: higher_order_layers
   source:
     id: higher_order_layers
-    path: \cntk\layers\higher_order_layers.py
+    path: /bindings/python\cntk\layers\higher_order_layers.py
     remote:
       branch: master
-      path: \cntk\layers\higher_order_layers.py
+      path: /bindings/python\cntk\layers\higher_order_layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   summary: Higher-order functions, like :func:`Sequential` and :func:`ResNetBlock`.
     Note that sequential higher-order functions like :func:`~cntk.layers.sequence.Recurrence`
     are in :mod:`cntk.layers.sequence`.
-  type: Namespace
+  type: module
   uid: cntk.layers.higher_order_layers
-- _type: function
-  fullName: cntk.layers.higher_order_layers.For
+- fullName: cntk.layers.higher_order_layers.For
   langs:
   - python
   module: cntk.layers.higher_order_layers
   name: For
   source:
     id: For
-    path: \cntk\layers\higher_order_layers.py
+    path: /bindings/python\cntk\layers\higher_order_layers.py
     remote:
       branch: master
-      path: \cntk\layers\higher_order_layers.py
+      path: /bindings/python\cntk\layers\higher_order_layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 98
   summary: "Layer factory function to create a composite through a pattern similar\
     \ to Python's *for* statement.\nThis layer factory loops over the given range\
     \ and passes each value to the constructor function. It is equivalent to `Sequential([constructor(i)\
     \ for i in what_range])`.\nIt is acceptable that `constructor` takes no argument.\n\
-    -[ Example ]-\n>>> from cntk.layers import *\n>>> from cntk.ops import relu\n\
-    >>> # stack of 3 Dense relu layers\n>>> model = For(range(3), lambda: Dense(2000,\
-    \ activation=relu))\n>>> # version of the above that has no activation for the\
-    \ last layer\n>>> model = For(range(3), lambda i: Dense(2000, activation=relu\
-    \ if i < 2 else identity))\n>>> # complex example that uses For() inside Sequential()\n\
-    >>> with default_options(activation=relu, pad=True):  # default activation is\
-    \ relu\n...     model = Sequential([\n...          For(range(2), lambda : [\n\
-    ...              Convolution2D((3,3), 64),\n...              Convolution2D((3,3),\
-    \ 64),\n...              MaxPooling((3,3), strides=2)\n...          ]),\n... \
-    \         Label('ndfeat'),              # name this specific value\n...      \
-    \    For(range(2), lambda i: [     # this passes a nested list to Sequential\n\
-    ...              Dense([256,128][i]),      # layer index i used to index into\
-    \ an array of parameters\n...              Dropout(0.5)\n...          ]),\n...\
-    \          Label('hidden'),\n...          Dense(10, activation=None)    # activation\
-    \ parameter overrides default (which was set to relu)\n...      ])\n>>> model.update_signature((3,32,32))\
-    \      # RGB, 32 x 32 pixels\n>>> model.ndfeat.shape                     # shape\
-    \ at top of convo/pooling pyramid\n    (64, 8, 8)\n>>> model.hidden.shape    \
-    \                 # shape before classifier\n    (128,)"
+    -[ Example ]-\n```\n\n>>> from cntk.layers import *\n>>> from cntk.ops import\
+    \ relu\n```\n```\n\n>>> # stack of 3 Dense relu layers\n>>> model = For(range(3),\
+    \ lambda: Dense(2000, activation=relu))\n```\n```\n\n>>> # version of the above\
+    \ that has no activation for the last layer\n>>> model = For(range(3), lambda\
+    \ i: Dense(2000, activation=relu if i < 2 else identity))\n```\n```\n\n>>> # complex\
+    \ example that uses For() inside Sequential()\n>>> with default_options(activation=relu,\
+    \ pad=True):  # default activation is relu\n...     model = Sequential([\n...\
+    \          For(range(2), lambda : [\n...              Convolution2D((3,3), 64),\n\
+    ...              Convolution2D((3,3), 64),\n...              MaxPooling((3,3),\
+    \ strides=2)\n...          ]),\n...          Label('ndfeat'),              # name\
+    \ this specific value\n...          For(range(2), lambda i: [     # this passes\
+    \ a nested list to Sequential\n...              Dense([256,128][i]),      # layer\
+    \ index i used to index into an array of parameters\n...              Dropout(0.5)\n\
+    ...          ]),\n...          Label('hidden'),\n...          Dense(10, activation=None)\
+    \    # activation parameter overrides default (which was set to relu)\n...   \
+    \   ])\n>>> model.update_signature((3,32,32))      # RGB, 32 x 32 pixels\n>>>\
+    \ model.ndfeat.shape                     # shape at top of convo/pooling pyramid\n\
+    \    (64, 8, 8)\n>>> model.hidden.shape                     # shape before classifier\n\
+    \    (128,)\n```"
   syntax:
     content: For(what_range, constructor, name="")
     parameters:
@@ -80,20 +79,19 @@ items:
         constructed by `constructor` one after another.
       type:
       - cntk.ops.functions.Function
-  type: Method
+  type: function
   uid: cntk.layers.higher_order_layers.For
-- _type: function
-  fullName: cntk.layers.higher_order_layers.LayerStack
+- fullName: cntk.layers.higher_order_layers.LayerStack
   langs:
   - python
   module: cntk.layers.higher_order_layers
   name: LayerStack
   source:
     id: LayerStack
-    path: \cntk\layers\higher_order_layers.py
+    path: /bindings/python\cntk\layers\higher_order_layers.py
     remote:
       branch: master
-      path: \cntk\layers\higher_order_layers.py
+      path: /bindings/python\cntk\layers\higher_order_layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 171
   syntax:
@@ -101,26 +99,28 @@ items:
     parameters:
     - id: N
     - id: constructor
-  type: Method
+  type: function
   uid: cntk.layers.higher_order_layers.LayerStack
-- _type: function
-  fullName: cntk.layers.higher_order_layers.ResNetBlock
+- fullName: cntk.layers.higher_order_layers.ResNetBlock
   langs:
   - python
   module: cntk.layers.higher_order_layers
   name: ResNetBlock
   source:
     id: ResNetBlock
-    path: \cntk\layers\higher_order_layers.py
+    path: /bindings/python\cntk\layers\higher_order_layers.py
     remote:
       branch: master
-      path: \cntk\layers\higher_order_layers.py
+      path: /bindings/python\cntk\layers\higher_order_layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 215
   summary: 'Layer factory function to create a composite that adds a skip connection
     to a function. This is equivalent to `Sequential((f, identity), plus)`.
 
     -[ Example ]-
+
+    ```
+
 
     >>> # a ResNet layer
 
@@ -129,7 +129,9 @@ items:
     >>> from cntk.ops import relu
 
     >>> resnet_layer = Sequential([ResNetBlock(Convolution((3,3), 64, activation=None)),
-    relu])'
+    relu])
+
+    ```'
   syntax:
     content: ResNetBlock(f, name="")
     parameters:
@@ -144,20 +146,19 @@ items:
         the original argument.
       type:
       - cntk.ops.functions.Function
-  type: Method
+  type: function
   uid: cntk.layers.higher_order_layers.ResNetBlock
-- _type: function
-  fullName: cntk.layers.higher_order_layers.Sequential
+- fullName: cntk.layers.higher_order_layers.Sequential
   langs:
   - python
   module: cntk.layers.higher_order_layers
   name: Sequential
   source:
     id: Sequential
-    path: \cntk\layers\higher_order_layers.py
+    path: /bindings/python\cntk\layers\higher_order_layers.py
     remote:
       branch: master
-      path: \cntk\layers\higher_order_layers.py
+      path: /bindings/python\cntk\layers\higher_order_layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 23
   summary: "Layer factory function to create a composite that applies a sequence of\
@@ -168,35 +169,36 @@ items:
     \ by another function (typ. `plus` or `splice`), the tuple items form the arguments\
     \ to that function.\nIntermediate values in the chain can be accessed by name\
     \ by inserting a `Label(name=...)` layer.\nNote: An equivalent way of writing\
-    \ `Sequential ([F, G, H])(x)` is `F >> G >> H`.\n-[ Example ]-\n>>> from cntk.layers\
-    \ import *\n>>> # sequence classifier. Maps a one-hot word sequence to a scalar\
-    \ probability value.\n>>> # The recurrence is a Fold(), meaning only the final\
-    \ hidden state is produced.\n>>> # The Label() layer allows to access the final\
-    \ hidden layer by name.\n>>> model = Sequential([Embedding(300), Fold(LSTM(500)),\
-    \ Label('hidden'), Dense(1, activation=sigmoid)])\n>>> model.update_signature(Sequence[Tensor[30000]])\n\
-    >>> model.hidden.shape\n    (500,)\n>>> # simple example that squares an input\
-    \ value\n>>> f = Sequential([log, lambda x: 2 * x, exp])  # the second function\
-    \ is a Python lambda\n>>> f.update_signature(1)\n>>> f([np.array([2])])     #\
-    \ log, times 2, exp is the same as computing the square\n    array([[ 4.]], dtype=float32)\n\
-    >>> # using function tuples to implement a bidirectional LSTM\n>>> bi_lstm = Sequential([(Recurrence(LSTM(250)),\
-    \                      # first tuple entry: forward pass\n...                \
-    \        Recurrence(LSTM(250), go_backwards=True)),  # second: backward pass\n\
-    ...                       splice])                                     # splice\
-    \ both on top of each other\n>>> # using function tuple to implement a ResNet\
-    \ block\n>>> # The function tuple applies all items to the input, and emits a\
-    \ tuple with the results\n>>> # that then act as the arguments to the next one.\n\
-    >>> # Here we say (Convolution(), identity), which generates two arguments to\
-    \ the next function,\n>>> # the first being the convolution, the second being\
-    \ the input passed through.\n>>> # Following that with plus() implements the ResNet\
-    \ formula.\n>>> from cntk.ops import plus, relu\n>>> resnet_layer = Sequential([(Convolution((3,3),\
-    \ 64, activation=None), # first tuple entry\n...                             identity),\
-    \                               # second tuple entry is a pass-through\n...  \
-    \                          plus,                                     # this sums\
-    \ both\n...                            relu])                                \
-    \    # activation applied afterwards\n>>> # simple function-tuples example with\
-    \ values\n>>> f = Sequential([(lambda x: x * x, identity), splice])  # computes\
-    \ tuple (x^2, x) and splices both values\n>>> f.update_signature(1)\n>>> f([np.array([2])])\n\
-    \    array([[ 4.,  2.]], dtype=float32)"
+    \ `Sequential ([F, G, H])(x)` is `F >> G >> H`.\n-[ Example ]-\n```\n\n>>> from\
+    \ cntk.layers import *\n```\n```\n\n>>> # sequence classifier. Maps a one-hot\
+    \ word sequence to a scalar probability value.\n>>> # The recurrence is a Fold(),\
+    \ meaning only the final hidden state is produced.\n>>> # The Label() layer allows\
+    \ to access the final hidden layer by name.\n>>> model = Sequential([Embedding(300),\
+    \ Fold(LSTM(500)), Label('hidden'), Dense(1, activation=sigmoid)])\n>>> model.update_signature(Sequence[Tensor[30000]])\n\
+    >>> model.hidden.shape\n    (500,)\n```\n```\n\n>>> # simple example that squares\
+    \ an input value\n>>> f = Sequential([log, lambda x: 2 * x, exp])  # the second\
+    \ function is a Python lambda\n>>> f.update_signature(1)\n>>> f([np.array([2])])\
+    \     # log, times 2, exp is the same as computing the square\n    array([[ 4.]],\
+    \ dtype=float32)\n```\n```\n\n>>> # using function tuples to implement a bidirectional\
+    \ LSTM\n>>> bi_lstm = Sequential([(Recurrence(LSTM(250)),                    \
+    \  # first tuple entry: forward pass\n...                        Recurrence(LSTM(250),\
+    \ go_backwards=True)),  # second: backward pass\n...                       splice])\
+    \                                     # splice both on top of each other\n```\n\
+    ```\n\n>>> # using function tuple to implement a ResNet block\n>>> # The function\
+    \ tuple applies all items to the input, and emits a tuple with the results\n>>>\
+    \ # that then act as the arguments to the next one.\n>>> # Here we say (Convolution(),\
+    \ identity), which generates two arguments to the next function,\n>>> # the first\
+    \ being the convolution, the second being the input passed through.\n>>> # Following\
+    \ that with plus() implements the ResNet formula.\n>>> from cntk.ops import plus,\
+    \ relu\n>>> resnet_layer = Sequential([(Convolution((3,3), 64, activation=None),\
+    \ # first tuple entry\n...                             identity),            \
+    \                   # second tuple entry is a pass-through\n...              \
+    \              plus,                                     # this sums both\n...\
+    \                            relu])                                    # activation\
+    \ applied afterwards\n```\n```\n\n>>> # simple function-tuples example with values\n\
+    >>> f = Sequential([(lambda x: x * x, identity), splice])  # computes tuple (x^2,\
+    \ x) and splices both values\n>>> f.update_signature(1)\n>>> f([np.array([2])])\n\
+    \    array([[ 4.,  2.]], dtype=float32)\n```"
   syntax:
     content: Sequential(layers, name="")
     parameters:
@@ -214,29 +216,28 @@ items:
         one after another.
       type:
       - cntk.ops.functions.Function
-  type: Method
+  type: function
   uid: cntk.layers.higher_order_layers.Sequential
-- _type: function
-  fullName: cntk.layers.higher_order_layers.SequentialClique
+- fullName: cntk.layers.higher_order_layers.SequentialClique
   langs:
   - python
   module: cntk.layers.higher_order_layers
   name: SequentialClique
   source:
     id: SequentialClique
-    path: \cntk\layers\higher_order_layers.py
+    path: /bindings/python\cntk\layers\higher_order_layers.py
     remote:
       branch: master
-      path: \cntk\layers\higher_order_layers.py
+      path: /bindings/python\cntk\layers\higher_order_layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 178
   summary: "Layer factory function to create a composite that applies a sequence of\
     \ functions onto an input, with skip connections between all function. I.e. each\
     \ function receives a sum of the input and all prior functions' outputs.\n-[ Example\
-    \ ]-\n>>> from cntk.layers import *\n>>> from cntk.ops import abs, sqrt, square\n\
-    >>> x = input(2)\n>>> seq_clique = SequentialClique([abs, sqrt, square])\n>>>\
-    \ seq_clique(x).eval(np.array([2, 8], np.float32)) # 400 = square((8 + abs(8))\
-    \ + sqrt(8 + abs(8)))\n    array([[  36.,  400.]], dtype=float32)"
+    \ ]-\n```\n\n>>> from cntk.layers import *\n>>> from cntk.ops import abs, sqrt,\
+    \ square\n>>> x = input(2)\n>>> seq_clique = SequentialClique([abs, sqrt, square])\n\
+    >>> seq_clique(x).eval(np.array([2, 8], np.float32)) # 400 = square((8 + abs(8))\
+    \ + sqrt(8 + abs(8)))\n    array([[  36.,  400.]], dtype=float32)\n```"
   syntax:
     content: SequentialClique(functions, name="")
     parameters:
@@ -251,7 +252,7 @@ items:
         functions.
       type:
       - cntk.ops.functions.Function
-  type: Method
+  type: function
   uid: cntk.layers.higher_order_layers.SequentialClique
 references:
 - fullName: cntk.layers.higher_order_layers.For

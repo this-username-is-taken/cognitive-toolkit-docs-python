@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.device.DeviceDescriptor
   - cntk.device.DeviceKind
   - cntk.device.all_devices
@@ -20,26 +19,25 @@ items:
   name: device
   source:
     id: device
-    path: \cntk\device.py
+    path: /bindings/python\cntk\device.py
     remote:
       branch: master
-      path: \cntk\device.py
+      path: /bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: Namespace
+  type: module
   uid: cntk.device
-- _type: function
-  fullName: cntk.device.all_devices
+- fullName: cntk.device.all_devices
   langs:
   - python
   module: cntk.device
   name: all_devices
   source:
     id: all_devices
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 71
   summary: Returns a device descriptor list with all the available devices
@@ -49,20 +47,19 @@ items:
       description: all device descriptors
       type:
       - DeviceDescriptor list
-  type: Method
+  type: function
   uid: cntk.device.all_devices
-- _type: function
-  fullName: cntk.device.cpu
+- fullName: cntk.device.cpu
   langs:
   - python
   module: cntk.device
   name: cpu
   source:
     id: cpu
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 82
   summary: Returns CPU device descriptor
@@ -72,20 +69,19 @@ items:
       description: CPU device descriptor
       type:
       - DeviceDescriptor
-  type: Method
+  type: function
   uid: cntk.device.cpu
-- _type: function
-  fullName: cntk.device.get_gpu_properties
+- fullName: cntk.device.get_gpu_properties
   langs:
   - python
   module: cntk.device
   name: get_gpu_properties
   source:
     id: get_gpu_properties
-    path: \cntk\device.py
+    path: /bindings/python\cntk\device.py
     remote:
       branch: master
-      path: \cntk\device.py
+      path: /bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 181
   summary: Retrieves and returns additional properties (total memory, number of CUDA
@@ -96,20 +92,19 @@ items:
     parameters:
     - description: a GPU device descriptor.
       id: device
-  type: Method
+  type: function
   uid: cntk.device.get_gpu_properties
-- _type: function
-  fullName: cntk.device.gpu
+- fullName: cntk.device.gpu
   langs:
   - python
   module: cntk.device
   name: gpu
   source:
     id: gpu
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 93
   summary: Returns GPU device descriptor
@@ -119,20 +114,19 @@ items:
       description: GPU device descriptor
       type:
       - DeviceDescriptor
-  type: Method
+  type: function
   uid: cntk.device.gpu
-- _type: function
-  fullName: cntk.device.set_default_device
+- fullName: cntk.device.set_default_device
   langs:
   - python
   module: cntk.device
   name: set_default_device
   source:
     id: set_default_device
-    path: \cntk\device.py
+    path: /bindings/python\cntk\device.py
     remote:
       branch: master
-      path: \cntk\device.py
+      path: /bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 122
   summary: See `try_set_default_device()`
@@ -140,20 +134,19 @@ items:
     content: set_default_device(new_default_device)
     parameters:
     - id: new_default_device
-  type: Method
+  type: function
   uid: cntk.device.set_default_device
-- _type: function
-  fullName: cntk.device.set_excluded_devices
+- fullName: cntk.device.set_excluded_devices
   langs:
   - python
   module: cntk.device
   name: set_excluded_devices
   source:
     id: set_excluded_devices
-    path: \cntk\device.py
+    path: /bindings/python\cntk\device.py
     remote:
       branch: master
-      path: \cntk\device.py
+      path: /bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 164
   summary: Allows to specify a list of excluded devices that cannot be used as globally
@@ -168,20 +161,19 @@ items:
       id: excluded_devices
       type:
       - list of DeviceDescriptor
-  type: Method
+  type: function
   uid: cntk.device.set_excluded_devices
-- _type: function
-  fullName: cntk.device.try_set_default_device
+- fullName: cntk.device.try_set_default_device
   langs:
   - python
   module: cntk.device
   name: try_set_default_device
   source:
     id: try_set_default_device
-    path: \cntk\device.py
+    path: /bindings/python\cntk\device.py
     remote:
       branch: master
-      path: \cntk\device.py
+      path: /bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 133
   summary: "Tries to set the specified device as the globally default, optionally\
@@ -208,20 +200,19 @@ items:
       id: acquire_device_lock
       type:
       - bool, defaults to False
-  type: Method
+  type: function
   uid: cntk.device.try_set_default_device
-- _type: function
-  fullName: cntk.device.use_default_device
+- fullName: cntk.device.use_default_device
   langs:
   - python
   module: cntk.device
   name: use_default_device
   source:
     id: use_default_device
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 104
   summary: Freezes the default device of the current CNTK process disallowing further
@@ -236,7 +227,7 @@ items:
       description: descriptor of the globally default device
       type:
       - DeviceDescriptor
-  type: Method
+  type: function
   uid: cntk.device.use_default_device
 references:
 - fullName: cntk.device.DeviceDescriptor

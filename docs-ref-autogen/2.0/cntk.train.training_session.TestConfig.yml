@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children: []
+- children: []
   class: cntk.train.training_session.TestConfig
   fullName: cntk.train.training_session.TestConfig
   inheritance:
@@ -15,10 +14,10 @@ items:
   name: TestConfig
   source:
     id: TestConfig
-    path: \cntk\train\training_session.py
+    path: /bindings/python\cntk\train\training_session.py
     remote:
       branch: master
-      path: \cntk\train\training_session.py
+      path: /bindings/python\cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 93
   summary: A test configuration for the training session.
@@ -33,6 +32,6 @@ items:
       id: schedule
       type:
       - minibatch_size_schedule
-  type: Class
+  type: class
   uid: cntk.train.training_session.TestConfig
 references: []

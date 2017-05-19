@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.ops.functions.CloneMethod.clone
   - cntk.ops.functions.CloneMethod.freeze
   - cntk.ops.functions.CloneMethod.share
@@ -18,10 +17,10 @@ items:
   name: CloneMethod
   source:
     id: CloneMethod
-    path: \cntk\ops\functions.py
+    path: /bindings/python\cntk\ops\functions.py
     remote:
       branch: master
-      path: \cntk\ops\functions.py
+      path: /bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 13
   summary: 'Describes different ways how `clone()` works.
@@ -30,10 +29,9 @@ items:
 
     '
   syntax: {}
-  type: Class
+  type: class
   uid: cntk.ops.functions.CloneMethod
-- _type: attribute
-  class: cntk.ops.functions.CloneMethod
+- class: cntk.ops.functions.CloneMethod
   fullName: cntk.ops.functions.CloneMethod.clone
   langs:
   - python
@@ -50,10 +48,9 @@ items:
   summary: New learnable parameters are created and initialized with the current values
     of the corresponding parameters of the Function being cloned
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.ops.functions.CloneMethod.clone
-- _type: attribute
-  class: cntk.ops.functions.CloneMethod
+- class: cntk.ops.functions.CloneMethod
   fullName: cntk.ops.functions.CloneMethod.freeze
   langs:
   - python
@@ -70,10 +67,9 @@ items:
   summary: Parameters are cloned and made immutable; i.e. Constants in the new clone
     (e.g. for use as a fixed feature extractor)
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.ops.functions.CloneMethod.freeze
-- _type: attribute
-  class: cntk.ops.functions.CloneMethod
+- class: cntk.ops.functions.CloneMethod
   fullName: cntk.ops.functions.CloneMethod.share
   langs:
   - python
@@ -89,7 +85,7 @@ items:
     startLine: null
   summary: Parameters are shared between the Function being cloned and the new clone
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.ops.functions.CloneMethod.share
 references:
 - fullName: cntk.ops.functions.CloneMethod.clone

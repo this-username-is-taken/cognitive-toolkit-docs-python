@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.train.training_session.CheckpointConfig
   - cntk.train.training_session.CrossValidationConfig
   - cntk.train.training_session.TestConfig
@@ -16,35 +15,37 @@ items:
   name: training_session
   source:
     id: training_session
-    path: \cntk\train\training_session.py
+    path: /bindings/python\cntk\train\training_session.py
     remote:
       branch: master
-      path: \cntk\train\training_session.py
+      path: /bindings/python\cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   summary: A training session encapsulates a typical training loop and binds together
     a minibatch source that is used for training, a :class:`~cntk.train.trainer.Trainer`
     and an optional cross validation minibatch source. A training session takes care
     of consistent checkpointing and progress printing with specified frequencies.
-  type: Namespace
+  type: module
   uid: cntk.train.training_session
-- _type: function
-  fullName: cntk.train.training_session.minibatch_size_schedule
+- fullName: cntk.train.training_session.minibatch_size_schedule
   langs:
   - python
   module: cntk.train.training_session
   name: minibatch_size_schedule
   source:
     id: minibatch_size_schedule
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 211
   summary: 'Creates a minibatch size schedule.
 
     -[ Examples ]-
+
+    ```
+
 
     >>> # Use a fixed value 32 for all minibatches
 
@@ -53,6 +54,11 @@ items:
     >>> s[0], s[1]
 
     (32, 32)
+
+    ```
+
+    ```
+
 
     >>> # Use minibatches of size 32 for the first 1000 samples, then 64 for the remaining
     ones
@@ -63,6 +69,11 @@ items:
 
     (32, 32, 64, 64)
 
+    ```
+
+    ```
+
+
     >>> # Use 32 for the first 12 epochs, then 64 for the next 15,
 
     >>> # followed by 128 for the remaining ones, with a 100 samples in an epoch
@@ -71,7 +82,9 @@ items:
 
     >>> s[0], s[1199], s[1200], s[2699], s[2700], s[5000]
 
-    (32, 32, 64, 64, 128, 128)'
+    (32, 32, 64, 64, 128, 128)
+
+    ```'
   syntax:
     content: minibatch_size_schedule()
     parameters:
@@ -88,20 +101,19 @@ items:
       - int
     return:
       description: training parameter schedule
-  type: Method
+  type: function
   uid: cntk.train.training_session.minibatch_size_schedule
-- _type: function
-  fullName: cntk.train.training_session.training_session
+- fullName: cntk.train.training_session.training_session
   langs:
   - python
   module: cntk.train.training_session
   name: training_session
   source:
     id: training_session
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 254
   summary: A factory function to create a training session object.
@@ -146,7 +158,7 @@ items:
       - TestConfig
     return:
       description: Instance of @cntk.train.training_session.TrainingSession
-  type: Method
+  type: function
   uid: cntk.train.training_session.training_session
 references:
 - fullName: cntk.train.training_session.CheckpointConfig

@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children: []
+- children: []
   class: cntk.tensor.TensorOpsMixin
   fullName: cntk.tensor.TensorOpsMixin
   inheritance:
@@ -13,16 +12,16 @@ items:
   name: TensorOpsMixin
   source:
     id: TensorOpsMixin
-    path: \cntk\tensor.py
+    path: /bindings/python\cntk\tensor.py
     remote:
       branch: master
-      path: \cntk\tensor.py
+      path: /bindings/python\cntk\tensor.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 10
   summary: This class defines math overloads so that CNTK nodes can be written in
     math expressions.
   syntax:
     content: TensorOpsMixin()
-  type: Class
+  type: class
   uid: cntk.tensor.TensorOpsMixin
 references: []

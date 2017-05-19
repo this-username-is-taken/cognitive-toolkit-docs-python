@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.train.distributed.WorkerDescriptor.global_rank
   - cntk.train.distributed.WorkerDescriptor.host_id
   class: cntk.train.distributed.WorkerDescriptor
@@ -17,10 +16,10 @@ items:
   name: WorkerDescriptor
   source:
     id: WorkerDescriptor
-    path: \cntk\train\distributed.py
+    path: /bindings/python\cntk\train\distributed.py
     remote:
       branch: master
-      path: \cntk\train\distributed.py
+      path: /bindings/python\cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 22
   summary: 'Distributed worker descriptor, returned by @cntk.train.distributed.Communicator
@@ -30,10 +29,9 @@ items:
     '
   syntax:
     content: WorkerDescriptor(self)
-  type: Class
+  type: class
   uid: cntk.train.distributed.WorkerDescriptor
-- _type: attribute
-  class: cntk.train.distributed.WorkerDescriptor
+- class: cntk.train.distributed.WorkerDescriptor
   fullName: cntk.train.distributed.WorkerDescriptor.global_rank
   langs:
   - python
@@ -49,10 +47,9 @@ items:
     startLine: null
   summary: The global rank of the worker.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.train.distributed.WorkerDescriptor.global_rank
-- _type: attribute
-  class: cntk.train.distributed.WorkerDescriptor
+- class: cntk.train.distributed.WorkerDescriptor
   fullName: cntk.train.distributed.WorkerDescriptor.host_id
   langs:
   - python
@@ -68,7 +65,7 @@ items:
     startLine: null
   summary: The host id of the worker.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.train.distributed.WorkerDescriptor.host_id
 references:
 - fullName: cntk.train.distributed.WorkerDescriptor.global_rank

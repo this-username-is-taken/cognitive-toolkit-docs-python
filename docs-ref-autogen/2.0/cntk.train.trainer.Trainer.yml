@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.train.trainer.Trainer.evaluation_function
   - cntk.train.trainer.Trainer.loss_function
   - cntk.train.trainer.Trainer.model
@@ -31,23 +30,23 @@ items:
   name: Trainer
   source:
     id: Trainer
-    path: \cntk\train\trainer.py
+    path: /bindings/python\cntk\train\trainer.py
     remote:
       branch: master
-      path: \cntk\train\trainer.py
+      path: /bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 19
+    startLine: 20
   summary: 'Class for training the model parameters of a models'' specified loss function,
     using the specified set of `parameter_learners` for updating the model''s parameters
     using computed gradients. An optional specified metric function, which can be
     non-differentiable, can be used for tracking the trained model''s quality.
 
-    <SYSTEM MESSAGE: D:\work\git-code\cntk\CNTK\bindings\python\cntk_test\cntk.train.trainer.rst:19:
+    <SYSTEM MESSAGE: C:\peter\ms_code\cntk_all\CNTK\bindings\python\doc\cntk.train.trainer.rst:18:
     (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
     Trying "todo" as canonical directive name.>
 
     <SYSTEM MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\train\trainer.py:docstring
-    of cntk.train.trainer.Trainer:19: (ERROR/3) Unknown directive type "todo".  ..
+    of cntk.train.trainer.Trainer:18: (ERROR/3) Unknown directive type "todo".  ..
     todo:: Would be great to allow to skip some parameters that should not be updated.  >
 
 
@@ -76,8 +75,8 @@ items:
         Function) is also accepted.
       id: criterion
       type:
-      - Python tuple of Function, or Function or
-    - description: list of learners from `cntk.learner`
+      - tuple of Function or Variable
+    - description: list of learners from @cntk.learners.htmlmodule-cntk.learners
       id: parameter_learners
       type:
       - list
@@ -86,10 +85,9 @@ items:
       id: progress_writers
       type:
       - list
-  type: Class
+  type: class
   uid: cntk.train.trainer.Trainer
-- _type: attribute
-  class: cntk.train.trainer.Trainer
+- class: cntk.train.trainer.Trainer
   fullName: cntk.train.trainer.Trainer.evaluation_function
   langs:
   - python
@@ -105,10 +103,9 @@ items:
     startLine: null
   summary: The evaluation function that the trainer is using.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.train.trainer.Trainer.evaluation_function
-- _type: attribute
-  class: cntk.train.trainer.Trainer
+- class: cntk.train.trainer.Trainer
   fullName: cntk.train.trainer.Trainer.loss_function
   langs:
   - python
@@ -124,10 +121,9 @@ items:
     startLine: null
   summary: The loss function that the trainer is using.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.train.trainer.Trainer.loss_function
-- _type: attribute
-  class: cntk.train.trainer.Trainer
+- class: cntk.train.trainer.Trainer
   fullName: cntk.train.trainer.Trainer.model
   langs:
   - python
@@ -143,10 +139,9 @@ items:
     startLine: null
   summary: The model that the trainer is training.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.train.trainer.Trainer.model
-- _type: attribute
-  class: cntk.train.trainer.Trainer
+- class: cntk.train.trainer.Trainer
   fullName: cntk.train.trainer.Trainer.parameter_learners
   langs:
   - python
@@ -162,10 +157,9 @@ items:
     startLine: null
   summary: The parameter learners that the trainer is using.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.train.trainer.Trainer.parameter_learners
-- _type: attribute
-  class: cntk.train.trainer.Trainer
+- class: cntk.train.trainer.Trainer
   fullName: cntk.train.trainer.Trainer.previous_minibatch_evaluation_average
   langs:
   - python
@@ -182,10 +176,9 @@ items:
   summary: The average evaluation criterion value per sample for the last minibatch
     trained
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.train.trainer.Trainer.previous_minibatch_evaluation_average
-- _type: attribute
-  class: cntk.train.trainer.Trainer
+- class: cntk.train.trainer.Trainer
   fullName: cntk.train.trainer.Trainer.previous_minibatch_loss_average
   langs:
   - python
@@ -201,10 +194,9 @@ items:
     startLine: null
   summary: The average training loss per sample for the last minibatch trained
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.train.trainer.Trainer.previous_minibatch_loss_average
-- _type: attribute
-  class: cntk.train.trainer.Trainer
+- class: cntk.train.trainer.Trainer
   fullName: cntk.train.trainer.Trainer.previous_minibatch_sample_count
   langs:
   - python
@@ -220,10 +212,9 @@ items:
     startLine: null
   summary: The number of samples in the last minibatch trained with
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.train.trainer.Trainer.previous_minibatch_sample_count
-- _type: method
-  class: cntk.train.trainer.Trainer
+- class: cntk.train.trainer.Trainer
   fullName: cntk.train.trainer.Trainer.restore_from_checkpoint
   langs:
   - python
@@ -231,12 +222,12 @@ items:
   name: restore_from_checkpoint
   source:
     id: restore_from_checkpoint
-    path: \cntk\train\trainer.py
+    path: /bindings/python\cntk\train\trainer.py
     remote:
       branch: master
-      path: \cntk\train\trainer.py
+      path: /bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 237
+    startLine: 235
   summary: Restores a checkpoint of the model and Trainer state from the specified
     file location.
   syntax:
@@ -247,10 +238,9 @@ items:
       id: filename
       type:
       - str
-  type: Method
+  type: method
   uid: cntk.train.trainer.Trainer.restore_from_checkpoint
-- _type: method
-  class: cntk.train.trainer.Trainer
+- class: cntk.train.trainer.Trainer
   fullName: cntk.train.trainer.Trainer.save_checkpoint
   langs:
   - python
@@ -258,12 +248,12 @@ items:
   name: save_checkpoint
   source:
     id: save_checkpoint
-    path: \cntk\train\trainer.py
+    path: /bindings/python\cntk\train\trainer.py
     remote:
       branch: master
-      path: \cntk\train\trainer.py
+      path: /bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 223
+    startLine: 221
   summary: 'Saves a checkpoint of the model and other Trainer state at the specified
     file location.
 
@@ -276,10 +266,9 @@ items:
       id: filename
       type:
       - str
-  type: Method
+  type: method
   uid: cntk.train.trainer.Trainer.save_checkpoint
-- _type: method
-  class: cntk.train.trainer.Trainer
+- class: cntk.train.trainer.Trainer
   fullName: cntk.train.trainer.Trainer.summarize_test_progress
   langs:
   - python
@@ -287,22 +276,21 @@ items:
   name: summarize_test_progress
   source:
     id: summarize_test_progress
-    path: \cntk\train\trainer.py
+    path: /bindings/python\cntk\train\trainer.py
     remote:
       branch: master
-      path: \cntk\train\trainer.py
+      path: /bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 315
+    startLine: 313
   summary: Updates the progress writers with the summary of test progress since start
     and resets the internal accumulators.
   syntax:
     content: summarize_test_progress(self)
     parameters:
     - id: self
-  type: Method
+  type: method
   uid: cntk.train.trainer.Trainer.summarize_test_progress
-- _type: method
-  class: cntk.train.trainer.Trainer
+- class: cntk.train.trainer.Trainer
   fullName: cntk.train.trainer.Trainer.summarize_training_progress
   langs:
   - python
@@ -310,22 +298,21 @@ items:
   name: summarize_training_progress
   source:
     id: summarize_training_progress
-    path: \cntk\train\trainer.py
+    path: /bindings/python\cntk\train\trainer.py
     remote:
       branch: master
-      path: \cntk\train\trainer.py
+      path: /bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 308
+    startLine: 306
   summary: Updates the progress writers with the summary of training progress since
     start and resets the internal accumulators.
   syntax:
     content: summarize_training_progress(self)
     parameters:
     - id: self
-  type: Method
+  type: method
   uid: cntk.train.trainer.Trainer.summarize_training_progress
-- _type: method
-  class: cntk.train.trainer.Trainer
+- class: cntk.train.trainer.Trainer
   fullName: cntk.train.trainer.Trainer.test_minibatch
   langs:
   - python
@@ -333,17 +320,17 @@ items:
   name: test_minibatch
   source:
     id: test_minibatch
-    path: \cntk\train\trainer.py
+    path: /bindings/python\cntk\train\trainer.py
     remote:
       branch: master
-      path: \cntk\train\trainer.py
+      path: /bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 175
+    startLine: 173
   summary: 'Test the model on the specified batch of samples using the evaluation
     Function specified during construction of the Trainer.
 
-    Note: See [forward()](cntk.ops.functions.html.md#cntk.ops.functions.Function.forward.md)
-    for examples on passing input data.'
+    Note: See @cntk.ops.functions.htmlcntk.ops.functions.Function.forward for examples
+    on passing input data.'
   syntax:
     content: test_minibatch(self, arguments, device=None)
     parameters:
@@ -356,10 +343,9 @@ items:
         minibatch.
       type:
       - float
-  type: Method
+  type: method
   uid: cntk.train.trainer.Trainer.test_minibatch
-- _type: attribute
-  class: cntk.train.trainer.Trainer
+- class: cntk.train.trainer.Trainer
   fullName: cntk.train.trainer.Trainer.total_number_of_samples_seen
   langs:
   - python
@@ -376,10 +362,9 @@ items:
   summary: The number of samples seen globally between all workers from the beginning
     of training.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.train.trainer.Trainer.total_number_of_samples_seen
-- _type: method
-  class: cntk.train.trainer.Trainer
+- class: cntk.train.trainer.Trainer
   fullName: cntk.train.trainer.Trainer.train_minibatch
   langs:
   - python
@@ -387,17 +372,17 @@ items:
   name: train_minibatch
   source:
     id: train_minibatch
-    path: \cntk\train\trainer.py
+    path: /bindings/python\cntk\train\trainer.py
     remote:
       branch: master
-      path: \cntk\train\trainer.py
+      path: /bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 94
+    startLine: 92
   summary: 'Optimize model parameters using the specified ''arguments'' minibatch
     of training samples.
 
-    Note: See [forward()](cntk.ops.functions.html.md#cntk.ops.functions.Function.forward.md)
-    for examples on passing input data.'
+    Note: See @cntk.ops.functions.htmlcntk.ops.functions.Function.forward for examples
+    on passing input data.'
   syntax:
     content: train_minibatch(self, arguments, outputs=None, device=None)
     parameters:
@@ -415,7 +400,7 @@ items:
         their respective NumPy arrays.
       type:
       - bool or tuple
-  type: Method
+  type: method
   uid: cntk.train.trainer.Trainer.train_minibatch
 references:
 - fullName: cntk.train.trainer.Trainer.evaluation_function

@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.ops.functions.CloneMethod
   - cntk.ops.functions.Function
   - cntk.ops.functions.UserFunction
@@ -17,47 +16,45 @@ items:
   name: functions
   source:
     id: functions
-    path: \cntk\ops\functions.py
+    path: /bindings/python\cntk\ops\functions.py
     remote:
       branch: master
-      path: \cntk\ops\functions.py
+      path: /bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: Namespace
+  type: module
   uid: cntk.ops.functions
-- _type: function
-  fullName: cntk.ops.functions.load_model
+- fullName: cntk.ops.functions.load_model
   langs:
   - python
   module: cntk.ops.functions
   name: load_model
   source:
     id: load_model
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1151
+    startLine: 1143
   summary: Alias for @cntk.ops.functions.Function.load.
   syntax:
     content: load_model()
-  type: Method
+  type: function
   uid: cntk.ops.functions.load_model
-- _type: function
-  fullName: cntk.ops.functions.native_user_function
+- fullName: cntk.ops.functions.native_user_function
   langs:
   - python
   module: cntk.ops.functions
   name: native_user_function
   source:
     id: native_user_function
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1132
+    startLine: 1124
   summary: Creates an instance of a user-defined Function previously registered using
     the 'register_native_user_function' method.
   syntax:
@@ -79,22 +76,21 @@ items:
       - str
     return:
       description: '@cntk.ops.functions.Function'
-  type: Method
+  type: function
   uid: cntk.ops.functions.native_user_function
-- _type: function
-  fullName: cntk.ops.functions.register_native_user_function
+- fullName: cntk.ops.functions.register_native_user_function
   langs:
   - python
   module: cntk.ops.functions
   name: register_native_user_function
   source:
     id: register_native_user_function
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1112
+    startLine: 1104
   summary: Registers a native user-defined Function that can be subsequently instantiated
     using the 'native_user_function' method.
   syntax:
@@ -119,25 +115,24 @@ items:
       id: factory_method_name
       type:
       - str
-  type: Method
+  type: function
   uid: cntk.ops.functions.register_native_user_function
-- _type: function
-  fullName: cntk.ops.functions.save_model
+- fullName: cntk.ops.functions.save_model
   langs:
   - python
   module: cntk.ops.functions
   name: save_model
   source:
     id: save_model
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1158
+    startLine: 1150
   syntax:
     content: save_model()
-  type: Method
+  type: function
   uid: cntk.ops.functions.save_model
 references:
 - fullName: cntk.ops.functions.CloneMethod

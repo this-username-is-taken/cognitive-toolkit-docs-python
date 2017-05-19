@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.variables.VariableMixin.dtype
   - cntk.variables.VariableMixin.dynamic_axes
   - cntk.variables.VariableMixin.is_constant
@@ -26,10 +25,10 @@ items:
   name: VariableMixin
   source:
     id: VariableMixin
-    path: \cntk\variables.py
+    path: /bindings/python\cntk\variables.py
     remote:
       branch: master
-      path: \cntk\variables.py
+      path: /bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 49
   summary: 'Standard properties for @cntk.variables.Variable and its derived classes
@@ -50,10 +49,9 @@ items:
     '
   syntax:
     content: VariableMixin()
-  type: Class
+  type: class
   uid: cntk.variables.VariableMixin
-- _type: attribute
-  class: cntk.variables.VariableMixin
+- class: cntk.variables.VariableMixin
   fullName: cntk.variables.VariableMixin.dtype
   langs:
   - python
@@ -69,10 +67,9 @@ items:
     startLine: null
   summary: The NumPy type of this variable.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.variables.VariableMixin.dtype
-- _type: attribute
-  class: cntk.variables.VariableMixin
+- class: cntk.variables.VariableMixin
   fullName: cntk.variables.VariableMixin.dynamic_axes
   langs:
   - python
@@ -88,10 +85,9 @@ items:
     startLine: null
   summary: The dynamic axes of this variable.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.variables.VariableMixin.dynamic_axes
-- _type: attribute
-  class: cntk.variables.VariableMixin
+- class: cntk.variables.VariableMixin
   fullName: cntk.variables.VariableMixin.is_constant
   langs:
   - python
@@ -107,10 +103,9 @@ items:
     startLine: null
   summary: Whether this variable is a constant.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.variables.VariableMixin.is_constant
-- _type: attribute
-  class: cntk.variables.VariableMixin
+- class: cntk.variables.VariableMixin
   fullName: cntk.variables.VariableMixin.is_input
   langs:
   - python
@@ -126,10 +121,9 @@ items:
     startLine: null
   summary: Whether this variable is an input.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.variables.VariableMixin.is_input
-- _type: attribute
-  class: cntk.variables.VariableMixin
+- class: cntk.variables.VariableMixin
   fullName: cntk.variables.VariableMixin.is_output
   langs:
   - python
@@ -145,10 +139,9 @@ items:
     startLine: null
   summary: Whether this variable is an output.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.variables.VariableMixin.is_output
-- _type: attribute
-  class: cntk.variables.VariableMixin
+- class: cntk.variables.VariableMixin
   fullName: cntk.variables.VariableMixin.is_parameter
   langs:
   - python
@@ -164,10 +157,9 @@ items:
     startLine: null
   summary: Whether this variable is a parameter.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.variables.VariableMixin.is_parameter
-- _type: attribute
-  class: cntk.variables.VariableMixin
+- class: cntk.variables.VariableMixin
   fullName: cntk.variables.VariableMixin.is_placeholder
   langs:
   - python
@@ -183,10 +175,9 @@ items:
     startLine: null
   summary: Whether this variable is a placeholder.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.variables.VariableMixin.is_placeholder
-- _type: attribute
-  class: cntk.variables.VariableMixin
+- class: cntk.variables.VariableMixin
   fullName: cntk.variables.VariableMixin.is_sparse
   langs:
   - python
@@ -202,10 +193,9 @@ items:
     startLine: null
   summary: Whether this variable is sparse.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.variables.VariableMixin.is_sparse
-- _type: attribute
-  class: cntk.variables.VariableMixin
+- class: cntk.variables.VariableMixin
   fullName: cntk.variables.VariableMixin.name
   langs:
   - python
@@ -221,10 +211,9 @@ items:
     startLine: null
   summary: The name of this variable.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.variables.VariableMixin.name
-- _type: attribute
-  class: cntk.variables.VariableMixin
+- class: cntk.variables.VariableMixin
   fullName: cntk.variables.VariableMixin.needs_gradient
   langs:
   - python
@@ -240,10 +229,9 @@ items:
     startLine: null
   summary: Whether this variable needs gradients.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.variables.VariableMixin.needs_gradient
-- _type: attribute
-  class: cntk.variables.VariableMixin
+- class: cntk.variables.VariableMixin
   fullName: cntk.variables.VariableMixin.owner
   langs:
   - python
@@ -259,10 +247,9 @@ items:
     startLine: null
   summary: The function this variable is an output of.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.variables.VariableMixin.owner
-- _type: attribute
-  class: cntk.variables.VariableMixin
+- class: cntk.variables.VariableMixin
   fullName: cntk.variables.VariableMixin.shape
   langs:
   - python
@@ -278,10 +265,9 @@ items:
     startLine: null
   summary: The shape of this variable as a tuple.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.variables.VariableMixin.shape
-- _type: attribute
-  class: cntk.variables.VariableMixin
+- class: cntk.variables.VariableMixin
   fullName: cntk.variables.VariableMixin.uid
   langs:
   - python
@@ -297,7 +283,7 @@ items:
     startLine: null
   summary: The internally generated unique name of the variable.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.variables.VariableMixin.uid
 references:
 - fullName: cntk.variables.VariableMixin.dtype

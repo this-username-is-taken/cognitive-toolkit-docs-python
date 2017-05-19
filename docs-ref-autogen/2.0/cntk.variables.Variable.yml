@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.variables.Variable.as_constant
   - cntk.variables.Variable.as_parameter
   class: cntk.variables.Variable
@@ -23,10 +22,10 @@ items:
   name: Variable
   source:
     id: Variable
-    path: \cntk\variables.py
+    path: /bindings/python\cntk\variables.py
     remote:
       branch: master
-      path: \cntk\variables.py
+      path: /bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 235
   summary: 'Denotes a symbolic entity corresponding to the inputs and outputs of a
@@ -65,10 +64,9 @@ items:
       id: name
       type:
       - str
-  type: Class
+  type: class
   uid: cntk.variables.Variable
-- _type: method
-  class: cntk.variables.Variable
+- class: cntk.variables.Variable
   fullName: cntk.variables.Variable.as_constant
   langs:
   - python
@@ -76,19 +74,18 @@ items:
   name: as_constant
   source:
     id: as_constant
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 273
   summary: Converts this instance into a @cntk.variables.Constant
   syntax:
     content: as_constant()
-  type: Method
+  type: method
   uid: cntk.variables.Variable.as_constant
-- _type: method
-  class: cntk.variables.Variable
+- class: cntk.variables.Variable
   fullName: cntk.variables.Variable.as_parameter
   langs:
   - python
@@ -96,16 +93,16 @@ items:
   name: as_parameter
   source:
     id: as_parameter
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 263
   summary: Converts this instance into a @cntk.variables.Parameter
   syntax:
     content: as_parameter()
-  type: Method
+  type: method
   uid: cntk.variables.Variable.as_parameter
 references:
 - fullName: cntk.variables.Variable.as_constant

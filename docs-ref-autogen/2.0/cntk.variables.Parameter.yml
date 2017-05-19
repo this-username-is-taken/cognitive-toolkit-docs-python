@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.variables.Parameter.value
   class: cntk.variables.Parameter
   fullName: cntk.variables.Parameter
@@ -24,34 +23,34 @@ items:
   name: Parameter
   source:
     id: Parameter
-    path: \cntk\variables.py
+    path: /bindings/python\cntk\variables.py
     remote:
       branch: master
-      path: \cntk\variables.py
+      path: /bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 283
   summary: "A trainable parameter. It can be a scalar, vector, matrix, or tensor of\
     \ floating point numbers that can be modified by a training procedure.\n-[ Example\
-    \ ]-\n>>> p = C.Parameter((13,42,7), init=C.glorot_uniform())\n>>> p.shape\n \
-    \   (13, 42, 7)\n>>> # example with inferred dimensions\n>>> W = C.Parameter((C.InferredDimension,\
-    \ 42), init=C.glorot_uniform())\n>>> W.shape   # -1 indicates dimension yet to\
-    \ be inferred\n    (-1, 42)\n>>> x = C.input(13)\n>>> y = C.times(x, W)  # times\
-    \ operation now knows that the input dimension of W must be 13\n>>> W.shape  \
-    \        # hence, the shape has been updated\n    (13, 42)\nParameters are Variables\
-    \ and therefore they inherit all their methods.\n"
+    \ ]-\n```\n\n>>> p = C.Parameter((13,42,7), init=C.glorot_uniform())\n>>> p.shape\n\
+    \    (13, 42, 7)\n```\n```\n\n>>> # example with inferred dimensions\n>>> W =\
+    \ C.Parameter((C.InferredDimension, 42), init=C.glorot_uniform())\n>>> W.shape\
+    \   # -1 indicates dimension yet to be inferred\n    (-1, 42)\n>>> x = C.input(13)\n\
+    >>> y = C.times(x, W)  # times operation now knows that the input dimension of\
+    \ W must be 13\n>>> W.shape          # hence, the shape has been updated\n   \
+    \ (13, 42)\n```\nParameters are Variables and therefore they inherit all their\
+    \ methods.\n"
   syntax:
     content: Parameter(self, shape=None, init=None, dtype=<cntk.default_options.default_override_or
-      object at 0x00000275AC90FEB8>, device=None, name="")
+      object at 0x00000266242539E8>, device=None, name="")
     parameters:
     - description: the shape of the tensor holding the parameters
       id: shape
       type:
       - tuple
-    - description: '[initializer](cntk.initializer.html.md#module-cntk.initializer.md):
-        Initial value. If a numpy array is specified the shape argument is ignored
-        and the tensor gets the shape of this argument. Alternatively, an initializer
-        from [initializer](cntk.initializer.html.md#module-cntk.initializer.md) can
-        be specified.'
+    - description: '@cntk.initializer.htmlmodule-cntk.initializer: Initial value.
+        If a numpy array is specified the shape argument is ignored and the tensor
+        gets the shape of this argument. Alternatively, an initializer from @cntk.initializer.htmlmodule-cntk.initializer
+        can be specified.'
       id: init
       type:
       - value (np.ndarray, list, float, int
@@ -67,10 +66,9 @@ items:
       id: name
       type:
       - str
-  type: Class
+  type: class
   uid: cntk.variables.Parameter
-- _type: attribute
-  class: cntk.variables.Parameter
+- class: cntk.variables.Parameter
   fullName: cntk.variables.Parameter.value
   langs:
   - python
@@ -91,7 +89,7 @@ items:
       id: getter
     - description: sets the Parameter's value to the provided NumPy array
       id: setter
-  type: Property
+  type: attribute
   uid: cntk.variables.Parameter.value
 references:
 - fullName: cntk.variables.Parameter.value

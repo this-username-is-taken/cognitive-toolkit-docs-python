@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.train.distributed.Communicator.barrier
   - cntk.train.distributed.Communicator.current_worker
   - cntk.train.distributed.Communicator.finalize
@@ -22,10 +21,10 @@ items:
   name: Communicator
   source:
     id: Communicator
-    path: \cntk\train\distributed.py
+    path: /bindings/python\cntk\train\distributed.py
     remote:
       branch: master
-      path: \cntk\train\distributed.py
+      path: /bindings/python\cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 41
   summary: 'A communicator interface exposing communication primitives that serve
@@ -40,10 +39,9 @@ items:
     '
   syntax:
     content: Communicator(self)
-  type: Class
+  type: class
   uid: cntk.train.distributed.Communicator
-- _type: method
-  class: cntk.train.distributed.Communicator
+- class: cntk.train.distributed.Communicator
   fullName: cntk.train.distributed.Communicator.barrier
   langs:
   - python
@@ -51,10 +49,10 @@ items:
   name: barrier
   source:
     id: barrier
-    path: \cntk\train\distributed.py
+    path: /bindings/python\cntk\train\distributed.py
     remote:
       branch: master
-      path: \cntk\train\distributed.py
+      path: /bindings/python\cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 67
   summary: Sync point to make sure all workers reach the same state.
@@ -62,10 +60,9 @@ items:
     content: barrier(self)
     parameters:
     - id: self
-  type: Method
+  type: method
   uid: cntk.train.distributed.Communicator.barrier
-- _type: method
-  class: cntk.train.distributed.Communicator
+- class: cntk.train.distributed.Communicator
   fullName: cntk.train.distributed.Communicator.current_worker
   langs:
   - python
@@ -73,10 +70,10 @@ items:
   name: current_worker
   source:
     id: current_worker
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 57
   summary: Returns worker descriptor of current process.
@@ -86,10 +83,9 @@ items:
       description: descriptor of current process.
       type:
       - WorkerDescriptor
-  type: Method
+  type: method
   uid: cntk.train.distributed.Communicator.current_worker
-- _type: method
-  class: cntk.train.distributed.Communicator
+- class: cntk.train.distributed.Communicator
   fullName: cntk.train.distributed.Communicator.finalize
   langs:
   - python
@@ -97,20 +93,19 @@ items:
   name: finalize
   source:
     id: finalize
-    path: \cntk\train\distributed.py
+    path: /bindings/python\cntk\train\distributed.py
     remote:
       branch: master
-      path: \cntk\train\distributed.py
+      path: /bindings/python\cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 79
   summary: Should be called when all communication is finished. No more communication
     should happen after this call.
   syntax:
     content: finalize()
-  type: Method
+  type: method
   uid: cntk.train.distributed.Communicator.finalize
-- _type: method
-  class: cntk.train.distributed.Communicator
+- class: cntk.train.distributed.Communicator
   fullName: cntk.train.distributed.Communicator.is_main
   langs:
   - python
@@ -118,10 +113,10 @@ items:
   name: is_main
   source:
     id: is_main
-    path: \cntk\train\distributed.py
+    path: /bindings/python\cntk\train\distributed.py
     remote:
       branch: master
-      path: \cntk\train\distributed.py
+      path: /bindings/python\cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 73
   summary: Indicates if the current communicator is instantiated on the main node.
@@ -130,10 +125,9 @@ items:
     content: is_main(self)
     parameters:
     - id: self
-  type: Method
+  type: method
   uid: cntk.train.distributed.Communicator.is_main
-- _type: method
-  class: cntk.train.distributed.Communicator
+- class: cntk.train.distributed.Communicator
   fullName: cntk.train.distributed.Communicator.num_workers
   langs:
   - python
@@ -141,19 +135,18 @@ items:
   name: num_workers
   source:
     id: num_workers
-    path: \cntk\train\distributed.py
+    path: /bindings/python\cntk\train\distributed.py
     remote:
       branch: master
-      path: \cntk\train\distributed.py
+      path: /bindings/python\cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 86
   summary: Returns information about all MPI workers.
   syntax:
     content: num_workers()
-  type: Method
+  type: method
   uid: cntk.train.distributed.Communicator.num_workers
-- _type: method
-  class: cntk.train.distributed.Communicator
+- class: cntk.train.distributed.Communicator
   fullName: cntk.train.distributed.Communicator.rank
   langs:
   - python
@@ -161,19 +154,18 @@ items:
   name: rank
   source:
     id: rank
-    path: \cntk\train\distributed.py
+    path: /bindings/python\cntk\train\distributed.py
     remote:
       branch: master
-      path: \cntk\train\distributed.py
+      path: /bindings/python\cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 93
   summary: Returns rank of current process.
   syntax:
     content: rank()
-  type: Method
+  type: method
   uid: cntk.train.distributed.Communicator.rank
-- _type: method
-  class: cntk.train.distributed.Communicator
+- class: cntk.train.distributed.Communicator
   fullName: cntk.train.distributed.Communicator.workers
   langs:
   - python
@@ -181,10 +173,10 @@ items:
   name: workers
   source:
     id: workers
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 47
   summary: Returns workers in this communicator.
@@ -194,7 +186,7 @@ items:
       description: workers in this communicator.
       type:
       - (list) of WorkerDescriptor
-  type: Method
+  type: method
   uid: cntk.train.distributed.Communicator.workers
 references:
 - fullName: cntk.train.distributed.Communicator.barrier

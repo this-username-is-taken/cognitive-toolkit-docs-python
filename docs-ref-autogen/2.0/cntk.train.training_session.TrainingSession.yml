@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.train.training_session.TrainingSession.on_cross_validation_end
   - cntk.train.training_session.TrainingSession.train
   class: cntk.train.training_session.TrainingSession
@@ -17,10 +16,10 @@ items:
   name: TrainingSession
   source:
     id: TrainingSession
-    path: \cntk\train\training_session.py
+    path: /bindings/python\cntk\train\training_session.py
     remote:
       branch: master
-      path: \cntk\train\training_session.py
+      path: /bindings/python\cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 116
   summary: 'The instance of the class should be created by using `training_session()`
@@ -72,10 +71,9 @@ items:
       id: test_config
       type:
       - TestConfig
-  type: Class
+  type: class
   uid: cntk.train.training_session.TrainingSession
-- _type: method
-  class: cntk.train.training_session.TrainingSession
+- class: cntk.train.training_session.TrainingSession
   fullName: cntk.train.training_session.TrainingSession.on_cross_validation_end
   langs:
   - python
@@ -83,10 +81,10 @@ items:
   name: on_cross_validation_end
   source:
     id: on_cross_validation_end
-    path: \cntk\train\training_session.py
+    path: /bindings/python\cntk\train\training_session.py
     remote:
       branch: master
-      path: \cntk\train\training_session.py
+      path: /bindings/python\cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 193
   summary: Callback that gets executed at the end of cross validation.
@@ -112,10 +110,9 @@ items:
       - int
     return:
       description: True if training should continue, False otherwise.
-  type: Method
+  type: method
   uid: cntk.train.training_session.TrainingSession.on_cross_validation_end
-- _type: method
-  class: cntk.train.training_session.TrainingSession
+- class: cntk.train.training_session.TrainingSession
   fullName: cntk.train.training_session.TrainingSession.train
   langs:
   - python
@@ -123,10 +120,10 @@ items:
   name: train
   source:
     id: train
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 178
   summary: Perform training on a specified device.
@@ -138,7 +135,7 @@ items:
       id: device
       type:
       - DeviceDescriptor
-  type: Method
+  type: method
   uid: cntk.train.training_session.TrainingSession.train
 references:
 - fullName: cntk.train.training_session.TrainingSession.on_cross_validation_end

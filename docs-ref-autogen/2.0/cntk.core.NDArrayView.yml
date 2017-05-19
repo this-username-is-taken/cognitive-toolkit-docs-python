@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.core.NDArrayView.device
   - cntk.core.NDArrayView.dtype
   - cntk.core.NDArrayView.from_csr
@@ -24,10 +23,10 @@ items:
   name: NDArrayView
   source:
     id: NDArrayView
-    path: \cntk\core.py
+    path: /bindings/python\cntk\core.py
     remote:
       branch: master
-      path: \cntk\core.py
+      path: /bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 26
   summary: 'Creates an empty dense internal data representation of a `Value` object.
@@ -58,10 +57,9 @@ items:
       id: device
       type:
       - DeviceDescriptor
-  type: Class
+  type: class
   uid: cntk.core.NDArrayView
-- _type: attribute
-  class: cntk.core.NDArrayView
+- class: cntk.core.NDArrayView
   fullName: cntk.core.NDArrayView.device
   langs:
   - python
@@ -77,10 +75,9 @@ items:
     startLine: null
   summary: Retrieves the `DeviceDescriptor` instance.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.core.NDArrayView.device
-- _type: attribute
-  class: cntk.core.NDArrayView
+- class: cntk.core.NDArrayView
   fullName: cntk.core.NDArrayView.dtype
   langs:
   - python
@@ -96,10 +93,9 @@ items:
     startLine: null
   summary: NumPy data type of the instance
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.core.NDArrayView.dtype
-- _type: method
-  class: cntk.core.NDArrayView
+- class: cntk.core.NDArrayView
   fullName: cntk.core.NDArrayView.from_csr
   langs:
   - python
@@ -107,14 +103,14 @@ items:
   name: from_csr
   source:
     id: from_csr
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 82
-  summary: Create an @cntk.core.NDArrayView instance from a SciPy sparse array in
-    CSR format.
+  summary: Create a @cntk.core.NDArrayView instance from a SciPy sparse array in CSR
+    format.
   syntax:
     content: from_csr()
     parameters:
@@ -144,10 +140,9 @@ items:
       - tuple, default None
     return:
       description: '@cntk.core.NDArrayView instance'
-  type: Method
+  type: method
   uid: cntk.core.NDArrayView.from_csr
-- _type: method
-  class: cntk.core.NDArrayView
+- class: cntk.core.NDArrayView
   fullName: cntk.core.NDArrayView.from_data
   langs:
   - python
@@ -155,14 +150,14 @@ items:
   name: from_data
   source:
     id: from_data
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 133
-  summary: Create an @cntk.core.NDArrayView instance from a NumPy or SciPy sparse
-    array in CSR format.
+  summary: Create a @cntk.core.NDArrayView instance from a NumPy or SciPy sparse array
+    in CSR format.
   syntax:
     content: from_data()
     parameters:
@@ -185,10 +180,9 @@ items:
       - bool, default False
     return:
       description: '@cntk.core.NDArrayView instance'
-  type: Method
+  type: method
   uid: cntk.core.NDArrayView.from_data
-- _type: method
-  class: cntk.core.NDArrayView
+- class: cntk.core.NDArrayView
   fullName: cntk.core.NDArrayView.from_dense
   langs:
   - python
@@ -196,13 +190,13 @@ items:
   name: from_dense
   source:
     id: from_dense
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 49
-  summary: Create an @cntk.core.NDArrayView instance from a NumPy array.
+  summary: Create a @cntk.core.NDArrayView instance from a NumPy array.
   syntax:
     content: from_dense()
     parameters:
@@ -225,10 +219,9 @@ items:
       - bool, optional
     return:
       description: '@cntk.core.NDArrayView instance'
-  type: Method
+  type: method
   uid: cntk.core.NDArrayView.from_dense
-- _type: attribute
-  class: cntk.core.NDArrayView
+- class: cntk.core.NDArrayView
   fullName: cntk.core.NDArrayView.is_read_only
   langs:
   - python
@@ -244,10 +237,9 @@ items:
     startLine: null
   summary: Whether the data is read-only
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.core.NDArrayView.is_read_only
-- _type: attribute
-  class: cntk.core.NDArrayView
+- class: cntk.core.NDArrayView
   fullName: cntk.core.NDArrayView.is_sparse
   langs:
   - python
@@ -263,10 +255,9 @@ items:
     startLine: null
   summary: Whether the data is sparse or dense
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.core.NDArrayView.is_sparse
-- _type: attribute
-  class: cntk.core.NDArrayView
+- class: cntk.core.NDArrayView
   fullName: cntk.core.NDArrayView.shape
   langs:
   - python
@@ -282,10 +273,9 @@ items:
     startLine: null
   summary: The shape of this instance.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.core.NDArrayView.shape
-- _type: method
-  class: cntk.core.NDArrayView
+- class: cntk.core.NDArrayView
   fullName: cntk.core.NDArrayView.slice_view
   langs:
   - python
@@ -293,18 +283,18 @@ items:
   name: slice_view
   source:
     id: slice_view
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 176
-  summary: "Returns a sliced view of the instance.\n-[ Example ]-\n>>> # Creating\
+  summary: "Returns a sliced view of the instance.\n-[ Example ]-\n```\n\n>>> # Creating\
     \ an array of shape (1, 1, 2, 3)\n>>> np_array = np.asarray([[[[10, 20, 30], [40,\
     \ 50, 60]]]],                                       dtype=np.float32)\n>>> nd\
     \ = NDArrayView.from_dense(np_array)\n>>> sliced = nd.slice_view([0, 0, 0, 0],\
     \ [2, 3])\n>>> np_sliced = sliced.asarray()\n>>> # Result is an array of shape\
-    \ (2, 3)\n>>> print(np_sliced)\n[[ 10.  20.  30.]\n [ 40.  50.  60.]]"
+    \ (2, 3)\n>>> print(np_sliced)\n[[ 10.  20.  30.]\n [ 40.  50.  60.]]\n```"
   syntax:
     content: slice_view()
     parameters:
@@ -321,7 +311,7 @@ items:
       id: read_only
       type:
       - bool
-  type: Method
+  type: method
   uid: cntk.core.NDArrayView.slice_view
 references:
 - fullName: cntk.core.NDArrayView.device

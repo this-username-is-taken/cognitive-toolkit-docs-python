@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.variables.Record.updated_with
   class: cntk.variables.Record
   fullName: cntk.variables.Record
@@ -16,10 +15,10 @@ items:
   name: Record
   source:
     id: Record
-    path: \cntk\variables.py
+    path: /bindings/python\cntk\variables.py
     remote:
       branch: master
-      path: \cntk\variables.py
+      path: /bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 11
   summary: 'Easy construction of a record (=immutable singleton class) from keyword
@@ -34,10 +33,9 @@ items:
     return:
       description: A singleton class instance that has all passed kw args as immutable
         class members.
-  type: Class
+  type: class
   uid: cntk.variables.Record
-- _type: method
-  class: cntk.variables.Record
+- class: cntk.variables.Record
   fullName: cntk.variables.Record.updated_with
   langs:
   - python
@@ -45,10 +43,10 @@ items:
   name: updated_with
   source:
     id: updated_with
-    path: \cntk\variables.py
+    path: /bindings/python\cntk\variables.py
     remote:
       branch: master
-      path: \cntk\variables.py
+      path: /bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 33
   summary: Create a new Record from an existing one with members modified or added.
@@ -61,7 +59,7 @@ items:
     return:
       description: A singleton class instance that has all passed kw args as immutable
         class members.
-  type: Method
+  type: method
   uid: cntk.variables.Record.updated_with
 references:
 - fullName: cntk.variables.Record.updated_with

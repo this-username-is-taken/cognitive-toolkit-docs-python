@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.train.distributed.Communicator
   - cntk.train.distributed.DistributedLearner
   - cntk.train.distributed.WorkerDescriptor
@@ -15,31 +14,30 @@ items:
   name: distributed
   source:
     id: distributed
-    path: \cntk\train\distributed.py
+    path: /bindings/python\cntk\train\distributed.py
     remote:
       branch: master
-      path: \cntk\train\distributed.py
+      path: /bindings/python\cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   summary: Distributed learners manage learners in distributed environment.
-  type: Namespace
+  type: module
   uid: cntk.train.distributed
-- _type: function
-  fullName: cntk.train.distributed.block_momentum_distributed_learner
+- fullName: cntk.train.distributed.block_momentum_distributed_learner
   langs:
   - python
   module: cntk.train.distributed
   name: block_momentum_distributed_learner
-  seealsoContent: '[1] K. Chen and Q. Huo. [Scalable training of deep learning machines
-    by incremental block training with intra-block parallel optimization and blockwise
-    model-update filtering](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/08/0005880.pdf).
+  seealsoContent: 'See also: [1] K. Chen and Q. Huo. [Scalable training of deep learning
+    machines by incremental block training with intra-block parallel optimization
+    and blockwise model-update filtering](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/08/0005880.pdf).
     Proceedings of ICASSP, 2016.'
   source:
     id: block_momentum_distributed_learner
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 141
   summary: 'Creates a block momentum distributed learner. See [1] for more information.
@@ -80,20 +78,19 @@ items:
       - int
     return:
       description: a distributed learner instance
-  type: Method
+  type: function
   uid: cntk.train.distributed.block_momentum_distributed_learner
-- _type: function
-  fullName: cntk.train.distributed.data_parallel_distributed_learner
+- fullName: cntk.train.distributed.data_parallel_distributed_learner
   langs:
   - python
   module: cntk.train.distributed
   name: data_parallel_distributed_learner
   source:
     id: data_parallel_distributed_learner
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 115
   summary: Creates a data parallel distributed learner
@@ -116,7 +113,7 @@ items:
       - bool
     return:
       description: a distributed learner instance
-  type: Method
+  type: function
   uid: cntk.train.distributed.data_parallel_distributed_learner
 references:
 - fullName: cntk.train.distributed.Communicator

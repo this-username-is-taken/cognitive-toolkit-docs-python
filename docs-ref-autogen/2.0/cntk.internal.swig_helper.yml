@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.internal.swig_helper.map_if_possible
   - cntk.internal.swig_helper.typemap
   fullName: cntk.internal.swig_helper
@@ -12,46 +11,44 @@ items:
   name: swig_helper
   source:
     id: swig_helper
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: Namespace
+  type: module
   uid: cntk.internal.swig_helper
-- _type: function
-  fullName: cntk.internal.swig_helper.map_if_possible
+- fullName: cntk.internal.swig_helper.map_if_possible
   langs:
   - python
   module: cntk.internal.swig_helper
   name: map_if_possible
   source:
     id: map_if_possible
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 11
   syntax:
     content: map_if_possible(obj)
     parameters:
     - id: obj
-  type: Method
+  type: function
   uid: cntk.internal.swig_helper.map_if_possible
-- _type: function
-  fullName: cntk.internal.swig_helper.typemap
+- fullName: cntk.internal.swig_helper.typemap
   langs:
   - python
   module: cntk.internal.swig_helper
   name: typemap
   source:
     id: typemap
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 60
   summary: Decorator that upcasts return types from Swig types to cntk types that
@@ -62,7 +59,7 @@ items:
     content: typemap(f)
     parameters:
     - id: f
-  type: Method
+  type: function
   uid: cntk.internal.swig_helper.typemap
 references:
 - fullName: cntk.internal.swig_helper.map_if_possible

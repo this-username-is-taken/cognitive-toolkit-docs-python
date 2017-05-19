@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.device.DeviceDescriptor.id
   - cntk.device.DeviceDescriptor.is_locked
   - cntk.device.DeviceDescriptor.type
@@ -18,10 +17,10 @@ items:
   name: DeviceDescriptor
   source:
     id: DeviceDescriptor
-    path: \cntk\device.py
+    path: /bindings/python\cntk\device.py
     remote:
       branch: master
-      path: \cntk\device.py
+      path: /bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 32
   summary: 'Describes a device by an unique id and its type. If the device corresponds
@@ -32,10 +31,9 @@ items:
     '
   syntax:
     content: DeviceDescriptor(self)
-  type: Class
+  type: class
   uid: cntk.device.DeviceDescriptor
-- _type: method
-  class: cntk.device.DeviceDescriptor
+- class: cntk.device.DeviceDescriptor
   fullName: cntk.device.DeviceDescriptor.id
   langs:
   - python
@@ -43,10 +41,10 @@ items:
   name: id
   source:
     id: id
-    path: \cntk\device.py
+    path: /bindings/python\cntk\device.py
     remote:
       branch: master
-      path: \cntk\device.py
+      path: /bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 38
   summary: Returns id of device descriptor
@@ -58,10 +56,9 @@ items:
       description: id
       type:
       - int
-  type: Method
+  type: method
   uid: cntk.device.DeviceDescriptor.id
-- _type: method
-  class: cntk.device.DeviceDescriptor
+- class: cntk.device.DeviceDescriptor
   fullName: cntk.device.DeviceDescriptor.is_locked
   langs:
   - python
@@ -69,10 +66,10 @@ items:
   name: is_locked
   source:
     id: is_locked
-    path: \cntk\device.py
+    path: /bindings/python\cntk\device.py
     remote:
       branch: master
-      path: \cntk\device.py
+      path: /bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 63
   summary: Returns *True* if another CNTK process already holds an exclusive lock
@@ -81,10 +78,9 @@ items:
     content: is_locked(self)
     parameters:
     - id: self
-  type: Method
+  type: method
   uid: cntk.device.DeviceDescriptor.is_locked
-- _type: method
-  class: cntk.device.DeviceDescriptor
+- class: cntk.device.DeviceDescriptor
   fullName: cntk.device.DeviceDescriptor.type
   langs:
   - python
@@ -92,10 +88,10 @@ items:
   name: type
   source:
     id: type
-    path: \cntk\device.py
+    path: /bindings/python\cntk\device.py
     remote:
       branch: master
-      path: \cntk\device.py
+      path: /bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 47
   summary: Returns type of device descriptor. 1 if it is a GPU device or 0 if CPU.
@@ -107,7 +103,7 @@ items:
       description: type
       type:
       - int
-  type: Method
+  type: method
   uid: cntk.device.DeviceDescriptor.type
 references:
 - fullName: cntk.device.DeviceDescriptor.id

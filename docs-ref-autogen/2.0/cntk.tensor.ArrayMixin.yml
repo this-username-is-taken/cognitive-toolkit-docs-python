@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.tensor.ArrayMixin.asarray
   class: cntk.tensor.ArrayMixin
   fullName: cntk.tensor.ArrayMixin
@@ -14,18 +13,17 @@ items:
   name: ArrayMixin
   source:
     id: ArrayMixin
-    path: \cntk\tensor.py
+    path: /bindings/python\cntk\tensor.py
     remote:
       branch: master
-      path: \cntk\tensor.py
+      path: /bindings/python\cntk\tensor.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 160
   syntax:
     content: ArrayMixin()
-  type: Class
+  type: class
   uid: cntk.tensor.ArrayMixin
-- _type: method
-  class: cntk.tensor.ArrayMixin
+- class: cntk.tensor.ArrayMixin
   fullName: cntk.tensor.ArrayMixin.asarray
   langs:
   - python
@@ -33,10 +31,10 @@ items:
   name: asarray
   source:
     id: asarray
-    path: \cntk\tensor.py
+    path: /bindings/python\cntk\tensor.py
     remote:
       branch: master
-      path: \cntk\tensor.py
+      path: /bindings/python\cntk\tensor.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 161
   summary: Converts the instance's data to a NumPy array.
@@ -44,7 +42,7 @@ items:
     content: asarray(self)
     parameters:
     - id: self
-  type: Method
+  type: method
   uid: cntk.tensor.ArrayMixin.asarray
 references:
 - fullName: cntk.tensor.ArrayMixin.asarray

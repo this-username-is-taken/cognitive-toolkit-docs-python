@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children: []
+- children: []
   class: cntk.io.StreamConfiguration
   fullName: cntk.io.StreamConfiguration
   inheritance:
@@ -15,10 +14,10 @@ items:
   name: StreamConfiguration
   source:
     id: StreamConfiguration
-    path: \cntk\io\__init__.py
+    path: /bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: \cntk\io\__init__.py
+      path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 641
   summary: Configuration of a stream in a text format reader.
@@ -42,6 +41,6 @@ items:
       id: stream_alias
       type:
       - str, defaults to ''
-  type: Class
+  type: class
   uid: cntk.io.StreamConfiguration
 references: []

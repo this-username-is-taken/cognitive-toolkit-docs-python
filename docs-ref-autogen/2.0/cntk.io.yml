@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.io.CTFDeserializer
   - cntk.io.HTKFeatureDeserializer
   - cntk.io.HTKMLFDeserializer
@@ -21,21 +20,20 @@ items:
   name: io
   source:
     id: io
-    path: \cntk\io\__init__.py
+    path: /bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: \cntk\io\__init__.py
+      path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: Namespace
+  type: module
   uid: cntk.io
-- _type: function
-  fullName: cntk.io.CTFDeserializer
+- fullName: cntk.io.CTFDeserializer
   langs:
   - python
   module: cntk.io
   name: CTFDeserializer
-  seealsoContent: ">>:cntkwiki:`CNTKTextReader format <BrainScript-CNTKTextFormat-Reader>`<<\n\
+  seealsoContent: "See also: >>:cntkwiki:`CNTKTextReader format <BrainScript-CNTKTextFormat-Reader>`<<\n\
     \n  <SYSTEM MESSAGE: c:\\local\\anaconda3-4.1.1-windows-x86_64\\lib\\site-packages\\\
     cntk\\io\\__init__.py:docstring of cntk.io.CTFDeserializer:13: (INFO/1) No role\
     \ entry for \"cntkwiki\" in module \"docutils.parsers.rst.languages.en\". Trying\
@@ -44,18 +42,18 @@ items:
     \ (ERROR/3) Unknown interpreted text role \"cntkwiki\".>"
   source:
     id: CTFDeserializer
-    path: \cntk\io\__init__.py
+    path: /bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: \cntk\io\__init__.py
+      path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 613
   summary: "Configures the CNTK text-format reader that reads text-based files with\
-    \ lines of the form:\n<!-- literal_block {\"names\": [], \"backrefs\": [], \"\
-    classes\": [], \"dupnames\": [], \"xml:space\": \"preserve\", \"ids\": []} -->\n\
+    \ lines of the form:\n<!-- literal_block {\"backrefs\": [], \"classes\": [], \"\
+    xml:space\": \"preserve\", \"names\": [], \"ids\": [], \"dupnames\": []} -->\n\
     \n````\n\n   [Sequence_Id] (Sample)+\n   ````\nwhere:\n<!-- literal_block {\"\
-    names\": [], \"backrefs\": [], \"classes\": [], \"dupnames\": [], \"xml:space\"\
-    : \"preserve\", \"ids\": []} -->\n\n````\n\n   Sample=|Input_Name (Value )*\n\
+    backrefs\": [], \"classes\": [], \"xml:space\": \"preserve\", \"names\": [], \"\
+    ids\": [], \"dupnames\": []} -->\n\n````\n\n   Sample=|Input_Name (Value )*\n\
     \   ````"
   syntax:
     content: CTFDeserializer(filename, streams)
@@ -65,20 +63,19 @@ items:
       id: filename
       type:
       - str
-  type: Method
+  type: function
   uid: cntk.io.CTFDeserializer
-- _type: function
-  fullName: cntk.io.HTKFeatureDeserializer
+- fullName: cntk.io.HTKFeatureDeserializer
   langs:
   - python
   module: cntk.io
   name: HTKFeatureDeserializer
   source:
     id: HTKFeatureDeserializer
-    path: \cntk\io\__init__.py
+    path: /bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: \cntk\io\__init__.py
+      path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 511
   summary: Configures the HTK feature reader that reads speech data from scp files.
@@ -88,20 +85,19 @@ items:
     - description: any dictionary-like object that contains a mapping from stream
         names to `StreamDef` objects. Each StreamDef object configures a feature stream.
       id: streams
-  type: Method
+  type: function
   uid: cntk.io.HTKFeatureDeserializer
-- _type: function
-  fullName: cntk.io.HTKMLFDeserializer
+- fullName: cntk.io.HTKMLFDeserializer
   langs:
   - python
   module: cntk.io
   name: HTKMLFDeserializer
   source:
     id: HTKMLFDeserializer
-    path: \cntk\io\__init__.py
+    path: /bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: \cntk\io\__init__.py
+      path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 541
   summary: Configures an HTK label reader that reads speech HTK format MLF (Master
@@ -116,15 +112,14 @@ items:
     - description: any dictionary-like object that contains a mapping from stream
         names to `StreamDef` objects. Each StreamDef object configures a label stream.
       id: streams
-  type: Method
+  type: function
   uid: cntk.io.HTKMLFDeserializer
-- _type: function
-  fullName: cntk.io.ImageDeserializer
+- fullName: cntk.io.ImageDeserializer
   langs:
   - python
   module: cntk.io
   name: ImageDeserializer
-  seealsoContent: ">>:cntkwiki:`Image reader definition <BrainScript-Image-reader>`<<\n\
+  seealsoContent: "See also: >>:cntkwiki:`Image reader definition <BrainScript-Image-reader>`<<\n\
     \n  <SYSTEM MESSAGE: c:\\local\\anaconda3-4.1.1-windows-x86_64\\lib\\site-packages\\\
     cntk\\io\\__init__.py:docstring of cntk.io.ImageDeserializer:14: (INFO/1) No role\
     \ entry for \"cntkwiki\" in module \"docutils.parsers.rst.languages.en\". Trying\
@@ -133,18 +128,18 @@ items:
     \ (ERROR/3) Unknown interpreted text role \"cntkwiki\".>"
   source:
     id: ImageDeserializer
-    path: \cntk\io\__init__.py
+    path: /bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: \cntk\io\__init__.py
+      path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 567
   summary: "Configures the image reader that reads images and corresponding labels\
-    \ from a file of the form:\n<!-- literal_block {\"names\": [], \"backrefs\": [],\
-    \ \"classes\": [], \"dupnames\": [], \"xml:space\": \"preserve\", \"ids\": []}\
+    \ from a file of the form:\n<!-- literal_block {\"backrefs\": [], \"classes\"\
+    : [], \"xml:space\": \"preserve\", \"names\": [], \"ids\": [], \"dupnames\": []}\
     \ -->\n\n````\n\n   <full path to image> <tab> <numerical label (0-based class\
-    \ id)>\n   ````\nor:\n<!-- literal_block {\"names\": [], \"backrefs\": [], \"\
-    classes\": [], \"dupnames\": [], \"xml:space\": \"preserve\", \"ids\": []} -->\n\
+    \ id)>\n   ````\nor:\n<!-- literal_block {\"backrefs\": [], \"classes\": [], \"\
+    xml:space\": \"preserve\", \"names\": [], \"ids\": [], \"dupnames\": []} -->\n\
     \n````\n\n   sequenceId <tab> path <tab> label\n   ````"
   syntax:
     content: ImageDeserializer(filename, streams)
@@ -154,20 +149,19 @@ items:
       id: filename
       type:
       - str
-  type: Method
+  type: function
   uid: cntk.io.ImageDeserializer
-- _type: function
-  fullName: cntk.io.StreamDef
+- fullName: cntk.io.StreamDef
   langs:
   - python
   module: cntk.io
   name: StreamDef
   source:
     id: StreamDef
-    path: \cntk\io\__init__.py
+    path: /bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: \cntk\io\__init__.py
+      path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 662
   summary: Configuration of a stream for use with the builtin Deserializers. The meanings
@@ -232,20 +226,19 @@ items:
       id: broadcast
       type:
       - bool, defaults to None
-  type: Method
+  type: function
   uid: cntk.io.StreamDef
-- _type: function
-  fullName: cntk.io.sequence_to_cntk_text_format
+- fullName: cntk.io.sequence_to_cntk_text_format
   langs:
   - python
   module: cntk.io
   name: sequence_to_cntk_text_format
   source:
     id: sequence_to_cntk_text_format
-    path: \cntk\io\__init__.py
+    path: /bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: \cntk\io\__init__.py
+      path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 770
   summary: Converts a list of NumPy arrays representing tensors of inputs into a format
@@ -266,7 +259,7 @@ items:
       description: String representation in >>:cntkwiki:`CNTKTextReader format <BrainScript-CNTKTextFormat-Reader>`<<
       type:
       - str
-  type: Method
+  type: function
   uid: cntk.io.sequence_to_cntk_text_format
 references:
 - fullName: cntk.io.CTFDeserializer

@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.internal.utils.eval
   - cntk.internal.utils.get_data_type
   - cntk.internal.utils.get_python_function_arguments
@@ -14,26 +13,25 @@ items:
   name: utils
   source:
     id: utils
-    path: \cntk\internal\utils.py
+    path: /bindings/python\cntk\internal\utils.py
     remote:
       branch: master
-      path: \cntk\internal\utils.py
+      path: /bindings/python\cntk\internal\utils.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: Namespace
+  type: module
   uid: cntk.internal.utils
-- _type: function
-  fullName: cntk.internal.utils.eval
+- fullName: cntk.internal.utils.eval
   langs:
   - python
   module: cntk.internal.utils
   name: eval
   source:
     id: eval
-    path: \cntk\internal\utils.py
+    path: /bindings/python\cntk\internal\utils.py
     remote:
       branch: master
-      path: \cntk\internal\utils.py
+      path: /bindings/python\cntk\internal\utils.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 137
   summary: It evaluates `op` on the data provided by the reader. This is useful mainly
@@ -85,20 +83,19 @@ items:
       - bool, optional
     return:
       description: mapping of output variables to their values.
-  type: Method
+  type: function
   uid: cntk.internal.utils.eval
-- _type: function
-  fullName: cntk.internal.utils.get_data_type
+- fullName: cntk.internal.utils.get_data_type
   langs:
   - python
   module: cntk.internal.utils
   name: get_data_type
   source:
     id: get_data_type
-    path: \cntk\internal\utils.py
+    path: /bindings/python\cntk\internal\utils.py
     remote:
       branch: master
-      path: \cntk\internal\utils.py
+      path: /bindings/python\cntk\internal\utils.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 12
   summary: Calculates the highest precision numpy data type of the provided parameters.
@@ -113,20 +110,19 @@ items:
       - number, list, NumPy array, Variable, or Function
     return:
       description: np.float32, np.float64, or None
-  type: Method
+  type: function
   uid: cntk.internal.utils.get_data_type
-- _type: function
-  fullName: cntk.internal.utils.get_python_function_arguments
+- fullName: cntk.internal.utils.get_python_function_arguments
   langs:
   - python
   module: cntk.internal.utils
   name: get_python_function_arguments
   source:
     id: get_python_function_arguments
-    path: \cntk\internal\utils.py
+    path: /bindings/python\cntk\internal\utils.py
     remote:
       branch: master
-      path: \cntk\internal\utils.py
+      path: /bindings/python\cntk\internal\utils.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 74
   summary: Helper to get the parameter names and annotations of a Python function.
@@ -134,20 +130,19 @@ items:
     content: get_python_function_arguments(f)
     parameters:
     - id: f
-  type: Method
+  type: function
   uid: cntk.internal.utils.get_python_function_arguments
-- _type: function
-  fullName: cntk.internal.utils.map_function_arguments
+- fullName: cntk.internal.utils.map_function_arguments
   langs:
   - python
   module: cntk.internal.utils
   name: map_function_arguments
   source:
     id: map_function_arguments
-    path: \cntk\internal\utils.py
+    path: /bindings/python\cntk\internal\utils.py
     remote:
       branch: master
-      path: \cntk\internal\utils.py
+      path: /bindings/python\cntk\internal\utils.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 101
   summary: Helper to determine the argument map for use with various call operations.
@@ -160,7 +155,7 @@ items:
     parameters:
     - id: params
     - id: params_dict
-  type: Method
+  type: function
   uid: cntk.internal.utils.map_function_arguments
 references:
 - fullName: cntk.internal.utils.eval

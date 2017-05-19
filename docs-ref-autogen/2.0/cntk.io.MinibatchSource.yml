@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.io.MinibatchSource.current_position
   - cntk.io.MinibatchSource.get_checkpoint_state
   - cntk.io.MinibatchSource.is_distributed
@@ -23,10 +22,10 @@ items:
   name: MinibatchSource
   source:
     id: MinibatchSource
-    path: \cntk\io\__init__.py
+    path: /bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: \cntk\io\__init__.py
+      path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 123
   summary: '
@@ -122,10 +121,9 @@ items:
       id: epoch_size
       type:
       - int, defaults to None
-  type: Class
+  type: class
   uid: cntk.io.MinibatchSource
-- _type: attribute
-  class: cntk.io.MinibatchSource
+- class: cntk.io.MinibatchSource
   fullName: cntk.io.MinibatchSource.current_position
   langs:
   - python
@@ -142,16 +140,17 @@ items:
   summary: Gets current position in the minibatch source.
   syntax:
     parameters:
-    - description: Minibatch position `Dictionary` on the global timeline.
+    - description: minibatch position on the global timeline.
       id: getter
+      type:
+      - Dictionary
     - description: position returned by the getter
       id: setter
       type:
       - Dictionary
-  type: Property
+  type: attribute
   uid: cntk.io.MinibatchSource.current_position
-- _type: method
-  class: cntk.io.MinibatchSource
+- class: cntk.io.MinibatchSource
   fullName: cntk.io.MinibatchSource.get_checkpoint_state
   langs:
   - python
@@ -159,10 +158,10 @@ items:
   name: get_checkpoint_state
   source:
     id: get_checkpoint_state
-    path: \cntk\io\__init__.py
+    path: /bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: \cntk\io\__init__.py
+      path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 350
   summary: Gets the checkpoint state of the MinibatchSource.
@@ -174,10 +173,9 @@ items:
       description: A `Dictionary` that has the checkpoint state of the MinibatchSource
       type:
       - cntk.cntk_py.Dictionary
-  type: Method
+  type: method
   uid: cntk.io.MinibatchSource.get_checkpoint_state
-- _type: attribute
-  class: cntk.io.MinibatchSource
+- class: cntk.io.MinibatchSource
   fullName: cntk.io.MinibatchSource.is_distributed
   langs:
   - python
@@ -193,10 +191,9 @@ items:
     startLine: null
   summary: Whether the minibatch source is running distributed
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.io.MinibatchSource.is_distributed
-- _type: method
-  class: cntk.io.MinibatchSource
+- class: cntk.io.MinibatchSource
   fullName: cntk.io.MinibatchSource.next_minibatch
   langs:
   - python
@@ -204,10 +201,10 @@ items:
   name: next_minibatch
   source:
     id: next_minibatch
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 296
   summary: 'Reads a minibatch that contains data for all input streams.  The minibatch
@@ -248,10 +245,9 @@ items:
         to class:*MinibatchData*.
       type:
       - cntk.io.MinibatchData
-  type: Method
+  type: method
   uid: cntk.io.MinibatchSource.next_minibatch
-- _type: method
-  class: cntk.io.MinibatchSource
+- class: cntk.io.MinibatchSource
   fullName: cntk.io.MinibatchSource.restore_from_checkpoint
   langs:
   - python
@@ -259,10 +255,10 @@ items:
   name: restore_from_checkpoint
   source:
     id: restore_from_checkpoint
-    path: \cntk\io\__init__.py
+    path: /bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: \cntk\io\__init__.py
+      path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 361
   summary: Restores the MinibatchSource state from the specified checkpoint.
@@ -274,10 +270,9 @@ items:
       id: checkpoint
       type:
       - Dictionary
-  type: Method
+  type: method
   uid: cntk.io.MinibatchSource.restore_from_checkpoint
-- _type: method
-  class: cntk.io.MinibatchSource
+- class: cntk.io.MinibatchSource
   fullName: cntk.io.MinibatchSource.stream_info
   langs:
   - python
@@ -285,10 +280,10 @@ items:
   name: stream_info
   source:
     id: stream_info
-    path: \cntk\io\__init__.py
+    path: /bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: \cntk\io\__init__.py
+      path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 270
   summary: Gets the description of the stream with given name. Throws an exception
@@ -303,10 +298,9 @@ items:
       - str
     return:
       description: '`StreamInformation` The information for the given stream name.'
-  type: Method
+  type: method
   uid: cntk.io.MinibatchSource.stream_info
-- _type: method
-  class: cntk.io.MinibatchSource
+- class: cntk.io.MinibatchSource
   fullName: cntk.io.MinibatchSource.stream_infos
   langs:
   - python
@@ -314,10 +308,10 @@ items:
   name: stream_infos
   source:
     id: stream_infos
-    path: \cntk\io\__init__.py
+    path: /bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: \cntk\io\__init__.py
+      path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 247
   summary: Describes the streams this minibatch source produces.
@@ -327,10 +321,9 @@ items:
     - id: self
     return:
       description: A list of instances of `StreamInformation`
-  type: Method
+  type: method
   uid: cntk.io.MinibatchSource.stream_infos
-- _type: attribute
-  class: cntk.io.MinibatchSource
+- class: cntk.io.MinibatchSource
   fullName: cntk.io.MinibatchSource.streams
   langs:
   - python
@@ -348,7 +341,7 @@ items:
   syntax:
     return:
       description: A *dict* mapping input names to instances of `StreamInformation`
-  type: Property
+  type: attribute
   uid: cntk.io.MinibatchSource.streams
 references:
 - fullName: cntk.io.MinibatchSource.current_position

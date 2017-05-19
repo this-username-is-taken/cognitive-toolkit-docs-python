@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.eval.evaluator.Evaluator
   fullName: cntk.eval.evaluator
   langs:
@@ -11,15 +10,15 @@ items:
   name: evaluator
   source:
     id: evaluator
-    path: \cntk\eval\evaluator.py
+    path: /bindings/python\cntk\eval\evaluator.py
     remote:
       branch: master
-      path: \cntk\eval\evaluator.py
+      path: /bindings/python\cntk\eval\evaluator.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   summary: An evaluator provides functionality to evaluate minibatches against the
     specified evaluation function.
-  type: Namespace
+  type: module
   uid: cntk.eval.evaluator
 references:
 - fullName: cntk.eval.evaluator.Evaluator

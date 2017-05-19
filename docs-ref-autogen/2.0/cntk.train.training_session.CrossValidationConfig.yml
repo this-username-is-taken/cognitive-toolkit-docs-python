@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children: []
+- children: []
   class: cntk.train.training_session.CrossValidationConfig
   fullName: cntk.train.training_session.CrossValidationConfig
   inheritance:
@@ -15,10 +14,10 @@ items:
   name: CrossValidationConfig
   source:
     id: CrossValidationConfig
-    path: \cntk\train\training_session.py
+    path: /bindings/python\cntk\train\training_session.py
     remote:
       branch: master
-      path: \cntk\train\training_session.py
+      path: /bindings/python\cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 53
   summary: A cross validation configuration for the training session.
@@ -44,6 +43,6 @@ items:
       id: callback
       type:
       - func (index, average_error, cv_num_samples, cv_num_minibatches)
-  type: Class
+  type: class
   uid: cntk.train.training_session.CrossValidationConfig
 references: []

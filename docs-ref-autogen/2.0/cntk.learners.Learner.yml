@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.learners.Learner.learning_rate
   - cntk.learners.Learner.parameters
   - cntk.learners.Learner.reset_learning_rate
@@ -19,10 +18,10 @@ items:
   name: Learner
   source:
     id: Learner
-    path: \cntk\learners\__init__.py
+    path: /bindings/python\cntk\learners\__init__.py
     remote:
       branch: master
-      path: \cntk\learners\__init__.py
+      path: /bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 120
   summary: 'Abstraction for learning a subset of parameters of a learnable function
@@ -37,10 +36,9 @@ items:
     '
   syntax:
     content: Learner(self, parameters, learningRateSchedule)
-  type: Class
+  type: class
   uid: cntk.learners.Learner
-- _type: method
-  class: cntk.learners.Learner
+- class: cntk.learners.Learner
   fullName: cntk.learners.Learner.learning_rate
   langs:
   - python
@@ -48,10 +46,10 @@ items:
   name: learning_rate
   source:
     id: learning_rate
-    path: \cntk\learners\__init__.py
+    path: /bindings/python\cntk\learners\__init__.py
     remote:
       branch: master
-      path: \cntk\learners\__init__.py
+      path: /bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 169
   summary: Current learning rate.
@@ -59,10 +57,9 @@ items:
     content: learning_rate(self)
     parameters:
     - id: self
-  type: Method
+  type: method
   uid: cntk.learners.Learner.learning_rate
-- _type: attribute
-  class: cntk.learners.Learner
+- class: cntk.learners.Learner
   fullName: cntk.learners.Learner.parameters
   langs:
   - python
@@ -78,10 +75,9 @@ items:
     startLine: null
   summary: The set of parameters associated with this learner.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.learners.Learner.parameters
-- _type: method
-  class: cntk.learners.Learner
+- class: cntk.learners.Learner
   fullName: cntk.learners.Learner.reset_learning_rate
   langs:
   - python
@@ -89,10 +85,10 @@ items:
   name: reset_learning_rate
   source:
     id: reset_learning_rate
-    path: \cntk\learners\__init__.py
+    path: /bindings/python\cntk\learners\__init__.py
     remote:
       branch: master
-      path: \cntk\learners\__init__.py
+      path: /bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 155
   summary: 'Resets the learning rate. The new schedule is adjusted to be relative
@@ -107,10 +103,9 @@ items:
       id: learning_rate
       type:
       - output of learning_rate_schedule()
-  type: Method
+  type: method
   uid: cntk.learners.Learner.reset_learning_rate
-- _type: method
-  class: cntk.learners.Learner
+- class: cntk.learners.Learner
   fullName: cntk.learners.Learner.update
   langs:
   - python
@@ -118,10 +113,10 @@ items:
   name: update
   source:
     id: update
-    path: \cntk\learners\__init__.py
+    path: /bindings/python\cntk\learners\__init__.py
     remote:
       branch: master
-      path: \cntk\learners\__init__.py
+      path: /bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 129
   summary: Update the parameters associated with this learner.
@@ -141,7 +136,7 @@ items:
     return:
       description: '*False* to indicate that learning has stopped for all of the parameters
         associated with this learner'
-  type: Method
+  type: method
   uid: cntk.learners.Learner.update
 references:
 - fullName: cntk.learners.Learner.learning_rate

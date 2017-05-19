@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.core.Value.as_sequences
   - cntk.core.Value.create
   - cntk.core.Value.data
@@ -25,10 +24,10 @@ items:
   name: Value
   source:
     id: Value
-    path: \cntk\core.py
+    path: /bindings/python\cntk\core.py
     remote:
       branch: master
-      path: \cntk\core.py
+      path: /bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 234
   summary: 'Internal representation of minibatch data.
@@ -62,10 +61,9 @@ items:
       id: device
       type:
       - DeviceDescriptor
-  type: Class
+  type: class
   uid: cntk.core.Value
-- _type: method
-  class: cntk.core.Value
+- class: cntk.core.Value
   fullName: cntk.core.Value.as_sequences
   langs:
   - python
@@ -73,10 +71,10 @@ items:
   name: as_sequences
   source:
     id: as_sequences
-    path: \cntk\core.py
+    path: /bindings/python\cntk\core.py
     remote:
       branch: master
-      path: \cntk\core.py
+      path: /bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 268
   summary: Convert a Value to a sequence of NumPy arrays that have their masked entries
@@ -91,10 +89,9 @@ items:
       description: If variable contains more dynamic axes than the batch axis, a list
         of NumPy arrays (if dense) or a SciPy CSR array (if sparse) will be returned.
         Otherwise, the arrays will be returned directly.
-  type: Method
+  type: method
   uid: cntk.core.Value.as_sequences
-- _type: method
-  class: cntk.core.Value
+- class: cntk.core.Value
   fullName: cntk.core.Value.create
   langs:
   - python
@@ -102,10 +99,10 @@ items:
   name: create
   source:
     id: create
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 354
   summary: Creates a @cntk.core.Value object.
@@ -137,10 +134,9 @@ items:
       - bool, default False
     return:
       description: '@cntk.core.Value object.'
-  type: Method
+  type: method
   uid: cntk.core.Value.create
-- _type: attribute
-  class: cntk.core.Value
+- class: cntk.core.Value
   fullName: cntk.core.Value.data
   langs:
   - python
@@ -156,10 +152,9 @@ items:
     startLine: null
   summary: Retrieves the underlying @cntk.core.NDArrayView instance.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.core.Value.data
-- _type: attribute
-  class: cntk.core.Value
+- class: cntk.core.Value
   fullName: cntk.core.Value.device
   langs:
   - python
@@ -175,10 +170,9 @@ items:
     startLine: null
   summary: Retrieves the `DeviceDescriptor` instance.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.core.Value.device
-- _type: attribute
-  class: cntk.core.Value
+- class: cntk.core.Value
   fullName: cntk.core.Value.dtype
   langs:
   - python
@@ -194,10 +188,9 @@ items:
     startLine: null
   summary: NumPy data type of the instance
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.core.Value.dtype
-- _type: attribute
-  class: cntk.core.Value
+- class: cntk.core.Value
   fullName: cntk.core.Value.is_read_only
   langs:
   - python
@@ -213,10 +206,9 @@ items:
     startLine: null
   summary: Whether the data is read-only
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.core.Value.is_read_only
-- _type: attribute
-  class: cntk.core.Value
+- class: cntk.core.Value
   fullName: cntk.core.Value.is_sparse
   langs:
   - python
@@ -232,10 +224,9 @@ items:
     startLine: null
   summary: Whether the data is sparse or dense
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.core.Value.is_sparse
-- _type: attribute
-  class: cntk.core.Value
+- class: cntk.core.Value
   fullName: cntk.core.Value.mask
   langs:
   - python
@@ -258,10 +249,9 @@ items:
     \ by '0'). As it starts with (1), it is a continuation of the 2nd sequence in\
     \ the previous minibatch."
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.core.Value.mask
-- _type: method
-  class: cntk.core.Value
+- class: cntk.core.Value
   fullName: cntk.core.Value.one_hot
   langs:
   - python
@@ -269,16 +259,16 @@ items:
   name: one_hot
   source:
     id: one_hot
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 459
   summary: "Converts `batch` into a @cntk.core.Value object of `dtype` such that the\
     \ integer data in `batch` is interpreted as the indices representing one-hot vectors.\
-    \ Use Value.ONE_HOT_SKIP for a zero vector\n-[ Example ]-\n>>> num_classes = 6\n\
-    >>> sparse_indices = [[1,C.Value.ONE_HOT_SKIP,5],[4]]\n>>> i0 = C.sequence.input(shape=num_classes,\
+    \ Use Value.ONE_HOT_SKIP for a zero vector\n-[ Example ]-\n```\n\n>>> num_classes\
+    \ = 6\n>>> sparse_indices = [[1,C.Value.ONE_HOT_SKIP,5],[4]]\n>>> i0 = C.sequence.input(shape=num_classes,\
     \ is_sparse=True)\n>>> z = C.times(i0, np.eye(num_classes))\n>>> value = C.Value.one_hot(sparse_indices,\
     \ num_classes)\n>>> z.eval({i0: value})\n[array([[ 0.,  1.,  0.,  0.,  0.,  0.],\n\
     \        [ 0.,  0.,  0.,  0.,  0.,  0.],\n        [ 0.,  0.,  0.,  0.,  0.,  1.]],\
@@ -289,7 +279,8 @@ items:
     \ sample_shape)\n>>> z.eval({i0: value})\n[array([[[ 0.,  1.,  0.,  0.,  0., \
     \ 0.],\n         [ 0.,  0.,  0.,  0.,  0.,  1.]],\n        [[ 0.,  0.,  0.,  1.,\
     \  0.,  0.],\n         [ 0.,  0.,  1.,  0.,  0.,  0.]]], dtype=float32),\n array([[[\
-    \ 0.,  0.,  0.,  0.,  1.,  0.],\n         [ 0.,  1.,  0.,  0.,  0.,  0.]]], dtype=float32)]"
+    \ 0.,  0.,  0.,  0.,  1.,  0.],\n         [ 0.,  1.,  0.,  0.,  0.,  0.]]], dtype=float32)]\n\
+    ```"
   syntax:
     content: one_hot()
     parameters:
@@ -313,10 +304,9 @@ items:
     return:
       description: '`batch` converted into a @cntk.core.Value object that can be passed
         to the forward or eval function.'
-  type: Method
+  type: method
   uid: cntk.core.Value.one_hot
-- _type: attribute
-  class: cntk.core.Value
+- class: cntk.core.Value
   fullName: cntk.core.Value.shape
   langs:
   - python
@@ -334,7 +324,7 @@ items:
     of varying lengths, the shape will have the max sequence length in the sequence
     dimension.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.core.Value.shape
 references:
 - fullName: cntk.core.Value.as_sequences

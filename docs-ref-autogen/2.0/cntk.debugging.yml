@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.debugging.dump_function
   - cntk.debugging.dump_signature
   fullName: cntk.debugging
@@ -12,27 +11,26 @@ items:
   name: debugging
   source:
     id: debugging
-    path: \cntk\debugging\__init__.py
+    path: /bindings/python\cntk\debugging\__init__.py
     remote:
       branch: master
-      path: \cntk\debugging\__init__.py
+      path: /bindings/python\cntk\debugging\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   summary: Helper functions for debugging graphs.
-  type: Namespace
+  type: module
   uid: cntk.debugging
-- _type: function
-  fullName: cntk.debugging.dump_function
+- fullName: cntk.debugging.dump_function
   langs:
   - python
   module: cntk.debugging
   name: dump_function
   source:
     id: dump_function
-    path: \cntk\debugging\__init__.py
+    path: /bindings/python\cntk\debugging\__init__.py
     remote:
       branch: master
-      path: \cntk\debugging\__init__.py
+      path: /bindings/python\cntk\debugging\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 33
   syntax:
@@ -41,20 +39,19 @@ items:
     - id: root
     - defaultValue: None
       id: tag
-  type: Method
+  type: function
   uid: cntk.debugging.dump_function
-- _type: function
-  fullName: cntk.debugging.dump_signature
+- fullName: cntk.debugging.dump_signature
   langs:
   - python
   module: cntk.debugging
   name: dump_signature
   source:
     id: dump_signature
-    path: \cntk\debugging\__init__.py
+    path: /bindings/python\cntk\debugging\__init__.py
     remote:
       branch: master
-      path: \cntk\debugging\__init__.py
+      path: /bindings/python\cntk\debugging\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 17
   summary: Debug helper that prints the signature of a Function.
@@ -64,7 +61,7 @@ items:
     - id: root
     - defaultValue: None
       id: tag
-  type: Method
+  type: function
   uid: cntk.debugging.dump_signature
 references:
 - fullName: cntk.debugging.dump_function

@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.logging.graph.depth_first_search
   - cntk.logging.graph.find_all_with_name
   - cntk.logging.graph.find_by_name
@@ -16,26 +15,25 @@ items:
   name: graph
   source:
     id: graph
-    path: \cntk\logging\graph.py
+    path: /bindings/python\cntk\logging\graph.py
     remote:
       branch: master
-      path: \cntk\logging\graph.py
+      path: /bindings/python\cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: Namespace
+  type: module
   uid: cntk.logging.graph
-- _type: function
-  fullName: cntk.logging.graph.depth_first_search
+- fullName: cntk.logging.graph.depth_first_search
   langs:
   - python
   module: cntk.logging.graph
   name: depth_first_search
   source:
     id: depth_first_search
-    path: \cntk\logging\graph.py
+    path: /bindings/python\cntk\logging\graph.py
     remote:
       branch: master
-      path: \cntk\logging\graph.py
+      path: /bindings/python\cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 11
   summary: Generic function that walks through the graph starting at `root` and uses
@@ -60,21 +58,20 @@ items:
       - int, default 0
     return:
       description: List of functions, for which `visitor` was `True`
-  type: Method
+  type: function
   uid: cntk.logging.graph.depth_first_search
-- _type: function
-  fullName: cntk.logging.graph.find_all_with_name
+- fullName: cntk.logging.graph.find_all_with_name
   langs:
   - python
   module: cntk.logging.graph
   name: find_all_with_name
-  seealsoContent: '`find_all_with_name()` in class `Function`.'
+  seealsoContent: 'See also: `find_all_with_name()` in class `Function`.'
   source:
     id: find_all_with_name
-    path: \cntk\logging\graph.py
+    path: /bindings/python\cntk\logging\graph.py
     remote:
       branch: master
-      path: \cntk\logging\graph.py
+      path: /bindings/python\cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 76
   summary: Finds functions in the graph starting from `node` and doing a depth-first
@@ -98,21 +95,20 @@ items:
       - int, default 0
     return:
       description: List of primitive (or block) functions having the specified name
-  type: Method
+  type: function
   uid: cntk.logging.graph.find_all_with_name
-- _type: function
-  fullName: cntk.logging.graph.find_by_name
+- fullName: cntk.logging.graph.find_by_name
   langs:
   - python
   module: cntk.logging.graph
   name: find_by_name
-  seealsoContent: '`find_by_name()` in class `Function`.'
+  seealsoContent: 'See also: `find_by_name()` in class `Function`.'
   source:
     id: find_by_name
-    path: \cntk\logging\graph.py
+    path: /bindings/python\cntk\logging\graph.py
     remote:
       branch: master
-      path: \cntk\logging\graph.py
+      path: /bindings/python\cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 97
   summary: Finds a function in the graph starting from `node` and doing a depth-first
@@ -136,20 +132,19 @@ items:
       - int, default 0
     return:
       description: Primitive (or block) function having the specified name
-  type: Method
+  type: function
   uid: cntk.logging.graph.find_by_name
-- _type: function
-  fullName: cntk.logging.graph.get_node_outputs
+- fullName: cntk.logging.graph.get_node_outputs
   langs:
   - python
   module: cntk.logging.graph
   name: get_node_outputs
   source:
     id: get_node_outputs
-    path: \cntk\logging\graph.py
+    path: /bindings/python\cntk\logging\graph.py
     remote:
       branch: master
-      path: \cntk\logging\graph.py
+      path: /bindings/python\cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 358
   summary: Walks through every node of the graph starting at `node` and returns a
@@ -165,20 +160,19 @@ items:
       - graph node
     return:
       description: A list of all node outputs
-  type: Method
+  type: function
   uid: cntk.logging.graph.get_node_outputs
-- _type: function
-  fullName: cntk.logging.graph.output_function_graph
+- fullName: cntk.logging.graph.output_function_graph
   langs:
   - python
   module: cntk.logging.graph
   name: output_function_graph
   source:
     id: output_function_graph
-    path: \cntk\logging\graph.py
+    path: /bindings/python\cntk\logging\graph.py
     remote:
       branch: master
-      path: \cntk\logging\graph.py
+      path: /bindings/python\cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 344
   syntax:
@@ -189,27 +183,26 @@ items:
       id: dot_file_path
     - defaultValue: None
       id: png_file_path
-  type: Method
+  type: function
   uid: cntk.logging.graph.output_function_graph
-- _type: function
-  fullName: cntk.logging.graph.plot
+- fullName: cntk.logging.graph.plot
   langs:
   - python
   module: cntk.logging.graph
   name: plot
   source:
     id: plot
-    path: \cntk\logging\graph.py
+    path: /bindings/python\cntk\logging\graph.py
     remote:
       branch: master
-      path: \cntk\logging\graph.py
+      path: /bindings/python\cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 133
   summary: "Walks through every node of the graph starting at `root`, creates a network\
     \ graph, and returns a network description. If `filename` is specified, it outputs\
     \ a DOT, PNG, PDF, or SVG file depending on the file name's suffix.\nRequirements:\n\
     * for DOT output: [pydot_ng](https://pypi.python.org/pypi/pydot-ng)\n\n   * <SYSTEM\
-    \ MESSAGE: D:\\work\\git-code\\cntk\\CNTK\\bindings\\python\\cntk_test\\cntk.logging.graph.rst:2:\
+    \ MESSAGE: C:\\peter\\ms_code\\cntk_all\\CNTK\\bindings\\python\\doc\\cntk.logging.graph.rst:2:\
     \ (INFO/1) Duplicate explicit target name: \"pydot_ng\".>\n\n     for PNG, PDF,\
     \ and SVG output: [pydot_ng](https://pypi.python.org/pypi/pydot-ng) and [graphviz](http://graphviz.org)\
     \ (GraphViz executable has to be in the system's PATH)."
@@ -229,7 +222,7 @@ items:
       - str, default None
     return:
       description: '*str* describing the graph'
-  type: Method
+  type: function
   uid: cntk.logging.graph.plot
 references:
 - fullName: cntk.logging.graph.depth_first_search

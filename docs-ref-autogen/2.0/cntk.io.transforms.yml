@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.io.transforms.color
   - cntk.io.transforms.crop
   - cntk.io.transforms.mean
@@ -14,26 +13,25 @@ items:
   name: transforms
   source:
     id: transforms
-    path: \cntk\io\transforms.py
+    path: /bindings/python\cntk\io\transforms.py
     remote:
       branch: master
-      path: \cntk\io\transforms.py
+      path: /bindings/python\cntk\io\transforms.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: Namespace
+  type: module
   uid: cntk.io.transforms
-- _type: function
-  fullName: cntk.io.transforms.color
+- fullName: cntk.io.transforms.color
   langs:
   - python
   module: cntk.io.transforms
   name: color
   source:
     id: color
-    path: \cntk\io\transforms.py
+    path: /bindings/python\cntk\io\transforms.py
     remote:
       branch: master
-      path: \cntk\io\transforms.py
+      path: /bindings/python\cntk\io\transforms.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 101
   summary: Color transform that can be used to pass to *map_features* for data augmentation.
@@ -64,20 +62,19 @@ items:
       - float, default 0.0
     return:
       description: A dictionary-like object describing the mean transform
-  type: Method
+  type: function
   uid: cntk.io.transforms.color
-- _type: function
-  fullName: cntk.io.transforms.crop
+- fullName: cntk.io.transforms.crop
   langs:
   - python
   module: cntk.io.transforms
   name: crop
   source:
     id: crop
-    path: \cntk\io\transforms.py
+    path: /bindings/python\cntk\io\transforms.py
     remote:
       branch: master
-      path: \cntk\io\transforms.py
+      path: /bindings/python\cntk\io\transforms.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 9
   summary: Crop transform that can be used to pass to *map_features*
@@ -148,20 +145,19 @@ items:
       - str, default 'none'
     return:
       description: A dictionary-like object describing the crop transform
-  type: Method
+  type: function
   uid: cntk.io.transforms.crop
-- _type: function
-  fullName: cntk.io.transforms.mean
+- fullName: cntk.io.transforms.mean
   langs:
   - python
   module: cntk.io.transforms
   name: mean
   source:
     id: mean
-    path: \cntk\io\transforms.py
+    path: /bindings/python\cntk\io\transforms.py
     remote:
       branch: master
-      path: \cntk\io\transforms.py
+      path: /bindings/python\cntk\io\transforms.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 87
   summary: Mean transform that can be used to pass to *map_features* for data augmentation.
@@ -177,20 +173,19 @@ items:
       description: A dictionary-like object describing the mean transform
       type:
       - dict
-  type: Method
+  type: function
   uid: cntk.io.transforms.mean
-- _type: function
-  fullName: cntk.io.transforms.scale
+- fullName: cntk.io.transforms.scale
   langs:
   - python
   module: cntk.io.transforms
   name: scale
   source:
     id: scale
-    path: \cntk\io\transforms.py
+    path: /bindings/python\cntk\io\transforms.py
     remote:
       branch: master
-      path: \cntk\io\transforms.py
+      path: /bindings/python\cntk\io\transforms.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 64
   summary: Scale transform that can be used to pass to *map_features* for data augmentation.
@@ -231,7 +226,7 @@ items:
       - int, default -1
     return:
       description: A dictionary-like object describing the scale transform
-  type: Method
+  type: function
   uid: cntk.io.transforms.scale
 references:
 - fullName: cntk.io.transforms.color

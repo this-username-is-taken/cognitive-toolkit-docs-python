@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.initializer.bilinear
   - cntk.initializer.glorot_normal
   - cntk.initializer.glorot_uniform
@@ -19,26 +18,25 @@ items:
   name: initializer
   source:
     id: initializer
-    path: \cntk\initializer.py
+    path: /bindings/python\cntk\initializer.py
     remote:
       branch: master
-      path: \cntk\initializer.py
+      path: /bindings/python\cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: Namespace
+  type: module
   uid: cntk.initializer
-- _type: function
-  fullName: cntk.initializer.bilinear
+- fullName: cntk.initializer.bilinear
   langs:
   - python
   module: cntk.initializer
   name: bilinear
   source:
     id: bilinear
-    path: \cntk\initializer.py
+    path: /bindings/python\cntk\initializer.py
     remote:
       branch: master
-      path: \cntk\initializer.py
+      path: /bindings/python\cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 149
   summary: initializer
@@ -55,20 +53,19 @@ items:
       - int
     return:
       description: initializer for `Parameter` useful for deconvolution layer
-  type: Method
+  type: function
   uid: cntk.initializer.bilinear
-- _type: function
-  fullName: cntk.initializer.glorot_normal
+- fullName: cntk.initializer.glorot_normal
   langs:
   - python
   module: cntk.initializer
   name: glorot_normal
   source:
     id: glorot_normal
-    path: \cntk\initializer.py
+    path: /bindings/python\cntk\initializer.py
     remote:
       branch: master
-      path: \cntk\initializer.py
+      path: /bindings/python\cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 89
   summary: initializer
@@ -98,20 +95,19 @@ items:
     return:
       description: initializer for `Parameter` initialized to Gaussian distribution
         with mean *0* and standard deviation $$scale*sqrt(2.0/(fanIn+fanOut))$$
-  type: Method
+  type: function
   uid: cntk.initializer.glorot_normal
-- _type: function
-  fullName: cntk.initializer.glorot_uniform
+- fullName: cntk.initializer.glorot_uniform
   langs:
   - python
   module: cntk.initializer
   name: glorot_uniform
   source:
     id: glorot_uniform
-    path: \cntk\initializer.py
+    path: /bindings/python\cntk\initializer.py
     remote:
       branch: master
-      path: \cntk\initializer.py
+      path: /bindings/python\cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 69
   summary: Glorot initializer
@@ -141,20 +137,19 @@ items:
     return:
       description: initializer for `Parameter` initialized to uniform distribution
         between $$scale*sqrt(6.0/(fanIn+fanOut))*[-1,1]$$
-  type: Method
+  type: function
   uid: cntk.initializer.glorot_uniform
-- _type: function
-  fullName: cntk.initializer.he_normal
+- fullName: cntk.initializer.he_normal
   langs:
   - python
   module: cntk.initializer
   name: he_normal
   source:
     id: he_normal
-    path: \cntk\initializer.py
+    path: /bindings/python\cntk\initializer.py
     remote:
       branch: master
-      path: \cntk\initializer.py
+      path: /bindings/python\cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 129
   summary: initializer
@@ -183,20 +178,19 @@ items:
     return:
       description: initializer for `Parameter` initialized to Gaussian distribution
         with mean *0* and standard deviation $$scale*sqrt(2.0/fanIn)$$
-  type: Method
+  type: function
   uid: cntk.initializer.he_normal
-- _type: function
-  fullName: cntk.initializer.he_uniform
+- fullName: cntk.initializer.he_uniform
   langs:
   - python
   module: cntk.initializer
   name: he_uniform
   source:
     id: he_uniform
-    path: \cntk\initializer.py
+    path: /bindings/python\cntk\initializer.py
     remote:
       branch: master
-      path: \cntk\initializer.py
+      path: /bindings/python\cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 109
   summary: initializer
@@ -225,20 +219,19 @@ items:
     return:
       description: initializer for `Parameter` initialized to uniform distribution
         between $$scale*sqrt(6.0/fanIn)*[-1,1]$$
-  type: Method
+  type: function
   uid: cntk.initializer.he_uniform
-- _type: function
-  fullName: cntk.initializer.initializer_with_rank
+- fullName: cntk.initializer.initializer_with_rank
   langs:
   - python
   module: cntk.initializer
   name: initializer_with_rank
   source:
     id: initializer_with_rank
-    path: \cntk\initializer.py
+    path: /bindings/python\cntk\initializer.py
     remote:
       branch: master
-      path: \cntk\initializer.py
+      path: /bindings/python\cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 163
   summary: override output_rank and filter_rank specification in a random initializer
@@ -262,20 +255,19 @@ items:
     return:
       description: new initializer for `Parameter` with specified output_rank and
         filter_rank
-  type: Method
+  type: function
   uid: cntk.initializer.initializer_with_rank
-- _type: function
-  fullName: cntk.initializer.normal
+- fullName: cntk.initializer.normal
   langs:
   - python
   module: cntk.initializer
   name: normal
   source:
     id: normal
-    path: \cntk\initializer.py
+    path: /bindings/python\cntk\initializer.py
     remote:
       branch: master
-      path: \cntk\initializer.py
+      path: /bindings/python\cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 30
   summary: Normal initializer
@@ -304,20 +296,19 @@ items:
     return:
       description: initializer for `Parameter` initialized to normal distribution
         with mean *0* and standard deviation *scale*.
-  type: Method
+  type: function
   uid: cntk.initializer.normal
-- _type: function
-  fullName: cntk.initializer.uniform
+- fullName: cntk.initializer.uniform
   langs:
   - python
   module: cntk.initializer
   name: uniform
   source:
     id: uniform
-    path: \cntk\initializer.py
+    path: /bindings/python\cntk\initializer.py
     remote:
       branch: master
-      path: \cntk\initializer.py
+      path: /bindings/python\cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 12
   summary: Uniform initializer
@@ -337,20 +328,19 @@ items:
       description: initializer for `Parameter` initialized to uniform distribution
         between *scale*[-1.0, 1.0]* note this maps to the "uniform1" distribution
         in BrainScript.
-  type: Method
+  type: function
   uid: cntk.initializer.uniform
-- _type: function
-  fullName: cntk.initializer.xavier
+- fullName: cntk.initializer.xavier
   langs:
   - python
   module: cntk.initializer
   name: xavier
   source:
     id: xavier
-    path: \cntk\initializer.py
+    path: /bindings/python\cntk\initializer.py
     remote:
       branch: master
-      path: \cntk\initializer.py
+      path: /bindings/python\cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 49
   summary: Xavier initializer
@@ -379,7 +369,7 @@ items:
     return:
       description: initializer for `Parameter` initialized to Gaussian distribution
         with mean *0* and standard deviation $$scale*sqrt(3.0/fanIn)$$
-  type: Method
+  type: function
   uid: cntk.initializer.xavier
 references:
 - fullName: cntk.initializer.bilinear

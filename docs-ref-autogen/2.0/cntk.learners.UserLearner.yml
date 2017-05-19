@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.learners.UserLearner.update
   class: cntk.learners.UserLearner
   fullName: cntk.learners.UserLearner
@@ -16,10 +15,10 @@ items:
   name: UserLearner
   source:
     id: UserLearner
-    path: \cntk\learners\__init__.py
+    path: /bindings/python\cntk\learners\__init__.py
     remote:
       branch: master
-      path: \cntk\learners\__init__.py
+      path: /bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 176
   summary: 'Base class of all user-defined learners. To implement your own learning
@@ -31,10 +30,9 @@ items:
     '
   syntax:
     content: UserLearner(self, parameters, lr_schedule, as_numpy=True)
-  type: Class
+  type: class
   uid: cntk.learners.UserLearner
-- _type: method
-  class: cntk.learners.UserLearner
+- class: cntk.learners.UserLearner
   fullName: cntk.learners.UserLearner.update
   langs:
   - python
@@ -42,10 +40,10 @@ items:
   name: update
   source:
     id: update
-    path: \cntk\learners\__init__.py
+    path: /bindings/python\cntk\learners\__init__.py
     remote:
       branch: master
-      path: \cntk\learners\__init__.py
+      path: /bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 217
   summary: Update the parameters associated with this learner.
@@ -70,7 +68,7 @@ items:
     return:
       description: '*False* to indicate that learning has stopped for all of the parameters
         associated with this learner'
-  type: Method
+  type: method
   uid: cntk.learners.UserLearner.update
 references:
 - fullName: cntk.learners.UserLearner.update

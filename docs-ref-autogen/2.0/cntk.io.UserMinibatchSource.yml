@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.io.UserMinibatchSource.next_minibatch
   - cntk.io.UserMinibatchSource.stream_info
   - cntk.io.UserMinibatchSource.stream_infos
@@ -20,10 +19,10 @@ items:
   name: UserMinibatchSource
   source:
     id: UserMinibatchSource
-    path: \cntk\io\__init__.py
+    path: /bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: \cntk\io\__init__.py
+      path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 447
   summary: 'Base class of all user minibatch sources.
@@ -33,10 +32,9 @@ items:
     '
   syntax:
     content: UserMinibatchSource(self)
-  type: Class
+  type: class
   uid: cntk.io.UserMinibatchSource
-- _type: method
-  class: cntk.io.UserMinibatchSource
+- class: cntk.io.UserMinibatchSource
   fullName: cntk.io.UserMinibatchSource.next_minibatch
   langs:
   - python
@@ -44,10 +42,10 @@ items:
   name: next_minibatch
   source:
     id: next_minibatch
-    path: \cntk\io\__init__.py
+    path: /bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: \cntk\io\__init__.py
+      path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 479
   summary: Function to be implemented by the user.
@@ -69,10 +67,9 @@ items:
       - int
     return:
       description: mapping of @cntk.io.StreamInformation to @cntk.io.MinibatchData
-  type: Method
+  type: method
   uid: cntk.io.UserMinibatchSource.next_minibatch
-- _type: method
-  class: cntk.io.UserMinibatchSource
+- class: cntk.io.UserMinibatchSource
   fullName: cntk.io.UserMinibatchSource.stream_info
   langs:
   - python
@@ -80,10 +77,10 @@ items:
   name: stream_info
   source:
     id: stream_info
-    path: \cntk\io\__init__.py
+    path: /bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: \cntk\io\__init__.py
+      path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 471
   summary: Gets the description of the stream with given name. Throws an exception
@@ -93,10 +90,9 @@ items:
     parameters:
     - id: self
     - id: name
-  type: Method
+  type: method
   uid: cntk.io.UserMinibatchSource.stream_info
-- _type: method
-  class: cntk.io.UserMinibatchSource
+- class: cntk.io.UserMinibatchSource
   fullName: cntk.io.UserMinibatchSource.stream_infos
   langs:
   - python
@@ -104,10 +100,10 @@ items:
   name: stream_infos
   source:
     id: stream_infos
-    path: \cntk\io\__init__.py
+    path: /bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: \cntk\io\__init__.py
+      path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 457
   summary: Function to be implemented by the user.
@@ -117,7 +113,7 @@ items:
     - id: self
     return:
       description: list of @cntk.io.StreamInformation instances
-  type: Method
+  type: method
   uid: cntk.io.UserMinibatchSource.stream_infos
 references:
 - fullName: cntk.io.UserMinibatchSource.next_minibatch

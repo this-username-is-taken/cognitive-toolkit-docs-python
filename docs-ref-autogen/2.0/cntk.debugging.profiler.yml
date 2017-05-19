@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.debugging.profiler.disable_profiler
   - cntk.debugging.profiler.enable_profiler
   - cntk.debugging.profiler.start_profiler
@@ -14,65 +13,62 @@ items:
   name: profiler
   source:
     id: profiler
-    path: \cntk\debugging\profiler.py
+    path: /bindings/python\cntk\debugging\profiler.py
     remote:
       branch: master
-      path: \cntk\debugging\profiler.py
+      path: /bindings/python\cntk\debugging\profiler.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: Namespace
+  type: module
   uid: cntk.debugging.profiler
-- _type: function
-  fullName: cntk.debugging.profiler.disable_profiler
+- fullName: cntk.debugging.profiler.disable_profiler
   langs:
   - python
   module: cntk.debugging.profiler
   name: disable_profiler
   source:
     id: disable_profiler
-    path: \cntk\debugging\profiler.py
+    path: /bindings/python\cntk\debugging\profiler.py
     remote:
       branch: master
-      path: \cntk\debugging\profiler.py
+      path: /bindings/python\cntk\debugging\profiler.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 37
   summary: Disable profiler from gathering data.
   syntax:
     content: disable_profiler()
-  type: Method
+  type: function
   uid: cntk.debugging.profiler.disable_profiler
-- _type: function
-  fullName: cntk.debugging.profiler.enable_profiler
+- fullName: cntk.debugging.profiler.enable_profiler
   langs:
   - python
   module: cntk.debugging.profiler
   name: enable_profiler
   source:
     id: enable_profiler
-    path: \cntk\debugging\profiler.py
+    path: /bindings/python\cntk\debugging\profiler.py
     remote:
       branch: master
-      path: \cntk\debugging\profiler.py
+      path: /bindings/python\cntk\debugging\profiler.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 30
   summary: Enable profiler to gather data. Note that in training_session, profiler
     would be enabled automatically after the first check point
   syntax:
     content: enable_profiler()
-  type: Method
+  type: function
   uid: cntk.debugging.profiler.enable_profiler
-- _type: function
-  fullName: cntk.debugging.profiler.start_profiler
+- fullName: cntk.debugging.profiler.start_profiler
   langs:
   - python
   module: cntk.debugging.profiler
   name: start_profiler
   source:
     id: start_profiler
-    path: \cntk\debugging\profiler.py
+    path: /bindings/python\cntk\debugging\profiler.py
     remote:
       branch: master
-      path: \cntk\debugging\profiler.py
+      path: /bindings/python\cntk\debugging\profiler.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 9
   summary: 'Start profiler to prepare performance statistics gathering. Note that
@@ -97,26 +93,25 @@ items:
       id: sync_gpu
     - description: size in byte for profiler memory reserved
       id: reserve_mem
-  type: Method
+  type: function
   uid: cntk.debugging.profiler.start_profiler
-- _type: function
-  fullName: cntk.debugging.profiler.stop_profiler
+- fullName: cntk.debugging.profiler.stop_profiler
   langs:
   - python
   module: cntk.debugging.profiler
   name: stop_profiler
   source:
     id: stop_profiler
-    path: \cntk\debugging\profiler.py
+    path: /bindings/python\cntk\debugging\profiler.py
     remote:
       branch: master
-      path: \cntk\debugging\profiler.py
+      path: /bindings/python\cntk\debugging\profiler.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 23
   summary: Stop profiler from gathering performance statistics and flush them to file
   syntax:
     content: stop_profiler()
-  type: Method
+  type: function
   uid: cntk.debugging.profiler.stop_profiler
 references:
 - fullName: cntk.debugging.profiler.disable_profiler

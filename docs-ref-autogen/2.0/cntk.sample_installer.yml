@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.sample_installer.default_sample_dir
   - cntk.sample_installer.default_sample_url
   - cntk.sample_installer.install_samples
@@ -14,62 +13,59 @@ items:
   name: sample_installer
   source:
     id: sample_installer
-    path: \cntk\sample_installer.py
+    path: /bindings/python\cntk\sample_installer.py
     remote:
       branch: master
-      path: \cntk\sample_installer.py
+      path: /bindings/python\cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: Namespace
+  type: module
   uid: cntk.sample_installer
-- _type: function
-  fullName: cntk.sample_installer.default_sample_dir
+- fullName: cntk.sample_installer.default_sample_dir
   langs:
   - python
   module: cntk.sample_installer
   name: default_sample_dir
   source:
     id: default_sample_dir
-    path: \cntk\sample_installer.py
+    path: /bindings/python\cntk\sample_installer.py
     remote:
       branch: master
-      path: \cntk\sample_installer.py
+      path: /bindings/python\cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 24
   syntax:
     content: default_sample_dir()
-  type: Method
+  type: function
   uid: cntk.sample_installer.default_sample_dir
-- _type: function
-  fullName: cntk.sample_installer.default_sample_url
+- fullName: cntk.sample_installer.default_sample_url
   langs:
   - python
   module: cntk.sample_installer
   name: default_sample_url
   source:
     id: default_sample_url
-    path: \cntk\sample_installer.py
+    path: /bindings/python\cntk\sample_installer.py
     remote:
       branch: master
-      path: \cntk\sample_installer.py
+      path: /bindings/python\cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 31
   syntax:
     content: default_sample_url()
-  type: Method
+  type: function
   uid: cntk.sample_installer.default_sample_url
-- _type: function
-  fullName: cntk.sample_installer.install_samples
+- fullName: cntk.sample_installer.install_samples
   langs:
   - python
   module: cntk.sample_installer
   name: install_samples
   source:
     id: install_samples
-    path: \cntk\sample_installer.py
+    path: /bindings/python\cntk\sample_installer.py
     remote:
       branch: master
-      path: \cntk\sample_installer.py
+      path: /bindings/python\cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 34
   summary: Fetch the CNTK samples from a URL, extract to local directory, and install
@@ -87,25 +83,24 @@ items:
       id: directory
     - description: whether to suppress all output (defaults to `False`)
       id: quiet
-  type: Method
+  type: function
   uid: cntk.sample_installer.install_samples
-- _type: function
-  fullName: cntk.sample_installer.module_is_unreleased
+- fullName: cntk.sample_installer.module_is_unreleased
   langs:
   - python
   module: cntk.sample_installer
   name: module_is_unreleased
   source:
     id: module_is_unreleased
-    path: \cntk\sample_installer.py
+    path: /bindings/python\cntk\sample_installer.py
     remote:
       branch: master
-      path: \cntk\sample_installer.py
+      path: /bindings/python\cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 21
   syntax:
     content: module_is_unreleased()
-  type: Method
+  type: function
   uid: cntk.sample_installer.module_is_unreleased
 references:
 - fullName: cntk.sample_installer.default_sample_dir

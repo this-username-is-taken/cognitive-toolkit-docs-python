@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.logging.progress_print.ProgressPrinter
   - cntk.logging.progress_print.TensorBoardProgressWriter
   - cntk.logging.progress_print.log_number_of_parameters
@@ -13,26 +12,25 @@ items:
   name: progress_print
   source:
     id: progress_print
-    path: \cntk\logging\progress_print.py
+    path: /bindings/python\cntk\logging\progress_print.py
     remote:
       branch: master
-      path: \cntk\logging\progress_print.py
+      path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: Namespace
+  type: module
   uid: cntk.logging.progress_print
-- _type: function
-  fullName: cntk.logging.progress_print.log_number_of_parameters
+- fullName: cntk.logging.progress_print.log_number_of_parameters
   langs:
   - python
   module: cntk.logging.progress_print
   name: log_number_of_parameters
   source:
     id: log_number_of_parameters
-    path: \cntk\logging\progress_print.py
+    path: /bindings/python\cntk\logging\progress_print.py
     remote:
       branch: master
-      path: \cntk\logging\progress_print.py
+      path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 520
   syntax:
@@ -41,7 +39,7 @@ items:
     - id: model
     - defaultValue: '0'
       id: trace_level
-  type: Method
+  type: function
   uid: cntk.logging.progress_print.log_number_of_parameters
 references:
 - fullName: cntk.logging.progress_print.ProgressPrinter

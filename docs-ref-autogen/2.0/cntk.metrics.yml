@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: module
-  children:
+- children:
   - cntk.metrics.classification_error
   - cntk.metrics.edit_distance_error
   - cntk.metrics.ndcg_at_1
@@ -13,26 +12,25 @@ items:
   name: metrics
   source:
     id: metrics
-    path: \cntk\metrics\__init__.py
+    path: /bindings/python\cntk\metrics\__init__.py
     remote:
       branch: master
-      path: \cntk\metrics\__init__.py
+      path: /bindings/python\cntk\metrics\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: Namespace
+  type: module
   uid: cntk.metrics
-- _type: function
-  fullName: cntk.metrics.classification_error
+- fullName: cntk.metrics.classification_error
   langs:
   - python
   module: cntk.metrics
   name: classification_error
   source:
     id: classification_error
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 63
   summary: 'This operation computes the classification error. It finds the index of
@@ -43,19 +41,34 @@ items:
 
     -[ Example ]-
 
+    ```
+
+
     >>> C.classification_error([[1., 2., 3., 4.]], [[0., 0., 0., 1.]]).eval()
 
     array([[ 0.]], dtype=float32)
+
+    ```
+
+    ```
+
 
     >>> C.classification_error([[1., 2., 3., 4.]], [[0., 0., 1., 0.]]).eval()
 
     array([[ 1.]], dtype=float32)
 
+    ```
+
+    ```
+
+
     >>> # Note that non-1 values are treated as 0
 
     >>> C.classification_error([[1., 2., 3., 4.]], [[5., 0., 1., 0.]]).eval()
 
-    array([[ 1.]], dtype=float32)'
+    array([[ 1.]], dtype=float32)
+
+    ```'
   syntax:
     content: classification_error()
     parameters:
@@ -74,20 +87,19 @@ items:
       - str, optional
     return:
       description: '`Function`'
-  type: Method
+  type: function
   uid: cntk.metrics.classification_error
-- _type: function
-  fullName: cntk.metrics.edit_distance_error
+- fullName: cntk.metrics.edit_distance_error
   langs:
   - python
   module: cntk.metrics
   name: edit_distance_error
   source:
     id: edit_distance_error
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 101
   summary: 'Edit distance error evaluation node with the option of specifying penalty
@@ -146,20 +158,19 @@ items:
       - str, optional
     return:
       description: '`Function`'
-  type: Method
+  type: function
   uid: cntk.metrics.edit_distance_error
-- _type: function
-  fullName: cntk.metrics.ndcg_at_1
+- fullName: cntk.metrics.ndcg_at_1
   langs:
   - python
   module: cntk.metrics
   name: ndcg_at_1
   source:
     id: ndcg_at_1
-    path: \cntk\internal\swig_helper.py
+    path: /bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: \cntk\internal\swig_helper.py
+      path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 17
   summary: 'Groups samples according to `group`, sorts them within each group based
@@ -178,6 +189,9 @@ items:
 
     -[ Example ]-
 
+    ```
+
+
     >>> group = C.input((1,))
 
     >>> score = C.input((1,))
@@ -192,7 +206,9 @@ items:
 
     >>> C.ndcg_at_1(score, gain, group).eval({score:s, gain:n, group: g})
 
-    array(400.0, dtype=float32)'
+    array(400.0, dtype=float32)
+
+    ```'
   syntax:
     content: ndcg_at_1()
     parameters:
@@ -208,7 +224,7 @@ items:
       - str, optional
     return:
       description: '`Function`'
-  type: Method
+  type: function
   uid: cntk.metrics.ndcg_at_1
 references:
 - fullName: cntk.metrics.classification_error

@@ -1,8 +1,7 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- _type: class
-  children:
+- children:
   - cntk.learners.UnitType.minibatch
   - cntk.learners.UnitType.sample
   class: cntk.learners.UnitType
@@ -17,10 +16,10 @@ items:
   name: UnitType
   source:
     id: UnitType
-    path: \cntk\learners\__init__.py
+    path: /bindings/python\cntk\learners\__init__.py
     remote:
       branch: master
-      path: \cntk\learners\__init__.py
+      path: /bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 16
   summary: 'Indicates whether the values in the schedule are specified on the per-sample
@@ -29,10 +28,9 @@ items:
 
     '
   syntax: {}
-  type: Class
+  type: class
   uid: cntk.learners.UnitType
-- _type: attribute
-  class: cntk.learners.UnitType
+- class: cntk.learners.UnitType
   fullName: cntk.learners.UnitType.minibatch
   langs:
   - python
@@ -49,10 +47,9 @@ items:
   summary: Schedule contains per-minibatch values (and need to be re-scaled by the
     learner using the actual minibatch size in samples).
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.learners.UnitType.minibatch
-- _type: attribute
-  class: cntk.learners.UnitType
+- class: cntk.learners.UnitType
   fullName: cntk.learners.UnitType.sample
   langs:
   - python
@@ -68,7 +65,7 @@ items:
     startLine: null
   summary: Schedule contains per-sample values.
   syntax: {}
-  type: Property
+  type: attribute
   uid: cntk.learners.UnitType.sample
 references:
 - fullName: cntk.learners.UnitType.minibatch
