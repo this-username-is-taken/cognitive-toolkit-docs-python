@@ -132,8 +132,6 @@ items:
   summary: See `try_set_default_device()`
   syntax:
     content: set_default_device(new_default_device)
-    parameters:
-    - id: new_default_device
   type: function
   uid: cntk.device.set_default_device
 - fullName: cntk.device.set_excluded_devices
@@ -195,8 +193,7 @@ items:
       id: new_default_device
       type:
       - DeviceDescriptor
-    - defaultValue: 'False'
-      description: whether or not a lock should be acquired for the specified device.
+    - description: whether or not a lock should be acquired for the specified device.
       id: acquire_device_lock
       type:
       - bool, defaults to False

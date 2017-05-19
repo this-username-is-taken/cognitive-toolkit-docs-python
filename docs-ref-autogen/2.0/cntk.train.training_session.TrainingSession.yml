@@ -91,7 +91,6 @@ items:
   syntax:
     content: on_cross_validation_end(self, index, average_error, num_samples, num_minibatches)
     parameters:
-    - id: self
     - description: index of the current callback.
       id: index
       type:

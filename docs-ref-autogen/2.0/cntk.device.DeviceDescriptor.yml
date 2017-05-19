@@ -50,8 +50,6 @@ items:
   summary: Returns id of device descriptor
   syntax:
     content: id(self)
-    parameters:
-    - id: self
     return:
       description: id
       type:
@@ -76,8 +74,6 @@ items:
     on this device.
   syntax:
     content: is_locked(self)
-    parameters:
-    - id: self
   type: method
   uid: cntk.device.DeviceDescriptor.is_locked
 - class: cntk.device.DeviceDescriptor
@@ -97,8 +93,6 @@ items:
   summary: Returns type of device descriptor. 1 if it is a GPU device or 0 if CPU.
   syntax:
     content: type(self)
-    parameters:
-    - id: self
     return:
       description: type
       type:

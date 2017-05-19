@@ -58,8 +58,6 @@ items:
   summary: Sync point to make sure all workers reach the same state.
   syntax:
     content: barrier(self)
-    parameters:
-    - id: self
   type: method
   uid: cntk.train.distributed.Communicator.barrier
 - class: cntk.train.distributed.Communicator
@@ -123,8 +121,6 @@ items:
     The node with rank 0 is considered the main.
   syntax:
     content: is_main(self)
-    parameters:
-    - id: self
   type: method
   uid: cntk.train.distributed.Communicator.is_main
 - class: cntk.train.distributed.Communicator

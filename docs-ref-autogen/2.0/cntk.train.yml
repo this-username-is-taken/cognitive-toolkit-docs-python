@@ -1,7 +1,10 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- children: []
+- children:
+  - cntk.train.distributed
+  - cntk.train.trainer
+  - cntk.train.training_session
   fullName: cntk.train
   langs:
   - python
@@ -17,4 +20,19 @@ items:
     startLine: 0
   type: module
   uid: cntk.train
-references: []
+references:
+- fullName: cntk.train.distributed
+  isExternal: false
+  name: distributed
+  parent: cntk.train
+  uid: cntk.train.distributed
+- fullName: cntk.train.trainer
+  isExternal: false
+  name: trainer
+  parent: cntk.train
+  uid: cntk.train.trainer
+- fullName: cntk.train.training_session
+  isExternal: false
+  name: training_session
+  parent: cntk.train
+  uid: cntk.train.training_session

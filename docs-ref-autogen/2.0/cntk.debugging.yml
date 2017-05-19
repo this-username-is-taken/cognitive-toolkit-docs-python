@@ -4,6 +4,8 @@ items:
 - children:
   - cntk.debugging.dump_function
   - cntk.debugging.dump_signature
+  - cntk.debugging.debug
+  - cntk.debugging.profiler
   fullName: cntk.debugging
   langs:
   - python
@@ -35,10 +37,6 @@ items:
     startLine: 33
   syntax:
     content: dump_function(root, tag=None)
-    parameters:
-    - id: root
-    - defaultValue: None
-      id: tag
   type: function
   uid: cntk.debugging.dump_function
 - fullName: cntk.debugging.dump_signature
@@ -57,10 +55,6 @@ items:
   summary: Debug helper that prints the signature of a Function.
   syntax:
     content: dump_signature(root, tag=None)
-    parameters:
-    - id: root
-    - defaultValue: None
-      id: tag
   type: function
   uid: cntk.debugging.dump_signature
 references:
@@ -74,3 +68,13 @@ references:
   name: dump_signature
   parent: cntk.debugging
   uid: cntk.debugging.dump_signature
+- fullName: cntk.debugging.debug
+  isExternal: false
+  name: debug
+  parent: cntk.debugging
+  uid: cntk.debugging.debug
+- fullName: cntk.debugging.profiler
+  isExternal: false
+  name: profiler
+  parent: cntk.debugging
+  uid: cntk.debugging.profiler

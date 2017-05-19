@@ -60,8 +60,7 @@ items:
       id: number_of_workers
       type:
       - int
-    - defaultValue: None
-      description: worker for which the data is to be returned
+    - description: worker for which the data is to be returned
       id: worker_rank
       type:
       - int
@@ -87,9 +86,6 @@ items:
     if there are none or multiple streams with this same name.
   syntax:
     content: stream_info(self, name)
-    parameters:
-    - id: self
-    - id: name
   type: method
   uid: cntk.io.UserMinibatchSource.stream_info
 - class: cntk.io.UserMinibatchSource
@@ -109,8 +105,6 @@ items:
   summary: Function to be implemented by the user.
   syntax:
     content: stream_infos(self)
-    parameters:
-    - id: self
     return:
       description: list of @cntk.io.StreamInformation instances
   type: method

@@ -1,7 +1,8 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- children: []
+- children:
+  - cntk.layers.models.attention
   fullName: cntk.layers.models
   langs:
   - python
@@ -19,4 +20,9 @@ items:
     model types go here.
   type: module
   uid: cntk.layers.models
-references: []
+references:
+- fullName: cntk.layers.models.attention
+  isExternal: false
+  name: attention
+  parent: cntk.layers.models
+  uid: cntk.layers.models.attention

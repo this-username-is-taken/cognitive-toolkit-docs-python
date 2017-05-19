@@ -38,16 +38,14 @@ items:
   syntax:
     content: color(brightness_radius=0.0, contrast_radius=0.0, saturation_radius=0.0)
     parameters:
-    - defaultValue: '0.0'
-      description: Radius for brightness change. Must be set within [0.0, 1.0]. For
+    - description: Radius for brightness change. Must be set within [0.0, 1.0]. For
         example, assume brightness_radius = 0.2, a random number *x* is uniformly
         drawn from [-0.2, 0.2], and every pixel's value is added by *x*meanVal*, where
         meanVal is the mean of the image pixel intensity combining all color channels.
       id: brightness_radius
       type:
       - float, default 0.0
-    - defaultValue: '0.0'
-      description: Radius for contrast change. Must be set within [0.0, 1.0]. For
+    - description: Radius for contrast change. Must be set within [0.0, 1.0]. For
         example, assume contrast_radius = 0.2, a random number *x* is uniformly drawn
         from [-0.2, 0.2], and every pixel's value is multiplied by *1+x*.
       id: contrast_radius
@@ -82,8 +80,7 @@ items:
     content: crop(crop_type='center', crop_size=0, side_ratio=0.0, area_ratio=0.0,
       aspect_ratio=1.0, jitter_type='none')
     parameters:
-    - defaultValue: '1.0'
-      description: '''center'', ''randomside'', ''randomarea'', or ''multiview10''.  ''randomside''
+    - description: '''center'', ''randomside'', ''randomarea'', or ''multiview10''.  ''randomside''
         and ''randomarea'' are usually used during training.  If either ''randomside''
         and ''randomarea'' are set, Horizontal flipping will be enabled and the image
         will be randomly flipped in horizontal direction. Horizontal flipping is another
@@ -94,8 +91,7 @@ items:
       id: crop_type
       type:
       - str, default 'center'
-    - defaultValue: '0.0'
-      description: crop size in pixels. Ignored if set to 0. When crop_size is non-zero,
+    - description: crop size in pixels. Ignored if set to 0. When crop_size is non-zero,
         for example, crop_size=256, it means a cropping window of size 256x256 pixels
         will be taken. If one want to crop with non-square shapes, specify crop_size=256:224
         will crop 256x224 (width x height) pixels. *When crop_size is specified, side_ratio,
@@ -103,8 +99,7 @@ items:
       id: crop_size
       type:
       - int, default 0
-    - defaultValue: '0.0'
-      description: It specifies the ratio of final image side (width or height) with
+    - description: It specifies the ratio of final image side (width or height) with
         respect to the original image. Ignored if set to 0.0. Otherwise, must be set
         within *(0,1]*. For example, with an input image size of 640x480, side_ratio
         of 0.5 means we crop a square region (if aspect_ratio is 1.0) of the input
@@ -115,8 +110,7 @@ items:
       id: side_ratio
       type:
       - float, default 0.0
-    - defaultValue: '0'
-      description: It specifies the area ratio of final image with respect to the
+    - description: It specifies the area ratio of final image with respect to the
         original image. Ignored if set to 0.0. Otherwise, must be set within *(0,1]*.
         For example, for an input image size of 200x150 pixels, the area is 30,000.
         If area_ratio is 0.3333, we crop a square region (if aspect_ratio is 1.0)
@@ -126,8 +120,7 @@ items:
       id: area_ratio
       type:
       - float, default 0.0
-    - defaultValue: center
-      description: 'It specifies the aspect ratio (width/height or height/width) of
+    - description: 'It specifies the aspect ratio (width/height or height/width) of
         the crop window. Must be set within *(0,1]*. For example, if due to size_ratio
         the crop size is 240x240, an aspect_ratio of 0.64 will change the window size
         to non-square: 192x300 or 300x192, each having 50% chance. Note the area of
@@ -193,13 +186,11 @@ items:
     content: scale(width, height, channels, interpolations='linear', scale_mode='fill',
       pad_value=-1)
     parameters:
-    - defaultValue: fill
-      description: width of the image in pixels
+    - description: width of the image in pixels
       id: width
       type:
       - int
-    - defaultValue: linear
-      description: height of the image in pixels
+    - description: height of the image in pixels
       id: height
       type:
       - int
@@ -218,8 +209,7 @@ items:
       id: scale_mode
       type:
       - str, default 'fill'
-    - defaultValue: '-1'
-      description: -1 or int value. The pad value used for the 'pad' mode. If set
+    - description: -1 or int value. The pad value used for the 'pad' mode. If set
         to -1 then the border will be replicated.
       id: pad_value
       type:

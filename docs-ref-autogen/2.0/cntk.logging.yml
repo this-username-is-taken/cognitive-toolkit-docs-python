@@ -5,6 +5,8 @@ items:
   - cntk.logging.TraceLevel
   - cntk.logging.get_trace_level
   - cntk.logging.set_trace_level
+  - cntk.logging.graph
+  - cntk.logging.progress_print
   fullName: cntk.logging
   langs:
   - python
@@ -81,3 +83,13 @@ references:
   name: set_trace_level
   parent: cntk.logging
   uid: cntk.logging.set_trace_level
+- fullName: cntk.logging.graph
+  isExternal: false
+  name: graph
+  parent: cntk.logging
+  uid: cntk.logging.graph
+- fullName: cntk.logging.progress_print
+  isExternal: false
+  name: progress_print
+  parent: cntk.logging
+  uid: cntk.logging.progress_print

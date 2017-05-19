@@ -85,6 +85,8 @@ items:
   - cntk.ops.to_sequence_like
   - cntk.ops.transpose
   - cntk.ops.unpooling
+  - cntk.ops.functions
+  - cntk.ops.sequence
   fullName: cntk.ops
   langs:
   - python
@@ -398,6 +400,12 @@ items:
     parameters:
     - description: left side tensor
       id: left
+    - description: right side tensor
+      id: right
+    - description: the name of the Function instance in the network
+      id: name
+      type:
+      - str, optional
     return:
       description: '`Function`'
   type: function
@@ -962,6 +970,12 @@ items:
       id: arg1
     - description: right side tensor
       id: arg2
+    - description: additional inputs
+      id: '*more_args'
+    - description: the name of the Function instance in the network
+      id: name
+      type:
+      - str, optional
     return:
       description: '`Function`'
   type: function
@@ -988,6 +1002,12 @@ items:
       id: arg1
     - description: right side tensor
       id: arg2
+    - description: additional inputs
+      id: '*more_args'
+    - description: the name of the Function instance in the network
+      id: name
+      type:
+      - str, optional
     return:
       description: '`Function`'
   type: function
@@ -1088,6 +1108,12 @@ items:
       id: arg1
     - description: right side tensor
       id: arg2
+    - description: additional inputs
+      id: '*more_args'
+    - description: the name of the Function instance in the network
+      id: name
+      type:
+      - str, optional
     return:
       description: '`Function`'
   type: function
@@ -1513,7 +1539,7 @@ items:
     and labels, should be provided.'
   syntax:
     content: input(shape, dtype=<cntk.default_options.default_override_or object at
-      0x0000020CE5A6C9B0>, needs_gradient=False, is_sparse=False, dynamic_axes=[Axis('defaultBatchAxis')],
+      0x0000016EEC49C9E8>, needs_gradient=False, is_sparse=False, dynamic_axes=[Axis('defaultBatchAxis')],
       name='')
     parameters:
     - description: the shape of the input tensor
@@ -1848,6 +1874,12 @@ items:
       id: arg1
     - description: right side tensor
       id: arg2
+    - description: additional inputs
+      id: '*more_args'
+    - description: the name of the Function instance in the network
+      id: name
+      type:
+      - str, optional
     return:
       description: '`Function`'
   type: function
@@ -2409,6 +2441,12 @@ items:
       id: arg1
     - description: right side tensor
       id: arg2
+    - description: additional inputs
+      id: '*more_args'
+    - description: the name of the Function instance in the network
+      id: name
+      type:
+      - str, optional
     return:
       description: '`Function`'
   type: function
@@ -3461,11 +3499,11 @@ items:
     \ a matrix. The operator '@' has been overloaded such that in Python 3.5 and later\
     \ X @ W equals times(X, W).\nFor better performance on times operation on sequence\
     \ which is followed by sequence.reduce_sum, use infer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK,\
-    \ i.e. replace following:\n<!-- literal_block {\"ids\": [], \"xml:space\": \"\
-    preserve\", \"dupnames\": [], \"names\": [], \"classes\": [], \"backrefs\": []}\
+    \ i.e. replace following:\n<!-- literal_block {\"classes\": [], \"dupnames\":\
+    \ [], \"ids\": [], \"backrefs\": [], \"xml:space\": \"preserve\", \"names\": []}\
     \ -->\n\n````\n\n   sequence.reduce_sum(times(seq1, seq2))\n   ````\nwith:\n<!--\
-    \ literal_block {\"ids\": [], \"xml:space\": \"preserve\", \"dupnames\": [], \"\
-    names\": [], \"classes\": [], \"backrefs\": []} -->\n\n````\n\n   times(seq1,\
+    \ literal_block {\"classes\": [], \"dupnames\": [], \"ids\": [], \"backrefs\"\
+    : [], \"xml:space\": \"preserve\", \"names\": []} -->\n\n````\n\n   times(seq1,\
     \ seq2, infer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK)\n\
     \   ````\n-[ Example ]-\n```\n\n>>> C.times([[1,2],[3,4]], [[5],[6]]).eval()\n\
     array([[ 17.],\n       [ 39.]], dtype=float32)\n```\n```\n\n>>> C.times(1.*np.reshape(np.arange(8),\
@@ -4135,3 +4173,13 @@ references:
   name: unpooling
   parent: cntk.ops
   uid: cntk.ops.unpooling
+- fullName: cntk.ops.functions
+  isExternal: false
+  name: functions
+  parent: cntk.ops
+  uid: cntk.ops.functions
+- fullName: cntk.ops.sequence
+  isExternal: false
+  name: sequence
+  parent: cntk.ops
+  uid: cntk.ops.sequence

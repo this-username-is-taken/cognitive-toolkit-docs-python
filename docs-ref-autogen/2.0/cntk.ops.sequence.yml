@@ -95,18 +95,15 @@ items:
     parameters:
     - description: the tensor (or its name) from which the past value is obtained
       id: x
-    - defaultValue: ''
-      description: tensor or scalar representing the initial value to be used when
+    - description: tensor or scalar representing the initial value to be used when
         the input tensor is shifted in time.
       id: initial_state
-    - defaultValue: '1'
-      description: the number of time steps to look into the past, where negative
+    - description: the number of time steps to look into the past, where negative
         values mean to look into the future, and 0 means a no-op (default 1).
       id: time_step
       type:
       - int
-    - defaultValue: None
-      description: the name of the Function instance in the network
+    - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
@@ -251,7 +248,7 @@ items:
     and labels, should be provided.'
   syntax:
     content: input(shape, dtype=<cntk.default_options.default_override_or object at
-      0x0000020CE552B278>, needs_gradient=False, is_sparse=False, sequence_axis=Axis('defaultDynamicAxis'),
+      0x0000016EEC3BCCC0>, needs_gradient=False, is_sparse=False, sequence_axis=Axis('defaultDynamicAxis'),
       name='')
     parameters:
     - description: the shape of the input tensor

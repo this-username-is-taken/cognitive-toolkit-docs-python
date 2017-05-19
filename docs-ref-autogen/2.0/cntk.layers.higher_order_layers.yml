@@ -64,8 +64,6 @@ items:
   syntax:
     content: For(what_range, constructor, name='')
     parameters:
-    - defaultValue: ''
-      id: what_range
     - description: a Python range to loop over
       id: what_range
       type:
@@ -96,9 +94,6 @@ items:
     startLine: 171
   syntax:
     content: LayerStack(N, constructor)
-    parameters:
-    - id: N
-    - id: constructor
   type: function
   uid: cntk.layers.higher_order_layers.LayerStack
 - fullName: cntk.layers.higher_order_layers.ResNetBlock
@@ -135,9 +130,7 @@ items:
   syntax:
     content: ResNetBlock(f, name='')
     parameters:
-    - id: f
-    - defaultValue: ''
-      description: the function to add the skip connection to.
+    - description: the function to add the skip connection to.
       id: f
       type:
       - Function or equivalent Python function
@@ -202,9 +195,7 @@ items:
   syntax:
     content: Sequential(layers, name='')
     parameters:
-    - id: layers
-    - defaultValue: ''
-      description: the list of functions to apply in sequence. A tuple aplies each
+    - description: the list of functions to apply in sequence. A tuple aplies each
         of its items to the input and results in a tuple value. An item that is a
         list will be flattened.
       id: layers
@@ -241,9 +232,7 @@ items:
   syntax:
     content: SequentialClique(functions, name='')
     parameters:
-    - id: functions
-    - defaultValue: ''
-      description: functions to be applied.
+    - description: functions to be applied.
       id: functions
       type:
       - single or list of Function

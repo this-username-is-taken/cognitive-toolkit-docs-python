@@ -78,8 +78,6 @@ items:
     and resets the internal accumulators.
   syntax:
     content: summarize_test_progress(self)
-    parameters:
-    - id: self
   type: method
   uid: cntk.eval.evaluator.Evaluator.summarize_test_progress
 - class: cntk.eval.evaluator.Evaluator
@@ -101,11 +99,6 @@ items:
     Note: See `forward()` for examples on passing input data.'
   syntax:
     content: test_minibatch(self, arguments, device=None)
-    parameters:
-    - defaultValue: None
-      id: self
-    - id: arguments
-    - id: device
     return:
       description: the average evaluation criterion value per sample for the tested
         minibatch.

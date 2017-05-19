@@ -81,10 +81,6 @@ items:
     removed.
   syntax:
     content: as_sequences(self, variable=None)
-    parameters:
-    - id: self
-    - defaultValue: None
-      id: variable
     return:
       description: If variable contains more dynamic axes than the batch axis, a list
         of NumPy arrays (if dense) or a SciPy CSR array (if sparse) will be returned.

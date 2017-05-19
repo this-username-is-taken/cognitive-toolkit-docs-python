@@ -55,8 +55,6 @@ items:
   summary: Current learning rate.
   syntax:
     content: learning_rate(self)
-    parameters:
-    - id: self
   type: method
   uid: cntk.learners.Learner.learning_rate
 - class: cntk.learners.Learner
@@ -98,7 +96,6 @@ items:
   syntax:
     content: reset_learning_rate(self, learning_rate)
     parameters:
-    - id: self
     - description: learning rate to reset to
       id: learning_rate
       type:
@@ -123,7 +120,6 @@ items:
   syntax:
     content: update(self, gradient_values, training_sample_count)
     parameters:
-    - id: self
     - description: maps `Parameter` to a NumPy array containing the first order gradient
         values for the Parameter w.r.t. the training objective.
       id: gradient_values

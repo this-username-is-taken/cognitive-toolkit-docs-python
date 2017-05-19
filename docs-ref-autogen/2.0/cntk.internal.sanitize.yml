@@ -51,8 +51,6 @@ items:
     startLine: 365
   syntax:
     content: data_type_to_dtype(data_type)
-    parameters:
-    - id: data_type
   type: function
   uid: cntk.internal.sanitize.data_type_to_dtype
 - fullName: cntk.internal.sanitize.is_string
@@ -71,8 +69,6 @@ items:
   summary: Tests whether `s` is a string in a way that works on Python 2 and 3.
   syntax:
     content: is_string(s)
-    parameters:
-    - id: s
   type: function
   uid: cntk.internal.sanitize.is_string
 - fullName: cntk.internal.sanitize.memoize
@@ -90,8 +86,6 @@ items:
     startLine: 500
   syntax:
     content: memoize(func)
-    parameters:
-    - id: func
   type: function
   uid: cntk.internal.sanitize.memoize
 - fullName: cntk.internal.sanitize.sanitize_Function_attributes
@@ -109,8 +103,6 @@ items:
     startLine: 489
   syntax:
     content: sanitize_Function_attributes(attributes)
-    parameters:
-    - id: attributes
   type: function
   uid: cntk.internal.sanitize.sanitize_Function_attributes
 - fullName: cntk.internal.sanitize.sanitize_axis
@@ -245,10 +237,6 @@ items:
     startLine: 480
   syntax:
     content: sanitize_convolution_args(strides, sharing, auto_padding)
-    parameters:
-    - id: strides
-    - id: sharing
-    - id: auto_padding
   type: function
   uid: cntk.internal.sanitize.sanitize_convolution_args
 - fullName: cntk.internal.sanitize.sanitize_dtype_cntk
@@ -266,8 +254,6 @@ items:
     startLine: 391
   syntax:
     content: sanitize_dtype_cntk(dtype)
-    parameters:
-    - id: dtype
   type: function
   uid: cntk.internal.sanitize.sanitize_dtype_cntk
 - fullName: cntk.internal.sanitize.sanitize_dtype_numpy
@@ -285,8 +271,6 @@ items:
     startLine: 376
   syntax:
     content: sanitize_dtype_numpy(dtype)
-    parameters:
-    - id: dtype
   type: function
   uid: cntk.internal.sanitize.sanitize_dtype_numpy
 - fullName: cntk.internal.sanitize.sanitize_dynamic_axes
@@ -304,8 +288,6 @@ items:
     startLine: 450
   syntax:
     content: sanitize_dynamic_axes(axes)
-    parameters:
-    - id: axes
   type: function
   uid: cntk.internal.sanitize.sanitize_dynamic_axes
 - fullName: cntk.internal.sanitize.sanitize_function
@@ -325,8 +307,6 @@ items:
     that's not possible.
   syntax:
     content: sanitize_function(arg)
-    parameters:
-    - id: arg
   type: function
   uid: cntk.internal.sanitize.sanitize_function
 - fullName: cntk.internal.sanitize.sanitize_input
@@ -349,14 +329,11 @@ items:
   syntax:
     content: sanitize_input(arg, fallback_dtype=<class 'numpy.float32'>, reshape=None)
     parameters:
-    - id: arg
-    - defaultValue: None
-      description: input
+    - description: input
       id: arg
       type:
       - number, NumPy array, Variable, or Function
-    - defaultValue: <class 'numpy.float32'>
-      description: fallback dtype in case `arg` is a list
+    - description: fallback dtype in case `arg` is a list
       id: fallback_dtype
       type:
       - NumPy dtype
@@ -380,10 +357,6 @@ items:
     startLine: 475
   syntax:
     content: sanitize_pooling_args(pooling_window_shape, strides, auto_padding)
-    parameters:
-    - id: pooling_window_shape
-    - id: strides
-    - id: auto_padding
   type: function
   uid: cntk.internal.sanitize.sanitize_pooling_args
 - fullName: cntk.internal.sanitize.sanitize_precision
@@ -428,8 +401,6 @@ items:
   summary: If shape is scalar, it creates a tuple out of it.
   syntax:
     content: sanitize_shape(shape)
-    parameters:
-    - id: shape
   type: function
   uid: cntk.internal.sanitize.sanitize_shape
 - fullName: cntk.internal.sanitize.sanitize_value
@@ -488,8 +459,7 @@ items:
     content: sanitize_var_map(op_arguments, arguments, precision=None, device=None,
       extract_values_from_minibatch_data=True)
     parameters:
-    - defaultValue: None
-      description: arguments of the root function. In `forward()` pass it is typically
+    - description: arguments of the root function. In `forward()` pass it is typically
         *op.arguments*, in `backward()` pass it is *op.outputs*
       id: op_arguments
       type:
@@ -518,13 +488,11 @@ items:
       id: precision
       type:
       - str or np.float32 or np.float64
-    - defaultValue: 'True'
-      description: device this value should be put on
+    - description: device this value should be put on
       id: device
       type:
       - DeviceDescriptor, default None
-    - defaultValue: None
-      description: specifies if `MinibatchData` instances in the arguments map are
+    - description: specifies if `MinibatchData` instances in the arguments map are
         converted to the underlying value (@cntk.core.htmlcntk.core.Value) instances
         (default), or if they should remain intact, as they contain additional meta
         information required by the Trainer (specifically, by the `train_minibatch()`
@@ -551,8 +519,6 @@ items:
     startLine: 460
   syntax:
     content: sanitize_variable_value_dict(var_value_dict)
-    parameters:
-    - id: var_value_dict
   type: function
   uid: cntk.internal.sanitize.sanitize_variable_value_dict
 references:

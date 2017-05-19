@@ -70,19 +70,19 @@ items:
     \ need to declare the types of the arguments. In this case, the @Function decorator\
     \ creates a CNTK Function whose arguments are input variables.\nIf you use Python\
     \ 3, Functions with types are declared using Python annotation syntax, e.g.:\n\
-    <!-- literal_block {\"ids\": [], \"xml:space\": \"preserve\", \"dupnames\": [],\
-    \ \"names\": [], \"classes\": [], \"backrefs\": []} -->\n\n````\n\n   @Function\n\
+    <!-- literal_block {\"classes\": [], \"dupnames\": [], \"ids\": [], \"backrefs\"\
+    : [], \"xml:space\": \"preserve\", \"names\": []} -->\n\n````\n\n   @Function\n\
     \   def f(x:Tensor[13]):\n       return x * x\n   ````\nIf you are working with\
     \ Python 2.7, use CNTK's *@:class:~cntk.layers.typing.Signature* decorator instead:\n\
-    <!-- literal_block {\"ids\": [], \"xml:space\": \"preserve\", \"dupnames\": [],\
-    \ \"names\": [], \"classes\": [], \"backrefs\": []} -->\n\n````\n\n   >>> from\
-    \ cntk.layers.typing import *\n   >>> @Function\n   ... @Signature(Tensor[13])\n\
-    \   ... def f(x):\n   ...     return x * x\n   >>> debugging.dump_signature(f)\n\
-    \   Function(x: Tensor[13]) -> Tensor[13]\n   ````\n`make_block=True` is an internal\
-    \ parameter used to implement *@:func:~cntk.layers.blocks.BlockFunction()*. If\
-    \ *BlockFunction()* passes *True`*, then the result will be wrapped in :func:`~cntk.ops.as_block()`,\
-    \ using the supplied `op_name` and `name` parameters, which are otherwise ignored.\n\
-    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    <!-- literal_block {\"classes\": [], \"dupnames\": [], \"ids\": [], \"backrefs\"\
+    : [], \"xml:space\": \"preserve\", \"names\": []} -->\n\n````\n\n   >>> from cntk.layers.typing\
+    \ import *\n   >>> @Function\n   ... @Signature(Tensor[13])\n   ... def f(x):\n\
+    \   ...     return x * x\n   >>> debugging.dump_signature(f)\n   Function(x: Tensor[13])\
+    \ -> Tensor[13]\n   ````\n`make_block=True` is an internal parameter used to implement\
+    \ *@:func:~cntk.layers.blocks.BlockFunction()*. If *BlockFunction()* passes *True`*,\
+    \ then the result will be wrapped in :func:`~cntk.ops.as_block()`, using the supplied\
+    \ `op_name` and `name` parameters, which are otherwise ignored.\n\n\n\n\n\n\n\n\
+    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
   syntax:
     content: Function(*args, **kwargs)
   type: class
@@ -109,8 +109,6 @@ items:
     by train_minibatch().'
   syntax:
     content: argument_map(self, *args, **kwargs)
-    parameters:
-    - id: self
   type: method
   uid: cntk.ops.functions.Function.argument_map
 - class: cntk.ops.functions.Function
@@ -323,8 +321,6 @@ items:
   summary: Back-compat wrapper for update_signature() (beta12 and before).
   syntax:
     content: declare_args(self, *arg_types)
-    parameters:
-    - id: self
   type: method
   uid: cntk.ops.functions.Function.declare_args
 - class: cntk.ops.functions.Function
@@ -346,16 +342,6 @@ items:
     Note: See `forward()` for examples on passing input data.'
   syntax:
     content: eval(self, arguments=None, outputs=None, device=None, as_numpy=True)
-    parameters:
-    - id: self
-    - defaultValue: 'True'
-      id: arguments
-    - defaultValue: None
-      id: outputs
-    - defaultValue: None
-      id: device
-    - defaultValue: None
-      id: as_numpy
     return:
       description: Dict with keys of ouput variable names and values of output variable.
         A single NumPy array if there is only one output value.
@@ -991,9 +977,6 @@ items:
     startLine: 1079
   syntax:
     content: restore_model(self, filename)
-    parameters:
-    - id: self
-    - id: filename
   type: method
   uid: cntk.ops.functions.Function.restore_model
 - class: cntk.ops.functions.Function
@@ -1058,9 +1041,6 @@ items:
     startLine: 1060
   syntax:
     content: save_model(self, filename)
-    parameters:
-    - id: self
-    - id: filename
   type: method
   uid: cntk.ops.functions.Function.save_model
 - class: cntk.ops.functions.Function
@@ -1137,8 +1117,6 @@ items:
     pass an int, a tuple, an Input, or a dict created with Type()
   syntax:
     content: update_signature(self, *arg_types, **kwarg_types)
-    parameters:
-    - id: self
   type: method
   uid: cntk.ops.functions.Function.update_signature
 references:

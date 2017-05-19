@@ -339,9 +339,7 @@ items:
   syntax:
     content: static_axis_index(self, checked=True)
     parameters:
-    - id: self
-    - defaultValue: 'True'
-      description: if True then this function will throw an exception if the axis
+    - description: if True then this function will throw an exception if the axis
         is not static.
       id: checked
       type:

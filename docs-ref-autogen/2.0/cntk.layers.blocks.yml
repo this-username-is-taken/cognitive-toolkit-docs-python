@@ -43,9 +43,6 @@ items:
     but wrap the content into an `as_block()`.
   syntax:
     content: BlockFunction(op_name, name)
-    parameters:
-    - id: op_name
-    - id: name
   type: function
   uid: cntk.layers.blocks.BlockFunction
 - fullName: cntk.layers.blocks.ForwardDeclaration
@@ -75,8 +72,6 @@ items:
     >>> length(x0)\n    array([[ 3.]], dtype=float32)\n```"
   syntax:
     content: ForwardDeclaration(name='forward_declaration')
-    parameters:
-    - id: name
     return:
       description: a placeholder variable with a method `resolve_to()` that resolves
         it to another variable
@@ -113,44 +108,38 @@ items:
     ```'
   syntax:
     content: GRU(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x0000020CE5A8F978>, init=<cntk.default_options.default_override_or
-      object at 0x0000020CE5A8F9E8>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000020CE5A8FA20>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x0000020CE5A8FA58>, name='')
+      object at 0x0000016EEC4BD9B0>, init=<cntk.default_options.default_override_or
+      object at 0x0000016EEC4BDA20>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000016EEC4BDA58>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x0000016EEC4BDA90>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
       type:
       - int or tuple of ints
-    - defaultValue: ''
-      description: if given, then the output state is first computed at *cell_shape*
+    - description: if given, then the output state is first computed at *cell_shape*
         and linearly projected to *shape*
       id: cell_shape
       type:
       - tuple, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A8FA58>
-      description: function to apply at the end, e.g. *relu*
+    - description: function to apply at the end, e.g. *relu*
       id: activation
       type:
       - Function, defaults to tanh()
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A8FA20>
-      description: initial value of weights *W*
+    - description: initial value of weights *W*
       id: init
       type:
       - scalar or NumPy array or cntk.initializer, defaults to glorot_uniform
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A8F9E8>
-      description: initial value of weights *b*
+    - description: initial value of weights *b*
       id: init_bias
       type:
       - scalar or NumPy array or cntk.initializer, defaults to 0
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A8F978>
-      description: if *True* then add a `Stabilizer()` to all state-related projections
+    - description: if *True* then add a `Stabilizer()` to all state-related projections
         (but not the data input)
       id: enable_self_stabilization
       type:
       - bool, defaults to False
-    - defaultValue: None
-      description: the name of the Function instance in the network
+    - description: the name of the Function instance in the network
       id: name
       type:
       - str, defaults to ''
@@ -193,50 +182,43 @@ items:
     ```'
   syntax:
     content: LSTM(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x0000020CE5A8F828>, use_peepholes=<cntk.default_options.default_override_or
-      object at 0x0000020CE5A8F5C0>, init=<cntk.default_options.default_override_or
-      object at 0x0000020CE5A8F780>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000020CE5A8F7B8>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x0000020CE5A8F860>, name='')
+      object at 0x0000016EEC4BD710>, use_peepholes=<cntk.default_options.default_override_or
+      object at 0x0000016EEC4BD828>, init=<cntk.default_options.default_override_or
+      object at 0x0000016EEC4BD780>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000016EEC4BD7B8>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x0000016EEC4BD860>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
       type:
       - int or tuple of ints
-    - defaultValue: ''
-      description: if given, then the output state is first computed at *cell_shape*
+    - description: if given, then the output state is first computed at *cell_shape*
         and linearly projected to *shape*
       id: cell_shape
       type:
       - tuple, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A8F860>
-      description: function to apply at the end, e.g. *relu*
+    - description: function to apply at the end, e.g. *relu*
       id: activation
       type:
       - Function, defaults to tanh()
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A8F7B8>
-      description: ''
+    - description: ''
       id: use_peepholes
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A8F780>
-      description: initial value of weights *W*
+    - description: initial value of weights *W*
       id: init
       type:
       - scalar or NumPy array or cntk.initializer, defaults to glorot_uniform
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A8F5C0>
-      description: initial value of weights *b*
+    - description: initial value of weights *b*
       id: init_bias
       type:
       - scalar or NumPy array or cntk.initializer, defaults to 0
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A8F828>
-      description: if *True* then add a `Stabilizer()` to all state-related projections
+    - description: if *True* then add a `Stabilizer()` to all state-related projections
         (but not the data input)
       id: enable_self_stabilization
       type:
       - bool, defaults to False
-    - defaultValue: None
-      description: the name of the Function instance in the network
+    - description: the name of the Function instance in the network
       id: name
       type:
       - str, defaults to ''
@@ -278,44 +260,38 @@ items:
     ```'
   syntax:
     content: RNNUnit(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x0000020CE5A8F898>, init=<cntk.default_options.default_override_or
-      object at 0x0000020CE58A6F28>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000020CE5A8F908>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x0000020CE5A8F940>, name='')
+      object at 0x0000016EEC4BD898>, init=<cntk.default_options.default_override_or
+      object at 0x0000016EEC4BD908>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000016EEC4BD940>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x0000016EEC4BD978>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
       type:
       - int or tuple of ints
-    - defaultValue: ''
-      description: if given, then the output state is first computed at *cell_shape*
+    - description: if given, then the output state is first computed at *cell_shape*
         and linearly projected to *shape*
       id: cell_shape
       type:
       - tuple, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A8F940>
-      description: function to apply at the end, e.g. *relu*
+    - description: function to apply at the end, e.g. *relu*
       id: activation
       type:
       - Function, defaults to signmoid
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A8F908>
-      description: initial value of weights *W*
+    - description: initial value of weights *W*
       id: init
       type:
       - scalar or NumPy array or cntk.initializer, defaults to glorot_uniform
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE58A6F28>
-      description: initial value of weights *b*
+    - description: initial value of weights *b*
       id: init_bias
       type:
       - scalar or NumPy array or cntk.initializer, defaults to 0
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A8F898>
-      description: if *True* then add a `Stabilizer()` to all state-related projections
+    - description: if *True* then add a `Stabilizer()` to all state-related projections
         (but not the data input)
       id: enable_self_stabilization
       type:
       - bool, defaults to False
-    - defaultValue: None
-      description: the name of the Function instance in the network
+    - description: the name of the Function instance in the network
       id: name
       type:
       - str, defaults to ''
@@ -386,15 +362,13 @@ items:
     ```'
   syntax:
     content: Stabilizer(steepness=4, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x0000020CE5A8F710>, name='')
+      object at 0x0000016EEC2DDC18>, name='')
     parameters:
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A8F710>
-      description: ''
+    - description: ''
       id: steepness
       type:
       - int, defaults to 4
-    - defaultValue: '4'
-      description: a flag that allows to disable itself. Useful if this is a global
+    - description: a flag that allows to disable itself. Useful if this is a global
         default
       id: enable_self_stabilization
       type:
@@ -424,8 +398,6 @@ items:
     startLine: 29
   syntax:
     content: UntestedBranchError(name)
-    parameters:
-    - id: name
   type: function
   uid: cntk.layers.blocks.UntestedBranchError
 references:

@@ -41,8 +41,7 @@ items:
   syntax:
     content: depth_first_search(root, visitor, depth=0)
     parameters:
-    - defaultValue: '0'
-      description: the root to start the journey from
+    - description: the root to start the journey from
       id: root
       type:
       - Function or Variable
@@ -79,8 +78,7 @@ items:
   syntax:
     content: find_all_with_name(node, node_name, depth=0)
     parameters:
-    - defaultValue: '0'
-      description: the node to start the journey from
+    - description: the node to start the journey from
       id: node
       type:
       - Function or Variable
@@ -116,8 +114,7 @@ items:
   syntax:
     content: find_by_name(node, node_name, depth=0)
     parameters:
-    - defaultValue: '0'
-      description: the node to start the journey from
+    - description: the node to start the journey from
       id: node
       type:
       - Function or Variable
@@ -152,9 +149,7 @@ items:
   syntax:
     content: get_node_outputs(node, depth=0)
     parameters:
-    - id: node
-    - defaultValue: '0'
-      description: the node to start the journey from
+    - description: the node to start the journey from
       id: node
       type:
       - graph node
@@ -177,12 +172,6 @@ items:
     startLine: 344
   syntax:
     content: output_function_graph(node, dot_file_path=None, png_file_path=None)
-    parameters:
-    - id: node
-    - defaultValue: None
-      id: dot_file_path
-    - defaultValue: None
-      id: png_file_path
   type: function
   uid: cntk.logging.graph.output_function_graph
 - fullName: cntk.logging.graph.plot
@@ -213,8 +202,7 @@ items:
       id: node
       type:
       - graph node
-    - defaultValue: None
-      description: file with extension '.dot', 'png', 'pdf', or 'svg' to denote what
+    - description: file with extension '.dot', 'png', 'pdf', or 'svg' to denote what
         format should be written. If *None* then nothing will be plotted, and the
         returned string can be used to debug the graph.
       id: filename
