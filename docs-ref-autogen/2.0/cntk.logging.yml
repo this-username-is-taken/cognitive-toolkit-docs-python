@@ -5,6 +5,8 @@ items:
   - cntk.logging.TraceLevel
   - cntk.logging.get_trace_level
   - cntk.logging.set_trace_level
+  - cntk.logging.graph
+  - cntk.logging.progress_print
   fullName: cntk.logging
   langs:
   - python
@@ -65,19 +67,90 @@ items:
       - TraceLevel
   type: function
   uid: cntk.logging.set_trace_level
+- children:
+  - cntk.logging.graph.depth_first_search
+  - cntk.logging.graph.find_all_with_name
+  - cntk.logging.graph.find_by_name
+  - cntk.logging.graph.get_node_outputs
+  - cntk.logging.graph.output_function_graph
+  - cntk.logging.graph.plot
+  fullName: cntk.logging.graph
+  langs:
+  - python
+  module: cntk.logging.graph
+  name: graph
+  source:
+    id: graph
+    path: /bindings/python\cntk\logging\graph.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\logging\graph.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: module
+  uid: cntk.logging.graph
+- children:
+  - cntk.logging.progress_print.ProgressPrinter
+  - cntk.logging.progress_print.TensorBoardProgressWriter
+  - cntk.logging.progress_print.log_number_of_parameters
+  fullName: cntk.logging.progress_print
+  langs:
+  - python
+  module: cntk.logging.progress_print
+  name: progress_print
+  source:
+    id: progress_print
+    path: /bindings/python\cntk\logging\progress_print.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\logging\progress_print.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: module
+  uid: cntk.logging.progress_print
 references:
-- fullName: cntk.logging.TraceLevel
+- fullName: cntk.logging.graph.depth_first_search
   isExternal: false
-  name: TraceLevel
-  parent: cntk.logging
-  uid: cntk.logging.TraceLevel
-- fullName: cntk.logging.get_trace_level
+  name: depth_first_search
+  parent: cntk.logging.graph
+  uid: cntk.logging.graph.depth_first_search
+- fullName: cntk.logging.graph.find_all_with_name
   isExternal: false
-  name: get_trace_level
-  parent: cntk.logging
-  uid: cntk.logging.get_trace_level
-- fullName: cntk.logging.set_trace_level
+  name: find_all_with_name
+  parent: cntk.logging.graph
+  uid: cntk.logging.graph.find_all_with_name
+- fullName: cntk.logging.graph.find_by_name
   isExternal: false
-  name: set_trace_level
-  parent: cntk.logging
-  uid: cntk.logging.set_trace_level
+  name: find_by_name
+  parent: cntk.logging.graph
+  uid: cntk.logging.graph.find_by_name
+- fullName: cntk.logging.graph.get_node_outputs
+  isExternal: false
+  name: get_node_outputs
+  parent: cntk.logging.graph
+  uid: cntk.logging.graph.get_node_outputs
+- fullName: cntk.logging.graph.output_function_graph
+  isExternal: false
+  name: output_function_graph
+  parent: cntk.logging.graph
+  uid: cntk.logging.graph.output_function_graph
+- fullName: cntk.logging.graph.plot
+  isExternal: false
+  name: plot
+  parent: cntk.logging.graph
+  uid: cntk.logging.graph.plot
+- fullName: cntk.logging.progress_print.ProgressPrinter
+  isExternal: false
+  name: ProgressPrinter
+  parent: cntk.logging.progress_print
+  uid: cntk.logging.progress_print.ProgressPrinter
+- fullName: cntk.logging.progress_print.TensorBoardProgressWriter
+  isExternal: false
+  name: TensorBoardProgressWriter
+  parent: cntk.logging.progress_print
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter
+- fullName: cntk.logging.progress_print.log_number_of_parameters
+  isExternal: false
+  name: log_number_of_parameters
+  parent: cntk.logging.progress_print
+  uid: cntk.logging.progress_print.log_number_of_parameters

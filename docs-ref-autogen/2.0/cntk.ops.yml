@@ -85,6 +85,8 @@ items:
   - cntk.ops.to_sequence_like
   - cntk.ops.transpose
   - cntk.ops.unpooling
+  - cntk.ops.functions
+  - cntk.ops.sequence
   fullName: cntk.ops
   langs:
   - python
@@ -1513,7 +1515,7 @@ items:
     and labels, should be provided.'
   syntax:
     content: input(shape, dtype=<cntk.default_options.default_override_or object at
-      0x0000026BBEDABA90>, needs_gradient=False, is_sparse=False, dynamic_axes=[Axis('defaultBatchAxis')],
+      0x00000227E8C4EC50>, needs_gradient=False, is_sparse=False, dynamic_axes=[Axis('defaultBatchAxis')],
       name='')
     parameters:
     - description: the shape of the input tensor
@@ -3462,10 +3464,10 @@ items:
     \ X @ W equals times(X, W).\nFor better performance on times operation on sequence\
     \ which is followed by sequence.reduce_sum, use infer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK,\
     \ i.e. replace following:\n<!-- literal_block {\"names\": [], \"ids\": [], \"\
-    classes\": [], \"backrefs\": [], \"dupnames\": [], \"xml:space\": \"preserve\"\
-    } -->\n\n````\n\n   sequence.reduce_sum(times(seq1, seq2))\n   ````\nwith:\n<!--\
-    \ literal_block {\"names\": [], \"ids\": [], \"classes\": [], \"backrefs\": [],\
-    \ \"dupnames\": [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   times(seq1,\
+    classes\": [], \"xml:space\": \"preserve\", \"backrefs\": [], \"dupnames\": []}\
+    \ -->\n\n````\n\n   sequence.reduce_sum(times(seq1, seq2))\n   ````\nwith:\n<!--\
+    \ literal_block {\"names\": [], \"ids\": [], \"classes\": [], \"xml:space\": \"\
+    preserve\", \"backrefs\": [], \"dupnames\": []} -->\n\n````\n\n   times(seq1,\
     \ seq2, infer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK)\n\
     \   ````\n-[ Example ]-\n```\n\n>>> C.times([[1,2],[3,4]], [[5],[6]]).eval()\n\
     array([[ 17.],\n       [ 39.]], dtype=float32)\n```\n```\n\n>>> C.times(1.*np.reshape(np.arange(8),\
@@ -3719,419 +3721,180 @@ items:
       description: '`Function`'
   type: function
   uid: cntk.ops.unpooling
+- children:
+  - cntk.ops.functions.CloneMethod
+  - cntk.ops.functions.Function
+  - cntk.ops.functions.UserFunction
+  - cntk.ops.functions.load_model
+  - cntk.ops.functions.native_user_function
+  - cntk.ops.functions.register_native_user_function
+  - cntk.ops.functions.save_model
+  fullName: cntk.ops.functions
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: functions
+  source:
+    id: functions
+    path: /bindings/python\cntk\ops\functions.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\ops\functions.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: module
+  uid: cntk.ops.functions
+- children:
+  - cntk.ops.sequence.broadcast_as
+  - cntk.ops.sequence.delay
+  - cntk.ops.sequence.first
+  - cntk.ops.sequence.future_value
+  - cntk.ops.sequence.gather
+  - cntk.ops.sequence.input
+  - cntk.ops.sequence.is_first
+  - cntk.ops.sequence.is_last
+  - cntk.ops.sequence.last
+  - cntk.ops.sequence.past_value
+  - cntk.ops.sequence.reduce_max
+  - cntk.ops.sequence.reduce_sum
+  - cntk.ops.sequence.scatter
+  - cntk.ops.sequence.slice
+  - cntk.ops.sequence.softmax
+  - cntk.ops.sequence.unpack
+  - cntk.ops.sequence.where
+  fullName: cntk.ops.sequence
+  langs:
+  - python
+  module: cntk.ops.sequence
+  name: sequence
+  source:
+    id: sequence
+    path: /bindings/python\cntk\ops\sequence\__init__.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\ops\sequence\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: module
+  uid: cntk.ops.sequence
 references:
-- fullName: cntk.ops.abs
+- fullName: cntk.ops.functions.CloneMethod
   isExternal: false
-  name: abs
-  parent: cntk.ops
-  uid: cntk.ops.abs
-- fullName: cntk.ops.alias
+  name: CloneMethod
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.CloneMethod
+- fullName: cntk.ops.functions.Function
   isExternal: false
-  name: alias
-  parent: cntk.ops
-  uid: cntk.ops.alias
-- fullName: cntk.ops.argmax
+  name: Function
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.Function
+- fullName: cntk.ops.functions.UserFunction
   isExternal: false
-  name: argmax
-  parent: cntk.ops
-  uid: cntk.ops.argmax
-- fullName: cntk.ops.argmin
+  name: UserFunction
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.UserFunction
+- fullName: cntk.ops.functions.load_model
   isExternal: false
-  name: argmin
-  parent: cntk.ops
-  uid: cntk.ops.argmin
-- fullName: cntk.ops.as_block
+  name: load_model
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.load_model
+- fullName: cntk.ops.functions.native_user_function
   isExternal: false
-  name: as_block
-  parent: cntk.ops
-  uid: cntk.ops.as_block
-- fullName: cntk.ops.as_composite
+  name: native_user_function
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.native_user_function
+- fullName: cntk.ops.functions.register_native_user_function
   isExternal: false
-  name: as_composite
-  parent: cntk.ops
-  uid: cntk.ops.as_composite
-- fullName: cntk.ops.associative_multi_arg
+  name: register_native_user_function
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.register_native_user_function
+- fullName: cntk.ops.functions.save_model
   isExternal: false
-  name: associative_multi_arg
-  parent: cntk.ops
-  uid: cntk.ops.associative_multi_arg
-- fullName: cntk.ops.batch_normalization
+  name: save_model
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.save_model
+- fullName: cntk.ops.sequence.broadcast_as
   isExternal: false
-  name: batch_normalization
-  parent: cntk.ops
-  uid: cntk.ops.batch_normalization
-- fullName: cntk.ops.ceil
+  name: broadcast_as
+  parent: cntk.ops.sequence
+  uid: cntk.ops.sequence.broadcast_as
+- fullName: cntk.ops.sequence.delay
   isExternal: false
-  name: ceil
-  parent: cntk.ops
-  uid: cntk.ops.ceil
-- fullName: cntk.ops.clip
+  name: delay
+  parent: cntk.ops.sequence
+  uid: cntk.ops.sequence.delay
+- fullName: cntk.ops.sequence.first
   isExternal: false
-  name: clip
-  parent: cntk.ops
-  uid: cntk.ops.clip
-- fullName: cntk.ops.combine
-  isExternal: false
-  name: combine
-  parent: cntk.ops
-  uid: cntk.ops.combine
-- fullName: cntk.ops.constant
-  isExternal: false
-  name: constant
-  parent: cntk.ops
-  uid: cntk.ops.constant
-- fullName: cntk.ops.convolution
-  isExternal: false
-  name: convolution
-  parent: cntk.ops
-  uid: cntk.ops.convolution
-- fullName: cntk.ops.convolution_transpose
-  isExternal: false
-  name: convolution_transpose
-  parent: cntk.ops
-  uid: cntk.ops.convolution_transpose
-- fullName: cntk.ops.cos
-  isExternal: false
-  name: cos
-  parent: cntk.ops
-  uid: cntk.ops.cos
-- fullName: cntk.ops.dropout
-  isExternal: false
-  name: dropout
-  parent: cntk.ops
-  uid: cntk.ops.dropout
-- fullName: cntk.ops.element_divide
-  isExternal: false
-  name: element_divide
-  parent: cntk.ops
-  uid: cntk.ops.element_divide
-- fullName: cntk.ops.element_max
-  isExternal: false
-  name: element_max
-  parent: cntk.ops
-  uid: cntk.ops.element_max
-- fullName: cntk.ops.element_min
-  isExternal: false
-  name: element_min
-  parent: cntk.ops
-  uid: cntk.ops.element_min
-- fullName: cntk.ops.element_select
-  isExternal: false
-  name: element_select
-  parent: cntk.ops
-  uid: cntk.ops.element_select
-- fullName: cntk.ops.element_times
-  isExternal: false
-  name: element_times
-  parent: cntk.ops
-  uid: cntk.ops.element_times
-- fullName: cntk.ops.elu
-  isExternal: false
-  name: elu
-  parent: cntk.ops
-  uid: cntk.ops.elu
-- fullName: cntk.ops.equal
-  isExternal: false
-  name: equal
-  parent: cntk.ops
-  uid: cntk.ops.equal
-- fullName: cntk.ops.exp
-  isExternal: false
-  name: exp
-  parent: cntk.ops
-  uid: cntk.ops.exp
-- fullName: cntk.ops.floor
-  isExternal: false
-  name: floor
-  parent: cntk.ops
-  uid: cntk.ops.floor
-- fullName: cntk.ops.forward_backward
-  isExternal: false
-  name: forward_backward
-  parent: cntk.ops
-  uid: cntk.ops.forward_backward
-- fullName: cntk.ops.future_value
+  name: first
+  parent: cntk.ops.sequence
+  uid: cntk.ops.sequence.first
+- fullName: cntk.ops.sequence.future_value
   isExternal: false
   name: future_value
-  parent: cntk.ops
-  uid: cntk.ops.future_value
-- fullName: cntk.ops.greater
+  parent: cntk.ops.sequence
+  uid: cntk.ops.sequence.future_value
+- fullName: cntk.ops.sequence.gather
   isExternal: false
-  name: greater
-  parent: cntk.ops
-  uid: cntk.ops.greater
-- fullName: cntk.ops.greater_equal
-  isExternal: false
-  name: greater_equal
-  parent: cntk.ops
-  uid: cntk.ops.greater_equal
-- fullName: cntk.ops.hardmax
-  isExternal: false
-  name: hardmax
-  parent: cntk.ops
-  uid: cntk.ops.hardmax
-- fullName: cntk.ops.input
+  name: gather
+  parent: cntk.ops.sequence
+  uid: cntk.ops.sequence.gather
+- fullName: cntk.ops.sequence.input
   isExternal: false
   name: input
-  parent: cntk.ops
-  uid: cntk.ops.input
-- fullName: cntk.ops.input_variable
+  parent: cntk.ops.sequence
+  uid: cntk.ops.sequence.input
+- fullName: cntk.ops.sequence.is_first
   isExternal: false
-  name: input_variable
-  parent: cntk.ops
-  uid: cntk.ops.input_variable
-- fullName: cntk.ops.labels_to_graph
+  name: is_first
+  parent: cntk.ops.sequence
+  uid: cntk.ops.sequence.is_first
+- fullName: cntk.ops.sequence.is_last
   isExternal: false
-  name: labels_to_graph
-  parent: cntk.ops
-  uid: cntk.ops.labels_to_graph
-- fullName: cntk.ops.leaky_relu
+  name: is_last
+  parent: cntk.ops.sequence
+  uid: cntk.ops.sequence.is_last
+- fullName: cntk.ops.sequence.last
   isExternal: false
-  name: leaky_relu
-  parent: cntk.ops
-  uid: cntk.ops.leaky_relu
-- fullName: cntk.ops.less
-  isExternal: false
-  name: less
-  parent: cntk.ops
-  uid: cntk.ops.less
-- fullName: cntk.ops.less_equal
-  isExternal: false
-  name: less_equal
-  parent: cntk.ops
-  uid: cntk.ops.less_equal
-- fullName: cntk.ops.log
-  isExternal: false
-  name: log
-  parent: cntk.ops
-  uid: cntk.ops.log
-- fullName: cntk.ops.log_add_exp
-  isExternal: false
-  name: log_add_exp
-  parent: cntk.ops
-  uid: cntk.ops.log_add_exp
-- fullName: cntk.ops.minus
-  isExternal: false
-  name: minus
-  parent: cntk.ops
-  uid: cntk.ops.minus
-- fullName: cntk.ops.negate
-  isExternal: false
-  name: negate
-  parent: cntk.ops
-  uid: cntk.ops.negate
-- fullName: cntk.ops.not_equal
-  isExternal: false
-  name: not_equal
-  parent: cntk.ops
-  uid: cntk.ops.not_equal
-- fullName: cntk.ops.one_hot
-  isExternal: false
-  name: one_hot
-  parent: cntk.ops
-  uid: cntk.ops.one_hot
-- fullName: cntk.ops.optimized_rnnstack
-  isExternal: false
-  name: optimized_rnnstack
-  parent: cntk.ops
-  uid: cntk.ops.optimized_rnnstack
-- fullName: cntk.ops.output_variable
-  isExternal: false
-  name: output_variable
-  parent: cntk.ops
-  uid: cntk.ops.output_variable
-- fullName: cntk.ops.param_relu
-  isExternal: false
-  name: param_relu
-  parent: cntk.ops
-  uid: cntk.ops.param_relu
-- fullName: cntk.ops.parameter
-  isExternal: false
-  name: parameter
-  parent: cntk.ops
-  uid: cntk.ops.parameter
-- fullName: cntk.ops.past_value
+  name: last
+  parent: cntk.ops.sequence
+  uid: cntk.ops.sequence.last
+- fullName: cntk.ops.sequence.past_value
   isExternal: false
   name: past_value
-  parent: cntk.ops
-  uid: cntk.ops.past_value
-- fullName: cntk.ops.per_dim_mean_variance_normalize
-  isExternal: false
-  name: per_dim_mean_variance_normalize
-  parent: cntk.ops
-  uid: cntk.ops.per_dim_mean_variance_normalize
-- fullName: cntk.ops.placeholder
-  isExternal: false
-  name: placeholder
-  parent: cntk.ops
-  uid: cntk.ops.placeholder
-- fullName: cntk.ops.placeholder_variable
-  isExternal: false
-  name: placeholder_variable
-  parent: cntk.ops
-  uid: cntk.ops.placeholder_variable
-- fullName: cntk.ops.plus
-  isExternal: false
-  name: plus
-  parent: cntk.ops
-  uid: cntk.ops.plus
-- fullName: cntk.ops.pooling
-  isExternal: false
-  name: pooling
-  parent: cntk.ops
-  uid: cntk.ops.pooling
-- fullName: cntk.ops.pow
-  isExternal: false
-  name: pow
-  parent: cntk.ops
-  uid: cntk.ops.pow
-- fullName: cntk.ops.random_sample
-  isExternal: false
-  name: random_sample
-  parent: cntk.ops
-  uid: cntk.ops.random_sample
-- fullName: cntk.ops.random_sample_inclusion_frequency
-  isExternal: false
-  name: random_sample_inclusion_frequency
-  parent: cntk.ops
-  uid: cntk.ops.random_sample_inclusion_frequency
-- fullName: cntk.ops.reciprocal
-  isExternal: false
-  name: reciprocal
-  parent: cntk.ops
-  uid: cntk.ops.reciprocal
-- fullName: cntk.ops.reconcile_dynamic_axes
-  isExternal: false
-  name: reconcile_dynamic_axes
-  parent: cntk.ops
-  uid: cntk.ops.reconcile_dynamic_axes
-- fullName: cntk.ops.reduce_log_sum_exp
-  isExternal: false
-  name: reduce_log_sum_exp
-  parent: cntk.ops
-  uid: cntk.ops.reduce_log_sum_exp
-- fullName: cntk.ops.reduce_max
+  parent: cntk.ops.sequence
+  uid: cntk.ops.sequence.past_value
+- fullName: cntk.ops.sequence.reduce_max
   isExternal: false
   name: reduce_max
-  parent: cntk.ops
-  uid: cntk.ops.reduce_max
-- fullName: cntk.ops.reduce_mean
-  isExternal: false
-  name: reduce_mean
-  parent: cntk.ops
-  uid: cntk.ops.reduce_mean
-- fullName: cntk.ops.reduce_min
-  isExternal: false
-  name: reduce_min
-  parent: cntk.ops
-  uid: cntk.ops.reduce_min
-- fullName: cntk.ops.reduce_prod
-  isExternal: false
-  name: reduce_prod
-  parent: cntk.ops
-  uid: cntk.ops.reduce_prod
-- fullName: cntk.ops.reduce_sum
+  parent: cntk.ops.sequence
+  uid: cntk.ops.sequence.reduce_max
+- fullName: cntk.ops.sequence.reduce_sum
   isExternal: false
   name: reduce_sum
-  parent: cntk.ops
-  uid: cntk.ops.reduce_sum
-- fullName: cntk.ops.relu
+  parent: cntk.ops.sequence
+  uid: cntk.ops.sequence.reduce_sum
+- fullName: cntk.ops.sequence.scatter
   isExternal: false
-  name: relu
-  parent: cntk.ops
-  uid: cntk.ops.relu
-- fullName: cntk.ops.reshape
-  isExternal: false
-  name: reshape
-  parent: cntk.ops
-  uid: cntk.ops.reshape
-- fullName: cntk.ops.roipooling
-  isExternal: false
-  name: roipooling
-  parent: cntk.ops
-  uid: cntk.ops.roipooling
-- fullName: cntk.ops.round
-  isExternal: false
-  name: round
-  parent: cntk.ops
-  uid: cntk.ops.round
-- fullName: cntk.ops.sigmoid
-  isExternal: false
-  name: sigmoid
-  parent: cntk.ops
-  uid: cntk.ops.sigmoid
-- fullName: cntk.ops.sin
-  isExternal: false
-  name: sin
-  parent: cntk.ops
-  uid: cntk.ops.sin
-- fullName: cntk.ops.slice
+  name: scatter
+  parent: cntk.ops.sequence
+  uid: cntk.ops.sequence.scatter
+- fullName: cntk.ops.sequence.slice
   isExternal: false
   name: slice
-  parent: cntk.ops
-  uid: cntk.ops.slice
-- fullName: cntk.ops.softmax
+  parent: cntk.ops.sequence
+  uid: cntk.ops.sequence.slice
+- fullName: cntk.ops.sequence.softmax
   isExternal: false
   name: softmax
-  parent: cntk.ops
-  uid: cntk.ops.softmax
-- fullName: cntk.ops.softplus
+  parent: cntk.ops.sequence
+  uid: cntk.ops.sequence.softmax
+- fullName: cntk.ops.sequence.unpack
   isExternal: false
-  name: softplus
-  parent: cntk.ops
-  uid: cntk.ops.softplus
-- fullName: cntk.ops.splice
+  name: unpack
+  parent: cntk.ops.sequence
+  uid: cntk.ops.sequence.unpack
+- fullName: cntk.ops.sequence.where
   isExternal: false
-  name: splice
-  parent: cntk.ops
-  uid: cntk.ops.splice
-- fullName: cntk.ops.sqrt
-  isExternal: false
-  name: sqrt
-  parent: cntk.ops
-  uid: cntk.ops.sqrt
-- fullName: cntk.ops.square
-  isExternal: false
-  name: square
-  parent: cntk.ops
-  uid: cntk.ops.square
-- fullName: cntk.ops.stop_gradient
-  isExternal: false
-  name: stop_gradient
-  parent: cntk.ops
-  uid: cntk.ops.stop_gradient
-- fullName: cntk.ops.tanh
-  isExternal: false
-  name: tanh
-  parent: cntk.ops
-  uid: cntk.ops.tanh
-- fullName: cntk.ops.times
-  isExternal: false
-  name: times
-  parent: cntk.ops
-  uid: cntk.ops.times
-- fullName: cntk.ops.times_transpose
-  isExternal: false
-  name: times_transpose
-  parent: cntk.ops
-  uid: cntk.ops.times_transpose
-- fullName: cntk.ops.to_sequence
-  isExternal: false
-  name: to_sequence
-  parent: cntk.ops
-  uid: cntk.ops.to_sequence
-- fullName: cntk.ops.to_sequence_like
-  isExternal: false
-  name: to_sequence_like
-  parent: cntk.ops
-  uid: cntk.ops.to_sequence_like
-- fullName: cntk.ops.transpose
-  isExternal: false
-  name: transpose
-  parent: cntk.ops
-  uid: cntk.ops.transpose
-- fullName: cntk.ops.unpooling
-  isExternal: false
-  name: unpooling
-  parent: cntk.ops
-  uid: cntk.ops.unpooling
+  name: where
+  parent: cntk.ops.sequence
+  uid: cntk.ops.sequence.where

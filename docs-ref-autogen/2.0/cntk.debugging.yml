@@ -4,6 +4,8 @@ items:
 - children:
   - cntk.debugging.dump_function
   - cntk.debugging.dump_signature
+  - cntk.debugging.debug
+  - cntk.debugging.profiler
   fullName: cntk.debugging
   langs:
   - python
@@ -63,14 +65,131 @@ items:
       id: tag
   type: function
   uid: cntk.debugging.dump_signature
+- children:
+  - cntk.debugging.debug.debug_model
+  - cntk.debugging.debug.save_as_legacy_model
+  - cntk.debugging.debug.set_computation_network_trace_level
+  - cntk.debugging.debug.set_computation_network_track_gap_nans
+  fullName: cntk.debugging.debug
+  langs:
+  - python
+  module: cntk.debugging.debug
+  name: debug
+  source:
+    id: debug
+    path: /bindings/python\cntk\debugging\debug.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\debugging\debug.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'In order to debug a graph one simply needs to wrap the root node as follows::
+
+
+    # ... setting up the model in z     from cntk.debugging import debug_model     z
+    = debug_model(z)
+
+
+    Then, when ``z`` is evaluated or trained (i.e. when either :meth:`~cntk.ops.functions.Function.forward`
+    or :meth:`~cntk.ops.functions.Function.backward` is called, you will see the following
+    command-line interface::
+
+
+    =================================== forward  ===================================     Parameter
+    node with uid=''Parameter28'' shape=[](2,)     [CNTK forward] >>> help         Commands:         n
+    - execute the next node         n <number> - execute the next <number> nodes
+
+
+    u f - execute until forward pass (like ''n'' when already in forward pass)         u
+    b - execute until backward pass (like ''n'' when already in backward pass)         u
+    name - execute until a node with that name is hit         u <lambda> - execute
+    until the lambda expression is True. Examples:                      Until a Times
+    node is hit:                          lambda arg, node: node.op_name == ''Times''                      Until
+    a node is hit that has 3 dimensions:                          lambda arg, node:
+    len(node.shape) == 3                      Until the variance of the input exceeds
+    1 (np = numpy):                          lambda arg, node: np.var(arg) > 1
+
+
+    c - execute until end         p - print input (forward) or root gradients (backward)         d
+    - drop into a pdb shell         q - quit
+
+
+    [CNTK backward] >>> n
+
+
+    Times node with uid=''Times29'' shape=[*,*](2,)     [CNTK forward] >>> n     ===================================
+    backward ===================================     Times node with uid=''Times29''
+    shape=[*,*](2,)     [CNTK backward] >>> p     State: None     Root gradients:     [[[-0.79412955  0.79412955]]      [[-0.79412955  0.79412955]]      [[
+    0.20587046 -0.20587045]]      [[ 0.20587046 -0.20587045]]      [[ 0.20587046 -0.20587045]]      [[
+    0.20587046 -0.20587045]]      [[-0.79412955  0.79412955]]      [[ 0.20587046 -0.20587045]]      [[
+    0.20587039 -0.20587039]]      [[-0.79412961  0.79412961]]]
+
+
+    At every stop the following information is given:  * Forward or backward pass  *
+    Node type (e.g. ''Times'')  * Name if given, otherwise it is omitted  * uid, which
+    is a unique reference within the graph  * shape having the format [dynamic axis](static
+    axes). E.g. ``[*,*](2,)``    means that the node''s output has two dynamic axes
+    (batch and sequence) and    one static axis (2 dimensions)'
+  type: module
+  uid: cntk.debugging.debug
+- children:
+  - cntk.debugging.profiler.disable_profiler
+  - cntk.debugging.profiler.enable_profiler
+  - cntk.debugging.profiler.start_profiler
+  - cntk.debugging.profiler.stop_profiler
+  fullName: cntk.debugging.profiler
+  langs:
+  - python
+  module: cntk.debugging.profiler
+  name: profiler
+  source:
+    id: profiler
+    path: /bindings/python\cntk\debugging\profiler.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\debugging\profiler.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: module
+  uid: cntk.debugging.profiler
 references:
-- fullName: cntk.debugging.dump_function
+- fullName: cntk.debugging.debug.debug_model
   isExternal: false
-  name: dump_function
-  parent: cntk.debugging
-  uid: cntk.debugging.dump_function
-- fullName: cntk.debugging.dump_signature
+  name: debug_model
+  parent: cntk.debugging.debug
+  uid: cntk.debugging.debug.debug_model
+- fullName: cntk.debugging.debug.save_as_legacy_model
   isExternal: false
-  name: dump_signature
-  parent: cntk.debugging
-  uid: cntk.debugging.dump_signature
+  name: save_as_legacy_model
+  parent: cntk.debugging.debug
+  uid: cntk.debugging.debug.save_as_legacy_model
+- fullName: cntk.debugging.debug.set_computation_network_trace_level
+  isExternal: false
+  name: set_computation_network_trace_level
+  parent: cntk.debugging.debug
+  uid: cntk.debugging.debug.set_computation_network_trace_level
+- fullName: cntk.debugging.debug.set_computation_network_track_gap_nans
+  isExternal: false
+  name: set_computation_network_track_gap_nans
+  parent: cntk.debugging.debug
+  uid: cntk.debugging.debug.set_computation_network_track_gap_nans
+- fullName: cntk.debugging.profiler.disable_profiler
+  isExternal: false
+  name: disable_profiler
+  parent: cntk.debugging.profiler
+  uid: cntk.debugging.profiler.disable_profiler
+- fullName: cntk.debugging.profiler.enable_profiler
+  isExternal: false
+  name: enable_profiler
+  parent: cntk.debugging.profiler
+  uid: cntk.debugging.profiler.enable_profiler
+- fullName: cntk.debugging.profiler.start_profiler
+  isExternal: false
+  name: start_profiler
+  parent: cntk.debugging.profiler
+  uid: cntk.debugging.profiler.start_profiler
+- fullName: cntk.debugging.profiler.stop_profiler
+  isExternal: false
+  name: stop_profiler
+  parent: cntk.debugging.profiler
+  uid: cntk.debugging.profiler.stop_profiler

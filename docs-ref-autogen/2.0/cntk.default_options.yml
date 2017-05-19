@@ -79,8 +79,8 @@ items:
     content: get_default_override(function_or_class, **kwargs)
     parameters:
     - description: "the function that calls this. For example:\n\n<!-- literal_block\
-        \ {\"names\": [], \"ids\": [], \"classes\": [], \"backrefs\": [], \"dupnames\"\
-        : [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   def Convolution(args,\
+        \ {\"names\": [], \"ids\": [], \"classes\": [], \"xml:space\": \"preserve\"\
+        , \"backrefs\": [], \"dupnames\": []} -->\n\n````\n\n   def Convolution(args,\
         \ init=default_override_or(glorot_uniform()), activation=default_override_or(identity),\
         \ pad=default_override_or(False)):\n   init = _get_default_override(Convolution,\
         \ init=init) # pass default under the same name\n   ````"
@@ -106,29 +106,4 @@ items:
     - id: value
   type: function
   uid: cntk.default_options.is_default_override
-references:
-- fullName: cntk.default_options.default_options
-  isExternal: false
-  name: default_options
-  parent: cntk.default_options
-  uid: cntk.default_options.default_options
-- fullName: cntk.default_options.default_options_for
-  isExternal: false
-  name: default_options_for
-  parent: cntk.default_options
-  uid: cntk.default_options.default_options_for
-- fullName: cntk.default_options.default_override_or
-  isExternal: false
-  name: default_override_or
-  parent: cntk.default_options
-  uid: cntk.default_options.default_override_or
-- fullName: cntk.default_options.get_default_override
-  isExternal: false
-  name: get_default_override
-  parent: cntk.default_options
-  uid: cntk.default_options.get_default_override
-- fullName: cntk.default_options.is_default_override
-  isExternal: false
-  name: is_default_override
-  parent: cntk.default_options
-  uid: cntk.default_options.is_default_override
+references: []

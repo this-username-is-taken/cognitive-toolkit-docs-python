@@ -1,7 +1,13 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- children: []
+- children:
+  - cntk.layers.blocks
+  - cntk.layers.higher_order_layers
+  - cntk.layers.layers
+  - cntk.layers.models
+  - cntk.layers.sequence
+  - cntk.layers.typing
   fullName: cntk.layers
   langs:
   - python
@@ -18,4 +24,501 @@ items:
   summary: CNTK Layers library
   type: module
   uid: cntk.layers
-references: []
+- children:
+  - cntk.layers.blocks.BlockFunction
+  - cntk.layers.blocks.ForwardDeclaration
+  - cntk.layers.blocks.GRU
+  - cntk.layers.blocks.LSTM
+  - cntk.layers.blocks.RNNUnit
+  - cntk.layers.blocks.Stabilizer
+  - cntk.layers.blocks.UntestedBranchError
+  fullName: cntk.layers.blocks
+  langs:
+  - python
+  module: cntk.layers.blocks
+  name: blocks
+  source:
+    id: blocks
+    path: /bindings/python\cntk\layers\blocks.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\layers\blocks.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: Basic building blocks that are semantically not layers (not used in a layered
+    fashion), e.g. the LSTM block.
+  type: module
+  uid: cntk.layers.blocks
+- children:
+  - cntk.layers.higher_order_layers.For
+  - cntk.layers.higher_order_layers.LayerStack
+  - cntk.layers.higher_order_layers.ResNetBlock
+  - cntk.layers.higher_order_layers.Sequential
+  - cntk.layers.higher_order_layers.SequentialClique
+  fullName: cntk.layers.higher_order_layers
+  langs:
+  - python
+  module: cntk.layers.higher_order_layers
+  name: higher_order_layers
+  source:
+    id: higher_order_layers
+    path: /bindings/python\cntk\layers\higher_order_layers.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\layers\higher_order_layers.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: Higher-order functions, like :func:`Sequential` and :func:`ResNetBlock`.
+    Note that sequential higher-order functions like :func:`~cntk.layers.sequence.Recurrence`
+    are in :mod:`cntk.layers.sequence`.
+  type: module
+  uid: cntk.layers.higher_order_layers
+- children:
+  - cntk.layers.layers.Activation
+  - cntk.layers.layers.AveragePooling
+  - cntk.layers.layers.BatchNormalization
+  - cntk.layers.layers.Convolution
+  - cntk.layers.layers.Convolution1D
+  - cntk.layers.layers.Convolution2D
+  - cntk.layers.layers.Convolution3D
+  - cntk.layers.layers.ConvolutionTranspose
+  - cntk.layers.layers.ConvolutionTranspose1D
+  - cntk.layers.layers.ConvolutionTranspose2D
+  - cntk.layers.layers.ConvolutionTranspose3D
+  - cntk.layers.layers.Dense
+  - cntk.layers.layers.Dropout
+  - cntk.layers.layers.Embedding
+  - cntk.layers.layers.GlobalAveragePooling
+  - cntk.layers.layers.GlobalMaxPooling
+  - cntk.layers.layers.Label
+  - cntk.layers.layers.LayerNormalization
+  - cntk.layers.layers.MaxPooling
+  - cntk.layers.layers.MaxUnpooling
+  fullName: cntk.layers.layers
+  langs:
+  - python
+  module: cntk.layers.layers
+  name: layers
+  source:
+    id: layers
+    path: /bindings/python\cntk\layers\layers.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\layers\layers.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: Blocks in the network that are used layer-like, i.e. layered on top of
+    each other e.g. a fully connected layer with non-linearity.
+  type: module
+  uid: cntk.layers.layers
+- children:
+  - cntk.layers.models.attention
+  fullName: cntk.layers.models
+  langs:
+  - python
+  module: cntk.layers.models
+  name: models
+  source:
+    id: models
+    path: /bindings/python\cntk\layers\models\__init__.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\layers\models\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: Layers and building blocks that are not generic but represent more specific
+    model types go here.
+  type: module
+  uid: cntk.layers.models
+- children:
+  - cntk.layers.sequence.Delay
+  - cntk.layers.sequence.Fold
+  - cntk.layers.sequence.PastValueWindow
+  - cntk.layers.sequence.Recurrence
+  - cntk.layers.sequence.RecurrenceFrom
+  - cntk.layers.sequence.UnfoldFrom
+  fullName: cntk.layers.sequence
+  langs:
+  - python
+  module: cntk.layers.sequence
+  name: sequence
+  source:
+    id: sequence
+    path: /bindings/python\cntk\layers\sequence.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\layers\sequence.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: First / higher-order functions over sequences, like :func:`Recurrence`.
+  type: module
+  uid: cntk.layers.sequence
+- children:
+  - cntk.layers.typing.ParameterTensor
+  - cntk.layers.typing.Sequence
+  - cntk.layers.typing.SequenceOver
+  - cntk.layers.typing.SequenceOverMeta
+  - cntk.layers.typing.Signature
+  - cntk.layers.typing.SparseTensor
+  - cntk.layers.typing.Tensor
+  fullName: cntk.layers.typing
+  langs:
+  - python
+  module: cntk.layers.typing
+  name: typing
+  source:
+    id: typing
+    path: /bindings/python\cntk\layers\typing.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\layers\typing.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'The CNTK typing module contains basic CNTK type meta-classes for :func:`~cntk.functions.Function.update_signature`
+    and type signatures for the CNTK :class:`~cntk.ops.functions.Function` decorator.
+
+
+    The type of a CNTK :class:`~cntk.variables.Variable` is defined by five properties:
+    `shape`, `dynamic_axes`, `is_sparse`, `dtype`, and `needs_gradient`. Some API
+    functions accept these variables as independent arguments, e.g. :class:`~cntk.input`.
+    The typing module provides a Pythonic way to represent the variable type properties
+    as a single data object.
+
+
+    Python type syntax can be used to create such a record for the three main properties,
+    `shape`, `dynamic_axes`, and `is_sparse`, using :class:`~cntk.layers.typing.Tensor`,  :class:`~cntk.layers.typing.SparseTensor`,  :class:`~cntk.layers.typing.ParameterTensor`,
+    :class:`~cntk.layers.typing.Sequence`,  and :class:`~cntk.layers.typing.SequenceOver`.
+
+
+    Note: This new type system may undergo changes. Please give us feedback on github
+    or stackoverflow
+
+
+    .. rubric:: Example
+
+
+    >>> # Tensor[...] denotes a data variable (with implied batch dimension) >>> from
+    cntk.layers.typing import * >>> tp = Tensor[13,42] >>> tp.shape (13, 42) >>> tp.is_sparse
+    False >>> [str(axis.name) for axis in tp.dynamic_axes] [''defaultBatchAxis'']
+
+
+    >>> # SparseTensor[...] is a sparse Tensor >>> tp = SparseTensor[9000] >>> tp.is_sparse
+    True
+
+
+    This record can be directly passed to update_signature().
+
+
+    .. rubric:: Example
+
+
+    >>> from cntk.layers import * >>> f = Dense(500) >>> f.update_signature(Tensor[13,42])
+    >>> f.shape (500,)
+
+
+    >>> # This is just the same as saying >>> f = Dense(500) >>> _ = f.replace_placeholders({f.arguments[0]:
+    C.input(shape=(13,42), dynamic_axes=[Axis.default_batch_axis()])}) >>> f.shape
+    (500,)
+
+
+    To specify types with a dynamic axis, use `Sequence[]`.
+
+
+    .. rubric:: Example
+
+
+    >>> tp = Sequence[SparseTensor[9000]] >>> [str(axis.name) for axis in tp.dynamic_axes]
+    [''defaultBatchAxis'', ''defaultDynamicAxis'']
+
+
+    This will refer to the default dynamic axis. If your model uses multiple dynamic
+    axes, such as a sequence-to-sequence model, you use `SequenceOver[]` to define
+    your own sequence type for each.
+
+
+    .. rubric:: Example
+
+
+    >>> InputSequence = SequenceOver[Axis(''input'')] >>> tp = InputSequence[SparseTensor[9000]]
+    >>> [str(axis.name) for axis in tp.dynamic_axes] [''defaultBatchAxis'', ''input'']
+
+
+    The typing syntax can be used to directly define CNTK functions with their input
+    types. This is often done for the criterion function.
+
+
+    .. rubric:: Example
+
+
+    >>> from cntk import debugging, cross_entropy_with_softmax >>> model = Sequential([Embedding(300),
+    Fold(GRU(128)), Dense(10)]) >>> debugging.dump_signature(model) Function(keep:
+    Sequence[tensor]) -> Sequence[tensor] >>> inputAxis = Axis(''inputAxis'') >>>
+    @Function ... @Signature(input=SequenceOver[inputAxis][Tensor[128]], label=Tensor[10])
+    ... def criterion(input, label): ...     output = model(input) ...     return
+    cross_entropy_with_softmax(output, label) >>> debugging.dump_signature(criterion)
+    Function(input: SequenceOver[inputAxis][Tensor[128]], label: Tensor[10]) -> Tensor[1]
+
+
+    The following lists a few common errors with CNTK type objects:
+
+
+    .. rubric:: Example
+
+
+    >>> # types are abstract, they cannot be instantiated directly >>> from cntk.layers.typing
+    import Tensor >>> try: ...     inp = Tensor[32]()   # attempt to create an instance
+    of type Tensor[32] ... except TypeError as e: ...     print(''ERROR: '' + str(e))
+    ERROR: Can''t instantiate abstract class Tensor[32]. Please use ''input(Tensor[32])''.
+
+
+    >>> # types are not inputs >>> try: ...     inp = Tensor[32] ...     y = sigmoid(inp)
+    ... except ValueError as e: ...     print(''ERROR: '' + str(e)) ERROR: Input is
+    a type object (Tensor[32]). Did you mean to pass ''input(Tensor[32])''?
+
+
+    Using Python type syntax, besides being more concise and easier to memorize, has
+    the added benefit of beign able to more easily talk about types of CNTK objects,
+    very similar to how one would talk about the types of Python objects (e.g. `List[Tuple[int,float]]`).
+    This is particularly beneficial for the functional-programming style of the Layers
+    library, where functions are also reasoned about by their types. In functional
+    programming, it has been observed that getting the types of functions right is
+    a critical step towards correct code.
+
+
+    Note that the type syntax does not allow to specify the special-purpose type property
+    `needs_gradient`, nor to `dtype` which instead should be specified as a global
+    setting. If these properties are needed on a type object, please use construct
+    an input using :func:`~cntk.input_var` and get its `type` property.'
+  type: module
+  uid: cntk.layers.typing
+references:
+- fullName: cntk.layers.blocks.BlockFunction
+  isExternal: false
+  name: BlockFunction
+  parent: cntk.layers.blocks
+  uid: cntk.layers.blocks.BlockFunction
+- fullName: cntk.layers.blocks.ForwardDeclaration
+  isExternal: false
+  name: ForwardDeclaration
+  parent: cntk.layers.blocks
+  uid: cntk.layers.blocks.ForwardDeclaration
+- fullName: cntk.layers.blocks.GRU
+  isExternal: false
+  name: GRU
+  parent: cntk.layers.blocks
+  uid: cntk.layers.blocks.GRU
+- fullName: cntk.layers.blocks.LSTM
+  isExternal: false
+  name: LSTM
+  parent: cntk.layers.blocks
+  uid: cntk.layers.blocks.LSTM
+- fullName: cntk.layers.blocks.RNNUnit
+  isExternal: false
+  name: RNNUnit
+  parent: cntk.layers.blocks
+  uid: cntk.layers.blocks.RNNUnit
+- fullName: cntk.layers.blocks.Stabilizer
+  isExternal: false
+  name: Stabilizer
+  parent: cntk.layers.blocks
+  uid: cntk.layers.blocks.Stabilizer
+- fullName: cntk.layers.blocks.UntestedBranchError
+  isExternal: false
+  name: UntestedBranchError
+  parent: cntk.layers.blocks
+  uid: cntk.layers.blocks.UntestedBranchError
+- fullName: cntk.layers.higher_order_layers.For
+  isExternal: false
+  name: For
+  parent: cntk.layers.higher_order_layers
+  uid: cntk.layers.higher_order_layers.For
+- fullName: cntk.layers.higher_order_layers.LayerStack
+  isExternal: false
+  name: LayerStack
+  parent: cntk.layers.higher_order_layers
+  uid: cntk.layers.higher_order_layers.LayerStack
+- fullName: cntk.layers.higher_order_layers.ResNetBlock
+  isExternal: false
+  name: ResNetBlock
+  parent: cntk.layers.higher_order_layers
+  uid: cntk.layers.higher_order_layers.ResNetBlock
+- fullName: cntk.layers.higher_order_layers.Sequential
+  isExternal: false
+  name: Sequential
+  parent: cntk.layers.higher_order_layers
+  uid: cntk.layers.higher_order_layers.Sequential
+- fullName: cntk.layers.higher_order_layers.SequentialClique
+  isExternal: false
+  name: SequentialClique
+  parent: cntk.layers.higher_order_layers
+  uid: cntk.layers.higher_order_layers.SequentialClique
+- fullName: cntk.layers.layers.Activation
+  isExternal: false
+  name: Activation
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.Activation
+- fullName: cntk.layers.layers.AveragePooling
+  isExternal: false
+  name: AveragePooling
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.AveragePooling
+- fullName: cntk.layers.layers.BatchNormalization
+  isExternal: false
+  name: BatchNormalization
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.BatchNormalization
+- fullName: cntk.layers.layers.Convolution
+  isExternal: false
+  name: Convolution
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.Convolution
+- fullName: cntk.layers.layers.Convolution1D
+  isExternal: false
+  name: Convolution1D
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.Convolution1D
+- fullName: cntk.layers.layers.Convolution2D
+  isExternal: false
+  name: Convolution2D
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.Convolution2D
+- fullName: cntk.layers.layers.Convolution3D
+  isExternal: false
+  name: Convolution3D
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.Convolution3D
+- fullName: cntk.layers.layers.ConvolutionTranspose
+  isExternal: false
+  name: ConvolutionTranspose
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.ConvolutionTranspose
+- fullName: cntk.layers.layers.ConvolutionTranspose1D
+  isExternal: false
+  name: ConvolutionTranspose1D
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.ConvolutionTranspose1D
+- fullName: cntk.layers.layers.ConvolutionTranspose2D
+  isExternal: false
+  name: ConvolutionTranspose2D
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.ConvolutionTranspose2D
+- fullName: cntk.layers.layers.ConvolutionTranspose3D
+  isExternal: false
+  name: ConvolutionTranspose3D
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.ConvolutionTranspose3D
+- fullName: cntk.layers.layers.Dense
+  isExternal: false
+  name: Dense
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.Dense
+- fullName: cntk.layers.layers.Dropout
+  isExternal: false
+  name: Dropout
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.Dropout
+- fullName: cntk.layers.layers.Embedding
+  isExternal: false
+  name: Embedding
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.Embedding
+- fullName: cntk.layers.layers.GlobalAveragePooling
+  isExternal: false
+  name: GlobalAveragePooling
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.GlobalAveragePooling
+- fullName: cntk.layers.layers.GlobalMaxPooling
+  isExternal: false
+  name: GlobalMaxPooling
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.GlobalMaxPooling
+- fullName: cntk.layers.layers.Label
+  isExternal: false
+  name: Label
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.Label
+- fullName: cntk.layers.layers.LayerNormalization
+  isExternal: false
+  name: LayerNormalization
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.LayerNormalization
+- fullName: cntk.layers.layers.MaxPooling
+  isExternal: false
+  name: MaxPooling
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.MaxPooling
+- fullName: cntk.layers.layers.MaxUnpooling
+  isExternal: false
+  name: MaxUnpooling
+  parent: cntk.layers.layers
+  uid: cntk.layers.layers.MaxUnpooling
+- fullName: cntk.layers.models.attention
+  isExternal: false
+  name: attention
+  parent: cntk.layers.models
+  uid: cntk.layers.models.attention
+- fullName: cntk.layers.sequence.Delay
+  isExternal: false
+  name: Delay
+  parent: cntk.layers.sequence
+  uid: cntk.layers.sequence.Delay
+- fullName: cntk.layers.sequence.Fold
+  isExternal: false
+  name: Fold
+  parent: cntk.layers.sequence
+  uid: cntk.layers.sequence.Fold
+- fullName: cntk.layers.sequence.PastValueWindow
+  isExternal: false
+  name: PastValueWindow
+  parent: cntk.layers.sequence
+  uid: cntk.layers.sequence.PastValueWindow
+- fullName: cntk.layers.sequence.Recurrence
+  isExternal: false
+  name: Recurrence
+  parent: cntk.layers.sequence
+  uid: cntk.layers.sequence.Recurrence
+- fullName: cntk.layers.sequence.RecurrenceFrom
+  isExternal: false
+  name: RecurrenceFrom
+  parent: cntk.layers.sequence
+  uid: cntk.layers.sequence.RecurrenceFrom
+- fullName: cntk.layers.sequence.UnfoldFrom
+  isExternal: false
+  name: UnfoldFrom
+  parent: cntk.layers.sequence
+  uid: cntk.layers.sequence.UnfoldFrom
+- fullName: cntk.layers.typing.ParameterTensor
+  isExternal: false
+  name: ParameterTensor
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.ParameterTensor
+- fullName: cntk.layers.typing.Sequence
+  isExternal: false
+  name: Sequence
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.Sequence
+- fullName: cntk.layers.typing.SequenceOver
+  isExternal: false
+  name: SequenceOver
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.SequenceOver
+- fullName: cntk.layers.typing.SequenceOverMeta
+  isExternal: false
+  name: SequenceOverMeta
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.SequenceOverMeta
+- fullName: cntk.layers.typing.Signature
+  isExternal: false
+  name: Signature
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.Signature
+- fullName: cntk.layers.typing.SparseTensor
+  isExternal: false
+  name: SparseTensor
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.SparseTensor
+- fullName: cntk.layers.typing.Tensor
+  isExternal: false
+  name: Tensor
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.Tensor

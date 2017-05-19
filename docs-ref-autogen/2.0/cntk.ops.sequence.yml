@@ -251,7 +251,7 @@ items:
     and labels, should be provided.'
   syntax:
     content: input(shape, dtype=<cntk.default_options.default_override_or object at
-      0x0000026BBECD9C18>, needs_gradient=False, is_sparse=False, sequence_axis=Axis('defaultDynamicAxis'),
+      0x00000227E8A26E80>, needs_gradient=False, is_sparse=False, sequence_axis=Axis('defaultDynamicAxis'),
       name='')
     parameters:
     - description: the shape of the input tensor
@@ -720,89 +720,4 @@ items:
       description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
   type: function
   uid: cntk.ops.sequence.where
-references:
-- fullName: cntk.ops.sequence.broadcast_as
-  isExternal: false
-  name: broadcast_as
-  parent: cntk.ops.sequence
-  uid: cntk.ops.sequence.broadcast_as
-- fullName: cntk.ops.sequence.delay
-  isExternal: false
-  name: delay
-  parent: cntk.ops.sequence
-  uid: cntk.ops.sequence.delay
-- fullName: cntk.ops.sequence.first
-  isExternal: false
-  name: first
-  parent: cntk.ops.sequence
-  uid: cntk.ops.sequence.first
-- fullName: cntk.ops.sequence.future_value
-  isExternal: false
-  name: future_value
-  parent: cntk.ops.sequence
-  uid: cntk.ops.sequence.future_value
-- fullName: cntk.ops.sequence.gather
-  isExternal: false
-  name: gather
-  parent: cntk.ops.sequence
-  uid: cntk.ops.sequence.gather
-- fullName: cntk.ops.sequence.input
-  isExternal: false
-  name: input
-  parent: cntk.ops.sequence
-  uid: cntk.ops.sequence.input
-- fullName: cntk.ops.sequence.is_first
-  isExternal: false
-  name: is_first
-  parent: cntk.ops.sequence
-  uid: cntk.ops.sequence.is_first
-- fullName: cntk.ops.sequence.is_last
-  isExternal: false
-  name: is_last
-  parent: cntk.ops.sequence
-  uid: cntk.ops.sequence.is_last
-- fullName: cntk.ops.sequence.last
-  isExternal: false
-  name: last
-  parent: cntk.ops.sequence
-  uid: cntk.ops.sequence.last
-- fullName: cntk.ops.sequence.past_value
-  isExternal: false
-  name: past_value
-  parent: cntk.ops.sequence
-  uid: cntk.ops.sequence.past_value
-- fullName: cntk.ops.sequence.reduce_max
-  isExternal: false
-  name: reduce_max
-  parent: cntk.ops.sequence
-  uid: cntk.ops.sequence.reduce_max
-- fullName: cntk.ops.sequence.reduce_sum
-  isExternal: false
-  name: reduce_sum
-  parent: cntk.ops.sequence
-  uid: cntk.ops.sequence.reduce_sum
-- fullName: cntk.ops.sequence.scatter
-  isExternal: false
-  name: scatter
-  parent: cntk.ops.sequence
-  uid: cntk.ops.sequence.scatter
-- fullName: cntk.ops.sequence.slice
-  isExternal: false
-  name: slice
-  parent: cntk.ops.sequence
-  uid: cntk.ops.sequence.slice
-- fullName: cntk.ops.sequence.softmax
-  isExternal: false
-  name: softmax
-  parent: cntk.ops.sequence
-  uid: cntk.ops.sequence.softmax
-- fullName: cntk.ops.sequence.unpack
-  isExternal: false
-  name: unpack
-  parent: cntk.ops.sequence
-  uid: cntk.ops.sequence.unpack
-- fullName: cntk.ops.sequence.where
-  isExternal: false
-  name: where
-  parent: cntk.ops.sequence
-  uid: cntk.ops.sequence.where
+references: []
