@@ -41,4 +41,19 @@ items:
       id: trace_level
   type: function
   uid: cntk.logging.progress_print.log_number_of_parameters
-references: []
+references:
+- fullName: cntk.logging.progress_print.ProgressPrinter
+  isExternal: false
+  name: ProgressPrinter
+  parent: cntk.logging.progress_print
+  uid: cntk.logging.progress_print.ProgressPrinter
+- fullName: cntk.logging.progress_print.TensorBoardProgressWriter
+  isExternal: false
+  name: TensorBoardProgressWriter
+  parent: cntk.logging.progress_print
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter
+- fullName: cntk.logging.progress_print.log_number_of_parameters
+  isExternal: false
+  name: log_number_of_parameters
+  parent: cntk.logging.progress_print
+  uid: cntk.logging.progress_print.log_number_of_parameters

@@ -157,8 +157,8 @@ items:
     \ you have not yet migrated to Python 3.x.\nNote: Although this is aimed at enabling\
     \ `@Function` syntax with type annotations in Python 2.7, `@Signature` is independent\
     \ of CNTK and can be used for any argument annotation.\nExample:\n<!-- literal_block\
-    \ {\"names\": [], \"ids\": [], \"classes\": [], \"xml:space\": \"preserve\", \"\
-    backrefs\": [], \"dupnames\": []} -->\n\n````\n\n   # Python 3:\n   @Function\n\
+    \ {\"ids\": [], \"xml:space\": \"preserve\", \"dupnames\": [], \"names\": [],\
+    \ \"classes\": [], \"backrefs\": []} -->\n\n````\n\n   # Python 3:\n   @Function\n\
     \   def f(x: Tensor[42]):\n       return sigmoid(x)\n\n   # Python 2.7:\n   @Function\n\
     \   @Signature(Tensor[42])\n   def f(x):\n       return sigmoid(x)\n\n   # note\
     \ that this:\n   @Function\n   @Signature(x:int)\n   def sqr(x):\n       return\
@@ -175,4 +175,39 @@ items:
       id: '**kwargs'
   type: function
   uid: cntk.layers.typing.Signature
-references: []
+references:
+- fullName: cntk.layers.typing.ParameterTensor
+  isExternal: false
+  name: ParameterTensor
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.ParameterTensor
+- fullName: cntk.layers.typing.Sequence
+  isExternal: false
+  name: Sequence
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.Sequence
+- fullName: cntk.layers.typing.SequenceOver
+  isExternal: false
+  name: SequenceOver
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.SequenceOver
+- fullName: cntk.layers.typing.SequenceOverMeta
+  isExternal: false
+  name: SequenceOverMeta
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.SequenceOverMeta
+- fullName: cntk.layers.typing.Signature
+  isExternal: false
+  name: Signature
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.Signature
+- fullName: cntk.layers.typing.SparseTensor
+  isExternal: false
+  name: SparseTensor
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.SparseTensor
+- fullName: cntk.layers.typing.Tensor
+  isExternal: false
+  name: Tensor
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.Tensor

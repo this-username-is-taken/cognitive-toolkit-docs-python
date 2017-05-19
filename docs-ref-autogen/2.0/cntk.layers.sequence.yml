@@ -53,9 +53,9 @@ items:
     \  ---t---  --(t+1)--\n```"
   syntax:
     content: Delay(T=1, initial_state=<cntk.default_options.default_override_or object
-      at 0x00000227E8C786D8>, name='')
+      at 0x0000020CE5A98470>, name='')
     parameters:
-    - defaultValue: <cntk.default_options.default_override_or object at 0x00000227E8C786D8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A98470>
       description: the number of time steps to look into the past, where negative
         values mean to look into the future, and 0 means a no-op (default 1).
       id: T
@@ -117,8 +117,8 @@ items:
     \    array([[ 25.,   8.]], dtype=float32)\n```"
   syntax:
     content: Fold(folder_function, go_backwards=<cntk.default_options.default_override_or
-      object at 0x00000227E8C787F0>, initial_state=<cntk.default_options.default_override_or
-      object at 0x00000227E8C78828>, return_full_state=False, name='')
+      object at 0x0000020CE5A98588>, initial_state=<cntk.default_options.default_override_or
+      object at 0x0000020CE5A985C0>, return_full_state=False, name='')
     parameters:
     - description: This function must have N+1 inputs and N outputs, where N is the
         number of state variables (typically 1 for GRU and plain RNNs, and 2 for LSTMs).
@@ -139,7 +139,7 @@ items:
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - defaultValue: <cntk.default_options.default_override_or object at 0x00000227E8C78828>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A985C0>
       description: if `True` and the step function has more than one state variable,
         then the layer returns the final value of a all state variables (a tuple of
         sequences); whereas if not given or `False`, only the final value of the first
@@ -147,7 +147,7 @@ items:
       id: return_full_state
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x00000227E8C787F0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A98588>
       description: the name of the Function instance in the network
       id: name
       type:
@@ -196,9 +196,9 @@ items:
     ```"
   syntax:
     content: PastValueWindow(window_size, axis, go_backwards=<cntk.default_options.default_override_or
-      object at 0x00000227E8C78710>, name='')
+      object at 0x0000020CE5A984A8>, name='')
     parameters:
-    - defaultValue: <cntk.default_options.default_override_or object at 0x00000227E8C78710>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A984A8>
       id: window_size
     - description: maximum number of items in sequences. The *axis* will have this
         dimension.
@@ -277,8 +277,8 @@ items:
     \ ,  144.5]], dtype=float32)]\n```"
   syntax:
     content: Recurrence(step_function, go_backwards=<cntk.default_options.default_override_or
-      object at 0x00000227E8C78780>, initial_state=<cntk.default_options.default_override_or
-      object at 0x00000227E8C787B8>, return_full_state=False, name='')
+      object at 0x0000020CE5A98518>, initial_state=<cntk.default_options.default_override_or
+      object at 0x0000020CE5A98550>, return_full_state=False, name='')
     parameters:
     - description: This function must have N+1 inputs and N outputs, where N is the
         number of state variables (typically 1 for GRU and plain RNNs, and 2 for LSTMs).
@@ -299,7 +299,7 @@ items:
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - defaultValue: <cntk.default_options.default_override_or object at 0x00000227E8C787B8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A98550>
       description: if `True` and the step function has more than one state variable,
         then the layer returns a all state variables (a tuple of sequences); whereas
         if not given or `False`, only the first state variable is returned to the
@@ -307,7 +307,7 @@ items:
       id: return_full_state
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x00000227E8C78780>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A98518>
       description: the name of the Function instance in the network
       id: name
       type:
@@ -395,7 +395,7 @@ items:
     ```'
   syntax:
     content: RecurrenceFrom(step_function, go_backwards=<cntk.default_options.default_override_or
-      object at 0x00000227E8C78748>, return_full_state=False, name='')
+      object at 0x0000020CE5A984E0>, return_full_state=False, name='')
     parameters:
     - description: This function must have N+1 inputs and N outputs, where N is the
         number of state variables (typically 1 for GRU and plain RNNs, and 2 for LSTMs).
@@ -416,7 +416,7 @@ items:
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - defaultValue: <cntk.default_options.default_override_or object at 0x00000227E8C78748>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000020CE5A984E0>
       description: if `True` and the step function has more than one state variable,
         then the layer returns a all state variables (a tuple of sequences); whereas
         if not given or `False`, only the first state variable is returned to the
@@ -517,4 +517,34 @@ items:
       - Function
   type: function
   uid: cntk.layers.sequence.UnfoldFrom
-references: []
+references:
+- fullName: cntk.layers.sequence.Delay
+  isExternal: false
+  name: Delay
+  parent: cntk.layers.sequence
+  uid: cntk.layers.sequence.Delay
+- fullName: cntk.layers.sequence.Fold
+  isExternal: false
+  name: Fold
+  parent: cntk.layers.sequence
+  uid: cntk.layers.sequence.Fold
+- fullName: cntk.layers.sequence.PastValueWindow
+  isExternal: false
+  name: PastValueWindow
+  parent: cntk.layers.sequence
+  uid: cntk.layers.sequence.PastValueWindow
+- fullName: cntk.layers.sequence.Recurrence
+  isExternal: false
+  name: Recurrence
+  parent: cntk.layers.sequence
+  uid: cntk.layers.sequence.Recurrence
+- fullName: cntk.layers.sequence.RecurrenceFrom
+  isExternal: false
+  name: RecurrenceFrom
+  parent: cntk.layers.sequence
+  uid: cntk.layers.sequence.RecurrenceFrom
+- fullName: cntk.layers.sequence.UnfoldFrom
+  isExternal: false
+  name: UnfoldFrom
+  parent: cntk.layers.sequence
+  uid: cntk.layers.sequence.UnfoldFrom

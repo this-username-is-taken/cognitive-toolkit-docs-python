@@ -13,7 +13,6 @@ items:
   - cntk.io.StreamInformation
   - cntk.io.UserMinibatchSource
   - cntk.io.sequence_to_cntk_text_format
-  - cntk.io.transforms
   fullName: cntk.io
   langs:
   - python
@@ -50,11 +49,11 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 613
   summary: "Configures the CNTK text-format reader that reads text-based files with\
-    \ lines of the form:\n<!-- literal_block {\"names\": [], \"ids\": [], \"classes\"\
-    : [], \"xml:space\": \"preserve\", \"backrefs\": [], \"dupnames\": []} -->\n\n\
-    ````\n\n   [Sequence_Id] (Sample)+\n   ````\nwhere:\n<!-- literal_block {\"names\"\
-    : [], \"ids\": [], \"classes\": [], \"xml:space\": \"preserve\", \"backrefs\"\
-    : [], \"dupnames\": []} -->\n\n````\n\n   Sample=|Input_Name (Value )*\n   ````"
+    \ lines of the form:\n<!-- literal_block {\"ids\": [], \"xml:space\": \"preserve\"\
+    , \"dupnames\": [], \"names\": [], \"classes\": [], \"backrefs\": []} -->\n\n\
+    ````\n\n   [Sequence_Id] (Sample)+\n   ````\nwhere:\n<!-- literal_block {\"ids\"\
+    : [], \"xml:space\": \"preserve\", \"dupnames\": [], \"names\": [], \"classes\"\
+    : [], \"backrefs\": []} -->\n\n````\n\n   Sample=|Input_Name (Value )*\n   ````"
   syntax:
     content: CTFDeserializer(filename, streams)
     parameters:
@@ -135,11 +134,11 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 567
   summary: "Configures the image reader that reads images and corresponding labels\
-    \ from a file of the form:\n<!-- literal_block {\"names\": [], \"ids\": [], \"\
-    classes\": [], \"xml:space\": \"preserve\", \"backrefs\": [], \"dupnames\": []}\
+    \ from a file of the form:\n<!-- literal_block {\"ids\": [], \"xml:space\": \"\
+    preserve\", \"dupnames\": [], \"names\": [], \"classes\": [], \"backrefs\": []}\
     \ -->\n\n````\n\n   <full path to image> <tab> <numerical label (0-based class\
-    \ id)>\n   ````\nor:\n<!-- literal_block {\"names\": [], \"ids\": [], \"classes\"\
-    : [], \"xml:space\": \"preserve\", \"backrefs\": [], \"dupnames\": []} -->\n\n\
+    \ id)>\n   ````\nor:\n<!-- literal_block {\"ids\": [], \"xml:space\": \"preserve\"\
+    , \"dupnames\": [], \"names\": [], \"classes\": [], \"backrefs\": []} -->\n\n\
     ````\n\n   sequenceId <tab> path <tab> label\n   ````"
   syntax:
     content: ImageDeserializer(filename, streams)
@@ -261,44 +260,59 @@ items:
       - str
   type: function
   uid: cntk.io.sequence_to_cntk_text_format
-- children:
-  - cntk.io.transforms.color
-  - cntk.io.transforms.crop
-  - cntk.io.transforms.mean
-  - cntk.io.transforms.scale
-  fullName: cntk.io.transforms
-  langs:
-  - python
-  module: cntk.io.transforms
-  name: transforms
-  source:
-    id: transforms
-    path: /bindings/python\cntk\io\transforms.py
-    remote:
-      branch: master
-      path: /bindings/python\cntk\io\transforms.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 0
-  type: module
-  uid: cntk.io.transforms
 references:
-- fullName: cntk.io.transforms.color
+- fullName: cntk.io.CTFDeserializer
   isExternal: false
-  name: color
-  parent: cntk.io.transforms
-  uid: cntk.io.transforms.color
-- fullName: cntk.io.transforms.crop
+  name: CTFDeserializer
+  parent: cntk.io
+  uid: cntk.io.CTFDeserializer
+- fullName: cntk.io.HTKFeatureDeserializer
   isExternal: false
-  name: crop
-  parent: cntk.io.transforms
-  uid: cntk.io.transforms.crop
-- fullName: cntk.io.transforms.mean
+  name: HTKFeatureDeserializer
+  parent: cntk.io
+  uid: cntk.io.HTKFeatureDeserializer
+- fullName: cntk.io.HTKMLFDeserializer
   isExternal: false
-  name: mean
-  parent: cntk.io.transforms
-  uid: cntk.io.transforms.mean
-- fullName: cntk.io.transforms.scale
+  name: HTKMLFDeserializer
+  parent: cntk.io
+  uid: cntk.io.HTKMLFDeserializer
+- fullName: cntk.io.ImageDeserializer
   isExternal: false
-  name: scale
-  parent: cntk.io.transforms
-  uid: cntk.io.transforms.scale
+  name: ImageDeserializer
+  parent: cntk.io
+  uid: cntk.io.ImageDeserializer
+- fullName: cntk.io.MinibatchData
+  isExternal: false
+  name: MinibatchData
+  parent: cntk.io
+  uid: cntk.io.MinibatchData
+- fullName: cntk.io.MinibatchSource
+  isExternal: false
+  name: MinibatchSource
+  parent: cntk.io
+  uid: cntk.io.MinibatchSource
+- fullName: cntk.io.StreamConfiguration
+  isExternal: false
+  name: StreamConfiguration
+  parent: cntk.io
+  uid: cntk.io.StreamConfiguration
+- fullName: cntk.io.StreamDef
+  isExternal: false
+  name: StreamDef
+  parent: cntk.io
+  uid: cntk.io.StreamDef
+- fullName: cntk.io.StreamInformation
+  isExternal: false
+  name: StreamInformation
+  parent: cntk.io
+  uid: cntk.io.StreamInformation
+- fullName: cntk.io.UserMinibatchSource
+  isExternal: false
+  name: UserMinibatchSource
+  parent: cntk.io
+  uid: cntk.io.UserMinibatchSource
+- fullName: cntk.io.sequence_to_cntk_text_format
+  isExternal: false
+  name: sequence_to_cntk_text_format
+  parent: cntk.io
+  uid: cntk.io.sequence_to_cntk_text_format

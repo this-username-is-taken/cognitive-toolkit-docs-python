@@ -371,4 +371,49 @@ items:
         with mean *0* and standard deviation $$scale*sqrt(3.0/fanIn)$$
   type: function
   uid: cntk.initializer.xavier
-references: []
+references:
+- fullName: cntk.initializer.bilinear
+  isExternal: false
+  name: bilinear
+  parent: cntk.initializer
+  uid: cntk.initializer.bilinear
+- fullName: cntk.initializer.glorot_normal
+  isExternal: false
+  name: glorot_normal
+  parent: cntk.initializer
+  uid: cntk.initializer.glorot_normal
+- fullName: cntk.initializer.glorot_uniform
+  isExternal: false
+  name: glorot_uniform
+  parent: cntk.initializer
+  uid: cntk.initializer.glorot_uniform
+- fullName: cntk.initializer.he_normal
+  isExternal: false
+  name: he_normal
+  parent: cntk.initializer
+  uid: cntk.initializer.he_normal
+- fullName: cntk.initializer.he_uniform
+  isExternal: false
+  name: he_uniform
+  parent: cntk.initializer
+  uid: cntk.initializer.he_uniform
+- fullName: cntk.initializer.initializer_with_rank
+  isExternal: false
+  name: initializer_with_rank
+  parent: cntk.initializer
+  uid: cntk.initializer.initializer_with_rank
+- fullName: cntk.initializer.normal
+  isExternal: false
+  name: normal
+  parent: cntk.initializer
+  uid: cntk.initializer.normal
+- fullName: cntk.initializer.uniform
+  isExternal: false
+  name: uniform
+  parent: cntk.initializer
+  uid: cntk.initializer.uniform
+- fullName: cntk.initializer.xavier
+  isExternal: false
+  name: xavier
+  parent: cntk.initializer
+  uid: cntk.initializer.xavier

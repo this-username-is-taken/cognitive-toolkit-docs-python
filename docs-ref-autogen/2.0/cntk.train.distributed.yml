@@ -118,4 +118,29 @@ items:
       description: a distributed learner instance
   type: function
   uid: cntk.train.distributed.data_parallel_distributed_learner
-references: []
+references:
+- fullName: cntk.train.distributed.Communicator
+  isExternal: false
+  name: Communicator
+  parent: cntk.train.distributed
+  uid: cntk.train.distributed.Communicator
+- fullName: cntk.train.distributed.DistributedLearner
+  isExternal: false
+  name: DistributedLearner
+  parent: cntk.train.distributed
+  uid: cntk.train.distributed.DistributedLearner
+- fullName: cntk.train.distributed.WorkerDescriptor
+  isExternal: false
+  name: WorkerDescriptor
+  parent: cntk.train.distributed
+  uid: cntk.train.distributed.WorkerDescriptor
+- fullName: cntk.train.distributed.block_momentum_distributed_learner
+  isExternal: false
+  name: block_momentum_distributed_learner
+  parent: cntk.train.distributed
+  uid: cntk.train.distributed.block_momentum_distributed_learner
+- fullName: cntk.train.distributed.data_parallel_distributed_learner
+  isExternal: false
+  name: data_parallel_distributed_learner
+  parent: cntk.train.distributed
+  uid: cntk.train.distributed.data_parallel_distributed_learner

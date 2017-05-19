@@ -68,7 +68,7 @@ items:
   syntax:
     content: adadelta(parameters, lr=<cntk.cntk_py.training_parameter_per_sample_schedule;
       proxy of <Swig Object of type 'CNTK::TrainingParameterPerUnitSchedule< double,CNTK::TrainingParameterSchedule<
-      double >::UnitType::Sample > *' at 0x00000227E8A285D0> >, rho=0.95, epsilon=1e-08,
+      double >::UnitType::Sample > *' at 0x0000020CE58775D0> >, rho=0.95, epsilon=1e-08,
       l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
       gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
       use_mean_gradient=False)
@@ -208,7 +208,7 @@ items:
     information.
   syntax:
     content: adam(parameters, lr, momentum, unit_gain=True, variance_momentum=<cntk.cntk_py.momentum_as_time_constant_schedule;
-      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x00000227E8BAC390>
+      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x0000020CE5998390>
       >, l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
       gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
       use_mean_gradient=False)
@@ -317,7 +317,7 @@ items:
   summary: Creates an FSAdaGrad learner instance to learn the parameters.
   syntax:
     content: fsadagrad(parameters, lr, momentum, unit_gain=True, variance_momentum=<cntk.cntk_py.momentum_as_time_constant_schedule;
-      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x00000227E8BAC330>
+      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x0000020CE5998330>
       >, l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
       gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
       use_mean_gradient=False)
@@ -939,4 +939,99 @@ items:
       description: training parameter schedule
   type: function
   uid: cntk.learners.training_parameter_schedule
-references: []
+references:
+- fullName: cntk.learners.Learner
+  isExternal: false
+  name: Learner
+  parent: cntk.learners
+  uid: cntk.learners.Learner
+- fullName: cntk.learners.UnitType
+  isExternal: false
+  name: UnitType
+  parent: cntk.learners
+  uid: cntk.learners.UnitType
+- fullName: cntk.learners.UserLearner
+  isExternal: false
+  name: UserLearner
+  parent: cntk.learners
+  uid: cntk.learners.UserLearner
+- fullName: cntk.learners.adadelta
+  isExternal: false
+  name: adadelta
+  parent: cntk.learners
+  uid: cntk.learners.adadelta
+- fullName: cntk.learners.adagrad
+  isExternal: false
+  name: adagrad
+  parent: cntk.learners
+  uid: cntk.learners.adagrad
+- fullName: cntk.learners.adam
+  isExternal: false
+  name: adam
+  parent: cntk.learners
+  uid: cntk.learners.adam
+- fullName: cntk.learners.default_unit_gain_value
+  isExternal: false
+  name: default_unit_gain_value
+  parent: cntk.learners
+  uid: cntk.learners.default_unit_gain_value
+- fullName: cntk.learners.default_use_mean_gradient_value
+  isExternal: false
+  name: default_use_mean_gradient_value
+  parent: cntk.learners
+  uid: cntk.learners.default_use_mean_gradient_value
+- fullName: cntk.learners.fsadagrad
+  isExternal: false
+  name: fsadagrad
+  parent: cntk.learners
+  uid: cntk.learners.fsadagrad
+- fullName: cntk.learners.learning_rate_schedule
+  isExternal: false
+  name: learning_rate_schedule
+  parent: cntk.learners
+  uid: cntk.learners.learning_rate_schedule
+- fullName: cntk.learners.momentum_as_time_constant_schedule
+  isExternal: false
+  name: momentum_as_time_constant_schedule
+  parent: cntk.learners
+  uid: cntk.learners.momentum_as_time_constant_schedule
+- fullName: cntk.learners.momentum_schedule
+  isExternal: false
+  name: momentum_schedule
+  parent: cntk.learners
+  uid: cntk.learners.momentum_schedule
+- fullName: cntk.learners.momentum_sgd
+  isExternal: false
+  name: momentum_sgd
+  parent: cntk.learners
+  uid: cntk.learners.momentum_sgd
+- fullName: cntk.learners.nesterov
+  isExternal: false
+  name: nesterov
+  parent: cntk.learners
+  uid: cntk.learners.nesterov
+- fullName: cntk.learners.rmsprop
+  isExternal: false
+  name: rmsprop
+  parent: cntk.learners
+  uid: cntk.learners.rmsprop
+- fullName: cntk.learners.set_default_unit_gain_value
+  isExternal: false
+  name: set_default_unit_gain_value
+  parent: cntk.learners
+  uid: cntk.learners.set_default_unit_gain_value
+- fullName: cntk.learners.set_default_use_mean_gradient_value
+  isExternal: false
+  name: set_default_use_mean_gradient_value
+  parent: cntk.learners
+  uid: cntk.learners.set_default_use_mean_gradient_value
+- fullName: cntk.learners.sgd
+  isExternal: false
+  name: sgd
+  parent: cntk.learners
+  uid: cntk.learners.sgd
+- fullName: cntk.learners.training_parameter_schedule
+  isExternal: false
+  name: training_parameter_schedule
+  parent: cntk.learners
+  uid: cntk.learners.training_parameter_schedule
