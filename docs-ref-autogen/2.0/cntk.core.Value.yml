@@ -44,7 +44,7 @@ items:
 
     '
   syntax:
-    content: Value(self, batch, seq_starts=None, device=None)
+    content: Value(batch, seq_starts=None, device=None)
     parameters:
     - description: "batch input for *var*. It can be:\n\n   * a pure Python structure\
         \ (list of lists, ...),\n\n   * a list of NumPy arrays or SciPy sparse CSR\
@@ -81,10 +81,6 @@ items:
     removed.
   syntax:
     content: as_sequences(self, variable=None)
-    parameters:
-    - id: self
-    - defaultValue: None
-      id: variable
     return:
       description: If variable contains more dynamic axes than the batch axis, a list
         of NumPy arrays (if dense) or a SciPy CSR array (if sparse) will be returned.
@@ -107,7 +103,7 @@ items:
     startLine: 354
   summary: Creates a @cntk.core.Value object.
   syntax:
-    content: create()
+    content: create(var, data, seq_starts=None, device=None, read_only=False)
     parameters:
     - description: variable into which `data` is passed
       id: var
@@ -282,7 +278,7 @@ items:
     \ 0.,  0.,  0.,  0.,  1.,  0.],\n         [ 0.,  1.,  0.,  0.,  0.,  0.]]], dtype=float32)]\n\
     ```"
   syntax:
-    content: one_hot()
+    content: one_hot(batch, num_classes, dtype=None, device=None)
     parameters:
     - description: batch input data of indices
       id: batch

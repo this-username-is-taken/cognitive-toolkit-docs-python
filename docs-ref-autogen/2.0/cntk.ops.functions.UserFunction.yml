@@ -34,7 +34,7 @@ items:
 
     '
   syntax:
-    content: UserFunction(cls)
+    content: UserFunction(*args, **kwargs)
     parameters:
     - description: inputs to this function
       id: inputs
@@ -70,7 +70,6 @@ items:
   syntax:
     content: clone(self, cloned_inputs)
     parameters:
-    - id: self
     - description: list of cloned inputs to the new user-defined Function clone to
         be created.
       id: cloned_inputs
@@ -97,8 +96,6 @@ items:
     Output variables are created by @cntk.ops.htmlcntk.ops.output_variable.'
   syntax:
     content: infer_outputs(self)
-    parameters:
-    - id: self
   type: method
   uid: cntk.ops.functions.UserFunction.infer_outputs
 references:

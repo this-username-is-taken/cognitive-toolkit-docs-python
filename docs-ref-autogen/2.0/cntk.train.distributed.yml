@@ -48,7 +48,9 @@ items:
     During training, a random, unprocessed block is randomly taken by the trainer
     and the N partitions of this block are dispatched on the workers.'
   syntax:
-    content: block_momentum_distributed_learner()
+    content: block_momentum_distributed_learner(learner, block_size, block_momentum_as_time_constant=None,
+      use_nestrov_momentum=True, reset_sgd_momentum_after_aggregation=True, block_learning_rate=1.0,
+      distributed_after=0)
     parameters:
     - description: a local learner (i.e. sgd)
       id: learner
@@ -95,7 +97,8 @@ items:
     startLine: 115
   summary: Creates a data parallel distributed learner
   syntax:
-    content: data_parallel_distributed_learner()
+    content: data_parallel_distributed_learner(learner, distributed_after=0, num_quantization_bits=32,
+      use_async_buffered_parameter_update=False)
     parameters:
     - description: a local learner (i.e. sgd)
       id: learner

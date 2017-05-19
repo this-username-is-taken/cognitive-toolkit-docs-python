@@ -22,8 +22,7 @@ items:
     startLine: 53
   summary: A cross validation configuration for the training session.
   syntax:
-    content: CrossValidationConfig(self, source=None, mb_size=None, frequency=None,
-      callback=None)
+    content: CrossValidationConfig(source=None, mb_size=None, frequency=None, callback=None)
     parameters:
     - description: minibatch source used for cross validation
       id: source

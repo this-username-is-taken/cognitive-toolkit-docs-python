@@ -4,33 +4,33 @@
     items:
     - href: cntk.axis.Axis.yml
       name: cntk.axis.Axis
-    name: cntk.axis
+    name: axis
   - href: cntk.core.yml
     items:
     - href: cntk.core.NDArrayView.yml
       name: cntk.core.NDArrayView
     - href: cntk.core.Value.yml
       name: cntk.core.Value
-    name: cntk.core
+    name: core
   - href: cntk.debugging.yml
     items:
     - href: cntk.debugging.debug.yml
       name: cntk.debugging.debug
     - href: cntk.debugging.profiler.yml
       name: cntk.debugging.profiler
-    name: cntk.debugging
+    name: debugging
   - href: cntk.default_options.yml
     items:
     - href: cntk.default_options.default_override_or.yml
       name: cntk.default_options.default_override_or
-    name: cntk.default_options
+    name: default_options
   - href: cntk.device.yml
     items:
     - href: cntk.device.DeviceDescriptor.yml
       name: cntk.device.DeviceDescriptor
     - href: cntk.device.DeviceKind.yml
       name: cntk.device.DeviceKind
-    name: cntk.device
+    name: device
   - href: cntk.eval.yml
     items:
     - href: cntk.eval.evaluator.yml
@@ -38,9 +38,9 @@
       - href: cntk.eval.evaluator.Evaluator.yml
         name: cntk.eval.evaluator.Evaluator
       name: cntk.eval.evaluator
-    name: cntk.eval
+    name: eval
   - href: cntk.initializer.yml
-    name: cntk.initializer
+    name: initializer
   - href: cntk.internal.yml
     items:
     - href: cntk.internal.sanitize.yml
@@ -49,7 +49,7 @@
       name: cntk.internal.swig_helper
     - href: cntk.internal.utils.yml
       name: cntk.internal.utils
-    name: cntk.internal
+    name: internal
   - href: cntk.io.yml
     items:
     - href: cntk.io.transforms.yml
@@ -64,7 +64,7 @@
       name: cntk.io.StreamInformation
     - href: cntk.io.UserMinibatchSource.yml
       name: cntk.io.UserMinibatchSource
-    name: cntk.io
+    name: io
   - href: cntk.layers.yml
     items:
     - href: cntk.layers.blocks.yml
@@ -95,7 +95,7 @@
       - href: cntk.layers.typing.Tensor.yml
         name: cntk.layers.typing.Tensor
       name: cntk.layers.typing
-    name: cntk.layers
+    name: layers
   - href: cntk.learners.yml
     items:
     - href: cntk.learners.Learner.yml
@@ -104,7 +104,7 @@
       name: cntk.learners.UnitType
     - href: cntk.learners.UserLearner.yml
       name: cntk.learners.UserLearner
-    name: cntk.learners
+    name: learners
   - href: cntk.logging.yml
     items:
     - href: cntk.logging.graph.yml
@@ -118,11 +118,11 @@
       name: cntk.logging.progress_print
     - href: cntk.logging.TraceLevel.yml
       name: cntk.logging.TraceLevel
-    name: cntk.logging
+    name: logging
   - href: cntk.losses.yml
-    name: cntk.losses
+    name: losses
   - href: cntk.metrics.yml
-    name: cntk.metrics
+    name: metrics
   - href: cntk.ops.yml
     items:
     - href: cntk.ops.functions.yml
@@ -136,16 +136,16 @@
       name: cntk.ops.functions
     - href: cntk.ops.sequence.yml
       name: cntk.ops.sequence
-    name: cntk.ops
+    name: ops
   - href: cntk.sample_installer.yml
-    name: cntk.sample_installer
+    name: sample_installer
   - href: cntk.tensor.yml
     items:
     - href: cntk.tensor.ArrayMixin.yml
       name: cntk.tensor.ArrayMixin
     - href: cntk.tensor.TensorOpsMixin.yml
       name: cntk.tensor.TensorOpsMixin
-    name: cntk.tensor
+    name: tensor
   - href: cntk.train.yml
     items:
     - href: cntk.train.distributed.yml
@@ -173,7 +173,7 @@
       - href: cntk.train.training_session.TrainingSession.yml
         name: cntk.train.training_session.TrainingSession
       name: cntk.train.training_session
-    name: cntk.train
+    name: train
   - href: cntk.variables.yml
     items:
     - href: cntk.variables.Constant.yml
@@ -186,5 +186,5 @@
       name: cntk.variables.Variable
     - href: cntk.variables.VariableMixin.yml
       name: cntk.variables.VariableMixin
-    name: cntk.variables
-  name: cntk
+    name: variables
+  name: Reference

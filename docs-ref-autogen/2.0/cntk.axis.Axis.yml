@@ -59,7 +59,7 @@ items:
 
     '
   syntax:
-    content: Axis(self)
+    content: Axis(*args)
   type: class
   uid: cntk.axis.Axis
 - class: cntk.axis.Axis
@@ -308,7 +308,7 @@ items:
     startLine: 136
   summary: Creates an Axis object representing a new unique dynamic axis.
   syntax:
-    content: new_unique_dynamic_axis()
+    content: new_unique_dynamic_axis(name)
     parameters:
     - description: name of the dynmic axis
       id: name
@@ -339,9 +339,7 @@ items:
   syntax:
     content: static_axis_index(self, checked=True)
     parameters:
-    - id: self
-    - defaultValue: 'True'
-      description: if True then this function will throw an exception if the axis
+    - description: if True then this function will throw an exception if the axis
         is not static.
       id: checked
       type:

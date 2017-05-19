@@ -23,7 +23,7 @@ items:
   summary: Stream information container that is used to describe streams when implementing
     custom minibatch source through `UserMinibatchSource`.
   syntax:
-    content: StreamInformation(self, name, stream_id, storage_format, dtype, shape)
+    content: StreamInformation(name, stream_id, storage_format, dtype, shape)
     parameters:
     - description: name of the stream
       id: name

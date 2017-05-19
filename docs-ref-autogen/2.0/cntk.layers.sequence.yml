@@ -53,16 +53,14 @@ items:
     \  ---t---  --(t+1)--\n```"
   syntax:
     content: Delay(T=1, initial_state=<cntk.default_options.default_override_or object
-      at 0x0000026624473908>, name="")
+      at 0x0000016EEC4C64A8>, name='')
     parameters:
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000026624473908>
-      description: the number of time steps to look into the past, where negative
+    - description: the number of time steps to look into the past, where negative
         values mean to look into the future, and 0 means a no-op (default 1).
       id: T
       type:
       - int
-    - defaultValue: '1'
-      description: tensor or scalar representing the initial value to be used when
+    - description: tensor or scalar representing the initial value to be used when
         the input tensor is shifted in time.
       id: initial_state
     - description: the name of the Function instance in the network
@@ -117,38 +115,34 @@ items:
     \    array([[ 25.,   8.]], dtype=float32)\n```"
   syntax:
     content: Fold(folder_function, go_backwards=<cntk.default_options.default_override_or
-      object at 0x0000026624473A20>, initial_state=<cntk.default_options.default_override_or
-      object at 0x0000026624473A58>, return_full_state=False, name="")
+      object at 0x0000016EEC4C65C0>, initial_state=<cntk.default_options.default_override_or
+      object at 0x0000016EEC4C65F8>, return_full_state=False, name='')
     parameters:
     - description: This function must have N+1 inputs and N outputs, where N is the
         number of state variables (typically 1 for GRU and plain RNNs, and 2 for LSTMs).
       id: folder_function
       type:
       - Function or equivalent Python function
-    - defaultValue: ''
-      description: if `True` then run the recurrence from the end of the sequence
+    - description: if `True` then run the recurrence from the end of the sequence
         to the start.
       id: go_backwards
       type:
       - bool, defaults to False
-    - defaultValue: 'False'
-      description: the initial value for the state. This can be a constant or a learnable
+    - description: the initial value for the state. This can be a constant or a learnable
         parameter. In the latter case, if the step function has more than 1 state
         variable, this parameter must be a tuple providing one initial state for every
         state variable.
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000026624473A58>
-      description: if `True` and the step function has more than one state variable,
+    - description: if `True` and the step function has more than one state variable,
         then the layer returns the final value of a all state variables (a tuple of
         sequences); whereas if not given or `False`, only the final value of the first
         of the state variables is returned to the caller.
       id: return_full_state
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000026624473A20>
-      description: the name of the Function instance in the network
+    - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
@@ -196,10 +190,8 @@ items:
     ```"
   syntax:
     content: PastValueWindow(window_size, axis, go_backwards=<cntk.default_options.default_override_or
-      object at 0x0000026624473940>, name="")
+      object at 0x0000016EEC4C64E0>, name='')
     parameters:
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000026624473940>
-      id: window_size
     - description: maximum number of items in sequences. The *axis* will have this
         dimension.
       id: window_size
@@ -209,8 +201,7 @@ items:
       id: axis
       type:
       - int or Axis, optional, keyword only
-    - defaultValue: ''
-      description: the name of the Function instance in the network
+    - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional, keyword only
@@ -277,38 +268,34 @@ items:
     \ ,  144.5]], dtype=float32)]\n```"
   syntax:
     content: Recurrence(step_function, go_backwards=<cntk.default_options.default_override_or
-      object at 0x00000266244739B0>, initial_state=<cntk.default_options.default_override_or
-      object at 0x00000266244739E8>, return_full_state=False, name="")
+      object at 0x0000016EEC4C6550>, initial_state=<cntk.default_options.default_override_or
+      object at 0x0000016EEC4C6588>, return_full_state=False, name='')
     parameters:
     - description: This function must have N+1 inputs and N outputs, where N is the
         number of state variables (typically 1 for GRU and plain RNNs, and 2 for LSTMs).
       id: step_function
       type:
       - Function or equivalent Python function
-    - defaultValue: ''
-      description: if `True` then run the recurrence from the end of the sequence
+    - description: if `True` then run the recurrence from the end of the sequence
         to the start.
       id: go_backwards
       type:
       - bool, defaults to False
-    - defaultValue: 'False'
-      description: the initial value for the state. This can be a constant or a learnable
+    - description: the initial value for the state. This can be a constant or a learnable
         parameter. In the latter case, if the step function has more than 1 state
         variable, this parameter must be a tuple providing one initial state for every
         state variable.
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - defaultValue: <cntk.default_options.default_override_or object at 0x00000266244739E8>
-      description: if `True` and the step function has more than one state variable,
+    - description: if `True` and the step function has more than one state variable,
         then the layer returns a all state variables (a tuple of sequences); whereas
         if not given or `False`, only the first state variable is returned to the
         caller.
       id: return_full_state
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x00000266244739B0>
-      description: the name of the Function instance in the network
+    - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
@@ -395,35 +382,36 @@ items:
     ```'
   syntax:
     content: RecurrenceFrom(step_function, go_backwards=<cntk.default_options.default_override_or
-      object at 0x0000026624473978>, return_full_state=False, name="")
+      object at 0x0000016EEC4C6518>, return_full_state=False, name='')
     parameters:
     - description: This function must have N+1 inputs and N outputs, where N is the
         number of state variables (typically 1 for GRU and plain RNNs, and 2 for LSTMs).
       id: step_function
       type:
       - Function or equivalent Python function
-    - defaultValue: ''
-      description: if `True` then run the recurrence from the end of the sequence
+    - description: if `True` then run the recurrence from the end of the sequence
         to the start.
       id: go_backwards
       type:
       - bool, defaults to False
-    - defaultValue: 'False'
-      description: the initial value for the state. This can be a constant or a learnable
+    - description: the initial value for the state. This can be a constant or a learnable
         parameter. In the latter case, if the step function has more than 1 state
         variable, this parameter must be a tuple providing one initial state for every
         state variable.
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000026624473978>
-      description: if `True` and the step function has more than one state variable,
+    - description: if `True` and the step function has more than one state variable,
         then the layer returns a all state variables (a tuple of sequences); whereas
         if not given or `False`, only the first state variable is returned to the
         caller.
       id: return_full_state
       type:
       - bool, defaults to False
+    - description: the name of the Function instance in the network
+      id: name
+      type:
+      - str, optional
     return:
       description: A function that accepts arguments `(initial_state_1, initial_state_2,
         ..., input_sequence)`, where the number of initial state variables must match
@@ -476,7 +464,7 @@ items:
     TO BE PROVIDED after signature changes.'
   syntax:
     content: UnfoldFrom(generator_function, until_predicate=None, length_increase=1,
-      name="")
+      name='')
     parameters:
     - description: This function must have N inputs and a N-tuple-valued output, where
         N is the number of state variables. If the emitted value should be different
@@ -485,8 +473,7 @@ items:
       id: generator_function
       type:
       - Function or equivalent Python function
-    - defaultValue: ''
-      description: A function that denotes when the last element of the unfold has
+    - description: A function that denotes when the last element of the unfold has
         been emitted. It takes the same number of argments as the generator, and returns
         a scalar that must be 1 for the last element of the sequence, and 0 otherwise.
         This is subject to the maximum length as determined by the input sequence
@@ -495,16 +482,14 @@ items:
       id: until_predicate
       type:
       - Function or equivalent Python function
-    - defaultValue: '1'
-      description: the maximum number of output items is equal to the number of items
+    - description: the maximum number of output items is equal to the number of items
         of the *dynamic_axis_like* argument to the returned *unfold()* function, multiplied
         by this factor. For example, pass 1.5 here if the output sequence can be at
         most 50% longer than the input.
       id: length_increase
       type:
       - float, defaults to 1
-    - defaultValue: None
-      description: the name of the Function instance in the network
+    - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional

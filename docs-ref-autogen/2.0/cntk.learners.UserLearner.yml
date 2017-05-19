@@ -29,7 +29,7 @@ items:
 
     '
   syntax:
-    content: UserLearner(self, parameters, lr_schedule, as_numpy=True)
+    content: UserLearner(parameters, lr_schedule, as_numpy=True)
   type: class
   uid: cntk.learners.UserLearner
 - class: cntk.learners.UserLearner
@@ -50,7 +50,6 @@ items:
   syntax:
     content: update(self, gradient_values, training_sample_count, sweep_end)
     parameters:
-    - id: self
     - description: maps `Parameter` to a NumPy array containing the first order gradient
         values for the Parameter w.r.t. the training objective.
       id: gradient_values

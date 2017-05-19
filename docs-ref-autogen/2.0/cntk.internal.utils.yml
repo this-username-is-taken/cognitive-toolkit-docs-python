@@ -44,8 +44,7 @@ items:
       id: op
       type:
       - Function
-    - defaultValue: None
-      description: "maps variables to their input data. The interpretation depends\
+    - description: "maps variables to their input data. The interpretation depends\
         \ on the input type:\n\n   * *dict*: keys are input variable or names, and\
         \ values are the input data.\n\n   * any other type: if node has a unique\
         \ input, `arguments` is mapped to this input. For nodes with more than one\
@@ -57,30 +56,31 @@ items:
         \ of the previous one (*False*). Data should be either NumPy arrays or a `MinibatchData`\
         \ instance."
       id: arguments
-    - defaultValue: 'False'
-      description: if None, every sequence is treated as a new sequence. Otherwise,
+    - description: if None, every sequence is treated as a new sequence. Otherwise,
         it is interpreted as a list of Booleans that tell whether a sequence is a
         new sequence (*True*) or a continuation of the sequence in the same slot of
         the previous minibatch (*False*)
       id: seq_starts
       type:
       - list of bools or None
-    - defaultValue: None
-      description: precision being 'float32', 'float64', or None, in which case it
+    - description: precision being 'float32', 'float64', or None, in which case it
         will be determined by inspecting the operator (costly)
       id: precision
       type:
       - str or None
-    - defaultValue: None
-      description: device this value should be put on
+    - description: device this value should be put on
       id: device
       type:
       - DeviceDescriptor, default None
-    - defaultValue: None
-      description: whether a backward pass is performed
+    - description: whether a backward pass is performed
       id: backward_pass
       type:
       - bool, optional
+    - description: keys are variables for which to compute a backward ouptut. By default
+        (None) all entries from 'arguments' are used
+      id: expected_backward
+      type:
+      - dict or None
     return:
       description: mapping of output variables to their values.
   type: function
@@ -102,7 +102,7 @@ items:
     If the parameter is a Function instance, it calculates it based on its inputs.
     placeholders are ignored in the type determination.
   syntax:
-    content: get_data_type()
+    content: get_data_type(*args)
     parameters:
     - description: input
       id: args
@@ -128,8 +128,6 @@ items:
   summary: Helper to get the parameter names and annotations of a Python function.
   syntax:
     content: get_python_function_arguments(f)
-    parameters:
-    - id: f
   type: function
   uid: cntk.internal.utils.get_python_function_arguments
 - fullName: cntk.internal.utils.map_function_arguments
@@ -151,10 +149,7 @@ items:
     except that keyword arguments are not optional. This does not require the arguments
     to be Variables or Functions. It is also called by train_minibatch() and @Signature.
   syntax:
-    content: map_function_arguments(params, params_dict)
-    parameters:
-    - id: params
-    - id: params_dict
+    content: map_function_arguments(params, params_dict, *args, **kwargs)
   type: function
   uid: cntk.internal.utils.map_function_arguments
 references:

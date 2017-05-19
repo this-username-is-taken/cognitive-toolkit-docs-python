@@ -60,7 +60,7 @@ items:
 
     '
   syntax:
-    content: ProgressPrinter(self, freq=None, first=0, tag="", log_to_file=None, rank=None,
+    content: ProgressPrinter(freq=None, first=0, tag='', log_to_file=None, rank=None,
       gen_heartbeat=False, num_epochs=300, test_freq=None, test_first=0, metric_is_pct=True,
       distributed_freq=None, distributed_first=0)
     parameters:
@@ -143,8 +143,6 @@ items:
     Returns: the average loss since the last print'
   syntax:
     content: avg_loss_since_last(self)
-    parameters:
-    - id: self
   type: method
   uid: cntk.logging.progress_print.ProgressPrinter.avg_loss_since_last
 - class: cntk.logging.progress_print.ProgressPrinter
@@ -166,8 +164,6 @@ items:
     Returns: the average loss since the start of accumulation'
   syntax:
     content: avg_loss_since_start(self)
-    parameters:
-    - id: self
   type: method
   uid: cntk.logging.progress_print.ProgressPrinter.avg_loss_since_start
 - class: cntk.logging.progress_print.ProgressPrinter
@@ -189,8 +185,6 @@ items:
     Returns: the average metric since the last print'
   syntax:
     content: avg_metric_since_last(self)
-    parameters:
-    - id: self
   type: method
   uid: cntk.logging.progress_print.ProgressPrinter.avg_metric_since_last
 - class: cntk.logging.progress_print.ProgressPrinter
@@ -212,8 +206,6 @@ items:
     Returns: the average metric since the start of accumulation'
   syntax:
     content: avg_metric_since_start(self)
-    parameters:
-    - id: self
   type: method
   uid: cntk.logging.progress_print.ProgressPrinter.avg_metric_since_start
 - class: cntk.logging.progress_print.ProgressPrinter
@@ -232,11 +224,9 @@ items:
     startLine: 124
   summary: Prints the given message signifying the end of training.
   syntax:
-    content: end_progress_print(self, msg="")
+    content: end_progress_print(self, msg='')
     parameters:
-    - id: self
-    - defaultValue: ''
-      description: message to print.
+    - description: message to print.
       id: msg
       type:
       - string, default ''
@@ -263,9 +253,7 @@ items:
   syntax:
     content: epoch_summary(self, with_metric=False)
     parameters:
-    - id: self
-    - defaultValue: 'False'
-      description: if *False* it only prints the loss, otherwise it prints both the
+    - description: if *False* it only prints the loss, otherwise it prints both the
         loss and the metric
       id: with_metric
       type:
@@ -290,7 +278,6 @@ items:
   syntax:
     content: log(self, message)
     parameters:
-    - id: self
     - description: message to print.
       id: msg
       type:
@@ -313,8 +300,6 @@ items:
     startLine: 336
   syntax:
     content: on_training_update_end(self)
-    parameters:
-    - id: self
   type: method
   uid: cntk.logging.progress_print.ProgressPrinter.on_training_update_end
 - class: cntk.logging.progress_print.ProgressPrinter
@@ -333,11 +318,6 @@ items:
     startLine: 344
   syntax:
     content: on_write_distributed_sync_update(self, samples, updates, aggregate_metric)
-    parameters:
-    - id: self
-    - id: samples
-    - id: updates
-    - id: aggregate_metric
   type: method
   uid: cntk.logging.progress_print.ProgressPrinter.on_write_distributed_sync_update
 - class: cntk.logging.progress_print.ProgressPrinter
@@ -357,13 +337,6 @@ items:
   syntax:
     content: on_write_test_summary(self, samples, updates, summaries, aggregate_metric,
       elapsed_milliseconds)
-    parameters:
-    - id: self
-    - id: samples
-    - id: updates
-    - id: summaries
-    - id: aggregate_metric
-    - id: elapsed_milliseconds
   type: method
   uid: cntk.logging.progress_print.ProgressPrinter.on_write_test_summary
 - class: cntk.logging.progress_print.ProgressPrinter
@@ -382,11 +355,6 @@ items:
     startLine: 340
   syntax:
     content: on_write_test_update(self, samples, updates, aggregate_metric)
-    parameters:
-    - id: self
-    - id: samples
-    - id: updates
-    - id: aggregate_metric
   type: method
   uid: cntk.logging.progress_print.ProgressPrinter.on_write_test_update
 - class: cntk.logging.progress_print.ProgressPrinter
@@ -406,14 +374,6 @@ items:
   syntax:
     content: on_write_training_summary(self, samples, updates, summaries, aggregate_loss,
       aggregate_metric, elapsed_milliseconds)
-    parameters:
-    - id: self
-    - id: samples
-    - id: updates
-    - id: summaries
-    - id: aggregate_loss
-    - id: aggregate_metric
-    - id: elapsed_milliseconds
   type: method
   uid: cntk.logging.progress_print.ProgressPrinter.on_write_training_summary
 - class: cntk.logging.progress_print.ProgressPrinter
@@ -432,12 +392,6 @@ items:
     startLine: 332
   syntax:
     content: on_write_training_update(self, samples, updates, aggregate_loss, aggregate_metric)
-    parameters:
-    - id: self
-    - id: samples
-    - id: updates
-    - id: aggregate_loss
-    - id: aggregate_metric
   type: method
   uid: cntk.logging.progress_print.ProgressPrinter.on_write_training_update
 - class: cntk.logging.progress_print.ProgressPrinter
@@ -462,8 +416,6 @@ items:
     since last)'
   syntax:
     content: reset_last(self)
-    parameters:
-    - id: self
   type: method
   uid: cntk.logging.progress_print.ProgressPrinter.reset_last
 - class: cntk.logging.progress_print.ProgressPrinter
@@ -488,8 +440,6 @@ items:
     since start)'
   syntax:
     content: reset_start(self)
-    parameters:
-    - id: self
   type: method
   uid: cntk.logging.progress_print.ProgressPrinter.reset_start
 - class: cntk.logging.progress_print.ProgressPrinter
@@ -512,9 +462,7 @@ items:
   syntax:
     content: update(self, loss, minibatch_size, metric=None)
     parameters:
-    - id: self
-    - defaultValue: None
-      description: the value with which to update the loss accumulators
+    - description: the value with which to update the loss accumulators
       id: loss
       type:
       - float
@@ -550,8 +498,6 @@ items:
   syntax:
     content: update_with_trainer(self, trainer, with_metric=False)
     parameters:
-    - defaultValue: 'False'
-      id: self
     - description: trainer from which information is gathered
       id: trainer
       type:
@@ -578,10 +524,6 @@ items:
     startLine: 213
   syntax:
     content: write(self, key, value)
-    parameters:
-    - id: self
-    - id: key
-    - id: value
   type: method
   uid: cntk.logging.progress_print.ProgressPrinter.write
 references:

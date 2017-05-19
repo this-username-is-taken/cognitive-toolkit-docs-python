@@ -34,8 +34,6 @@ items:
     startLine: 11
   syntax:
     content: map_if_possible(obj)
-    parameters:
-    - id: obj
   type: function
   uid: cntk.internal.swig_helper.map_if_possible
 - fullName: cntk.internal.swig_helper.typemap
@@ -57,8 +55,6 @@ items:
     all the keys and values in the dictionary.
   syntax:
     content: typemap(f)
-    parameters:
-    - id: f
   type: function
   uid: cntk.internal.swig_helper.typemap
 references:

@@ -70,12 +70,12 @@ items:
     \ need to declare the types of the arguments. In this case, the @Function decorator\
     \ creates a CNTK Function whose arguments are input variables.\nIf you use Python\
     \ 3, Functions with types are declared using Python annotation syntax, e.g.:\n\
-    <!-- literal_block {\"backrefs\": [], \"classes\": [], \"xml:space\": \"preserve\"\
-    , \"names\": [], \"ids\": [], \"dupnames\": []} -->\n\n````\n\n   @Function\n\
+    <!-- literal_block {\"classes\": [], \"dupnames\": [], \"ids\": [], \"backrefs\"\
+    : [], \"xml:space\": \"preserve\", \"names\": []} -->\n\n````\n\n   @Function\n\
     \   def f(x:Tensor[13]):\n       return x * x\n   ````\nIf you are working with\
     \ Python 2.7, use CNTK's *@:class:~cntk.layers.typing.Signature* decorator instead:\n\
-    <!-- literal_block {\"backrefs\": [], \"classes\": [], \"xml:space\": \"preserve\"\
-    , \"names\": [], \"ids\": [], \"dupnames\": []} -->\n\n````\n\n   >>> from cntk.layers.typing\
+    <!-- literal_block {\"classes\": [], \"dupnames\": [], \"ids\": [], \"backrefs\"\
+    : [], \"xml:space\": \"preserve\", \"names\": []} -->\n\n````\n\n   >>> from cntk.layers.typing\
     \ import *\n   >>> @Function\n   ... @Signature(Tensor[13])\n   ... def f(x):\n\
     \   ...     return x * x\n   >>> debugging.dump_signature(f)\n   Function(x: Tensor[13])\
     \ -> Tensor[13]\n   ````\n`make_block=True` is an internal parameter used to implement\
@@ -84,7 +84,7 @@ items:
     \ `op_name` and `name` parameters, which are otherwise ignored.\n\n\n\n\n\n\n\n\
     \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
   syntax:
-    content: Function(cls)
+    content: Function(*args, **kwargs)
   type: class
   uid: cntk.ops.functions.Function
 - class: cntk.ops.functions.Function
@@ -108,9 +108,7 @@ items:
     does not require the arguments to be Variables or Functions. It is also called
     by train_minibatch().'
   syntax:
-    content: argument_map(self)
-    parameters:
-    - id: self
+    content: argument_map(self, *args, **kwargs)
   type: method
   uid: cntk.ops.functions.Function.argument_map
 - class: cntk.ops.functions.Function
@@ -198,7 +196,7 @@ items:
 
     Note: See `forward()` for more examples on passing input data.'
   syntax:
-    content: backward()
+    content: backward(self, state, root_gradients, variables, as_numpy=True)
     return:
       description: mapping of `variables` to NumPy arrays
       type:
@@ -262,7 +260,7 @@ items:
     shared or frozen as specified by the method argument and any variable substitutions
     requested are applied in the cloned Function instance.
   syntax:
-    content: clone()
+    content: clone(self, method, substitutions=None)
     parameters:
     - description: 'one of
 
@@ -322,9 +320,7 @@ items:
     startLine: 268
   summary: Back-compat wrapper for update_signature() (beta12 and before).
   syntax:
-    content: declare_args(self)
-    parameters:
-    - id: self
+    content: declare_args(self, *arg_types)
   type: method
   uid: cntk.ops.functions.Function.declare_args
 - class: cntk.ops.functions.Function
@@ -346,16 +342,6 @@ items:
     Note: See `forward()` for examples on passing input data.'
   syntax:
     content: eval(self, arguments=None, outputs=None, device=None, as_numpy=True)
-    parameters:
-    - id: self
-    - defaultValue: 'True'
-      id: arguments
-    - defaultValue: None
-      id: outputs
-    - defaultValue: None
-      id: device
-    - defaultValue: None
-      id: as_numpy
     return:
       description: Dict with keys of ouput variable names and values of output variable.
         A single NumPy array if there is only one output value.
@@ -403,7 +389,7 @@ items:
 
     ```'
   syntax:
-    content: find_all_with_name()
+    content: find_all_with_name(self, name, depth=0)
     parameters:
     - description: names to look for
       id: name
@@ -472,7 +458,7 @@ items:
 
     ```'
   syntax:
-    content: find_by_name()
+    content: find_by_name(self, name, depth=0)
     parameters:
     - description: names to look for
       id: name
@@ -533,7 +519,8 @@ items:
     \ array([[ 0.,  0.,  1.,  0.,  0.], [ 0.,  0.,  0.,  0.,  1.]], dtype=float32)]\n\
     ```"
   syntax:
-    content: forward()
+    content: forward(self, arguments, outputs=None, keep_for_backward=None, device=None,
+      as_numpy=True)
     parameters:
     - description: "maps variables to their input data. The interpretation depends\
         \ on the input type:\n\n   * dict: keys are input variable or names, and values\
@@ -607,7 +594,7 @@ items:
     >>> y.grad({x:a})\narray([[ 0.5  ],\n<BLANKLINE>\n       [ 0.25 ],\n<BLANKLINE>\n\
     \       [ 0.125]], dtype=float32)\n```"
   syntax:
-    content: grad()
+    content: grad(self, at, wrt=None, outputs=None, device=None, as_numpy=True, grad_root=None)
     parameters:
     - description: mapping of the Function's arguments to values
       id: at
@@ -751,7 +738,7 @@ items:
     startLine: 1085
   summary: Load the model in `filename`, that has been saved using `save()`.
   syntax:
-    content: load()
+    content: load(filename, device=None)
     parameters:
     - description: filename to load the model from
       id: filename
@@ -901,7 +888,7 @@ items:
   summary: In-place replace the only placeholder in the function graph with the specified
     substitution.
   syntax:
-    content: replace_placeholder()
+    content: replace_placeholder(self, substitution)
     exceptions:
     - description: when the function has multiple placeholders.
       type: Exception
@@ -933,7 +920,7 @@ items:
   summary: In-place replace specified placeholders in the Function graph with the
     specified replacements in the map.
   syntax:
-    content: replace_placeholders()
+    content: replace_placeholders(self, substitutions)
     parameters:
     - description: map from placeholder to variables
       id: substitutions
@@ -961,7 +948,7 @@ items:
     startLine: 1066
   summary: Restore the models parameters (in-place) from a saved model file
   syntax:
-    content: restore()
+    content: restore(self, filename)
     parameters:
     - description: saved model path
       id: filename
@@ -990,9 +977,6 @@ items:
     startLine: 1079
   syntax:
     content: restore_model(self, filename)
-    parameters:
-    - id: self
-    - id: filename
   type: method
   uid: cntk.ops.functions.Function.restore_model
 - class: cntk.ops.functions.Function
@@ -1033,7 +1017,7 @@ items:
     Use distributed.Communicator.is_main() to gate your call to save() in distributed
     environment.'
   syntax:
-    content: save()
+    content: save(self, filename)
     parameters:
     - description: model path
       id: filename
@@ -1057,9 +1041,6 @@ items:
     startLine: 1060
   syntax:
     content: save_model(self, filename)
-    parameters:
-    - id: self
-    - id: filename
   type: method
   uid: cntk.ops.functions.Function.save_model
 - class: cntk.ops.functions.Function
@@ -1135,9 +1116,7 @@ items:
     of objects that define the dimensions etc. of the placeholders Currently you can
     pass an int, a tuple, an Input, or a dict created with Type()
   syntax:
-    content: update_signature(self)
-    parameters:
-    - id: self
+    content: update_signature(self, *arg_types, **kwarg_types)
   type: method
   uid: cntk.ops.functions.Function.update_signature
 references:

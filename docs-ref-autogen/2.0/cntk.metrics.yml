@@ -70,7 +70,7 @@ items:
 
     ```'
   syntax:
-    content: classification_error()
+    content: classification_error(output_vector, target_vector, axis=-1, topN=1, name='')
     parameters:
     - description: the output values from the network
       id: output_vector
@@ -132,7 +132,8 @@ items:
     3], [2, 0]], i2 : [[2, 0], [2, 0]]} a = edit_distance_error(i1, i2, 0, 1, 1, True,
     [1]) print(a.eval(arguments))'
   syntax:
-    content: edit_distance_error()
+    content: edit_distance_error(input_a, input_b, subPen=1, delPen=1, insPen=1, squashInputs=False,
+      tokensToIgnore=[], name='')
     parameters:
     - description: first input sequence
       id: input_a
@@ -210,7 +211,7 @@ items:
 
     ```'
   syntax:
-    content: ndcg_at_1()
+    content: ndcg_at_1(output, gain, group, name='')
     parameters:
     - description: score of each sample
       id: output

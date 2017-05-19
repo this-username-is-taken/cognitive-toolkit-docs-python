@@ -45,7 +45,7 @@ items:
 
     '
   syntax:
-    content: MinibatchData(self, value, num_sequences, num_samples, sweep_end)
+    content: MinibatchData(value, num_sequences, num_samples, sweep_end)
   type: class
   uid: cntk.io.MinibatchData
 - class: cntk.io.MinibatchData
@@ -66,10 +66,6 @@ items:
     that have their masked entries removed.
   syntax:
     content: as_sequences(self, variable=None)
-    parameters:
-    - id: self
-    - defaultValue: None
-      id: variable
     return:
       description: a list of NumPy arrays if dense, otherwise a SciPy CSR array
   type: method

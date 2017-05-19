@@ -73,18 +73,15 @@ items:
     content: glorot_normal(scale=1, output_rank=2147483647, filter_rank=2147483647,
       seed=None)
     parameters:
-    - defaultValue: '2147483647'
-      description: scale
+    - description: scale
       id: scale
       type:
       - float
-    - defaultValue: '2147483647'
-      description: output rank
+    - description: output rank
       id: output_rank
       type:
       - int
-    - defaultValue: '1'
-      description: filter rank
+    - description: filter rank
       id: filter_rank
       type:
       - int
@@ -115,18 +112,15 @@ items:
     content: glorot_uniform(scale=1, output_rank=2147483647, filter_rank=2147483647,
       seed=None)
     parameters:
-    - defaultValue: '2147483647'
-      description: scale
+    - description: scale
       id: scale
       type:
       - float
-    - defaultValue: '2147483647'
-      description: output rank
+    - description: output rank
       id: output_rank
       type:
       - int
-    - defaultValue: '1'
-      description: filter rank
+    - description: filter rank
       id: filter_rank
       type:
       - int
@@ -156,18 +150,15 @@ items:
   syntax:
     content: he_normal(scale=1, output_rank=2147483647, filter_rank=2147483647, seed=None)
     parameters:
-    - defaultValue: '2147483647'
-      description: scale
+    - description: scale
       id: scale
       type:
       - float
-    - defaultValue: '2147483647'
-      description: output rank
+    - description: output rank
       id: output_rank
       type:
       - int
-    - defaultValue: '1'
-      description: filter rank
+    - description: filter rank
       id: filter_rank
       type:
       - int
@@ -197,18 +188,15 @@ items:
   syntax:
     content: he_uniform(scale=1, output_rank=2147483647, filter_rank=2147483647, seed=None)
     parameters:
-    - defaultValue: '2147483647'
-      description: scale
+    - description: scale
       id: scale
       type:
       - float
-    - defaultValue: '2147483647'
-      description: output rank
+    - description: output rank
       id: output_rank
       type:
       - int
-    - defaultValue: '1'
-      description: filter rank
+    - description: filter rank
       id: filter_rank
       type:
       - int
@@ -242,13 +230,11 @@ items:
     - description: initializer whose output_rank and filter_rank parameters are to
         be overriden
       id: initializer
-    - defaultValue: None
-      description: new output rank value
+    - description: new output rank value
       id: output_rank
       type:
       - int
-    - defaultValue: None
-      description: new filter rank value
+    - description: new filter rank value
       id: filter_rank
       type:
       - int
@@ -278,18 +264,15 @@ items:
       id: scale
       type:
       - float
-    - defaultValue: None
-      description: output rank
+    - description: output rank
       id: output_rank
       type:
       - int
-    - defaultValue: '2147483647'
-      description: filter rank
+    - description: filter rank
       id: filter_rank
       type:
       - int
-    - defaultValue: '2147483647'
-      description: random seed
+    - description: random seed
       id: seed
       type:
       - int
@@ -319,8 +302,7 @@ items:
       id: scale
       type:
       - float
-    - defaultValue: None
-      description: random seed
+    - description: random seed
       id: seed
       type:
       - int
@@ -347,18 +329,15 @@ items:
   syntax:
     content: xavier(scale=1, output_rank=2147483647, filter_rank=2147483647, seed=None)
     parameters:
-    - defaultValue: '2147483647'
-      description: scale
+    - description: scale
       id: scale
       type:
       - float
-    - defaultValue: '2147483647'
-      description: output rank
+    - description: output rank
       id: output_rank
       type:
       - int
-    - defaultValue: '1'
-      description: filter rank
+    - description: filter rank
       id: filter_rank
       type:
       - int

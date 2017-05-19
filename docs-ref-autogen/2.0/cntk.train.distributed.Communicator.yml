@@ -38,7 +38,7 @@ items:
 
     '
   syntax:
-    content: Communicator(self)
+    content: Communicator(*args, **kwargs)
   type: class
   uid: cntk.train.distributed.Communicator
 - class: cntk.train.distributed.Communicator
@@ -58,8 +58,6 @@ items:
   summary: Sync point to make sure all workers reach the same state.
   syntax:
     content: barrier(self)
-    parameters:
-    - id: self
   type: method
   uid: cntk.train.distributed.Communicator.barrier
 - class: cntk.train.distributed.Communicator
@@ -78,7 +76,7 @@ items:
     startLine: 57
   summary: Returns worker descriptor of current process.
   syntax:
-    content: current_worker()
+    content: current_worker(self)
     return:
       description: descriptor of current process.
       type:
@@ -123,8 +121,6 @@ items:
     The node with rank 0 is considered the main.
   syntax:
     content: is_main(self)
-    parameters:
-    - id: self
   type: method
   uid: cntk.train.distributed.Communicator.is_main
 - class: cntk.train.distributed.Communicator
@@ -181,7 +177,7 @@ items:
     startLine: 47
   summary: Returns workers in this communicator.
   syntax:
-    content: workers()
+    content: workers(self)
     return:
       description: workers in this communicator.
       type:

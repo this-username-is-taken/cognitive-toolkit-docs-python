@@ -64,7 +64,7 @@ items:
 
     '
   syntax:
-    content: Trainer(self, model, criterion, parameter_learners, progress_writers=None)
+    content: Trainer(model, criterion, parameter_learners, progress_writers=None)
     parameters:
     - description: root node of the function to train
       id: model
@@ -233,7 +233,6 @@ items:
   syntax:
     content: restore_from_checkpoint(self, filename)
     parameters:
-    - id: self
     - description: filename to restore the checkpoint from
       id: filename
       type:
@@ -261,8 +260,7 @@ items:
   syntax:
     content: save_checkpoint(self, filename, external_state={})
     parameters:
-    - defaultValue: '{}'
-      description: filename to store the checkpoint.
+    - description: filename to store the checkpoint.
       id: filename
       type:
       - str
@@ -286,8 +284,6 @@ items:
     and resets the internal accumulators.
   syntax:
     content: summarize_test_progress(self)
-    parameters:
-    - id: self
   type: method
   uid: cntk.train.trainer.Trainer.summarize_test_progress
 - class: cntk.train.trainer.Trainer
@@ -308,8 +304,6 @@ items:
     start and resets the internal accumulators.
   syntax:
     content: summarize_training_progress(self)
-    parameters:
-    - id: self
   type: method
   uid: cntk.train.trainer.Trainer.summarize_training_progress
 - class: cntk.train.trainer.Trainer
@@ -333,11 +327,6 @@ items:
     on passing input data.'
   syntax:
     content: test_minibatch(self, arguments, device=None)
-    parameters:
-    - defaultValue: None
-      id: self
-    - id: arguments
-    - id: device
     return:
       description: the average evaluation criterion value per sample for the tested
         minibatch.
@@ -385,13 +374,6 @@ items:
     on passing input data.'
   syntax:
     content: train_minibatch(self, arguments, outputs=None, device=None)
-    parameters:
-    - defaultValue: None
-      id: self
-    - id: arguments
-    - id: outputs
-    - defaultValue: None
-      id: device
     return:
       description: If `outputs` have not been provided, the returned value is *True*
         if updates have been performed, *False* if all parameter learners indicate
