@@ -38,7 +38,7 @@ items:
 
     '
   syntax:
-    content: Communicator(self)
+    content: Communicator(*args, **kwargs)
   type: class
   uid: cntk.train.distributed.Communicator
 - class: cntk.train.distributed.Communicator
@@ -78,7 +78,7 @@ items:
     startLine: 57
   summary: Returns worker descriptor of current process.
   syntax:
-    content: current_worker()
+    content: current_worker(self)
     return:
       description: descriptor of current process.
       type:
@@ -181,7 +181,7 @@ items:
     startLine: 47
   summary: Returns workers in this communicator.
   syntax:
-    content: workers()
+    content: workers(self)
     return:
       description: workers in this communicator.
       type:

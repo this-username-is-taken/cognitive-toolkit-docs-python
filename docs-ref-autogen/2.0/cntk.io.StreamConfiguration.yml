@@ -22,7 +22,7 @@ items:
     startLine: 641
   summary: Configuration of a stream in a text format reader.
   syntax:
-    content: StreamConfiguration(self, name, dim, is_sparse=False, stream_alias="")
+    content: StreamConfiguration(name, dim, is_sparse=False, stream_alias='')
     parameters:
     - description: name of this stream
       id: name

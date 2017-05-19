@@ -86,7 +86,7 @@ items:
 
     ```'
   syntax:
-    content: minibatch_size_schedule()
+    content: minibatch_size_schedule(schedule, epoch_size=1)
     parameters:
     - description: if integer, this minibatch size will be used for the whole training.
         In case of list of integers, the elements are used as the values for `epoch_size`
@@ -118,7 +118,9 @@ items:
     startLine: 254
   summary: A factory function to create a training session object.
   syntax:
-    content: training_session()
+    content: training_session(trainer, mb_source, mb_size, model_inputs_to_streams,
+      progress_frequency=None, max_samples=None, checkpoint_config=None, cv_config=None,
+      test_config=None)
     parameters:
     - description: trainer
       id: trainer

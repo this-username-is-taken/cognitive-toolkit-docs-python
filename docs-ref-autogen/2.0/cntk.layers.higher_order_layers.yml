@@ -62,7 +62,7 @@ items:
     \    (64, 8, 8)\n>>> model.hidden.shape                     # shape before classifier\n\
     \    (128,)\n```"
   syntax:
-    content: For(what_range, constructor, name="")
+    content: For(what_range, constructor, name='')
     parameters:
     - defaultValue: ''
       id: what_range
@@ -133,7 +133,7 @@ items:
 
     ```'
   syntax:
-    content: ResNetBlock(f, name="")
+    content: ResNetBlock(f, name='')
     parameters:
     - id: f
     - defaultValue: ''
@@ -200,7 +200,7 @@ items:
     \ x) and splices both values\n>>> f.update_signature(1)\n>>> f([np.array([2])])\n\
     \    array([[ 4.,  2.]], dtype=float32)\n```"
   syntax:
-    content: Sequential(layers, name="")
+    content: Sequential(layers, name='')
     parameters:
     - id: layers
     - defaultValue: ''
@@ -239,7 +239,7 @@ items:
     >>> seq_clique(x).eval(np.array([2, 8], np.float32)) # 400 = square((8 + abs(8))\
     \ + sqrt(8 + abs(8)))\n    array([[  36.,  400.]], dtype=float32)\n```"
   syntax:
-    content: SequentialClique(functions, name="")
+    content: SequentialClique(functions, name='')
     parameters:
     - id: functions
     - defaultValue: ''

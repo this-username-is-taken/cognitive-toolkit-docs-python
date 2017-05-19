@@ -26,7 +26,7 @@ items:
 
     '
   syntax:
-    content: Record(self)
+    content: Record(**args_dict)
     parameters:
     - description: keyword arguments to turn into the record members
       id: kwargs
@@ -52,7 +52,7 @@ items:
   summary: Create a new Record from an existing one with members modified or added.
     e.g. r = Record(x = 13) ; print(r.x) ; r2 = r.updated_with(x = 42) ; print(r2.x)
   syntax:
-    content: updated_with(self)
+    content: updated_with(self, **kwargs)
     parameters:
     - description: keyword arguments to turn into the record members
       id: kwargs

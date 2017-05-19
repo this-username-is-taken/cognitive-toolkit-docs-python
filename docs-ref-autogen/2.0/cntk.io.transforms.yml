@@ -79,8 +79,8 @@ items:
     startLine: 9
   summary: Crop transform that can be used to pass to *map_features*
   syntax:
-    content: crop(crop_type="center", crop_size=0, side_ratio=0.0, area_ratio=0.0,
-      aspect_ratio=1.0, jitter_type="none")
+    content: crop(crop_type='center', crop_size=0, side_ratio=0.0, area_ratio=0.0,
+      aspect_ratio=1.0, jitter_type='none')
     parameters:
     - defaultValue: '1.0'
       description: '''center'', ''randomside'', ''randomarea'', or ''multiview10''.  ''randomside''
@@ -190,7 +190,7 @@ items:
     startLine: 64
   summary: Scale transform that can be used to pass to *map_features* for data augmentation.
   syntax:
-    content: scale(width, height, channels, interpolations="linear", scale_mode="fill",
+    content: scale(width, height, channels, interpolations='linear', scale_mode='fill',
       pad_value=-1)
     parameters:
     - defaultValue: fill

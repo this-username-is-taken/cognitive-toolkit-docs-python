@@ -83,7 +83,7 @@ items:
     of cntk.debugging.profiler.start_profiler:1: (ERROR/3) Unknown interpreted text
     role "cntkwiki".>'
   syntax:
-    content: start_profiler(dir="profiler", sync_gpu=True, reserve_mem=33554432)
+    content: start_profiler(dir='profiler', sync_gpu=True, reserve_mem=33554432)
     parameters:
     - defaultValue: 'True'
       description: directory for profiler output

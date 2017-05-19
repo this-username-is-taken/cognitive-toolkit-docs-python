@@ -59,7 +59,7 @@ items:
     \  21.],\n         [ 22.,  23.]],\n<BLANKLINE>\n        [[ 18.,  19.],\n     \
     \    [ 20.,  21.],\n         [ 22.,  23.]]], dtype=float32)]\n```"
   syntax:
-    content: broadcast_as()
+    content: broadcast_as(operand, broadcast_as_operand, name='')
     parameters:
     - description: the symbolic tensor whose value will be broadcast
       id: operand
@@ -91,7 +91,7 @@ items:
     function. This is useful when the time_step is computed and can be positive, negative,
     or 0.
   syntax:
-    content: delay(x, initial_state=None, time_step=1, name="")
+    content: delay(x, initial_state=None, time_step=1, name='')
     parameters:
     - description: the tensor (or its name) from which the past value is obtained
       id: x
@@ -131,7 +131,7 @@ items:
     >>> y.eval({x:x0})\narray([[[ 0.,  1.],\n         [ 2.,  3.],\n         [ 4.,\
     \  5.]]], dtype=float32)\n```"
   syntax:
-    content: first()
+    content: first(seq, name='')
     parameters:
     - description: the symbolic tensor denoting a sequence
       id: seq
@@ -172,7 +172,7 @@ items:
     \         [ 22.,  23.]],\n<BLANKLINE>\n        [[  0.,   0.],\n         [  0.,\
     \   0.],\n         [  0.,   0.]]], dtype=float32)]\n```"
   syntax:
-    content: future_value()
+    content: future_value(x, initial_state=None, time_step=1, name='')
     parameters:
     - description: the tensor (or its name) from which the future value is obtained.
       id: x
@@ -214,7 +214,7 @@ items:
     \ 16.,  17.]],\n<BLANKLINE>\n        [[ 18.,  19.],\n         [ 20.,  21.],\n\
     \         [ 22.,  23.]]], dtype=float32)]\n```"
   syntax:
-    content: gather()
+    content: gather(seq, condition, new_sequence_axis_typeinfo=None, name='')
     parameters:
     - description: the symbolic sequence from which elements will be selected
       id: seq
@@ -250,7 +250,9 @@ items:
   summary: 'It creates an input in the network: a place where data, such as features
     and labels, should be provided.'
   syntax:
-    content: input()
+    content: input(shape, dtype=<cntk.default_options.default_override_or object at
+      0x0000026BBECD9C18>, needs_gradient=False, is_sparse=False, sequence_axis=Axis('defaultDynamicAxis'),
+      name='')
     parameters:
     - description: the shape of the input tensor
       id: shape
@@ -315,7 +317,7 @@ items:
 
     ```'
   syntax:
-    content: is_first()
+    content: is_first(seq, name='')
     parameters:
     - description: the symbolic tensor denoting a sequence
       id: seq
@@ -362,7 +364,7 @@ items:
 
     ```'
   syntax:
-    content: is_last()
+    content: is_last(seq, name='')
     parameters:
     - description: the symbolic tensor denoting a sequence
       id: seq
@@ -393,7 +395,7 @@ items:
     >>> y.eval({x:x0})\narray([[[ 18.,  19.],\n         [ 20.,  21.],\n         [\
     \ 22.,  23.]]], dtype=float32)\n```"
   syntax:
-    content: last()
+    content: last(seq, name='')
     parameters:
     - description: the symbolic tensor denoting a sequence
       id: seq
@@ -451,7 +453,7 @@ items:
     \ ,  11. ]],\n<BLANKLINE>\n        [[ 12. ,  13. ],\n         [ 14. ,  15. ],\n\
     \         [ 16. ,  17. ]]], dtype=float32)]\n```"
   syntax:
-    content: past_value()
+    content: past_value(x, initial_state=None, time_step=1, name='')
     parameters:
     - description: the tensor (or its name) from which the past value is obtained
       id: x
@@ -485,7 +487,7 @@ items:
     startLine: 602
   summary: Computes the max of the input sequence's elements across the sequence axis.
   syntax:
-    content: reduce_max()
+    content: reduce_max(seq, name='')
     parameters:
     - description: sequence input tensor
       id: seq
@@ -516,7 +518,7 @@ items:
     >>> y = C.sequence.reduce_sum(x)\n>>> y.eval({x:x0})\narray([[[ 36.,  40.],\n\
     \         [ 44.,  48.],\n         [ 52.,  56.]]], dtype=float32)\n```"
   syntax:
-    content: reduce_sum()
+    content: reduce_sum(seq, name='')
     parameters:
     - description: sequence input tensor
       id: seq
@@ -555,7 +557,7 @@ items:
     \   0.],\n         [  0.,   0.]],\n<BLANKLINE>\n        [[  0.,   0.],\n     \
     \    [  0.,   0.],\n         [  0.,   0.]]], dtype=float32)]\n```"
   syntax:
-    content: scatter()
+    content: scatter(seq, condition, new_sequence_axis_typeinfo=None, name='')
     parameters:
     - description: the symbolic sequence from which elements will be copied in the
         output
@@ -597,7 +599,7 @@ items:
 
     TBA'
   syntax:
-    content: slice()
+    content: slice(seq, begin_index, end_index, name='')
     return:
       description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
   type: function
@@ -617,7 +619,7 @@ items:
     startLine: 618
   summary: Computes the softmax of the input across the sequence axis.
   syntax:
-    content: softmax()
+    content: softmax(seq, name='')
     parameters:
     - description: sequence input tensor
       id: seq
@@ -652,7 +654,7 @@ items:
 
     TBA.'
   syntax:
-    content: unpack()
+    content: unpack(x, padding_value, no_mask_output=False, name='')
     parameters:
     - description: the sequence tensor (or its name) which is unpacked
       id: x
@@ -705,7 +707,7 @@ items:
     >>> # as a result, a 1.2 times stretch is realized by duplicating frame[0] and\
     \ frame[5]\n```"
   syntax:
-    content: where()
+    content: where(condition, name='')
     parameters:
     - description: sequence of 0 or 1 values for filtering, or other positive values
         for repetition (also fractional)

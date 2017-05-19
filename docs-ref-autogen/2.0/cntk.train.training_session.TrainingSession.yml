@@ -32,7 +32,7 @@ items:
 
     '
   syntax:
-    content: TrainingSession(self, trainer, mb_source, mb_size, model_inputs_to_streams,
+    content: TrainingSession(trainer, mb_source, mb_size, model_inputs_to_streams,
       max_samples, progress_frequency, checkpoint_config, cv_config, test_config)
     parameters:
     - description: trainer
@@ -128,7 +128,7 @@ items:
     startLine: 178
   summary: Perform training on a specified device.
   syntax:
-    content: train()
+    content: train(self, device=None)
     parameters:
     - description: the device descriptor containing the type and id of the device
         where training takes place.

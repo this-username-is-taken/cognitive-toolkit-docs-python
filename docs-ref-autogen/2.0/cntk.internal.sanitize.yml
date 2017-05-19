@@ -196,7 +196,7 @@ items:
     startLine: 117
   summary: Convert to @cntk.core.htmlcntk.core.Value.
   syntax:
-    content: sanitize_batch()
+    content: sanitize_batch(var, batch, seq_starts=None, device=None)
     parameters:
     - description: input variable into which `batch` is passed
       id: var

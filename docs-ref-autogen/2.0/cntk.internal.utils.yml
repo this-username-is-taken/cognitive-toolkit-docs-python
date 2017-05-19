@@ -102,7 +102,7 @@ items:
     If the parameter is a Function instance, it calculates it based on its inputs.
     placeholders are ignored in the type determination.
   syntax:
-    content: get_data_type()
+    content: get_data_type(*args)
     parameters:
     - description: input
       id: args
@@ -151,7 +151,7 @@ items:
     except that keyword arguments are not optional. This does not require the arguments
     to be Variables or Functions. It is also called by train_minibatch() and @Signature.
   syntax:
-    content: map_function_arguments(params, params_dict)
+    content: map_function_arguments(params, params_dict, *args, **kwargs)
     parameters:
     - id: params
     - id: params_dict

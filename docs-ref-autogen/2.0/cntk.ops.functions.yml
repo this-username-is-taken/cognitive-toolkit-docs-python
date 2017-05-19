@@ -39,7 +39,7 @@ items:
     startLine: 1143
   summary: Alias for @cntk.ops.functions.Function.load.
   syntax:
-    content: load_model()
+    content: load_model(filename, device=None)
   type: function
   uid: cntk.ops.functions.load_model
 - fullName: cntk.ops.functions.native_user_function
@@ -58,7 +58,7 @@ items:
   summary: Creates an instance of a user-defined Function previously registered using
     the 'register_native_user_function' method.
   syntax:
-    content: native_user_function()
+    content: native_user_function(op_name, operands, user_function_instance_name='')
     parameters:
     - description: Name of the native user-defined Function to instantiate. This name
         must be the name that was used when registering the native user-function with
@@ -94,7 +94,7 @@ items:
   summary: Registers a native user-defined Function that can be subsequently instantiated
     using the 'native_user_function' method.
   syntax:
-    content: register_native_user_function()
+    content: register_native_user_function(op_name, module_name, factory_method_name)
     parameters:
     - description: Name of the native user-defined Function to register. This name
         must be unique and an error will be reported if it matches the 'op_name' specified
@@ -131,7 +131,7 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1150
   syntax:
-    content: save_model()
+    content: save_model(model, filename)
   type: function
   uid: cntk.ops.functions.save_model
 references:

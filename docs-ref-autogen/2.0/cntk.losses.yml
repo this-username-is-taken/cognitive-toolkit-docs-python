@@ -44,7 +44,7 @@ items:
 
     TBA'
   syntax:
-    content: binary_cross_entropy()
+    content: binary_cross_entropy(output, target, name='')
     parameters:
     - description: the computed posterior probability for a variable to be 1 from
         the network (typ. a `sigmoid`)
@@ -79,7 +79,7 @@ items:
     \ np.round(C.cosine_distance(x,y).eval({x:a,y:b}),5)\narray([[-1.,  1.],\n   \
     \    [ 1.,  0.],\n       [ 0., -1.]], dtype=float32)\n```"
   syntax:
-    content: cosine_distance()
+    content: cosine_distance(x, y, name='')
     parameters:
     - description: numpy array or any `Function` that outputs a tensor
       id: x
@@ -124,7 +124,8 @@ items:
     \ 0. ]],\n<BLANKLINE>\n       [[ 1. ,  0.5,  0.5]],\n<BLANKLINE>\n       [[ 1.\
     \ ,  0. ,  0.5]]], dtype=float32)\n```"
   syntax:
-    content: cosine_distance_with_negative_samples()
+    content: cosine_distance_with_negative_samples(x, y, shift, num_negative_samples,
+      name='')
     parameters:
     - description: numpy array or any `Function` that outputs a tensor
       id: x
@@ -186,7 +187,7 @@ items:
 
     ```'
   syntax:
-    content: cross_entropy_with_softmax()
+    content: cross_entropy_with_softmax(output_vector, target_vector, axis=-1, name='')
     parameters:
     - description: the unscaled computed output values from the network
       id: output_vector
@@ -235,7 +236,7 @@ items:
     array([[-0.2121],\n<BLANKLINE>\n       [ 0.2121],\n<BLANKLINE>\n       [-0.1486],\n\
     <BLANKLINE>\n       [ 0.1486]], dtype=float32)\n```"
   syntax:
-    content: lambda_rank()
+    content: lambda_rank(output, gain, group, name='')
     parameters:
     - description: score of each sample
       id: output
@@ -294,7 +295,7 @@ items:
 
     ```'
   syntax:
-    content: squared_error()
+    content: squared_error(output, target, name='')
     parameters:
     - description: the output values from the network
       id: output
@@ -329,7 +330,7 @@ items:
 
     TBA'
   syntax:
-    content: weighted_binary_cross_entropy()
+    content: weighted_binary_cross_entropy(output, target, weight, name='')
     parameters:
     - description: the computed posterior probability from the network
       id: output

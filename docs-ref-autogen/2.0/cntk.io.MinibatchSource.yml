@@ -38,11 +38,11 @@ items:
 
     '
   syntax:
-    content: MinibatchSource(self, deserializers, max_samples=18446744073709551615,
-      max_sweeps=18446744073709551615, randomization_window_in_chunks=128, randomization_window_in_samples=0,
-      trace_level=TraceLevel.Warning, multithreaded_deserializer=False, frame_mode=False,
-      truncation_length=0, randomize=None, randomization_window=None, sample_based_randomization_window=None,
-      epoch_size=None, distributed_after=None)
+    content: 'MinibatchSource(deserializers, max_samples=18446744073709551615, max_sweeps=18446744073709551615,
+      randomization_window_in_chunks=128, randomization_window_in_samples=0, trace_level=<TraceLevel.Warning:
+      1>, multithreaded_deserializer=False, frame_mode=False, truncation_length=0,
+      randomize=None, randomization_window=None, sample_based_randomization_window=None,
+      epoch_size=None, distributed_after=None)'
     parameters:
     - description: deserializers to be used in the composite reader
       id: deserializers
@@ -214,7 +214,8 @@ items:
     taken.  An empty map is returned when the MinibatchSource has no more data to
     return.'
   syntax:
-    content: next_minibatch()
+    content: next_minibatch(self, minibatch_size_in_samples, input_map=None, device=None,
+      num_data_partitions=None, partition_index=None)
     parameters:
     - description: number of samples to retrieve for the next minibatch. Must be >
         0. **Important:** Click >>:cntkwiki:`here <BrainScript-minibatchSize-and-Python-minibatch_size_in_samples-in-CNTK>`<<

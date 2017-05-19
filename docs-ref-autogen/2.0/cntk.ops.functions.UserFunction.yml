@@ -34,7 +34,7 @@ items:
 
     '
   syntax:
-    content: UserFunction(cls)
+    content: UserFunction(*args, **kwargs)
     parameters:
     - description: inputs to this function
       id: inputs

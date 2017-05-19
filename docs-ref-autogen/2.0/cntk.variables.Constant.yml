@@ -35,8 +35,8 @@ items:
     >>> c.value\n    array([[ 1.,  1.,  1.],\n           [ 1.,  1.,  1.]], dtype=float32)\n\
     ```\n"
   syntax:
-    content: Constant(self, value=None, shape=None, dtype=<cntk.default_options.default_override_or
-      object at 0x0000026624253A20>, device=None, name="")
+    content: Constant(value=None, shape=None, dtype=<cntk.default_options.default_override_or
+      object at 0x0000026BBE865438>, device=None, name='')
     parameters:
     - description: 'Initial value. BUGBUG: Document initializers'
       id: value

@@ -30,7 +30,7 @@ items:
 
     '
   syntax:
-    content: DeviceDescriptor(self)
+    content: DeviceDescriptor(*args, **kwargs)
   type: class
   uid: cntk.device.DeviceDescriptor
 - class: cntk.device.DeviceDescriptor

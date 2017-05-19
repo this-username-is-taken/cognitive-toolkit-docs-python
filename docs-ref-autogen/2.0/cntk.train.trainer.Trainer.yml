@@ -64,7 +64,7 @@ items:
 
     '
   syntax:
-    content: Trainer(self, model, criterion, parameter_learners, progress_writers=None)
+    content: Trainer(model, criterion, parameter_learners, progress_writers=None)
     parameters:
     - description: root node of the function to train
       id: model

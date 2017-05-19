@@ -60,7 +60,7 @@ items:
 
     '
   syntax:
-    content: ProgressPrinter(self, freq=None, first=0, tag="", log_to_file=None, rank=None,
+    content: ProgressPrinter(freq=None, first=0, tag='', log_to_file=None, rank=None,
       gen_heartbeat=False, num_epochs=300, test_freq=None, test_first=0, metric_is_pct=True,
       distributed_freq=None, distributed_first=0)
     parameters:
@@ -232,7 +232,7 @@ items:
     startLine: 124
   summary: Prints the given message signifying the end of training.
   syntax:
-    content: end_progress_print(self, msg="")
+    content: end_progress_print(self, msg='')
     parameters:
     - id: self
     - defaultValue: ''

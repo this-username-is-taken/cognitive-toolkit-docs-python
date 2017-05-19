@@ -66,7 +66,12 @@ items:
   summary: Creates an AdaDelta learner instance to learn the parameters. See [1] for
     more information.
   syntax:
-    content: adadelta()
+    content: adadelta(parameters, lr=<cntk.cntk_py.training_parameter_per_sample_schedule;
+      proxy of <Swig Object of type 'CNTK::TrainingParameterPerUnitSchedule< double,CNTK::TrainingParameterSchedule<
+      double >::UnitType::Sample > *' at 0x0000026BBEBC7630> >, rho=0.95, epsilon=1e-08,
+      l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
+      gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
+      use_mean_gradient=False)
     parameters:
     - description: list of network parameters to tune. These can be obtained by the
         root operator's `parameters`.
@@ -135,7 +140,9 @@ items:
   summary: Creates an AdaGrad learner instance to learn the parameters. See [1] for
     more information.
   syntax:
-    content: adagrad()
+    content: adagrad(parameters, lr, need_ave_multiplier=True, l1_regularization_weight=0.0,
+      l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0, gradient_clipping_threshold_per_sample=inf,
+      gradient_clipping_with_truncation=True, use_mean_gradient=False)
     parameters:
     - description: list of network parameters to tune. These can be obtained by the
         root operator's `parameters`.
@@ -200,7 +207,11 @@ items:
   summary: Creates an Adam learner instance to learn the parameters. See [1] for more
     information.
   syntax:
-    content: adam()
+    content: adam(parameters, lr, momentum, unit_gain=True, variance_momentum=<cntk.cntk_py.momentum_as_time_constant_schedule;
+      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x0000026BBECD63F0>
+      >, l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
+      gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
+      use_mean_gradient=False)
     parameters:
     - description: list of network parameters to tune. These can be obtained by the
         root operator's `parameters`.
@@ -305,7 +316,11 @@ items:
     startLine: 686
   summary: Creates an FSAdaGrad learner instance to learn the parameters.
   syntax:
-    content: fsadagrad()
+    content: fsadagrad(parameters, lr, momentum, unit_gain=True, variance_momentum=<cntk.cntk_py.momentum_as_time_constant_schedule;
+      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x0000026BBECD6390>
+      >, l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
+      gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
+      use_mean_gradient=False)
     parameters:
     - description: list of network parameters to tune. These can be obtained by the
         root operator's `parameters`.
@@ -375,7 +390,7 @@ items:
     startLine: 308
   summary: Create a learning rate schedule (using the same semantics as `training_parameter_schedule()`).
   syntax:
-    content: learning_rate_schedule()
+    content: learning_rate_schedule(lr, unit, epoch_size=None)
     parameters:
     - description: see parameter `schedule` in `training_parameter_schedule()`.
       id: lr
@@ -437,7 +452,7 @@ items:
 
     ```'
   syntax:
-    content: momentum_as_time_constant_schedule()
+    content: momentum_as_time_constant_schedule(momentum, epoch_size=None)
     return:
       description: momentum as time constant schedule
   type: function
@@ -503,7 +518,7 @@ items:
 
     ```'
   syntax:
-    content: momentum_schedule()
+    content: momentum_schedule(momentum, epoch_size=None)
     return:
       description: momentum schedule
   type: function
@@ -523,7 +538,9 @@ items:
     startLine: 470
   summary: Creates a Momentum SGD learner instance to learn the parameters.
   syntax:
-    content: momentum_sgd()
+    content: momentum_sgd(parameters, lr, momentum, unit_gain=True, l1_regularization_weight=0.0,
+      l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0, gradient_clipping_threshold_per_sample=inf,
+      gradient_clipping_with_truncation=True, use_mean_gradient=False)
     parameters:
     - description: list of network parameters to tune. These can be obtained by the
         root operator's `parameters`.
@@ -595,7 +612,9 @@ items:
     originally proposed by Nesterov [1] in 1983 and then shown to work well in a deep
     learning context by Sutskever, et al. [2].
   syntax:
-    content: nesterov()
+    content: nesterov(parameters, lr, momentum, unit_gain=True, l1_regularization_weight=0.0,
+      l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0, gradient_clipping_threshold_per_sample=inf,
+      gradient_clipping_with_truncation=True, use_mean_gradient=False)
     parameters:
     - description: list of network parameters to tune. These can be obtained by the
         root operator's `parameters`.
@@ -660,7 +679,10 @@ items:
     startLine: 801
   summary: Creates an RMSProp learner instance to learn the parameters.
   syntax:
-    content: rmsprop()
+    content: rmsprop(parameters, lr, gamma, inc, dec, max, min, need_ave_multiplier=True,
+      l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
+      gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
+      use_mean_gradient=False)
     parameters:
     - description: list of network parameters to tune. These can be obtained by the
         root operator's `parameters`.
@@ -785,7 +807,9 @@ items:
   summary: Creates an SGD learner instance to learn the parameters. See [1] for more
     information on how to set the parameters.
   syntax:
-    content: sgd()
+    content: sgd(parameters, lr, l1_regularization_weight=0.0, l2_regularization_weight=0.0,
+      gaussian_noise_injection_std_dev=0.0, gradient_clipping_threshold_per_sample=inf,
+      gradient_clipping_with_truncation=True, use_mean_gradient=False)
     parameters:
     - description: list of network parameters to tune. These can be obtained by the
         '.parameters()' method of the root operator.
@@ -888,7 +912,7 @@ items:
 
     ```'
   syntax:
-    content: training_parameter_schedule()
+    content: training_parameter_schedule(schedule, unit, epoch_size=None)
     parameters:
     - description: if float, is the parameter schedule to be used for all samples.
         In case of list, the elements are used as the values for `epoch_size` samples.
