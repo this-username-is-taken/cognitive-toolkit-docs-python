@@ -100,7 +100,7 @@ items:
       path: /bindings/python\cntk\ops\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: module
+  type: package
   uid: cntk.ops
 - fullName: cntk.ops.abs
   langs:
@@ -1539,7 +1539,7 @@ items:
     and labels, should be provided.'
   syntax:
     content: input(shape, dtype=<cntk.default_options.default_override_or object at
-      0x0000016EEC49C9E8>, needs_gradient=False, is_sparse=False, dynamic_axes=[Axis('defaultBatchAxis')],
+      0x0000026B45EA18D0>, needs_gradient=False, is_sparse=False, dynamic_axes=[Axis('defaultBatchAxis')],
       name='')
     parameters:
     - description: the shape of the input tensor
@@ -3499,11 +3499,11 @@ items:
     \ a matrix. The operator '@' has been overloaded such that in Python 3.5 and later\
     \ X @ W equals times(X, W).\nFor better performance on times operation on sequence\
     \ which is followed by sequence.reduce_sum, use infer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK,\
-    \ i.e. replace following:\n<!-- literal_block {\"classes\": [], \"dupnames\":\
-    \ [], \"ids\": [], \"backrefs\": [], \"xml:space\": \"preserve\", \"names\": []}\
+    \ i.e. replace following:\n<!-- literal_block {\"xml:space\": \"preserve\", \"\
+    backrefs\": [], \"classes\": [], \"dupnames\": [], \"ids\": [], \"names\": []}\
     \ -->\n\n````\n\n   sequence.reduce_sum(times(seq1, seq2))\n   ````\nwith:\n<!--\
-    \ literal_block {\"classes\": [], \"dupnames\": [], \"ids\": [], \"backrefs\"\
-    : [], \"xml:space\": \"preserve\", \"names\": []} -->\n\n````\n\n   times(seq1,\
+    \ literal_block {\"xml:space\": \"preserve\", \"backrefs\": [], \"classes\": [],\
+    \ \"dupnames\": [], \"ids\": [], \"names\": []} -->\n\n````\n\n   times(seq1,\
     \ seq2, infer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK)\n\
     \   ````\n-[ Example ]-\n```\n\n>>> C.times([[1,2],[3,4]], [[5],[6]]).eval()\n\
     array([[ 17.],\n       [ 39.]], dtype=float32)\n```\n```\n\n>>> C.times(1.*np.reshape(np.arange(8),\

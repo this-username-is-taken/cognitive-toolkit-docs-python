@@ -70,19 +70,19 @@ items:
     \ need to declare the types of the arguments. In this case, the @Function decorator\
     \ creates a CNTK Function whose arguments are input variables.\nIf you use Python\
     \ 3, Functions with types are declared using Python annotation syntax, e.g.:\n\
-    <!-- literal_block {\"classes\": [], \"dupnames\": [], \"ids\": [], \"backrefs\"\
-    : [], \"xml:space\": \"preserve\", \"names\": []} -->\n\n````\n\n   @Function\n\
+    <!-- literal_block {\"xml:space\": \"preserve\", \"backrefs\": [], \"classes\"\
+    : [], \"dupnames\": [], \"ids\": [], \"names\": []} -->\n\n````\n\n   @Function\n\
     \   def f(x:Tensor[13]):\n       return x * x\n   ````\nIf you are working with\
     \ Python 2.7, use CNTK's *@:class:~cntk.layers.typing.Signature* decorator instead:\n\
-    <!-- literal_block {\"classes\": [], \"dupnames\": [], \"ids\": [], \"backrefs\"\
-    : [], \"xml:space\": \"preserve\", \"names\": []} -->\n\n````\n\n   >>> from cntk.layers.typing\
-    \ import *\n   >>> @Function\n   ... @Signature(Tensor[13])\n   ... def f(x):\n\
-    \   ...     return x * x\n   >>> debugging.dump_signature(f)\n   Function(x: Tensor[13])\
-    \ -> Tensor[13]\n   ````\n`make_block=True` is an internal parameter used to implement\
-    \ *@:func:~cntk.layers.blocks.BlockFunction()*. If *BlockFunction()* passes *True`*,\
-    \ then the result will be wrapped in :func:`~cntk.ops.as_block()`, using the supplied\
-    \ `op_name` and `name` parameters, which are otherwise ignored.\n\n\n\n\n\n\n\n\
-    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    <!-- literal_block {\"xml:space\": \"preserve\", \"backrefs\": [], \"classes\"\
+    : [], \"dupnames\": [], \"ids\": [], \"names\": []} -->\n\n````\n\n   >>> from\
+    \ cntk.layers.typing import *\n   >>> @Function\n   ... @Signature(Tensor[13])\n\
+    \   ... def f(x):\n   ...     return x * x\n   >>> debugging.dump_signature(f)\n\
+    \   Function(x: Tensor[13]) -> Tensor[13]\n   ````\n`make_block=True` is an internal\
+    \ parameter used to implement *@:func:~cntk.layers.blocks.BlockFunction()*. If\
+    \ *BlockFunction()* passes *True`*, then the result will be wrapped in :func:`~cntk.ops.as_block()`,\
+    \ using the supplied `op_name` and `name` parameters, which are otherwise ignored.\n\
+    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
   syntax:
     content: Function(*args, **kwargs)
   type: class
