@@ -76,7 +76,7 @@ items:
     ```'
   syntax:
     content: Activation(activation=<cntk.default_options.default_override_or object
-      at 0x0000016EEC4D1F28>, name='')
+      at 0x0000026B45ED3DD8>, name='')
     parameters:
     - description: function to apply at the end, e.g. *relu*
       id: activation
@@ -126,7 +126,7 @@ items:
     \ dtype=float32)\n```"
   syntax:
     content: AveragePooling(filter_shape, strides=1, pad=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1E80>, name='')
+      object at 0x0000026B45ED3D30>, name='')
     parameters:
     - description: shape (spatial extent) of the receptive field, *not* including
         the input feature-map depth. E.g. (3,3) for a 2D convolution.
@@ -185,10 +185,10 @@ items:
     \ pixel positions\n    ((3,), (3,))\n```"
   syntax:
     content: BatchNormalization(map_rank=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1F60>, init_scale=1, normalization_time_constant=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1F98>, blend_time_constant=0, epsilon=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1FD0>, use_cntk_engine=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D5048>, name='')
+      object at 0x0000026B45ED3E10>, init_scale=1, normalization_time_constant=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3E48>, blend_time_constant=0, epsilon=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3E80>, use_cntk_engine=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3EB8>, name='')
     parameters:
     - description: passing 1 means spatially-pooled batch-normalization, where normalization
         values will be tied across all pixel positions; while `None` will normalize
@@ -282,11 +282,11 @@ items:
     \    (128, 3, 2, 5, 4)\n```"
   syntax:
     content: Convolution(filter_shape, num_filters=None, sequential=False, activation=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D13C8>, init=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1438>, pad=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1470>, strides=1, sharing=True, bias=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D14A8>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D14E0>, reduction_rank=1, transpose_weight=False, max_temp_mem_size_in_samples=0,
+      object at 0x0000026B45ED3278>, init=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED32E8>, pad=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3320>, strides=1, sharing=True, bias=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3358>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3390>, reduction_rank=1, transpose_weight=False, max_temp_mem_size_in_samples=0,
       op_name='Convolution', name='')
     parameters:
     - description: shape (spatial extent) of the receptive field, *not* including
@@ -384,11 +384,11 @@ items:
     See *Convolution()* for extensive documentation.
   syntax:
     content: Convolution1D(filter_shape, num_filters=None, activation=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1518>, init=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1588>, pad=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D15C0>, strides=1, bias=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D15F8>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1630>, reduction_rank=1, name='')
+      object at 0x0000026B45ED33C8>, init=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3438>, pad=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3470>, strides=1, bias=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED34A8>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED34E0>, reduction_rank=1, name='')
     parameters:
     - description: shape (spatial extent) of the receptive field, *not* including
         the input feature-map depth. E.g. (3,3) for a 2D convolution.
@@ -464,11 +464,11 @@ items:
     See *Convolution()* for extensive documentation.
   syntax:
     content: Convolution2D(filter_shape, num_filters=None, activation=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1668>, init=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D16D8>, pad=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1710>, strides=1, bias=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1748>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1780>, reduction_rank=1, name='')
+      object at 0x0000026B45ED3518>, init=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3588>, pad=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED35C0>, strides=1, bias=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED35F8>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3630>, reduction_rank=1, name='')
     parameters:
     - description: shape (spatial extent) of the receptive field, *not* including
         the input feature-map depth. E.g. (3,3) for a 2D convolution.
@@ -544,11 +544,11 @@ items:
     See *Convolution()* for extensive documentation.
   syntax:
     content: Convolution3D(filter_shape, num_filters=None, activation=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D17B8>, init=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1828>, pad=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1860>, strides=1, bias=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1898>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D18D0>, reduction_rank=1, name='')
+      object at 0x0000026B45ED3668>, init=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED36D8>, pad=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3710>, strides=1, bias=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3748>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3780>, reduction_rank=1, name='')
     parameters:
     - description: shape (spatial extent) of the receptive field, *not* including
         the input feature-map depth. E.g. (3,3) for a 2D convolution.
@@ -649,11 +649,11 @@ items:
     \ form (input_depth, num_filters, *filter_shape)\n    (3, 128, 3, 4)\n```"
   syntax:
     content: ConvolutionTranspose(filter_shape, num_filters, activation=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1908>, init=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1978>, pad=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D19B0>, strides=1, sharing=True, bias=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D19E8>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1A20>, output_shape=None, reduction_rank=1, max_temp_mem_size_in_samples=0,
+      object at 0x0000026B45ED37B8>, init=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3828>, pad=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3860>, strides=1, sharing=True, bias=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3898>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED38D0>, output_shape=None, reduction_rank=1, max_temp_mem_size_in_samples=0,
       name='')
     parameters:
     - description: shape (spatial extent) of the receptive field, *not* including
@@ -743,11 +743,11 @@ items:
     is verified to be 1-dimensional. See *ConvolutionTranspose()* for extensive documentation.
   syntax:
     content: ConvolutionTranspose1D(filter_shape, num_filters, activation=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1A58>, init=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1AC8>, pad=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1B00>, strides=1, bias=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1B38>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1B70>, output_shape=None, name='')
+      object at 0x0000026B45ED3908>, init=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3978>, pad=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED39B0>, strides=1, bias=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED39E8>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3A20>, output_shape=None, name='')
   type: function
   uid: cntk.layers.layers.ConvolutionTranspose1D
 - fullName: cntk.layers.layers.ConvolutionTranspose2D
@@ -768,11 +768,11 @@ items:
     is verified to be 2-dimensional. See *ConvolutionTranspose()* for extensive documentation.
   syntax:
     content: ConvolutionTranspose2D(filter_shape, num_filters, activation=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1BA8>, init=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1C18>, pad=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1C50>, strides=1, bias=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1C88>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1CC0>, output_shape=None, name='')
+      object at 0x0000026B45ED3A58>, init=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3AC8>, pad=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3B00>, strides=1, bias=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3B38>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3B70>, output_shape=None, name='')
   type: function
   uid: cntk.layers.layers.ConvolutionTranspose2D
 - fullName: cntk.layers.layers.ConvolutionTranspose3D
@@ -793,11 +793,11 @@ items:
     is verified to be 3-dimensional. See *ConvolutionTranspose()* for extensive documentation.
   syntax:
     content: ConvolutionTranspose3D(filter_shape, num_filters, activation=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1CF8>, init=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1D68>, pad=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1DA0>, strides=1, bias=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1DD8>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1E10>, output_shape=None, name='')
+      object at 0x0000026B45ED3BA8>, init=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3C18>, pad=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3C50>, strides=1, bias=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3C88>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3CC0>, output_shape=None, name='')
   type: function
   uid: cntk.layers.layers.ConvolutionTranspose3D
 - fullName: cntk.layers.layers.Dense
@@ -824,10 +824,10 @@ items:
     ...     f = Dense(500)\n```"
   syntax:
     content: Dense(shape, activation=<cntk.default_options.default_override_or object
-      at 0x0000016EEC4D1208>, init=<cntk.default_options.default_override_or object
-      at 0x0000016EEC4D1278>, input_rank=None, map_rank=None, bias=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D12B0>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D12E8>, name='')
+      at 0x0000026B45ED30B8>, init=<cntk.default_options.default_override_or object
+      at 0x0000026B45ED3128>, input_rank=None, map_rank=None, bias=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3160>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000026B45ED3198>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
@@ -962,8 +962,8 @@ items:
     \ sparse.\nThe lookup table in this layer is learnable, unless a user-specified\
     \ one is supplied through the `weights` parameter. For example, to use an existing\
     \ embedding table from a file in numpy format, use this:\n<!-- literal_block {\"\
-    classes\": [], \"dupnames\": [], \"ids\": [], \"backrefs\": [], \"xml:space\"\
-    : \"preserve\", \"names\": []} -->\n\n````\n\n   Embedding(weights=np.load('PATH.npy'))\n\
+    xml:space\": \"preserve\", \"backrefs\": [], \"classes\": [], \"dupnames\": [],\
+    \ \"ids\": [], \"names\": []} -->\n\n````\n\n   Embedding(weights=np.load('PATH.npy'))\n\
     \   ````\nTo initialize a learnable lookup table with a given numpy array that\
     \ is to be used as the initial value, pass that array to the `init` parameter\
     \ (not `weights`).\nAn `Embedding` instance owns its weight parameter tensor *E*,\
@@ -979,7 +979,7 @@ items:
     \ dtype=float32)\n```"
   syntax:
     content: Embedding(shape=None, init=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1358>, weights=None, name='')
+      object at 0x0000026B45ED3208>, weights=None, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
@@ -1128,7 +1128,7 @@ items:
     \ array([[ 2.99999, -0.99999, -0.99999,  2.99999]], dtype=float32)\n```"
   syntax:
     content: LayerNormalization(initial_scale=1, initial_bias=0, epsilon=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D5080>, name='')
+      object at 0x0000026B45ED3EF0>, name='')
     parameters:
     - description: initial value for the `scale` parameter
       id: initial_scale
@@ -1185,7 +1185,7 @@ items:
     \ 5.,  8.],\n             [ 7.,  9.]]]], dtype=float32)\n```"
   syntax:
     content: MaxPooling(filter_shape, strides=1, pad=<cntk.default_options.default_override_or
-      object at 0x0000016EEC4D1E48>, name='')
+      object at 0x0000026B45ED3CF8>, name='')
     parameters:
     - description: shape (spatial extent) of the receptive field, *not* including
         the input feature-map depth. E.g. (3,3) for a 2D convolution.

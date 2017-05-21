@@ -68,7 +68,7 @@ items:
   syntax:
     content: adadelta(parameters, lr=<cntk.cntk_py.training_parameter_per_sample_schedule;
       proxy of <Swig Object of type 'CNTK::TrainingParameterPerUnitSchedule< double,CNTK::TrainingParameterSchedule<
-      double >::UnitType::Sample > *' at 0x0000016EEC2385D0> >, rho=0.95, epsilon=1e-08,
+      double >::UnitType::Sample > *' at 0x0000026B45C685D0> >, rho=0.95, epsilon=1e-08,
       l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
       gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
       use_mean_gradient=False)
@@ -208,7 +208,7 @@ items:
     information.
   syntax:
     content: adam(parameters, lr, momentum, unit_gain=True, variance_momentum=<cntk.cntk_py.momentum_as_time_constant_schedule;
-      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x0000016EEC3B8390>
+      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x0000026B45E28390>
       >, l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
       gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
       use_mean_gradient=False)
@@ -317,7 +317,7 @@ items:
   summary: Creates an FSAdaGrad learner instance to learn the parameters.
   syntax:
     content: fsadagrad(parameters, lr, momentum, unit_gain=True, variance_momentum=<cntk.cntk_py.momentum_as_time_constant_schedule;
-      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x0000016EEC3B8330>
+      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x0000026B45E28330>
       >, l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
       gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
       use_mean_gradient=False)
