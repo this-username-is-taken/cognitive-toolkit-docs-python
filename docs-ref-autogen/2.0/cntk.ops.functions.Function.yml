@@ -39,7 +39,8 @@ items:
   - cntk.ops.functions.Function.uid
   - cntk.ops.functions.Function.update_signature
   class: cntk.ops.functions.Function
-  example: '```
+  example:
+  - '```
 
 
     >>> @Function
@@ -83,12 +84,12 @@ items:
     To train a Function or pass data to it, you need to declare the types of the arguments.\
     \ In this case, the @Function decorator creates a CNTK Function whose arguments\
     \ are input variables.\nIf you use Python 3, Functions with types are declared\
-    \ using Python annotation syntax, e.g.:\n<!-- literal_block {\"classes\": [],\
-    \ \"names\": [], \"dupnames\": [], \"xml:space\": \"preserve\", \"backrefs\":\
-    \ [], \"ids\": []} -->\n\n````\n\n   @Function\n   def f(x:Tensor[13]):\n    \
-    \   return x * x\n   ````\nIf you are working with Python 2.7, use CNTK's *@:class:~cntk.layers.typing.Signature*\
-    \ decorator instead:\n<!-- literal_block {\"classes\": [], \"names\": [], \"dupnames\"\
-    : [], \"xml:space\": \"preserve\", \"backrefs\": [], \"ids\": []} -->\n\n````\n\
+    \ using Python annotation syntax, e.g.:\n<!-- literal_block {\"xml:space\": \"\
+    preserve\", \"backrefs\": [], \"names\": [], \"ids\": [], \"classes\": [], \"\
+    dupnames\": []} -->\n\n````\n\n   @Function\n   def f(x:Tensor[13]):\n       return\
+    \ x * x\n   ````\nIf you are working with Python 2.7, use CNTK's *@:class:~cntk.layers.typing.Signature*\
+    \ decorator instead:\n<!-- literal_block {\"xml:space\": \"preserve\", \"backrefs\"\
+    : [], \"names\": [], \"ids\": [], \"classes\": [], \"dupnames\": []} -->\n\n````\n\
     \n   >>> from cntk.layers.typing import *\n   >>> @Function\n   ... @Signature(Tensor[13])\n\
     \   ... def f(x):\n   ...     return x * x\n   >>> debugging.dump_signature(f)\n\
     \   Function(x: Tensor[13]) -> Tensor[13]\n   ````\n`make_block=True` is an internal\
@@ -162,7 +163,8 @@ items:
   type: attribute
   uid: cntk.ops.functions.Function.attributes
 - class: cntk.ops.functions.Function
-  example: '```
+  example:
+  - '```
 
 
     >>> # compute the value and the derivative of the sigmoid at 0
@@ -360,7 +362,8 @@ items:
   type: method
   uid: cntk.ops.functions.Function.eval
 - class: cntk.ops.functions.Function
-  example: '```
+  example:
+  - '```
 
 
     >>> a = C.input(shape=1, name=''i'')
@@ -412,7 +415,8 @@ items:
   type: method
   uid: cntk.ops.functions.Function.find_all_with_name
 - class: cntk.ops.functions.Function
-  example: '```
+  example:
+  - '```
 
 
     >>> a = C.input(shape=1, name=''a'')
@@ -477,8 +481,9 @@ items:
   type: method
   uid: cntk.ops.functions.Function.find_by_name
 - class: cntk.ops.functions.Function
-  example: "```\n\n>>> # Doing the same, but with a CSR matrix from scipy.sparse\n\
-    >>> vocab_size = 5\n>>> from scipy.sparse import csr_matrix\n>>> v = C.sequence.input(shape=(vocab_size,),\
+  example:
+  - "```\n\n>>> # Doing the same, but with a CSR matrix from scipy.sparse\n>>> vocab_size\
+    \ = 5\n>>> from scipy.sparse import csr_matrix\n>>> v = C.sequence.input(shape=(vocab_size,),\
     \ is_sparse=True)\n>>> f = C.times(v, np.eye(vocab_size))\n>>> # Note that csr_matrix\
     \ automatically uses a sparse representation underneath.\n>>> sparse_batch = [csr_matrix([[0,1,0,0,0]]),\
     \ csr_matrix([[0,0,1,0,0], [0,0,0,0,1]])]\n>>> _, fv = f.forward({v:sparse_batch})\n\
@@ -568,7 +573,8 @@ items:
   type: method
   uid: cntk.ops.functions.Function.forward
 - class: cntk.ops.functions.Function
-  example: "```\n\n>>> x = C.input(shape=(1,), needs_gradient=True)\n>>> y = C.sqrt(x)\n\
+  example:
+  - "```\n\n>>> x = C.input(shape=(1,), needs_gradient=True)\n>>> y = C.sqrt(x)\n\
     >>> a = np.asarray([1,4,16],dtype=np.float32).reshape(3,1)\n>>> y.grad({x:a})\n\
     array([[ 0.5  ],\n<BLANKLINE>\n       [ 0.25 ],\n<BLANKLINE>\n       [ 0.125]],\
     \ dtype=float32)\n```"

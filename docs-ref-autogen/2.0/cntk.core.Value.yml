@@ -223,9 +223,10 @@ items:
   type: attribute
   uid: cntk.core.Value.is_sparse
 - class: cntk.core.Value
-  example: A mask of `[[2, 1, 1], [1, 1, 0]]` describes a batch of two sequences.
-    The first has three elements, of which the first element (2) signals the beginning
-    of a sequence. The second sequence has two elements (last element marked 'invalid'
+  example:
+  - A mask of `[[2, 1, 1], [1, 1, 0]]` describes a batch of two sequences. The first
+    has three elements, of which the first element (2) signals the beginning of a
+    sequence. The second sequence has two elements (last element marked 'invalid'
     by '0'). As it starts with (1), it is a continuation of the 2nd sequence in the
     previous minibatch.
   fullName: cntk.core.Value.mask
@@ -248,7 +249,8 @@ items:
   type: attribute
   uid: cntk.core.Value.mask
 - class: cntk.core.Value
-  example: "```\n\n>>> num_classes = 6\n>>> sparse_indices = [[1,C.Value.ONE_HOT_SKIP,5],[4]]\n\
+  example:
+  - "```\n\n>>> num_classes = 6\n>>> sparse_indices = [[1,C.Value.ONE_HOT_SKIP,5],[4]]\n\
     >>> i0 = C.sequence.input(shape=num_classes, is_sparse=True)\n>>> z = C.times(i0,\
     \ np.eye(num_classes))\n>>> value = C.Value.one_hot(sparse_indices, num_classes)\n\
     >>> z.eval({i0: value})\n[array([[ 0.,  1.,  0.,  0.,  0.,  0.],\n        [ 0.,\

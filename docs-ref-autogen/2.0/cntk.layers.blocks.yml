@@ -45,8 +45,9 @@ items:
     content: BlockFunction(op_name, name)
   type: function
   uid: cntk.layers.blocks.BlockFunction
-- example: "```\n\n>>> # create a graph with a recurrent loop to compute the length\
-    \ of an input sequence\n>>> from cntk.layers.typing import *\n>>> x = C.input(**Sequence[Tensor[2]])\n\
+- example:
+  - "```\n\n>>> # create a graph with a recurrent loop to compute the length of an\
+    \ input sequence\n>>> from cntk.layers.typing import *\n>>> x = C.input(**Sequence[Tensor[2]])\n\
     >>> ones_like_input = sequence.broadcast_as(1, x)  # sequence of scalar ones of\
     \ same length as input\n>>> out_fwd = ForwardDeclaration()  # placeholder for\
     \ the state variables\n>>> out = sequence.past_value(out_fwd, initial_state=0)\
@@ -77,7 +78,8 @@ items:
         it to another variable
   type: function
   uid: cntk.layers.blocks.ForwardDeclaration
-- example: '```
+- example:
+  - '```
 
 
     >>> # a gated recurrent layer
@@ -105,10 +107,10 @@ items:
     the previous state as its first argument, and outputs its new state.
   syntax:
     content: GRU(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x0000021842549EB8>, init=<cntk.default_options.default_override_or
-      object at 0x0000021842549F28>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000021842549F60>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x0000021842549F98>, name='')
+      object at 0x0000023A53273EF0>, init=<cntk.default_options.default_override_or
+      object at 0x0000023A53273F60>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000023A53273F98>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x0000023A53273FD0>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
@@ -147,7 +149,8 @@ items:
       - cntk.ops.functions.Function
   type: function
   uid: cntk.layers.blocks.GRU
-- example: '```
+- example:
+  - '```
 
 
     >>> # a typical recurrent LSTM layer
@@ -176,11 +179,11 @@ items:
     two-valued tuple `(h,c)`.
   syntax:
     content: LSTM(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x0000021842549D30>, use_peepholes=<cntk.default_options.default_override_or
-      object at 0x00000218425493C8>, init=<cntk.default_options.default_override_or
-      object at 0x0000021842549C88>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000021842549CC0>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x0000021842549D68>, name='')
+      object at 0x0000023A53273D68>, use_peepholes=<cntk.default_options.default_override_or
+      object at 0x0000023A53273B38>, init=<cntk.default_options.default_override_or
+      object at 0x0000023A53273CC0>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000023A53273CF8>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x0000023A53273DA0>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
@@ -223,7 +226,8 @@ items:
       - cntk.ops.functions.Function
   type: function
   uid: cntk.layers.blocks.LSTM
-- example: '```
+- example:
+  - '```
 
 
     >>> # a plain relu RNN layer
@@ -251,10 +255,10 @@ items:
     the previous state as its first argument, and outputs its new state.
   syntax:
     content: RNNUnit(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x0000021842549DA0>, init=<cntk.default_options.default_override_or
-      object at 0x0000021842549E10>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000021842549E48>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x0000021842549E80>, name='')
+      object at 0x0000023A53273DD8>, init=<cntk.default_options.default_override_or
+      object at 0x0000023A53273E48>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000023A53273E80>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x0000023A53273EB8>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
@@ -293,7 +297,8 @@ items:
       - cntk.ops.functions.Function
   type: function
   uid: cntk.layers.blocks.RNNUnit
-- example: '```
+- example:
+  - '```
 
 
     >>> # recurrent model with self-stabilization
@@ -350,7 +355,7 @@ items:
     variant) but is also more robust by avoiding exploding gradients.'
   syntax:
     content: Stabilizer(steepness=4, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x0000021842549C18>, name='')
+      object at 0x0000023A53273C50>, name='')
     parameters:
     - description: ''
       id: steepness

@@ -34,8 +34,9 @@ items:
     startLine: 0
   type: module
   uid: cntk.ops.sequence
-- example: "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> t = C.sequence.last(x)\n\
-    >>> b = C.sequence.is_first(x)\n>>> y = C.sequence.broadcast_as(t, b)\n>>> # create\
+- example:
+  - "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> t = C.sequence.last(x)\n>>>\
+    \ b = C.sequence.is_first(x)\n>>> y = C.sequence.broadcast_as(t, b)\n>>> # create\
     \ one sequence of 4 tensors each with shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
     >>> y.eval({x:x0})\n[array([[[ 18.,  19.],\n         [ 20.,  21.],\n         [\
     \ 22.,  23.]],\n<BLANKLINE>\n        [[ 18.,  19.],\n         [ 20.,  21.],\n\
@@ -109,8 +110,9 @@ items:
       - str, optional
   type: function
   uid: cntk.ops.sequence.delay
-- example: "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> y = C.sequence.first(x)\n\
-    >>> # create one sequence of 4 tensors each with shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
+- example:
+  - "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> y = C.sequence.first(x)\n>>>\
+    \ # create one sequence of 4 tensors each with shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
     >>> y.eval({x:x0})\narray([[[ 0.,  1.],\n         [ 2.,  3.],\n         [ 4.,\
     \  5.]]], dtype=float32)\n```"
   fullName: cntk.ops.sequence.first
@@ -140,8 +142,9 @@ items:
       description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
   type: function
   uid: cntk.ops.sequence.first
-- example: "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> # Create one sequence\
-    \ with 4 tensors of shape (3, 2)\n>>> x0 = np.reshape(np.arange(24,dtype=np.float32),(1,4,3,2))\n\
+- example:
+  - "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> # Create one sequence with\
+    \ 4 tensors of shape (3, 2)\n>>> x0 = np.reshape(np.arange(24,dtype=np.float32),(1,4,3,2))\n\
     >>> y = C.sequence.future_value(x) # using initial state of 0 by default\n>>>\
     \ y.eval({x:x0})\n[array([[[  6.,   7.],\n         [  8.,   9.],\n         [ 10.,\
     \  11.]],\n<BLANKLINE>\n        [[ 12.,  13.],\n         [ 14.,  15.],\n     \
@@ -189,7 +192,8 @@ items:
       description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
   type: function
   uid: cntk.ops.sequence.future_value
-- example: "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> z = C.greater(C.reduce_sum(x),60)\n\
+- example:
+  - "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> z = C.greater(C.reduce_sum(x),60)\n\
     >>> y = C.sequence.gather(x,z)\n>>> # create one sequence of 4 tensors each with\
     \ shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
     >>> y.eval({x:x0})\n[array([[[ 12.,  13.],\n         [ 14.,  15.],\n         [\
@@ -251,7 +255,7 @@ items:
     and labels, should be provided.'
   syntax:
     content: input(shape, dtype=<cntk.default_options.default_override_or object at
-      0x00000218424B50B8>, needs_gradient=False, is_sparse=False, sequence_axis=Axis('defaultDynamicAxis'),
+      0x0000023A5318F080>, needs_gradient=False, is_sparse=False, sequence_axis=Axis('defaultDynamicAxis'),
       name='')
     parameters:
     - description: the shape of the input tensor
@@ -282,7 +286,8 @@ items:
       description: '`Variable`'
   type: function
   uid: cntk.ops.sequence.input
-- example: '```
+- example:
+  - '```
 
 
     >>> x = C.sequence.input(shape=(3,2))
@@ -326,7 +331,8 @@ items:
       description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
   type: function
   uid: cntk.ops.sequence.is_first
-- example: '```
+- example:
+  - '```
 
 
     >>> x = C.sequence.input(shape=(3,2))
@@ -370,8 +376,9 @@ items:
       description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
   type: function
   uid: cntk.ops.sequence.is_last
-- example: "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> y = C.sequence.last(x)\n\
-    >>> # create one sequence of 4 tensors each with shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
+- example:
+  - "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> y = C.sequence.last(x)\n>>>\
+    \ # create one sequence of 4 tensors each with shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
     >>> y.eval({x:x0})\narray([[[ 18.,  19.],\n         [ 20.,  21.],\n         [\
     \ 22.,  23.]]], dtype=float32)\n```"
   fullName: cntk.ops.sequence.last
@@ -401,8 +408,9 @@ items:
       description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
   type: function
   uid: cntk.ops.sequence.last
-- example: "```\n\n>>> # create example input: one sequence with 4 tensors of shape\
-    \ (3, 2)\n>>> from cntk.layers.typing import Tensor, Sequence\n>>> x = C.sequence.input((3,2))\n\
+- example:
+  - "```\n\n>>> # create example input: one sequence with 4 tensors of shape (3, 2)\n\
+    >>> from cntk.layers.typing import Tensor, Sequence\n>>> x = C.sequence.input((3,2))\n\
     >>> x0 = np.reshape(np.arange(24,dtype=np.float32),(1,4,3,2))\n>>> x0\narray([[[[\
     \  0.,   1.],\n         [  2.,   3.],\n         [  4.,   5.]],\n<BLANKLINE>\n\
     \        [[  6.,   7.],\n         [  8.,   9.],\n         [ 10.,  11.]],\n<BLANKLINE>\n\
@@ -495,8 +503,9 @@ items:
       description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
   type: function
   uid: cntk.ops.sequence.reduce_max
-- example: "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> # create one sequence\
-    \ of 4 tensors each with shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
+- example:
+  - "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> # create one sequence of 4\
+    \ tensors each with shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
     >>> y = C.sequence.reduce_sum(x)\n>>> y.eval({x:x0})\narray([[[ 36.,  40.],\n\
     \         [ 44.,  48.],\n         [ 52.,  56.]]], dtype=float32)\n```"
   fullName: cntk.ops.sequence.reduce_sum
@@ -526,9 +535,10 @@ items:
       description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
   type: function
   uid: cntk.ops.sequence.reduce_sum
-- example: "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> t = C.sequence.last(x)\n\
-    >>> b = C.sequence.is_first(x)\n>>> y = C.sequence.scatter(t, b)\n>>> # create\
-    \ one sequence of 4 tensors each with shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
+- example:
+  - "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> t = C.sequence.last(x)\n>>>\
+    \ b = C.sequence.is_first(x)\n>>> y = C.sequence.scatter(t, b)\n>>> # create one\
+    \ sequence of 4 tensors each with shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
     >>> y.eval({x:x0})\n[array([[[ 18.,  19.],\n         [ 20.,  21.],\n         [\
     \ 22.,  23.]],\n<BLANKLINE>\n        [[  0.,   0.],\n         [  0.,   0.],\n\
     \         [  0.,   0.]],\n<BLANKLINE>\n        [[  0.,   0.],\n         [  0.,\
@@ -575,7 +585,8 @@ items:
       description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
   type: function
   uid: cntk.ops.sequence.scatter
-- example: TBA
+- example:
+  - TBA
   fullName: cntk.ops.sequence.slice
   langs:
   - python
@@ -624,7 +635,8 @@ items:
       description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
   type: function
   uid: cntk.ops.sequence.softmax
-- example: TBA.
+- example:
+  - TBA.
   fullName: cntk.ops.sequence.unpack
   langs:
   - python
@@ -666,7 +678,8 @@ items:
       description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
   type: function
   uid: cntk.ops.sequence.unpack
-- example: "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> z = C.greater(C.reduce_sum(x),\
+- example:
+  - "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> z = C.greater(C.reduce_sum(x),\
     \ 60)\n>>> # create one sequence of 4 tensors each with shape (3,2)\n>>> x0 =\
     \ np.reshape(np.arange(24.0, dtype=np.float32), (1,4,3,2))\n>>> z.eval({x:x0})\n\
     [array([[ 0.],\n        [ 0.],\n        [ 1.],\n        [ 1.]], dtype=float32)]\n\

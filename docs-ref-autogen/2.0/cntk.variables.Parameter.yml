@@ -4,7 +4,8 @@ items:
 - children:
   - cntk.variables.Parameter.value
   class: cntk.variables.Parameter
-  example: "```\n\n>>> p = C.Parameter((13,42,7), init=C.glorot_uniform())\n>>> p.shape\n\
+  example:
+  - "```\n\n>>> p = C.Parameter((13,42,7), init=C.glorot_uniform())\n>>> p.shape\n\
     \    (13, 42, 7)\n```\n\n```\n\n>>> # example with inferred dimensions\n>>> W\
     \ = C.Parameter((C.InferredDimension, 42), init=C.glorot_uniform())\n>>> W.shape\
     \   # -1 indicates dimension yet to be inferred\n    (-1, 42)\n>>> x = C.input(13)\n\
@@ -44,7 +45,7 @@ items:
     '
   syntax:
     content: Parameter(shape=None, init=None, dtype=<cntk.default_options.default_override_or
-      object at 0x0000021842499A20>, device=None, name='')
+      object at 0x0000023A51CD7AC8>, device=None, name='')
     parameters:
     - description: the shape of the tensor holding the parameters
       id: shape

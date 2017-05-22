@@ -4,8 +4,9 @@ items:
 - children:
   - cntk.variables.Constant.value
   class: cntk.variables.Constant
-  example: "```\n\n>>> c = C.Constant(1, (2,3))\n>>> c.value\n    array([[ 1.,  1.,\
-    \  1.],\n           [ 1.,  1.,  1.]], dtype=float32)\n```"
+  example:
+  - "```\n\n>>> c = C.Constant(1, (2,3))\n>>> c.value\n    array([[ 1.,  1.,  1.],\n\
+    \           [ 1.,  1.,  1.]], dtype=float32)\n```"
   fullName: cntk.variables.Constant
   inheritance:
   - inheritance:
@@ -39,7 +40,7 @@ items:
     '
   syntax:
     content: Constant(value=None, shape=None, dtype=<cntk.default_options.default_override_or
-      object at 0x0000021842499A58>, device=None, name='')
+      object at 0x0000023A530B3B70>, device=None, name='')
     parameters:
     - description: 'Initial value. BUGBUG: Document initializers'
       id: value
