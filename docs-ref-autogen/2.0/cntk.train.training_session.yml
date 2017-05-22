@@ -27,24 +27,7 @@ items:
     of consistent checkpointing and progress printing with specified frequencies.
   type: module
   uid: cntk.train.training_session
-- fullName: cntk.train.training_session.minibatch_size_schedule
-  langs:
-  - python
-  module: cntk.train.training_session
-  name: minibatch_size_schedule
-  source:
-    id: minibatch_size_schedule
-    path: /bindings/python\cntk\internal\swig_helper.py
-    remote:
-      branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 211
-  summary: 'Creates a minibatch size schedule.
-
-    -[ Examples ]-
-
-    ```
+- example: '```
 
 
     >>> # Use a fixed value 32 for all minibatches
@@ -56,6 +39,7 @@ items:
     (32, 32)
 
     ```
+
 
     ```
 
@@ -71,6 +55,7 @@ items:
 
     ```
 
+
     ```
 
 
@@ -85,6 +70,20 @@ items:
     (32, 32, 64, 64, 128, 128)
 
     ```'
+  fullName: cntk.train.training_session.minibatch_size_schedule
+  langs:
+  - python
+  module: cntk.train.training_session
+  name: minibatch_size_schedule
+  source:
+    id: minibatch_size_schedule
+    path: /bindings/python\cntk\internal\swig_helper.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 211
+  summary: Creates a minibatch size schedule.
   syntax:
     content: minibatch_size_schedule(schedule, epoch_size=1)
     parameters:

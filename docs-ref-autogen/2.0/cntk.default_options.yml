@@ -77,11 +77,11 @@ items:
     content: get_default_override(function_or_class, **kwargs)
     parameters:
     - description: "the function that calls this. For example:\n\n<!-- literal_block\
-        \ {\"xml:space\": \"preserve\", \"backrefs\": [], \"classes\": [], \"dupnames\"\
-        : [], \"ids\": [], \"names\": []} -->\n\n````\n\n   def Convolution(args,\
-        \ init=default_override_or(glorot_uniform()), activation=default_override_or(identity),\
-        \ pad=default_override_or(False)):\n   init = _get_default_override(Convolution,\
-        \ init=init) # pass default under the same name\n   ````"
+        \ {\"classes\": [], \"names\": [], \"dupnames\": [], \"xml:space\": \"preserve\"\
+        , \"backrefs\": [], \"ids\": []} -->\n\n````\n\n   def Convolution(args, init=default_override_or(glorot_uniform()),\
+        \ activation=default_override_or(identity), pad=default_override_or(False)):\n\
+        \   init = _get_default_override(Convolution, init=init) # pass default under\
+        \ the same name\n   ````"
       id: function
   type: function
   uid: cntk.default_options.get_default_override

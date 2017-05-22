@@ -68,7 +68,7 @@ items:
   syntax:
     content: adadelta(parameters, lr=<cntk.cntk_py.training_parameter_per_sample_schedule;
       proxy of <Swig Object of type 'CNTK::TrainingParameterPerUnitSchedule< double,CNTK::TrainingParameterSchedule<
-      double >::UnitType::Sample > *' at 0x0000026B45C685D0> >, rho=0.95, epsilon=1e-08,
+      double >::UnitType::Sample > *' at 0x0000021842317C00> >, rho=0.95, epsilon=1e-08,
       l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
       gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
       use_mean_gradient=False)
@@ -208,7 +208,7 @@ items:
     information.
   syntax:
     content: adam(parameters, lr, momentum, unit_gain=True, variance_momentum=<cntk.cntk_py.momentum_as_time_constant_schedule;
-      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x0000026B45E28390>
+      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x000002184246C9C0>
       >, l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
       gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
       use_mean_gradient=False)
@@ -317,7 +317,7 @@ items:
   summary: Creates an FSAdaGrad learner instance to learn the parameters.
   syntax:
     content: fsadagrad(parameters, lr, momentum, unit_gain=True, variance_momentum=<cntk.cntk_py.momentum_as_time_constant_schedule;
-      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x0000026B45E28330>
+      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x000002184246C960>
       >, l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
       gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
       use_mean_gradient=False)
@@ -408,7 +408,27 @@ items:
       description: learning rate schedule
   type: function
   uid: cntk.learners.learning_rate_schedule
-- fullName: cntk.learners.momentum_as_time_constant_schedule
+- example: '```
+
+
+    >>> # Use a fixed momentum of 1100 for all samples
+
+    >>> m = momentum_as_time_constant_schedule(1100)
+
+    ```
+
+
+    ```
+
+
+    >>> # Use the time constant 1100 for the first 1000 samples,
+
+    >>> # then 1500 for the remaining ones
+
+    >>> m = momentum_as_time_constant_schedule([1100, 1500], 1000)
+
+    ```'
+  fullName: cntk.learners.momentum_as_time_constant_schedule
   langs:
   - python
   module: cntk.learners
@@ -428,56 +448,14 @@ items:
     (in samples) of a unit-gain 1st-order IIR filter. The value specifies the number
     of samples after which a gradient has an effect of 1/e=37%.
 
-    If you want to specify the momentum per sample (or per minibatch), use `momentum_schedule()`.
-
-    -[ Examples ]-
-
-    ```
-
-
-    >>> # Use a fixed momentum of 1100 for all samples
-
-    >>> m = momentum_as_time_constant_schedule(1100)
-
-    ```
-
-    ```
-
-
-    >>> # Use the time constant 1100 for the first 1000 samples,
-
-    >>> # then 1500 for the remaining ones
-
-    >>> m = momentum_as_time_constant_schedule([1100, 1500], 1000)
-
-    ```'
+    If you want to specify the momentum per sample (or per minibatch), use `momentum_schedule()`.'
   syntax:
     content: momentum_as_time_constant_schedule(momentum, epoch_size=None)
     return:
       description: momentum as time constant schedule
   type: function
   uid: cntk.learners.momentum_as_time_constant_schedule
-- fullName: cntk.learners.momentum_schedule
-  langs:
-  - python
-  module: cntk.learners
-  name: momentum_schedule
-  source:
-    id: momentum_schedule
-    path: /bindings/python\cntk\internal\swig_helper.py
-    remote:
-      branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 331
-  summary: 'Create a per-minibatch momentum schedule (using the same semantics as
-    `training_parameter_schedule()` with the *unit=UnitType.minibatch*).
-
-    If you want to provide momentum values in a minibatch-size agnostic way, use @cntk.learners.momentum_as_time_constant_schedule.
-
-    -[ Examples ]-
-
-    ```
+- example: '```
 
 
     >>> # Use a fixed momentum of 0.99 for all samples
@@ -485,6 +463,7 @@ items:
     >>> m = momentum_schedule(0.99)
 
     ```
+
 
     ```
 
@@ -500,6 +479,7 @@ items:
     (0.99, 0.99, 0.9, 0.9)
 
     ```
+
 
     ```
 
@@ -517,6 +497,23 @@ items:
     (0.99, 0.99, 0.88, 0.88, 0.77)
 
     ```'
+  fullName: cntk.learners.momentum_schedule
+  langs:
+  - python
+  module: cntk.learners
+  name: momentum_schedule
+  source:
+    id: momentum_schedule
+    path: /bindings/python\cntk\internal\swig_helper.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 331
+  summary: 'Create a per-minibatch momentum schedule (using the same semantics as
+    `training_parameter_schedule()` with the *unit=UnitType.minibatch*).
+
+    If you want to provide momentum values in a minibatch-size agnostic way, use @cntk.learners.momentum_as_time_constant_schedule.'
   syntax:
     content: momentum_schedule(momentum, epoch_size=None)
     return:
@@ -847,26 +844,7 @@ items:
         `Trainer`
   type: function
   uid: cntk.learners.sgd
-- fullName: cntk.learners.training_parameter_schedule
-  langs:
-  - python
-  module: cntk.learners
-  name: training_parameter_schedule
-  seealsoContent: 'See also: @cntk.learners.learning_rate_schedule'
-  source:
-    id: training_parameter_schedule
-    path: /bindings/python\cntk\internal\swig_helper.py
-    remote:
-      branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 236
-  summary: 'Create a training parameter schedule containing either per-sample (default)
-    or per-minibatch values.
-
-    -[ Examples ]-
-
-    ```
+- example: '```
 
 
     >>> # Use a fixed value 0.01 for all samples
@@ -878,6 +856,7 @@ items:
     (0.01, 0.01)
 
     ```
+
 
     ```
 
@@ -891,6 +870,7 @@ items:
     (0.01, 0.01, 0.001, 0.001)
 
     ```
+
 
     ```
 
@@ -907,6 +887,22 @@ items:
     (0.1, 0.1, 0.01, 0.01, 0.001, 0.001)
 
     ```'
+  fullName: cntk.learners.training_parameter_schedule
+  langs:
+  - python
+  module: cntk.learners
+  name: training_parameter_schedule
+  seealsoContent: 'See also: @cntk.learners.learning_rate_schedule'
+  source:
+    id: training_parameter_schedule
+    path: /bindings/python\cntk\internal\swig_helper.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 236
+  summary: Create a training parameter schedule containing either per-sample (default)
+    or per-minibatch values.
   syntax:
     content: training_parameter_schedule(schedule, unit, epoch_size=None)
     parameters:

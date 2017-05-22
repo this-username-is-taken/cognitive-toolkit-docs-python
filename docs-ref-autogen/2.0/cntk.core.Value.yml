@@ -223,6 +223,11 @@ items:
   type: attribute
   uid: cntk.core.Value.is_sparse
 - class: cntk.core.Value
+  example: A mask of `[[2, 1, 1], [1, 1, 0]]` describes a batch of two sequences.
+    The first has three elements, of which the first element (2) signals the beginning
+    of a sequence. The second sequence has two elements (last element marked 'invalid'
+    by '0'). As it starts with (1), it is a continuation of the 2nd sequence in the
+    previous minibatch.
   fullName: cntk.core.Value.mask
   langs:
   - python
@@ -238,16 +243,25 @@ items:
     startLine: null
   summary: "The mask matrix of this value. Each row denotes a sequence with its elements\
     \ describing the mask of the element:\n* 2: beginning of sequence (e.g. an LSTM\
-    \ would be reset)\n\n   * 1: valid element\n\n   * 0: invalid element\n-[ Example\
-    \ ]-\nA mask of `[[2, 1, 1], [1, 1, 0]]` describes a batch of two sequences. The\
-    \ first has three elements, of which the first element (2) signals the beginning\
-    \ of a sequence. The second sequence has two elements (last element marked 'invalid'\
-    \ by '0'). As it starts with (1), it is a continuation of the 2nd sequence in\
-    \ the previous minibatch."
+    \ would be reset)\n\n   * 1: valid element\n\n   * 0: invalid element"
   syntax: {}
   type: attribute
   uid: cntk.core.Value.mask
 - class: cntk.core.Value
+  example: "```\n\n>>> num_classes = 6\n>>> sparse_indices = [[1,C.Value.ONE_HOT_SKIP,5],[4]]\n\
+    >>> i0 = C.sequence.input(shape=num_classes, is_sparse=True)\n>>> z = C.times(i0,\
+    \ np.eye(num_classes))\n>>> value = C.Value.one_hot(sparse_indices, num_classes)\n\
+    >>> z.eval({i0: value})\n[array([[ 0.,  1.,  0.,  0.,  0.,  0.],\n        [ 0.,\
+    \  0.,  0.,  0.,  0.,  0.],\n        [ 0.,  0.,  0.,  0.,  0.,  1.]], dtype=float32),\n\
+    \ array([[ 0.,  0.,  0.,  0.,  1.,  0.]], dtype=float32)]\n<BLANKLINE>\n>>> num_classes\
+    \ = 6\n>>> sample_shape = (2, num_classes)\n>>> sparse_indices = [[1,5,3,2],[4,1]]\n\
+    >>> i0 = C.sequence.input(shape=sample_shape, is_sparse=True)\n>>> z = C.times(i0,\
+    \ np.eye(num_classes))\n>>> value = C.Value.one_hot(sparse_indices, sample_shape)\n\
+    >>> z.eval({i0: value})\n[array([[[ 0.,  1.,  0.,  0.,  0.,  0.],\n         [\
+    \ 0.,  0.,  0.,  0.,  0.,  1.]],\n        [[ 0.,  0.,  0.,  1.,  0.,  0.],\n \
+    \        [ 0.,  0.,  1.,  0.,  0.,  0.]]], dtype=float32),\n array([[[ 0.,  0.,\
+    \  0.,  0.,  1.,  0.],\n         [ 0.,  1.,  0.,  0.,  0.,  0.]]], dtype=float32)]\n\
+    ```"
   fullName: cntk.core.Value.one_hot
   langs:
   - python
@@ -261,22 +275,9 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 459
-  summary: "Converts `batch` into a @cntk.core.Value object of `dtype` such that the\
-    \ integer data in `batch` is interpreted as the indices representing one-hot vectors.\
-    \ Use Value.ONE_HOT_SKIP for a zero vector\n-[ Example ]-\n```\n\n>>> num_classes\
-    \ = 6\n>>> sparse_indices = [[1,C.Value.ONE_HOT_SKIP,5],[4]]\n>>> i0 = C.sequence.input(shape=num_classes,\
-    \ is_sparse=True)\n>>> z = C.times(i0, np.eye(num_classes))\n>>> value = C.Value.one_hot(sparse_indices,\
-    \ num_classes)\n>>> z.eval({i0: value})\n[array([[ 0.,  1.,  0.,  0.,  0.,  0.],\n\
-    \        [ 0.,  0.,  0.,  0.,  0.,  0.],\n        [ 0.,  0.,  0.,  0.,  0.,  1.]],\
-    \ dtype=float32),\n array([[ 0.,  0.,  0.,  0.,  1.,  0.]], dtype=float32)]\n\
-    <BLANKLINE>\n>>> num_classes = 6\n>>> sample_shape = (2, num_classes)\n>>> sparse_indices\
-    \ = [[1,5,3,2],[4,1]]\n>>> i0 = C.sequence.input(shape=sample_shape, is_sparse=True)\n\
-    >>> z = C.times(i0, np.eye(num_classes))\n>>> value = C.Value.one_hot(sparse_indices,\
-    \ sample_shape)\n>>> z.eval({i0: value})\n[array([[[ 0.,  1.,  0.,  0.,  0., \
-    \ 0.],\n         [ 0.,  0.,  0.,  0.,  0.,  1.]],\n        [[ 0.,  0.,  0.,  1.,\
-    \  0.,  0.],\n         [ 0.,  0.,  1.,  0.,  0.,  0.]]], dtype=float32),\n array([[[\
-    \ 0.,  0.,  0.,  0.,  1.,  0.],\n         [ 0.,  1.,  0.,  0.,  0.,  0.]]], dtype=float32)]\n\
-    ```"
+  summary: Converts `batch` into a @cntk.core.Value object of `dtype` such that the
+    integer data in `batch` is interpreted as the indices representing one-hot vectors.
+    Use Value.ONE_HOT_SKIP for a zero vector
   syntax:
     content: one_hot(batch, num_classes, dtype=None, device=None)
     parameters:

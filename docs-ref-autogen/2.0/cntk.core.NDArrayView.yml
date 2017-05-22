@@ -276,6 +276,11 @@ items:
   type: attribute
   uid: cntk.core.NDArrayView.shape
 - class: cntk.core.NDArrayView
+  example: "```\n\n>>> # Creating an array of shape (1, 1, 2, 3)\n>>> np_array = np.asarray([[[[10,\
+    \ 20, 30], [40, 50, 60]]]],                                       dtype=np.float32)\n\
+    >>> nd = NDArrayView.from_dense(np_array)\n>>> sliced = nd.slice_view([0, 0, 0,\
+    \ 0], [2, 3])\n>>> np_sliced = sliced.asarray()\n>>> # Result is an array of shape\
+    \ (2, 3)\n>>> print(np_sliced)\n[[ 10.  20.  30.]\n [ 40.  50.  60.]]\n```"
   fullName: cntk.core.NDArrayView.slice_view
   langs:
   - python
@@ -289,12 +294,7 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 176
-  summary: "Returns a sliced view of the instance.\n-[ Example ]-\n```\n\n>>> # Creating\
-    \ an array of shape (1, 1, 2, 3)\n>>> np_array = np.asarray([[[[10, 20, 30], [40,\
-    \ 50, 60]]]],                                       dtype=np.float32)\n>>> nd\
-    \ = NDArrayView.from_dense(np_array)\n>>> sliced = nd.slice_view([0, 0, 0, 0],\
-    \ [2, 3])\n>>> np_sliced = sliced.asarray()\n>>> # Result is an array of shape\
-    \ (2, 3)\n>>> print(np_sliced)\n[[ 10.  20.  30.]\n [ 40.  50.  60.]]\n```"
+  summary: Returns a sliced view of the instance.
   syntax:
     content: slice_view(self, start_offset, extent, read_only=True)
     parameters:

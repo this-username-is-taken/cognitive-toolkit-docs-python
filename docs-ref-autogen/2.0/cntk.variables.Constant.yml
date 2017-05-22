@@ -4,6 +4,8 @@ items:
 - children:
   - cntk.variables.Constant.value
   class: cntk.variables.Constant
+  example: "```\n\n>>> c = C.Constant(1, (2,3))\n>>> c.value\n    array([[ 1.,  1.,\
+    \  1.],\n           [ 1.,  1.,  1.]], dtype=float32)\n```"
   fullName: cntk.variables.Constant
   inheritance:
   - inheritance:
@@ -29,14 +31,15 @@ items:
       path: /bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 376
-  summary: "A constant value. It can be a scalar, vector, matrix, or tensor of floating\
-    \ point numbers that cannot be modified.\nA Constant is a `Variable` and therefore\
-    \ inherits all its methods.\n-[ Example ]-\n```\n\n>>> c = C.Constant(1, (2,3))\n\
-    >>> c.value\n    array([[ 1.,  1.,  1.],\n           [ 1.,  1.,  1.]], dtype=float32)\n\
-    ```\n"
+  summary: 'A constant value. It can be a scalar, vector, matrix, or tensor of floating
+    point numbers that cannot be modified.
+
+    A Constant is a `Variable` and therefore inherits all its methods.
+
+    '
   syntax:
     content: Constant(value=None, shape=None, dtype=<cntk.default_options.default_override_or
-      object at 0x0000026B45E2C4A8>, device=None, name='')
+      object at 0x0000021842499A58>, device=None, name='')
     parameters:
     - description: 'Initial value. BUGBUG: Document initializers'
       id: value

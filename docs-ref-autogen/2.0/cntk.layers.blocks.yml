@@ -45,7 +45,16 @@ items:
     content: BlockFunction(op_name, name)
   type: function
   uid: cntk.layers.blocks.BlockFunction
-- fullName: cntk.layers.blocks.ForwardDeclaration
+- example: "```\n\n>>> # create a graph with a recurrent loop to compute the length\
+    \ of an input sequence\n>>> from cntk.layers.typing import *\n>>> x = C.input(**Sequence[Tensor[2]])\n\
+    >>> ones_like_input = sequence.broadcast_as(1, x)  # sequence of scalar ones of\
+    \ same length as input\n>>> out_fwd = ForwardDeclaration()  # placeholder for\
+    \ the state variables\n>>> out = sequence.past_value(out_fwd, initial_state=0)\
+    \ + ones_like_input\n>>> out_fwd.resolve_to(out)\n>>> length = sequence.last(out)\n\
+    >>> x0 = np.reshape(np.arange(6,dtype=np.float32),(1,3,2))\n>>> x0\n    array([[[\
+    \ 0.,  1.],\n            [ 2.,  3.],\n            [ 4.,  5.]]], dtype=float32)\n\
+    >>> length(x0)\n    array([[ 3.]], dtype=float32)\n```"
+  fullName: cntk.layers.blocks.ForwardDeclaration
   langs:
   - python
   module: cntk.layers.blocks
@@ -58,18 +67,9 @@ items:
       path: /bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 88
-  summary: "Helper for recurrent network declarations. Returns a placeholder variable\
-    \ with an added method `resolve_to()` to be called at the end to close the loop.\
-    \ This is used for explicit graph building with recurrent connections.\n-[ Example\
-    \ ]-\n```\n\n>>> # create a graph with a recurrent loop to compute the length\
-    \ of an input sequence\n>>> from cntk.layers.typing import *\n>>> x = C.input(**Sequence[Tensor[2]])\n\
-    >>> ones_like_input = sequence.broadcast_as(1, x)  # sequence of scalar ones of\
-    \ same length as input\n>>> out_fwd = ForwardDeclaration()  # placeholder for\
-    \ the state variables\n>>> out = sequence.past_value(out_fwd, initial_state=0)\
-    \ + ones_like_input\n>>> out_fwd.resolve_to(out)\n>>> length = sequence.last(out)\n\
-    >>> x0 = np.reshape(np.arange(6,dtype=np.float32),(1,3,2))\n>>> x0\n    array([[[\
-    \ 0.,  1.],\n            [ 2.,  3.],\n            [ 4.,  5.]]], dtype=float32)\n\
-    >>> length(x0)\n    array([[ 3.]], dtype=float32)\n```"
+  summary: Helper for recurrent network declarations. Returns a placeholder variable
+    with an added method `resolve_to()` to be called at the end to close the loop.
+    This is used for explicit graph building with recurrent connections.
   syntax:
     content: ForwardDeclaration(name='forward_declaration')
     return:
@@ -77,7 +77,17 @@ items:
         it to another variable
   type: function
   uid: cntk.layers.blocks.ForwardDeclaration
-- fullName: cntk.layers.blocks.GRU
+- example: '```
+
+
+    >>> # a gated recurrent layer
+
+    >>> from cntk.layers import *
+
+    >>> gru_layer = Recurrence(GRU(500))
+
+    ```'
+  fullName: cntk.layers.blocks.GRU
   langs:
   - python
   module: cntk.layers.blocks
@@ -90,28 +100,15 @@ items:
       path: /bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 445
-  summary: 'Layer factory function to create a GRU block for use inside a recurrence.
+  summary: Layer factory function to create a GRU block for use inside a recurrence.
     The GRU block implements one step of the recurrence and is stateless. It accepts
     the previous state as its first argument, and outputs its new state.
-
-    -[ Example ]-
-
-    ```
-
-
-    >>> # a gated recurrent layer
-
-    >>> from cntk.layers import *
-
-    >>> gru_layer = Recurrence(GRU(500))
-
-    ```'
   syntax:
     content: GRU(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x0000026B45EBE860>, init=<cntk.default_options.default_override_or
-      object at 0x0000026B45EBE8D0>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000026B45EBE908>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x0000026B45EBE940>, name='')
+      object at 0x0000021842549EB8>, init=<cntk.default_options.default_override_or
+      object at 0x0000021842549F28>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000021842549F60>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x0000021842549F98>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
@@ -150,7 +147,17 @@ items:
       - cntk.ops.functions.Function
   type: function
   uid: cntk.layers.blocks.GRU
-- fullName: cntk.layers.blocks.LSTM
+- example: '```
+
+
+    >>> # a typical recurrent LSTM layer
+
+    >>> from cntk.layers import *
+
+    >>> lstm_layer = Recurrence(LSTM(500))
+
+    ```'
+  fullName: cntk.layers.blocks.LSTM
   langs:
   - python
   module: cntk.layers.blocks
@@ -163,30 +170,17 @@ items:
       path: /bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 358
-  summary: 'Layer factory function to create an LSTM block for use inside a recurrence.
+  summary: Layer factory function to create an LSTM block for use inside a recurrence.
     The LSTM block implements one step of the recurrence and is stateless. It accepts
     the previous state as its first two arguments, and outputs its new state as a
     two-valued tuple `(h,c)`.
-
-    -[ Example ]-
-
-    ```
-
-
-    >>> # a typical recurrent LSTM layer
-
-    >>> from cntk.layers import *
-
-    >>> lstm_layer = Recurrence(LSTM(500))
-
-    ```'
   syntax:
     content: LSTM(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x0000026B45EBE6D8>, use_peepholes=<cntk.default_options.default_override_or
-      object at 0x0000026B45EBE470>, init=<cntk.default_options.default_override_or
-      object at 0x0000026B45EBE630>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000026B45EBE668>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x0000026B45EBE710>, name='')
+      object at 0x0000021842549D30>, use_peepholes=<cntk.default_options.default_override_or
+      object at 0x00000218425493C8>, init=<cntk.default_options.default_override_or
+      object at 0x0000021842549C88>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000021842549CC0>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x0000021842549D68>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
@@ -229,7 +223,17 @@ items:
       - cntk.ops.functions.Function
   type: function
   uid: cntk.layers.blocks.LSTM
-- fullName: cntk.layers.blocks.RNNUnit
+- example: '```
+
+
+    >>> # a plain relu RNN layer
+
+    >>> from cntk.layers import *
+
+    >>> relu_rnn_layer = Recurrence(RNNUnit(500, activation=C.relu))
+
+    ```'
+  fullName: cntk.layers.blocks.RNNUnit
   langs:
   - python
   module: cntk.layers.blocks
@@ -242,28 +246,15 @@ items:
       path: /bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 403
-  summary: 'Layer factory function to create a plain RNN block for use inside a recurrence.
+  summary: Layer factory function to create a plain RNN block for use inside a recurrence.
     The RNN block implements one step of the recurrence and is stateless. It accepts
     the previous state as its first argument, and outputs its new state.
-
-    -[ Example ]-
-
-    ```
-
-
-    >>> # a plain relu RNN layer
-
-    >>> from cntk.layers import *
-
-    >>> relu_rnn_layer = Recurrence(RNNUnit(500, activation=C.relu))
-
-    ```'
   syntax:
     content: RNNUnit(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x0000026B45EBE748>, init=<cntk.default_options.default_override_or
-      object at 0x0000026B45EBE7B8>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000026B45EBE7F0>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x0000026B45EBE828>, name='')
+      object at 0x0000021842549DA0>, init=<cntk.default_options.default_override_or
+      object at 0x0000021842549E10>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000021842549E48>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x0000021842549E80>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
@@ -302,7 +293,33 @@ items:
       - cntk.ops.functions.Function
   type: function
   uid: cntk.layers.blocks.RNNUnit
-- fullName: cntk.layers.blocks.Stabilizer
+- example: '```
+
+
+    >>> # recurrent model with self-stabilization
+
+    >>> from cntk.layers import *
+
+    >>> with default_options(enable_self_stabilization=True): # enable stabilizers
+    by default for LSTM()
+
+    ...     model = Sequential([
+
+    ...         Embedding(300),
+
+    ...         Stabilizer(),           # stabilizer for main data input of recurrence
+
+    ...         Recurrence(LSTM(512)),  # LSTM owns its own stabilizers for the recurrent
+    connections
+
+    ...         Stabilizer(),
+
+    ...         Dense(10)
+
+    ...     ])
+
+    ```'
+  fullName: cntk.layers.blocks.Stabilizer
   langs:
   - python
   module: cntk.layers.blocks
@@ -330,39 +347,10 @@ items:
     proposed a linear or exponential scalar, CNTK uses a sharpened Softplus: 1/steepness
     ln(1+e^{steepness*beta}). The softplus behaves linear for weights around and above
     1 (like the linear scalar) while guaranteeing positiveness (like the exponentional
-    variant) but is also more robust by avoiding exploding gradients.
-
-    -[ Example ]-
-
-    ```
-
-
-    >>> # recurrent model with self-stabilization
-
-    >>> from cntk.layers import *
-
-    >>> with default_options(enable_self_stabilization=True): # enable stabilizers
-    by default for LSTM()
-
-    ...     model = Sequential([
-
-    ...         Embedding(300),
-
-    ...         Stabilizer(),           # stabilizer for main data input of recurrence
-
-    ...         Recurrence(LSTM(512)),  # LSTM owns its own stabilizers for the recurrent
-    connections
-
-    ...         Stabilizer(),
-
-    ...         Dense(10)
-
-    ...     ])
-
-    ```'
+    variant) but is also more robust by avoiding exploding gradients.'
   syntax:
     content: Stabilizer(steepness=4, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x0000026B45EBE5C0>, name='')
+      object at 0x0000021842549C18>, name='')
     parameters:
     - description: ''
       id: steepness

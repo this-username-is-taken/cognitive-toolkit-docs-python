@@ -41,7 +41,7 @@ items:
         custom cross validation logic, returns False if training should be stopped.
       id: callback
       type:
-      - func (index, average_error, cv_num_samples, cv_num_minibatches)
+      - func (index, average_error, cv_num_samples, cv_num_minibatches
   type: class
   uid: cntk.train.training_session.CrossValidationConfig
 references: []

@@ -39,6 +39,22 @@ items:
   - cntk.ops.functions.Function.uid
   - cntk.ops.functions.Function.update_signature
   class: cntk.ops.functions.Function
+  example: '```
+
+
+    >>> @Function
+
+    ... def f(x):
+
+    ...     return x * x
+
+    >>> from cntk import debugging
+
+    >>> debugging.dump_signature(f)
+
+    Function(x: Sequence[tensor]) -> Sequence[tensor]
+
+    ```'
   fullName: cntk.ops.functions.Function
   inheritance:
   - inheritance:
@@ -62,21 +78,18 @@ items:
     \ one can invoke Variable methods on it, which it will relay to its only output.\n\
     *Function* objects can also be constructed directly from a Python lambda, by means\
     \ of the *@Function* decorator. The *Function*'s input signature is defined by\
-    \ the lambda.\n-[ Example ]-\n```\n\n>>> @Function\n... def f(x):\n...     return\
-    \ x * x\n>>> from cntk import debugging\n>>> debugging.dump_signature(f)\nFunction(x:\
-    \ Sequence[tensor]) -> Sequence[tensor]\n```\nThe above form creates a CNTK Function\
-    \ whose arguments are placeholder variables. Such a function can only be combined\
-    \ with other symbolic functions.\nTo train a Function or pass data to it, you\
-    \ need to declare the types of the arguments. In this case, the @Function decorator\
-    \ creates a CNTK Function whose arguments are input variables.\nIf you use Python\
-    \ 3, Functions with types are declared using Python annotation syntax, e.g.:\n\
-    <!-- literal_block {\"xml:space\": \"preserve\", \"backrefs\": [], \"classes\"\
-    : [], \"dupnames\": [], \"ids\": [], \"names\": []} -->\n\n````\n\n   @Function\n\
-    \   def f(x:Tensor[13]):\n       return x * x\n   ````\nIf you are working with\
-    \ Python 2.7, use CNTK's *@:class:~cntk.layers.typing.Signature* decorator instead:\n\
-    <!-- literal_block {\"xml:space\": \"preserve\", \"backrefs\": [], \"classes\"\
-    : [], \"dupnames\": [], \"ids\": [], \"names\": []} -->\n\n````\n\n   >>> from\
-    \ cntk.layers.typing import *\n   >>> @Function\n   ... @Signature(Tensor[13])\n\
+    \ the lambda.\nThe above form creates a CNTK Function whose arguments are placeholder\
+    \ variables. Such a function can only be combined with other symbolic functions.\n\
+    To train a Function or pass data to it, you need to declare the types of the arguments.\
+    \ In this case, the @Function decorator creates a CNTK Function whose arguments\
+    \ are input variables.\nIf you use Python 3, Functions with types are declared\
+    \ using Python annotation syntax, e.g.:\n<!-- literal_block {\"classes\": [],\
+    \ \"names\": [], \"dupnames\": [], \"xml:space\": \"preserve\", \"backrefs\":\
+    \ [], \"ids\": []} -->\n\n````\n\n   @Function\n   def f(x:Tensor[13]):\n    \
+    \   return x * x\n   ````\nIf you are working with Python 2.7, use CNTK's *@:class:~cntk.layers.typing.Signature*\
+    \ decorator instead:\n<!-- literal_block {\"classes\": [], \"names\": [], \"dupnames\"\
+    : [], \"xml:space\": \"preserve\", \"backrefs\": [], \"ids\": []} -->\n\n````\n\
+    \n   >>> from cntk.layers.typing import *\n   >>> @Function\n   ... @Signature(Tensor[13])\n\
     \   ... def f(x):\n   ...     return x * x\n   >>> debugging.dump_signature(f)\n\
     \   Function(x: Tensor[13]) -> Tensor[13]\n   ````\n`make_block=True` is an internal\
     \ parameter used to implement *@:func:~cntk.layers.blocks.BlockFunction()*. If\
@@ -149,27 +162,7 @@ items:
   type: attribute
   uid: cntk.ops.functions.Function.attributes
 - class: cntk.ops.functions.Function
-  fullName: cntk.ops.functions.Function.backward
-  langs:
-  - python
-  module: cntk.ops.functions
-  name: backward
-  source:
-    id: backward
-    path: /bindings/python\cntk\internal\swig_helper.py
-    remote:
-      branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 682
-  summary: 'Backpropagates supplied `root_gradients` for one or more of the output
-    variables of the Function, to calculate gradients with respect to `variables`.
-    Formally, multiplies the values of `root_gradients` by the Jacobian of the Function
-    and returns the subset of the output that corresponds to `variables`.
-
-    -[ Example ]-
-
-    ```
+  example: '```
 
 
     >>> # compute the value and the derivative of the sigmoid at 0
@@ -192,7 +185,24 @@ items:
 
     array([[ 0.25]], dtype=float32)
 
-    ```
+    ```'
+  fullName: cntk.ops.functions.Function.backward
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: backward
+  source:
+    id: backward
+    path: /bindings/python\cntk\internal\swig_helper.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 682
+  summary: 'Backpropagates supplied `root_gradients` for one or more of the output
+    variables of the Function, to calculate gradients with respect to `variables`.
+    Formally, multiplies the values of `root_gradients` by the Jacobian of the Function
+    and returns the subset of the output that corresponds to `variables`.
 
     Note: See `forward()` for more examples on passing input data.'
   syntax:
@@ -350,27 +360,7 @@ items:
   type: method
   uid: cntk.ops.functions.Function.eval
 - class: cntk.ops.functions.Function
-  fullName: cntk.ops.functions.Function.find_all_with_name
-  langs:
-  - python
-  module: cntk.ops.functions
-  name: find_all_with_name
-  seealsoContent: 'See also: `find_by_name()`'
-  source:
-    id: find_all_with_name
-    path: /bindings/python\cntk\internal\swig_helper.py
-    remote:
-      branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 976
-  summary: 'Returns a list of primitive function with `name` in the graph starting
-    from this node. Throws an exception if `name` occurs multiple times. If you expect
-    only one function to be returned, use `find_by_name()`.
-
-    -[ Example ]-
-
-    ```
+  example: '```
 
 
     >>> a = C.input(shape=1, name=''i'')
@@ -388,6 +378,23 @@ items:
     []
 
     ```'
+  fullName: cntk.ops.functions.Function.find_all_with_name
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: find_all_with_name
+  seealsoContent: 'See also: `find_by_name()`'
+  source:
+    id: find_all_with_name
+    path: /bindings/python\cntk\internal\swig_helper.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 976
+  summary: Returns a list of primitive function with `name` in the graph starting
+    from this node. Throws an exception if `name` occurs multiple times. If you expect
+    only one function to be returned, use `find_by_name()`.
   syntax:
     content: find_all_with_name(self, name, depth=0)
     parameters:
@@ -405,27 +412,7 @@ items:
   type: method
   uid: cntk.ops.functions.Function.find_all_with_name
 - class: cntk.ops.functions.Function
-  fullName: cntk.ops.functions.Function.find_by_name
-  langs:
-  - python
-  module: cntk.ops.functions
-  name: find_by_name
-  seealsoContent: 'See also: @cntk.ops.functions.Function.find_all_with_name'
-  source:
-    id: find_by_name
-    path: /bindings/python\cntk\internal\swig_helper.py
-    remote:
-      branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1008
-  summary: 'Returns a primitive function with `name` in the graph starting from this
-    node. Throws an exception if `name` occurs multiple times. If you expect multiple
-    functions to be returned, use @cntk.ops.functions.Function.find_all_with_name.
-
-    -[ Example ]-
-
-    ```
+  example: '```
 
 
     >>> a = C.input(shape=1, name=''a'')
@@ -444,10 +431,9 @@ items:
 
     ```
 
-    If you need a full function out of it that can be evaluated, you need to upcast
-    it (currently done via combine):
 
-    ```
+    If you need a full function out of it that can be evaluated, you need to upcast
+    it (currently done via combine):```
 
 
     >>> d = c * 5
@@ -457,6 +443,23 @@ items:
     array([[ 3.]], dtype=float32)
 
     ```'
+  fullName: cntk.ops.functions.Function.find_by_name
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: find_by_name
+  seealsoContent: 'See also: @cntk.ops.functions.Function.find_all_with_name'
+  source:
+    id: find_by_name
+    path: /bindings/python\cntk\internal\swig_helper.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 1008
+  summary: Returns a primitive function with `name` in the graph starting from this
+    node. Throws an exception if `name` occurs multiple times. If you expect multiple
+    functions to be returned, use @cntk.ops.functions.Function.find_all_with_name.
   syntax:
     content: find_by_name(self, name, depth=0)
     parameters:
@@ -474,33 +477,7 @@ items:
   type: method
   uid: cntk.ops.functions.Function.find_by_name
 - class: cntk.ops.functions.Function
-  fullName: cntk.ops.functions.Function.forward
-  langs:
-  - python
-  module: cntk.ops.functions
-  name: forward
-  source:
-    id: forward
-    path: /bindings/python\cntk\internal\swig_helper.py
-    remote:
-      branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 546
-  summary: "Computes the values of speficied variables in `outputs`, using values\
-    \ provided in `arguments` that correspond to each input *Variable* of the function\
-    \ (i.e. those that have `is_input = True`).\n-[ Example ]-\n```\n\n>>> # Example\
-    \ of passing dense data\n>>> v = C.input(shape=(3,))\n>>> f = C.reciprocal(v)\n\
-    >>> _, fv = f.forward({v:[[1, 2, 4]]})\n>>> list(fv.values())[0]\narray([[ 1.\
-    \  ,  0.5 ,  0.25]], dtype=float32)\n```\n-[ Example ]-\n```\n\n>>> # Passing\
-    \ sparse values as one-hot with a vocabulary size of 5\n>>> vocab_size = 5\n>>>\
-    \ v = C.sequence.input(shape=(vocab_size,), is_sparse=True)\n>>> f = C.times(v,\
-    \ np.eye(vocab_size))\n>>> # Passing a batch of two sequences:\n>>> # 1st sequence:\
-    \ word 1\n>>> # 2nd sequence: words 2 and 4\n>>> batch = [[1],[2,4]]\n>>> sparse_batch\
-    \ = C.Value.one_hot(batch, vocab_size)\n>>> _, fv = f.forward({v:sparse_batch})\n\
-    >>> list(fv.values())[0]\n[array([[ 0.,  1.,  0.,  0.,  0.]], dtype=float32),\n\
-    \ array([[ 0.,  0.,  1.,  0.,  0.], [ 0.,  0.,  0.,  0.,  1.]], dtype=float32)]\n\
-    ```\n-[ Example ]-\n```\n\n>>> # Doing the same, but with a CSR matrix from scipy.sparse\n\
+  example: "```\n\n>>> # Doing the same, but with a CSR matrix from scipy.sparse\n\
     >>> vocab_size = 5\n>>> from scipy.sparse import csr_matrix\n>>> v = C.sequence.input(shape=(vocab_size,),\
     \ is_sparse=True)\n>>> f = C.times(v, np.eye(vocab_size))\n>>> # Note that csr_matrix\
     \ automatically uses a sparse representation underneath.\n>>> sparse_batch = [csr_matrix([[0,1,0,0,0]]),\
@@ -518,6 +495,22 @@ items:
     \ list(fv.values())[0]\n[array([[ 0.,  1.,  0.,  0.,  0.]], dtype=float32),\n\
     \ array([[ 0.,  0.,  1.,  0.,  0.], [ 0.,  0.,  0.,  0.,  1.]], dtype=float32)]\n\
     ```"
+  fullName: cntk.ops.functions.Function.forward
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: forward
+  source:
+    id: forward
+    path: /bindings/python\cntk\internal\swig_helper.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 546
+  summary: Computes the values of speficied variables in `outputs`, using values provided
+    in `arguments` that correspond to each input *Variable* of the function (i.e.
+    those that have `is_input = True`).
   syntax:
     content: forward(self, arguments, outputs=None, keep_for_backward=None, device=None,
       as_numpy=True)
@@ -575,6 +568,10 @@ items:
   type: method
   uid: cntk.ops.functions.Function.forward
 - class: cntk.ops.functions.Function
+  example: "```\n\n>>> x = C.input(shape=(1,), needs_gradient=True)\n>>> y = C.sqrt(x)\n\
+    >>> a = np.asarray([1,4,16],dtype=np.float32).reshape(3,1)\n>>> y.grad({x:a})\n\
+    array([[ 0.5  ],\n<BLANKLINE>\n       [ 0.25 ],\n<BLANKLINE>\n       [ 0.125]],\
+    \ dtype=float32)\n```"
   fullName: cntk.ops.functions.Function.grad
   langs:
   - python
@@ -588,11 +585,8 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 737
-  summary: "Computes the gradient of this Function at location `at` with respect to\
-    \ `wrt`. The Function must have a single output.\n-[ Example ]-\n```\n\n>>> x\
-    \ = C.input(shape=(1,), needs_gradient=True)\n>>> y = C.sqrt(x)\n>>> a = np.asarray([1,4,16],dtype=np.float32).reshape(3,1)\n\
-    >>> y.grad({x:a})\narray([[ 0.5  ],\n<BLANKLINE>\n       [ 0.25 ],\n<BLANKLINE>\n\
-    \       [ 0.125]], dtype=float32)\n```"
+  summary: Computes the gradient of this Function at location `at` with respect to
+    `wrt`. The Function must have a single output.
   syntax:
     content: grad(self, at, wrt=None, outputs=None, device=None, as_numpy=True, grad_root=None)
     parameters:
