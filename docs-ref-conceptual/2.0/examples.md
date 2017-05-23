@@ -1,5 +1,13 @@
-Examples
-========
+---
+title: Examples
+author: 
+ms.author: 
+ms.date: 05/31/2017
+ms.topic: concepts
+ms.service: cognitive-services
+---
+
+# Examples
 
 The best way to learn about the APIs is to look at the
 following examples in the [CNTK clone root]/Examples directory:

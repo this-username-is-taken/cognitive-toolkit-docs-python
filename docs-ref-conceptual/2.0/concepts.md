@@ -1,7 +1,13 @@
-:orphan:
+---
+title: Concepts
+author: 
+ms.author: 
+ms.date: 05/31/2017
+ms.topic: concepts
+ms.service: cognitive-services
+---
 
-Concepts
-========
+# Concepts
 
 There is a common property in key machine learning models, such as deep neural
 networks (DNNs), convolutional neural networks (CNNs), and recurrent neural
@@ -13,8 +19,7 @@ parameters. The vertices are *functions* (also called operations) that are
 performing a computation on these input tensors.
 
 
-Tensors
--------
+## Tensors
 
 The underlying data structure in CNTK is that of a *tensor*. It is a
 multidimensional array on which computations can be performed. Every dimension in
@@ -27,8 +32,8 @@ classification problems where the inputs are vectors, black-and-white
 images (input is a matrix of points), color images (includes a separate dimension
 for r, g, and b) or videos (has an extra time dimension).
 
-- Tensors have a *shape* which describes the dimensions of its axes. E.g. a shape ``[2,3,4]``
-  would refer to a tensor with three axes that have, respectively, 2, 3, and 4
+- Tensors have a *shape* which describes the dimensions of its axes. E.g. a shape 
+`[2,3,4]` would refer to a tensor with three axes that have, respectively, 2, 3, and 4
   dimensions.
 
 - CNTK allows for the last axis to be a *dynamic axis*, i.e. an axis whose size
@@ -66,8 +71,9 @@ All of these represent the *leaf nodes* in the network, or, in other words, the
 input parameters of the function that the network represents.
 
 To introduce a tensor, simply use one of the methods in the cntk namespace. Once
-introduced, overloaded operators can be applied to them to form an operator graph::
+introduced, overloaded operators can be applied to them to form an operator graph:
 
+```python
   import cntk as C
 
   # Create an input with the shape (2,3,*)
@@ -103,20 +109,21 @@ introduced, overloaded operators can be applied to them to form an operator grap
   >>> print(op3.eval({ x: test_input}))
   [array([[[  10.,   40.,   90.],
           [ 160.,  250.,  360.]]], dtype=float32)]
+```
 
-
-Broadcasting
-~~~~~~~~~~~~
+### Broadcasting
 
 For operations that require the tensor dimensions of their arguments to match,
 *broadcasting*  is applied automatically whenever a tensor dimension is 1.
 Examples are elementwise product or plus operations.
 E.g. the following are equivalent:
 
+```python
   >>> C.element_times([2,3], 2).eval()
   array([ 4.,  6.], dtype=float32)
-
+```
+```python
   >>> C.element_times([2,3], [2,2]).eval()
   array([ 4.,  6.], dtype=float32)
-
+```
 

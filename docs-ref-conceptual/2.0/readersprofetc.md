@@ -1,8 +1,16 @@
-Readers, Multi-GPU, Profiling...
-================================
+---
+title: Readers, Multi-GPU, Profiling
+author: 
+ms.author: 
+ms.date: 05/31/2017
+ms.topic: concepts
+ms.service: cognitive-services
+---
 
-For extending readers in CNTK, please follow :cntkwiki:`these instructions <BrainScript-and-Python---Understanding-and-Extending-Readers>`
+# Readers, Multi-GPU, Profiling...
 
-For multi-GPU and multi-machine usage, please follow :cntkwiki:`these <Multiple-GPUs-and-machines>`.
+For extending readers in CNTK, please follow [these instructions](/cognitive-toolkit/brainscript-and-python---understanding-and-extending-readers).
 
-For profiling, please refer to :cntkwiki:`these <BrainScript-and-Python-Performance-Profiler>`.
+For multi-GPU and multi-machine usage, please follow [these](/cognitive-toolkit/multiple-gpus-and-machines).
+
+For profiling, please refer to [these](/cognitive-toolkit/brainscript-and-python-performance-profiler).
