@@ -19,9 +19,9 @@ Every CNTK tensor has some *static axes* and some *dynamic axes*.
 The static axes have the same length throughout the life of the network.
 The dynamic axes are like static axes in that they define a meaningful grouping of the numbers contained in the tensor but:
 
-> - their length can vary from instance to instance
-> - their length is typically not known before each minibatch is presented
-> - they may be ordered
+- their length can vary from instance to instance
+- their length is typically not known before each minibatch is presented
+- they may be ordered
 
 A minibatch is also a tensor. Therefore, it has a dynamic axis, called the *batch axis*,
 whose length can change from minibatch to minibatch. At the time of this writing 
@@ -51,39 +51,39 @@ containing for each word (or short phrase) the number of times it appears in the
 document. However we can also process the document to be a sequence of words
 in which case we use another dynamic axis. In this case we have the following nesting:
 
-> - Query: CNTK
->
->   - Document 1:
->
->     - Microsoft
->     - Cognitive
->     - Toolkit
->
->   - Document 2:
->
->     - Cartoon
->     - Network
->
->   - Document 3:
->
->     - NVIDIA
->     - Microsoft
->     - Accelerate
->     - AI
->
-> - Query: flower
->
->   - Document 1:
->
->     - Flower
->     - Wikipedia
->
->   - Document 2:
->
->     - Local 
->     - Florist
->     - Flower
->     - Delivery
+- Query: CNTK
+
+   - Document 1:
+
+     - Microsoft
+     - Cognitive
+     - Toolkit
+
+   - Document 2:
+
+     - Cartoon
+     - Network
+
+   - Document 3:
+
+     - NVIDIA
+     - Microsoft
+     - Accelerate
+     - AI
+
+ - Query: flower
+
+   - Document 1:
+
+     - Flower
+     - Wikipedia
+
+   - Document 2:
+
+     - Local 
+     - Florist
+     - Flower
+     - Delivery
 
 The outermost level is the batch axis. The document level should have 
 a dynamic axis because we have a variable number of candidate documents per query. 
@@ -156,8 +156,89 @@ sequence classification. We can think of the network as adding a series of layer
 A very similar network is also located at `Examples/SequenceClassification/SimpleExample/Python/SequenceClassification.py`. 
 Let's see how easy it is to work with sequences in CNTK:
 
-```
-.. literalinclude:: simplernn.py
+```python
+import sys
+import os
+from cntk import Trainer, Axis
+from cntk.io import MinibatchSource, CTFDeserializer, StreamDef, StreamDefs,\
+        INFINITELY_REPEAT
+from cntk.learners import sgd, learning_rate_schedule, UnitType
+from cntk import input_variable, cross_entropy_with_softmax, \
+        classification_error, sequence
+from cntk.logging import ProgressPrinter
+from cntk.layers import Sequential, Embedding, Recurrence, LSTM, Dense
+
+# Creates the reader
+def create_reader(path, is_training, input_dim, label_dim):
+    return MinibatchSource(CTFDeserializer(path, StreamDefs(
+        features=StreamDef(field='x', shape=input_dim, is_sparse=True),
+        labels=StreamDef(field='y', shape=label_dim, is_sparse=False)
+        )), randomize=is_training,
+        max_sweeps=INFINITELY_REPEAT if is_training else 1)
+
+
+# Defines the LSTM model for classifying sequences
+def LSTM_sequence_classifier_net(input, num_output_classes, embedding_dim,
+                                LSTM_dim, cell_dim):
+    lstm_classifier = Sequential([Embedding(embedding_dim),
+                                  Recurrence(LSTM(LSTM_dim, cell_dim)),
+                                  sequence.last,
+                                  Dense(num_output_classes)])
+    return lstm_classifier(input)
+
+
+# Creates and trains a LSTM sequence classification model
+def train_sequence_classifier():
+    input_dim = 2000
+    cell_dim = 25
+    hidden_dim = 25
+    embedding_dim = 50
+    num_output_classes = 5
+
+    # Input variables denoting the features and label data
+    features = sequence.input_variable(shape=input_dim, is_sparse=True)
+    label = input_variable(num_output_classes)
+
+    # Instantiate the sequence classification model
+    classifier_output = LSTM_sequence_classifier_net(
+        features, num_output_classes, embedding_dim, hidden_dim, cell_dim)
+
+    ce = cross_entropy_with_softmax(classifier_output, label)
+    pe = classification_error(classifier_output, label)
+
+    rel_path = ("../../../Tests/EndToEndTests/Text/" +
+                "SequenceClassification/Data/Train.ctf")
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), rel_path)
+
+    reader = create_reader(path, True, input_dim, num_output_classes)
+
+    input_map = {
+            features: reader.streams.features,
+            label:    reader.streams.labels
+    }
+
+    lr_per_sample = learning_rate_schedule(0.0005, UnitType.sample)
+    # Instantiate the trainer object to drive the model training
+    progress_printer = ProgressPrinter(0)
+    trainer = Trainer(classifier_output, (ce, pe),
+                      sgd(classifier_output.parameters, lr=lr_per_sample),
+                      progress_printer)
+
+    # Get minibatches of sequences to train with and perform model training
+    minibatch_size = 200
+
+    for i in range(255):
+        mb = reader.next_minibatch(minibatch_size, input_map=input_map)
+        trainer.train_minibatch(mb)
+
+    evaluation_average = float(trainer.previous_minibatch_evaluation_average)
+    loss_average = float(trainer.previous_minibatch_loss_average)
+    return evaluation_average, loss_average
+
+if __name__ == '__main__':
+    error, _ = train_sequence_classifier()
+    print(" error: %f" % error)
+
 ```
 
 Running this script should generate this output:
@@ -182,12 +263,14 @@ have a vocabulary (input dimension) of 2000, LSTM hidden and cell dimensions of 
 classes for our sequences. As before, we define two input variables: one for the features, and for the labels. We then instantiate our model. The
 `LSTM_sequence_classifier_net` is a simple function which looks up our input in an embedding matrix and returns the embedded representation, puts
 that input through an LSTM recurrent neural network layer, and returns a fixed-size output from the LSTM by selecting the last hidden state of the
-LSTM::
+LSTM:
 
+```python
     lstm_classifier = Sequential([Embedding(embedding_dim),
                                   Recurrence(LSTM(LSTM_dim, cell_dim))[0],
                                   sequence.last,
                                   Dense(num_output_classes)])
+```
 
 That is the entire network definition. In the second line above we select the first output from the LSTM. In
 this implementation of the LSTM this is the actual output while the second output is the state of the LSTM.
@@ -211,21 +294,25 @@ an example with images. Feeding text data via NumPy arrays is not very different
 Each sequence must be its own NumPy array. Therefore if you have an input variable 
 that represents a small color image like this:
 
+```python
     x = sequence.input_variable((3,32,32))
+```
 
 and you want to feed a sequence of 4 images `img1` to `img4`, to CNTK then
-you need to create a tensor containing all 4 images. For example::
-    
+you need to create a tensor containing all 4 images. For example:
+
+```python    
     img_seq = np.stack([img1, img2, img3, img4])
     output = network.eval({x:[img_seq]})
+```
 
 The stack function in NumPy stacks the inputs along a new axis (placing it in the beginning by default)
-so the shape of `img_seq` is `4 \times 3 \times 32 \times 32`. You 
+so the shape of `img_seq` is `4 x 3 x 32 x 32`. You 
 might have noticed that before binding `img_seq` to  `x` we wrap it in a list.
 This list denotes a minibatch of 1 and **minibatches 
 are specified as lists**. The reason for this is because different elements of 
 the minibatch can have different lengths. If all the elements in the 
 minibatch are sequences of the same length then it is acceptable to provide
-the minibatch as one big tensor of dimension `b \times s \times d_1 \times \ldots \times d_k`
+the minibatch as one big tensor of dimension `b x s x d_1 x ... x d_k`
 where `b` is the batch size, `s` is the sequence length and `d_i`
 is the dimension of the i-th static axis of the input variable.

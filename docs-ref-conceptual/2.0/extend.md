@@ -32,8 +32,8 @@ needed.
 Let's consider the example of a sigmoid. This is just for demonstration purposes - for real
 computation better use <xref:cntk.ops.sigmoid>.
 
-As the derivative of `\textrm{sigmoid}(x)` is `\textrm{sigmoid}(x) * (1-\textrm{sigmoid}(x))` we
-pass the `\textrm{sigmoid}(x)` value as the state variable, which is then later
+As the derivative of `sigmoid(x)` is `sigmoid(x) * (1-sigmoid(x))` we
+pass the `sigmoid(x)` value as the state variable, which is then later
 fed into backward(). Note that one can pass any Python value (including
 tuple, strings, etc.):
 
@@ -75,7 +75,7 @@ It is representing a primitive function, which we have to pass through
 `user_function()`.
 
 In case, the operator is initialized with multiple inputs, `forward()` 's
-`argument` will be a list of those inputs::
+`argument` will be a list of those inputs:
 
 ```python
     class MyPlus(UserFunction):
@@ -148,7 +148,7 @@ instance of the user function. However, if the function is stateful and override
 ### Using user functions for debugging
 
 It is now easy to just plug user function nodes into the graph to support
-debugging. For instance, the following operator::
+debugging. For instance, the following operator:
 
 ```python
     class LambdaFunc(UserFunction):
@@ -228,7 +228,7 @@ The class `MySgd` could then be used as a normal learner, e.g.:
 While this approach might be good enough as a one-off, it is not the fastest
 possible UserLearner implementation. In every call, a complete CNTK graph is
 created and then destructed (`new_p`). To speed up the parameter update, this
-computation can be moved to the constructor:: 
+computation can be moved to the constructor::
 
 ```python
     class MySgdFast(UserLearner):
@@ -286,11 +286,10 @@ image, text, and speech data, there might be the need (e.g. in distributed scnea
 roll out one's own custom minibatch
 source. This is possible in pure Python as simple matter of
 
-> - inheriting from <xref:cntk.io.UserMinibatchSource> and
-> - implementing the following methods
->
->   - ``stream_infos()``: returns a list of <xref:cntk.io.StreamInformation> instances that describe the streams the minibatch source is providing
->   - ``next_minibatch()``: returns the next minibatch data as a dictionary of <xref:cntk.io.StreamInformation> instance to the data (instance of <xref:cntk.io.MinibatchData>, which basically wraps the data).
+- inheriting from <xref:cntk.io.UserMinibatchSource> and
+- implementing the following methods
+   - ``stream_infos()``: returns a list of <xref:cntk.io.StreamInformation> instances that describe the streams the minibatch source is providing
+  - ``next_minibatch()``: returns the next minibatch data as a dictionary of <xref:cntk.io.StreamInformation> instance to the data (instance of <xref:cntk.io.MinibatchData>, which basically wraps the data).
 
 In the following example, we reimplement parts of the CNTKTextFormatReader to show how it
 is done in an end-to-end manner. As we can see, the majority of the lines below is

@@ -79,8 +79,8 @@ can be vastly improved. To explicitly set the device to GPU, set the target devi
     set_default_device(gpu(0))
 ```
 
-Now let's setup a network that will learn a classifier with fully connected layers using only the functions :func:`~cntk.layers.higher_order_layers.Sequential`
-and :func:`~cntk.layers.layers.Dense` from the Layers Library. Create a `simplenet.py` file with the following contents:
+Now let's setup a network that will learn a classifier with fully connected layers using only the functions <xref:cntk.layers.higher_order_layers.Sequential>
+and <xref:cntk.layers.layers.Dense> from the Layers Library. Create a `simplenet.py` file with the following contents:
 
 ```python
 .. literalinclude:: simplenet.py
