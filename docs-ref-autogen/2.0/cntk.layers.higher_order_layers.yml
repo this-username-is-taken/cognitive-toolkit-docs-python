@@ -134,7 +134,7 @@ items:
     - description: the function to add the skip connection to.
       id: f
       type:
-      - Function or equivalent Python function
+      - '@cntk.ops.functions.Function or equivalent Python function'
     return:
       description: A function that accepts one argument, applies `f` to it, and adds
         the original argument.
@@ -206,8 +206,8 @@ items:
         list will be flattened.
       id: layers
       type:
-      - list of Function, equivalent Python functions, tuples of functions, or lists
-        thereof
+      - list of @cntk.ops.functions.Function, equivalent Python functions, tuples
+        of functions, or lists thereof
     return:
       description: A function that accepts one argument and applies the given `functions`
         one after another.
@@ -242,7 +242,7 @@ items:
     - description: functions to be applied.
       id: functions
       type:
-      - single or list of Function
+      - single or list of @cntk.ops.functions.Function
     return:
       description: A function that accepts one argument and applies the sequence of
         functions.

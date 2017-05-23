@@ -57,21 +57,21 @@ items:
         of input and label samples.
       id: max_samples
       type:
-      - int, defaults to cntk.io.INFINITELY_REPEAT
+      - int, defaults to @cntk.io.INFINITELY_REPEAT
     - description: The maximum number of of sweeps over the input dataset After this
         number has been reached, the reader returns empty minibatches on subsequent
         calls to func:*next_minibatch*. *max_samples* and *max_sweeps* are mutually
         exclusive, an exception will be raised if both have non-default values.
       id: max_sweeps
       type:
-      - int, defaults to cntk.io.INFINITELY_REPEAT
+      - int, defaults to @cntk.io.INFINITELY_REPEAT
     - description: size of the randomization window in chunks, non-zero value enables
         randomization. *randomization_window_in_chunks* and *randomization_window_in_samples*
         are mutually exclusive, an exception will be raised if both have non-zero
         values.
       id: randomization_window_in_chunks
       type:
-      - int, defaults to cntk.io.DEFAULT_RANDOMIZATION_WINDOW_IN_CHUNKS
+      - int, defaults to @cntk.io.DEFAULT_RANDOMIZATION_WINDOW_IN_CHUNKS
     - description: size of the randomization window in samples, non-zero value enables
         randomization. *randomization_window_in_chunks* and *randomization_window_in_samples*
         are mutually exclusive, an exception will be raised if both have non-zero
@@ -80,10 +80,10 @@ items:
       type:
       - int, defaults to 0
     - description: the output verbosity level, defaults to the current logging verbosity
-        level given by `get_trace_level()`.
+        level given by @cntk.logging.get_trace_level.
       id: trace_level
       type:
-      - an instance of cntk.logging.TraceLevel
+      - an instance of @cntk.logging.TraceLevel
     - description: specifies if the deserialization should be done on a single or
         multiple threads.
       id: multithreaded_deserializer
@@ -143,11 +143,11 @@ items:
     - description: minibatch position on the global timeline.
       id: getter
       type:
-      - Dictionary
+      - '@cntk.cntk_py.Dictionary'
     - description: position returned by the getter
       id: setter
       type:
-      - Dictionary
+      - '@cntk.cntk_py.Dictionary'
   type: attribute
   uid: cntk.io.MinibatchSource.current_position
 - class: cntk.io.MinibatchSource
@@ -168,7 +168,8 @@ items:
   syntax:
     content: get_checkpoint_state(self)
     return:
-      description: A `Dictionary` that has the checkpoint state of the MinibatchSource
+      description: A @cntk.cntk_py.Dictionary that has the checkpoint state of the
+        MinibatchSource
       type:
       - cntk.cntk_py.Dictionary
   type: method
@@ -221,8 +222,8 @@ items:
       id: minibatch_size_in_samples
       type:
       - int
-    - description: mapping of `Variable` to `StreamInformation` which will be used
-        to convert the returned data.
+    - description: mapping of @cntk.variables.Variable to `StreamInformation` which
+        will be used to convert the returned data.
       id: input_map
       type:
       - dict
@@ -240,7 +241,7 @@ items:
       - int, defaults to None
     return:
       description: A mapping of `StreamInformation` to @cntk.io.MinibatchData if *input_map*
-        was not specified. Otherwise, the returned value will be a mapping of `Variable`
+        was not specified. Otherwise, the returned value will be a mapping of @cntk.variables.Variable
         to class:*MinibatchData*.
       type:
       - cntk.io.MinibatchData
@@ -267,7 +268,7 @@ items:
     - description: checkpoint to restore from
       id: checkpoint
       type:
-      - Dictionary
+      - '@cntk.cntk_py.Dictionary'
   type: method
   uid: cntk.io.MinibatchSource.restore_from_checkpoint
 - class: cntk.io.MinibatchSource

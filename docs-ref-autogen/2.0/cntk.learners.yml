@@ -68,7 +68,7 @@ items:
   syntax:
     content: adadelta(parameters, lr=<cntk.cntk_py.training_parameter_per_sample_schedule;
       proxy of <Swig Object of type 'CNTK::TrainingParameterPerUnitSchedule< double,CNTK::TrainingParameterSchedule<
-      double >::UnitType::Sample > *' at 0x0000023A530417B0> >, rho=0.95, epsilon=1e-08,
+      double >::UnitType::Sample > *' at 0x000002AD873DF630> >, rho=0.95, epsilon=1e-08,
       l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
       gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
       use_mean_gradient=False)
@@ -81,7 +81,7 @@ items:
     - description: learning rate schedule.
       id: lr
       type:
-      - output of learning_rate_schedule()
+      - output of `learning_rate_schedule()`
     - description: exponential smooth factor for each minibatch.
       id: rho
       type:
@@ -118,7 +118,7 @@ items:
       - bool, default False
     return:
       description: Instance of a @cntk.learners.Learner that can be passed to the
-        `Trainer`
+        @cntk.train.trainer.Trainer
   type: function
   uid: cntk.learners.adadelta
 - fullName: cntk.learners.adagrad
@@ -152,7 +152,7 @@ items:
     - description: learning rate schedule.
       id: lr
       type:
-      - output of learning_rate_schedule()
+      - output of `learning_rate_schedule()`
     - description: ''
       id: need_ave_multiplier
       type:
@@ -185,7 +185,7 @@ items:
       - bool, default False
     return:
       description: Instance of a @cntk.learners.Learner that can be passed to the
-        `Trainer`
+        @cntk.train.trainer.Trainer
   type: function
   uid: cntk.learners.adagrad
 - fullName: cntk.learners.adam
@@ -208,7 +208,7 @@ items:
     information.
   syntax:
     content: adam(parameters, lr, momentum, unit_gain=True, variance_momentum=<cntk.cntk_py.momentum_as_time_constant_schedule;
-      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x0000023A5316C570>
+      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x000002AD873DFF60>
       >, l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
       gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
       use_mean_gradient=False)
@@ -221,19 +221,19 @@ items:
     - description: learning rate schedule.
       id: lr
       type:
-      - output of learning_rate_schedule()
+      - output of `learning_rate_schedule()`
     - description: momentum schedule. For additional information, please refer to
         the >>:cntkwiki:`this CNTK Wiki article <BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits>`<<.
       id: momentum
       type:
-      - output of momentum_schedule() or momentum_as_time_constant_schedule()
+      - output of `momentum_schedule()` or `momentum_as_time_constant_schedule()`
     - description: when `True`, momentum is interpreted as a unit-gain filter. Defaults
         to the value returned by `default_unit_gain_value()`.
       id: unit_gain
     - description: variance momentum schedule. Defaults to `momentum_as_time_constant_schedule(720000)`.
       id: variance_momentum
       type:
-      - output of momentum_schedule() or momentum_as_time_constant_schedule()
+      - output of `momentum_schedule()` or `momentum_as_time_constant_schedule()`
     - description: the L1 regularization weight per sample, defaults to 0.0
       id: l1_regularization_weight
       type:
@@ -262,7 +262,7 @@ items:
       - bool, default False
     return:
       description: Instance of a @cntk.learners.Learner that can be passed to the
-        `Trainer`
+        @cntk.train.trainer.Trainer
   type: function
   uid: cntk.learners.adam
 - fullName: cntk.learners.default_unit_gain_value
@@ -317,7 +317,7 @@ items:
   summary: Creates an FSAdaGrad learner instance to learn the parameters.
   syntax:
     content: fsadagrad(parameters, lr, momentum, unit_gain=True, variance_momentum=<cntk.cntk_py.momentum_as_time_constant_schedule;
-      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x0000023A5316C510>
+      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x000002AD873DFF00>
       >, l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
       gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
       use_mean_gradient=False)
@@ -330,19 +330,19 @@ items:
     - description: learning rate schedule.
       id: lr
       type:
-      - output of learning_rate_schedule()
+      - output of `learning_rate_schedule()`
     - description: momentum schedule. For additional information, please refer to
         the >>:cntkwiki:`this CNTK Wiki article <BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits>`<<.
       id: momentum
       type:
-      - output of momentum_schedule() or momentum_as_time_constant_schedule()
+      - output of `momentum_schedule()` or `momentum_as_time_constant_schedule()`
     - description: when `True`, momentum is interpreted as a unit-gain filter. Defaults
         to the value returned by @cntk.learners.default_unit_gain_value.
       id: unit_gain
     - description: variance momentum schedule. Defaults to `momentum_as_time_constant_schedule(720000)`.
       id: variance_momentum
       type:
-      - output of momentum_schedule() or momentum_as_time_constant_schedule()
+      - output of `momentum_schedule()` or `momentum_as_time_constant_schedule()`
     - description: the L1 regularization weight per sample, defaults to 0.0
       id: l1_regularization_weight
       type:
@@ -371,7 +371,7 @@ items:
       - bool, default False
     return:
       description: Instance of a @cntk.learners.Learner that can be passed to the
-        `Trainer`
+        @cntk.train.trainer.Trainer
   type: function
   uid: cntk.learners.fsadagrad
 - fullName: cntk.learners.learning_rate_schedule
@@ -399,7 +399,7 @@ items:
     - description: see parameter `unit` in `training_parameter_schedule()`.
       id: unit
       type:
-      - UnitType
+      - '@cntk.learners.UnitType'
     - description: see parameter `epoch_size` in `training_parameter_schedule()`.
       id: epoch_size
       type:
@@ -549,12 +549,12 @@ items:
     - description: learning rate schedule.
       id: lr
       type:
-      - output of learning_rate_schedule()
+      - output of @cntk.learners.learning_rate_schedule
     - description: momentum schedule. For additional information, please refer to
         the >>:cntkwiki:`this CNTK Wiki article <BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits>`<<.
       id: momentum
       type:
-      - output of momentum_schedule() or momentum_as_time_constant_schedule()
+      - output of @cntk.learners.momentum_schedule or @cntk.learners.momentum_as_time_constant_schedule
     - description: when `True`, momentum is interpreted as a unit-gain filter. Defaults
         to the value returned by @cntk.learners.default_unit_gain_value.
       id: unit_gain
@@ -586,7 +586,7 @@ items:
       - bool, default False
     return:
       description: Instance of a @cntk.learners.Learner that can be passed to the
-        `Trainer`
+        @cntk.train.trainer.Trainer
   type: function
   uid: cntk.learners.momentum_sgd
 - fullName: cntk.learners.nesterov
@@ -623,12 +623,12 @@ items:
     - description: learning rate schedule.
       id: lr
       type:
-      - output of learning_rate_schedule()
+      - output of @cntk.learners.learning_rate_schedule
     - description: momentum schedule. For additional information, please refer to
         the >>:cntkwiki:`this CNTK Wiki article <BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits>`<<.
       id: momentum
       type:
-      - output of momentum_schedule() or momentum_as_time_constant_schedule()
+      - output of @cntk.learners.momentum_schedule or @cntk.learners.momentum_as_time_constant_schedule
     - description: when `True`, momentum is interpreted as a unit-gain filter. Defaults
         to the value returned by @cntk.learners.default_unit_gain_value.
       id: unit_gain
@@ -660,7 +660,7 @@ items:
       - bool, default False
     return:
       description: Instance of a @cntk.learners.Learner that can be passed to the
-        `Trainer`.
+        @cntk.train.trainer.Trainer.
   type: function
   uid: cntk.learners.nesterov
 - fullName: cntk.learners.rmsprop
@@ -691,7 +691,7 @@ items:
     - description: learning rate schedule.
       id: lr
       type:
-      - output of learning_rate_schedule()
+      - output of @cntk.learners.learning_rate_schedule
     - description: Trade-off factor for current and previous gradients. Common value
         is 0.95
       id: gamma
@@ -745,7 +745,7 @@ items:
       - bool, default False
     return:
       description: Instance of a @cntk.learners.Learner that can be passed to the
-        `Trainer`
+        @cntk.train.trainer.Trainer
   type: function
   uid: cntk.learners.rmsprop
 - fullName: cntk.learners.set_default_unit_gain_value
@@ -814,7 +814,7 @@ items:
     - description: learning rate schedule.
       id: lr
       type:
-      - output of learning_rate_schedule()
+      - output of @cntk.learners.learning_rate_schedule
     - description: the L1 regularization weight per sample, defaults to 0.0
       id: l1_regularization_weight
       type:
@@ -843,7 +843,7 @@ items:
       - bool, default False
     return:
       description: Instance of a @cntk.learners.Learner that can be passed to the
-        `Trainer`
+        @cntk.train.trainer.Trainer
   type: function
   uid: cntk.learners.sgd
 - example:
@@ -920,7 +920,7 @@ items:
         values * `minibatch`: the returned schedule contains per-minibatch values.'
       id: unit
       type:
-      - UnitType
+      - '@cntk.learners.UnitType'
     - description: number of samples as a scheduling unit. Parameters in the schedule
         change their values every `epoch_size` samples. If no `epoch_size` is provided,
         this parameter is substituted by the size of the full data sweep, in which

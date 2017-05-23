@@ -29,7 +29,7 @@ items:
       type:
       - str
     - description: dimensions of this stream. A text format reader reads data as flat
-        arrays. If you need different shapes you can `reshape()` it later.
+        arrays. If you need different shapes you can @cntk.ops.reshape it later.
       id: dim
       type:
       - int

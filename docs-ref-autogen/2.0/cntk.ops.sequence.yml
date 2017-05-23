@@ -72,7 +72,7 @@ items:
       type:
       - str
     return:
-      description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
+      description: '@cntk.ops.functions'
   type: function
   uid: cntk.ops.sequence.broadcast_as
 - fullName: cntk.ops.sequence.delay
@@ -88,9 +88,9 @@ items:
       path: /bindings/python\cntk\ops\sequence\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 227
-  summary: This function combines `past_value()` and `future_value()` into a single
-    function. This is useful when the time_step is computed and can be positive, negative,
-    or 0.
+  summary: This function combines @cntk.ops.sequence.past_value and @cntk.ops.sequence.future_value
+    into a single function. This is useful when the time_step is computed and can
+    be positive, negative, or 0.
   syntax:
     content: delay(x, initial_state=None, time_step=1, name='')
     parameters:
@@ -139,7 +139,7 @@ items:
       type:
       - str
     return:
-      description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
+      description: '@cntk.ops.functions'
   type: function
   uid: cntk.ops.sequence.first
 - example:
@@ -189,7 +189,7 @@ items:
       type:
       - str, optional
     return:
-      description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
+      description: '@cntk.ops.functions'
   type: function
   uid: cntk.ops.sequence.future_value
 - example:
@@ -235,7 +235,7 @@ items:
       type:
       - str
     return:
-      description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
+      description: '@cntk.ops.functions'
   type: function
   uid: cntk.ops.sequence.gather
 - fullName: cntk.ops.sequence.input
@@ -255,7 +255,7 @@ items:
     and labels, should be provided.'
   syntax:
     content: input(shape, dtype=<cntk.default_options.default_override_or object at
-      0x0000023A5318F080>, needs_gradient=False, is_sparse=False, sequence_axis=Axis('defaultDynamicAxis'),
+      0x000002AD873B2C88>, needs_gradient=False, is_sparse=False, sequence_axis=Axis('defaultDynamicAxis'),
       name='')
     parameters:
     - description: the shape of the input tensor
@@ -283,7 +283,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Variable`'
+      description: '@cntk.variables.Variable'
   type: function
   uid: cntk.ops.sequence.input
 - example:
@@ -328,7 +328,7 @@ items:
       type:
       - str
     return:
-      description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
+      description: '@cntk.ops.functions'
   type: function
   uid: cntk.ops.sequence.is_first
 - example:
@@ -373,7 +373,7 @@ items:
       type:
       - str
     return:
-      description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
+      description: '@cntk.ops.functions'
   type: function
   uid: cntk.ops.sequence.is_last
 - example:
@@ -405,7 +405,7 @@ items:
       type:
       - str
     return:
-      description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
+      description: '@cntk.ops.functions'
   type: function
   uid: cntk.ops.sequence.last
 - example:
@@ -473,7 +473,7 @@ items:
       type:
       - str, optional
     return:
-      description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
+      description: '@cntk.ops.functions'
   type: function
   uid: cntk.ops.sequence.past_value
 - fullName: cntk.ops.sequence.reduce_max
@@ -500,7 +500,7 @@ items:
       type:
       - str, optional
     return:
-      description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
+      description: '@cntk.ops.functions'
   type: function
   uid: cntk.ops.sequence.reduce_max
 - example:
@@ -532,7 +532,7 @@ items:
       type:
       - str, optional
     return:
-      description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
+      description: '@cntk.ops.functions'
   type: function
   uid: cntk.ops.sequence.reduce_sum
 - example:
@@ -582,7 +582,7 @@ items:
       type:
       - str
     return:
-      description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
+      description: '@cntk.ops.functions'
   type: function
   uid: cntk.ops.sequence.scatter
 - example:
@@ -605,7 +605,7 @@ items:
   syntax:
     content: slice(seq, begin_index, end_index, name='')
     return:
-      description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
+      description: '@cntk.ops.functions'
   type: function
   uid: cntk.ops.sequence.slice
 - fullName: cntk.ops.sequence.softmax
@@ -632,7 +632,7 @@ items:
       type:
       - str, optional
     return:
-      description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
+      description: '@cntk.ops.functions'
   type: function
   uid: cntk.ops.sequence.softmax
 - example:
@@ -675,7 +675,7 @@ items:
       type:
       - str, optional
     return:
-      description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
+      description: '@cntk.ops.functions'
   type: function
   uid: cntk.ops.sequence.unpack
 - example:
@@ -722,7 +722,7 @@ items:
       type:
       - str
     return:
-      description: '@cntk.ops.functions.htmlcntk.ops.functions.Function'
+      description: '@cntk.ops.functions'
   type: function
   uid: cntk.ops.sequence.where
 references:

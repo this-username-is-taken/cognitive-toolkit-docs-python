@@ -51,10 +51,11 @@ items:
     startLine: 17
   summary: Layer factory function to create a layer that delays input the input by
     a given number of time steps. Negative means future. This is provided as a layer
-    that wraps `delay()` so that it can easily be used in a Sequential() expression.
+    that wraps @cntk.ops.sequence.delay so that it can easily be used in a Sequential()
+    expression.
   syntax:
     content: Delay(T=1, initial_state=<cntk.default_options.default_override_or object
-      at 0x0000023A5327A9E8>, name='')
+      at 0x000002AD87448518>, name='')
     parameters:
     - description: the number of time steps to look into the past, where negative
         values mean to look into the future, and 0 means a no-op (default 1).
@@ -107,10 +108,10 @@ items:
     recurrently over an input sequence, and returns the final state. This is often
     used for embeddings of sequences, e.g. in a sequence-to-sequence model.
 
-    `Fold()` is the same as `Recurrence()` except that only the final state is returned
-    (whereas `Recurrence()` returns the entire state sequence). Hence, this documentation
-    will only focus on the differences to `Recurrence()`, please see `Recurrence()`
-    for a detailed information on parameters.
+    `Fold()` is the same as @cntk.layers.sequence.Recurrence except that only the
+    final state is returned (whereas `Recurrence()` returns the entire state sequence).
+    Hence, this documentation will only focus on the differences to `Recurrence()`,
+    please see @cntk.layers.sequence.Recurrence for a detailed information on parameters.
 
     Commonly, the `folder_function` is a recurrent block such as an LSTM. However,
     one can pass any binary function. E.g. passing `plus` will sum up all items of
@@ -122,15 +123,16 @@ items:
     fold-right, except that the `folder_function` signature is always the one of fold-left.'
   syntax:
     content: Fold(folder_function, go_backwards=<cntk.default_options.default_override_or
-      object at 0x0000023A5327AB00>, initial_state=<cntk.default_options.default_override_or
-      object at 0x0000023A5327AB38>, return_full_state=False, name='')
+      object at 0x000002AD87448630>, initial_state=<cntk.default_options.default_override_or
+      object at 0x000002AD87448668>, return_full_state=False, name='')
     parameters:
     - description: This function must have N+1 inputs and N outputs, where N is the
         number of state variables (typically 1 for GRU and plain RNNs, and 2 for LSTMs).
       id: folder_function
       type:
-      - Function or equivalent Python function
-    - description: ''
+      - '@cntk.ops.functions.Function or equivalent Python function'
+    - description: if `True` then run the recurrence from the end of the sequence
+        to the start.
       id: go_backwards
       type:
       - bool, defaults to False
@@ -141,9 +143,10 @@ items:
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - description: state variable, then the layer returns the final value of a all
-        state variables (a tuple of sequences); whereas if not given or `False`, only
-        the final value of the first of the state variables is returned to the caller.
+    - description: if `True` and the step function has more than one state variable,
+        then the layer returns the final value of a all state variables (a tuple of
+        sequences); whereas if not given or `False`, only the final value of the first
+        of the state variables is returned to the caller.
       id: return_full_state
       type:
       - bool, defaults to False
@@ -197,7 +200,7 @@ items:
     same axis dimension. Longer sequences will be truncated.'
   syntax:
     content: PastValueWindow(window_size, axis, go_backwards=<cntk.default_options.default_override_or
-      object at 0x0000023A5327AA20>, name='')
+      object at 0x000002AD87448550>, name='')
     parameters:
     - description: maximum number of items in sequences. The *axis* will have this
         dimension.
@@ -207,7 +210,7 @@ items:
     - description: axis along which the concatenation will be performed
       id: axis
       type:
-      - int or Axis, optional, keyword only
+      - int or @cntk.axis, optional, keyword only
     - description: the name of the Function instance in the network
       id: name
       type:
@@ -253,12 +256,12 @@ items:
   summary: 'Layer factory function to create a function that runs a step function
     recurrently over an input sequence. This implements the typical recurrent model.
 
-    The step function can be any `Function` or Python function with a signature `(h_prev,
-    x) -> h`, where `h_prev` is the previous state, `x` is the new data input, and
-    the output is the new state. All three are sequences of the same length. The step
-    function will be called item by item.
+    The step function can be any @cntk.ops.functions.Function or Python function with
+    a signature `(h_prev, x) -> h`, where `h_prev` is the previous state, `x` is the
+    new data input, and the output is the new state. All three are sequences of the
+    same length. The step function will be called item by item.
 
-    Step functions can have more than one state output, e.g. @cntk.layers.blocks.htmlcntk.layers.blocks.LSTM.
+    Step functions can have more than one state output, e.g. @cntk.layers.blocks.
     In this case, the first N arguments are the previous state, followed by one more
     argument that is the data input; and its output must be a tuple of N values. In
     this case, the recurrence operation will, by default, return the first of the
@@ -266,33 +269,33 @@ items:
     are internal (like the LSTM''s `c`). If all state variables should be returned,
     pass `return_full_state=True`.
 
-    Typical step functions are @cntk.layers.blocks.htmlcntk.layers.blocks.LSTM, @cntk.layers.blocks.htmlcntk.layers.blocks.GRU,
-    and @cntk.layers.blocks.htmlcntk.layers.blocks.RNNUnit. However, any function
-    with a signature as described above is admissible. For example, a cumulative sum
-    over a sequence can be computed as `Recurrence(plus)`, or a GRU layer with projection
-    could be realized as `Recurrence(GRU(500) >> Dense(200))`; where the projection
-    is applied to the hidden state as fed back to the next step. `F>>G` is a short-hand
-    for `Sequential([F, G])`.
+    Typical step functions are @cntk.layers.blocks, @cntk.layers.blocks, and @cntk.layers.blocks.
+    However, any function with a signature as described above is admissible. For example,
+    a cumulative sum over a sequence can be computed as `Recurrence(plus)`, or a GRU
+    layer with projection could be realized as `Recurrence(GRU(500) >> Dense(200))`;
+    where the projection is applied to the hidden state as fed back to the next step.
+    `F>>G` is a short-hand for `Sequential([F, G])`.
 
     Optionally, the recurrence can run backwards. This is useful for constructing
     bidirectional models.
 
     `initial_state` must be a constant. To pass initial_state as a data input, e.g.
-    for a sequence-to-sequence model, use `RecurrenceFrom()` instead.
+    for a sequence-to-sequence model, use @cntk.layers.sequence.RecurrenceFrom instead.
 
     Note: `Recurrence()` is the equivalent to what in functional programming is often
     called `scanl()`.'
   syntax:
     content: Recurrence(step_function, go_backwards=<cntk.default_options.default_override_or
-      object at 0x0000023A5327AA90>, initial_state=<cntk.default_options.default_override_or
-      object at 0x0000023A5327AAC8>, return_full_state=False, name='')
+      object at 0x000002AD874485C0>, initial_state=<cntk.default_options.default_override_or
+      object at 0x000002AD874485F8>, return_full_state=False, name='')
     parameters:
     - description: This function must have N+1 inputs and N outputs, where N is the
         number of state variables (typically 1 for GRU and plain RNNs, and 2 for LSTMs).
       id: step_function
       type:
-      - Function or equivalent Python function
-    - description: ''
+      - '@cntk.ops.functions.Function or equivalent Python function'
+    - description: if `True` then run the recurrence from the end of the sequence
+        to the start.
       id: go_backwards
       type:
       - bool, defaults to False
@@ -303,9 +306,10 @@ items:
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - description: state variable, then the layer returns a all state variables (a
-        tuple of sequences); whereas if not given or `False`, only the first state
-        variable is returned to the caller.
+    - description: if `True` and the step function has more than one state variable,
+        then the layer returns a all state variables (a tuple of sequences); whereas
+        if not given or `False`, only the first state variable is returned to the
+        caller.
       id: return_full_state
       type:
       - bool, defaults to False
@@ -396,14 +400,15 @@ items:
     model, or sequential data. In the latter case, the last item is the initial state.'
   syntax:
     content: RecurrenceFrom(step_function, go_backwards=<cntk.default_options.default_override_or
-      object at 0x0000023A5327AA58>, return_full_state=False, name='')
+      object at 0x000002AD87448588>, return_full_state=False, name='')
     parameters:
     - description: This function must have N+1 inputs and N outputs, where N is the
         number of state variables (typically 1 for GRU and plain RNNs, and 2 for LSTMs).
       id: step_function
       type:
-      - Function or equivalent Python function
-    - description: ''
+      - '@cntk.ops.functions.Function or equivalent Python function'
+    - description: if `True` then run the recurrence from the end of the sequence
+        to the start.
       id: go_backwards
       type:
       - bool, defaults to False
@@ -414,9 +419,10 @@ items:
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - description: state variable, then the layer returns a all state variables (a
-        tuple of sequences); whereas if not given or `False`, only the first state
-        variable is returned to the caller.
+    - description: if `True` and the step function has more than one state variable,
+        then the layer returns a all state variables (a tuple of sequences); whereas
+        if not given or `False`, only the first state variable is returned to the
+        caller.
       id: return_full_state
       type:
       - bool, defaults to False
@@ -482,7 +488,7 @@ items:
         the first output is the value to emit, while the others are the state.
       id: generator_function
       type:
-      - Function or equivalent Python function
+      - '@cntk.ops.functions.Function or equivalent Python function'
     - description: A function that denotes when the last element of the unfold has
         been emitted. It takes the same number of argments as the generator, and returns
         a scalar that must be 1 for the last element of the sequence, and 0 otherwise.
@@ -491,7 +497,7 @@ items:
         will be equal to the specified maximum length.
       id: until_predicate
       type:
-      - Function or equivalent Python function
+      - '@cntk.ops.functions.Function or equivalent Python function'
     - description: the maximum number of output items is equal to the number of items
         of the *dynamic_axis_like* argument to the returned *unfold()* function, multiplied
         by this factor. For example, pass 1.5 here if the output sequence can be at

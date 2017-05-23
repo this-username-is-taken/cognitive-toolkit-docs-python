@@ -130,14 +130,15 @@ items:
   syntax:
     content: abs(x, name='')
     parameters:
-    - description: numpy array or any `Function` that outputs a tensor
+    - description: numpy array or any @cntk.ops.functions.Function that outputs a
+        tensor
       id: x
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.abs
 - fullName: cntk.ops.alias
@@ -170,7 +171,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.alias
 - example:
@@ -197,20 +198,20 @@ items:
   syntax:
     content: argmax(x, axis=None, name='')
     parameters:
-    - description: any `Function` that outputs a tensor.
+    - description: any @cntk.ops.functions.Function that outputs a tensor.
       id: x
       type:
-      - numpy.array or Function
+      - numpy.array or @cntk.ops.functions.Function
     - description: axis along which the reduction will be performed
       id: axis
       type:
-      - int or Axis
+      - int or @cntk.axis
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, default to ''
     return:
-      description: An instance of `Function`
+      description: An instance of @cntk.ops.functions.Function
       type:
       - cntk.ops.functions.Function
   type: function
@@ -239,20 +240,20 @@ items:
   syntax:
     content: argmin(x, axis=None, name='')
     parameters:
-    - description: any `Function` that outputs a tensor.
+    - description: any @cntk.ops.functions.Function that outputs a tensor.
       id: x
       type:
-      - numpy.array or Function
+      - numpy.array or @cntk.ops.functions.Function
     - description: axis along which the reduction will be performed
       id: axis
       type:
-      - int or Axis
+      - int or @cntk.axis
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, default to ''
     return:
-      description: An instance of `Function`
+      description: An instance of @cntk.ops.functions.Function
       type:
       - cntk.ops.functions.Function
   type: function
@@ -298,7 +299,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.as_block
 - fullName: cntk.ops.as_composite
@@ -328,7 +329,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.as_composite
 - example:
@@ -410,7 +411,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.associative_multi_arg
 - fullName: cntk.ops.batch_normalization
@@ -480,7 +481,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.batch_normalization
 - example:
@@ -512,7 +513,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.ceil
 - example:
@@ -572,7 +573,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.clip
 - example:
@@ -615,7 +616,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.combine
 - example:
@@ -657,13 +658,13 @@ items:
     - description: instance of DeviceDescriptor
       id: device
       type:
-      - DeviceDescriptor
+      - '@cntk.device'
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Constant`'
+      description: '@cntk.variables.Constant'
   type: function
   uid: cntk.ops.constant
 - example:
@@ -746,7 +747,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.convolution
 - example:
@@ -833,7 +834,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.convolution_transpose
 - example:
@@ -858,14 +859,15 @@ items:
   syntax:
     content: cos(x, name='')
     parameters:
-    - description: numpy array or any `Function` that outputs a tensor
+    - description: numpy array or any @cntk.ops.functions.Function that outputs a
+        tensor
       id: x
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.cos
 - example:
@@ -903,7 +905,7 @@ items:
     - description: probability that an element of `x` will be set to zero
       id: dropout_rate
       type:
-      - float, [0,1
+      - float, [0,1)
     - description: random seed.
       id: seed
       type:
@@ -911,9 +913,9 @@ items:
     - description: the name of the Function instance in the network
       id: name
       type:
-      - str, optional
+      - '`str`, optional'
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.dropout
 - example:
@@ -962,7 +964,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.element_divide
 - fullName: cntk.ops.element_max
@@ -994,7 +996,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.element_max
 - fullName: cntk.ops.element_min
@@ -1026,7 +1028,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.element_min
 - example:
@@ -1069,7 +1071,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.element_select
 - example:
@@ -1130,7 +1132,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.element_times
 - example:
@@ -1162,16 +1164,16 @@ items:
   syntax:
     content: elu(x, name='')
     parameters:
-    - description: any `Function` that outputs a tensor.
+    - description: any @cntk.ops.functions.Function that outputs a tensor.
       id: x
       type:
-      - numpy.array or Function
+      - numpy.array or @cntk.ops.functions.Function
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, default to ''
     return:
-      description: An instance of `Function`
+      description: An instance of @cntk.ops.functions.Function
       type:
       - cntk.ops.functions.Function
   type: function
@@ -1222,7 +1224,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.equal
 - example:
@@ -1253,14 +1255,15 @@ items:
   syntax:
     content: exp(x, name='')
     parameters:
-    - description: numpy array or any `Function` that outputs a tensor
+    - description: numpy array or any @cntk.ops.functions.Function that outputs a
+        tensor
       id: x
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.exp
 - example:
@@ -1295,7 +1298,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.floor
 - fullName: cntk.ops.forward_backward
@@ -1334,7 +1337,7 @@ items:
         decoding, yet may hurt accuracy. delayConstraint=-1 means no constraint
       id: delayConstraint
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.forward_backward
 - example:
@@ -1386,7 +1389,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.future_value
 - example:
@@ -1435,7 +1438,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.greater
 - example:
@@ -1484,7 +1487,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.greater_equal
 - example:
@@ -1525,14 +1528,15 @@ items:
   syntax:
     content: hardmax(x, name='')
     parameters:
-    - description: numpy array or any `Function` that outputs a tensor
+    - description: numpy array or any @cntk.ops.functions.Function that outputs a
+        tensor
       id: x
     - description: the name of the Function instance in the network
       id: name
       type:
       - str
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.hardmax
 - fullName: cntk.ops.input
@@ -1552,7 +1556,7 @@ items:
     and labels, should be provided.'
   syntax:
     content: input(shape, dtype=<cntk.default_options.default_override_or object at
-      0x0000023A53257F28>, needs_gradient=False, is_sparse=False, dynamic_axes=[Axis('defaultBatchAxis')],
+      0x000002AD8741CA58>, needs_gradient=False, is_sparse=False, dynamic_axes=[Axis('defaultBatchAxis')],
       name='')
     parameters:
     - description: the shape of the input tensor
@@ -1580,7 +1584,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Variable`'
+      description: '@cntk.variables.Variable'
   type: function
   uid: cntk.ops.input
 - fullName: cntk.ops.input_variable
@@ -1630,7 +1634,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Variable`'
+      description: '@cntk.variables.Variable'
   type: function
   uid: cntk.ops.input_variable
 - fullName: cntk.ops.labels_to_graph
@@ -1657,7 +1661,7 @@ items:
     - description: input training labels
       id: labels
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.labels_to_graph
 - example:
@@ -1689,16 +1693,16 @@ items:
   syntax:
     content: leaky_relu(x, name='')
     parameters:
-    - description: any `Function` that outputs a tensor.
+    - description: any @cntk.ops.functions.Function that outputs a tensor.
       id: x
       type:
-      - numpy.array or Function
+      - numpy.array or @cntk.ops.functions.Function
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, default to ''
     return:
-      description: An instance of `Function`
+      description: An instance of @cntk.ops.functions.Function
       type:
       - cntk.ops.functions.Function
   type: function
@@ -1749,7 +1753,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.less
 - example:
@@ -1798,7 +1802,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.less_equal
 - example:
@@ -1832,14 +1836,15 @@ items:
   syntax:
     content: log(x, name='')
     parameters:
-    - description: numpy array or any `Function` that outputs a tensor
+    - description: numpy array or any @cntk.ops.functions.Function that outputs a
+        tensor
       id: x
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.log
 - example:
@@ -1886,7 +1891,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.log_add_exp
 - example:
@@ -1919,7 +1924,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.minus
 - example:
@@ -1950,14 +1955,15 @@ items:
   syntax:
     content: negate(x, name='')
     parameters:
-    - description: numpy array or any `Function` that outputs a tensor
+    - description: numpy array or any @cntk.ops.functions.Function that outputs a
+        tensor
       id: x
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.negate
 - example:
@@ -2006,7 +2012,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.not_equal
 - example:
@@ -2045,7 +2051,7 @@ items:
       type:
       - str, optional, keyword only
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.one_hot
 - example:
@@ -2079,7 +2085,7 @@ items:
     content: optimized_rnnstack(operand, weights, hidden_size, num_layers, bidirectional=False,
       recurrent_op='lstm', name='')
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.optimized_rnnstack
 - fullName: cntk.ops.output_variable
@@ -2116,7 +2122,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Variable` that is of output type'
+      description: '@cntk.variables.Variable that is of output type'
   type: function
   uid: cntk.ops.output_variable
 - example:
@@ -2153,17 +2159,17 @@ items:
     - description: same shape as x
       id: alpha
       type:
-      - Parameter
-    - description: any `Function` that outputs a tensor.
+      - '@cntk.variables.Parameter'
+    - description: any @cntk.ops.functions.Function that outputs a tensor.
       id: x
       type:
-      - numpy.array or Function
+      - numpy.array or @cntk.ops.functions.Function
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, default to ''
     return:
-      description: An instance of `Function`
+      description: An instance of @cntk.ops.functions.Function
       type:
       - cntk.ops.functions.Function
   type: function
@@ -2195,7 +2201,7 @@ items:
       type:
       - tuple or int, optional
     - description: if init is a scalar it will be replicated for every element in
-        the tensor or NumPy array. If it is the output of an initializer form @cntk.initializer.htmlmodule-cntk.initializer
+        the tensor or NumPy array. If it is the output of an initializer form @cntk.initializer
         it will be used to initialize the tensor at the first forward pass. If *None*,
         the tensor will be initialized with 0.
       id: init
@@ -2209,13 +2215,13 @@ items:
     - description: instance of DeviceDescriptor
       id: device
       type:
-      - DeviceDescriptor
+      - '@cntk.device'
     - description: the name of the Parameter instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Parameter`'
+      description: '@cntk.variables.Parameter'
   type: function
   uid: cntk.ops.parameter
 - example:
@@ -2279,7 +2285,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.past_value
 - fullName: cntk.ops.per_dim_mean_variance_normalize
@@ -2315,7 +2321,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.per_dim_mean_variance_normalize
 - fullName: cntk.ops.placeholder
@@ -2351,7 +2357,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Variable`'
+      description: '@cntk.variables.Variable'
   type: function
   uid: cntk.ops.placeholder
 - fullName: cntk.ops.placeholder_variable
@@ -2388,7 +2394,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Variable`'
+      description: '@cntk.variables.Variable'
   type: function
   uid: cntk.ops.placeholder_variable
 - example:
@@ -2459,7 +2465,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.plus
 - example:
@@ -2518,7 +2524,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.pooling
 - example:
@@ -2552,7 +2558,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.pow
 - fullName: cntk.ops.random_sample
@@ -2597,9 +2603,9 @@ items:
     - description: the name of the Function instance in the network.
       id: name
       type:
-      - str, optional
+      - '`str`, optional'
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.random_sample
 - example:
@@ -2668,7 +2674,7 @@ items:
     content: random_sample_inclusion_frequency(weights, num_samples, allow_duplicates,
       seed=4294967293, name='')
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.random_sample_inclusion_frequency
 - example:
@@ -2697,14 +2703,15 @@ items:
   syntax:
     content: reciprocal(x, name='')
     parameters:
-    - description: numpy array or any `Function` that outputs a tensor
+    - description: numpy array or any @cntk.ops.functions.Function that outputs a
+        tensor
       id: x
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.reciprocal
 - fullName: cntk.ops.reconcile_dynamic_axes
@@ -2738,7 +2745,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.reconcile_dynamic_axes
 - example:
@@ -2765,7 +2772,7 @@ items:
   - python
   module: cntk.ops
   name: reduce_log_sum_exp
-  seealsoContent: 'See also: `reduce_sum()` for more details and examples.'
+  seealsoContent: 'See also: @cntk.ops.reduce_sum for more details and examples.'
   source:
     id: reduce_log_sum_exp
     path: /bindings/python\cntk\internal\swig_helper.py
@@ -2779,7 +2786,7 @@ items:
   syntax:
     content: reduce_log_sum_exp(x, axis=None, name='')
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.reduce_log_sum_exp
 - example:
@@ -2793,7 +2800,7 @@ items:
   - python
   module: cntk.ops
   name: reduce_max
-  seealsoContent: 'See also: `reduce_sum()` for more details and examples.'
+  seealsoContent: 'See also: @cntk.ops.reduce_sum for more details and examples.'
   source:
     id: reduce_max
     path: /bindings/python\cntk\internal\swig_helper.py
@@ -2806,7 +2813,7 @@ items:
   syntax:
     content: reduce_max(x, axis=None, name='')
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.reduce_max
 - example:
@@ -2820,7 +2827,7 @@ items:
   - python
   module: cntk.ops
   name: reduce_mean
-  seealsoContent: 'See also: `reduce_sum()` for more details and examples.'
+  seealsoContent: 'See also: @cntk.ops.reduce_sum for more details and examples.'
   source:
     id: reduce_mean
     path: /bindings/python\cntk\internal\swig_helper.py
@@ -2833,7 +2840,7 @@ items:
   syntax:
     content: reduce_mean(x, axis=None, name='')
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.reduce_mean
 - example:
@@ -2847,7 +2854,7 @@ items:
   - python
   module: cntk.ops
   name: reduce_min
-  seealsoContent: 'See also: `reduce_sum()` for more details and examples.'
+  seealsoContent: 'See also: @cntk.ops.reduce_sum for more details and examples.'
   source:
     id: reduce_min
     path: /bindings/python\cntk\internal\swig_helper.py
@@ -2860,7 +2867,7 @@ items:
   syntax:
     content: reduce_min(x, axis=None, name='')
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.reduce_min
 - example:
@@ -2873,7 +2880,7 @@ items:
   - python
   module: cntk.ops
   name: reduce_prod
-  seealsoContent: 'See also: `reduce_sum()` for more details and examples.'
+  seealsoContent: 'See also: @cntk.ops.reduce_sum for more details and examples.'
   source:
     id: reduce_prod
     path: /bindings/python\cntk\internal\swig_helper.py
@@ -2886,7 +2893,7 @@ items:
   syntax:
     content: reduce_prod(x, axis=None, name='')
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.reduce_prod
 - example:
@@ -2931,13 +2938,13 @@ items:
     - description: axis along which the reduction will be performed
       id: axis
       type:
-      - int or Axis
+      - int or @cntk.axis
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.reduce_sum
 - example:
@@ -2969,14 +2976,15 @@ items:
   syntax:
     content: relu(x, name='')
     parameters:
-    - description: numpy array or any `Function` that outputs a tensor
+    - description: numpy array or any @cntk.ops.functions.Function that outputs a
+        tensor
       id: x
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.relu
 - example:
@@ -3025,7 +3033,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.reshape
 - fullName: cntk.ops.roipooling
@@ -3064,7 +3072,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.roipooling
 - example:
@@ -3101,7 +3109,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.round
 - example:
@@ -3133,14 +3141,15 @@ items:
   syntax:
     content: sigmoid(x, name='')
     parameters:
-    - description: numpy array or any `Function` that outputs a tensor
+    - description: numpy array or any @cntk.ops.functions.Function that outputs a
+        tensor
       id: x
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.sigmoid
 - example:
@@ -3165,14 +3174,15 @@ items:
   syntax:
     content: sin(x, name='')
     parameters:
-    - description: numpy array or any `Function` that outputs a tensor
+    - description: numpy array or any @cntk.ops.functions.Function that outputs a
+        tensor
       id: x
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.sin
 - example:
@@ -3215,7 +3225,7 @@ items:
   syntax:
     content: slice(x, axis, begin_index, end_index, name='')
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.slice
 - example:
@@ -3251,18 +3261,19 @@ items:
   syntax:
     content: softmax(x, axis=None, name='')
     parameters:
-    - description: numpy array or any `Function` that outputs a tensor
+    - description: numpy array or any @cntk.ops.functions.Function that outputs a
+        tensor
       id: x
     - description: axis along which the softmax operation will be performed
       id: axis
       type:
-      - int or Axis
+      - int or @cntk.axis
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.softmax
 - example:
@@ -3308,10 +3319,10 @@ items:
   syntax:
     content: softplus(x, steepness=1, name='')
     parameters:
-    - description: any `Function` that outputs a tensor.
+    - description: any @cntk.ops.functions.Function that outputs a tensor.
       id: x
       type:
-      - numpy.array or Function
+      - numpy.array or @cntk.ops.functions.Function
     - description: optional steepness factor
       id: steepness
       type:
@@ -3321,7 +3332,7 @@ items:
       type:
       - str, default to ''
     return:
-      description: An instance of `Function`
+      description: An instance of @cntk.ops.functions.Function
       type:
       - cntk.ops.functions.Function
   type: function
@@ -3358,13 +3369,13 @@ items:
     - description: axis along which the concatenation will be performed
       id: axis
       type:
-      - int or Axis, optional, keyword only
+      - int or @cntk.axis, optional, keyword only
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional, keyword only
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.splice
 - example:
@@ -3397,14 +3408,15 @@ items:
   syntax:
     content: sqrt(x, name='')
     parameters:
-    - description: numpy array or any `Function` that outputs a tensor
+    - description: numpy array or any @cntk.ops.functions.Function that outputs a
+        tensor
       id: x
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.sqrt
 - example:
@@ -3433,14 +3445,15 @@ items:
   syntax:
     content: square(x, name='')
     parameters:
-    - description: numpy array or any `Function` that outputs a tensor
+    - description: numpy array or any @cntk.ops.functions.Function that outputs a
+        tensor
       id: x
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.square
 - fullName: cntk.ops.stop_gradient
@@ -3468,7 +3481,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.stop_gradient
 - example:
@@ -3493,14 +3506,15 @@ items:
   syntax:
     content: tanh(x, name='')
     parameters:
-    - description: numpy array or any `Function` that outputs a tensor
+    - description: numpy array or any @cntk.ops.functions.Function that outputs a
+        tensor
       id: x
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.tanh
 - example:
@@ -3531,11 +3545,11 @@ items:
     \ a matrix. The operator '@' has been overloaded such that in Python 3.5 and later\
     \ X @ W equals times(X, W).\nFor better performance on times operation on sequence\
     \ which is followed by sequence.reduce_sum, use infer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK,\
-    \ i.e. replace following:\n<!-- literal_block {\"xml:space\": \"preserve\", \"\
-    backrefs\": [], \"names\": [], \"ids\": [], \"classes\": [], \"dupnames\": []}\
+    \ i.e. replace following:\n<!-- literal_block {\"dupnames\": [], \"xml:space\"\
+    : \"preserve\", \"names\": [], \"ids\": [], \"backrefs\": [], \"classes\": []}\
     \ -->\n\n````\n\n   sequence.reduce_sum(times(seq1, seq2))\n   ````\nwith:\n<!--\
-    \ literal_block {\"xml:space\": \"preserve\", \"backrefs\": [], \"names\": [],\
-    \ \"ids\": [], \"classes\": [], \"dupnames\": []} -->\n\n````\n\n   times(seq1,\
+    \ literal_block {\"dupnames\": [], \"xml:space\": \"preserve\", \"names\": [],\
+    \ \"ids\": [], \"backrefs\": [], \"classes\": []} -->\n\n````\n\n   times(seq1,\
     \ seq2, infer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK)\n\
     \   ````"
   syntax:
@@ -3560,7 +3574,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.times
 - example:
@@ -3611,7 +3625,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.times_transpose
 - example:
@@ -3653,7 +3667,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.to_sequence
 - example:
@@ -3688,7 +3702,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.to_sequence_like
 - example:
@@ -3717,17 +3731,17 @@ items:
     - description: the axis to swap with `axis2`
       id: axis1
       type:
-      - int or Axis
+      - int or @cntk.axis
     - description: the axis to swap with `axis1`
       id: axis2
       type:
-      - int or Axis
+      - int or @cntk.axis
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.transpose
 - example:
@@ -3778,7 +3792,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.unpooling
 references:

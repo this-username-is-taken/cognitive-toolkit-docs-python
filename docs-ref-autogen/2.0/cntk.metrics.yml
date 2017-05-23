@@ -80,13 +80,13 @@ items:
     - description: axis along which the classification error will be computed.
       id: axis
       type:
-      - int or Axis
+      - int or @cntk.axis
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.metrics.classification_error
 - example:
@@ -156,7 +156,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.metrics.edit_distance_error
 - example:
@@ -220,7 +220,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.metrics.ndcg_at_1
 references:

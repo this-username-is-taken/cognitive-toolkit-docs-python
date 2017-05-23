@@ -69,18 +69,18 @@ items:
     - description: root node of the function to train
       id: model
       type:
-      - Function
+      - '@cntk.ops.functions'
     - description: Function with one or two outputs, representing loss and, if given,
         evaluation metric (in this order). Alternatively, a tuple(loss Function, evaluation
         Function) is also accepted.
       id: criterion
       type:
-      - tuple of Function or Variable
-    - description: list of learners from @cntk.learners.htmlmodule-cntk.learners
+      - tuple of @cntk.ops.functions or @cntk.variables.Variable
+    - description: list of learners from @cntk.learners
       id: parameter_learners
       type:
       - list
-    - description: optionally, list of progress writers from `cntk.utils` to automatically
+    - description: optionally, list of progress writers from @cntk.utils to automatically
         track training progress.
       id: progress_writers
       type:
@@ -323,8 +323,7 @@ items:
   summary: 'Test the model on the specified batch of samples using the evaluation
     Function specified during construction of the Trainer.
 
-    Note: See @cntk.ops.functions.htmlcntk.ops.functions.Function.forward for examples
-    on passing input data.'
+    Note: See @cntk.ops.functions for examples on passing input data.'
   syntax:
     content: test_minibatch(self, arguments, device=None)
     return:
@@ -370,8 +369,7 @@ items:
   summary: 'Optimize model parameters using the specified ''arguments'' minibatch
     of training samples.
 
-    Note: See @cntk.ops.functions.htmlcntk.ops.functions.Function.forward for examples
-    on passing input data.'
+    Note: See @cntk.ops.functions for examples on passing input data.'
   syntax:
     content: train_minibatch(self, arguments, outputs=None, device=None)
     return:

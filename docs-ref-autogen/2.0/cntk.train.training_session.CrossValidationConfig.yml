@@ -27,7 +27,7 @@ items:
     - description: minibatch source used for cross validation
       id: source
       type:
-      - MinibatchSource
+      - '@cntk.io'
     - description: frequency in samples for cross validation If `sys.maxsize`, a single
         cross validation is performed at the end of training.
       id: frequency
@@ -36,12 +36,12 @@ items:
     - description: minibatch schedule for cross validation
       id: schedule
       type:
-      - minibatch_size_schedule
+      - '@cntk.cntk_py.minibatch_size_schedule'
     - description: Callback that will be called with frequency which can implement
         custom cross validation logic, returns False if training should be stopped.
       id: callback
       type:
-      - func (index, average_error, cv_num_samples, cv_num_minibatches
+      - func (index, average_error, cv_num_samples, cv_num_minibatches)
   type: class
   uid: cntk.train.training_session.CrossValidationConfig
 references: []

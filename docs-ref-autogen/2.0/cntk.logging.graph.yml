@@ -44,7 +44,7 @@ items:
     - description: the root to start the journey from
       id: root
       type:
-      - Function or Variable
+      - '@cntk.ops.functions.Function or @cntk.variables.Variable'
     - description: function that takes a node as argument and returns `True` if that
         node should be returned.
       id: visitor
@@ -64,7 +64,8 @@ items:
   - python
   module: cntk.logging.graph
   name: find_all_with_name
-  seealsoContent: 'See also: `find_all_with_name()` in class `Function`.'
+  seealsoContent: 'See also: @cntk.ops.functions.Function.find_all_with_name in class
+    @cntk.ops.functions.Function.'
   source:
     id: find_all_with_name
     path: /bindings/python\cntk\logging\graph.py
@@ -81,7 +82,7 @@ items:
     - description: the node to start the journey from
       id: node
       type:
-      - Function or Variable
+      - '@cntk.ops.functions.Function or @cntk.variables.Variable'
     - description: name for which we are search nodes
       id: node_name
       type:
@@ -100,7 +101,7 @@ items:
   - python
   module: cntk.logging.graph
   name: find_by_name
-  seealsoContent: 'See also: `find_by_name()` in class `Function`.'
+  seealsoContent: 'See also: @cntk.ops.functions.Function.find_by_name in class @cntk.ops.functions.Function.'
   source:
     id: find_by_name
     path: /bindings/python\cntk\logging\graph.py
@@ -117,7 +118,7 @@ items:
     - description: the node to start the journey from
       id: node
       type:
-      - Function or Variable
+      - '@cntk.ops.functions.Function or @cntk.variables.Variable'
     - description: name for which we are search nodes
       id: node_name
       type:

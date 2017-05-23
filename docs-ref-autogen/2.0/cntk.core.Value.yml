@@ -60,7 +60,7 @@ items:
     - description: device this value should be put on
       id: device
       type:
-      - DeviceDescriptor
+      - '@cntk.device.DeviceDescriptor'
   type: class
   uid: cntk.core.Value
 - class: cntk.core.Value
@@ -108,7 +108,7 @@ items:
     - description: variable into which `data` is passed
       id: var
       type:
-      - Variable
+      - '@cntk.variables.Variable'
     - description: "data for *var*. It can be:\n\n   * a single NumPy array denoting\
         \ the full minibatch\n\n   * a list of NumPy arrays or SciPy sparse CSR matrices\n\
         \n   * a single NumPy array denoting one parameter or constant"
@@ -123,7 +123,7 @@ items:
     - description: device this value should be put on
       id: device
       type:
-      - DeviceDescriptor, default None
+      - '@cntk.device.DeviceDescriptor, default None'
     - description: whether the data is read only
       id: read_only
       type:
@@ -164,7 +164,7 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Retrieves the `DeviceDescriptor` instance.
+  summary: Retrieves the @cntk.device.DeviceDescriptor instance.
   syntax: {}
   type: attribute
   uid: cntk.core.Value.device
@@ -299,7 +299,7 @@ items:
     - description: device this value should be put on
       id: device
       type:
-      - DeviceDescriptor, default None
+      - '@cntk.device.DeviceDescriptor, default None'
     return:
       description: '`batch` converted into a @cntk.core.Value object that can be passed
         to the forward or eval function.'

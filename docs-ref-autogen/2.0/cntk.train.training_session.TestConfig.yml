@@ -27,11 +27,11 @@ items:
     - description: minibatch source used for testing
       id: source
       type:
-      - MinibatchSource
+      - '@cntk.io'
     - description: minibatch schedule for testing
       id: schedule
       type:
-      - minibatch_size_schedule
+      - '@cntk.cntk_py.minibatch_size_schedule'
   type: class
   uid: cntk.train.training_session.TestConfig
 references: []
