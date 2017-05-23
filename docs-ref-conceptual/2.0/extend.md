@@ -9,7 +9,7 @@ ms.service: cognitive-services
 
 # Extending CNTK
 
-**_CNTK provides extension possibilities through_**
+CNTK provides extension possibilities through
  - custom operators in pure Python as so-called 'user functions'
  - custom learning algorithms (like SGD or Adam) as 'user learners'
  - custom minibatch sources as 'user minibatch sources'
@@ -18,7 +18,7 @@ ms.service: cognitive-services
 
 Implementing a custom operator in pure Python is simple matter of
 
- - inheriting from :class:`~cntk.ops.functions.UserFunction`
+ - inheriting from <xref:cntk.ops.functions.UserFunction>
  - implementing `forward()` and `backward()`, whose signatures dependent on the number of inputs and outputs
  - specifying the outputs' shape, data type and dynamic axes in
    `infer_outputs()`
@@ -30,13 +30,14 @@ pass data from the forward to the backward pass, but can be set to None if not
 needed.
 
 Let's consider the example of a sigmoid. This is just for demonstration purposes - for real
-computation better use :func:`~cntk.ops.sigmoid`.
+computation better use <xref:cntk.ops.sigmoid>.
 
 As the derivative of `\textrm{sigmoid}(x)` is `\textrm{sigmoid}(x) * (1-\textrm{sigmoid}(x))` we
 pass the `\textrm{sigmoid}(x)` value as the state variable, which is then later
 fed into backward(). Note that one can pass any Python value (including
 tuple, strings, etc.):
 
+```python
     from cntk.ops.functions import UserFunction
     from cntk import output_variable
 
@@ -60,11 +61,14 @@ tuple, strings, etc.):
         def deserialize(inputs, name, state):
             return = MySigmoid(inputs[0], name)
 
+```
 
 This can now be used as a normal operator like:
 
+```python
     from cntk import user_function
     s = user_function(MySigmoid(prev_node))
+```
 
 Note that we cannot pass the UserFunction instance directly into the graph.
 It is representing a primitive function, which we have to pass through
@@ -73,6 +77,7 @@ It is representing a primitive function, which we have to pass through
 In case, the operator is initialized with multiple inputs, `forward()` 's
 `argument` will be a list of those inputs::
 
+```python
     class MyPlus(UserFunction):
         def __init__(self, arg1, arg2, name='f1'):
             super(MyPlus, self).__init__([arg1, arg2], name=name)
@@ -105,24 +110,26 @@ In case, the operator is initialized with multiple inputs, `forward()` 's
             f.forward_calls = state['forward_calls']
             f.backward_calls = state['backward_calls']
             return f
+```
 
 If the UserFunction has more than one input, `backward()` is invoked
 with an additional `variables` argument, which contains a dictionary of
 Variable to the gradient data, whose values have to be set with the proper
 gradients. If the gradient is not to be propagated to a particular input,
-the value for that input's gradient can be left None::
+the value for that input's gradient can be left None:
 
+```python
     def backward(self, state, root_gradients, variables):
         for var in variables:
             variables[var] = ... # compute the gradient for var
 
         # no return value since all the data is already in variables
-
+```
 
 In case, the operator shall output multiple outputs, the signature of forward
 changes to:
 
-```
+```python
    self.forward(args, outputs, device, outputs_to_retain):
        ...
 ```
@@ -133,17 +140,17 @@ In addition, `root_gradient` in `backward()` is a dictionary of Variable to the
 root_gradient.
 
 `deserialize()` is invoked by CNTK to reconstruct a previously saved function. It should
-have the same signature as :func:`~cntk.ops.functions.UserFunction.deserialize` method. 
+have the same signature as <xref:cntk.ops.functions.UserFunction.deserialize> method. 
 In case of a stateless function, it simply needs to invoke the constructor and return an 
 instance of the user function. However, if the function is stateful and overrides 
-:func:`~cntk.ops.functions.UserFunction.serialize` method, `deserialize()` also needs to 
-properly restore the function state.
+<xref:cntk.ops.functions.UserFunction.serialize> method, `deserialize()` also needs to properly restore the function state.
 
 ### Using user functions for debugging
 
 It is now easy to just plug user function nodes into the graph to support
 debugging. For instance, the following operator::
 
+```python
     class LambdaFunc(UserFunction):
         def __init__(self,
                 arg,
@@ -166,10 +173,12 @@ debugging. For instance, the following operator::
 
         def backward(self, state, root_gradients):
             return root_gradients
+```
 
 can now be used to trigger certain actions when the data in the graph shows some
-interesting behavior, for instance::
+interesting behavior, for instance:
 
+```python
     import pdb
     import numpy as np
     # ... setting up the graph
@@ -178,19 +187,21 @@ interesting behavior, for instance::
             execute=lambda arg: pdb.set_trace())
     # out = ... using user_function(debug_node) ...
     # ... training out
+```
 
 Now, if the variance of the input tensor exceeds 1, we will be put into
 debugging mode and can start inspection.
 
 ## User defined learners
 
-**_Implementing a custom learner in pure Python is accomplished by_**
- - creating a class that inherits from :class:`cntk.learners.UserLearner`
- - implementing its :meth:`~cntk.learners.UserLearner.update` method
+Implementing a custom learner in pure Python is accomplished by
+ - creating a class that inherits from <xref:cntk.learners.UserLearner>
+ - implementing its <xref:cntk.learners.UserLearner.update> method
 
 Here is an example, how normal stochastic gradient descent would be
 reimplemented in a naive way:
 
+```python
     from cntk.learner import UserLearner
 
     class MySgd(UserLearner):
@@ -204,18 +215,22 @@ reimplemented in a naive way:
                 new_p = p - eta * C.constant(g)
                 p.set_value(new_p.eval(as_numpy=False).data())
             return True
+```
 
 The class `MySgd` could then be used as a normal learner, e.g.:
 
+```python
     # z, ce, pe = <your model, loss and evaluation functions>
     # lr_per_minibatch = <your learning rate specification>
     trainer = Trainer(z, (ce, pe), MySgd(z.parameters, lr_per_minibatch))
+```
 
 While this approach might be good enough as a one-off, it is not the fastest
 possible UserLearner implementation. In every call, a complete CNTK graph is
 created and then destructed (`new_p`). To speed up the parameter update, this
 computation can be moved to the constructor:: 
 
+```python
     class MySgdFast(UserLearner):
 
         def __init__(self, parameters, lr_schedule):
@@ -255,31 +270,33 @@ computation can be moved to the constructor::
                 p.set_value(static_tensor)
 
             return True
+```
 
 With this implementation, we keep the costly NumPy conversion to a bare
 minimum, while speeding up the update process considerably.
 
-Before starting a new learner, though, please check out :mod:`cntk.learners`
+Before starting a new learner, though, please check out <xref:cntk.learners>
 whether your learner is already available.
 
 ## User defined minibatch sources
 
 In order to make use of CNTK's training session, one has to provide the input data as an
-instance of :class:`~cntk.io.MinibatchSource`. Although :mod:`cntk.io` already provides means to read
+instance of <xref:cntk.io.MinibatchSource>. Although <xref:cntk.io> already provides means to read
 image, text, and speech data, there might be the need (e.g. in distributed scnearios) to
 roll out one's own custom minibatch
 source. This is possible in pure Python as simple matter of
 
-> - inheriting from :class:`~cntk.io.UserMinibatchSource` and
+> - inheriting from <xref:cntk.io.UserMinibatchSource> and
 > - implementing the following methods
 >
->   - ``stream_infos()``: returns a list of :class:`~cntk.io.StreamInformation` instances that describe the streams the minibatch source is providing
->   - ``next_minibatch()``: returns the next minibatch data as a dictionary of :class:`~cntk.io.StreamInformation` instance to the data (instance of :class:`~cntk.io.MinibatchData`, which basically wraps the data).
+>   - ``stream_infos()``: returns a list of <xref:cntk.io.StreamInformation> instances that describe the streams the minibatch source is providing
+>   - ``next_minibatch()``: returns the next minibatch data as a dictionary of <xref:cntk.io.StreamInformation> instance to the data (instance of <xref:cntk.io.MinibatchData>, which basically wraps the data).
 
 In the following example, we reimplement parts of the CNTKTextFormatReader to show how it
 is done in an end-to-end manner. As we can see, the majority of the lines below is
 scenario-specific code that deals with parsing, etc.:
 
+```python
     import numpy as np
     from cntk.io import UserMinibatchSource, StreamInformation, MinibatchData
 
@@ -388,8 +405,9 @@ scenario-specific code that deals with parsing, etc.:
 
 
             return result
+```
 
-This can then be used wherever a :class:`~cntk.io.MinibatchSource` instance is accepted,
+This can then be used wherever a <xref:cntk.io.MinibatchSource> instance is accepted,
 e.g.:
 ```python
     input_dim = 1000
