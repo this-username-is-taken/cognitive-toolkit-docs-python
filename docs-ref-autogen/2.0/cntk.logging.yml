@@ -64,7 +64,7 @@ items:
     - description: required verbosity level.
       id: value
       type:
-      - TraceLevel
+      - '@cntk.logging.TraceLevel'
   type: function
   uid: cntk.logging.set_trace_level
 references:

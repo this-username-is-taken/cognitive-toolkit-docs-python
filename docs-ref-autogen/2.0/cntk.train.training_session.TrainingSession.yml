@@ -22,7 +22,7 @@ items:
       path: /bindings/python\cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 116
-  summary: 'The instance of the class should be created by using `training_session()`
+  summary: 'The instance of the class should be created by using @cntk.train.training_session.training_session
     function.
 
     A training session trains a model using the specified `trainer` and configs. Different
@@ -38,15 +38,15 @@ items:
     - description: trainer
       id: trainer
       type:
-      - Trainer
+      - '@cntk.train.trainer'
     - description: minibatch source used for training
       id: mb_source
       type:
-      - MinibatchSource
+      - '@cntk.io'
     - description: minibatch size schedule for training
       id: mb_size
       type:
-      - minibatch_size_schedule or int
+      - '@cntk.cntk_py.minibatch_size_schedule or int'
     - description: mapping between input variables and input streams
       id: model_inputs_to_streams
       type:
@@ -62,15 +62,15 @@ items:
     - description: checkpoint configuration
       id: checkpoint_config
       type:
-      - CheckpointConfig
+      - '@cntk.train.training_session.CheckpointConfig'
     - description: cross validation configuration
       id: cv_config
       type:
-      - CrossValidationConfig
+      - '@cntk.train.training_session.CrossValidationConfig'
     - description: test configuration
       id: test_config
       type:
-      - TestConfig
+      - '@cntk.train.training_session.TestConfig'
   type: class
   uid: cntk.train.training_session.TrainingSession
 - class: cntk.train.training_session.TrainingSession
@@ -133,7 +133,7 @@ items:
         where training takes place.
       id: device
       type:
-      - DeviceDescriptor
+      - '@cntk.device'
   type: method
   uid: cntk.train.training_session.TrainingSession.train
 references:

@@ -158,7 +158,7 @@ items:
     - description: a list of device descriptors to exclude.
       id: excluded_devices
       type:
-      - list of DeviceDescriptor
+      - list of @cntk.device.DeviceDescriptor
   type: function
   uid: cntk.device.set_excluded_devices
 - fullName: cntk.device.try_set_default_device
@@ -192,7 +192,7 @@ items:
     - description: a descriptor of the device to be used as a globally default.
       id: new_default_device
       type:
-      - DeviceDescriptor
+      - '@cntk.device.DeviceDescriptor'
     - description: whether or not a lock should be acquired for the specified device.
       id: acquire_device_lock
       type:

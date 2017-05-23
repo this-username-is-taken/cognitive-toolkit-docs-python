@@ -54,7 +54,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.losses.binary_cross_entropy
 - example:
@@ -80,14 +80,15 @@ items:
   syntax:
     content: cosine_distance(x, y, name='')
     parameters:
-    - description: numpy array or any `Function` that outputs a tensor
+    - description: numpy array or any @cntk.ops.functions.Function that outputs a
+        tensor
       id: x
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.losses.cosine_distance
 - example:
@@ -126,9 +127,11 @@ items:
     content: cosine_distance_with_negative_samples(x, y, shift, num_negative_samples,
       name='')
     parameters:
-    - description: numpy array or any `Function` that outputs a tensor
+    - description: numpy array or any @cntk.ops.functions.Function that outputs a
+        tensor
       id: x
-    - description: numpy array or any `Function` that outputs a tensor
+    - description: numpy array or any @cntk.ops.functions.Function that outputs a
+        tensor
       id: y
     - description: non-zero positive integer representing number of shift to generate
         a negative sample
@@ -140,7 +143,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.losses.cosine_distance_with_negative_samples
 - example:
@@ -195,13 +198,13 @@ items:
     - description: if given, cross entropy will be computed along this axis
       id: axis
       type:
-      - int or Axis, optional
+      - int or @cntk.axis, optional
     - description: the name of the Function instance in the network
       id: name
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.losses.cross_entropy_with_softmax
 - example:
@@ -255,7 +258,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.losses.lambda_rank
 - example:
@@ -312,7 +315,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.losses.squared_error
 - example:
@@ -346,7 +349,7 @@ items:
       type:
       - str, optional
     return:
-      description: '`Function`'
+      description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.losses.weighted_binary_cross_entropy
 references:

@@ -99,7 +99,7 @@ items:
     - description: learning rate to reset to
       id: learning_rate
       type:
-      - output of learning_rate_schedule()
+      - output of `learning_rate_schedule()`
   type: method
   uid: cntk.learners.Learner.reset_learning_rate
 - class: cntk.learners.Learner
@@ -120,8 +120,8 @@ items:
   syntax:
     content: update(self, gradient_values, training_sample_count)
     parameters:
-    - description: maps `Parameter` to a NumPy array containing the first order gradient
-        values for the Parameter w.r.t. the training objective.
+    - description: maps @cntk.variables.Parameter to a NumPy array containing the
+        first order gradient values for the Parameter w.r.t. the training objective.
       id: gradient_values
       type:
       - dict

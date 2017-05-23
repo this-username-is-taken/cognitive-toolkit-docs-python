@@ -40,7 +40,7 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 69
   summary: Decorator for defining a @Function as a BlockFunction. Same as @Function,
-    but wrap the content into an `as_block()`.
+    but wrap the content into an @cntk.ops.as_block.
   syntax:
     content: BlockFunction(op_name, name)
   type: function
@@ -107,10 +107,10 @@ items:
     the previous state as its first argument, and outputs its new state.
   syntax:
     content: GRU(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x0000023A53273EF0>, init=<cntk.default_options.default_override_or
-      object at 0x0000023A53273F60>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000023A53273F98>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x0000023A53273FD0>, name='')
+      object at 0x000002AD8743CA20>, init=<cntk.default_options.default_override_or
+      object at 0x000002AD8743CA90>, init_bias=<cntk.default_options.default_override_or
+      object at 0x000002AD8743CAC8>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x000002AD8743CB00>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
@@ -124,17 +124,17 @@ items:
     - description: function to apply at the end, e.g. *relu*
       id: activation
       type:
-      - Function, defaults to tanh()
+      - '@cntk.ops.functions.Function, defaults to @cntk.ops.tanh'
     - description: initial value of weights *W*
       id: init
       type:
-      - scalar or NumPy array or cntk.initializer, defaults to glorot_uniform
+      - scalar or NumPy array or @cntk.initializer, defaults to glorot_uniform
     - description: initial value of weights *b*
       id: init_bias
       type:
-      - scalar or NumPy array or cntk.initializer, defaults to 0
-    - description: if *True* then add a `Stabilizer()` to all state-related projections
-        (but not the data input)
+      - scalar or NumPy array or @cntk.initializer, defaults to 0
+    - description: if *True* then add a @cntk.layers.blocks.Stabilizer to all state-related
+        projections (but not the data input)
       id: enable_self_stabilization
       type:
       - bool, defaults to False
@@ -179,11 +179,11 @@ items:
     two-valued tuple `(h,c)`.
   syntax:
     content: LSTM(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x0000023A53273D68>, use_peepholes=<cntk.default_options.default_override_or
-      object at 0x0000023A53273B38>, init=<cntk.default_options.default_override_or
-      object at 0x0000023A53273CC0>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000023A53273CF8>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x0000023A53273DA0>, name='')
+      object at 0x000002AD8743C898>, use_peepholes=<cntk.default_options.default_override_or
+      object at 0x000002AD8743C630>, init=<cntk.default_options.default_override_or
+      object at 0x000002AD8743C7F0>, init_bias=<cntk.default_options.default_override_or
+      object at 0x000002AD8743C828>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x000002AD8743C8D0>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
@@ -197,7 +197,7 @@ items:
     - description: function to apply at the end, e.g. *relu*
       id: activation
       type:
-      - Function, defaults to tanh()
+      - '@cntk.ops.functions.Function, defaults to @cntk.ops.tanh'
     - description: ''
       id: use_peepholes
       type:
@@ -205,13 +205,13 @@ items:
     - description: initial value of weights *W*
       id: init
       type:
-      - scalar or NumPy array or cntk.initializer, defaults to glorot_uniform
+      - scalar or NumPy array or @cntk.initializer, defaults to glorot_uniform
     - description: initial value of weights *b*
       id: init_bias
       type:
-      - scalar or NumPy array or cntk.initializer, defaults to 0
-    - description: if *True* then add a `Stabilizer()` to all state-related projections
-        (but not the data input)
+      - scalar or NumPy array or @cntk.initializer, defaults to 0
+    - description: if *True* then add a @cntk.layers.blocks.Stabilizer to all state-related
+        projections (but not the data input)
       id: enable_self_stabilization
       type:
       - bool, defaults to False
@@ -255,10 +255,10 @@ items:
     the previous state as its first argument, and outputs its new state.
   syntax:
     content: RNNUnit(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x0000023A53273DD8>, init=<cntk.default_options.default_override_or
-      object at 0x0000023A53273E48>, init_bias=<cntk.default_options.default_override_or
-      object at 0x0000023A53273E80>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x0000023A53273EB8>, name='')
+      object at 0x000002AD8743C908>, init=<cntk.default_options.default_override_or
+      object at 0x000002AD8743C978>, init_bias=<cntk.default_options.default_override_or
+      object at 0x000002AD8743C9B0>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x000002AD8743C9E8>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
@@ -272,17 +272,17 @@ items:
     - description: function to apply at the end, e.g. *relu*
       id: activation
       type:
-      - Function, defaults to signmoid
+      - '@cntk.ops.functions.Function, defaults to signmoid'
     - description: initial value of weights *W*
       id: init
       type:
-      - scalar or NumPy array or cntk.initializer, defaults to glorot_uniform
+      - scalar or NumPy array or @cntk.initializer, defaults to glorot_uniform
     - description: initial value of weights *b*
       id: init_bias
       type:
-      - scalar or NumPy array or cntk.initializer, defaults to 0
-    - description: if *True* then add a `Stabilizer()` to all state-related projections
-        (but not the data input)
+      - scalar or NumPy array or @cntk.initializer, defaults to 0
+    - description: if *True* then add a @cntk.layers.blocks.Stabilizer to all state-related
+        projections (but not the data input)
       id: enable_self_stabilization
       type:
       - bool, defaults to False
@@ -355,7 +355,7 @@ items:
     variant) but is also more robust by avoiding exploding gradients.'
   syntax:
     content: Stabilizer(steepness=4, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x0000023A53273C50>, name='')
+      object at 0x000002AD8743C780>, name='')
     parameters:
     - description: ''
       id: steepness

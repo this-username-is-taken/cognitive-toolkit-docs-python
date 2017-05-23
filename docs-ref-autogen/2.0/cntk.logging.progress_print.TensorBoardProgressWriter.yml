@@ -60,7 +60,7 @@ items:
     - description: model graph to plot.
       id: model
       type:
-      - cntk.ops.functions.Function or None, default None
+      - '@cntk.ops.functions.Function or None, default None'
   type: class
   uid: cntk.logging.progress_print.TensorBoardProgressWriter
 - class: cntk.logging.progress_print.TensorBoardProgressWriter

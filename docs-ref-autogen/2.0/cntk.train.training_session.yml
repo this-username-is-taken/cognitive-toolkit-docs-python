@@ -125,15 +125,15 @@ items:
     - description: trainer
       id: trainer
       type:
-      - Trainer
+      - '@cntk.train.trainer'
     - description: minibatch source used for training
       id: mb_source
       type:
-      - MinibatchSource
+      - '@cntk.io'
     - description: minibatch schedule for training
       id: mb_size
       type:
-      - minibatch_size_schedule
+      - '@cntk.cntk_py.minibatch_size_schedule'
     - description: mapping between input variables and input streams
       id: model_inputs_to_streams
       type:
@@ -149,15 +149,15 @@ items:
     - description: checkpoint configuration
       id: checkpoint_config
       type:
-      - CheckpointConfig
+      - '@cntk.train.training_session.CheckpointConfig'
     - description: cross validation configuration
       id: cv_config
       type:
-      - CrossValidationConfig
+      - '@cntk.train.training_session.CrossValidationConfig'
     - description: test configuration
       id: test_config
       type:
-      - TestConfig
+      - '@cntk.train.training_session.TestConfig'
     return:
       description: Instance of @cntk.train.training_session.TrainingSession
   type: function

@@ -29,8 +29,8 @@ items:
       path: /bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 26
-  summary: 'Creates an empty dense internal data representation of a `Value` object.
-    To create an NDArrayView from a NumPy array, use @cntk.core.NDArrayView.from_dense.
+  summary: 'Creates an empty dense internal data representation of a @cntk.core.Value
+    object. To create an NDArrayView from a NumPy array, use @cntk.core.NDArrayView.from_dense.
     To create an NDArrayView from a sparse array, use @cntk.core.NDArrayView.from_csr.
 
 
@@ -56,7 +56,7 @@ items:
     - description: device this value should be put on
       id: device
       type:
-      - DeviceDescriptor
+      - '@cntk.device.DeviceDescriptor'
   type: class
   uid: cntk.core.NDArrayView
 - class: cntk.core.NDArrayView
@@ -73,7 +73,7 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Retrieves the `DeviceDescriptor` instance.
+  summary: Retrieves the @cntk.device.DeviceDescriptor instance.
   syntax: {}
   type: attribute
   uid: cntk.core.NDArrayView.device
@@ -121,7 +121,7 @@ items:
     - description: device this value should be put on
       id: device
       type:
-      - DeviceDescriptor
+      - '@cntk.device.DeviceDescriptor'
     - description: whether the data can be modified or not (default False)
       id: read_only
       type:
@@ -168,7 +168,7 @@ items:
     - description: device this value should be put on
       id: device
       type:
-      - DeviceDescriptor
+      - '@cntk.device.DeviceDescriptor'
     - description: whether the data can be modified or not (default False)
       id: read_only
       type:
@@ -207,7 +207,7 @@ items:
     - description: device this value should be put on
       id: device
       type:
-      - DeviceDescriptor
+      - '@cntk.device.DeviceDescriptor'
     - description: whether nd_arrary memory can be borrowed internally to speed up
         the data creation
       id: borrow
