@@ -24,7 +24,7 @@ items:
       branch: master
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 447
+    startLine: 425
   summary: 'Base class of all user minibatch sources.
 
 
@@ -47,7 +47,7 @@ items:
       branch: master
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 479
+    startLine: 457
   summary: Function to be implemented by the user.
   syntax:
     content: next_minibatch(self, num_samples, number_of_workers, worker_rank, device=None)
@@ -81,7 +81,7 @@ items:
       branch: master
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 471
+    startLine: 449
   summary: Gets the description of the stream with given name. Throws an exception
     if there are none or multiple streams with this same name.
   syntax:
@@ -101,7 +101,7 @@ items:
       branch: master
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 457
+    startLine: 435
   summary: Function to be implemented by the user.
   syntax:
     content: stream_infos(self)

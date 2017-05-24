@@ -31,18 +31,26 @@ items:
       branch: master
       path: /bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 376
+    startLine: 408
   summary: 'A constant value. It can be a scalar, vector, matrix, or tensor of floating
     point numbers that cannot be modified.
 
     A Constant is a @cntk.variables.Variable and therefore inherits all its methods.
 
+    <SYSTEM MESSAGE: C:\peter\ms_code\cntk_all\CNTK\bindings\python\doc\cntk.variables.rst:22:
+    (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
+    Trying "todo" as canonical directive name.>
+
+    <SYSTEM MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\variables.py:docstring
+    of cntk.variables.Constant:22: (ERROR/3) Unknown directive type "todo".  .. todo::
+    Document initializers for `value` parameter.  >
+
     '
   syntax:
     content: Constant(value=None, shape=None, dtype=<cntk.default_options.default_override_or
-      object at 0x000002AD86E79048>, device=None, name='')
+      object at 0x0000020A75EADD68>, device=None, name='')
     parameters:
-    - description: 'Initial value. BUGBUG: Document initializers'
+    - description: Initial value.
       id: value
       type:
       - np.ndarray or list or float or int

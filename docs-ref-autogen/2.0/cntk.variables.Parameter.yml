@@ -36,7 +36,7 @@ items:
       branch: master
       path: /bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 283
+    startLine: 315
   summary: 'A trainable parameter. It can be a scalar, vector, matrix, or tensor of
     floating point numbers that can be modified by a training procedure.
 
@@ -45,7 +45,7 @@ items:
     '
   syntax:
     content: Parameter(shape=None, init=None, dtype=<cntk.default_options.default_override_or
-      object at 0x000002AD872339B0>, device=None, name='')
+      object at 0x0000020A76451E10>, device=None, name='')
     parameters:
     - description: the shape of the tensor holding the parameters
       id: shape

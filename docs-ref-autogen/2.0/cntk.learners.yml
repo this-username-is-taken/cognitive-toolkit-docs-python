@@ -68,7 +68,7 @@ items:
   syntax:
     content: adadelta(parameters, lr=<cntk.cntk_py.training_parameter_per_sample_schedule;
       proxy of <Swig Object of type 'CNTK::TrainingParameterPerUnitSchedule< double,CNTK::TrainingParameterSchedule<
-      double >::UnitType::Sample > *' at 0x000002AD873DF630> >, rho=0.95, epsilon=1e-08,
+      double >::UnitType::Sample > *' at 0x0000020A7638E780> >, rho=0.95, epsilon=1e-08,
       l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
       gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
       use_mean_gradient=False)
@@ -208,10 +208,10 @@ items:
     information.
   syntax:
     content: adam(parameters, lr, momentum, unit_gain=True, variance_momentum=<cntk.cntk_py.momentum_as_time_constant_schedule;
-      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x000002AD873DFF60>
+      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x0000020A764CB5D0>
       >, l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
       gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
-      use_mean_gradient=False)
+      use_mean_gradient=False, epsilon=1e-08)
     parameters:
     - description: list of network parameters to tune. These can be obtained by the
         root operator's `parameters`.
@@ -260,6 +260,10 @@ items:
       id: use_mean_gradient
       type:
       - bool, default False
+    - description: numerical stability constant, defaults to 1e-8
+      id: epsilon
+      type:
+      - float, optional
     return:
       description: Instance of a @cntk.learners.Learner that can be passed to the
         @cntk.train.trainer.Trainer
@@ -317,7 +321,7 @@ items:
   summary: Creates an FSAdaGrad learner instance to learn the parameters.
   syntax:
     content: fsadagrad(parameters, lr, momentum, unit_gain=True, variance_momentum=<cntk.cntk_py.momentum_as_time_constant_schedule;
-      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x000002AD873DFF00>
+      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x0000020A764CB570>
       >, l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
       gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
       use_mean_gradient=False)
@@ -675,7 +679,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 801
+    startLine: 803
   summary: Creates an RMSProp learner instance to learn the parameters.
   syntax:
     content: rmsprop(parameters, lr, gamma, inc, dec, max, min, need_ave_multiplier=True,

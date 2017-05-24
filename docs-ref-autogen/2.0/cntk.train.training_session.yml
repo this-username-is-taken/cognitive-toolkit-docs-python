@@ -83,7 +83,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 211
+    startLine: 210
   summary: Creates a minibatch size schedule.
   syntax:
     content: minibatch_size_schedule(schedule, epoch_size=1)
@@ -115,7 +115,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 254
+    startLine: 253
   summary: A factory function to create a training session object.
   syntax:
     content: training_session(trainer, mb_source, mb_size, model_inputs_to_streams,

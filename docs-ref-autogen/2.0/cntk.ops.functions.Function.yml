@@ -74,7 +74,7 @@ items:
       branch: master
       path: /bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 36
+    startLine: 45
   summary: "Base class of all primitive tensor operators.\nIf it has only one output,\
     \ one can invoke Variable methods on it, which it will relay to its only output.\n\
     *Function* objects can also be constructed directly from a Python lambda, by means\
@@ -84,19 +84,19 @@ items:
     To train a Function or pass data to it, you need to declare the types of the arguments.\
     \ In this case, the @Function decorator creates a CNTK Function whose arguments\
     \ are input variables.\nIf you use Python 3, Functions with types are declared\
-    \ using Python annotation syntax, e.g.:\n<!-- literal_block {\"dupnames\": [],\
-    \ \"xml:space\": \"preserve\", \"names\": [], \"ids\": [], \"backrefs\": [], \"\
-    classes\": []} -->\n\n````\n\n   @Function\n   def f(x:Tensor[13]):\n       return\
-    \ x * x\n   ````\nIf you are working with Python 2.7, use CNTK's *@:class:~cntk.layers.typing.Signature*\
-    \ decorator instead:\n<!-- literal_block {\"dupnames\": [], \"xml:space\": \"\
-    preserve\", \"names\": [], \"ids\": [], \"backrefs\": [], \"classes\": []} -->\n\
-    \n````\n\n   >>> from cntk.layers.typing import *\n   >>> @Function\n   ... @Signature(Tensor[13])\n\
+    \ using Python annotation syntax, e.g.:\n<!-- literal_block {\"classes\": [],\
+    \ \"xml:space\": \"preserve\", \"ids\": [], \"backrefs\": [], \"names\": [], \"\
+    dupnames\": []} -->\n\n````\n\n   @Function\n   def f(x:Tensor[13]):\n       return\
+    \ x * x\n   ````\nIf you are working with Python 2.7, use CNTK's @cntk.layers.typing\
+    \ decorator instead:\n<!-- literal_block {\"classes\": [], \"xml:space\": \"preserve\"\
+    , \"ids\": [], \"backrefs\": [], \"names\": [], \"dupnames\": []} -->\n\n````\n\
+    \n   >>> from cntk.layers.typing import *\n   >>> @Function\n   ... @Signature(Tensor[13])\n\
     \   ... def f(x):\n   ...     return x * x\n   >>> debugging.dump_signature(f)\n\
     \   Function(x: Tensor[13]) -> Tensor[13]\n   ````\n`make_block=True` is an internal\
-    \ parameter used to implement *@:func:~cntk.layers.blocks.BlockFunction()*. If\
-    \ *BlockFunction()* passes *True`*, then the result will be wrapped in :func:`~cntk.ops.as_block()`,\
-    \ using the supplied `op_name` and `name` parameters, which are otherwise ignored.\n\
-    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    \ parameter used to implement @cntk.layers.blocks. If *BlockFunction()* passes\
+    \ *True*, then the result will be wrapped in @cntk.ops, using the supplied `op_name`\
+    \ and `name` parameters, which are otherwise ignored.\n\n\n\n\n\n\n\n\n\n\n\n\n\
+    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
   syntax:
     content: Function(*args, **kwargs)
   type: class
@@ -114,13 +114,13 @@ items:
       branch: master
       path: /bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 227
-  summary: 'determine the {placeholder: variable} map for use with various call operations
+    startLine: 240
+  summary: 'Determines the {placeholder: variable} map for use with various call operations
     Returns a dictionary from this function''s placeholders to whatever arguments
     are passed. Accepted are both positional and keyword arguments. This mimics Python''s
-    argument interpretation, except that keyword arguments are not optional. This
-    does not require the arguments to be Variables or Functions. It is also called
-    by train_minibatch().'
+    argument interpretation, except that keyword arguments are not optional (there
+    is no concept of default value). This does not require the arguments to be Variables
+    or Functions. It is also called by train_minibatch().'
   syntax:
     content: argument_map(self, *args, **kwargs)
   type: method
@@ -200,7 +200,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 682
+    startLine: 737
   summary: 'Backpropagates supplied `root_gradients` for one or more of the output
     variables of the Function, to calculate gradients with respect to `variables`.
     Formally, multiplies the values of `root_gradients` by the Jacobian of the Function
@@ -268,7 +268,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 444
+    startLine: 497
   summary: Clones the function. The parameters of the Function are either cloned,
     shared or frozen as specified by the method argument and any variable substitutions
     requested are applied in the cloned Function instance.
@@ -330,7 +330,7 @@ items:
       branch: master
       path: /bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 268
+    startLine: 318
   summary: Back-compat wrapper for update_signature() (beta12 and before).
   syntax:
     content: declare_args(self, *arg_types)
@@ -349,7 +349,7 @@ items:
       branch: master
       path: /bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 484
+    startLine: 537
   summary: 'Evaluate the Function''s outputs using the specified `arguments` as input.
 
     Note: See @cntk.ops.functions.Function.forward for examples on passing input data.'
@@ -395,7 +395,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 976
+    startLine: 1031
   summary: Returns a list of primitive function with `name` in the graph starting
     from this node. Throws an exception if `name` occurs multiple times. If you expect
     only one function to be returned, use `find_by_name()`.
@@ -461,7 +461,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1008
+    startLine: 1063
   summary: Returns a primitive function with `name` in the graph starting from this
     node. Throws an exception if `name` occurs multiple times. If you expect multiple
     functions to be returned, use @cntk.ops.functions.Function.find_all_with_name.
@@ -513,7 +513,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 546
+    startLine: 599
   summary: Computes the values of speficied variables in `outputs`, using values provided
     in `arguments` that correspond to each input *Variable* of the function (i.e.
     those that have `is_input = True`).
@@ -526,7 +526,7 @@ items:
         \ are the input data. To specify a minibatch, provide a list of arrays. The\
         \ shape of each array must be compatible with the shape of the dictionary\
         \ key. If the array denotes a sequence then the elements of the sequence are\
-        \ grouped along axis 0.\n\n   * any other type: if node has an unique input,\
+        \ grouped along axis 0.\n\n   * any other type: if node has a unique input,\
         \ arguments is mapped to this input.\n\nFor nodes with more than one input,\
         \ only dict is allowed.\n\nIn both cases, every sample in the data will be\
         \ interpreted as a new sequence.\n\nSequences can be marked as continuations\
@@ -591,7 +591,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 737
+    startLine: 792
   summary: Computes the gradient of this Function at location `at` with respect to
     `wrt`. The Function must have a single output.
   syntax:
@@ -736,19 +736,32 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1085
-  summary: Load the model in `filename`, that has been saved using @cntk.ops.functions.Function.save.
+    startLine: 1138
+  summary: Load the `model`, that has been saved using @cntk.ops.functions.Function.save.
   syntax:
-    content: load(filename, device=None)
+    content: load(model, device=None, udf_factory_callback_map=None)
     parameters:
-    - description: filename to load the model from
-      id: filename
+    - description: either a filepath of a model file or a byte buffer containing the
+        binary representation of a model.
+      id: model
       type:
-      - str
-    - description: instance of DeviceDescriptor
+      - str or bytes
+    - description: specifies the device to allocate the model on.
       id: device
       type:
-      - '@cntk.device, default is the default device'
+      - '@cntk.device, defaults to the current globally default device'
+    - description: if the model contains any user-defined functions, CNTK will try
+        to automatically reconstruct them by invoking a static `deserialize` method
+        of the corresponding Function sub-class. This method takes three arguments
+        (a list of inputs to the function, a string name, and a state dictionary generated
+        by the corresponding @cntk.ops.functions.UserFunction.serialize method) and
+        returns an instance of the user-defined function. This optional argument allows
+        to override default UDF deserialization behavior by providing a map of user-function
+        op names and corresponding lambdas that should be invoked instead of the `deserialize`
+        method.
+      id: udf_factory_callback_map
+      type:
+      - dict, default is None
     return:
       description: root node
   type: method
@@ -885,7 +898,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 959
+    startLine: 1014
   summary: In-place replace the only placeholder in the function graph with the specified
     substitution.
   syntax:
@@ -917,7 +930,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 942
+    startLine: 997
   summary: In-place replace specified placeholders in the Function graph with the
     specified replacements in the map.
   syntax:
@@ -946,7 +959,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1066
+    startLine: 1120
   summary: Restore the models parameters (in-place) from a saved model file
   syntax:
     content: restore(self, filename)
@@ -975,7 +988,7 @@ items:
       branch: master
       path: /bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1079
+    startLine: 1133
   syntax:
     content: restore_model(self, filename)
   type: method
@@ -1012,7 +1025,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1046
+    startLine: 1101
   summary: 'Save this function graph into a model file using protobuf-based serialization.
 
     Use distributed.Communicator.is_main() to gate your call to save() in distributed
@@ -1039,7 +1052,7 @@ items:
       branch: master
       path: /bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1060
+    startLine: 1115
   syntax:
     content: save_model(self, filename)
   type: method
@@ -1112,8 +1125,8 @@ items:
       branch: master
       path: /bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 241
-  summary: define input shapes, in-place e.g. model.update_signature(42) pass a list
+    startLine: 291
+  summary: Defines input shapes, in-place e.g. model.update_signature(42) pass a list
     of objects that define the dimensions etc. of the placeholders Currently you can
     pass an int, a tuple, an Input, or a dict created with Type()
   syntax:

@@ -19,7 +19,7 @@ items:
       branch: master
       path: /bindings/python\cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 15
+    startLine: 14
   summary: A checkpoint configuration for the training session.
   syntax:
     content: CheckpointConfig(filename, frequency=None, restore=True, preserve_all=False)

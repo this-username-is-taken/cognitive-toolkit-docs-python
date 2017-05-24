@@ -191,11 +191,12 @@ items:
   summary: "Walks through every node of the graph starting at `root`, creates a network\
     \ graph, and returns a network description. If `filename` is specified, it outputs\
     \ a DOT, PNG, PDF, or SVG file depending on the file name's suffix.\nRequirements:\n\
-    * for DOT output: [pydot_ng](https://pypi.python.org/pypi/pydot-ng)\n\n   * <SYSTEM\
-    \ MESSAGE: C:\\peter\\ms_code\\cntk_all\\CNTK\\bindings\\python\\doc\\cntk.logging.graph.rst:2:\
-    \ (INFO/1) Duplicate explicit target name: \"pydot_ng\".>\n\n     for PNG, PDF,\
-    \ and SVG output: [pydot_ng](https://pypi.python.org/pypi/pydot-ng) and [graphviz](http://graphviz.org)\
-    \ (GraphViz executable has to be in the system's PATH)."
+    \   * for DOT output: [pydot_ng](https://pypi.python.org/pypi/pydot-ng)\n\n  \
+    \ * <SYSTEM MESSAGE: C:\\peter\\ms_code\\cntk_all\\CNTK\\bindings\\python\\doc\\\
+    cntk.logging.graph.rst:2: (INFO/1) Duplicate explicit target name: \"pydot_ng\"\
+    .>\n\n     for PNG, PDF, and SVG output: [pydot_ng](https://pypi.python.org/pypi/pydot-ng)\
+    \ and [graphviz](http://graphviz.org) (GraphViz executable has to be in the system's\
+    \ PATH)."
   syntax:
     content: plot(root, filename=None)
     parameters:

@@ -35,7 +35,7 @@ items:
       branch: master
       path: /bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 20
+    startLine: 22
   summary: 'Class for training the model parameters of a models'' specified loss function,
     using the specified set of `parameter_learners` for updating the model''s parameters
     using computed gradients. An optional specified metric function, which can be
@@ -47,7 +47,7 @@ items:
 
     <SYSTEM MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\train\trainer.py:docstring
     of cntk.train.trainer.Trainer:18: (ERROR/3) Unknown directive type "todo".  ..
-    todo:: Would be great to allow to skip some parameters that should not be updated.  >
+    todo:: Allow to skip some parameters that should not be updated.  >
 
 
 
@@ -227,7 +227,7 @@ items:
       branch: master
       path: /bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 235
+    startLine: 237
   summary: Restores a checkpoint of the model and Trainer state from the specified
     file location.
   syntax:
@@ -252,7 +252,7 @@ items:
       branch: master
       path: /bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 221
+    startLine: 223
   summary: 'Saves a checkpoint of the model and other Trainer state at the specified
     file location.
 
@@ -279,7 +279,7 @@ items:
       branch: master
       path: /bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 313
+    startLine: 315
   summary: Updates the progress writers with the summary of test progress since start
     and resets the internal accumulators.
   syntax:
@@ -299,7 +299,7 @@ items:
       branch: master
       path: /bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 306
+    startLine: 308
   summary: Updates the progress writers with the summary of training progress since
     start and resets the internal accumulators.
   syntax:
@@ -319,7 +319,7 @@ items:
       branch: master
       path: /bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 173
+    startLine: 175
   summary: 'Test the model on the specified batch of samples using the evaluation
     Function specified during construction of the Trainer.
 
@@ -365,7 +365,7 @@ items:
       branch: master
       path: /bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 92
+    startLine: 94
   summary: 'Optimize model parameters using the specified ''arguments'' minibatch
     of training samples.
 

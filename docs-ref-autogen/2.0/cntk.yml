@@ -9,7 +9,6 @@ items:
   - cntk.device
   - cntk.eval
   - cntk.initializer
-  - cntk.internal
   - cntk.io
   - cntk.layers
   - cntk.learners
@@ -72,11 +71,6 @@ references:
   name: initializer
   parent: cntk
   uid: cntk.initializer
-- fullName: cntk.internal
-  isExternal: false
-  name: internal
-  parent: cntk
-  uid: cntk.internal
 - fullName: cntk.io
   isExternal: false
   name: io

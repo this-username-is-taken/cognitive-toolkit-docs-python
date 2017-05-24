@@ -8,6 +8,7 @@ items:
   - cntk.ops.argmin
   - cntk.ops.as_block
   - cntk.ops.as_composite
+  - cntk.ops.assign
   - cntk.ops.associative_multi_arg
   - cntk.ops.batch_normalization
   - cntk.ops.ceil
@@ -29,6 +30,7 @@ items:
   - cntk.ops.floor
   - cntk.ops.forward_backward
   - cntk.ops.future_value
+  - cntk.ops.gather
   - cntk.ops.greater
   - cntk.ops.greater_equal
   - cntk.ops.hardmax
@@ -78,6 +80,7 @@ items:
   - cntk.ops.sqrt
   - cntk.ops.square
   - cntk.ops.stop_gradient
+  - cntk.ops.swapaxes
   - cntk.ops.tanh
   - cntk.ops.times
   - cntk.ops.times_transpose
@@ -123,7 +126,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1589
+    startLine: 1590
   summary: 'Computes the element-wise absolute of `x`:
 
     '
@@ -154,13 +157,14 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 104
-  summary: Create a new Function instance which just aliases the specified 'x' Function/Variable
-    such that the 'Output' of the new 'Function' is same as the 'Output' of the specified
-    'x' Function/Variable, and has the newly specified name. The purpose of this operator
-    is to create a new distinct reference to a symbolic computation which is different
-    from the original Function/Variable that it aliases and can be used for e.g. to
-    substitute a specific instance of the aliased Function/Variable in the computation
-    graph instead of substituting all usages of the aliased Function/Variable.
+  summary: '   Create a new Function instance which just aliases the specified ''x''
+    Function/Variable such that the ''Output'' of the new ''Function'' is same as
+    the ''Output'' of the specified ''x'' Function/Variable, and has the newly specified
+    name. The purpose of this operator is to create a new distinct reference to a
+    symbolic computation which is different from the original Function/Variable that
+    it aliases and can be used for e.g. to substitute a specific instance of the aliased
+    Function/Variable in the computation graph instead of substituting all usages
+    of the aliased Function/Variable.'
   syntax:
     content: alias(x, name='')
     parameters:
@@ -191,7 +195,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2348
+    startLine: 2409
   summary: Computes the argmax of the input tensor's elements across the specified
     axis. If no axis is specified, it will return the flatten index of the largest
     element in tensor x.
@@ -233,7 +237,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2381
+    startLine: 2442
   summary: Computes the argmin of the input tensor's elements across the specified
     axis. If no axis is specified, it will return the flatten index of the smallest
     element in tensor x.
@@ -271,27 +275,23 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 61
-  summary: Create a new block Function instance which just encapsulates the specified
+  summary: '   Create a new block Function instance which just encapsulates the specified
     composite Function to create a new Function that appears to be a primitive. All
     the arguments of the composite being encapsulated must be Placeholder variables.
     The purpose of block Functions is to enable creation of hierarchical Function
     graphs where details of implementing certain building block operations can be
-    encapsulated away such that the actual structure of the block's implementation
+    encapsulated away such that the actual structure of the block''s implementation
     is not inlined into the parent graph where the block is used, and instead the
     block just appears as an opaque primitive. Users still have the ability to peek
-    at the underlying Function graph that implements the actual block Function.
+    at the underlying Function graph that implements the actual block Function.'
   syntax:
     content: as_block(composite, block_arguments_map, block_op_name, block_instance_name='')
     parameters:
     - description: The composite Function that the block encapsulates
       id: composite
     - description: A list of tuples, mapping from block's underlying composite's arguments
-        to
+        to actual variables they are connected to
       id: block_arguments_map
-    - description: ''
-      id: variables they are connected to
-      type:
-      - actual
     - description: Name of the op that the block represents
       id: block_op_name
     - description: the name of the block Function in the network
@@ -315,9 +315,9 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 87
-  summary: Creates a composite Function that has the specified root_function as its
-    root. The composite denotes a higher-level Function encapsulating the entire graph
-    of Functions underlying the specified rootFunction.
+  summary: '   Creates a composite Function that has the specified root_function as
+    its root. The composite denotes a higher-level Function encapsulating the entire
+    graph of Functions underlying the specified rootFunction.'
   syntax:
     content: as_composite(root_function, name='')
     parameters:
@@ -332,6 +332,68 @@ items:
       description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.ops.as_composite
+- example:
+  - "```\n\n>>> dest = C.constant(shape=(3,4))\n>>> data = C.parameter(shape=(3,4),\
+    \ init=2)\n>>> C.assign(dest,data).eval()\narray([[ 2.,  2.,  2.,  2.],\n    \
+    \   [ 2.,  2.,  2.,  2.],\n       [ 2.,  2.,  2.,  2.]], dtype=float32)\n>>> dest.asarray()\n\
+    array([[ 2.,  2.,  2.,  2.],\n       [ 2.,  2.,  2.,  2.],\n       [ 2.,  2.,\
+    \  2.,  2.]], dtype=float32)\n```\n\n```\n\n>>> dest = C.parameter(shape=(3,4),\
+    \ init=0)\n>>> a = C.assign(dest, data)\n>>> y = dest + data\n>>> result = C.combine([y,\
+    \ a]).eval()\n>>> result[y.output]\narray([[ 2.,  2.,  2.,  2.],\n       [ 2.,\
+    \  2.,  2.,  2.],\n       [ 2.,  2.,  2.,  2.]], dtype=float32)\n>>> dest.asarray()\n\
+    array([[ 2.,  2.,  2.,  2.],\n       [ 2.,  2.,  2.,  2.],\n       [ 2.,  2.,\
+    \  2.,  2.]], dtype=float32)\n>>> result = C.combine([y, a]).eval()\n>>> result[y.output]\n\
+    array([[ 4.,  4.,  4.,  4.],\n       [ 4.,  4.,  4.,  4.],\n       [ 4.,  4.,\
+    \  4.,  4.]], dtype=float32)\n>>> dest.asarray()\narray([[ 2.,  2.,  2.,  2.],\n\
+    \       [ 2.,  2.,  2.,  2.],\n       [ 2.,  2.,  2.,  2.]], dtype=float32)\n\
+    ```"
+  fullName: cntk.ops.assign
+  langs:
+  - python
+  module: cntk.ops
+  name: assign
+  source:
+    id: assign
+    path: /bindings/python\cntk\internal\swig_helper.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2944
+  summary: 'Assign the value in input to ref and return the new value, ref need to
+    be the same layout as input. Both ref and input can''t have dynamic axis and broadcast
+    isn''t supported for the assign operator. During forward pass, ref will get the
+    new value after the forward or backward pass finish, so that any part of the graph
+    that depend on ref will get the old value. To get the new value, use the one returned
+    by the assign node. The reason for that is to make `assign` have a deterministic
+    behavior.
+
+    If not computing gradients, the ref will be assigned the new value after the forward
+    pass over the entire Function graph is complete; i.e. all uses of ref in the forward
+    pass will use the original (pre-assignment) value of ref.
+
+    If computing gradients (training mode), the assignment to ref will happen after
+    completing both the forward and backward passes over the entire Function graph.
+
+    The ref must be a Parameter or Constant. If the same ref is used in multiple assign
+    operations, then the order in which the assignment happens is non-deterministic
+    and the final value can be either of the assignments unless an order is established
+    using a data dependence between the assignments.'
+  syntax:
+    content: assign(ref, input, name='')
+    parameters:
+    - description: 'class: *~cntk.variables.Constant* or *~cntk.variables.Parameter*.'
+      id: ref
+    - description: class:*~cntk.ops.functions.Function* that outputs a tensor
+      id: input
+    - description: the name of the Function instance in the network
+      id: name
+      type:
+      - str, optional
+    return:
+      description: '@cntk.ops.functions.Function'
+  type: function
+  uid: cntk.ops.assign
 - example:
   - '```
 
@@ -395,7 +457,7 @@ items:
       branch: master
       path: /bindings/python\cntk\ops\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 642
+    startLine: 643
   summary: The output of this operation is the result of an operation (*plus*, *log_add_exp*,
     *element_times*, *element_max*, *element_min*) of two or more input tensors. Broadcasting
     is supported.
@@ -426,7 +488,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 431
+    startLine: 432
   summary: Normalizes layer outputs for every minibatch for each output (feature)
     independently and applies affine transformation to preserve representation of
     the layer.
@@ -500,7 +562,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1098
+    startLine: 1099
   summary: The output of this operation is the element wise value rounded to the smallest
     integer greater than or equal to the input.
   syntax:
@@ -548,7 +610,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1162
+    startLine: 1163
   summary: 'Computes a tensor with all of its values clipped to fall between `min_value`
     and `max_value`, i.e. `min(max(x, min_value), max_value)`.
 
@@ -597,13 +659,13 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 24
-  summary: Create a new Function instance which just combines the outputs of the specified
-    list of 'operands' Functions such that the 'Outputs' of the new 'Function' are
-    union of the 'Outputs' of each of the specified 'operands' Functions. E.g., when
-    creating a classification model, typically the CrossEntropy loss Function and
-    the ClassificationError Function comprise the two roots of the computation graph
-    which can be combined to create a single Function with 2 outputs; viz. CrossEntropy
-    loss and ClassificationError output.
+  summary: '   Create a new Function instance which just combines the outputs of the
+    specified list of ''operands'' Functions such that the ''Outputs'' of the new
+    ''Function'' are union of the ''Outputs'' of each of the specified ''operands''
+    Functions. E.g., when creating a classification model, typically the CrossEntropy
+    loss Function and the ClassificationError Function comprise the two roots of the
+    computation graph which can be combined to create a single Function with 2 outputs;
+    viz. CrossEntropy loss and ClassificationError output.'
   syntax:
     content: combine(operands, name='')
     parameters:
@@ -634,7 +696,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2814
+    startLine: 2875
   summary: It creates a constant tensor initialized from a numpy array
   syntax:
     content: constant(value=None, shape=None, dtype=None, device=None, name='')
@@ -686,7 +748,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 197
+    startLine: 198
   summary: 'Computes the convolution of `convolution_map` (typically a tensor of learnable
     parameters) with `operand` (commonly an image or output of a previous convolution/pooling
     operation). This operation is used in image and language processing applications.
@@ -769,7 +831,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 256
+    startLine: 257
   summary: 'Computes the transposed convolution of `convolution_map` (typically a
     tensor of learnable parameters) with `operand` (commonly an image or output of
     a previous convolution/pooling operation). This is also known as `fractionally
@@ -852,7 +914,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1399
+    startLine: 1400
   summary: 'Computes the element-wise cosine of `x`:
 
     The output tensor has the same shape as `x`.'
@@ -888,7 +950,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2582
+    startLine: 2643
   summary: 'Each element of the input is independently set to 0 with probabily `dropout_rate`
     or to 1 / (1 - `dropout_rate`) times its original value (with probability 1-`dropout_rate`).
     Dropout is a good way to reduce overfitting.
@@ -949,7 +1011,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 849
+    startLine: 850
   summary: The output of this operation is the element-wise division of the two input
     tensors. It supports broadcasting.
   syntax:
@@ -979,7 +1041,7 @@ items:
       branch: master
       path: /bindings/python\cntk\ops\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 809
+    startLine: 810
   summary: The output of this operation is the element-wise max of the two or more
     input tensors. It supports broadcasting.
   syntax:
@@ -1011,7 +1073,7 @@ items:
       branch: master
       path: /bindings/python\cntk\ops\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 829
+    startLine: 830
   summary: The output of this operation is the element-wise min of the two or more
     input tensors. It supports broadcasting.
   syntax:
@@ -1053,7 +1115,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1653
+    startLine: 1654
   summary: return either `value_if_true` or `value_if_false` based on the value of
     `flag`. If `flag` != 0 `value_if_true` is returned, otherwise `value_if_false`.
     Behaves analogously to numpy.where(...).
@@ -1115,7 +1177,7 @@ items:
       branch: master
       path: /bindings/python\cntk\ops\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 776
+    startLine: 777
   summary: The output of this operation is the element-wise product of the two or
     more input tensors. It supports broadcasting.
   syntax:
@@ -1156,7 +1218,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1218
+    startLine: 1219
   summary: 'Exponential linear unit operation. Computes the element-wise exponential
     linear of `x`: `max(x, 0)` for `x >= 0` and `x`: `exp(x)-1` otherwise.
 
@@ -1209,7 +1271,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 507
+    startLine: 508
   summary: Elementwise 'equal' comparison of two tensors. Result is 1 if values are
     equal 0 otherwise.
   syntax:
@@ -1248,7 +1310,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1495
+    startLine: 1496
   summary: 'Computes the element-wise exponential of `x`:
 
     '
@@ -1285,7 +1347,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1066
+    startLine: 1067
   summary: The output of this operation is the element wise value rounded to the largest
     integer less than or equal to the input.
   syntax:
@@ -1313,14 +1375,13 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 169
-  summary: 'Criterion node for training methods that rely on forward-backward Viterbi-like
-    passes, e.g. Connectionist Temporal Classification (CTC) training The node takes
-    as the input the graph of labels, produced by the labels_to_graph operation that
-    determines the exact forward/backward procedure. .. admonition:: Example
-
-    graph = cntk.labels_to_graph(labels) networkOut = model(features) fb = C.forward_backward(graph,
-    networkOut, 132)'
+    startLine: 170
+  summary: "Criterion node for training methods that rely on forward-backward Viterbi-like\
+    \ passes, e.g. Connectionist Temporal Classification (CTC) training The node takes\
+    \ as the input the graph of labels, produced by the labels_to_graph operation\
+    \ that determines the exact forward/backward procedure. .. admonition:: Example\n\
+    \   graph = cntk.labels_to_graph(labels) networkOut = model(features) fb = C.forward_backward(graph,\
+    \ networkOut, 132)"
   syntax:
     content: forward_backward(graph, features, blankTokenId, delayConstraint=-1, name='')
     parameters:
@@ -1361,7 +1422,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1684
+    startLine: 1685
   summary: 'DEPRECATED.
 
     This function returns the future value w.r.t. `x`. It is most often used when
@@ -1393,6 +1454,37 @@ items:
   type: function
   uid: cntk.ops.future_value
 - example:
+  - "```\n\n>>> c = np.asarray([[[0],[1]],[[4],[5]]]).astype('f')\n>>> x = C.input((2,1))\n\
+    >>> d = np.arange(12).reshape(6,2).astype('f')\n>>> y = C.constant(d)\n>>> C.gather(y,\
+    \ x).eval({x:c})\narray([[[[  0.,   1.]],\n<BLANKLINE>\n        [[  2.,   3.]]],\n\
+    <BLANKLINE>\n<BLANKLINE>\n       [[[  8.,   9.]],\n<BLANKLINE>\n        [[ 10.,\
+    \  11.]]]], dtype=float32)\n```"
+  fullName: cntk.ops.gather
+  langs:
+  - python
+  module: cntk.ops
+  name: gather
+  source:
+    id: gather
+    path: /bindings/python\cntk\internal\swig_helper.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2136
+  summary: Retrieves the elements of indices in the tensor reference.
+  syntax:
+    content: gather(reference, indices)
+    parameters:
+    - description: A tensor
+      id: reference
+    - description: An integer tensor of indices
+      id: indices
+    return:
+      description: '@cntk.ops.functions.Function'
+  type: function
+  uid: cntk.ops.gather
+- example:
   - '```
 
 
@@ -1423,7 +1515,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 533
+    startLine: 534
   summary: Elementwise 'greater' comparison of two tensors. Result is 1 if left >
     right else 0.
   syntax:
@@ -1472,7 +1564,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 559
+    startLine: 560
   summary: Elementwise 'greater equal' comparison of two tensors. Result is 1 if left
     >= right else 0.
   syntax:
@@ -1521,7 +1613,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1471
+    startLine: 1472
   summary: Creates a tensor with the same shape as the input tensor, with zeros everywhere
     and a 1.0 where the maximum value of the input tensor is located. If the maximum
     value is repeated, 1.0 is placed in the first location found.
@@ -1551,12 +1643,12 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2639
+    startLine: 2700
   summary: 'It creates an input in the network: a place where data, such as features
     and labels, should be provided.'
   syntax:
     content: input(shape, dtype=<cntk.default_options.default_override_or object at
-      0x000002AD8741CA58>, needs_gradient=False, is_sparse=False, dynamic_axes=[Axis('defaultBatchAxis')],
+      0x0000020A7657E550>, needs_gradient=False, is_sparse=False, dynamic_axes=[Axis('defaultBatchAxis')],
       name='')
     parameters:
     - description: the shape of the input tensor
@@ -1599,7 +1691,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2674
+    startLine: 2735
   summary: 'DEPRECATED.
 
     It creates an input in the network: a place where data, such as features and labels,
@@ -1637,7 +1729,18 @@ items:
       description: '@cntk.variables.Variable'
   type: function
   uid: cntk.ops.input_variable
-- fullName: cntk.ops.labels_to_graph
+- example:
+  - '```
+
+
+    >>> num_classes = 2
+
+    >>> labels = C.input((num_classes))
+
+    >>> graph = C.labels_to_graph(labels)
+
+    ```'
+  fullName: cntk.ops.labels_to_graph
   langs:
   - python
   module: cntk.ops
@@ -1650,11 +1753,9 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 149
-  summary: 'Conversion node from labels to graph. Typically used as an input to ForwardBackward
-    node. This node''s objective is to transform input labels into a graph representing
-    exact forward-backward criterion. .. admonition:: Example
-
-    num_classes = 2 labels = cntk.input((num_classes)) graph = cntk.labels_to_graph(labels)'
+  summary: Conversion node from labels to graph. Typically used as an input to ForwardBackward
+    node. This node's objective is to transform input labels into a graph representing
+    exact forward-backward criterion.
   syntax:
     content: labels_to_graph(labels, name='')
     parameters:
@@ -1685,7 +1786,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1243
+    startLine: 1244
   summary: 'Leaky Rectified linear operation. Computes the element-wise leaky rectified
     linear of `x`: `max(x, 0)` for `x >= 0` and `x`: `0.01*x` otherwise.
 
@@ -1738,7 +1839,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 481
+    startLine: 482
   summary: Elementwise 'less' comparison of two tensors. Result is 1 if left < right
     else 0.
   syntax:
@@ -1787,7 +1888,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 611
+    startLine: 612
   summary: Elementwise 'less equal' comparison of two tensors. Result is 1 if left
     <= right else 0.
   syntax:
@@ -1826,7 +1927,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1517
+    startLine: 1518
   summary: 'Computes the element-wise the natural logarithm of `x`:
 
     Note: CNTK returns -85.1 for log(x) if `x` is negative or zero. The reason is
@@ -1874,7 +1975,7 @@ items:
       branch: master
       path: /bindings/python\cntk\ops\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 876
+    startLine: 877
   summary: Calculates the log of the sum of the exponentials of the two or more input
     tensors. It supports broadcasting.
   syntax:
@@ -1910,7 +2011,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 722
+    startLine: 723
   summary: The output of this operation is left minus right tensor. It supports broadcasting.
   syntax:
     content: minus(left, right, name='')
@@ -1948,7 +2049,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1611
+    startLine: 1612
   summary: 'Computes the element-wise negation of `x`:
 
     '
@@ -1997,7 +2098,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 585
+    startLine: 586
   summary: Elementwise 'not equal' comparison of two tensors. Result is 1 if left
     != right else 0.
   syntax:
@@ -2033,7 +2134,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2078
+    startLine: 2104
   summary: Create one hot tensor based on the input tensor
   syntax:
     content: one_hot(x, num_classes, sparse_output=False, axis=-1, name='')
@@ -2078,7 +2179,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1818
+    startLine: 1819
   summary: An RNN implementation that uses the primitives in cuDNN. If cuDNN is not
     available it fails.
   syntax:
@@ -2100,7 +2201,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2702
+    startLine: 2763
   summary: It creates an output variable that is used to define a user defined function.
   syntax:
     content: output_variable(shape, dtype, dynamic_axes, needs_gradient=True, name='')
@@ -2148,7 +2249,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1267
+    startLine: 1268
   summary: 'Parametric rectified linear operation. Computes the element-wise parameteric
     rectified linear of `x`: `max(x, 0)` for `x >= 0` and `x`: `alpha*x` otherwise.
 
@@ -2190,7 +2291,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2780
+    startLine: 2841
   summary: It creates a parameter tensor.
   syntax:
     content: parameter(shape=None, init=None, dtype=None, device=None, name='')
@@ -2257,7 +2358,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1737
+    startLine: 1738
   summary: 'DEPRECATED.
 
     This function returns the past value w.r.t. `x`. It is most often used when creating
@@ -2300,7 +2401,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2849
+    startLine: 2910
   summary: Computes per dimension mean-variance normalization of the specified input
     operand.
   syntax:
@@ -2336,7 +2437,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2730
+    startLine: 2791
   summary: It creates a placeholder variable that has to be later bound to an actual
     variable. A common use of this is to serve as a placeholder for a later output
     variable in a recurrent network, which is replaced with the actual output variable
@@ -2372,7 +2473,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2759
+    startLine: 2820
   summary: 'DEPRECATED.
 
     It creates a placeholder variable for recurrence networks, when the network''s
@@ -2448,7 +2549,7 @@ items:
       branch: master
       path: /bindings/python\cntk\ops\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 688
+    startLine: 689
   summary: The output of this operation is the sum of the two or more input tensors.
     It supports broadcasting.
   syntax:
@@ -2486,7 +2587,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 352
+    startLine: 353
   summary: 'The pooling operations compute a new tensor by selecting the maximum or
     average value in the pooling input. In the case of average pooling with padding,
     the average is only over the valid region.
@@ -2543,7 +2644,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 749
+    startLine: 750
   summary: The output of this operation is base raised to the power of exponent. It
     supports broadcasting.
   syntax:
@@ -2573,7 +2674,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2480
+    startLine: 2541
   summary: 'Estimates inclusion frequencies for random sampling with or without replacement.
 
     The output value is a set of num_samples random samples represented by a (sparse)
@@ -2663,7 +2764,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2520
+    startLine: 2581
   summary: For weighted sampling with the specifed sample size (*num_samples*) this
     operation computes the expected number of occurences of each class in the the
     sampled set. In case of sampling without replacement the result is only an estimate
@@ -2698,7 +2799,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1633
+    startLine: 1634
   summary: 'Computes the element-wise reciprocal of `x`:'
   syntax:
     content: reciprocal(x, name='')
@@ -2727,11 +2828,11 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 126
-  summary: Create a new Function instance which reconciles the dynamic axes of the
-    specified tensor operands. The output of the returned Function has the sample
-    layout of the 'x' operand and the dynamic axes of the 'dynamic_axes_as' operand.
+  summary: '   Create a new Function instance which reconciles the dynamic axes of
+    the specified tensor operands. The output of the returned Function has the sample
+    layout of the ''x'' operand and the dynamic axes of the ''dynamic_axes_as'' operand.
     This operator also performs a runtime check to ensure that the dynamic axes layouts
-    of the 2 operands indeed match.
+    of the 2 operands indeed match.'
   syntax:
     content: reconcile_dynamic_axes(x, dynamic_axes_as, name='')
     parameters:
@@ -2780,7 +2881,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2180
+    startLine: 2241
   summary: Computes the log of the sum of the exponentiations of the input tensor's
     elements across the specified axis.
   syntax:
@@ -2808,7 +2909,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2247
+    startLine: 2308
   summary: Computes the max of the input tensor's elements across the specified axis.
   syntax:
     content: reduce_max(x, axis=None, name='')
@@ -2835,7 +2936,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2213
+    startLine: 2274
   summary: Computes the mean of the input tensor's elements across the specified axis.
   syntax:
     content: reduce_mean(x, axis=None, name='')
@@ -2862,7 +2963,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2281
+    startLine: 2342
   summary: Computes the min of the input tensor's elements across the specified axis.
   syntax:
     content: reduce_min(x, axis=None, name='')
@@ -2888,7 +2989,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2315
+    startLine: 2376
   summary: Computes the min of the input tensor's elements across the specified axis.
   syntax:
     content: reduce_prod(x, axis=None, name='')
@@ -2912,7 +3013,9 @@ items:
     \ the batch has sequences of different length\n>>> x1 = np.arange(4,dtype=np.float32).reshape(1,2,2)\n\
     >>> x2 = np.arange(12,dtype=np.float32).reshape(3,2,2)\n>>> np.round(C.reduce_mean(x,\
     \ axis=C.Axis.all_axes()).eval({x:[x1,x2]}),5)\n4.5\n>>> (np.sum(x1)+np.sum(x2))/(x1.size+x2.size)\n\
-    4.5\n```"
+    4.5\n>>> # reduce over batch axis\n>>> xv = C.input((2,2))\n>>> xd = np.arange(8,dtype=np.float32).reshape(2,2,2)\n\
+    >>> C.reduce_sum(xv,axis=C.Axis.default_batch_axis()).eval({xv:xd})\narray([[\
+    \  4.,   6.],\n       [  8.,  10.]], dtype=float32)\n```"
   fullName: cntk.ops.reduce_sum
   langs:
   - python
@@ -2925,11 +3028,14 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2115
+    startLine: 2169
   summary: Computes the sum of the input tensor's elements across one axis. If the
     axis parameter is not specified then the sum will be computed over all static
-    axes, which is equivalent with specifying `axis=Axis.all_static_axes()`. If `axis=Axis.all_axes()`,
-    the output is a scalar which is the sum of all the elements in the minibatch.
+    axes, which is equivalent with specifying `axis=Axis.all_static_axes()`. If `axis=Axis.all_axes()`
+    is specified, then the output is a scalar which is the sum of all the elements
+    in the minibatch. And if `axis=Axis.default_batch_axis()` is specified, then the
+    reduction will happen across the batch axis (In this case the input must not be
+    a sequence).
   syntax:
     content: reduce_sum(x, axis=None, name='')
     parameters:
@@ -2968,7 +3074,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1195
+    startLine: 1196
   summary: 'Rectified linear operation. Computes the element-wise rectified linear
     of `x`: `max(x, 0)`
 
@@ -3003,7 +3109,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1875
+    startLine: 1876
   summary: 'Reinterpret input samples as having different tensor dimensions One dimension
     may be specified as 0 and will be inferred
 
@@ -3048,7 +3154,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 320
+    startLine: 321
   summary: 'The ROI (Region of Interest) pooling operation pools over sub-regions
     of an input volume and produces a fixed sized output volume regardless of the
     ROI size. It is used for example for object detection.
@@ -3094,7 +3200,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1123
+    startLine: 1124
   summary: The output of this operation is the element wise value rounded to the nearest
     integer. In case of tie, where element can have exact fractional part of 0.5 this
     operation follows "round half-up" tie breaking strategy. This is different from
@@ -3133,7 +3239,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1331
+    startLine: 1332
   summary: 'Computes the element-wise sigmoid of `x`:
 
 
@@ -3167,7 +3273,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1377
+    startLine: 1378
   summary: 'Computes the element-wise sine of `x`:
 
     The output tensor has the same shape as `x`.'
@@ -3220,7 +3326,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1958
+    startLine: 1984
   summary: Slice the input along one or multiple axes.
   syntax:
     content: slice(x, axis, begin_index, end_index, name='')
@@ -3246,7 +3352,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1422
+    startLine: 1423
   summary: 'Computes the gradient of  at `z = x`. Concretely,
 
 
@@ -3307,7 +3413,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1294
+    startLine: 1295
   summary: 'Softplus operation. Computes the element-wise softplus of `x`:
 
 
@@ -3359,7 +3465,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2033
+    startLine: 2059
   summary: Concatenate the input tensors along an axis.
   syntax:
     content: splice(*inputs, **kw_axis_name)
@@ -3399,7 +3505,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1543
+    startLine: 1544
   summary: 'Computes the element-wise square-root of `x`:
 
 
@@ -3440,7 +3546,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1569
+    startLine: 1570
   summary: 'Computes the element-wise square of `x`:'
   syntax:
     content: square(x, name='')
@@ -3468,7 +3574,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2867
+    startLine: 2928
   summary: Outputs its input as it and prevents any gradient contribution from its
     output to its input.
   syntax:
@@ -3485,6 +3591,45 @@ items:
   type: function
   uid: cntk.ops.stop_gradient
 - example:
+  - "```\n\n>>> C.swapaxes([[[0,1],[2,3],[4,5]]], 1, 2).eval()\narray([[[ 0.,  2.,\
+    \  4.],\n        [ 1.,  3.,  5.]]], dtype=float32)\n```"
+  fullName: cntk.ops.swapaxes
+  langs:
+  - python
+  module: cntk.ops
+  name: swapaxes
+  source:
+    id: swapaxes
+    path: /bindings/python\cntk\internal\swig_helper.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 1959
+  summary: Swaps two axes of the tensor. The output tensor has the same data but with
+    `axis1` and `axis2` swapped.
+  syntax:
+    content: swapaxes(x, axis1=0, axis2=1, name='')
+    parameters:
+    - description: tensor to be transposed
+      id: x
+    - description: the axis to swap with `axis2`
+      id: axis1
+      type:
+      - int or @cntk.axis
+    - description: the axis to swap with `axis1`
+      id: axis2
+      type:
+      - int or @cntk.axis
+    - description: the name of the Function instance in the network
+      id: name
+      type:
+      - str, optional
+    return:
+      description: '@cntk.ops.functions.Function'
+  type: function
+  uid: cntk.ops.swapaxes
+- example:
   - "```\n\n>>> C.tanh([[1,2],[3,4]]).eval()\narray([[ 0.761594,  0.964028],\n   \
     \    [ 0.995055,  0.999329]], dtype=float32)\n```"
   fullName: cntk.ops.tanh
@@ -3499,7 +3644,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1355
+    startLine: 1356
   summary: 'Computes the element-wise tanh of `x`:
 
     The output tensor has the same shape as `x`.'
@@ -3539,17 +3684,17 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 906
+    startLine: 907
   summary: "The output of this operation is the matrix product of the two input matrices.\
     \ It supports broadcasting. Sparse is supported in the left operand, if it is\
     \ a matrix. The operator '@' has been overloaded such that in Python 3.5 and later\
     \ X @ W equals times(X, W).\nFor better performance on times operation on sequence\
     \ which is followed by sequence.reduce_sum, use infer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK,\
-    \ i.e. replace following:\n<!-- literal_block {\"dupnames\": [], \"xml:space\"\
-    : \"preserve\", \"names\": [], \"ids\": [], \"backrefs\": [], \"classes\": []}\
+    \ i.e. replace following:\n<!-- literal_block {\"classes\": [], \"xml:space\"\
+    : \"preserve\", \"ids\": [], \"backrefs\": [], \"names\": [], \"dupnames\": []}\
     \ -->\n\n````\n\n   sequence.reduce_sum(times(seq1, seq2))\n   ````\nwith:\n<!--\
-    \ literal_block {\"dupnames\": [], \"xml:space\": \"preserve\", \"names\": [],\
-    \ \"ids\": [], \"backrefs\": [], \"classes\": []} -->\n\n````\n\n   times(seq1,\
+    \ literal_block {\"classes\": [], \"xml:space\": \"preserve\", \"ids\": [], \"\
+    backrefs\": [], \"names\": [], \"dupnames\": []} -->\n\n````\n\n   times(seq1,\
     \ seq2, infer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK)\n\
     \   ````"
   syntax:
@@ -3607,7 +3752,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 964
+    startLine: 965
   summary: The output of this operation is the product of the first (`left`) argument
     with the second (`right`) argument transposed. The second (`right`) argument must
     have a rank of 1 or 2. This operation is conceptually computing `np.dot(left,
@@ -3642,7 +3787,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2414
+    startLine: 2475
   summary: 'This function converts ''x'' to a sequence using the most significant
     static axis [0] as the sequence axis.
 
@@ -3684,7 +3829,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2449
+    startLine: 2510
   summary: This function converts 'x' to a sequence using the most significant static
     axis [0] as the sequence axis. The length of the sequences are obtained from the
     'dynamic_axes_like' operand.
@@ -3706,8 +3851,17 @@ items:
   type: function
   uid: cntk.ops.to_sequence_like
 - example:
-  - "```\n\n>>> C.transpose([[[0,1],[2,3],[4,5]]], 1, 2).eval()\narray([[[ 0.,  2.,\
-    \  4.],\n        [ 1.,  3.,  5.]]], dtype=float32)\n```"
+  - '```
+
+
+    >>> a = np.arange(24).reshape(2,3,4).astype(''f'')
+
+    >>> np.array_equal(C.transpose(a, perm=(2, 0, 1)).eval(), np.transpose(a, (2,
+    0, 1)))
+
+    True
+
+    ```'
   fullName: cntk.ops.transpose
   langs:
   - python
@@ -3720,22 +3874,18 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1932
-  summary: Swaps two axes of the tensor. The output tensor has the same data but with
-    `axis1` and `axis2` swapped.
+    startLine: 1933
+  summary: Permutes the axes of the tensor. The output has the same data but the axes
+    are permuted according to `perm`.
   syntax:
-    content: transpose(x, axis1=0, axis2=1, name='')
+    content: transpose(x, perm, name='')
     parameters:
     - description: tensor to be transposed
       id: x
-    - description: the axis to swap with `axis2`
-      id: axis1
+    - description: the permutation to apply to the axes.
+      id: perm
       type:
-      - int or @cntk.axis
-    - description: the axis to swap with `axis1`
-      id: axis2
-      type:
-      - int or @cntk.axis
+      - list
     - description: the name of the Function instance in the network
       id: name
       type:
@@ -3763,7 +3913,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 393
+    startLine: 394
   summary: Unpools the `operand` using information from `pooling_input`. Unpooling
     mirrors the operations performed by pooling and depends on the values provided
     to the corresponding pooling operation. The output should have the same shape
@@ -3826,6 +3976,11 @@ references:
   name: as_composite
   parent: cntk.ops
   uid: cntk.ops.as_composite
+- fullName: cntk.ops.assign
+  isExternal: false
+  name: assign
+  parent: cntk.ops
+  uid: cntk.ops.assign
 - fullName: cntk.ops.associative_multi_arg
   isExternal: false
   name: associative_multi_arg
@@ -3931,6 +4086,11 @@ references:
   name: future_value
   parent: cntk.ops
   uid: cntk.ops.future_value
+- fullName: cntk.ops.gather
+  isExternal: false
+  name: gather
+  parent: cntk.ops
+  uid: cntk.ops.gather
 - fullName: cntk.ops.greater
   isExternal: false
   name: greater
@@ -4176,6 +4336,11 @@ references:
   name: stop_gradient
   parent: cntk.ops
   uid: cntk.ops.stop_gradient
+- fullName: cntk.ops.swapaxes
+  isExternal: false
+  name: swapaxes
+  parent: cntk.ops
+  uid: cntk.ops.swapaxes
 - fullName: cntk.ops.tanh
   isExternal: false
   name: tanh

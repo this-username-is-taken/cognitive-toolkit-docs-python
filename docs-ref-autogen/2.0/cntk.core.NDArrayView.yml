@@ -109,8 +109,8 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 82
-  summary: Create a @cntk.core.NDArrayView instance from a SciPy sparse array in CSR
-    format.
+  summary: Create an @cntk.core.NDArrayView instance from a SciPy sparse array in
+    CSR format.
   syntax:
     content: from_csr(csr_array, device=None, read_only=False, borrow=False, shape=None)
     parameters:
@@ -156,8 +156,8 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 133
-  summary: Create a @cntk.core.NDArrayView instance from a NumPy or SciPy sparse array
-    in CSR format.
+  summary: Create an @cntk.core.NDArrayView instance from a NumPy or SciPy sparse
+    array in CSR format.
   syntax:
     content: from_data(data, device=None, read_only=False, borrow=False)
     parameters:
@@ -196,7 +196,7 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 49
-  summary: Create a @cntk.core.NDArrayView instance from a NumPy array.
+  summary: Create an @cntk.core.NDArrayView instance from a NumPy array.
   syntax:
     content: from_dense(np_array, device=None, read_only=False, borrow=False)
     parameters:

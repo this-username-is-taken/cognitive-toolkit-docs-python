@@ -55,7 +55,7 @@ items:
     expression.
   syntax:
     content: Delay(T=1, initial_state=<cntk.default_options.default_override_or object
-      at 0x000002AD87448518>, name='')
+      at 0x0000020A7659EE80>, name='')
     parameters:
     - description: the number of time steps to look into the past, where negative
         values mean to look into the future, and 0 means a no-op (default 1).
@@ -123,8 +123,8 @@ items:
     fold-right, except that the `folder_function` signature is always the one of fold-left.'
   syntax:
     content: Fold(folder_function, go_backwards=<cntk.default_options.default_override_or
-      object at 0x000002AD87448630>, initial_state=<cntk.default_options.default_override_or
-      object at 0x000002AD87448668>, return_full_state=False, name='')
+      object at 0x0000020A7659EF98>, initial_state=<cntk.default_options.default_override_or
+      object at 0x0000020A7659EFD0>, return_full_state=False, name='')
     parameters:
     - description: This function must have N+1 inputs and N outputs, where N is the
         number of state variables (typically 1 for GRU and plain RNNs, and 2 for LSTMs).
@@ -200,7 +200,7 @@ items:
     same axis dimension. Longer sequences will be truncated.'
   syntax:
     content: PastValueWindow(window_size, axis, go_backwards=<cntk.default_options.default_override_or
-      object at 0x000002AD87448550>, name='')
+      object at 0x0000020A7659EEB8>, name='')
     parameters:
     - description: maximum number of items in sequences. The *axis* will have this
         dimension.
@@ -286,8 +286,8 @@ items:
     called `scanl()`.'
   syntax:
     content: Recurrence(step_function, go_backwards=<cntk.default_options.default_override_or
-      object at 0x000002AD874485C0>, initial_state=<cntk.default_options.default_override_or
-      object at 0x000002AD874485F8>, return_full_state=False, name='')
+      object at 0x0000020A7659EF28>, initial_state=<cntk.default_options.default_override_or
+      object at 0x0000020A7659EF60>, return_full_state=False, name='')
     parameters:
     - description: This function must have N+1 inputs and N outputs, where N is the
         number of state variables (typically 1 for GRU and plain RNNs, and 2 for LSTMs).
@@ -400,7 +400,7 @@ items:
     model, or sequential data. In the latter case, the last item is the initial state.'
   syntax:
     content: RecurrenceFrom(step_function, go_backwards=<cntk.default_options.default_override_or
-      object at 0x000002AD87448588>, return_full_state=False, name='')
+      object at 0x0000020A7659EEF0>, return_full_state=False, name='')
     parameters:
     - description: This function must have N+1 inputs and N outputs, where N is the
         number of state variables (typically 1 for GRU and plain RNNs, and 2 for LSTMs).

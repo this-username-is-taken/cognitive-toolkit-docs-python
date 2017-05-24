@@ -24,7 +24,6 @@ htmlhelp_basename = 'pyexampledoc'
 
 
 extensions = ['sphinx.ext.autodoc',
-              'sphinx.ext.extlinks',
               'sphinx.ext.napoleon',
               'extension']
 
@@ -34,3 +33,5 @@ exclude_patterns = [
   '_build',
   '*.tests.rst'
 ]
+
+source_prefix = '/bindings/python'

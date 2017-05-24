@@ -34,7 +34,7 @@ items:
       branch: master
       path: /bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 618
+    startLine: 625
   summary: Converts a Value object to a sequence of NumPy arrays (if dense) or CSR
     arrays (if sparse).
   syntax:
@@ -53,7 +53,7 @@ items:
       branch: master
       path: /bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 634
+    startLine: 641
   summary: Converts a sequence of NumPy arrays or CSR arrays to a Value object.
   syntax:
     content: asvalue(variable, data_array)
@@ -71,7 +71,7 @@ items:
       branch: master
       path: /bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 609
+    startLine: 616
   summary: Wraps the passed Function to create a composite representing the composite
     Function graph rooted at the passed root Function.
   syntax:

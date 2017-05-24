@@ -9,6 +9,7 @@ items:
   - cntk.core.Value.dtype
   - cntk.core.Value.is_read_only
   - cntk.core.Value.is_sparse
+  - cntk.core.Value.is_valid
   - cntk.core.Value.mask
   - cntk.core.Value.one_hot
   - cntk.core.Value.shape
@@ -31,6 +32,7 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 234
   summary: 'Internal representation of minibatch data.
+
 
 
 
@@ -223,6 +225,25 @@ items:
   type: attribute
   uid: cntk.core.Value.is_sparse
 - class: cntk.core.Value
+  fullName: cntk.core.Value.is_valid
+  langs:
+  - python
+  module: cntk.core
+  name: is_valid
+  source:
+    id: is_valid
+    path: null
+    remote:
+      branch: master
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: Whether the value is valid or has been invalidated by another forward and/or
+    backward pass
+  syntax: {}
+  type: attribute
+  uid: cntk.core.Value.is_valid
+- class: cntk.core.Value
   example:
   - A mask of `[[2, 1, 1], [1, 1, 0]]` describes a batch of two sequences. The first
     has three elements, of which the first element (2) signals the beginning of a
@@ -243,8 +264,8 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
   summary: "The mask matrix of this value. Each row denotes a sequence with its elements\
-    \ describing the mask of the element:\n* 2: beginning of sequence (e.g. an LSTM\
-    \ would be reset)\n\n   * 1: valid element\n\n   * 0: invalid element"
+    \ describing the mask of the element:\n   * 2: beginning of sequence (e.g. an\
+    \ LSTM would be reset)\n\n   * 1: valid element\n\n   * 0: invalid element"
   syntax: {}
   type: attribute
   uid: cntk.core.Value.mask
@@ -361,6 +382,11 @@ references:
   name: is_sparse
   parent: cntk.core.Value
   uid: cntk.core.Value.is_sparse
+- fullName: cntk.core.Value.is_valid
+  isExternal: false
+  name: is_valid
+  parent: cntk.core.Value
+  uid: cntk.core.Value.is_valid
 - fullName: cntk.core.Value.mask
   isExternal: false
   name: mask

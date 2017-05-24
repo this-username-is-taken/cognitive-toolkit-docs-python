@@ -107,10 +107,10 @@ items:
     the previous state as its first argument, and outputs its new state.
   syntax:
     content: GRU(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x000002AD8743CA20>, init=<cntk.default_options.default_override_or
-      object at 0x000002AD8743CA90>, init_bias=<cntk.default_options.default_override_or
-      object at 0x000002AD8743CAC8>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x000002AD8743CB00>, name='')
+      object at 0x0000020A7659E3C8>, init=<cntk.default_options.default_override_or
+      object at 0x0000020A7659E438>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000020A7659E470>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x0000020A7659E4A8>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
@@ -179,11 +179,11 @@ items:
     two-valued tuple `(h,c)`.
   syntax:
     content: LSTM(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x000002AD8743C898>, use_peepholes=<cntk.default_options.default_override_or
-      object at 0x000002AD8743C630>, init=<cntk.default_options.default_override_or
-      object at 0x000002AD8743C7F0>, init_bias=<cntk.default_options.default_override_or
-      object at 0x000002AD8743C828>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x000002AD8743C8D0>, name='')
+      object at 0x0000020A7659E128>, use_peepholes=<cntk.default_options.default_override_or
+      object at 0x0000020A7659E240>, init=<cntk.default_options.default_override_or
+      object at 0x0000020A7659E198>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000020A7659E1D0>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x0000020A7659E278>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
@@ -255,10 +255,10 @@ items:
     the previous state as its first argument, and outputs its new state.
   syntax:
     content: RNNUnit(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x000002AD8743C908>, init=<cntk.default_options.default_override_or
-      object at 0x000002AD8743C978>, init_bias=<cntk.default_options.default_override_or
-      object at 0x000002AD8743C9B0>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x000002AD8743C9E8>, name='')
+      object at 0x0000020A7659E2B0>, init=<cntk.default_options.default_override_or
+      object at 0x0000020A7659E320>, init_bias=<cntk.default_options.default_override_or
+      object at 0x0000020A7659E358>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x0000020A7659E390>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
@@ -355,7 +355,7 @@ items:
     variant) but is also more robust by avoiding exploding gradients.'
   syntax:
     content: Stabilizer(steepness=4, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x000002AD8743C780>, name='')
+      object at 0x0000020A76597F98>, name='')
     parameters:
     - description: ''
       id: steepness

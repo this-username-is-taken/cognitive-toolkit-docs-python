@@ -4,6 +4,7 @@ items:
 - children:
   - cntk.ops.functions.UserFunction.clone
   - cntk.ops.functions.UserFunction.infer_outputs
+  - cntk.ops.functions.UserFunction.serialize
   class: cntk.ops.functions.UserFunction
   fullName: cntk.ops.functions.UserFunction
   inheritance:
@@ -25,11 +26,12 @@ items:
       branch: master
       path: /bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1158
+    startLine: 1240
   summary: 'Base class of all user extension functions.
 
     If it has only one output, one can invoke Variable methods on it, which it will
     relay to its only output.
+
 
 
     '
@@ -65,7 +67,7 @@ items:
       branch: master
       path: /bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1310
+    startLine: 1392
   summary: Creates a clone of this user-defined function.
   syntax:
     content: clone(self, cloned_inputs)
@@ -90,7 +92,7 @@ items:
       branch: master
       path: /bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1300
+    startLine: 1382
   summary: 'Returns a list of all output variables this user-defined function outputs.
 
     Output variables are created by @cntk.ops.'
@@ -98,6 +100,28 @@ items:
     content: infer_outputs(self)
   type: method
   uid: cntk.ops.functions.UserFunction.infer_outputs
+- class: cntk.ops.functions.UserFunction
+  fullName: cntk.ops.functions.UserFunction.serialize
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: serialize
+  source:
+    id: serialize
+    path: /bindings/python\cntk\ops\functions.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\ops\functions.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 1413
+  summary: 'Generates a dictionary that captures the state of this user-defined function.
+
+    This method must be overridden, if a user function has any state that needs to
+    be preserved in the model dictionary.'
+  syntax:
+    content: serialize(self)
+  type: method
+  uid: cntk.ops.functions.UserFunction.serialize
 references:
 - fullName: cntk.ops.functions.UserFunction.clone
   isExternal: false
@@ -109,3 +133,8 @@ references:
   name: infer_outputs
   parent: cntk.ops.functions.UserFunction
   uid: cntk.ops.functions.UserFunction.infer_outputs
+- fullName: cntk.ops.functions.UserFunction.serialize
+  isExternal: false
+  name: serialize
+  parent: cntk.ops.functions.UserFunction
+  uid: cntk.ops.functions.UserFunction.serialize

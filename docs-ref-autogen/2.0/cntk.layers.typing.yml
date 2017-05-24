@@ -22,114 +22,79 @@ items:
       path: /bindings/python\cntk\layers\typing.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  summary: 'The CNTK typing module contains basic CNTK type meta-classes for :func:`~cntk.functions.Function.update_signature`
-    and type signatures for the CNTK :class:`~cntk.ops.functions.Function` decorator.
-
-
-    The type of a CNTK :class:`~cntk.variables.Variable` is defined by five properties:
-    `shape`, `dynamic_axes`, `is_sparse`, `dtype`, and `needs_gradient`. Some API
-    functions accept these variables as independent arguments, e.g. :class:`~cntk.input`.
-    The typing module provides a Pythonic way to represent the variable type properties
-    as a single data object.
-
-
-    Python type syntax can be used to create such a record for the three main properties,
-    `shape`, `dynamic_axes`, and `is_sparse`, using :class:`~cntk.layers.typing.Tensor`,  :class:`~cntk.layers.typing.SparseTensor`,  :class:`~cntk.layers.typing.ParameterTensor`,
-    :class:`~cntk.layers.typing.Sequence`,  and :class:`~cntk.layers.typing.SequenceOver`.
-
-
-    Note: This new type system may undergo changes. Please give us feedback on github
-    or stackoverflow
-
-
-    .. admonition:: Example
-
-
-    >>> # Tensor[...] denotes a data variable (with implied batch dimension)    >>>
-    from cntk.layers.typing import *    >>> tp = Tensor[13,42]    >>> tp.shape    (13,
-    42)    >>> tp.is_sparse    False    >>> [str(axis.name) for axis in tp.dynamic_axes]    [''defaultBatchAxis'']        >>>
-    # SparseTensor[...] is a sparse Tensor    >>> tp = SparseTensor[9000]    >>> tp.is_sparse    True
-
-
-    This record can be directly passed to update_signature().
-
-
-    .. admonition:: Example
-
-
-    >>> from cntk.layers import *    >>> f = Dense(500)    >>> f.update_signature(Tensor[13,42])    >>>
-    f.shape    (500,)        >>> # This is just the same as saying    >>> f = Dense(500)    >>>
-    _ = f.replace_placeholders({f.arguments[0]: C.input(shape=(13,42), dynamic_axes=[Axis.default_batch_axis()])})    >>>
-    f.shape    (500,)
-
-
-    To specify types with a dynamic axis, use `Sequence[]`.
-
-
-    .. admonition:: Example
-
-
-    >>> tp = Sequence[SparseTensor[9000]]    >>> [str(axis.name) for axis in tp.dynamic_axes]    [''defaultBatchAxis'',
-    ''defaultDynamicAxis'']
-
-
-    This will refer to the default dynamic axis. If your model uses multiple dynamic
-    axes, such as a sequence-to-sequence model, you use `SequenceOver[]` to define
-    your own sequence type for each.
-
-
-    .. admonition:: Example
-
-
-    >>> InputSequence = SequenceOver[Axis(''input'')]    >>> tp = InputSequence[SparseTensor[9000]]    >>>
-    [str(axis.name) for axis in tp.dynamic_axes]    [''defaultBatchAxis'', ''input'']
-
-
-    The typing syntax can be used to directly define CNTK functions with their input
-    types. This is often done for the criterion function.
-
-
-    .. admonition:: Example
-
-
-    >>> from cntk import debugging, cross_entropy_with_softmax    >>> model = Sequential([Embedding(300),
-    Fold(GRU(128)), Dense(10)])    >>> debugging.dump_signature(model)    Function(keep:
-    Sequence[tensor]) -> Sequence[tensor]    >>> inputAxis = Axis(''inputAxis'')    >>>
-    @Function    ... @Signature(input=SequenceOver[inputAxis][Tensor[128]], label=Tensor[10])    ...
-    def criterion(input, label):    ...     output = model(input)    ...     return
-    cross_entropy_with_softmax(output, label)    >>> debugging.dump_signature(criterion)    Function(input:
-    SequenceOver[inputAxis][Tensor[128]], label: Tensor[10]) -> Tensor[1]
-
-
-    The following lists a few common errors with CNTK type objects:
-
-
-    .. admonition:: Example
-
-
-    >>> # types are abstract, they cannot be instantiated directly    >>> from cntk.layers.typing
-    import Tensor    >>> try:    ...     inp = Tensor[32]()   # attempt to create
-    an instance of type Tensor[32]    ... except TypeError as e:    ...     print(''ERROR:
-    '' + str(e))    ERROR: Can''t instantiate abstract class Tensor[32]. Please use
-    ''input(Tensor[32])''.        >>> # types are not inputs    >>> try:    ...     inp
-    = Tensor[32]    ...     y = sigmoid(inp)    ... except ValueError as e:    ...     print(''ERROR:
-    '' + str(e))    ERROR: Input is a type object (Tensor[32]). Did you mean to pass
-    ''input(Tensor[32])''?
-
-
-    Using Python type syntax, besides being more concise and easier to memorize, has
-    the added benefit of beign able to more easily talk about types of CNTK objects,
-    very similar to how one would talk about the types of Python objects (e.g. `List[Tuple[int,float]]`).
-    This is particularly beneficial for the functional-programming style of the Layers
-    library, where functions are also reasoned about by their types. In functional
-    programming, it has been observed that getting the types of functions right is
-    a critical step towards correct code.
-
-
-    Note that the type syntax does not allow to specify the special-purpose type property
-    `needs_gradient`, nor to `dtype` which instead should be specified as a global
-    setting. If these properties are needed on a type object, please use construct
-    an input using :func:`~cntk.input_var` and get its `type` property.'
+  summary: "The CNTK typing module contains basic CNTK type meta-classes for :func:`~cntk.functions.Function.update_signature`\
+    \ and type signatures for the CNTK :class:`~cntk.ops.functions.Function` decorator.\n\
+    \nThe type of a CNTK :class:`~cntk.variables.Variable` is defined by five properties:\
+    \ `shape`, `dynamic_axes`, `is_sparse`, `dtype`, and `needs_gradient`. Some API\
+    \ functions accept these variables as independent arguments, e.g. :class:`~cntk.input`.\
+    \ The typing module provides a Pythonic way to represent the variable type properties\
+    \ as a single data object.\n\nPython type syntax can be used to create such a\
+    \ record for the three main properties, `shape`, `dynamic_axes`, and `is_sparse`,\
+    \ using :class:`~cntk.layers.typing.Tensor`,  :class:`~cntk.layers.typing.SparseTensor`,\
+    \  :class:`~cntk.layers.typing.ParameterTensor`, :class:`~cntk.layers.typing.Sequence`,\
+    \  and :class:`~cntk.layers.typing.SequenceOver`.\n\nNote: This new type system\
+    \ may undergo changes. Please give us feedback on github or stackoverflow\n\n\
+    .. admonition:: Example\n\n   >>> # Tensor[...] denotes a data variable (with\
+    \ implied batch dimension)    >>> from cntk.layers.typing import *    >>> tp =\
+    \ Tensor[13,42]    >>> tp.shape    (13, 42)    >>> tp.is_sparse    False    >>>\
+    \ [str(axis.name) for axis in tp.dynamic_axes]    ['defaultBatchAxis']       \
+    \ >>> # SparseTensor[...] is a sparse Tensor    >>> tp = SparseTensor[9000]  \
+    \  >>> tp.is_sparse    True        >>> # if the first argument is np.float32 or\
+    \ np.float64, then this sets the dtype    >>> tp = Tensor[np.float32,13,42]  \
+    \  >>> print(tp.dtype == np.float32)    True\n\nThis record can be directly passed\
+    \ to update_signature().\n\n.. admonition:: Example\n\n   >>> from cntk.layers\
+    \ import *    >>> f = Dense(500)    >>> f.update_signature(Tensor[13,42])    >>>\
+    \ f.shape    (500,)        >>> # This is just the same as saying    >>> f = Dense(500)\
+    \    >>> _ = f.replace_placeholders({f.arguments[0]: C.input(shape=(13,42), dynamic_axes=[Axis.default_batch_axis()])})\
+    \    >>> f.shape    (500,)\n\nScalars can be just specified as float, np.float32,\
+    \ or np.float64.\n\n.. admonition:: Example\n\n   >>> @Function    ... def f(x):\
+    \    ...    return x+1    >>> f.update_signature(np.float64)    >>> print(f.dtype\
+    \ == np.float64)    True\n\nTo specify types with a dynamic axis, use `Sequence[]`.\n\
+    \n.. admonition:: Example\n\n   >>> tp = Sequence[SparseTensor[9000]]    >>> [str(axis.name)\
+    \ for axis in tp.dynamic_axes]    ['defaultBatchAxis', 'defaultDynamicAxis']\n\
+    \nThis will refer to the default dynamic axis. If your model uses multiple dynamic\
+    \ axes, such as a sequence-to-sequence model, you use `SequenceOver[]` to define\
+    \ your own sequence type for each.\n\n.. admonition:: Example\n\n   >>> InputSequence\
+    \ = SequenceOver[Axis('input')]    >>> tp = InputSequence[SparseTensor[9000]]\
+    \    >>> [str(axis.name) for axis in tp.dynamic_axes]    ['defaultBatchAxis',\
+    \ 'input']\n\nThe typing syntax can be used to directly define CNTK functions\
+    \ with their input types. This is often done for the criterion function.\n\n..\
+    \ admonition:: Example\n\n   >>> from cntk import debugging, cross_entropy_with_softmax\
+    \    >>> model = Sequential([Embedding(300), Fold(GRU(128)), Dense(10)])    >>>\
+    \ debugging.dump_signature(model)    Function(keep: Sequence[tensor]) -> Sequence[tensor]\
+    \    >>> inputAxis = Axis('inputAxis')    >>> @Function    ... @Signature(input=SequenceOver[inputAxis][Tensor[128]],\
+    \ label=Tensor[10])    ... def criterion(input, label):    ...     output = model(input)\
+    \    ...     return cross_entropy_with_softmax(output, label)    >>> debugging.dump_signature(criterion)\
+    \    Function(input: SequenceOver[inputAxis][Tensor[128]], label: Tensor[10])\
+    \ -> Tensor[1]\n\nThe following lists a few common errors with CNTK type objects:\n\
+    \n.. admonition:: Example\n\n   >>> # types are abstract, they cannot be instantiated\
+    \ directly    >>> from cntk.layers.typing import Tensor    >>> try:    ...   \
+    \  inp = Tensor[32]()   # attempt to create an instance of type Tensor[32]   \
+    \ ... except TypeError as e:    ...     print('ERROR: ' + str(e))    ERROR: abstract\
+    \ type Tensor[32] cannot be instantiated; use 'input(**Tensor[32])' instead  \
+    \      >>> # types are not inputs    >>> try:    ...     inp = Tensor[32]    ...\
+    \     y = sigmoid(inp)    ... except ValueError as e:    ...     print('ERROR:\
+    \ ' + str(e))    ERROR: Input is a type object (Tensor[32]). Did you mean to pass\
+    \ 'input(Tensor[32])'?        >>> # nested sequences are currently not supported\
+    \    >>> try:    ...     t = Sequence[Sequence[Tensor[32]]]    ... except TypeError\
+    \ as e:    ...     print('ERROR: ' + str(e))    ERROR: sequences over sequences\
+    \ are currently not supported        >>> # a function with specified type gets\
+    \ passed a differently-shaped input    >>> @Function    ...\n@Signature(x=Tensor[13])\
+    \    ... def f(x):    ...    return sigmoid(x)    >>> try:    ...     x = input((42,))\
+    \    ...     y = f(x)    ... except TypeError as e:    ...     print('ERROR: '\
+    \ + str(e))    ERROR: argument x's type Tensor[13] is incompatible with the type\
+    \ Tensor[42] of the passed Variable\n\nUsing Python type syntax, besides being\
+    \ more concise and easier to memorize, has the added benefit of beign able to\
+    \ more easily talk about types of CNTK objects, very similar to how one would\
+    \ talk about the types of Python objects (e.g. `List[Tuple[int,float]]`). This\
+    \ is particularly beneficial for the functional-programming style of the Layers\
+    \ library, where functions are also reasoned about by their types. In functional\
+    \ programming, it has been observed that getting the types of functions right\
+    \ is a critical step towards correct code.\n\nNote that the type syntax does not\
+    \ allow to specify the special-purpose type property `needs_gradient`, nor to\
+    \ `dtype` which instead should be specified as a global setting. If these properties\
+    \ are needed on a type object, please use construct an input using :func:`~cntk.input_var`\
+    \ and get its `type` property."
   type: module
   uid: cntk.layers.typing
 - fullName: cntk.layers.typing.Signature
@@ -144,14 +109,14 @@ items:
       branch: master
       path: /bindings/python\cntk\layers\typing.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 168
+    startLine: 210
   summary: "`@Signature` is a decorator to implement the function-argument annotations\
     \ in Python-2.7, as needed by the `@Function` decorator. This is only needed when\
     \ you have not yet migrated to Python 3.x.\nNote: Although this is aimed at enabling\
     \ `@Function` syntax with type annotations in Python 2.7, `@Signature` is independent\
     \ of CNTK and can be used for any argument annotation.\nExample:\n<!-- literal_block\
-    \ {\"dupnames\": [], \"xml:space\": \"preserve\", \"names\": [], \"ids\": [],\
-    \ \"backrefs\": [], \"classes\": []} -->\n\n````\n\n   # Python 3:\n   @Function\n\
+    \ {\"classes\": [], \"xml:space\": \"preserve\", \"ids\": [], \"backrefs\": [],\
+    \ \"names\": [], \"dupnames\": []} -->\n\n````\n\n   # Python 3:\n   @Function\n\
     \   def f(x: Tensor[42]):\n       return sigmoid(x)\n\n   # Python 2.7:\n   @Function\n\
     \   @Signature(Tensor[42])\n   def f(x):\n       return sigmoid(x)\n\n   # note\
     \ that this:\n   @Function\n   @Signature(x:int)\n   def sqr(x):\n       return\
