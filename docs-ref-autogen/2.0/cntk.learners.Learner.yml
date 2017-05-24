@@ -23,7 +23,7 @@ items:
       branch: master
       path: /bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 120
+    startLine: 110
   summary: 'Abstraction for learning a subset of parameters of a learnable function
     using first order gradient values. For example momentum, AdaGrad, RMSProp, etc.
     are different types of learners with their own algorithms for learning parameter
@@ -51,7 +51,7 @@ items:
       branch: master
       path: /bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 169
+    startLine: 159
   summary: Current learning rate.
   syntax:
     content: learning_rate(self)
@@ -88,7 +88,7 @@ items:
       branch: master
       path: /bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 155
+    startLine: 145
   summary: 'Resets the learning rate. The new schedule is adjusted to be relative
     to the current number of elapsed samples/sweeps: the 0 offset in the new schedule
     corresponds to the current value of elapsed samples/sweeps, and it takes effect
@@ -115,7 +115,7 @@ items:
       branch: master
       path: /bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 129
+    startLine: 119
   summary: Update the parameters associated with this learner.
   syntax:
     content: update(self, gradient_values, training_sample_count)
@@ -132,6 +132,8 @@ items:
     return:
       description: '*False* to indicate that learning has stopped for all of the parameters
         associated with this learner'
+      type:
+      - bool
   type: method
   uid: cntk.learners.Learner.update
 references:

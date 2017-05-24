@@ -6,7 +6,6 @@ items:
   - cntk.logging.graph.find_all_with_name
   - cntk.logging.graph.find_by_name
   - cntk.logging.graph.get_node_outputs
-  - cntk.logging.graph.output_function_graph
   - cntk.logging.graph.plot
   fullName: cntk.logging.graph
   langs:
@@ -35,7 +34,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 11
+    startLine: 12
   summary: Generic function that walks through the graph starting at `root` and uses
     function `visitor` on each node to check whether it should be returned.
   syntax:
@@ -73,7 +72,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 76
+    startLine: 79
   summary: Finds functions in the graph starting from `node` and doing a depth-first
     search.
   syntax:
@@ -109,7 +108,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 97
+    startLine: 100
   summary: Finds a function in the graph starting from `node` and doing a depth-first
     search. It assumes that the name occurs only once.
   syntax:
@@ -144,7 +143,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 358
+    startLine: 347
   summary: Walks through every node of the graph starting at `node` and returns a
     list of all node outputs.
   syntax:
@@ -158,23 +157,6 @@ items:
       description: A list of all node outputs
   type: function
   uid: cntk.logging.graph.get_node_outputs
-- fullName: cntk.logging.graph.output_function_graph
-  langs:
-  - python
-  module: cntk.logging.graph
-  name: output_function_graph
-  source:
-    id: output_function_graph
-    path: /bindings/python\cntk\logging\graph.py
-    remote:
-      branch: master
-      path: /bindings/python\cntk\logging\graph.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 344
-  syntax:
-    content: output_function_graph(node, dot_file_path=None, png_file_path=None)
-  type: function
-  uid: cntk.logging.graph.output_function_graph
 - fullName: cntk.logging.graph.plot
   langs:
   - python
@@ -187,7 +169,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 133
+    startLine: 136
   summary: "Walks through every node of the graph starting at `root`, creates a network\
     \ graph, and returns a network description. If `filename` is specified, it outputs\
     \ a DOT, PNG, PDF, or SVG file depending on the file name's suffix.\nRequirements:\n\
@@ -235,11 +217,6 @@ references:
   name: get_node_outputs
   parent: cntk.logging.graph
   uid: cntk.logging.graph.get_node_outputs
-- fullName: cntk.logging.graph.output_function_graph
-  isExternal: false
-  name: output_function_graph
-  parent: cntk.logging.graph
-  uid: cntk.logging.graph.output_function_graph
 - fullName: cntk.logging.graph.plot
   isExternal: false
   name: plot

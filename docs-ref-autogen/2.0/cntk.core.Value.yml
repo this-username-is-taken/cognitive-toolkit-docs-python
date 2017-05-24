@@ -272,18 +272,18 @@ items:
 - class: cntk.core.Value
   example:
   - "```\n\n>>> num_classes = 6\n>>> sparse_indices = [[1,C.Value.ONE_HOT_SKIP,5],[4]]\n\
-    >>> i0 = C.sequence.input(shape=num_classes, is_sparse=True)\n>>> z = C.times(i0,\
-    \ np.eye(num_classes))\n>>> value = C.Value.one_hot(sparse_indices, num_classes)\n\
-    >>> z.eval({i0: value})\n[array([[ 0.,  1.,  0.,  0.,  0.,  0.],\n        [ 0.,\
-    \  0.,  0.,  0.,  0.,  0.],\n        [ 0.,  0.,  0.,  0.,  0.,  1.]], dtype=float32),\n\
-    \ array([[ 0.,  0.,  0.,  0.,  1.,  0.]], dtype=float32)]\n<BLANKLINE>\n>>> num_classes\
-    \ = 6\n>>> sample_shape = (2, num_classes)\n>>> sparse_indices = [[1,5,3,2],[4,1]]\n\
-    >>> i0 = C.sequence.input(shape=sample_shape, is_sparse=True)\n>>> z = C.times(i0,\
-    \ np.eye(num_classes))\n>>> value = C.Value.one_hot(sparse_indices, sample_shape)\n\
-    >>> z.eval({i0: value})\n[array([[[ 0.,  1.,  0.,  0.,  0.,  0.],\n         [\
-    \ 0.,  0.,  0.,  0.,  0.,  1.]],\n        [[ 0.,  0.,  0.,  1.,  0.,  0.],\n \
-    \        [ 0.,  0.,  1.,  0.,  0.,  0.]]], dtype=float32),\n array([[[ 0.,  0.,\
-    \  0.,  0.,  1.,  0.],\n         [ 0.,  1.,  0.,  0.,  0.,  0.]]], dtype=float32)]\n\
+    >>> i0 = C.sequence.input_variable(shape=num_classes, is_sparse=True)\n>>> z =\
+    \ C.times(i0, np.eye(num_classes))\n>>> value = C.Value.one_hot(sparse_indices,\
+    \ num_classes)\n>>> z.eval({i0: value})\n[array([[ 0.,  1.,  0.,  0.,  0.,  0.],\n\
+    \        [ 0.,  0.,  0.,  0.,  0.,  0.],\n        [ 0.,  0.,  0.,  0.,  0.,  1.]],\
+    \ dtype=float32),\n array([[ 0.,  0.,  0.,  0.,  1.,  0.]], dtype=float32)]\n\
+    <BLANKLINE>\n>>> num_classes = 6\n>>> sample_shape = (2, num_classes)\n>>> sparse_indices\
+    \ = [[1,5,3,2],[4,1]]\n>>> i0 = C.sequence.input_variable(shape=sample_shape,\
+    \ is_sparse=True)\n>>> z = C.times(i0, np.eye(num_classes))\n>>> value = C.Value.one_hot(sparse_indices,\
+    \ sample_shape)\n>>> z.eval({i0: value})\n[array([[[ 0.,  1.,  0.,  0.,  0., \
+    \ 0.],\n         [ 0.,  0.,  0.,  0.,  0.,  1.]],\n        [[ 0.,  0.,  0.,  1.,\
+    \  0.,  0.],\n         [ 0.,  0.,  1.,  0.,  0.,  0.]]], dtype=float32),\n array([[[\
+    \ 0.,  0.,  0.,  0.,  1.,  0.],\n         [ 0.,  1.,  0.,  0.,  0.,  0.]]], dtype=float32)]\n\
     ```"
   fullName: cntk.core.Value.one_hot
   langs:

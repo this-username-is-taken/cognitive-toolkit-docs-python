@@ -45,17 +45,17 @@ items:
     \ to update_signature().\n\n.. admonition:: Example\n\n   >>> from cntk.layers\
     \ import *    >>> f = Dense(500)    >>> f.update_signature(Tensor[13,42])    >>>\
     \ f.shape    (500,)        >>> # This is just the same as saying    >>> f = Dense(500)\
-    \    >>> _ = f.replace_placeholders({f.arguments[0]: C.input(shape=(13,42), dynamic_axes=[Axis.default_batch_axis()])})\
-    \    >>> f.shape    (500,)\n\nScalars can be just specified as float, np.float32,\
-    \ or np.float64.\n\n.. admonition:: Example\n\n   >>> @Function    ... def f(x):\
-    \    ...    return x+1    >>> f.update_signature(np.float64)    >>> print(f.dtype\
-    \ == np.float64)    True\n\nTo specify types with a dynamic axis, use `Sequence[]`.\n\
-    \n.. admonition:: Example\n\n   >>> tp = Sequence[SparseTensor[9000]]    >>> [str(axis.name)\
-    \ for axis in tp.dynamic_axes]    ['defaultBatchAxis', 'defaultDynamicAxis']\n\
-    \nThis will refer to the default dynamic axis. If your model uses multiple dynamic\
-    \ axes, such as a sequence-to-sequence model, you use `SequenceOver[]` to define\
-    \ your own sequence type for each.\n\n.. admonition:: Example\n\n   >>> InputSequence\
-    \ = SequenceOver[Axis('input')]    >>> tp = InputSequence[SparseTensor[9000]]\
+    \    >>> _ = f.replace_placeholders({f.arguments[0]: C.input_variable(shape=(13,42),\
+    \ dynamic_axes=[Axis.default_batch_axis()])})    >>> f.shape    (500,)\n\nScalars\
+    \ can be just specified as float, np.float32, or np.float64.\n\n.. admonition::\
+    \ Example\n\n   >>> @Function    ... def f(x):    ...    return x+1    >>> f.update_signature(np.float64)\
+    \    >>> print(f.dtype == np.float64)    True\n\nTo specify types with a dynamic\
+    \ axis, use `Sequence[]`.\n\n.. admonition:: Example\n\n   >>> tp = Sequence[SparseTensor[9000]]\
+    \    >>> [str(axis.name) for axis in tp.dynamic_axes]    ['defaultBatchAxis',\
+    \ 'defaultDynamicAxis']\n\nThis will refer to the default dynamic axis. If your\
+    \ model uses multiple dynamic axes, such as a sequence-to-sequence model, you\
+    \ use `SequenceOver[]` to define your own sequence type for each.\n\n.. admonition::\
+    \ Example\n\n   >>> InputSequence = SequenceOver[Axis('input')]    >>> tp = InputSequence[SparseTensor[9000]]\
     \    >>> [str(axis.name) for axis in tp.dynamic_axes]    ['defaultBatchAxis',\
     \ 'input']\n\nThe typing syntax can be used to directly define CNTK functions\
     \ with their input types. This is often done for the criterion function.\n\n..\
@@ -71,16 +71,16 @@ items:
     \ directly    >>> from cntk.layers.typing import Tensor    >>> try:    ...   \
     \  inp = Tensor[32]()   # attempt to create an instance of type Tensor[32]   \
     \ ... except TypeError as e:    ...     print('ERROR: ' + str(e))    ERROR: abstract\
-    \ type Tensor[32] cannot be instantiated; use 'input(**Tensor[32])' instead  \
-    \      >>> # types are not inputs    >>> try:    ...     inp = Tensor[32]    ...\
-    \     y = sigmoid(inp)    ... except ValueError as e:    ...     print('ERROR:\
+    \ type Tensor[32] cannot be instantiated; use 'input_variable(**Tensor[32])' instead\
+    \        >>> # types are not inputs    >>> try:    ...     inp = Tensor[32]  \
+    \  ...     y = sigmoid(inp)    ... except ValueError as e:    ...     print('ERROR:\
     \ ' + str(e))    ERROR: Input is a type object (Tensor[32]). Did you mean to pass\
-    \ 'input(Tensor[32])'?        >>> # nested sequences are currently not supported\
-    \    >>> try:    ...     t = Sequence[Sequence[Tensor[32]]]    ... except TypeError\
-    \ as e:    ...     print('ERROR: ' + str(e))    ERROR: sequences over sequences\
-    \ are currently not supported        >>> # a function with specified type gets\
-    \ passed a differently-shaped input    >>> @Function    ...\n@Signature(x=Tensor[13])\
-    \    ... def f(x):    ...    return sigmoid(x)    >>> try:    ...     x = input((42,))\
+    \ 'input_variable(**Tensor[32])'?        >>> # nested sequences are currently\
+    \ not supported    >>> try:    ...     t = Sequence[Sequence[Tensor[32]]]    ...\
+    \ except TypeError as e:    ...     print('ERROR: ' + str(e))    ERROR: sequences\
+    \ over sequences are currently not supported        >>> # a function with specified\
+    \ type gets passed a differently-shaped input    >>> @Function    ...\n@Signature(x=Tensor[13])\
+    \    ... def f(x):    ...    return sigmoid(x)    >>> try:    ...     x = C.input_variable((42,))\
     \    ...     y = f(x)    ... except TypeError as e:    ...     print('ERROR: '\
     \ + str(e))    ERROR: argument x's type Tensor[13] is incompatible with the type\
     \ Tensor[42] of the passed Variable\n\nUsing Python type syntax, besides being\
@@ -115,7 +115,7 @@ items:
     \ you have not yet migrated to Python 3.x.\nNote: Although this is aimed at enabling\
     \ `@Function` syntax with type annotations in Python 2.7, `@Signature` is independent\
     \ of CNTK and can be used for any argument annotation.\nExample:\n<!-- literal_block\
-    \ {\"classes\": [], \"xml:space\": \"preserve\", \"ids\": [], \"backrefs\": [],\
+    \ {\"ids\": [], \"xml:space\": \"preserve\", \"classes\": [], \"backrefs\": [],\
     \ \"names\": [], \"dupnames\": []} -->\n\n````\n\n   # Python 3:\n   @Function\n\
     \   def f(x: Tensor[42]):\n       return sigmoid(x)\n\n   # Python 2.7:\n   @Function\n\
     \   @Signature(Tensor[42])\n   def f(x):\n       return sigmoid(x)\n\n   # note\

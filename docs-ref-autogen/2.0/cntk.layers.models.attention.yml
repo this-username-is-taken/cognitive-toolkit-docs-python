@@ -31,16 +31,16 @@ items:
       branch: master
       path: /bindings/python\cntk\layers\models\attention.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 18
+    startLine: 23
   summary: Layer factory function to create a function object that implements an attention
     model as described in Bahdanau, et al., "Neural machine translation by jointly
     learning to align and translate."
   syntax:
     content: AttentionModel(attention_dim, attention_span=None, attention_axis=None,
-      init=<cntk.default_options.default_override_or object at 0x0000020A765AEDD8>,
-      go_backwards=<cntk.default_options.default_override_or object at 0x0000020A765AEE10>,
+      init=<cntk.default_options.default_override_or object at 0x00000244A71D87F0>,
+      go_backwards=<cntk.default_options.default_override_or object at 0x00000244A71D8828>,
       enable_self_stabilization=<cntk.default_options.default_override_or object at
-      0x0000020A765AEE48>, name='')
+      0x00000244A71D8860>, name='')
   type: function
   uid: cntk.layers.models.attention.AttentionModel
 references:

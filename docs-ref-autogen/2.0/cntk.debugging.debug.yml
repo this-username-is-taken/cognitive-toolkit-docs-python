@@ -65,13 +65,13 @@ items:
       branch: master
       path: /bindings/python\cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 404
+    startLine: 402
   summary: Returns a cloned model that has debug nodes inserted everywhere. When the
     graph is evaluated or trained, those nodes will allow to inspect the graph.
   syntax:
     content: debug_model(model, in_stream=<_io.TextIOWrapper name='<stdin>' mode='r'
       encoding='cp936'>, out_stream=<colorama.ansitowin32.StreamWrapper object at
-      0x0000020A719294A8>, exit_func=<built-in function exit>)
+      0x00000244A2537470>, exit_func=<built-in function exit>)
     parameters:
     - description: root node until which the nodes are to be debugged
       id: model
@@ -107,7 +107,7 @@ items:
       branch: master
       path: /bindings/python\cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 86
+    startLine: 84
   summary: Save the network of `root_op` in `filename`. For debugging purposes only,
     very likely to be deprecated in the future.
   syntax:
@@ -135,7 +135,7 @@ items:
       branch: master
       path: /bindings/python\cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 109
+    startLine: 107
   summary: "   Checked mode enables additional runtime verification such as:\n   \
     \   * Tracking NaN occurences in sequence gaps.\n\n      * Function graph verification\
     \ after binding of free static axes to actual values at runtime\n\n   Enabling\
@@ -162,7 +162,7 @@ items:
       branch: master
       path: /bindings/python\cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 123
+    startLine: 121
   summary: "Set trace level to the computation network. Currently supported values:\n\
     \   0\n      turn off trace\n\n   1\n      output nodes' dimensions and some other\
     \ static info\n\n   1000\n      output each node's abs sum of elements in its\

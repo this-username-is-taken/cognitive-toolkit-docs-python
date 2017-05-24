@@ -31,7 +31,7 @@ items:
       branch: master
       path: /bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 408
+    startLine: 419
   summary: 'A constant value. It can be a scalar, vector, matrix, or tensor of floating
     point numbers that cannot be modified.
 
@@ -48,7 +48,7 @@ items:
     '
   syntax:
     content: Constant(value=None, shape=None, dtype=<cntk.default_options.default_override_or
-      object at 0x0000020A75EADD68>, device=None, name='')
+      object at 0x00000244A7127710>, device=None, name='')
     parameters:
     - description: Initial value.
       id: value

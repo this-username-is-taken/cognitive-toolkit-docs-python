@@ -20,7 +20,7 @@ items:
       branch: master
       path: /bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 176
+    startLine: 166
   summary: 'Base class of all user-defined learners. To implement your own learning
     algorithm, derive from this class and override the @cntk.learners.UserLearner.update.
 
@@ -45,7 +45,7 @@ items:
       branch: master
       path: /bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 217
+    startLine: 207
   summary: Update the parameters associated with this learner.
   syntax:
     content: update(self, gradient_values, training_sample_count, sweep_end)
@@ -60,13 +60,15 @@ items:
       type:
       - int
     - description: if the data is fed by a conforming reader, this indicates whether
-        a full pass over the dataset has just occured.
+        a full pass over the dataset has just occurred.
       id: sweep_end
       type:
       - bool
     return:
       description: '*False* to indicate that learning has stopped for all of the parameters
         associated with this learner'
+      type:
+      - bool
   type: method
   uid: cntk.learners.UserLearner.update
 references:

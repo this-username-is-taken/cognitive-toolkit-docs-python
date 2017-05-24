@@ -8,6 +8,7 @@ items:
   - cntk.ops.sequence.future_value
   - cntk.ops.sequence.gather
   - cntk.ops.sequence.input
+  - cntk.ops.sequence.input_variable
   - cntk.ops.sequence.is_first
   - cntk.ops.sequence.is_last
   - cntk.ops.sequence.last
@@ -35,8 +36,8 @@ items:
   type: module
   uid: cntk.ops.sequence
 - example:
-  - "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> t = C.sequence.last(x)\n>>>\
-    \ b = C.sequence.is_first(x)\n>>> y = C.sequence.broadcast_as(t, b)\n>>> # create\
+  - "```\n\n>>> x = C.sequence.input_variable(shape=(3,2))\n>>> t = C.sequence.last(x)\n\
+    >>> b = C.sequence.is_first(x)\n>>> y = C.sequence.broadcast_as(t, b)\n>>> # create\
     \ one sequence of 4 tensors each with shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
     >>> y.eval({x:x0})\n[array([[[ 18.,  19.],\n         [ 20.,  21.],\n         [\
     \ 22.,  23.]],\n<BLANKLINE>\n        [[ 18.,  19.],\n         [ 20.,  21.],\n\
@@ -55,7 +56,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 529
+    startLine: 556
   summary: Creates a sequence out of a non-sequence by endowing the `operand` with
     dynamic axes of the same type as the `broadcast_as_operand` and broadcasting the
     value of the `operand` along those dynamic axes.
@@ -87,7 +88,7 @@ items:
       branch: master
       path: /bindings/python\cntk\ops\sequence\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 227
+    startLine: 256
   summary: This function combines @cntk.ops.sequence.past_value and @cntk.ops.sequence.future_value
     into a single function. This is useful when the time_step is computed and can
     be positive, negative, or 0.
@@ -111,8 +112,8 @@ items:
   type: function
   uid: cntk.ops.sequence.delay
 - example:
-  - "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> y = C.sequence.first(x)\n>>>\
-    \ # create one sequence of 4 tensors each with shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
+  - "```\n\n>>> x = C.sequence.input_variable(shape=(3,2))\n>>> y = C.sequence.first(x)\n\
+    >>> # create one sequence of 4 tensors each with shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
     >>> y.eval({x:x0})\narray([[[ 0.,  1.],\n         [ 2.,  3.],\n         [ 4.,\
     \  5.]]], dtype=float32)\n```"
   fullName: cntk.ops.sequence.first
@@ -127,7 +128,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 326
+    startLine: 356
   summary: Returns the first element of its symbolic input sequence `seq`
   syntax:
     content: first(seq, name='')
@@ -143,8 +144,8 @@ items:
   type: function
   uid: cntk.ops.sequence.first
 - example:
-  - "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> # Create one sequence with\
-    \ 4 tensors of shape (3, 2)\n>>> x0 = np.reshape(np.arange(24,dtype=np.float32),(1,4,3,2))\n\
+  - "```\n\n>>> x = C.sequence.input_variable(shape=(3,2))\n>>> # Create one sequence\
+    \ with 4 tensors of shape (3, 2)\n>>> x0 = np.reshape(np.arange(24,dtype=np.float32),(1,4,3,2))\n\
     >>> y = C.sequence.future_value(x) # using initial state of 0 by default\n>>>\
     \ y.eval({x:x0})\n[array([[[  6.,   7.],\n         [  8.,   9.],\n         [ 10.,\
     \  11.]],\n<BLANKLINE>\n        [[ 12.,  13.],\n         [ 14.,  15.],\n     \
@@ -163,7 +164,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 71
+    startLine: 100
   summary: 'This function returns the future value w.r.t. `x`. It is most often used
     when creating RNNs. The resulting tensor has the same shape as the input but is
     the next logical sample. The `time_step` parameter is the number of steps to look
@@ -193,7 +194,7 @@ items:
   type: function
   uid: cntk.ops.sequence.future_value
 - example:
-  - "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> z = C.greater(C.reduce_sum(x),60)\n\
+  - "```\n\n>>> x = C.sequence.input_variable(shape=(3,2))\n>>> z = C.greater(C.reduce_sum(x),60)\n\
     >>> y = C.sequence.gather(x,z)\n>>> # create one sequence of 4 tensors each with\
     \ shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
     >>> y.eval({x:x0})\n[array([[[ 12.,  13.],\n         [ 14.,  15.],\n         [\
@@ -211,7 +212,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 426
+    startLine: 453
   summary: 'Takes two sequences of the same length and returns a new sequence whose
     elements are those elements of sequence `seq` whose corresponding element in `condition`
     is True, preserving the ordering of `seq`.
@@ -250,12 +251,14 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 16
-  summary: 'It creates an input in the network: a place where data, such as features
-    and labels, should be provided.'
+    startLine: 17
+  summary: 'DEPRECATED.
+
+    It creates an input in the network: a place where data, such as features and labels,
+    should be provided.'
   syntax:
     content: input(shape, dtype=<cntk.default_options.default_override_or object at
-      0x0000020A7648D400>, needs_gradient=False, is_sparse=False, sequence_axis=Axis('defaultDynamicAxis'),
+      0x00000244A7127D68>, needs_gradient=False, is_sparse=False, sequence_axis=Axis('defaultDynamicAxis'),
       name='')
     parameters:
     - description: the shape of the input tensor
@@ -274,10 +277,10 @@ items:
       id: is_sparse
       type:
       - bool, optional
-    - description: a list of dynamic axis (e.g., batch axis, time axis)
-      id: dynamic_axes
+    - description: a dynamic axis (e.g., default_dynamic_axis())
+      id: sequence_axis
       type:
-      - list or tuple, default
+      - '@cntk.axis'
     - description: the name of the Function instance in the network
       id: name
       type:
@@ -286,11 +289,59 @@ items:
       description: '@cntk.variables.Variable'
   type: function
   uid: cntk.ops.sequence.input
+- fullName: cntk.ops.sequence.input_variable
+  langs:
+  - python
+  module: cntk.ops.sequence
+  name: input_variable
+  source:
+    id: input_variable
+    path: /bindings/python\cntk\internal\swig_helper.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 44
+  summary: 'It creates an input in the network: a place where data, such as features
+    and labels, should be provided.'
+  syntax:
+    content: input_variable(shape, dtype=<cntk.default_options.default_override_or
+      object at 0x00000244A7127E10>, needs_gradient=False, is_sparse=False, sequence_axis=Axis('defaultDynamicAxis'),
+      name='')
+    parameters:
+    - description: the shape of the input tensor
+      id: shape
+      type:
+      - tuple or int
+    - description: data type. Default is np.float32.
+      id: dtype
+      type:
+      - np.float32 or np.float64
+    - description: whether to back-propagates to it or not. False by default.
+      id: needs_gradients
+      type:
+      - bool, optional
+    - description: whether the variable is sparse (*False* by default)
+      id: is_sparse
+      type:
+      - bool, optional
+    - description: a dynamic axis (e.g., default_dynamic_axis())
+      id: sequence_axis
+      type:
+      - '@cntk.axis'
+    - description: the name of the Function instance in the network
+      id: name
+      type:
+      - str, optional
+    return:
+      description: '@cntk.variables.Variable'
+  type: function
+  uid: cntk.ops.sequence.input_variable
 - example:
   - '```
 
 
-    >>> x = C.sequence.input(shape=(3,2))
+    >>> x = C.sequence.input_variable(shape=(3,2))
 
     >>> y = C.sequence.is_first(x)
 
@@ -315,7 +366,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 250
+    startLine: 279
   summary: Returns a symbolic sequence of booleans with the same length as `seq`.
     The first element of the sequence is 1 and all others are 0.
   syntax:
@@ -335,7 +386,7 @@ items:
   - '```
 
 
-    >>> x = C.sequence.input(shape=(3,2))
+    >>> x = C.sequence.input_variable(shape=(3,2))
 
     >>> y = C.sequence.is_last(x)
 
@@ -360,7 +411,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 276
+    startLine: 305
   summary: Returns a symbolic sequence of booleans with the same length as `seq`.
     The last element of the sequence is 1 and all others are 0.
   syntax:
@@ -377,8 +428,8 @@ items:
   type: function
   uid: cntk.ops.sequence.is_last
 - example:
-  - "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> y = C.sequence.last(x)\n>>>\
-    \ # create one sequence of 4 tensors each with shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
+  - "```\n\n>>> x = C.sequence.input_variable(shape=(3,2))\n>>> y = C.sequence.last(x)\n\
+    >>> # create one sequence of 4 tensors each with shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
     >>> y.eval({x:x0})\narray([[[ 18.,  19.],\n         [ 20.,  21.],\n         [\
     \ 22.,  23.]]], dtype=float32)\n```"
   fullName: cntk.ops.sequence.last
@@ -393,7 +444,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 352
+    startLine: 382
   summary: Returns the last element of its symbolic input sequence `seq`
   syntax:
     content: last(seq, name='')
@@ -410,7 +461,7 @@ items:
   uid: cntk.ops.sequence.last
 - example:
   - "```\n\n>>> # create example input: one sequence with 4 tensors of shape (3, 2)\n\
-    >>> from cntk.layers.typing import Tensor, Sequence\n>>> x = C.sequence.input((3,2))\n\
+    >>> from cntk.layers.typing import Tensor, Sequence\n>>> x = C.sequence.input_variable((3,2))\n\
     >>> x0 = np.reshape(np.arange(24,dtype=np.float32),(1,4,3,2))\n>>> x0\narray([[[[\
     \  0.,   1.],\n         [  2.,   3.],\n         [  4.,   5.]],\n<BLANKLINE>\n\
     \        [[  6.,   7.],\n         [  8.,   9.],\n         [ 10.,  11.]],\n<BLANKLINE>\n\
@@ -424,9 +475,9 @@ items:
     \         [  8.,   9.],\n         [ 10.,  11.]],\n<BLANKLINE>\n        [[ 12.,\
     \  13.],\n         [ 14.,  15.],\n         [ 16.,  17.]]], dtype=float32)]\n```\n\
     \n```\n\n>>> # here, we pass a the initial_state as input data (e.g. sequence-to-sequence)\n\
-    >>> s = C.input((3,2))  # not a sequence, e.g. a final encoder hidden state\n\
-    >>> s0 = np.reshape(np.arange(6,dtype=np.float32)/2,(1,3,2))\n>>> s0\narray([[[\
-    \ 0. ,  0.5],\n        [ 1. ,  1.5],\n        [ 2. ,  2.5]]], dtype=float32)\n\
+    >>> s = C.input_variable((3,2))  # not a sequence, e.g. a final encoder hidden\
+    \ state\n>>> s0 = np.reshape(np.arange(6,dtype=np.float32)/2,(1,3,2))\n>>> s0\n\
+    array([[[ 0. ,  0.5],\n        [ 1. ,  1.5],\n        [ 2. ,  2.5]]], dtype=float32)\n\
     >>> y = C.sequence.past_value(x, initial_state=s)\n>>> y.eval({x:x0, s:s0}) #\
     \ same as the previous example except for the first time step\n[array([[[  0.\
     \ ,   0.5],\n         [  1. ,   1.5],\n         [  2. ,   2.5]],\n<BLANKLINE>\n\
@@ -446,7 +497,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 126
+    startLine: 155
   summary: 'This function returns the past value w.r.t. `x`. It is most often used
     when creating RNNs. The resulting tensor has the same shape as the input but is
     the previous logical sample. The `time_step` parameter is the number of steps
@@ -488,7 +539,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 602
+    startLine: 630
   summary: Computes the max of the input sequence's elements across the sequence axis.
   syntax:
     content: reduce_max(seq, name='')
@@ -504,8 +555,8 @@ items:
   type: function
   uid: cntk.ops.sequence.reduce_max
 - example:
-  - "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> # create one sequence of 4\
-    \ tensors each with shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
+  - "```\n\n>>> x = C.sequence.input_variable(shape=(3,2))\n>>> # create one sequence\
+    \ of 4 tensors each with shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
     >>> y = C.sequence.reduce_sum(x)\n>>> y.eval({x:x0})\narray([[[ 36.,  40.],\n\
     \         [ 44.,  48.],\n         [ 52.,  56.]]], dtype=float32)\n```"
   fullName: cntk.ops.sequence.reduce_sum
@@ -520,7 +571,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 576
+    startLine: 603
   summary: Computes the sum of the input sequence's elements across the sequence axis.
   syntax:
     content: reduce_sum(seq, name='')
@@ -536,9 +587,9 @@ items:
   type: function
   uid: cntk.ops.sequence.reduce_sum
 - example:
-  - "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> t = C.sequence.last(x)\n>>>\
-    \ b = C.sequence.is_first(x)\n>>> y = C.sequence.scatter(t, b)\n>>> # create one\
-    \ sequence of 4 tensors each with shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
+  - "```\n\n>>> x = C.sequence.input_variable(shape=(3,2))\n>>> t = C.sequence.last(x)\n\
+    >>> b = C.sequence.is_first(x)\n>>> y = C.sequence.scatter(t, b)\n>>> # create\
+    \ one sequence of 4 tensors each with shape (3,2)\n>>> x0 = np.reshape(np.arange(24.0,dtype=np.float32),(1,4,3,2))\n\
     >>> y.eval({x:x0})\n[array([[[ 18.,  19.],\n         [ 20.,  21.],\n         [\
     \ 22.,  23.]],\n<BLANKLINE>\n        [[  0.,   0.],\n         [  0.,   0.],\n\
     \         [  0.,   0.]],\n<BLANKLINE>\n        [[  0.,   0.],\n         [  0.,\
@@ -556,7 +607,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 472
+    startLine: 499
   summary: Performs the inverse of gather. The sequence `seq` must have as many elements
     as the number of True values in the sequence `condition`. It will return a sequence
     whose length is the same as the `condition` sequence with zeroes everywhere except
@@ -585,9 +636,7 @@ items:
       description: '@cntk.ops.functions'
   type: function
   uid: cntk.ops.sequence.scatter
-- example:
-  - TBA
-  fullName: cntk.ops.sequence.slice
+- fullName: cntk.ops.sequence.slice
   langs:
   - python
   module: cntk.ops.sequence
@@ -600,8 +649,15 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 302
-  summary: Slice the input sequence.
+    startLine: 331
+  summary: 'Slice the input sequence.
+
+    <SYSTEM MESSAGE: C:\peter\ms_code\cntk_all\CNTK\bindings\python\doc\cntk.ops.sequence.rst:15:
+    (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
+    Trying "todo" as canonical directive name.>
+
+    <SYSTEM MESSAGE: docstring of cntk.ops.sequence.slice:15: (ERROR/3) Unknown directive
+    type "todo".  .. todo:: add an example>'
   syntax:
     content: slice(seq, begin_index, end_index, name='')
     return:
@@ -620,7 +676,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 618
+    startLine: 647
   summary: Computes the softmax of the input across the sequence axis.
   syntax:
     content: softmax(seq, name='')
@@ -635,9 +691,7 @@ items:
       description: '@cntk.ops.functions'
   type: function
   uid: cntk.ops.sequence.softmax
-- example:
-  - TBA.
-  fullName: cntk.ops.sequence.unpack
+- fullName: cntk.ops.sequence.unpack
   langs:
   - python
   module: cntk.ops.sequence
@@ -649,12 +703,19 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 42
-  summary: This function unpacks the specified sequence operand 'x' along the most
-    significant static axis [-1] and pads any gaps with the specified 'padding_value'.
-    If the 'no_mask_output' argument is False, the returned Function has 2 outputs;
+    startLine: 71
+  summary: 'This function unpacks the specified sequence operand ''x'' along the most
+    significant static axis [-1] and pads any gaps with the specified ''padding_value''.
+    If the ''no_mask_output'' argument is False, the returned Function has 2 outputs;
     viz. the unpacked non-sequence data and a mask denoting the gaps in the unpacked
     output due to differences across lengths of the sequences in the operand.
+
+    <SYSTEM MESSAGE: C:\peter\ms_code\cntk_all\CNTK\bindings\python\doc\cntk.ops.sequence.rst:18:
+    (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
+    Trying "todo" as canonical directive name.>
+
+    <SYSTEM MESSAGE: docstring of cntk.ops.sequence.unpack:18: (ERROR/3) Unknown directive
+    type "todo".  .. todo:: add an example>'
   syntax:
     content: unpack(x, padding_value, no_mask_output=False, name='')
     parameters:
@@ -679,16 +740,15 @@ items:
   type: function
   uid: cntk.ops.sequence.unpack
 - example:
-  - "```\n\n>>> x = C.sequence.input(shape=(3,2))\n>>> z = C.greater(C.reduce_sum(x),\
+  - "```\n\n>>> x = C.sequence.input_variable(shape=(3,2))\n>>> z = C.greater(C.reduce_sum(x),\
     \ 60)\n>>> # create one sequence of 4 tensors each with shape (3,2)\n>>> x0 =\
     \ np.reshape(np.arange(24.0, dtype=np.float32), (1,4,3,2))\n>>> z.eval({x:x0})\n\
-    [array([[ 0.],\n        [ 0.],\n        [ 1.],\n        [ 1.]], dtype=float32)]\n\
-    >>> y = C.sequence.where(z)\n>>> y.eval({x:x0})\n[array([ 2.,  3.], dtype=float32)]\n\
-    ```\n\n```\n\n>>> # repeat frame[1] twice, frame[3] three times, and frame[4]\
-    \ twice\n>>> C.sequence.where(C.sequence.input(1)).eval([[[1], [2], [1], [3],\
-    \ [2]]])\n[array([ 0.,  1.,  1.,  2.,  3.,  3.,  3.,  4.,  4.], dtype=float32)]\n\
-    >>> # note that the above are the indices that are passed to\n```\n\n```\n\n>>>\
-    \ # repeat frames with a fractional factor\n>>> C.sequence.where(C.sequence.input(1)).eval([[[1.2]]*10])\n\
+    [array([ 0.,  0.,  1.,  1.], dtype=float32)]\n>>> y = C.sequence.where(z)\n>>>\
+    \ y.eval({x:x0})\n[array([ 2.,  3.], dtype=float32)]\n```\n\n```\n\n>>> # repeat\
+    \ frame[1] twice, frame[3] three times, and frame[4] twice\n>>> C.sequence.where(C.sequence.input_variable(1)).eval([[[1],\
+    \ [2], [1], [3], [2]]])\n[array([ 0.,  1.,  1.,  2.,  3.,  3.,  3.,  4.,  4.],\
+    \ dtype=float32)]\n>>> # note that the above are the indices that are passed to\n\
+    ```\n\n```\n\n>>> # repeat frames with a fractional factor\n>>> C.sequence.where(C.sequence.input_variable(1)).eval([[[1.2]]*10])\n\
     [array([ 0.,  0.,  1.,  2.,  3.,  4.,  5.,  5.,  6.,  7.,  8.,  9.],\n    dtype=float32)]\n\
     >>> # as a result, a 1.2 times stretch is realized by duplicating frame[0] and\
     \ frame[5]\n```"
@@ -704,7 +764,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 379
+    startLine: 409
   summary: 'Given a symbolic sequence `condition` of boolean-like (1/0) values, it
     will return a new sequence containing the indices for which the values were true.
 
@@ -756,6 +816,11 @@ references:
   name: input
   parent: cntk.ops.sequence
   uid: cntk.ops.sequence.input
+- fullName: cntk.ops.sequence.input_variable
+  isExternal: false
+  name: input_variable
+  parent: cntk.ops.sequence
+  uid: cntk.ops.sequence.input_variable
 - fullName: cntk.ops.sequence.is_first
   isExternal: false
   name: is_first

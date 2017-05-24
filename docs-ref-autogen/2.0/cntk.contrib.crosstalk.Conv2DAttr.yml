@@ -1,0 +1,78 @@
+#YamlMime:PythonReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalk.Conv2DAttr.filter_shape
+  - cntk.contrib.crosstalk.Conv2DAttr.num_filters
+  class: cntk.contrib.crosstalk.Conv2DAttr
+  fullName: cntk.contrib.crosstalk.Conv2DAttr
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: builtins.tuple
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: Conv2DAttr
+  source:
+    id: Conv2DAttr
+    path: null
+    remote:
+      branch: master
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: '
+
+    '
+  syntax:
+    content: Conv2DAttr(filter_shape, num_filters)
+  type: class
+  uid: cntk.contrib.crosstalk.Conv2DAttr
+- class: cntk.contrib.crosstalk.Conv2DAttr
+  fullName: cntk.contrib.crosstalk.Conv2DAttr.filter_shape
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: filter_shape
+  source:
+    id: filter_shape
+    path: null
+    remote:
+      branch: master
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: Alias for field number 0
+  syntax: {}
+  type: attribute
+  uid: cntk.contrib.crosstalk.Conv2DAttr.filter_shape
+- class: cntk.contrib.crosstalk.Conv2DAttr
+  fullName: cntk.contrib.crosstalk.Conv2DAttr.num_filters
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: num_filters
+  source:
+    id: num_filters
+    path: null
+    remote:
+      branch: master
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: Alias for field number 1
+  syntax: {}
+  type: attribute
+  uid: cntk.contrib.crosstalk.Conv2DAttr.num_filters
+references:
+- fullName: cntk.contrib.crosstalk.Conv2DAttr.filter_shape
+  isExternal: false
+  name: filter_shape
+  parent: cntk.contrib.crosstalk.Conv2DAttr
+  uid: cntk.contrib.crosstalk.Conv2DAttr.filter_shape
+- fullName: cntk.contrib.crosstalk.Conv2DAttr.num_filters
+  isExternal: false
+  name: num_filters
+  parent: cntk.contrib.crosstalk.Conv2DAttr
+  uid: cntk.contrib.crosstalk.Conv2DAttr.num_filters

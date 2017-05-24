@@ -7,7 +7,6 @@ items:
   - cntk.axis.Axis.default_batch_axis
   - cntk.axis.Axis.default_dynamic_axis
   - cntk.axis.Axis.default_input_variable_dynamic_axes
-  - cntk.axis.Axis.end_static_axis
   - cntk.axis.Axis.is_ordered
   - cntk.axis.Axis.is_static_axis
   - cntk.axis.Axis.name
@@ -44,7 +43,6 @@ items:
     Axis parameters can also be negative, which allows to refere axis starting from
     the last axis. Please be aware that Axis objects work in a column-major wise,
     as opposed to any other function in the library.
-
 
 
 
@@ -178,31 +176,6 @@ items:
   type: method
   uid: cntk.axis.Axis.default_input_variable_dynamic_axes
 - class: cntk.axis.Axis
-  fullName: cntk.axis.Axis.end_static_axis
-  langs:
-  - python
-  module: cntk.axis
-  name: end_static_axis
-  source:
-    id: end_static_axis
-    path: /bindings/python\cntk\internal\swig_helper.py
-    remote:
-      branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 150
-  summary: 'DEPRECATED.
-
-    Creates an Axis object representing a new leading static axis.'
-  syntax:
-    content: end_static_axis()
-    return:
-      description: axis object representing a new leading static axis.
-      type:
-      - Axis
-  type: method
-  uid: cntk.axis.Axis.end_static_axis
-- class: cntk.axis.Axis
   fullName: cntk.axis.Axis.is_ordered
   langs:
   - python
@@ -282,7 +255,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 166
+    startLine: 150
   summary: Creates an Axis object representing a new leading static axis.
   syntax:
     content: new_leading_axis()
@@ -399,11 +372,6 @@ references:
   name: default_input_variable_dynamic_axes
   parent: cntk.axis.Axis
   uid: cntk.axis.Axis.default_input_variable_dynamic_axes
-- fullName: cntk.axis.Axis.end_static_axis
-  isExternal: false
-  name: end_static_axis
-  parent: cntk.axis.Axis
-  uid: cntk.axis.Axis.end_static_axis
 - fullName: cntk.axis.Axis.is_ordered
   isExternal: false
   name: is_ordered

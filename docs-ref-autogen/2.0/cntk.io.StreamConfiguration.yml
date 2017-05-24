@@ -19,10 +19,10 @@ items:
       branch: master
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 620
+    startLine: 630
   summary: Configuration of a stream in a text format reader.
   syntax:
-    content: StreamConfiguration(name, dim, is_sparse=False, stream_alias='')
+    content: StreamConfiguration(name, dim, is_sparse=False, stream_alias='', defines_mb_size=False)
     parameters:
     - description: name of this stream
       id: name
@@ -41,6 +41,10 @@ items:
       id: stream_alias
       type:
       - str, defaults to ''
+    - description: whether this stream defines the minibatch size.
+      id: defines_mb_size
+      type:
+      - bool, defaults to False
   type: class
   uid: cntk.io.StreamConfiguration
 references: []

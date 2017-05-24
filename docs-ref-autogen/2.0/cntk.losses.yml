@@ -24,9 +24,7 @@ items:
     startLine: 0
   type: module
   uid: cntk.losses
-- example:
-  - TBA
-  fullName: cntk.losses.binary_cross_entropy
+- fullName: cntk.losses.binary_cross_entropy
   langs:
   - python
   module: cntk.losses
@@ -39,8 +37,16 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 90
-  summary: Computes the binary cross entropy (aka logistic loss) between the `output`
+  summary: 'Computes the binary cross entropy (aka logistic loss) between the `output`
     and `target`.
+
+    <SYSTEM MESSAGE: C:\peter\ms_code\cntk_all\CNTK\bindings\python\doc\cntk.losses.rst:10:
+    (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
+    Trying "todo" as canonical directive name.>
+
+    <SYSTEM MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\losses\__init__.py:docstring
+    of cntk.losses.binary_cross_entropy:10: (ERROR/3) Unknown directive type "todo".  ..
+    todo:: add an example>'
   syntax:
     content: binary_cross_entropy(output, target, name='')
     parameters:
@@ -60,9 +66,9 @@ items:
 - example:
   - "```\n\n>>> a = np.asarray([-1, -1, -1, 1, 1, -1, 1, 1, -1, 1, 1, -1]).reshape(3,2,2)\n\
     >>> b = np.asarray([1, 1, -1, 1, 1, -1, 1, -1, -1, -1, -1, 1]).reshape(3,2,2)\n\
-    >>> x = C.sequence.input(shape=(2,))\n>>> y = C.sequence.input(shape=(2,))\n>>>\
-    \ np.round(C.cosine_distance(x,y).eval({x:a,y:b}),5)\narray([[-1.,  1.],\n   \
-    \    [ 1.,  0.],\n       [ 0., -1.]], dtype=float32)\n```"
+    >>> x = C.sequence.input_variable(shape=(2,))\n>>> y = C.sequence.input_variable(shape=(2,))\n\
+    >>> np.round(C.cosine_distance(x,y).eval({x:a,y:b}),5)\narray([[-1.,  1.],\n \
+    \      [ 1.,  0.],\n       [ 0., -1.]], dtype=float32)\n```"
   fullName: cntk.losses.cosine_distance
   langs:
   - python
@@ -94,8 +100,8 @@ items:
 - example:
   - "```\n\n>>> qry = np.asarray([1., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 1.],\
     \ dtype=np.float32).reshape(3, 1, 4)\n>>> doc = np.asarray([1., 1., 0., 0., 0.,\
-    \ 1., 1., 0., 0., 0., 1., 1.], dtype=np.float32).reshape(3, 1, 4)\n>>> x = C.sequence.input(shape=(4,))\n\
-    >>> y = C.sequence.input(shape=(4,))\n>>> model = C.cosine_distance_with_negative_samples(x,\
+    \ 1., 1., 0., 0., 0., 1., 1.], dtype=np.float32).reshape(3, 1, 4)\n>>> x = C.sequence.input_variable(shape=(4,))\n\
+    >>> y = C.sequence.input_variable(shape=(4,))\n>>> model = C.cosine_distance_with_negative_samples(x,\
     \ y, shift=1, num_negative_samples=2)\n>>> np.round(model.eval({x: qry, y: doc}),\
     \ decimals=4)\narray([[[ 1. ,  0.5,  0. ]],\n<BLANKLINE>\n       [[ 1. ,  0.5,\
     \  0.5]],\n<BLANKLINE>\n       [[ 1. ,  0. ,  0.5]]], dtype=float32)\n```"
@@ -177,7 +183,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 134
+    startLine: 136
   summary: 'This operation computes the cross entropy between the `target_vector`
     and the softmax of the `output_vector`. The elements of `target_vector` have to
     be non-negative and should sum to 1. The `output_vector` can contain any values.
@@ -208,13 +214,13 @@ items:
   type: function
   uid: cntk.losses.cross_entropy_with_softmax
 - example:
-  - "```\n\n>>> group = C.input((1,))\n>>> score = C.input((1,), needs_gradient=True)\n\
-    >>> gain  = C.input((1,))\n>>> g = np.array([1, 1, 2, 2], dtype=np.float32).reshape(4,1)\n\
-    >>> s = np.array([1, 2, 3, 4], dtype=np.float32).reshape(4,1)\n>>> n = np.array([7,\
-    \ 1, 3, 1], dtype=np.float32).reshape(4,1)\n>>> f = C.lambda_rank(score, gain,\
-    \ group)\n>>> np.round(f.grad({score:s, gain:n, group: g}, wrt=[score]),4)\narray([[-0.2121],\n\
-    <BLANKLINE>\n       [ 0.2121],\n<BLANKLINE>\n       [-0.1486],\n<BLANKLINE>\n\
-    \       [ 0.1486]], dtype=float32)\n```"
+  - "```\n\n>>> group = C.input_variable((1,))\n>>> score = C.input_variable((1,),\
+    \ needs_gradient=True)\n>>> gain  = C.input_variable((1,))\n>>> g = np.array([1,\
+    \ 1, 2, 2], dtype=np.float32).reshape(4,1)\n>>> s = np.array([1, 2, 3, 4], dtype=np.float32).reshape(4,1)\n\
+    >>> n = np.array([7, 1, 3, 1], dtype=np.float32).reshape(4,1)\n>>> f = C.lambda_rank(score,\
+    \ gain, group)\n>>> np.round(f.grad({score:s, gain:n, group: g}, wrt=[score]),4)\n\
+    array([[-0.2121],\n<BLANKLINE>\n       [ 0.2121],\n<BLANKLINE>\n       [-0.1486],\n\
+    <BLANKLINE>\n       [ 0.1486]], dtype=float32)\n```"
   fullName: cntk.losses.lambda_rank
   langs:
   - python
@@ -227,7 +233,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 206
+    startLine: 208
   summary: 'Groups samples according to `group`, sorts them within each group based
     on `output` and computes the Normalized Discounted Cumulative Gain (NDCG) at infinity
     for each group. Concretely, the Discounted Cumulative Gain (DCG) at infinity is:
@@ -265,9 +271,9 @@ items:
   - '```
 
 
-    >>> i1 = C.input((1,2))
+    >>> i1 = C.input_variable((1,2))
 
-    >>> i2 = C.input((1,2))
+    >>> i2 = C.input_variable((1,2))
 
     >>> C.squared_error(i1,i2).eval({i1:np.asarray([[[2., 1.]]], dtype=np.float32),
     i2:np.asarray([[[4., 6.]]], dtype=np.float32)})
@@ -298,7 +304,7 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 176
+    startLine: 178
   summary: This operation computes the sum of the squared difference between elements
     in the two input matrices. The result is a scalar (i.e., one by one matrix). This
     is often used as a training criterion.
@@ -318,9 +324,7 @@ items:
       description: '@cntk.ops.functions.Function'
   type: function
   uid: cntk.losses.squared_error
-- example:
-  - TBA
-  fullName: cntk.losses.weighted_binary_cross_entropy
+- fullName: cntk.losses.weighted_binary_cross_entropy
   langs:
   - python
   module: cntk.losses
@@ -332,9 +336,17 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 111
-  summary: This operation computes the weighted binary cross entropy (aka logistic
+    startLine: 112
+  summary: 'This operation computes the weighted binary cross entropy (aka logistic
     loss) between the `output` and `target`.
+
+    <SYSTEM MESSAGE: C:\peter\ms_code\cntk_all\CNTK\bindings\python\doc\cntk.losses.rst:11:
+    (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
+    Trying "todo" as canonical directive name.>
+
+    <SYSTEM MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\losses\__init__.py:docstring
+    of cntk.losses.weighted_binary_cross_entropy:11: (ERROR/3) Unknown directive type
+    "todo".  .. todo:: add an example>'
   syntax:
     content: weighted_binary_cross_entropy(output, target, weight, name='')
     parameters:

@@ -8,7 +8,6 @@ items:
   - cntk.device.cpu
   - cntk.device.get_gpu_properties
   - cntk.device.gpu
-  - cntk.device.set_default_device
   - cntk.device.set_excluded_devices
   - cntk.device.try_set_default_device
   - cntk.device.use_default_device
@@ -83,7 +82,7 @@ items:
       branch: master
       path: /bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 178
+    startLine: 167
   summary: Retrieves and returns additional properties (total memory, number of CUDA
     cores, etc.) for the specified GPU device. This method will raise an exception
     if a CPU device is specified as an argument.
@@ -116,24 +115,6 @@ items:
       - DeviceDescriptor
   type: function
   uid: cntk.device.gpu
-- fullName: cntk.device.set_default_device
-  langs:
-  - python
-  module: cntk.device
-  name: set_default_device
-  source:
-    id: set_default_device
-    path: /bindings/python\cntk\device.py
-    remote:
-      branch: master
-      path: /bindings/python\cntk\device.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 115
-  summary: See `try_set_default_device()`
-  syntax:
-    content: set_default_device(new_default_device)
-  type: function
-  uid: cntk.device.set_default_device
 - fullName: cntk.device.set_excluded_devices
   langs:
   - python
@@ -146,7 +127,7 @@ items:
       branch: master
       path: /bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 161
+    startLine: 150
   summary: Allows to specify a list of excluded devices that cannot be used as globally
     default (neither auto-selected nor explicitly specified by `try_set_default_device()`).
     For example, to avoid auto-selecting the CPU, invoke `set_excluded_devices([cpu()])`.
@@ -173,7 +154,7 @@ items:
       branch: master
       path: /bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 126
+    startLine: 115
   summary: "Tries to set the specified device as the globally default, optionally\
     \ acquiring an exclusive (cooperative) lock on the device (only a GPU device can\
     \ be locked).\nThe default device can only be changed if it has not yet been frozen\
@@ -261,11 +242,6 @@ references:
   name: gpu
   parent: cntk.device
   uid: cntk.device.gpu
-- fullName: cntk.device.set_default_device
-  isExternal: false
-  name: set_default_device
-  parent: cntk.device
-  uid: cntk.device.set_default_device
 - fullName: cntk.device.set_excluded_devices
   isExternal: false
   name: set_excluded_devices

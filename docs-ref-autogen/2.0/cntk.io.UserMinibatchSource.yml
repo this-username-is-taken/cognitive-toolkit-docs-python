@@ -2,7 +2,9 @@
 api_name: []
 items:
 - children:
+  - cntk.io.UserMinibatchSource.get_checkpoint_state
   - cntk.io.UserMinibatchSource.next_minibatch
+  - cntk.io.UserMinibatchSource.restore_from_checkpoint
   - cntk.io.UserMinibatchSource.stream_info
   - cntk.io.UserMinibatchSource.stream_infos
   class: cntk.io.UserMinibatchSource
@@ -24,8 +26,10 @@ items:
       branch: master
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 425
+    startLine: 366
   summary: 'Base class of all user minibatch sources.
+
+
 
 
 
@@ -34,6 +38,27 @@ items:
     content: UserMinibatchSource()
   type: class
   uid: cntk.io.UserMinibatchSource
+- class: cntk.io.UserMinibatchSource
+  fullName: cntk.io.UserMinibatchSource.get_checkpoint_state
+  langs:
+  - python
+  module: cntk.io
+  name: get_checkpoint_state
+  source:
+    id: get_checkpoint_state
+    path: /bindings/python\cntk\io\__init__.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 432
+  summary: Returns a dictionary describing the current state of the minibatch source.
+  syntax:
+    content: get_checkpoint_state(self)
+    return:
+      description: dictionary, that can be later used on `restore_from_checkpoint()`.
+  type: method
+  uid: cntk.io.UserMinibatchSource.get_checkpoint_state
 - class: cntk.io.UserMinibatchSource
   fullName: cntk.io.UserMinibatchSource.next_minibatch
   langs:
@@ -47,7 +72,7 @@ items:
       branch: master
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 457
+    startLine: 398
   summary: Function to be implemented by the user.
   syntax:
     content: next_minibatch(self, num_samples, number_of_workers, worker_rank, device=None)
@@ -69,6 +94,30 @@ items:
   type: method
   uid: cntk.io.UserMinibatchSource.next_minibatch
 - class: cntk.io.UserMinibatchSource
+  fullName: cntk.io.UserMinibatchSource.restore_from_checkpoint
+  langs:
+  - python
+  module: cntk.io
+  name: restore_from_checkpoint
+  source:
+    id: restore_from_checkpoint
+    path: /bindings/python\cntk\io\__init__.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 447
+  summary: Sets the state of the checkpoint.
+  syntax:
+    content: restore_from_checkpoint(self, state)
+    parameters:
+    - description: dictionary containing the state
+      id: state
+      type:
+      - dict
+  type: method
+  uid: cntk.io.UserMinibatchSource.restore_from_checkpoint
+- class: cntk.io.UserMinibatchSource
   fullName: cntk.io.UserMinibatchSource.stream_info
   langs:
   - python
@@ -81,7 +130,7 @@ items:
       branch: master
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 449
+    startLine: 390
   summary: Gets the description of the stream with given name. Throws an exception
     if there are none or multiple streams with this same name.
   syntax:
@@ -101,7 +150,7 @@ items:
       branch: master
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 435
+    startLine: 376
   summary: Function to be implemented by the user.
   syntax:
     content: stream_infos(self)
@@ -110,11 +159,21 @@ items:
   type: method
   uid: cntk.io.UserMinibatchSource.stream_infos
 references:
+- fullName: cntk.io.UserMinibatchSource.get_checkpoint_state
+  isExternal: false
+  name: get_checkpoint_state
+  parent: cntk.io.UserMinibatchSource
+  uid: cntk.io.UserMinibatchSource.get_checkpoint_state
 - fullName: cntk.io.UserMinibatchSource.next_minibatch
   isExternal: false
   name: next_minibatch
   parent: cntk.io.UserMinibatchSource
   uid: cntk.io.UserMinibatchSource.next_minibatch
+- fullName: cntk.io.UserMinibatchSource.restore_from_checkpoint
+  isExternal: false
+  name: restore_from_checkpoint
+  parent: cntk.io.UserMinibatchSource
+  uid: cntk.io.UserMinibatchSource.restore_from_checkpoint
 - fullName: cntk.io.UserMinibatchSource.stream_info
   isExternal: false
   name: stream_info

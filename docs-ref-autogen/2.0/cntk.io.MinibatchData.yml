@@ -10,7 +10,6 @@ items:
   - cntk.io.MinibatchData.num_samples
   - cntk.io.MinibatchData.num_sequences
   - cntk.io.MinibatchData.shape
-  - cntk.io.MinibatchData.value
   class: cntk.io.MinibatchData
   fullName: cntk.io.MinibatchData
   inheritance:
@@ -34,7 +33,6 @@ items:
     startLine: 25
   summary: 'Holds a minibatch of input data. This is never directly created, but only
     returned by `MinibatchSource` instances.
-
 
 
 
@@ -198,24 +196,6 @@ items:
   syntax: {}
   type: attribute
   uid: cntk.io.MinibatchData.shape
-- class: cntk.io.MinibatchData
-  fullName: cntk.io.MinibatchData.value
-  langs:
-  - python
-  module: cntk.io
-  name: value
-  source:
-    id: value
-    path: null
-    remote:
-      branch: master
-      path: null
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: null
-  summary: The value of the minibatch as a NumPy array.
-  syntax: {}
-  type: attribute
-  uid: cntk.io.MinibatchData.value
 references:
 - fullName: cntk.io.MinibatchData.as_sequences
   isExternal: false
@@ -257,8 +237,3 @@ references:
   name: shape
   parent: cntk.io.MinibatchData
   uid: cntk.io.MinibatchData.shape
-- fullName: cntk.io.MinibatchData.value
-  isExternal: false
-  name: value
-  parent: cntk.io.MinibatchData
-  uid: cntk.io.MinibatchData.value

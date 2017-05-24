@@ -77,7 +77,7 @@ items:
     content: get_default_override(function_or_class, **kwargs)
     parameters:
     - description: "the function that calls this. For example:\n\n<!-- literal_block\
-        \ {\"classes\": [], \"xml:space\": \"preserve\", \"ids\": [], \"backrefs\"\
+        \ {\"ids\": [], \"xml:space\": \"preserve\", \"classes\": [], \"backrefs\"\
         : [], \"names\": [], \"dupnames\": []} -->\n\n````\n\n   def Convolution(args,\
         \ init=default_override_or(glorot_uniform()), activation=default_override_or(identity),\
         \ pad=default_override_or(False)):\n   init = _get_default_override(Convolution,\

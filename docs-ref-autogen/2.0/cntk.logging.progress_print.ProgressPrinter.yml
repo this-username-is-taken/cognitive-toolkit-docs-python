@@ -37,7 +37,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 27
+    startLine: 26
   summary: 'Allows printing various statistics (e.g. loss and metric) as training/evaluation
     progresses.
 
@@ -137,7 +137,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 162
+    startLine: 161
   summary: 'DEPRECATED.
 
     Returns: the average loss since the last print'
@@ -158,7 +158,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 144
+    startLine: 143
   summary: 'DEPRECATED.
 
     Returns: the average loss since the start of accumulation'
@@ -179,7 +179,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 171
+    startLine: 170
   summary: 'DEPRECATED.
 
     Returns: the average metric since the last print'
@@ -200,7 +200,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 153
+    startLine: 152
   summary: 'DEPRECATED.
 
     Returns: the average metric since the start of accumulation'
@@ -221,7 +221,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 124
+    startLine: 123
   summary: Prints the given message signifying the end of training.
   syntax:
     content: end_progress_print(self, msg='')
@@ -245,7 +245,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 226
+    startLine: 225
   summary: 'DEPRECATED.
 
     If on an arithmetic schedule print an epoch summary using the ''start'' accumulators.
@@ -273,7 +273,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 135
+    startLine: 134
   summary: Prints any message the user wishes to place in the log.
   syntax:
     content: log(self, message)
@@ -297,7 +297,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 336
+    startLine: 335
   syntax:
     content: on_training_update_end(self)
   type: method
@@ -315,7 +315,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 344
+    startLine: 343
   syntax:
     content: on_write_distributed_sync_update(self, samples, updates, aggregate_metric)
   type: method
@@ -333,7 +333,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 416
+    startLine: 415
   syntax:
     content: on_write_test_summary(self, samples, updates, summaries, aggregate_metric,
       elapsed_milliseconds)
@@ -352,7 +352,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 340
+    startLine: 339
   syntax:
     content: on_write_test_update(self, samples, updates, aggregate_metric)
   type: method
@@ -370,7 +370,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 391
+    startLine: 390
   syntax:
     content: on_write_training_summary(self, samples, updates, summaries, aggregate_loss,
       aggregate_metric, elapsed_milliseconds)
@@ -389,7 +389,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 332
+    startLine: 331
   syntax:
     content: on_write_training_update(self, samples, updates, aggregate_loss, aggregate_metric)
   type: method
@@ -407,7 +407,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 196
+    startLine: 195
   summary: 'DEPRECATED.
 
     Resets the ''last'' accumulators
@@ -431,7 +431,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 180
+    startLine: 179
   summary: 'DEPRECATED.
 
     Resets the ''start'' accumulators
@@ -455,7 +455,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 258
+    startLine: 257
   summary: 'DEPRECATED.
 
     Updates the accumulators using the loss, the minibatch_size and the optional metric.'
@@ -490,7 +490,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 310
+    startLine: 309
   summary: 'DEPRECATED.
 
     Update the current loss, the minibatch size and optionally the metric using the
@@ -521,7 +521,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 213
+    startLine: 212
   syntax:
     content: write(self, key, value)
   type: method

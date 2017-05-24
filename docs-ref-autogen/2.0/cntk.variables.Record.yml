@@ -4,6 +4,8 @@ items:
 - children:
   - cntk.variables.Record.updated_with
   class: cntk.variables.Record
+  example:
+  - "```\n\n>>> r = Record(x = 13, y = 42)\n>>> r.x\n    13\n```"
   fullName: cntk.variables.Record
   inheritance:
   - inheritance:
@@ -22,7 +24,7 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 11
   summary: 'Easy construction of a record (=immutable singleton class) from keyword
-    arguments. e.g. r = Record(x = 13, y = 42) ; x = r.x
+    arguments.
 
     '
   syntax:
@@ -36,6 +38,9 @@ items:
   type: class
   uid: cntk.variables.Record
 - class: cntk.variables.Record
+  example:
+  - "```\n\n>>> r = Record(x = 13)\n>>> r.x\n    13\n>>> r2 = r.updated_with(x = 42)\n\
+    >>> r2.x\n    42\n```"
   fullName: cntk.variables.Record.updated_with
   langs:
   - python
@@ -48,9 +53,8 @@ items:
       branch: master
       path: /bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 33
+    startLine: 37
   summary: Create a new Record from an existing one with members modified or added.
-    e.g. r = Record(x = 13) ; print(r.x) ; r2 = r.updated_with(x = 42) ; print(r2.x)
   syntax:
     content: updated_with(self, **kwargs)
     parameters:

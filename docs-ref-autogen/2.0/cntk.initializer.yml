@@ -9,6 +9,7 @@ items:
   - cntk.initializer.he_uniform
   - cntk.initializer.initializer_with_rank
   - cntk.initializer.normal
+  - cntk.initializer.truncated_normal
   - cntk.initializer.uniform
   - cntk.initializer.xavier
   fullName: cntk.initializer
@@ -282,6 +283,38 @@ items:
         distribution with mean *0* and standard deviation *scale*.
   type: function
   uid: cntk.initializer.normal
+- fullName: cntk.initializer.truncated_normal
+  langs:
+  - python
+  module: cntk.initializer
+  name: truncated_normal
+  source:
+    id: truncated_normal
+    path: /bindings/python\cntk\initializer.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\initializer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 183
+  summary: Truncated normal initializer. The resulting values are drawn from a truncated
+    normal distribution and are always within two standard deviations from the mean
+    (which is 0).
+  syntax:
+    content: truncated_normal(stdev, seed=None)
+    parameters:
+    - description: standard deviation
+      id: stdev
+      type:
+      - float
+    - description: random seed
+      id: seed
+      type:
+      - int
+    return:
+      description: initializer for @cntk.variables.Parameter initialized to truncated
+        Gaussian distribution between *2*stdev[-1, 1]*
+  type: function
+  uid: cntk.initializer.truncated_normal
 - fullName: cntk.initializer.uniform
   langs:
   - python
@@ -308,9 +341,9 @@ items:
       type:
       - int
     return:
-      description: initializer for @cntk.variables.Parameter initialized to uniform
-        distribution between *scale*[-1.0, 1.0]* note this maps to the "uniform1"
-        distribution in BrainScript.
+      description: 'initializer for @cntk.variables.Parameter initialized to uniform
+        distribution between *scale*[-1.0, 1.0]*. Note: this maps to the "uniform1"
+        distribution in BrainScript.'
   type: function
   uid: cntk.initializer.uniform
 - fullName: cntk.initializer.xavier
@@ -387,6 +420,11 @@ references:
   name: normal
   parent: cntk.initializer
   uid: cntk.initializer.normal
+- fullName: cntk.initializer.truncated_normal
+  isExternal: false
+  name: truncated_normal
+  parent: cntk.initializer
+  uid: cntk.initializer.truncated_normal
 - fullName: cntk.initializer.uniform
   isExternal: false
   name: uniform

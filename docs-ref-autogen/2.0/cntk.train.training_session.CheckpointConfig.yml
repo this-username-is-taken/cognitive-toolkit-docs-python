@@ -33,14 +33,14 @@ items:
       id: frequency
       type:
       - int
-    - description: saves all checkpoints, using `filename` as prefix and checkpoint
-        index as a suffix.
-      id: preserve_all
-      type:
-      - bool
     - description: flag, indicating whether to restore from available checkpoint before
         the start of the training
       id: restore
+      type:
+      - bool
+    - description: saves all checkpoints, using `filename` as prefix and checkpoint
+        index as a suffix.
+      id: preserve_all
       type:
       - bool
   type: class

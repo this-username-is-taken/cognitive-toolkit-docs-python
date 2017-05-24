@@ -5,6 +5,33 @@
     - href: cntk.axis.Axis.yml
       name: cntk.axis.Axis
     name: axis
+  - href: cntk.contrib.yml
+    items:
+    - href: cntk.contrib.crosstalk.yml
+      items:
+      - href: cntk.contrib.crosstalk.crosstalk_cntk.yml
+        items:
+        - href: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.yml
+          name: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+        name: cntk.contrib.crosstalk.crosstalk_cntk
+      - href: cntk.contrib.crosstalk.Conv2DArgs.yml
+        name: cntk.contrib.crosstalk.Conv2DArgs
+      - href: cntk.contrib.crosstalk.Conv2DAttr.yml
+        name: cntk.contrib.crosstalk.Conv2DAttr
+      - href: cntk.contrib.crosstalk.Crosstalk.yml
+        name: cntk.contrib.crosstalk.Crosstalk
+      - href: cntk.contrib.crosstalk.EmbedAttr.yml
+        name: cntk.contrib.crosstalk.EmbedAttr
+      - href: cntk.contrib.crosstalk.FuncInfo.yml
+        name: cntk.contrib.crosstalk.FuncInfo
+      - href: cntk.contrib.crosstalk.RnnArgs.yml
+        name: cntk.contrib.crosstalk.RnnArgs
+      - href: cntk.contrib.crosstalk.RnnAttr.yml
+        name: cntk.contrib.crosstalk.RnnAttr
+      - href: cntk.contrib.crosstalk.VarInfo.yml
+        name: cntk.contrib.crosstalk.VarInfo
+      name: cntk.contrib.crosstalk
+    name: contrib
   - href: cntk.core.yml
     items:
     - href: cntk.core.NDArrayView.yml
@@ -114,6 +141,11 @@
     name: losses
   - href: cntk.metrics.yml
     name: metrics
+  - href: cntk.misc.yml
+    items:
+    - href: cntk.misc.optimized_rnnstack_converter.yml
+      name: cntk.misc.optimized_rnnstack_converter
+    name: misc
   - href: cntk.ops.yml
     items:
     - href: cntk.ops.functions.yml

@@ -2,6 +2,7 @@
 api_name: []
 items:
 - children:
+  - cntk.io.Base64ImageDeserializer
   - cntk.io.CTFDeserializer
   - cntk.io.HTKFeatureDeserializer
   - cntk.io.HTKMLFDeserializer
@@ -29,6 +30,43 @@ items:
     startLine: 0
   type: package
   uid: cntk.io
+- fullName: cntk.io.Base64ImageDeserializer
+  langs:
+  - python
+  module: cntk.io
+  name: Base64ImageDeserializer
+  seealsoContent: "See also: >>:cntkwiki:`Base64ImageDeserializer options <BrainScript-and-Python---Understanding-and-Extending-Readers#base64imagedeserializer-options>`<<\n\
+    \n  <SYSTEM MESSAGE: c:\\local\\anaconda3-4.1.1-windows-x86_64\\lib\\site-packages\\\
+    cntk\\io\\__init__.py:docstring of cntk.io.Base64ImageDeserializer:12: (INFO/1)\
+    \ No role entry for \"cntkwiki\" in module \"docutils.parsers.rst.languages.en\"\
+    . Trying \"cntkwiki\" as canonical role name.>\n\n  <SYSTEM MESSAGE: c:\\local\\\
+    anaconda3-4.1.1-windows-x86_64\\lib\\site-packages\\cntk\\io\\__init__.py:docstring\
+    \ of cntk.io.Base64ImageDeserializer:12: (ERROR/3) Unknown interpreted text role\
+    \ \"cntkwiki\".>"
+  source:
+    id: Base64ImageDeserializer
+    path: /bindings/python\cntk\io\__init__.py
+    remote:
+      branch: master
+      path: /bindings/python\cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 579
+  summary: "Configures the image reader that reads base64 encoded images and corresponding\
+    \ labels from a file of the form:\n<!-- literal_block {\"ids\": [], \"xml:space\"\
+    : \"preserve\", \"classes\": [], \"backrefs\": [], \"names\": [], \"dupnames\"\
+    : []} -->\n\n````\n\n   [sequenceId <tab>] <numerical label (0-based class id)>\
+    \ <tab> <base64 encoded image>\n   ````\nSimilarly to the ImageDeserializer, the\
+    \ sequenceId prefix is optional and can be omitted."
+  syntax:
+    content: Base64ImageDeserializer(filename, streams)
+    parameters:
+    - description: file name of the input file dataset that contains images and corresponding
+        labels
+      id: filename
+      type:
+      - str
+  type: function
+  uid: cntk.io.Base64ImageDeserializer
 - fullName: cntk.io.CTFDeserializer
   langs:
   - python
@@ -36,10 +74,10 @@ items:
   name: CTFDeserializer
   seealsoContent: "See also: >>:cntkwiki:`CNTKTextReader format <BrainScript-CNTKTextFormat-Reader>`<<\n\
     \n  <SYSTEM MESSAGE: c:\\local\\anaconda3-4.1.1-windows-x86_64\\lib\\site-packages\\\
-    cntk\\io\\__init__.py:docstring of cntk.io.CTFDeserializer:13: (INFO/1) No role\
+    cntk\\io\\__init__.py:docstring of cntk.io.CTFDeserializer:16: (INFO/1) No role\
     \ entry for \"cntkwiki\" in module \"docutils.parsers.rst.languages.en\". Trying\
     \ \"cntkwiki\" as canonical role name.>\n\n  <SYSTEM MESSAGE: c:\\local\\anaconda3-4.1.1-windows-x86_64\\\
-    lib\\site-packages\\cntk\\io\\__init__.py:docstring of cntk.io.CTFDeserializer:13:\
+    lib\\site-packages\\cntk\\io\\__init__.py:docstring of cntk.io.CTFDeserializer:16:\
     \ (ERROR/3) Unknown interpreted text role \"cntkwiki\".>"
   source:
     id: CTFDeserializer
@@ -48,13 +86,13 @@ items:
       branch: master
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 592
+    startLine: 599
   summary: "Configures the CNTK text-format reader that reads text-based files with\
-    \ lines of the form:\n<!-- literal_block {\"classes\": [], \"xml:space\": \"preserve\"\
-    , \"ids\": [], \"backrefs\": [], \"names\": [], \"dupnames\": []} -->\n\n````\n\
-    \n   [Sequence_Id] (Sample)+\n   ````\nwhere:\n<!-- literal_block {\"classes\"\
-    : [], \"xml:space\": \"preserve\", \"ids\": [], \"backrefs\": [], \"names\": [],\
-    \ \"dupnames\": []} -->\n\n````\n\n   Sample=|Input_Name (Value )*\n   ````"
+    \ lines of the form:\n<!-- literal_block {\"ids\": [], \"xml:space\": \"preserve\"\
+    , \"classes\": [], \"backrefs\": [], \"names\": [], \"dupnames\": []} -->\n\n\
+    ````\n\n   [Sequence_Id] (Sample)+\n   ````\nwhere:\n<!-- literal_block {\"ids\"\
+    : [], \"xml:space\": \"preserve\", \"classes\": [], \"backrefs\": [], \"names\"\
+    : [], \"dupnames\": []} -->\n\n````\n\n   Sample=|Input_Name (Value )*\n   ````"
   syntax:
     content: CTFDeserializer(filename, streams)
     parameters:
@@ -62,6 +100,9 @@ items:
       id: filename
       type:
       - str
+    - description: any dictionary-like object that contains a mapping from stream
+        names to `StreamDef` objects. Each StreamDef object configures an input stream.
+      id: streams
   type: function
   uid: cntk.io.CTFDeserializer
 - fullName: cntk.io.HTKFeatureDeserializer
@@ -76,7 +117,7 @@ items:
       branch: master
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 489
+    startLine: 470
   summary: Configures the HTK feature reader that reads speech data from scp files.
   syntax:
     content: HTKFeatureDeserializer(streams)
@@ -98,7 +139,7 @@ items:
       branch: master
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 519
+    startLine: 502
   summary: Configures an HTK label reader that reads speech HTK format MLF (Master
     Label File)
   syntax:
@@ -137,14 +178,14 @@ items:
       branch: master
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 546
+    startLine: 557
   summary: "Configures the image reader that reads images and corresponding labels\
-    \ from a file of the form:\n<!-- literal_block {\"classes\": [], \"xml:space\"\
-    : \"preserve\", \"ids\": [], \"backrefs\": [], \"names\": [], \"dupnames\": []}\
+    \ from a file of the form:\n<!-- literal_block {\"ids\": [], \"xml:space\": \"\
+    preserve\", \"classes\": [], \"backrefs\": [], \"names\": [], \"dupnames\": []}\
     \ -->\n\n````\n\n   <full path to image> <tab> <numerical label (0-based class\
-    \ id)>\n   ````\nor:\n<!-- literal_block {\"classes\": [], \"xml:space\": \"preserve\"\
-    , \"ids\": [], \"backrefs\": [], \"names\": [], \"dupnames\": []} -->\n\n````\n\
-    \n   sequenceId <tab> path <tab> label\n   ````"
+    \ id)>\n   ````\nor:\n<!-- literal_block {\"ids\": [], \"xml:space\": \"preserve\"\
+    , \"classes\": [], \"backrefs\": [], \"names\": [], \"dupnames\": []} -->\n\n\
+    ````\n\n   sequenceId <tab> path <tab> label\n   ````"
   syntax:
     content: ImageDeserializer(filename, streams)
     parameters:
@@ -166,13 +207,13 @@ items:
       branch: master
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 641
+    startLine: 653
   summary: '   Configuration of a stream for use with the builtin Deserializers. The
     meanings of some configuration keys have a mild dependency on the exact deserializer,
     and certain keys are meaningless for certain deserializers.'
   syntax:
     content: StreamDef(field=None, shape=None, is_sparse=False, transforms=None, context=None,
-      scp=None, mlf=None, broadcast=None)
+      scp=None, mlf=None, broadcast=None, defines_mb_size=False)
     parameters:
     - description: 'this is the name of the stream
 
@@ -222,6 +263,10 @@ items:
       id: broadcast
       type:
       - bool, defaults to None
+    - description: whether this stream defines the minibatch size.
+      id: defines_mb_size
+      type:
+      - bool, defaults to False
   type: function
   uid: cntk.io.StreamDef
 - fullName: cntk.io.sequence_to_cntk_text_format
@@ -236,7 +281,7 @@ items:
       branch: master
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 749
+    startLine: 765
   summary: Converts a list of NumPy arrays representing tensors of inputs into a format
     that is readable by @cntk.io.CTFDeserializer.
   syntax:
@@ -258,6 +303,11 @@ items:
   type: function
   uid: cntk.io.sequence_to_cntk_text_format
 references:
+- fullName: cntk.io.Base64ImageDeserializer
+  isExternal: false
+  name: Base64ImageDeserializer
+  parent: cntk.io
+  uid: cntk.io.Base64ImageDeserializer
 - fullName: cntk.io.CTFDeserializer
   isExternal: false
   name: CTFDeserializer

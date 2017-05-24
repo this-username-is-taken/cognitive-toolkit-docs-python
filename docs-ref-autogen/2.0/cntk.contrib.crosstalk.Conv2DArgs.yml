@@ -1,0 +1,78 @@
+#YamlMime:PythonReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalk.Conv2DArgs.W
+  - cntk.contrib.crosstalk.Conv2DArgs.b
+  class: cntk.contrib.crosstalk.Conv2DArgs
+  fullName: cntk.contrib.crosstalk.Conv2DArgs
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: builtins.tuple
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: Conv2DArgs
+  source:
+    id: Conv2DArgs
+    path: null
+    remote:
+      branch: master
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: '
+
+    '
+  syntax:
+    content: Conv2DArgs(W, b)
+  type: class
+  uid: cntk.contrib.crosstalk.Conv2DArgs
+- class: cntk.contrib.crosstalk.Conv2DArgs
+  fullName: cntk.contrib.crosstalk.Conv2DArgs.W
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: W
+  source:
+    id: W
+    path: null
+    remote:
+      branch: master
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: Alias for field number 0
+  syntax: {}
+  type: attribute
+  uid: cntk.contrib.crosstalk.Conv2DArgs.W
+- class: cntk.contrib.crosstalk.Conv2DArgs
+  fullName: cntk.contrib.crosstalk.Conv2DArgs.b
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: b
+  source:
+    id: b
+    path: null
+    remote:
+      branch: master
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: Alias for field number 1
+  syntax: {}
+  type: attribute
+  uid: cntk.contrib.crosstalk.Conv2DArgs.b
+references:
+- fullName: cntk.contrib.crosstalk.Conv2DArgs.W
+  isExternal: false
+  name: W
+  parent: cntk.contrib.crosstalk.Conv2DArgs
+  uid: cntk.contrib.crosstalk.Conv2DArgs.W
+- fullName: cntk.contrib.crosstalk.Conv2DArgs.b
+  isExternal: false
+  name: b
+  parent: cntk.contrib.crosstalk.Conv2DArgs
+  uid: cntk.contrib.crosstalk.Conv2DArgs.b
