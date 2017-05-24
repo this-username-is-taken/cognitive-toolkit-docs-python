@@ -166,7 +166,7 @@ it with a recurrent LSTM, and then classifies each word:
 
 And the following is a simple convolutional network for image
 recognition, using the
-[with default_options(...):](specifying-the-same-options-to-multliple-layers)
+[with default_options(...):](/cognitive-toolkit/specifying-the-same-options-to-multliple-layers)
 pattern):
 
 ```python
@@ -593,7 +593,7 @@ a 300-dimensional vector:
 
 In addition to `is_sparse=True`, one would also typically read sparse
 data from disk. Here is an example of reading sparse text input with the
-[CNTKTextFormatReader](brainscript-cntktextformat-reader):
+[CNTKTextFormatReader](/cognitive-toolkit/brainscript-cntktextformat-reader):
 
 ```python
     source = MinibatchSource(CTFDeserializer('en2fr.ctf', StreamDefs(
