@@ -104,8 +104,7 @@ observations in the input sequence into a finite dimensional state, predict the
 next observation using that state and transform their current state and the observed
 input into their next state. In other words, they allow information 
 to persist. So, while a traditional neural network layer can be thought of as having data 
-flow through as in the figure on the left below, an RNN layer can be seen as the figure 
-on the right.
+flow through as in the figure on the left below, an RNN layer can be seen as the figure on the right.
 
 ![alt text](images/nn_layers.png "NN Layers")
 
@@ -298,7 +297,7 @@ that represents a small color image like this:
     x = sequence.input_variable((3,32,32))
 ```
 
-and you want to feed a sequence of 4 images `img1` to `img4`, to CNTK then
+and you want to feed a sequence of 4 images _img1_ to _img4_, to CNTK then
 you need to create a tensor containing all 4 images. For example:
 
 ```python    
@@ -307,12 +306,12 @@ you need to create a tensor containing all 4 images. For example:
 ```
 
 The stack function in NumPy stacks the inputs along a new axis (placing it in the beginning by default)
-so the shape of `img_seq` is `4 x 3 x 32 x 32`. You 
-might have noticed that before binding `img_seq` to  `x` we wrap it in a list.
+so the shape of *img_seq* is `4 x 3 x 32 x 32`. You 
+might have noticed that before binding *img_seq* to  *x* we wrap it in a list.
 This list denotes a minibatch of 1 and **minibatches 
 are specified as lists**. The reason for this is because different elements of 
 the minibatch can have different lengths. If all the elements in the 
 minibatch are sequences of the same length then it is acceptable to provide
-the minibatch as one big tensor of dimension `b x s x d_1 x ... x d_k`
-where `b` is the batch size, `s` is the sequence length and `d_i`
+the minibatch as one big tensor of dimension **b &#xd7; s &#xd7; d<sub>i</sub> &#xd7; ... &#xd7; d<sub>k</sub>**
+where *b* is the batch size, *s* is the sequence length and *d<sub>i</sub>*
 is the dimension of the i-th static axis of the input variable.

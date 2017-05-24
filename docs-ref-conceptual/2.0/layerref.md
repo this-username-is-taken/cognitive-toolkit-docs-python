@@ -20,41 +20,49 @@ and have an additional pair of ``()`` to pass construction parameters
 or attributes.
 
 For example, this is the network description for a simple 1-hidden layer
-model using the :func:`~cntk.layers.layers.Dense` layer:
+model using the <xref:cntk.layers.layers.Dense> layer:
 
+```python
     h = Dense(1024, activation=relu)(features)
     p = Dense(9000, activation=softmax)(h)
+```
 
 which can then, e.g., be used for training against a cross-entropy
 criterion:
 
+```python
     ce = cross_entropy(p, labels)
+```
 
 If your network is a straight concatenation of operations (many are),
 you can use the alternative [sequential](#sequential) notation:
 
+```python
     from cntk.layers import *
     my_model = Sequential ([
         Dense(1024, activation=relu),
         Dense(9000, activation=softmax)
     ])
+```
 
 and invoke it like this:
 
+```python
     p = my_model(features)
+```
 
 Built on top of ``Sequential()`` is [for](#for),
 which allows to easily create models with repetitions. For example, a
 2011-style feed-forward speech-recognition network with 6 hidden sigmoid
 layers of identical dimensions can be written like this:
 
-::
-
+```python
     my_model = Sequential ([
         For(range(6), lambda: \
             Dense(2048, activation=sigmoid))
         Dense(9000, activation=softmax)
     ])
+```
 
 Note that for most real-life inference scenarios, the output layer's
 `softmax` non-linearity is not needed (it is instead made part of the
@@ -70,20 +78,22 @@ systems use the `relu` activation function throughout. You can use the
 Python `with` statement with the CNTK `default_options()` function
 to define scopes with locally changed defaults, using one of the following two forms:
 
+```python
     with default_options(OPT1=VAL1, OPT2=VAL2, ...):
         # scope with modified defaults
 
     with default_options_for(FUNCTION, OPT1=VAL1, OPT2=VAL2, ...):
         # scope with modified defaults for FUNCTION only
+```
 
 The following options can be overridden with the ``with`` statement:
 
-> - `init` (default: `glorot_uniform()`): initializer specification, for [dense](#dense), [convolution](#convolution), and [embedding](#embedding)
-> - `activation` (default: `None`): activation function, for `Dense()` and `Convolution()`
-> - `bias` (default: `True`): have a bias, for `Dense()` and `Convolution()`
-> - `init_bias` (default: `0`): initializer specification for the bias, for `Dense()` and `Convolution()`
-> - `initial_state` (default: `None`): initial state to use in [Recurrence()](#recurrence)
-> - `use_peepholes` (default: `False`): use peephole connections in [LSTM()](#lstm-gru-rnnunit)
+- `init` (default: `glorot_uniform()`): initializer specification, for [dense](#dense), [convolution](#convolution), and [embedding](#embedding)
+- `activation` (default: `None`): activation function, for `Dense()` and `Convolution()`
+- `bias` (default: `True`): have a bias, for `Dense()` and `Convolution()`
+- `init_bias` (default: `0`): initializer specification for the bias, for `Dense()` and `Convolution()`
+- `initial_state` (default: `None`): initial state to use in [Recurrence()](#recurrence)
+- `use_peepholes` (default: `False`): use peephole connections in [LSTM()](#lstm-gru-rnnunit)
 
 The second form allows to set default options on a
 per-layer type. This is, for example, valuable for the ``pad``
@@ -95,9 +105,11 @@ always set to the same for these two layer types.
 If you assign a layer to a variable and use it in multiple places, *the
 weight parameters will be shared*. If you say
 
+```python
     lay = Dense(1024, activation=sigmoid)
     h1 = lay(x)
     h2 = lay(h1)  # same weights as h1
+```
 
 `h1` and `h2` will *share the same weight parameters*, as `lay()`
 is the *same function* in both cases. In the above case this is probably
@@ -111,6 +123,7 @@ of a model. Consider a DSSM model which processes two input images, say
 `doc` and `query` identically with the same processing chain, and
 compares the resulting hidden vectors:
 
+```python
     with default_options(activation=relu):
         image_to_vec = Sequential([
             Convolution((5,5), 32, pad=True), MaxPooling((3,3), strides=2),
@@ -121,7 +134,7 @@ compares the resulting hidden vectors:
     z_doc   = image_to_vec (doc)
     z_query = image_to_vec (query)  # same model as for z_doc
     sim = cos_distance(zdoc, z_query)
-
+```
 where `image_to_vec` is the part of the model that converts images
 into flat vector. `image_to_vec` is a function object that in turn
 contains several function objects (e.g. three instances of
@@ -142,18 +155,21 @@ inference/validation will fail with an error message.
 The following shows a slot tagger that embeds a word sequence, processes
 it with a recurrent LSTM, and then classifies each word:
 
+```python
     from cntk.layers import *
     tagging_model = Sequential ([
         Embedding(150),         # embed into a 150-dimensional vector
         Recurrence(LSTM(300)),  # forward LSTM
         Dense(labelDim)         # word-wise classification
     ])
+```
 
 And the following is a simple convolutional network for image
 recognition, using the
 [with default_options(...):](specifying-the-same-options-to-multliple-layers)
 pattern):
 
+```python
     with default_options(activation=relu):
         conv_net = Sequential ([
             # 3 layers of convolution and dimension reduction by pooling
@@ -164,6 +180,7 @@ pattern):
             Dense(64),
             Dense(10, activation=None)
         ])
+```
 
 ### Notes
 
@@ -187,13 +204,14 @@ The Python library described here is the equivalent of BrainScript's
 Factory function to create a fully-connected layer. ``Dense()`` takes an
 optional activation function.
 
+```python
     Dense(shape, activation=default_override_or(identity), init=default_override_or(glorot_uniform()),
           input_rank=None, map_rank=None,
           bias=default_override_or(True), init_bias=default_override_or(0),
           name='')
+```
 
 ### Parameters
-
 
 -  `shape`: output dimension of this layer
 -  `activation` (default: `None`: pass a function here to be used as
@@ -203,7 +221,7 @@ optional activation function.
 -  `map_rank`: if given, the number of leading dimensions that are not
    transformed by `Dense()` (`input_rank` must not be given)
 -  `init` (default: `glorot_uniform()`): initializer descriptor for
-   the weights. See :mod:`cntk.initializer`
+   the weights. See <xref:cntk.initializer>
    for a full list of random-initialization options.
 -  `bias`: if `False`, do not include a bias parameter
 -  `init_bias` (default: `0`): initializer for the bias
@@ -221,8 +239,10 @@ unless ``bias=False``, a learnable bias. The function object can be used
 like a function, which implements one of these formulas (using Python
 3.5 `@` operator for matrix multiplication):
 
+```python
     Dense(...)(v) = activation (v @ W + b)
     Dense(...)(v) = v @ W + b      # if activation is None
+```
 
 where `W` is a weight matrix of dimension
 `((dimension of v), shape)`, `b` is the bias of dimension
@@ -255,17 +275,22 @@ how many trailing axes are to be transformed (the remaining are mapped).
 
 ### Example:
 
+```python
     h = Dense(1024, activation=sigmoid)(v)
+```
 
 or alternatively:
 
+```python
     layer = Dense(1024, activation=sigmoid)
     h = layer(v)
+```
 
 ## Convolution()
 
 Creates a convolution layer with optional non-linearity.
 
+```python
     Convolution(filter_shape,     # shape of receptive field, e.g. (3,3)
                 num_filters=None, # e.g. 64 or None (which means 1 channel and don't add a dimension)
                 sequential=False, # time convolution if True (filter_shape[0] corresponds to dynamic axis)
@@ -278,6 +303,7 @@ Creates a convolution layer with optional non-linearity.
                 reduction_rank=1, # (0 means input has no depth dimension, e.g. audio signal or B&W image)
                 max_temp_mem_size_in_samples=0,
                 name='')
+```
 
 ### Parameters
 
@@ -286,7 +312,7 @@ Creates a convolution layer with optional non-linearity.
 -  `num_filters`: number of output channels (number of filters)
 -  `activation`: optional non-linearity, e.g. `activation=relu`
 -  `init`: initializer descriptor for the weights, e.g.
-   `glorot_uniform()`. See :mod:`cntk.initializer` for a full
+   `glorot_uniform()`. See <xref:cntk.initializer> for a full
    list of random-initialization options.
 -  `pad`: if `False` (default), then the filter will be shifted over
    the "valid" area of input, that is, no value outside the area is
@@ -339,17 +365,21 @@ inside this layer. In our example, the kernel shape will be
 The following summarizes the relationship between the various dimensions
 and shapes:
 
+```python
     input shape   : (               num_input_channels, (spatial dims) )
     filter shape  : (                                   (filter_shape) )
     output shape  : ( num_filters,                      (spatial dims) )
     kernel shape  : ( num_filters,  num_input_channels, (filter_shape)     )
+```
 
 which in our example are:
 
+```python
     input shape   : (              3, 480, 640 )
     filter shape  : (                   5, 5   )
     output shape  : ( num_filters,    480, 640 )
     kernel shape  : ( num_filters, 3,   5, 5   )
+```
 
 ### Padding
 
@@ -389,6 +419,7 @@ future.
 
 Factory functions to create a max- or average-pooling layer.
 
+```python
     MaxPooling(filter_shape,      # shape of receptive field, e.g. (3,3)
                strides=1,
                pad=default_override_or(False),
@@ -397,6 +428,7 @@ Factory functions to create a max- or average-pooling layer.
                    strides=1,
                    pad=default_override_or(False),
                    name='')
+```
 
 ### Parameters
 
@@ -435,14 +467,18 @@ detail.
 
 ### Example:
 
+```python
     p = MaxPooling((3,3), strides=(2,2))(c)
+```
 
 ## GlobalMaxPooling(), GlobalAveragePooling()
 
 Factory functions to create a global-max-pooling or global-average-pooling layer.
 
+```python
     GlobalMaxPooling(name='')
     GlobalAveragePooling(name='')
+```
 
 ### Return Value
 
@@ -462,13 +498,17 @@ window.
 
 ### Example:
 
+```python
     p = GlobalMaxPooling()(c)
+```
 
 ## Dropout()
 
 Factory functions to create a dropout layer.
 
+```python
     Dropout(dropout_rate=None, keep_prob=None, name='')
+```
 
 ### Parameters
 
@@ -487,22 +527,24 @@ dropout rate.
 
 ### Example:
 
+```python
     p = Dropout(0.5)(c)
-
+```
 
 ## Embedding()
 
 Factory function to create a linear embedding layer, which is either
 learned or a constant passed from outside.
 
+```python
     Embedding(shape=None, init=default_override_or(glorot_uniform()), weights=None, name='')
+```
 
 ### Parameters
 
 -  `shape`: the dimension of the desired embedding vector. Must not be
    `None` unless `weights` are passed
--  `init`: initializer descriptor for the weights to be learned. See
-   :mod:`cntk.initializer` for a full
+-  `init`: initializer descriptor for the weights to be learned. See <xref:cntk.initializer> for a full
    list of initialization options.
 -  `weights` (numpy array): if given, embeddings are not learned but
    specified by this array (which could be, e.g., loaded from a file)
@@ -544,17 +586,21 @@ technique instead.
 A learned embedding that represents words from a vocabulary of 87636 as
 a 300-dimensional vector:
 
+```python
     input = Input(87636, is_sparse=True)  # word sequence, as one-hot vector, sparse format
     embEn = Embedding(300)(input)         # embed word as a 300-dimensional continuous vector
+```
 
 In addition to `is_sparse=True`, one would also typically read sparse
 data from disk. Here is an example of reading sparse text input with the
 [CNTKTextFormatReader](brainscript-cntktextformat-reader):
 
+```python
     source = MinibatchSource(CTFDeserializer('en2fr.ctf', StreamDefs(
         input   = StreamDef(field='E', shape=87636, is_sparse=True),
         labels  = StreamDef(field='F', shape=98624, is_sparse=True)
     )))
+```
 
 If, instead, the embedding vectors already exist and should be loaded
 from a file, it would look like this:
@@ -570,10 +616,12 @@ be expected to consist of 87,636 text rows, each of which consisting of
 
 Factory function to create a single-layer or multi-layer recurrence.
 
+```python
     Recurrence(step_function, go_backwards=default_override_or(False), initial_state=default_override_or(0), return_full_state=False, name='')
     RecurrenceFrom(step_function, go_backwards=default_override_or(False), return_full_state=False, name='')
     Fold(folder_function, go_backwards=default_override_or(False), initial_state=default_override_or(0), return_full_state=False, name='')
     UnfoldFrom(generator_function, until_predicate=None, length_increase=1, name='')
+```
 
 ### Parameters
 
@@ -626,20 +674,23 @@ A simple text classifier, which runs a word sequence through a
 recurrence and then passes the *last* hidden state of the LSTM to a
 softmax classifer, could have this form:
 
+```python
     w = Input(...)                          # word sequence (one-hot vectors)
     e = Embedding(150)(w)                   # embed as a 150-dimensional dense vector
     h = Recurrence(LSTM(300))(e)            # left-to-right LSTM with hidden and cell dim 300
     t = select_last(h)                      # extract last hidden state
     z = Dense(10000, activation=softmax)(t) # softmax classifier
+```
 
 To create a bidirectional one-layer LSTM (e.g. using half the hidden
 dimension compared to above), use this:
 
+```python
     h_fwd = Recurrence(LSTM(150))(e)
     h_bwd = Recurrence(LSTM(150), go_backwards=True)(e)
     h = splice (h_fwd, h_bwd)
+```
 
-<a name="lstm-gru-rnnunit"></a>
 ## LSTM(), GRU(), RNNUnit()
 
 Factory functions to create a stateless LSTM/GRU/RNN ``Function``, typically for
@@ -667,7 +718,7 @@ use with `Recurrence()`.
    cell dimension to the output shape.
 -  `use_peepholes` (optional): if `True`, then use peephole
    connections in the LSTM
--  `init`: initializer descriptor for the weights. See :mod:`cntk.initializer`
+-  `init`: initializer descriptor for the weights. See <xref:cntk.initializer>
    for a full list of initialization options.
 -  `enable_self_stabilization` (optional): if `True`, insert a
    `Stabilizer()` for the hidden state and cell
@@ -694,7 +745,9 @@ See `Recurrence()`.
 
 Factory function to create a layer that delays its input.
 
+```python
     Delay(T=1, initial_state=default_override_or(0), name='')
+```
 
 ### Parameters
 
@@ -716,28 +769,34 @@ overlapping word triples.
 Consider an input sequence "a b c b", which shall be encoded as a
 sequence of 3-dimensional one-hot vectors as follows:
 
+```python
     1 0 0
     0 1 0
     0 0 1
     0 1 0
+```
 
 Here, every row is a one-hot vector and corresponds to a word. Applying
 ``Delay(T=1)`` to this input will generate this sequence:
 
+```python
     0 0 0
     1 0 0
     0 1 0
     0 0 1
+```
 
 All tokens get delayed by one, and the first position gets filled in by
 ``initial_state`` which defaults to 0. Likewise, using ``Delay(T=-1)``
 (negative delay) will give access to the future values, and pad from the
 end with a zero:
 
+```python
     0 1 0
     0 0 1
     0 1 0
     0 0 0
+```
 
 ### Notes
 
@@ -760,6 +819,7 @@ vector:
 Factory functions to create layers for batch normalization, layer
 normalization, and self-stabilization.
 
+```python
     BatchNormalization(map_rank=default_override_or(None),  # if given then normalize only over this many dimensions. E.g. pass 1 to tie all (h,w) in a (C, H, W)-shaped input
                        init_scale=1,
                        normalization_time_constant=default_override_or(5000), blend_time_constant=0,
@@ -767,6 +827,7 @@ normalization, and self-stabilization.
                        name='')
     LayerNormalization(initial_scale=1, initial_bias=0, epsilon=default_override_or(0.00001), name='')
     Stabilizer(steepness=4, enable_self_stabilization=default_override_or(True), name='')
+```
 
 ### Parameters
 
@@ -846,19 +907,23 @@ values and instability from the exponential.
 
 A typical layer in a convolutional network with batch normalization:
 
+```python
     def my_convo_layer(x, depth, init):
         c = Convolution(depth, (5,5), pad=True, init=init)(x)
         b = BatchNormalization(map_rank=1)(c)
         r = relu(b)
         p = MaxPooling((3,3), strides=(2,2))(r)
         return p
+```
 
 ## Sequential()
 
 Composes an list of functions into a new function that calls these
 functions one after another ("forward function composition").
 
+```python
     Sequential(layers, name='')
+```
 
 ### Parameters
 
@@ -882,36 +947,45 @@ familiar with it from other neural-network toolkits.
 returns a *new* function that invokes these function in order, each time
 passing the output of one to the next. Consider this example:
 
+```python
     FGH = Sequential ([F, G, H])
     y = FGH (x)
+```
 
 The ``FGH`` function defined above means the same as
 
+```python
     y = H(G(F(x)))
+```
 
 This is known as [function
 composition](https://en.wikipedia.org/wiki/Function_composition),
 and is especially convenient for expressing neural networks, which often
 have this form:
 
+```
          +-------+   +-------+   +-------+
     x -->|   F   |-->|   G   |-->|   H   |--> y
          +-------+   +-------+   +-------+
-
+```
 
 which is perfectly expressed by ``Sequential ([F, G, H])``. (An even
 shorter alternative way of writing it is ``(F >> G >> H)``.)
 
 Lastly, please be aware that the following expression:
 
+```python
     layer1 = Dense(1024)
     layer2 = Dense(1024)
     z = Sequential([layer1, layer2])(x)
+```
 
 means something different from:
 
+```python
     layer = Dense(1024)
     z = Sequential([layer, layer])(x)
+```
 
 In the latter form, the same function *with the same shared set of
 parameters* is applied twice (typically not desired), while in the
@@ -922,6 +996,7 @@ former, the two layers have separate sets of parameters.
 Standard 4-hidden layer feed-forward network as used in the earlier
 deep-neural network work on speech recognition:
 
+```python
     my_model = Sequential ([
         Dense(2048, activation=sigmoid),  # four hidden layers
         Dense(2048, activation=sigmoid),
@@ -931,12 +1006,15 @@ deep-neural network work on speech recognition:
     )
     features = Input(40)
     p = my_model(features)
+```
 
 ## For()
 
 Repeats a layer multiple times.
 
+```python
     For(rng, constructor, name='')
+```
 
 ### Parameters
 
@@ -958,13 +1036,17 @@ that creates a layer, e.g. using the Python ``lambda`` syntax.
 
 For example, creating a stack of 3 Dense layers of identical shape:
 
+```
          +------------+   +------------+   +------------+
     x -->| Dense(128) |-->| Dense(128) |-->| Dense(128) |--> y
          +------------+   +------------+   +------------+
+```
 
 is as easy as:
 
+```python
     model = For(range(3), lambda: Dense(128))
+```
 
 Note that because you pass in a lambda for creating the layer, each
 layer will be separately constructed. This is important, because this
@@ -973,26 +1055,33 @@ ensures that all layers have their own distinct set of model parameters.
 That constructor lambda can optionally take one parameter, the layer
 counter. E.g. if the output dimension should double in each layer,
 
+```
          +------------+   +------------+   +------------+
     x -->| Dense(128) |-->| Dense(256) |-->| Dense(512) |--> y
          +------------+   +------------+   +------------+
+```
 
 the one-parameter lambda form allows you to say this (notice the
 ``lambda i``, which defines a function that takes one parameter named
 ``i``):
 
+```python
     model = For(range(3), lambda i: Dense(128 * 2**i))
+```
 
 or this:
 
+```python
     dims = [128,256,512]
     model = For(range(3), lambda i: Dense(dims[i]))
+```
 
 ### Example
 
 The following creates a 9-hidden-layer VGG-style model. VGG is a popular
 architecture for image recognition:
 
+```python
     with default_options(activation=relu):
         model = Sequential([
             For(range(3), lambda i: [  # lambda with one parameter
@@ -1006,34 +1095,31 @@ architecture for image recognition:
             ]),
             Dense(num_classes, activation=None)
         ])
+```
 
 The resulting model will have this structure (read this from top to
 bottom)
 
-
-| VGG9             |
-|------------------|
-| input: image     |
-|                  |
-| conv3-64         |
-| conv3-64         |
-| max3             |
-|                  |
-| conv3-96         |
-| conv3-96         |
-| max3             |
-|                  |
-| conv3-128        |
-| conv3-128        |
-| max3             |
-|                  |
-| FC-1024          |
-| dropout0.5       |
-|                  |
-| FC-1024          |
-| dropout0.5       |
-|                  |
-| FC-10            |
-|                  |
-| output: object   |
-
+<table>
+<tr><th>VGG9<th></tr>
+<tr><td>input: image</td><tr>
+<tr><td> </td><tr>
+<tr><td>conv3-64</td><tr>
+<tr><td>conv3-64</td><tr>
+<tr><td>max3</td><tr>
+<tr><td>  </td><tr>
+<tr><td>conv3-96</td><tr>
+<tr><td>conv3-96</td><tr>
+<tr><td>max3</td><tr>
+<tr><td>  </td><tr>
+<tr><td>conv3-128</td><tr>
+<tr><td>conv3-128</td><tr>
+<tr><td>max3</td><tr>
+<tr><td>  </td><tr>
+<tr><td>FC-1024</td><tr>
+<tr><td>dropout0.5</td><tr>
+<tr><td>  </td><tr>
+<tr><td>FC-10</td><tr>
+<tr><td>  </td><tr>
+<tr><td>output: object</td><tr>
+</table>
