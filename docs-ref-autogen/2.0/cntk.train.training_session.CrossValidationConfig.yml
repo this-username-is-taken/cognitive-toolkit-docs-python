@@ -19,29 +19,65 @@ items:
       branch: master
       path: /bindings/python\cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 53
-  summary: A cross validation configuration for the training session.
+    startLine: 52
+  summary: 'A cross validation configuration for the training session.
+
+    '
   syntax:
-    content: CrossValidationConfig(source=None, mb_size=None, frequency=None, callback=None)
+    content: CrossValidationConfig(source=None, mb_size=None, frequency=None, callback=None,
+      max_samples=None, model_inputs_to_streams=None)
     parameters:
-    - description: minibatch source used for cross validation
+    - description: 'minibatch source used for cross validation
+
+        '
       id: source
       type:
-      - '@cntk.io'
-    - description: frequency in samples for cross validation If `sys.maxsize`, a single
-        cross validation is performed at the end of training.
+      - '@cntk.io
+
+        '
+    - description: 'minibatch schedule for cross validation
+
+        '
+      id: mb_size
+      type:
+      - '@cntk.cntk_py.minibatch_size_schedule
+
+        '
+    - description: 'frequency in samples for cross validation
+
+        If None or `sys.maxsize`, a single cross validation is performed at the end
+        of training.
+
+        '
       id: frequency
       type:
       - int
-    - description: minibatch schedule for cross validation
-      id: schedule
-      type:
-      - '@cntk.cntk_py.minibatch_size_schedule'
-    - description: Callback that will be called with frequency which can implement
-        custom cross validation logic, returns False if training should be stopped.
+    - description: 'Callback that will
+
+        be called with frequency which can implement custom cross validation logic,
+
+        returns False if training should be stopped.
+
+        '
       id: callback
       type:
       - func (index, average_error, cv_num_samples, cv_num_minibatches)
+    - description: 'number of samples to perform
+
+        cross-validation on. If None, all samples are taken.
+
+        '
+      id: max_samples
+      type:
+      - int, default None
+    - description: 'mapping between input variables and input streams.
+
+        If None, the mapping provided to the training session constructor is used.
+
+        '
+      id: model_inputs_to_streams
+      type:
+      - dict, default None
   type: class
   uid: cntk.train.training_session.CrossValidationConfig
 references: []

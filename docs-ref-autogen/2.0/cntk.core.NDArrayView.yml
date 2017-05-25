@@ -29,9 +29,14 @@ items:
       path: /bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 26
-  summary: 'Creates an empty dense internal data representation of a @cntk.core.Value
-    object. To create an NDArrayView from a NumPy array, use @cntk.core.NDArrayView.from_dense.
+  summary: 'Creates an empty dense internal data representation of a
+
+    @cntk.core.Value object.
+
+    To create an NDArrayView from a NumPy array, use @cntk.core.NDArrayView.from_dense.
+
     To create an NDArrayView from a sparse array, use @cntk.core.NDArrayView.from_csr.
+
 
 
 
@@ -43,20 +48,40 @@ items:
 
     '
   syntax:
+    attribute:
+    - device
+    - dtype
+    - static from_csrcsr_array, device=None, read_only=False, borrow=False, shape=None
+    - static from_datadata, device=None, read_only=False, borrow=False
+    - static from_densenp_array, device=None, read_only=False, borrow=False
+    - is_read_only
+    - is_sparse
+    - shape
+    - slice_viewstart_offset, extent, read_only=True
     content: NDArrayView(shape, data_type, device=None)
     parameters:
-    - description: shape of the data
+    - description: 'shape of the data
+
+        '
       id: shape
       type:
       - tuple
-    - description: data type of the data
+    - description: 'data type of the data
+
+        '
       id: data_type
       type:
       - np.float32, np.float64
-    - description: device this value should be put on
+    - description: 'device this value
+
+        should be put on
+
+        '
       id: device
       type:
-      - '@cntk.device.DeviceDescriptor'
+      - '@cntk.device.DeviceDescriptor
+
+        '
   type: class
   uid: cntk.core.NDArrayView
 - class: cntk.core.NDArrayView
@@ -73,7 +98,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Retrieves the @cntk.device.DeviceDescriptor instance.
+  summary: 'Retrieves the @cntk.device.DeviceDescriptor instance.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.core.NDArrayView.device
@@ -91,7 +118,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: NumPy data type of the instance
+  summary: 'NumPy data type of the instance
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.core.NDArrayView.dtype
@@ -109,37 +138,66 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 82
-  summary: Create a @cntk.core.NDArrayView instance from a SciPy sparse array in CSR
+  summary: 'Create an @cntk.core.NDArrayView instance from a SciPy sparse array in
+    CSR
+
     format.
+
+    '
   syntax:
     content: from_csr(csr_array, device=None, read_only=False, borrow=False, shape=None)
     parameters:
-    - description: SciPy sparse matrix in CSR format
+    - description: 'SciPy sparse matrix in CSR
+
+        format
+
+        '
       id: csr_array
       type:
       - scipy.sparse.csr_matrix
-    - description: device this value should be put on
+    - description: 'device this value
+
+        should be put on
+
+        '
       id: device
       type:
-      - '@cntk.device.DeviceDescriptor'
-    - description: whether the data can be modified or not (default False)
+      - '@cntk.device.DeviceDescriptor
+
+        '
+    - description: 'whether the data can be modified or
+
+        not (default False)
+
+        '
       id: read_only
       type:
       - bool, optional
-    - description: whether nd_arrary memory can be borrowed internally to speed up
-        the data creation
+    - description: 'whether nd_arrary memory can be
+
+        borrowed internally to speed up the data creation
+
+        '
       id: borrow
       type:
       - bool, default False
-    - description: shape of the created NDArrayView. If unspecified, the created NDArrayView
-        has the same shape as the csr_matrix. Otherwise, an NDArrayView object of
-        specified shape is created using csr_data. The total size and number of rows
-        of csr_data must match specified NDArrayView shape.
+    - description: 'shape of the created NDArrayView.
+
+        If unspecified, the created NDArrayView has the same shape as the csr_matrix.
+
+        Otherwise, an NDArrayView object of specified shape is created using csr_data.
+
+        The total size and number of rows of csr_data must match specified NDArrayView
+        shape.
+
+        '
       id: shape
       type:
       - tuple, default None
     return:
-      description: '@cntk.core.NDArrayView instance'
+      description: '@cntk.core.NDArrayView instance
+
+        '
   type: method
   uid: cntk.core.NDArrayView.from_csr
 - class: cntk.core.NDArrayView
@@ -156,30 +214,50 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 133
-  summary: Create a @cntk.core.NDArrayView instance from a NumPy or SciPy sparse array
-    in CSR format.
+  summary: 'Create an @cntk.core.NDArrayView instance from a NumPy or SciPy sparse
+
+    array in CSR format.
+
+    '
   syntax:
     content: from_data(data, device=None, read_only=False, borrow=False)
     parameters:
-    - description: data
+    - description: 'data
+
+        '
       id: data
       type:
       - numpy.ndarray or scipy.sparse.csr_matrix
-    - description: device this value should be put on
+    - description: 'device this value
+
+        should be put on
+
+        '
       id: device
       type:
-      - '@cntk.device.DeviceDescriptor'
-    - description: whether the data can be modified or not (default False)
+      - '@cntk.device.DeviceDescriptor
+
+        '
+    - description: 'whether the data can be modified or
+
+        not (default False)
+
+        '
       id: read_only
       type:
       - bool, optional
-    - description: whether nd_arrary memory can be borrowed internally to speed up
-        the data creation
+    - description: 'whether nd_arrary memory can be
+
+        borrowed internally to speed up the data creation
+
+        '
       id: borrow
       type:
       - bool, default False
     return:
-      description: '@cntk.core.NDArrayView instance'
+      description: '@cntk.core.NDArrayView instance
+
+        '
   type: method
   uid: cntk.core.NDArrayView.from_data
 - class: cntk.core.NDArrayView
@@ -196,29 +274,48 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 49
-  summary: Create a @cntk.core.NDArrayView instance from a NumPy array.
+  summary: 'Create an @cntk.core.NDArrayView instance from a NumPy array.
+
+    '
   syntax:
     content: from_dense(np_array, device=None, read_only=False, borrow=False)
     parameters:
-    - description: NumPy array
+    - description: 'NumPy array
+
+        '
       id: np_array
       type:
       - numpy.ndarray
-    - description: device this value should be put on
+    - description: 'device this value
+
+        should be put on
+
+        '
       id: device
       type:
-      - '@cntk.device.DeviceDescriptor'
-    - description: whether nd_arrary memory can be borrowed internally to speed up
-        the data creation
+      - '@cntk.device.DeviceDescriptor
+
+        '
+    - description: 'whether nd_arrary memory can be
+
+        borrowed internally to speed up the data creation
+
+        '
       id: borrow
       type:
       - bool, default False
-    - description: whether the data can be modified or not (default False)
+    - description: 'whether the data can be modified or
+
+        not (default False)
+
+        '
       id: read_only
       type:
       - bool, optional
     return:
-      description: '@cntk.core.NDArrayView instance'
+      description: '@cntk.core.NDArrayView instance
+
+        '
   type: method
   uid: cntk.core.NDArrayView.from_dense
 - class: cntk.core.NDArrayView
@@ -235,7 +332,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Whether the data is read-only
+  summary: 'Whether the data is read-only
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.core.NDArrayView.is_read_only
@@ -253,7 +352,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Whether the data is sparse or dense
+  summary: 'Whether the data is sparse or dense
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.core.NDArrayView.is_sparse
@@ -271,7 +372,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: The shape of this instance.
+  summary: 'The shape of this instance.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.core.NDArrayView.shape
@@ -281,7 +384,7 @@ items:
     \ 20, 30], [40, 50, 60]]]],                                       dtype=np.float32)\n\
     >>> nd = NDArrayView.from_dense(np_array)\n>>> sliced = nd.slice_view([0, 0, 0,\
     \ 0], [2, 3])\n>>> np_sliced = sliced.asarray()\n>>> # Result is an array of shape\
-    \ (2, 3)\n>>> print(np_sliced)\n[[ 10.  20.  30.]\n [ 40.  50.  60.]]\n```"
+    \ (2, 3)\n>>> print(np_sliced)\n[[ 10.  20.  30.]\n [ 40.  50.  60.]]\n```\n"
   fullName: cntk.core.NDArrayView.slice_view
   langs:
   - python
@@ -295,20 +398,29 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 176
-  summary: Returns a sliced view of the instance.
+  summary: 'Returns a sliced view of the instance.
+
+    '
   syntax:
     content: slice_view(self, start_offset, extent, read_only=True)
     parameters:
-    - description: shape of the same rank as this Value instance that denotes the
-        start of the slicing
+    - description: 'shape of the same rank as this Value
+
+        instance that denotes the start of the slicing
+
+        '
       id: start_offset
       type:
       - tuple or list
-    - description: shape of the right-aligned extent to keep
+    - description: 'shape of the right-aligned extent to keep
+
+        '
       id: extent
       type:
       - tuple or list
-    - description: whether the returned slice is read only or not
+    - description: 'whether the returned slice is read only or not
+
+        '
       id: read_only
       type:
       - bool

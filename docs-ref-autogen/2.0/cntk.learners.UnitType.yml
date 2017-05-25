@@ -21,13 +21,19 @@ items:
       branch: master
       path: /bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 16
+    startLine: 17
   summary: 'Indicates whether the values in the schedule are specified on the per-sample
-    or per-minibatch basis.
+    or
+
+    per-minibatch basis.
+
 
 
     '
   syntax:
+    attribute:
+    - minibatch = 'minibatch'
+    - sample = 'sample'
     content: UnitType(value, names=None, *, module=None, qualname=None, type=None,
       start=1)
   type: class
@@ -46,8 +52,12 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Schedule contains per-minibatch values (and need to be re-scaled by the
-    learner using the actual minibatch size in samples).
+  summary: 'Schedule contains per-minibatch values (and need to be re-scaled by the
+    learner
+
+    using the actual minibatch size in samples).
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.learners.UnitType.minibatch
@@ -65,7 +75,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Schedule contains per-sample values.
+  summary: 'Schedule contains per-sample values.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.learners.UnitType.sample

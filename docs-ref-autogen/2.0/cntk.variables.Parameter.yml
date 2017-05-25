@@ -8,10 +8,10 @@ items:
   - "```\n\n>>> p = C.Parameter((13,42,7), init=C.glorot_uniform())\n>>> p.shape\n\
     \    (13, 42, 7)\n```\n\n```\n\n>>> # example with inferred dimensions\n>>> W\
     \ = C.Parameter((C.InferredDimension, 42), init=C.glorot_uniform())\n>>> W.shape\
-    \   # -1 indicates dimension yet to be inferred\n    (-1, 42)\n>>> x = C.input(13)\n\
+    \   # -1 indicates dimension yet to be inferred\n    (-1, 42)\n>>> x = C.input_variable(13)\n\
     >>> y = C.times(x, W)  # times operation now knows that the input dimension of\
     \ W must be 13\n>>> W.shape          # hence, the shape has been updated\n   \
-    \ (13, 42)\n```"
+    \ (13, 42)\n```\n"
   fullName: cntk.variables.Parameter
   inheritance:
   - inheritance:
@@ -36,36 +36,59 @@ items:
       branch: master
       path: /bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 283
-  summary: 'A trainable parameter. It can be a scalar, vector, matrix, or tensor of
-    floating point numbers that can be modified by a training procedure.
+    startLine: 326
+  summary: 'A trainable parameter. It can be a scalar, vector, matrix, or tensor
+
+    of floating point numbers that can be modified by a training
+
+    procedure.
+
 
     Parameters are Variables and therefore they inherit all their methods.
 
+
     '
   syntax:
+    attribute:
+    - value
     content: Parameter(shape=None, init=None, dtype=<cntk.default_options.default_override_or
-      object at 0x000002AD872339B0>, device=None, name='')
+      object at 0x000001B3C36AC978>, device=None, name='')
     parameters:
-    - description: the shape of the tensor holding the parameters
+    - description: 'the shape of the tensor holding the parameters
+
+        '
       id: shape
       type:
       - tuple
-    - description: '@cntk.initializer: Initial value. If a numpy array is specified
-        the shape argument is ignored and the tensor gets the shape of this argument.
-        Alternatively, an initializer from @cntk.initializer can be specified.'
+    - description: '@cntk.initializer: Initial value.
+
+        If a numpy array is specified the shape argument is ignored and
+
+        the tensor gets the shape of this argument. Alternatively, an
+
+        initializer from @cntk.initializer can be specified.
+
+        '
       id: init
       type:
       - value (np.ndarray, list, float, int
-    - description: data type of the values stored.
+    - description: 'data type of the values stored.
+
+        '
       id: dtype
       type:
       - np.float32 or np.float64
-    - description: the device on which the values should reside.
+    - description: 'the device on which the values should reside.
+
+        '
       id: device
       type:
-      - '@cntk.device'
-    - description: an optional name for this parameter
+      - '@cntk.device
+
+        '
+    - description: 'an optional name for this parameter
+
+        '
       id: name
       type:
       - str
@@ -85,12 +108,18 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Value of the Parameter
+  summary: 'Value of the Parameter
+
+    '
   syntax:
     parameters:
-    - description: gets the Parameter's value as a NumPy array
+    - description: 'gets the Parameter''s value as a NumPy array
+
+        '
       id: getter
-    - description: sets the Parameter's value to the provided NumPy array
+    - description: 'sets the Parameter''s value to the provided NumPy array
+
+        '
       id: setter
   type: attribute
   uid: cntk.variables.Parameter.value

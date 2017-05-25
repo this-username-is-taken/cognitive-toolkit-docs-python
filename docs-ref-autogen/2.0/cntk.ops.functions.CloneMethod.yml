@@ -22,13 +22,20 @@ items:
       branch: master
       path: /bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 13
-  summary: 'Describes different ways how @cntk.ops.functions.Function.clone works.
+    startLine: 24
+  summary: 'Describes different ways how @cntk.ops.functions.Function.clone
+
+    works.
+
 
 
 
     '
   syntax:
+    attribute:
+    - clone = 'clone'
+    - freeze = 'freeze'
+    - share = 'share'
     content: CloneMethod(value, names=None, *, module=None, qualname=None, type=None,
       start=1)
   type: class
@@ -47,8 +54,12 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: New learnable parameters are created and initialized with the current values
-    of the corresponding parameters of the Function being cloned
+  summary: 'New learnable parameters are created and initialized with the current
+    values of the
+
+    corresponding parameters of the Function being cloned
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.ops.functions.CloneMethod.clone
@@ -66,8 +77,11 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Parameters are cloned and made immutable; i.e. Constants in the new clone
+  summary: 'Parameters are cloned and made immutable; i.e. Constants in the new clone
+
     (e.g. for use as a fixed feature extractor)
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.ops.functions.CloneMethod.freeze
@@ -85,7 +99,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Parameters are shared between the Function being cloned and the new clone
+  summary: 'Parameters are shared between the Function being cloned and the new clone
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.ops.functions.CloneMethod.share

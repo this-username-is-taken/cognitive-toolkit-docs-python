@@ -3,19 +3,20 @@ api_name: []
 items:
 - children:
   - cntk.axis
+  - cntk.contrib
   - cntk.core
   - cntk.debugging
   - cntk.default_options
   - cntk.device
   - cntk.eval
   - cntk.initializer
-  - cntk.internal
   - cntk.io
   - cntk.layers
   - cntk.learners
   - cntk.logging
   - cntk.losses
   - cntk.metrics
+  - cntk.misc
   - cntk.ops
   - cntk.sample_installer
   - cntk.tensor
@@ -42,6 +43,11 @@ references:
   name: axis
   parent: cntk
   uid: cntk.axis
+- fullName: cntk.contrib
+  isExternal: false
+  name: contrib
+  parent: cntk
+  uid: cntk.contrib
 - fullName: cntk.core
   isExternal: false
   name: core
@@ -72,11 +78,6 @@ references:
   name: initializer
   parent: cntk
   uid: cntk.initializer
-- fullName: cntk.internal
-  isExternal: false
-  name: internal
-  parent: cntk
-  uid: cntk.internal
 - fullName: cntk.io
   isExternal: false
   name: io
@@ -107,6 +108,11 @@ references:
   name: metrics
   parent: cntk
   uid: cntk.metrics
+- fullName: cntk.misc
+  isExternal: false
+  name: misc
+  parent: cntk
+  uid: cntk.misc
 - fullName: cntk.ops
   isExternal: false
   name: ops

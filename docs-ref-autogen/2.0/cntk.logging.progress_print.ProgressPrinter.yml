@@ -37,7 +37,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 27
+    startLine: 26
   summary: 'Allows printing various statistics (e.g. loss and metric) as training/evaluation
     progresses.
 
@@ -58,67 +58,126 @@ items:
 
 
 
+
     '
   syntax:
+    attribute:
+    - avg_loss_since_last
+    - avg_loss_since_start
+    - avg_metric_since_last
+    - avg_metric_since_start
+    - end_progress_printmsg=''
+    - epoch_summarywith_metric=False
+    - logmessage
+    - on_training_update_end
+    - on_write_distributed_sync_updatesamples, updates, aggregate_metric
+    - on_write_test_summarysamples, updates, summaries, aggregate_metric, elapsed_milliseconds
+    - on_write_test_updatesamples, updates, aggregate_metric
+    - on_write_training_summarysamples, updates, summaries, aggregate_loss, aggregate_metric,
+      elapsed_milliseconds
+    - on_write_training_updatesamples, updates, aggregate_loss, aggregate_metric
+    - reset_last
+    - reset_start
+    - updateloss, minibatch_size, metric=None
+    - update_with_trainertrainer, with_metric=False
+    - writekey, value
     content: ProgressPrinter(freq=None, first=0, tag='', log_to_file=None, rank=None,
       gen_heartbeat=False, num_epochs=300, test_freq=None, test_first=0, metric_is_pct=True,
       distributed_freq=None, distributed_first=0)
     parameters:
     - description: 'determines how often printing of training progress will occur.
-        A value of 0 means a geometric schedule (1,2,4,...). A value > 0 means an
-        arithmetic schedule (print for minibatch number: `freq`, print for minibatch
-        number: `2 * freq`, print for minibatch number: `3 * freq`,...). A value of
-        None means no per-minibatch log.'
+
+        A value of 0 means a geometric schedule (1,2,4,...).
+
+        A value > 0 means an arithmetic schedule (print for minibatch number: `freq`,
+
+        print for minibatch number: `2 * freq`, print for minibatch number: `3 * freq`,...).
+
+        A value of None means no per-minibatch log.
+
+        '
       id: freq
       type:
       - int or None, default None
-    - description: Only start printing after the training minibatch number is greater
-        or equal to `first`.
+    - description: 'Only start printing after the training minibatch number is greater
+        or equal to
+
+        `first`.
+
+        '
       id: first
       type:
       - int, default 0
-    - description: prepend minibatch log lines with your own string
+    - description: 'prepend minibatch log lines with your own string
+
+        '
       id: tag
       type:
       - string, default EmptyString
-    - description: if None, output log data to stdout. If a string is passed, the
-        string is path to a file for log data.
+    - description: 'if None, output log data to stdout.
+
+        If a string is passed, the string is path to a file for log data.
+
+        '
       id: log_to_file
       type:
       - string or None, default None
-    - description: set this to distributed.rank if you are using distributed parallelism
-        -- each rank's log will go to separate file.
+    - description: 'set this to distributed.rank if you are using distributed
+
+        parallelism -- each rank''s log will go to separate file.
+
+        '
       id: rank
       type:
       - int or None, default None
-    - description: If True output a progress message every 10 seconds or so to stdout.
+    - description: 'If True output a progress message every 10 seconds or so to stdout.
+
+        '
       id: gen_heartbeat
       type:
       - bool, default False
-    - description: The total number of epochs to be trained.  Used for some metadata.
+    - description: 'The total number of epochs to be trained.  Used for some metadata.
+
         This parameter is optional.
+
+        '
       id: num_epochs
       type:
       - int, default 300
-    - description: similar to `freq`, but applies to printing intermediate test results.
+    - description: 'similar to `freq`, but applies to printing intermediate
+
+        test results.
+
+        '
       id: test_freq
       type:
       - int or None, default None
-    - description: similar to `first`, but applies to printing intermediate test results.
+    - description: 'similar to `first`, but applies to printing intermediate test
+        results.
+
+        '
       id: test_first
       type:
       - int, default 0
-    - description: Treat metric as a percentage for output purposes.
+    - description: 'Treat metric as a percentage for output purposes.
+
+        '
       id: metric_is_pct
       type:
       - bool, default True
-    - description: similar to `freq`, but applies to printing distributed-training
+    - description: 'similar to `freq`, but applies to printing distributed-training
+
         worker synchronization info.
+
+        '
       id: distributed_freq
       type:
       - int or None, default None
-    - description: similar to `first`, but applies to printing distributed-training
+    - description: 'similar to `first`, but applies to printing distributed-training
+
         worker synchronization info.
+
+        '
       id: distributed_first
       type:
       - int, default 0
@@ -137,10 +196,13 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 162
+    startLine: 161
   summary: 'DEPRECATED.
 
-    Returns: the average loss since the last print'
+
+    Returns: the average loss since the last print
+
+    '
   syntax:
     content: avg_loss_since_last(self)
   type: method
@@ -158,10 +220,13 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 144
+    startLine: 143
   summary: 'DEPRECATED.
 
-    Returns: the average loss since the start of accumulation'
+
+    Returns: the average loss since the start of accumulation
+
+    '
   syntax:
     content: avg_loss_since_start(self)
   type: method
@@ -179,10 +244,13 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 171
+    startLine: 170
   summary: 'DEPRECATED.
 
-    Returns: the average metric since the last print'
+
+    Returns: the average metric since the last print
+
+    '
   syntax:
     content: avg_metric_since_last(self)
   type: method
@@ -200,10 +268,13 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 153
+    startLine: 152
   summary: 'DEPRECATED.
 
-    Returns: the average metric since the start of accumulation'
+
+    Returns: the average metric since the start of accumulation
+
+    '
   syntax:
     content: avg_metric_since_start(self)
   type: method
@@ -221,12 +292,16 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 124
-  summary: Prints the given message signifying the end of training.
+    startLine: 123
+  summary: 'Prints the given message signifying the end of training.
+
+    '
   syntax:
     content: end_progress_print(self, msg='')
     parameters:
-    - description: message to print.
+    - description: 'message to print.
+
+        '
       id: msg
       type:
       - string, default ''
@@ -245,16 +320,22 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 226
+    startLine: 225
   summary: 'DEPRECATED.
 
+
     If on an arithmetic schedule print an epoch summary using the ''start'' accumulators.
-    If on a geometric schedule does nothing.'
+
+    If on a geometric schedule does nothing.
+
+    '
   syntax:
     content: epoch_summary(self, with_metric=False)
     parameters:
-    - description: if *False* it only prints the loss, otherwise it prints both the
+    - description: 'if *False* it only prints the loss, otherwise it prints both the
         loss and the metric
+
+        '
       id: with_metric
       type:
       - bool
@@ -273,12 +354,16 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 135
-  summary: Prints any message the user wishes to place in the log.
+    startLine: 134
+  summary: 'Prints any message the user wishes to place in the log.
+
+    '
   syntax:
     content: log(self, message)
     parameters:
-    - description: message to print.
+    - description: 'message to print.
+
+        '
       id: msg
       type:
       - string
@@ -297,7 +382,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 336
+    startLine: 335
   syntax:
     content: on_training_update_end(self)
   type: method
@@ -315,7 +400,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 344
+    startLine: 343
   syntax:
     content: on_write_distributed_sync_update(self, samples, updates, aggregate_metric)
   type: method
@@ -333,7 +418,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 416
+    startLine: 415
   syntax:
     content: on_write_test_summary(self, samples, updates, summaries, aggregate_metric,
       elapsed_milliseconds)
@@ -352,7 +437,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 340
+    startLine: 339
   syntax:
     content: on_write_test_update(self, samples, updates, aggregate_metric)
   type: method
@@ -370,7 +455,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 391
+    startLine: 390
   syntax:
     content: on_write_training_summary(self, samples, updates, summaries, aggregate_loss,
       aggregate_metric, elapsed_milliseconds)
@@ -389,7 +474,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 332
+    startLine: 331
   syntax:
     content: on_write_training_update(self, samples, updates, aggregate_loss, aggregate_metric)
   type: method
@@ -407,13 +492,17 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 196
+    startLine: 195
   summary: 'DEPRECATED.
+
 
     Resets the ''last'' accumulators
 
+
     Returns: tuple of (average loss since last, average metric since last, samples
-    since last)'
+    since last)
+
+    '
   syntax:
     content: reset_last(self)
   type: method
@@ -431,13 +520,17 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 180
+    startLine: 179
   summary: 'DEPRECATED.
+
 
     Resets the ''start'' accumulators
 
+
     Returns: tuple of (average loss since start, average metric since start, samples
-    since start)'
+    since start)
+
+    '
   syntax:
     content: reset_start(self)
   type: method
@@ -455,23 +548,33 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 258
+    startLine: 257
   summary: 'DEPRECATED.
 
-    Updates the accumulators using the loss, the minibatch_size and the optional metric.'
+
+    Updates the accumulators using the loss, the minibatch_size and the optional metric.
+
+    '
   syntax:
     content: update(self, loss, minibatch_size, metric=None)
     parameters:
-    - description: the value with which to update the loss accumulators
+    - description: 'the value with which to update the loss accumulators
+
+        '
       id: loss
       type:
       - float
-    - description: the value with which to update the samples accumulator
+    - description: 'the value with which to update the samples accumulator
+
+        '
       id: minibatch_size
       type:
       - int
-    - description: if *None* do not update the metric accumulators, otherwise update
-        with the given value
+    - description: 'if *None* do not update the metric
+
+        accumulators, otherwise update with the given value
+
+        '
       id: metric
       type:
       - float or None
@@ -490,19 +593,30 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 310
+    startLine: 309
   summary: 'DEPRECATED.
 
+
     Update the current loss, the minibatch size and optionally the metric using the
-    information from the `trainer`.'
+    information from the
+
+    `trainer`.
+
+    '
   syntax:
     content: update_with_trainer(self, trainer, with_metric=False)
     parameters:
-    - description: trainer from which information is gathered
+    - description: 'trainer from which information is gathered
+
+        '
       id: trainer
       type:
-      - '@cntk.train.trainer.Trainer'
-    - description: whether to update the metric accumulators
+      - '@cntk.train.trainer.Trainer
+
+        '
+    - description: 'whether to update the metric accumulators
+
+        '
       id: with_metric
       type:
       - bool
@@ -521,7 +635,7 @@ items:
       branch: master
       path: /bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 213
+    startLine: 212
   syntax:
     content: write(self, key, value)
   type: method

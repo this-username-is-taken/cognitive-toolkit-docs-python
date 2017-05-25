@@ -28,7 +28,10 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 41
   summary: 'A communicator interface exposing communication primitives that serve
-    as building blocks for distributed training.
+    as building blocks
+
+    for distributed training.
+
 
 
 
@@ -38,6 +41,14 @@ items:
 
     '
   syntax:
+    attribute:
+    - barrier
+    - current_worker
+    - static finalize
+    - is_main
+    - static num_workers
+    - static rank
+    - workers
     content: Communicator(*args, **kwargs)
   type: class
   uid: cntk.train.distributed.Communicator
@@ -55,7 +66,9 @@ items:
       path: /bindings/python\cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 67
-  summary: Sync point to make sure all workers reach the same state.
+  summary: 'Sync point to make sure all workers reach the same state.
+
+    '
   syntax:
     content: barrier(self)
   type: method
@@ -74,11 +87,15 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 57
-  summary: Returns worker descriptor of current process.
+  summary: 'Returns worker descriptor of current process.
+
+    '
   syntax:
     content: current_worker(self)
     return:
-      description: descriptor of current process.
+      description: 'descriptor of current process.
+
+        '
       type:
       - WorkerDescriptor
   type: method
@@ -97,8 +114,10 @@ items:
       path: /bindings/python\cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 79
-  summary: Should be called when all communication is finished. No more communication
+  summary: 'Should be called when all communication is finished. No more communication
     should happen after this call.
+
+    '
   syntax:
     content: finalize()
   type: method
@@ -117,8 +136,10 @@ items:
       path: /bindings/python\cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 73
-  summary: Indicates if the current communicator is instantiated on the main node.
+  summary: 'Indicates if the current communicator is instantiated on the main node.
     The node with rank 0 is considered the main.
+
+    '
   syntax:
     content: is_main(self)
   type: method
@@ -137,7 +158,9 @@ items:
       path: /bindings/python\cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 86
-  summary: Returns information about all MPI workers.
+  summary: 'Returns information about all MPI workers.
+
+    '
   syntax:
     content: num_workers()
   type: method
@@ -156,7 +179,9 @@ items:
       path: /bindings/python\cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 93
-  summary: Returns rank of current process.
+  summary: 'Returns rank of current process.
+
+    '
   syntax:
     content: rank()
   type: method
@@ -175,11 +200,15 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 47
-  summary: Returns workers in this communicator.
+  summary: 'Returns workers in this communicator.
+
+    '
   syntax:
     content: workers(self)
     return:
-      description: workers in this communicator.
+      description: 'workers in this communicator.
+
+        '
       type:
       - (list) of WorkerDescriptor
   type: method

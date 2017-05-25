@@ -6,7 +6,7 @@ items:
   class: cntk.variables.Constant
   example:
   - "```\n\n>>> c = C.Constant(1, (2,3))\n>>> c.value\n    array([[ 1.,  1.,  1.],\n\
-    \           [ 1.,  1.,  1.]], dtype=float32)\n```"
+    \           [ 1.,  1.,  1.]], dtype=float32)\n```\n"
   fullName: cntk.variables.Constant
   inheritance:
   - inheritance:
@@ -31,30 +31,61 @@ items:
       branch: master
       path: /bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 376
-  summary: 'A constant value. It can be a scalar, vector, matrix, or tensor of floating
-    point numbers that cannot be modified.
+    startLine: 419
+  summary: 'A constant value. It can be a scalar, vector, matrix, or tensor
+
+    of floating point numbers that cannot be modified.
+
 
     A Constant is a @cntk.variables.Variable and therefore inherits all its methods.
 
+
+    <SYSTEM MESSAGE: C:\peter\ms_code\cntk_all\CNTK\bindings\python\doc\cntk.variables.rst:22:
+    (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
+
+    Trying "todo" as canonical directive name.>
+
+
+    <SYSTEM MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\variables.py:docstring
+    of cntk.variables.Constant:22: (ERROR/3) Unknown directive type "todo".
+
+
+    .. todo:: Document initializers for `value` parameter.
+
+
+    >
+
+
     '
   syntax:
+    attribute:
+    - value
     content: Constant(value=None, shape=None, dtype=<cntk.default_options.default_override_or
-      object at 0x000002AD86E79048>, device=None, name='')
+      object at 0x000001B3C36AC9B0>, device=None, name='')
     parameters:
-    - description: 'Initial value. BUGBUG: Document initializers'
+    - description: 'Initial value.
+
+        '
       id: value
       type:
       - np.ndarray or list or float or int
-    - description: data type to store the values as.
+    - description: 'data type to store the values as.
+
+        '
       id: dtype
       type:
       - np.float32 or np.float64
-    - description: the device on which the values should reside.
+    - description: 'the device on which the values should reside.
+
+        '
       id: device
       type:
-      - '@cntk.device'
-    - description: an optional name for this constant.
+      - '@cntk.device
+
+        '
+    - description: 'an optional name for this constant.
+
+        '
       id: name
       type:
       - str
@@ -74,7 +105,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: NumPy array of the value
+  summary: 'NumPy array of the value
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.variables.Constant.value

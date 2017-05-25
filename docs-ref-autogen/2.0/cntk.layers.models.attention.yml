@@ -16,7 +16,9 @@ items:
       path: /bindings/python\cntk\layers\models\attention.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  summary: Standard attention model.
+  summary: 'Standard attention model.
+
+    '
   type: module
   uid: cntk.layers.models.attention
 - fullName: cntk.layers.models.attention.AttentionModel
@@ -31,16 +33,20 @@ items:
       branch: master
       path: /bindings/python\cntk\layers\models\attention.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 18
-  summary: Layer factory function to create a function object that implements an attention
-    model as described in Bahdanau, et al., "Neural machine translation by jointly
-    learning to align and translate."
+    startLine: 23
+  summary: 'Layer factory function to create a function object that implements an
+    attention model
+
+    as described in Bahdanau, et al., "Neural machine translation by jointly learning
+    to align and translate."
+
+    '
   syntax:
     content: AttentionModel(attention_dim, attention_span=None, attention_axis=None,
-      init=<cntk.default_options.default_override_or object at 0x000002AD87454470>,
-      go_backwards=<cntk.default_options.default_override_or object at 0x000002AD874544A8>,
+      init=<cntk.default_options.default_override_or object at 0x000001B3C38A9AC8>,
+      go_backwards=<cntk.default_options.default_override_or object at 0x000001B3C38A9B00>,
       enable_self_stabilization=<cntk.default_options.default_override_or object at
-      0x000002AD874544E0>, name='')
+      0x000001B3C38A9B38>, name='')
   type: function
   uid: cntk.layers.models.attention.AttentionModel
 references:

@@ -7,7 +7,6 @@ items:
   - cntk.axis.Axis.default_batch_axis
   - cntk.axis.Axis.default_dynamic_axis
   - cntk.axis.Axis.default_input_variable_dynamic_axes
-  - cntk.axis.Axis.end_static_axis
   - cntk.axis.Axis.is_ordered
   - cntk.axis.Axis.is_static_axis
   - cntk.axis.Axis.name
@@ -34,16 +33,27 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 9
   summary: 'An axis object describes the axis of a variable and is used for specifying
-    the axes parameters of certain functions such as reductions.  Besides the static
-    axes corresponding to each of the axes of the variable''s shape, variables of
-    kind ''input'' and any ''output'' variables dependent on an ''input'' variable
-    also have two additional dynamic axes whose dimensions are known only when the
-    variable is bound to actual data during compute time (viz. sequence axis and batch
-    axis denoting the axis along which multiple sequences are batched).
 
-    Axis parameters can also be negative, which allows to refere axis starting from
-    the last axis. Please be aware that Axis objects work in a column-major wise,
-    as opposed to any other function in the library.
+    the axes parameters of certain functions such as reductions.  Besides the
+
+    static axes corresponding to each of the axes of the variable''s shape,
+
+    variables of kind ''input'' and any ''output'' variables dependent on an
+
+    ''input'' variable also have two additional dynamic axes whose dimensions are
+
+    known only when the variable is bound to actual data during compute time
+
+    (viz. sequence axis and batch axis denoting the axis along which multiple
+
+    sequences are batched).
+
+
+    Axis parameters can also be negative, which allows to refere axis starting
+
+    from the last axis. Please be aware that Axis objects work in a
+
+    column-major wise, as opposed to any other function in the library.
 
 
 
@@ -59,6 +69,19 @@ items:
 
     '
   syntax:
+    attribute:
+    - static all_axes
+    - static all_static_axes
+    - static default_batch_axis
+    - static default_dynamic_axis
+    - static default_input_variable_dynamic_axes
+    - is_ordered
+    - is_static_axis
+    - name
+    - static new_leading_axis
+    - static new_unique_dynamic_axisname
+    - static_axis_indexchecked=True
+    - static unknown_dynamic_axes
     content: Axis(*args)
   type: class
   uid: cntk.axis.Axis
@@ -76,11 +99,15 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 103
-  summary: Axis object representing all the axes--static and dynamic--of an operand.
+  summary: 'Axis object representing all the axes--static and dynamic--of an operand.
+
+    '
   syntax:
     content: all_axes()
     return:
-      description: all axes
+      description: 'all axes
+
+        '
       type:
       - Axis
   type: method
@@ -99,11 +126,15 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 92
-  summary: Axis object representing all the static axes of an operand.
+  summary: 'Axis object representing all the static axes of an operand.
+
+    '
   syntax:
     content: all_static_axes()
     return:
-      description: all static axes
+      description: 'all static axes
+
+        '
       type:
       - Axis
   type: method
@@ -122,11 +153,15 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 81
-  summary: Returns an Axis object representing the batch axis
+  summary: 'Returns an Axis object representing the batch axis
+
+    '
   syntax:
     content: default_batch_axis()
     return:
-      description: default batch axis
+      description: 'default batch axis
+
+        '
       type:
       - Axis
   type: method
@@ -145,11 +180,15 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 70
-  summary: Returns an Axis object representing the default dynamic axis
+  summary: 'Returns an Axis object representing the default dynamic axis
+
+    '
   syntax:
     content: default_dynamic_axis()
     return:
-      description: default dynamic axis
+      description: 'default dynamic axis
+
+        '
       type:
       - Axis
   type: method
@@ -168,40 +207,19 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 114
-  summary: Default dynamic axes of the input variable
+  summary: 'Default dynamic axes of the input variable
+
+    '
   syntax:
     content: default_input_variable_dynamic_axes()
     return:
-      description: instances
+      description: 'instances
+
+        '
       type:
       - tuple of Axis
   type: method
   uid: cntk.axis.Axis.default_input_variable_dynamic_axes
-- class: cntk.axis.Axis
-  fullName: cntk.axis.Axis.end_static_axis
-  langs:
-  - python
-  module: cntk.axis
-  name: end_static_axis
-  source:
-    id: end_static_axis
-    path: /bindings/python\cntk\internal\swig_helper.py
-    remote:
-      branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 150
-  summary: 'DEPRECATED.
-
-    Creates an Axis object representing a new leading static axis.'
-  syntax:
-    content: end_static_axis()
-    return:
-      description: axis object representing a new leading static axis.
-      type:
-      - Axis
-  type: method
-  uid: cntk.axis.Axis.end_static_axis
 - class: cntk.axis.Axis
   fullName: cntk.axis.Axis.is_ordered
   langs:
@@ -216,11 +234,15 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Returns True if the axis is ordered; i.e. if there is an ordering between
+  summary: 'Returns True if the axis is ordered; i.e. if there is an ordering between
     the dimensions along the axis.
+
+    '
   syntax:
     return:
-      description: True if this axis is ordered and False otherwise
+      description: 'True if this axis is ordered and False otherwise
+
+        '
       type:
       - bool
   type: attribute
@@ -239,10 +261,14 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Returns True if the axis is of type static and False otherwise
+  summary: 'Returns True if the axis is of type static and False otherwise
+
+    '
   syntax:
     return:
-      description: True if this axis is of type static and False otherwise
+      description: 'True if this axis is of type static and False otherwise
+
+        '
       type:
       - bool
   type: attribute
@@ -261,10 +287,14 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Returns the name of this axis.
+  summary: 'Returns the name of this axis.
+
+    '
   syntax:
     return:
-      description: the name of this axis.
+      description: 'the name of this axis.
+
+        '
       type:
       - str
   type: attribute
@@ -282,12 +312,16 @@ items:
       branch: master
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 166
-  summary: Creates an Axis object representing a new leading static axis.
+    startLine: 150
+  summary: 'Creates an Axis object representing a new leading static axis.
+
+    '
   syntax:
     content: new_leading_axis()
     return:
-      description: axis object representing a new leading static axis.
+      description: 'axis object representing a new leading static axis.
+
+        '
       type:
       - Axis
   type: method
@@ -306,16 +340,22 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 136
-  summary: Creates an Axis object representing a new unique dynamic axis.
+  summary: 'Creates an Axis object representing a new unique dynamic axis.
+
+    '
   syntax:
     content: new_unique_dynamic_axis(name)
     parameters:
-    - description: name of the dynmic axis
+    - description: 'name of the dynmic axis
+
+        '
       id: name
       type:
       - str
     return:
-      description: new unique dynamic axis
+      description: 'new unique dynamic axis
+
+        '
       type:
       - Axis
   type: method
@@ -334,18 +374,24 @@ items:
       path: /bindings/python\cntk\axis.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 58
-  summary: Returns the integer with which the static axis is defined. For example,
+  summary: 'Returns the integer with which the static axis is defined. For example,
     0 = first axis, 1 = second axis, etc.
+
+    '
   syntax:
     content: static_axis_index(self, checked=True)
     parameters:
-    - description: if True then this function will throw an exception if the axis
+    - description: 'if True then this function will throw an exception if the axis
         is not static.
+
+        '
       id: checked
       type:
       - bool
     return:
-      description: the number with which the static axis is defined.
+      description: 'the number with which the static axis is defined.
+
+        '
       type:
       - int
   type: method
@@ -364,11 +410,15 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 125
-  summary: Unknown dynamic axes
+  summary: 'Unknown dynamic axes
+
+    '
   syntax:
     content: unknown_dynamic_axes()
     return:
-      description: instances
+      description: 'instances
+
+        '
       type:
       - tuple of Axis
   type: method
@@ -399,11 +449,6 @@ references:
   name: default_input_variable_dynamic_axes
   parent: cntk.axis.Axis
   uid: cntk.axis.Axis.default_input_variable_dynamic_axes
-- fullName: cntk.axis.Axis.end_static_axis
-  isExternal: false
-  name: end_static_axis
-  parent: cntk.axis.Axis
-  uid: cntk.axis.Axis.end_static_axis
 - fullName: cntk.axis.Axis.is_ordered
   isExternal: false
   name: is_ordered

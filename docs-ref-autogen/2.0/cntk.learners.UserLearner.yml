@@ -20,15 +20,21 @@ items:
       branch: master
       path: /bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 176
+    startLine: 166
   summary: 'Base class of all user-defined learners. To implement your own learning
+
     algorithm, derive from this class and override the @cntk.learners.UserLearner.update.
 
-    Certain optimizers (such as AdaGrad) require additional storage. This can be allocated
-    and initialized during construction.
+
+    Certain optimizers (such as AdaGrad) require additional storage.
+
+    This can be allocated and initialized during construction.
+
 
     '
   syntax:
+    attribute:
+    - updategradient_values, training_sample_count, sweep_end
     content: UserLearner(parameters, lr_schedule, as_numpy=True)
   type: class
   uid: cntk.learners.UserLearner
@@ -45,28 +51,45 @@ items:
       branch: master
       path: /bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 217
-  summary: Update the parameters associated with this learner.
+    startLine: 207
+  summary: 'Update the parameters associated with this learner.
+
+    '
   syntax:
     content: update(self, gradient_values, training_sample_count, sweep_end)
     parameters:
-    - description: maps @cntk.variables.Parameter to a NumPy array containing the
-        first order gradient values for the Parameter w.r.t. the training objective.
+    - description: 'maps @cntk.variables.Parameter to
+
+        a NumPy array containing the first order gradient values for the
+
+        Parameter w.r.t. the training objective.
+
+        '
       id: gradient_values
       type:
       - dict
-    - description: number of samples in the minibatch
+    - description: 'number of samples in the minibatch
+
+        '
       id: training_sample_count
       type:
       - int
-    - description: if the data is fed by a conforming reader, this indicates whether
-        a full pass over the dataset has just occured.
+    - description: 'if the data is fed by a conforming reader, this indicates
+
+        whether a full pass over the dataset has just occurred.
+
+        '
       id: sweep_end
       type:
       - bool
     return:
-      description: '*False* to indicate that learning has stopped for all of the parameters
-        associated with this learner'
+      description: '*False* to indicate that learning has stopped for all of the
+
+        parameters associated with this learner
+
+        '
+      type:
+      - bool
   type: method
   uid: cntk.learners.UserLearner.update
 references:
