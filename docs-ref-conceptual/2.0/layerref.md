@@ -3,7 +3,7 @@ title: Getting started
 author: 
 ms.author: 
 ms.date: 05/31/2017
-ms.topic: concepts
+ms.topic: conceptual
 ms.service: cognitive-services
 ---
 
@@ -166,7 +166,7 @@ it with a recurrent LSTM, and then classifies each word:
 
 And the following is a simple convolutional network for image
 recognition, using the
-[with default_options(...):](/cognitive-toolkit/specifying-the-same-options-to-multliple-layers)
+[with default_options(...):](#specifying-the-same-options-to-multiple-layers)
 pattern):
 
 ```python

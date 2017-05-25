@@ -3,7 +3,7 @@ title: Tutorials
 author: 
 ms.author: 
 ms.date: 05/31/2017
-ms.topic: concepts
+ms.topic: conceptual
 ms.service: cognitive-services
 ---
 
@@ -18,8 +18,8 @@ ms.service: cognitive-services
 3.  **_Recognize hand written digits (OCR) with MNIST data_**<br>
      CNTK 103 Part A: [MNIST data preparation](https://github.com/Microsoft/CNTK/blob/v2.0.rc2/Tutorials/CNTK_103A_MNIST_DataLoader.ipynb),
      Part B: [Multi-class logistic regression classifier](https://github.com/Microsoft/CNTK/blob/v2.0.rc2/Tutorials/CNTK_103B_MNIST_FeedForwardNetwork.ipynb) 
-     Part C: [Multi-layer perceptron classifier](CNTK_103C_MNIST_MultiLayerPerceptron),
-     Part D: [Convolutional neural network classifier](CNTK_103D_MNIST_ConvolutionalNeuralNetwork)
+     Part C: [Multi-layer perceptron classifier](https://github.com/Microsoft/CNTK/blob/v2.0.rc3/Tutorials/CNTK_103C_MNIST_MultiLayerPerceptron.ipynb),
+     Part D: [Convolutional neural network classifier](https://github.com/Microsoft/CNTK/blob/v2.0.rc3/Tutorials/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.ipynb)
 
 4.  **_Learn how to predict the stock market_**<br>
      CNTK 104: [Time Series basics](https://github.com/Microsoft/CNTK/blob/v2.0.rc2/Tutorials/CNTK_104_Finance_Timeseries_Basic_with_Pandas_Numpy.ipynb) with finance data
