@@ -25,6 +25,16 @@
           "**/obj/**",
           "**/includes/**"
         ]
+      },
+      {
+        "files": [
+          "**/*.yml"
+        ],
+        "src": "breadcrumb",
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
+        ]
       }
     ],
     "resource": [
@@ -50,7 +60,7 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-      "breadcrumb_path": "/python/cognitive-toolkit/breadcrumb/TOC.yml"
+      "breadcrumb_path": "/python/breadcrumb/TOC.json"
     },
     "fileMetadata": {
       "author": {
