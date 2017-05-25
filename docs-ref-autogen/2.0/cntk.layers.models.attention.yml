@@ -16,7 +16,9 @@ items:
       path: /bindings/python\cntk\layers\models\attention.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  summary: Standard attention model.
+  summary: 'Standard attention model.
+
+    '
   type: module
   uid: cntk.layers.models.attention
 - fullName: cntk.layers.models.attention.AttentionModel
@@ -37,10 +39,10 @@ items:
     learning to align and translate."
   syntax:
     content: AttentionModel(attention_dim, attention_span=None, attention_axis=None,
-      init=<cntk.default_options.default_override_or object at 0x00000244A71D87F0>,
-      go_backwards=<cntk.default_options.default_override_or object at 0x00000244A71D8828>,
+      init=<cntk.default_options.default_override_or object at 0x000001E2B1700550>,
+      go_backwards=<cntk.default_options.default_override_or object at 0x000001E2B189D908>,
       enable_self_stabilization=<cntk.default_options.default_override_or object at
-      0x00000244A71D8860>, name='')
+      0x000001E2B189D940>, name='')
   type: function
   uid: cntk.layers.models.attention.AttentionModel
 references:

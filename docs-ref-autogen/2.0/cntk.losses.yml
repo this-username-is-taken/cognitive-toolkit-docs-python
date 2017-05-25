@@ -160,11 +160,6 @@ items:
 
     array([[ 0.]], dtype=float32)
 
-    ```
-
-
-    ```
-
 
     >>> C.cross_entropy_with_softmax([[1., 2., 3., 4.]], [[0.35, 0.15, 0.05, 0.45]]).eval()
 
@@ -279,11 +274,6 @@ items:
     i2:np.asarray([[[4., 6.]]], dtype=np.float32)})
 
     array([ 29.], dtype=float32)
-
-    ```
-
-
-    ```
 
 
     >>> C.squared_error(i1,i2).eval({i1:np.asarray([[[1., 2.]]], dtype=np.float32),

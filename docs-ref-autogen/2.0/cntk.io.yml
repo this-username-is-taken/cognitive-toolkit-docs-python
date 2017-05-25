@@ -35,14 +35,13 @@ items:
   - python
   module: cntk.io
   name: Base64ImageDeserializer
-  seealsoContent: "See also: >>:cntkwiki:`Base64ImageDeserializer options <BrainScript-and-Python---Understanding-and-Extending-Readers#base64imagedeserializer-options>`<<\n\
-    \n  <SYSTEM MESSAGE: c:\\local\\anaconda3-4.1.1-windows-x86_64\\lib\\site-packages\\\
-    cntk\\io\\__init__.py:docstring of cntk.io.Base64ImageDeserializer:12: (INFO/1)\
-    \ No role entry for \"cntkwiki\" in module \"docutils.parsers.rst.languages.en\"\
-    . Trying \"cntkwiki\" as canonical role name.>\n\n  <SYSTEM MESSAGE: c:\\local\\\
-    anaconda3-4.1.1-windows-x86_64\\lib\\site-packages\\cntk\\io\\__init__.py:docstring\
-    \ of cntk.io.Base64ImageDeserializer:12: (ERROR/3) Unknown interpreted text role\
-    \ \"cntkwiki\".>"
+  seealsoContent: 'See also: >>:cntkwiki:`Base64ImageDeserializer options <BrainScript-and-Python---Understanding-and-Extending-Readers#base64imagedeserializer-options>`<<  <SYSTEM
+    MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\io\__init__.py:docstring
+    of cntk.io.Base64ImageDeserializer:12: (INFO/1) No role entry for "cntkwiki" in
+    module "docutils.parsers.rst.languages.en". Trying "cntkwiki" as canonical role
+    name.>  <SYSTEM MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\io\__init__.py:docstring
+    of cntk.io.Base64ImageDeserializer:12: (ERROR/3) Unknown interpreted text role
+    "cntkwiki".>'
   source:
     id: Base64ImageDeserializer
     path: /bindings/python\cntk\io\__init__.py
@@ -51,12 +50,15 @@ items:
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 579
-  summary: "Configures the image reader that reads base64 encoded images and corresponding\
-    \ labels from a file of the form:\n<!-- literal_block {\"ids\": [], \"xml:space\"\
-    : \"preserve\", \"classes\": [], \"backrefs\": [], \"names\": [], \"dupnames\"\
-    : []} -->\n\n````\n\n   [sequenceId <tab>] <numerical label (0-based class id)>\
-    \ <tab> <base64 encoded image>\n   ````\nSimilarly to the ImageDeserializer, the\
-    \ sequenceId prefix is optional and can be omitted."
+  summary: 'Configures the image reader that reads base64 encoded images and corresponding
+    labels from a file of the form:
+
+    <!-- literal_block {"xml:space": "preserve", "names": [], "dupnames": [], "classes":
+    [], "ids": [], "backrefs": []} -->````   [sequenceId <tab>] <numerical label (0-based
+    class id)> <tab> <base64 encoded image>   ````
+
+    Similarly to the ImageDeserializer, the sequenceId prefix is optional and can
+    be omitted.'
   syntax:
     content: Base64ImageDeserializer(filename, streams)
     parameters:
@@ -72,13 +74,12 @@ items:
   - python
   module: cntk.io
   name: CTFDeserializer
-  seealsoContent: "See also: >>:cntkwiki:`CNTKTextReader format <BrainScript-CNTKTextFormat-Reader>`<<\n\
-    \n  <SYSTEM MESSAGE: c:\\local\\anaconda3-4.1.1-windows-x86_64\\lib\\site-packages\\\
-    cntk\\io\\__init__.py:docstring of cntk.io.CTFDeserializer:16: (INFO/1) No role\
-    \ entry for \"cntkwiki\" in module \"docutils.parsers.rst.languages.en\". Trying\
-    \ \"cntkwiki\" as canonical role name.>\n\n  <SYSTEM MESSAGE: c:\\local\\anaconda3-4.1.1-windows-x86_64\\\
-    lib\\site-packages\\cntk\\io\\__init__.py:docstring of cntk.io.CTFDeserializer:16:\
-    \ (ERROR/3) Unknown interpreted text role \"cntkwiki\".>"
+  seealsoContent: 'See also: >>:cntkwiki:`CNTKTextReader format <BrainScript-CNTKTextFormat-Reader>`<<  <SYSTEM
+    MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\io\__init__.py:docstring
+    of cntk.io.CTFDeserializer:16: (INFO/1) No role entry for "cntkwiki" in module
+    "docutils.parsers.rst.languages.en". Trying "cntkwiki" as canonical role name.>  <SYSTEM
+    MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\io\__init__.py:docstring
+    of cntk.io.CTFDeserializer:16: (ERROR/3) Unknown interpreted text role "cntkwiki".>'
   source:
     id: CTFDeserializer
     path: /bindings/python\cntk\io\__init__.py
@@ -87,12 +88,16 @@ items:
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 599
-  summary: "Configures the CNTK text-format reader that reads text-based files with\
-    \ lines of the form:\n<!-- literal_block {\"ids\": [], \"xml:space\": \"preserve\"\
-    , \"classes\": [], \"backrefs\": [], \"names\": [], \"dupnames\": []} -->\n\n\
-    ````\n\n   [Sequence_Id] (Sample)+\n   ````\nwhere:\n<!-- literal_block {\"ids\"\
-    : [], \"xml:space\": \"preserve\", \"classes\": [], \"backrefs\": [], \"names\"\
-    : [], \"dupnames\": []} -->\n\n````\n\n   Sample=|Input_Name (Value )*\n   ````"
+  summary: 'Configures the CNTK text-format reader that reads text-based files with
+    lines of the form:
+
+    <!-- literal_block {"xml:space": "preserve", "names": [], "dupnames": [], "classes":
+    [], "ids": [], "backrefs": []} -->````   [Sequence_Id] (Sample)+   ````
+
+    where:
+
+    <!-- literal_block {"xml:space": "preserve", "names": [], "dupnames": [], "classes":
+    [], "ids": [], "backrefs": []} -->````   Sample=|Input_Name (Value )*   ````'
   syntax:
     content: CTFDeserializer(filename, streams)
     parameters:
@@ -164,13 +169,12 @@ items:
   - python
   module: cntk.io
   name: ImageDeserializer
-  seealsoContent: "See also: >>:cntkwiki:`Image reader definition <BrainScript-Image-reader>`<<\n\
-    \n  <SYSTEM MESSAGE: c:\\local\\anaconda3-4.1.1-windows-x86_64\\lib\\site-packages\\\
-    cntk\\io\\__init__.py:docstring of cntk.io.ImageDeserializer:14: (INFO/1) No role\
-    \ entry for \"cntkwiki\" in module \"docutils.parsers.rst.languages.en\". Trying\
-    \ \"cntkwiki\" as canonical role name.>\n\n  <SYSTEM MESSAGE: c:\\local\\anaconda3-4.1.1-windows-x86_64\\\
-    lib\\site-packages\\cntk\\io\\__init__.py:docstring of cntk.io.ImageDeserializer:14:\
-    \ (ERROR/3) Unknown interpreted text role \"cntkwiki\".>"
+  seealsoContent: 'See also: >>:cntkwiki:`Image reader definition <BrainScript-Image-reader>`<<  <SYSTEM
+    MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\io\__init__.py:docstring
+    of cntk.io.ImageDeserializer:14: (INFO/1) No role entry for "cntkwiki" in module
+    "docutils.parsers.rst.languages.en". Trying "cntkwiki" as canonical role name.>  <SYSTEM
+    MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\io\__init__.py:docstring
+    of cntk.io.ImageDeserializer:14: (ERROR/3) Unknown interpreted text role "cntkwiki".>'
   source:
     id: ImageDeserializer
     path: /bindings/python\cntk\io\__init__.py
@@ -179,13 +183,17 @@ items:
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 557
-  summary: "Configures the image reader that reads images and corresponding labels\
-    \ from a file of the form:\n<!-- literal_block {\"ids\": [], \"xml:space\": \"\
-    preserve\", \"classes\": [], \"backrefs\": [], \"names\": [], \"dupnames\": []}\
-    \ -->\n\n````\n\n   <full path to image> <tab> <numerical label (0-based class\
-    \ id)>\n   ````\nor:\n<!-- literal_block {\"ids\": [], \"xml:space\": \"preserve\"\
-    , \"classes\": [], \"backrefs\": [], \"names\": [], \"dupnames\": []} -->\n\n\
-    ````\n\n   sequenceId <tab> path <tab> label\n   ````"
+  summary: 'Configures the image reader that reads images and corresponding labels
+    from a file of the form:
+
+    <!-- literal_block {"xml:space": "preserve", "names": [], "dupnames": [], "classes":
+    [], "ids": [], "backrefs": []} -->````   <full path to image> <tab> <numerical
+    label (0-based class id)>   ````
+
+    or:
+
+    <!-- literal_block {"xml:space": "preserve", "names": [], "dupnames": [], "classes":
+    [], "ids": [], "backrefs": []} -->````   sequenceId <tab> path <tab> label   ````'
   syntax:
     content: ImageDeserializer(filename, streams)
     parameters:
@@ -215,17 +223,10 @@ items:
     content: StreamDef(field=None, shape=None, is_sparse=False, transforms=None, context=None,
       scp=None, mlf=None, broadcast=None, defines_mb_size=False)
     parameters:
-    - description: 'this is the name of the stream
-
-
-        * for CTFDeserializer the name is inside the CTF file
-
-
-        * for ImageDeserializer the acceptable names are *image* or *label*
-
-
-        * for HTKFeatureDeserializer and HTKMLFDeserializer only the default value
-        of None is acceptable'
+    - description: this is the name of the stream* for CTFDeserializer the name is
+        inside the CTF file* for ImageDeserializer the acceptable names are *image*
+        or *label** for HTKFeatureDeserializer and HTKMLFDeserializer only the default
+        value of None is acceptable
       id: field
       type:
       - str, defaults to None

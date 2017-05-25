@@ -36,11 +36,30 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   summary: 'Learner tunes a set of parameters during the training process. One can
-    use different learners for different sets of parameters. Currently, CNTK supports
+    use
+
+    different learners for different sets of parameters. Currently, CNTK supports
+
     the following learning algorithms:
 
 
-    - AdaDelta - AdaGrad - FSAdaGrad - Adam - MomentumSGD - Nesterov - RMSProp - SGD'
+    - AdaDelta
+
+    - AdaGrad
+
+    - FSAdaGrad
+
+    - Adam
+
+    - MomentumSGD
+
+    - Nesterov
+
+    - RMSProp
+
+    - SGD
+
+    '
   type: module
   uid: cntk.learners
 - fullName: cntk.learners.adadelta
@@ -63,7 +82,7 @@ items:
   syntax:
     content: adadelta(parameters, lr=<cntk.cntk_py.training_parameter_per_sample_schedule;
       proxy of <Swig Object of type 'CNTK::TrainingParameterPerUnitSchedule< double,CNTK::TrainingParameterSchedule<
-      double >::UnitType::Sample > *' at 0x00000244A6FB36C0> >, rho=0.95, epsilon=1e-08,
+      double >::UnitType::Sample > *' at 0x000001E2B1634690> >, rho=0.95, epsilon=1e-08,
       l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
       gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
       use_mean_gradient=False)
@@ -205,7 +224,7 @@ items:
     information.
   syntax:
     content: adam(parameters, lr, momentum, unit_gain=True, variance_momentum=<cntk.cntk_py.momentum_as_time_constant_schedule;
-      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x00000244A71215A0>
+      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x000001E2B1795540>
       >, l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
       gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
       use_mean_gradient=False, epsilon=1e-08, adamax=False)
@@ -322,7 +341,7 @@ items:
   summary: Creates an FSAdaGrad learner instance to learn the parameters.
   syntax:
     content: fsadagrad(parameters, lr, momentum, unit_gain=True, variance_momentum=<cntk.cntk_py.momentum_as_time_constant_schedule;
-      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x00000244A7121540>
+      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x000001E2B17954E0>
       >, l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
       gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
       use_mean_gradient=False)
@@ -422,11 +441,6 @@ items:
 
     >>> m = momentum_as_time_constant_schedule(1100)
 
-    ```
-
-
-    ```
-
 
     >>> # Use the time constant 1100 for the first 1000 samples,
 
@@ -470,11 +484,6 @@ items:
 
     >>> m = momentum_schedule(0.99)
 
-    ```
-
-
-    ```
-
 
     >>> # Use the momentum value 0.99 for the first 1000 samples,
 
@@ -485,11 +494,6 @@ items:
     >>> m[0], m[999], m[1000], m[1001]
 
     (0.99, 0.99, 0.9, 0.9)
-
-    ```
-
-
-    ```
 
 
     >>> # Use the momentum value 0.99 for the first 999 samples,
@@ -601,11 +605,11 @@ items:
   - python
   module: cntk.learners
   name: nesterov
-  seealsoContent: "See also: [1] Y. Nesterov. A Method of Solving a Convex Programming\
-    \ Problem with Convergence Rate O(1/ sqrt(k)). Soviet Mathematics Doklady, 1983.\n\
-    \n  [2] I. Sutskever, J. Martens, G. Dahl, and G. Hinton. [On the Importance of\
-    \ Initialization and Momentum in Deep Learning](http://www.cs.toronto.edu/~fritz/absps/momentum.pdf).\
-    \  Proceedings of the 30th International Conference on Machine Learning, 2013."
+  seealsoContent: 'See also: [1] Y. Nesterov. A Method of Solving a Convex Programming
+    Problem with Convergence Rate O(1/ sqrt(k)). Soviet Mathematics Doklady, 1983.  [2]
+    I. Sutskever, J. Martens, G. Dahl, and G. Hinton. [On the Importance of Initialization
+    and Momentum in Deep Learning](http://www.cs.toronto.edu/~fritz/absps/momentum.pdf).  Proceedings
+    of the 30th International Conference on Machine Learning, 2013.'
   source:
     id: nesterov
     path: /bindings/python\cntk\internal\swig_helper.py
@@ -868,11 +872,6 @@ items:
 
     (0.01, 0.01)
 
-    ```
-
-
-    ```
-
 
     >>> # Use 0.01 for the first 1000 samples, then 0.001 for the remaining ones
 
@@ -881,11 +880,6 @@ items:
     >>> s[0], s[1], s[1000], s[1001]
 
     (0.01, 0.01, 0.001, 0.001)
-
-    ```
-
-
-    ```
 
 
     >>> # Use 0.1 for the first 12 epochs, then 0.01 for the next 15,

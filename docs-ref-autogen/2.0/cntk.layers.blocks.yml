@@ -22,8 +22,12 @@ items:
       path: /bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  summary: Basic building blocks that are semantically not layers (not used in a layered
-    fashion), e.g. the LSTM block.
+  summary: 'Basic building blocks that are semantically not layers (not used in a
+    layered fashion),
+
+    e.g. the LSTM block.
+
+    '
   type: module
   uid: cntk.layers.blocks
 - fullName: cntk.layers.blocks.BlockFunction
@@ -109,10 +113,10 @@ items:
     the previous state as its first argument, and outputs its new state.
   syntax:
     content: GRU(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x00000244A71C5DA0>, init=<cntk.default_options.default_override_or
-      object at 0x00000244A71C5E10>, init_bias=<cntk.default_options.default_override_or
-      object at 0x00000244A71C5E48>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x00000244A71C5E80>, name='')
+      object at 0x000001E2B1888EF0>, init=<cntk.default_options.default_override_or
+      object at 0x000001E2B1888F60>, init_bias=<cntk.default_options.default_override_or
+      object at 0x000001E2B1888F98>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x000001E2B1888FD0>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
@@ -181,11 +185,11 @@ items:
     two-valued tuple `(h,c)`.
   syntax:
     content: LSTM(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x00000244A71C5C18>, use_peepholes=<cntk.default_options.default_override_or
-      object at 0x00000244A71C59E8>, init=<cntk.default_options.default_override_or
-      object at 0x00000244A71C5B70>, init_bias=<cntk.default_options.default_override_or
-      object at 0x00000244A71C5BA8>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x00000244A71C5C50>, name='')
+      object at 0x000001E2B1888D68>, use_peepholes=<cntk.default_options.default_override_or
+      object at 0x000001E2B1888B38>, init=<cntk.default_options.default_override_or
+      object at 0x000001E2B1888CC0>, init_bias=<cntk.default_options.default_override_or
+      object at 0x000001E2B1888CF8>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x000001E2B1888DA0>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
@@ -257,10 +261,10 @@ items:
     the previous state as its first argument, and outputs its new state.
   syntax:
     content: RNNUnit(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x00000244A71C5C88>, init=<cntk.default_options.default_override_or
-      object at 0x00000244A71C5CF8>, init_bias=<cntk.default_options.default_override_or
-      object at 0x00000244A71C5D30>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x00000244A71C5D68>, name='')
+      object at 0x000001E2B1888DD8>, init=<cntk.default_options.default_override_or
+      object at 0x000001E2B1888E48>, init_bias=<cntk.default_options.default_override_or
+      object at 0x000001E2B1888E80>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x000001E2B1888EB8>, name='')
     parameters:
     - description: vector or tensor dimension of the output of this layer
       id: shape
@@ -359,7 +363,7 @@ items:
     exploding gradients.'
   syntax:
     content: Stabilizer(steepness=4, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x00000244A71C5B00>, name='')
+      object at 0x000001E2B1888C50>, name='')
     parameters:
     - description: ''
       id: steepness

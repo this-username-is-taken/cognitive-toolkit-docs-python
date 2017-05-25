@@ -75,28 +75,77 @@ items:
       path: /bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 48
-  summary: "Base class of all primitive tensor operators.\nIf it has only one output,\
-    \ one can invoke Variable methods on it, which it will relay to its only output.\n\
-    *Function* objects can also be constructed directly from a Python lambda, by means\
-    \ of the *@Function* decorator. The *Function*'s input signature is defined by\
-    \ the lambda.\nThe above form creates a CNTK Function whose arguments are placeholder\
-    \ variables. Such a function can only be combined with other symbolic functions.\n\
-    To train a Function or pass data to it, you need to declare the types of the arguments.\
-    \ In this case, the @Function decorator creates a CNTK Function whose arguments\
-    \ are input variables.\nIf you use Python 3, Functions with types are declared\
-    \ using Python annotation syntax, e.g.:\n<!-- literal_block {\"ids\": [], \"xml:space\"\
-    : \"preserve\", \"classes\": [], \"backrefs\": [], \"names\": [], \"dupnames\"\
-    : []} -->\n\n````\n\n   @Function\n   def f(x:Tensor[13]):\n       return x *\
-    \ x\n   ````\nIf you are working with Python 2.7, use CNTK's @cntk.layers.typing\
-    \ decorator instead:\n<!-- literal_block {\"ids\": [], \"xml:space\": \"preserve\"\
-    , \"classes\": [], \"backrefs\": [], \"names\": [], \"dupnames\": []} -->\n\n\
-    ````\n\n   >>> from cntk.layers.typing import *\n   >>> @Function\n   ... @Signature(Tensor[13])\n\
-    \   ... def f(x):\n   ...     return x * x\n   >>> debugging.dump_signature(f)\n\
-    \   Function(x: Tensor[13]) -> Tensor[13]\n   ````\n`make_block=True` is an internal\
-    \ parameter used to implement @cntk.layers.blocks. If *BlockFunction()* passes\
-    \ *True*, then the result will be wrapped in @cntk.ops, using the supplied `op_name`\
-    \ and `name` parameters, which are otherwise ignored.\n\n\n\n\n\n\n\n\n\n\n\n\n\
-    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+  summary: 'Base class of all primitive tensor operators.
+
+    If it has only one output, one can invoke Variable methods on it, which it will
+    relay to its only output.
+
+    *Function* objects can also be constructed directly from a Python lambda, by means
+    of the *@Function* decorator. The *Function*''s input signature is defined by
+    the lambda.
+
+    The above form creates a CNTK Function whose arguments are placeholder variables.
+    Such a function can only be combined with other symbolic functions.
+
+    To train a Function or pass data to it, you need to declare the types of the arguments.
+    In this case, the @Function decorator creates a CNTK Function whose arguments
+    are input variables.
+
+    If you use Python 3, Functions with types are declared using Python annotation
+    syntax, e.g.:
+
+    <!-- literal_block {"xml:space": "preserve", "names": [], "dupnames": [], "classes":
+    [], "ids": [], "backrefs": []} -->````   @Function   def f(x:Tensor[13]):       return
+    x * x   ````
+
+    If you are working with Python 2.7, use CNTK''s @cntk.layers.typing decorator
+    instead:
+
+    <!-- literal_block {"xml:space": "preserve", "names": [], "dupnames": [], "classes":
+    [], "ids": [], "backrefs": []} -->````   >>> from cntk.layers.typing import *   >>>
+    @Function   ... @Signature(Tensor[13])   ... def f(x):   ...     return x * x   >>>
+    debugging.dump_signature(f)   Function(x: Tensor[13]) -> Tensor[13]   ````
+
+    `make_block=True` is an internal parameter used to implement @cntk.layers.blocks.
+    If *BlockFunction()* passes *True*, then the result will be wrapped in @cntk.ops,
+    using the supplied `op_name` and `name` parameters, which are otherwise ignored.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    '
   syntax:
     content: Function(*args, **kwargs)
   type: class
@@ -275,16 +324,9 @@ items:
   syntax:
     content: clone(self, method, substitutions=None)
     parameters:
-    - description: 'one of
-
-
-        * ''clone'': the returned function gets its own copy of parameters (default)
-
-
-        * ''share'': the returned function shares its parameters with this function
-
-
-        * ''freeze'': parameters are cloned and made immutable (constant).'
+    - description: 'one of* ''clone'': the returned function gets its own copy of
+        parameters (default)* ''share'': the returned function shares its parameters
+        with this function* ''freeze'': parameters are cloned and made immutable (constant).'
       id: method
       type:
       - '@cntk.ops.functions.CloneMethod'
@@ -434,11 +476,10 @@ items:
 
     True
 
-    ```
 
+    If you need a full function out of it that can be evaluated, you
 
-    If you need a full function out of it that can be evaluated, you need to upcast
-    it (currently done via combine):```
+    need to upcast it (currently done via combine):
 
 
     >>> d = c * 5
@@ -521,27 +562,26 @@ items:
     content: forward(self, arguments, outputs=None, keep_for_backward=None, device=None,
       as_numpy=True)
     parameters:
-    - description: "maps variables to their input data. The interpretation depends\
-        \ on the input type:\n\n   * dict: keys are input variable or names, and values\
-        \ are the input data. To specify a minibatch, provide a list of arrays. The\
-        \ shape of each array must be compatible with the shape of the dictionary\
-        \ key. If the array denotes a sequence then the elements of the sequence are\
-        \ grouped along axis 0.\n\n   * any other type: if node has a unique input,\
-        \ arguments is mapped to this input.\n\nFor nodes with more than one input,\
-        \ only dict is allowed.\n\nIn both cases, every sample in the data will be\
-        \ interpreted as a new sequence.\n\nSequences can be marked as continuations\
-        \ of the same sequence in the previous minibatch (that is the sequence in\
-        \ the same slot). There are two possibilities for this:\n\n   * specifying\
-        \ arguments as a *tuple* where the first element is used as arguments and\
-        \ the second one will be used as a list of bools, denoting whether a sequence\
-        \ is a new one (*True*) or a continuation of the sequence in the same slot\
-        \ of the previous minibatch (*False*). This will be applied to all batches.\n\
-        \n   * specifying arguments as a dictionary of variables to tuples where the\
-        \ first element is used as arguments and the second one will be used as a\
-        \ list of bools, denoting whether a sequence is a new one (*True*) or a continuation\
-        \ of the sequence in the same slot of the previous minibatch (*False*). This\
-        \ will be applied to all batches.\n\nData should be either NumPy arrays or\
-        \ a @cntk.io instance."
+    - description: 'maps variables to their input data. The interpretation depends
+        on the input type:   * dict: keys are input variable or names, and values
+        are the input data. To specify a minibatch, provide a list of arrays. The
+        shape of each array must be compatible with the shape of the dictionary key.
+        If the array denotes a sequence then the elements of the sequence are grouped
+        along axis 0.   * any other type: if node has a unique input, arguments is
+        mapped to this input.For nodes with more than one input, only dict is allowed.In
+        both cases, every sample in the data will be interpreted as a new sequence.Sequences
+        can be marked as continuations of the same sequence in the previous minibatch
+        (that is the sequence in the same slot). There are two possibilities for this:   *
+        specifying arguments as a *tuple* where the first element is used as arguments
+        and the second one will be used as a list of bools, denoting whether a sequence
+        is a new one (*True*) or a continuation of the sequence in the same slot of
+        the previous minibatch (*False*). This will be applied to all batches.   *
+        specifying arguments as a dictionary of variables to tuples where the first
+        element is used as arguments and the second one will be used as a list of
+        bools, denoting whether a sequence is a new one (*True*) or a continuation
+        of the sequence in the same slot of the previous minibatch (*False*). This
+        will be applied to all batches.Data should be either NumPy arrays or a @cntk.io
+        instance.'
       id: arguments
     - description: outputs to fetch values for. If not set, all outputs of the function
         will be fetched.
@@ -1065,15 +1105,11 @@ items:
   syntax:
     content: set_attribute(self, name, value)
     parameters:
-    - description: 'one of
-
-
-        * ''dropoutRate'': modifies the dropout rate of a dropout function (can only
-        be invoked on a function instance returned either from @cntk.ops or @cntk.ops.functions.Function.find_by_name).
-
-
-        * ''rngSeed'': modifies the seed of a stateful function (can only be invoked
-        on  function instance returned from @cntk.ops, @cntk.ops, @cntk.ops or @cntk.ops.functions.Function.find_by_name)'
+    - description: 'one of* ''dropoutRate'': modifies the dropout rate of a dropout
+        function (can only be invoked on a function instance returned either from
+        @cntk.ops or @cntk.ops.functions.Function.find_by_name).* ''rngSeed'': modifies
+        the seed of a stateful function (can only be invoked on  function instance
+        returned from @cntk.ops, @cntk.ops, @cntk.ops or @cntk.ops.functions.Function.find_by_name)'
       id: name
       type:
       - string

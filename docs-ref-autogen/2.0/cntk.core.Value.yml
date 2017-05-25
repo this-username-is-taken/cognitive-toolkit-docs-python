@@ -48,9 +48,9 @@ items:
   syntax:
     content: Value(batch, seq_starts=None, device=None)
     parameters:
-    - description: "batch input for *var*. It can be:\n\n   * a pure Python structure\
-        \ (list of lists, ...),\n\n   * a list of NumPy arrays or SciPy sparse CSR\
-        \ matrices\n\n   * a @cntk.core.Value object (e.g. returned by @cntk.core.Value.one_hot)"
+    - description: 'batch input for *var*. It can be:   * a pure Python structure
+        (list of lists, ...),   * a list of NumPy arrays or SciPy sparse CSR matrices   *
+        a @cntk.core.Value object (e.g. returned by @cntk.core.Value.one_hot)'
       id: batch
     - description: if None, every sequence is treated as a new sequence. Otherwise,
         it is interpreted as a list of Booleans that tell whether a sequence is a
@@ -111,9 +111,9 @@ items:
       id: var
       type:
       - '@cntk.variables.Variable'
-    - description: "data for *var*. It can be:\n\n   * a single NumPy array denoting\
-        \ the full minibatch\n\n   * a list of NumPy arrays or SciPy sparse CSR matrices\n\
-        \n   * a single NumPy array denoting one parameter or constant"
+    - description: 'data for *var*. It can be:   * a single NumPy array denoting the
+        full minibatch   * a list of NumPy arrays or SciPy sparse CSR matrices   *
+        a single NumPy array denoting one parameter or constant'
       id: data
     - description: if None, every sequence is treated as a new sequence. Otherwise,
         it is interpreted as a list of Booleans that tell whether a sequence is a
@@ -245,11 +245,22 @@ items:
   uid: cntk.core.Value.is_valid
 - class: cntk.core.Value
   example:
-  - A mask of `[[2, 1, 1], [1, 1, 0]]` describes a batch of two sequences. The first
-    has three elements, of which the first element (2) signals the beginning of a
-    sequence. The second sequence has two elements (last element marked 'invalid'
-    by '0'). As it starts with (1), it is a continuation of the 2nd sequence in the
-    previous minibatch.
+  - '```
+
+
+    A mask of [[2, 1, 1], [1, 1, 0]] describes a batch of two
+
+    sequences. The first has three elements, of which the first element
+
+    (2) signals the beginning of a sequence. The second sequence has two
+
+    elements (last element marked ''invalid'' by ''0''). As it starts with
+
+    (1), it is a continuation of the 2nd sequence in the previous
+
+    minibatch.
+
+    ```'
   fullName: cntk.core.Value.mask
   langs:
   - python
@@ -265,7 +276,7 @@ items:
     startLine: null
   summary: "The mask matrix of this value. Each row denotes a sequence with its elements\
     \ describing the mask of the element:\n   * 2: beginning of sequence (e.g. an\
-    \ LSTM would be reset)\n\n   * 1: valid element\n\n   * 0: invalid element"
+    \ LSTM would be reset)   * 1: valid element   * 0: invalid element"
   syntax: {}
   type: attribute
   uid: cntk.core.Value.mask
