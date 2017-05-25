@@ -34,6 +34,13 @@ items:
 
     '
   syntax:
+    attribute:
+    - bw_H
+    - bw_W
+    - bw_b
+    - fw_H
+    - fw_W
+    - fw_b
     content: RnnArgs(fw_W, fw_H, fw_b, bw_W, bw_H, bw_b)
   type: class
   uid: cntk.contrib.crosstalk.RnnArgs
@@ -51,7 +58,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Alias for field number 4
+  summary: 'Alias for field number 4
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.contrib.crosstalk.RnnArgs.bw_H
@@ -69,7 +78,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Alias for field number 3
+  summary: 'Alias for field number 3
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.contrib.crosstalk.RnnArgs.bw_W
@@ -87,7 +98,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Alias for field number 5
+  summary: 'Alias for field number 5
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.contrib.crosstalk.RnnArgs.bw_b
@@ -105,7 +118,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Alias for field number 1
+  summary: 'Alias for field number 1
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.contrib.crosstalk.RnnArgs.fw_H
@@ -123,7 +138,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Alias for field number 0
+  summary: 'Alias for field number 0
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.contrib.crosstalk.RnnArgs.fw_W
@@ -141,7 +158,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Alias for field number 2
+  summary: 'Alias for field number 2
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.contrib.crosstalk.RnnArgs.fw_b

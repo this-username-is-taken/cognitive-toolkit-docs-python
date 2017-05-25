@@ -20,26 +20,38 @@ items:
       path: /bindings/python\cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 14
-  summary: A checkpoint configuration for the training session.
+  summary: 'A checkpoint configuration for the training session.
+
+    '
   syntax:
     content: CheckpointConfig(filename, frequency=None, restore=True, preserve_all=False)
     parameters:
-    - description: checkpoint file name.
+    - description: 'checkpoint file name.
+
+        '
       id: filename
       type:
       - str
-    - description: checkpoint frequency in samples. If 0, no checkpointing takes place.
+    - description: 'checkpoint frequency in samples. If 0, no checkpointing takes
+        place.
+
         If `sys.maxsize`, a single checkpoint is taken at the end of the training.
+
+        '
       id: frequency
       type:
       - int
-    - description: flag, indicating whether to restore from available checkpoint before
-        the start of the training
+    - description: 'flag, indicating whether to restore from available checkpoint
+        before the start of the training
+
+        '
       id: restore
       type:
       - bool
-    - description: saves all checkpoints, using `filename` as prefix and checkpoint
+    - description: 'saves all checkpoints, using `filename` as prefix and checkpoint
         index as a suffix.
+
+        '
       id: preserve_all
       type:
       - bool

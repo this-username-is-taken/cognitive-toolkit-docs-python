@@ -33,10 +33,16 @@ items:
   summary: 'Base class of Crosstalk. Crosstalk is a utility to manage variables for
     debugging/conversion across scripts in different toolkits.
 
+
     With crosstalk, user can define named watch points to variables or parameters,
-    and setting up a work dir. Then crosstalk can save/load variables to corresponding
-    files from python debugger, and compare values using numpy. Please refer to crosstalk
-    unittests for examples of how to exchange/compare values between different toolkits.
+    and setting up a work dir.
+
+    Then crosstalk can save/load variables to corresponding files from python debugger,
+    and compare values using numpy.
+
+    Please refer to crosstalk unittests for examples of how to exchange/compare values
+    between different toolkits.
+
 
 
 
@@ -51,6 +57,19 @@ items:
 
     '
   syntax:
+    attribute:
+    - assignname, value=None, load=False, load_name=None
+    - comparename, compare_name=None, rtol=1e-05, atol=1e-08, equal_nan=False
+    - fetchname, save=False
+    - loadnames
+    - load_raw_valuename
+    - next_pass
+    - register_funcsvar_type, setter=None, getter=None
+    - reset
+    - savenames
+    - save_all
+    - set_workdirdir
+    - watchvar, name, var_type=None, attr=None
     content: Crosstalk()
   type: class
   uid: cntk.contrib.crosstalk.Crosstalk
@@ -68,7 +87,9 @@ items:
       path: /bindings/python\cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 101
-  summary: Set value to var, with option to load from work_dir
+  summary: 'Set value to var, with option to load from work_dir
+
+    '
   syntax:
     content: assign(self, name, value=None, load=False, load_name=None)
   type: method
@@ -87,8 +108,10 @@ items:
       path: /bindings/python\cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 137
-  summary: Compare var with name to value in file in work_dir. Specify compare_name
+  summary: 'Compare var with name to value in file in work_dir. Specify compare_name
     if the file to compare is with a different name of var.
+
+    '
   syntax:
     content: compare(self, name, compare_name=None, rtol=1e-05, atol=1e-08, equal_nan=False)
   type: method
@@ -107,7 +130,9 @@ items:
       path: /bindings/python\cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 123
-  summary: Evaluate var with name and optionally save to work_dir
+  summary: 'Evaluate var with name and optionally save to work_dir
+
+    '
   syntax:
     content: fetch(self, name, save=False)
   type: method
@@ -126,7 +151,9 @@ items:
       path: /bindings/python\cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 165
-  summary: Load vars in list of names
+  summary: 'Load vars in list of names
+
+    '
   syntax:
     content: load(self, names)
   type: method
@@ -145,7 +172,9 @@ items:
       path: /bindings/python\cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 89
-  summary: Load raw value from npy|pkl file in work_dir
+  summary: 'Load raw value from npy|pkl file in work_dir
+
+    '
   syntax:
     content: load_raw_value(self, name)
   type: method
@@ -164,7 +193,9 @@ items:
       path: /bindings/python\cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 65
-  summary: Bump up passes so save won't overwrite existing files
+  summary: 'Bump up passes so save won''t overwrite existing files
+
+    '
   syntax:
     content: next_pass(self)
   type: method
@@ -183,7 +214,9 @@ items:
       path: /bindings/python\cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 80
-  summary: Register setter/getter functions for var_type
+  summary: 'Register setter/getter functions for var_type
+
+    '
   syntax:
     content: register_funcs(self, var_type, setter=None, getter=None)
   type: method
@@ -202,7 +235,9 @@ items:
       path: /bindings/python\cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 183
-  summary: Reset all vars and passes, setter/getter are kept
+  summary: 'Reset all vars and passes, setter/getter are kept
+
+    '
   syntax:
     content: reset(self)
   type: method
@@ -221,7 +256,9 @@ items:
       path: /bindings/python\cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 171
-  summary: Save vars in list
+  summary: 'Save vars in list
+
+    '
   syntax:
     content: save(self, names)
   type: method
@@ -240,7 +277,9 @@ items:
       path: /bindings/python\cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 177
-  summary: Save all vars
+  summary: 'Save all vars
+
+    '
   syntax:
     content: save_all(self)
   type: method
@@ -259,8 +298,10 @@ items:
       path: /bindings/python\cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 57
-  summary: Set up a working directory for save/load numpy values(.npy) or python data
-    (.pkl)
+  summary: 'Set up a working directory for save/load numpy values(.npy) or python
+    data (.pkl)
+
+    '
   syntax:
     content: set_workdir(self, dir)
   type: method
@@ -279,8 +320,11 @@ items:
       path: /bindings/python\cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 71
-  summary: Add variables to watch with a unique name File in working directory would
-    be named <pass>_<name>.(npy|pkl)
+  summary: 'Add variables to watch with a unique name
+
+    File in working directory would be named <pass>_<name>.(npy|pkl)
+
+    '
   syntax:
     content: watch(self, var, name, var_type=None, attr=None)
   type: method

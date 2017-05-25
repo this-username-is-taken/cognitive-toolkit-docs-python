@@ -26,6 +26,9 @@ items:
 
     '
   syntax:
+    attribute:
+    - dict
+    - input_dim
     content: EmbedAttr(dict, input_dim)
   type: class
   uid: cntk.contrib.crosstalk.EmbedAttr
@@ -43,7 +46,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Alias for field number 0
+  summary: 'Alias for field number 0
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.contrib.crosstalk.EmbedAttr.dict
@@ -61,7 +66,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Alias for field number 1
+  summary: 'Alias for field number 1
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.contrib.crosstalk.EmbedAttr.input_dim

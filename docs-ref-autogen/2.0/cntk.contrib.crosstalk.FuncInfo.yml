@@ -26,6 +26,9 @@ items:
 
     '
   syntax:
+    attribute:
+    - getter
+    - setter
     content: FuncInfo(setter, getter)
   type: class
   uid: cntk.contrib.crosstalk.FuncInfo
@@ -43,7 +46,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Alias for field number 1
+  summary: 'Alias for field number 1
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.contrib.crosstalk.FuncInfo.getter
@@ -61,7 +66,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Alias for field number 0
+  summary: 'Alias for field number 0
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.contrib.crosstalk.FuncInfo.setter

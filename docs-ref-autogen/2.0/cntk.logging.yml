@@ -35,11 +35,15 @@ items:
       path: /bindings/python\cntk\logging\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 42
-  summary: Returns current logging verbosity level.
+  summary: 'Returns current logging verbosity level.
+
+    '
   syntax:
     content: get_trace_level()
     return:
-      description: current verbosity level.
+      description: 'current verbosity level.
+
+        '
       type:
       - TraceLevel
   type: function
@@ -57,14 +61,20 @@ items:
       path: /bindings/python\cntk\logging\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 30
-  summary: Specifies global logging verbosity level.
+  summary: 'Specifies global logging verbosity level.
+
+    '
   syntax:
     content: set_trace_level(value)
     parameters:
-    - description: required verbosity level.
+    - description: 'required verbosity level.
+
+        '
       id: value
       type:
-      - '@cntk.logging.TraceLevel'
+      - '@cntk.logging.TraceLevel
+
+        '
   type: function
   uid: cntk.logging.set_trace_level
 references:

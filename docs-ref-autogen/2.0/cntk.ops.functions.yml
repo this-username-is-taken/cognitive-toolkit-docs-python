@@ -36,7 +36,9 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1267
-  summary: Alias for @cntk.ops.functions.Function.load.
+  summary: 'Alias for @cntk.ops.functions.Function.load.
+
+    '
   syntax:
     content: load_model(model, device=None)
   type: function
@@ -54,27 +56,44 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1244
-  summary: Creates an instance of a user-defined Function previously registered using
-    the 'register_native_user_function' method.
+  summary: 'Creates an instance of a user-defined Function previously registered using
+    the
+
+    ''register_native_user_function'' method.
+
+    '
   syntax:
     content: native_user_function(op_id, operands, attributes=None, user_function_instance_name='')
     parameters:
-    - description: Id of the native user-defined Function to instantiate. This must
-        be the id that was used when registering the native user-function with the
-        'register_native_user_function' method.
+    - description: 'Id of the native user-defined Function to instantiate.
+
+        This must be the id that was used when registering the native user-function
+
+        with the ''register_native_user_function'' method.
+
+        '
       id: op_id
       type:
       - str
-    - description: input operands of the new instance of the native user-defined Function.
+    - description: 'input operands of the new instance of the native user-defined
+        Function.
+
+        '
       id: operands
       type:
       - list
-    - description: Name of the instance of the created native user-defined Function.
+    - description: 'Name of the instance of the created native
+
+        user-defined Function.
+
+        '
       id: user_function_instance_name
       type:
       - str
     return:
-      description: '@cntk.ops.functions.Function'
+      description: '@cntk.ops.functions.Function
+
+        '
   type: function
   uid: cntk.ops.functions.native_user_function
 - fullName: cntk.ops.functions.register_native_user_function
@@ -90,27 +109,45 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1224
-  summary: Registers a native user-defined Function that can be subsequently instantiated
-    using the 'native_user_function' method.
+  summary: 'Registers a native user-defined Function that can be subsequently instantiated
+
+    using the ''native_user_function'' method.
+
+    '
   syntax:
     content: register_native_user_function(op_id, module_name, factory_method_name)
     parameters:
-    - description: Unique id of the native user-defined Function to register. This
-        id must be unique and an error will be reported if it matches the 'op_id'
-        specified for any other registered native user-defined Function.
+    - description: 'Unique id of the native user-defined Function to register.
+
+        This id must be unique and an error will be reported if it matches
+
+        the ''op_id'' specified for any other registered native user-defined Function.
+
+        '
       id: op_id
       type:
       - str
-    - description: Name of the module containing the factory method for creating instances
-        of the native user-defined Function being registered. This is typically the
-        name of a DLL/so which exports a factory method for creating instances of
-        the native user-defined Function.
+    - description: 'Name of the module containing the factory method for creating
+
+        instances of the native user-defined Function being registered. This is typically
+
+        the name of a DLL/so which exports a factory method for creating instances
+        of the
+
+        native user-defined Function.
+
+        '
       id: module_name
       type:
       - str
-    - description: Name of the factory method for creating instances of the native
+    - description: 'Name of the factory method for creating instances of the native
+
         user-defined Function being registered. This method must be an exported method
-        of the specified module.
+        of the
+
+        specified module.
+
+        '
       id: factory_method_name
       type:
       - str

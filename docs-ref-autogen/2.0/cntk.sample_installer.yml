@@ -68,18 +68,31 @@ items:
       path: /bindings/python\cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 34
-  summary: Fetch the CNTK samples from a URL, extract to local directory, and install
+  summary: 'Fetch the CNTK samples from a URL, extract to local directory, and install
+
     Python package requirements.
+
+    '
   syntax:
     content: install_samples(url=None, directory=None, quiet=False)
     parameters:
-    - description: the URL of the sample zip file (if passed `None`, which is default,
+    - description: 'the URL of the sample zip file (if passed `None`, which is default,
+
         the sample URL matching the CNTK module release is chosen)
+
+        '
       id: url
-    - description: the directory to extract the samples into (if passed `None`, which
-        is default, a name matching the CNTK module release is chosen, `CNTK-Samples-<version>`)
+    - description: 'the directory to extract the samples into (if passed
+
+        `None`, which is default, a name matching the CNTK module release is
+
+        chosen, `CNTK-Samples-<version>`)
+
+        '
       id: directory
-    - description: whether to suppress all output (defaults to `False`)
+    - description: 'whether to suppress all output (defaults to `False`)
+
+        '
       id: quiet
   type: function
   uid: cntk.sample_installer.install_samples

@@ -34,7 +34,9 @@ items:
       path: /bindings/python\cntk\debugging\profiler.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 37
-  summary: Disable profiler from gathering data.
+  summary: 'Disable profiler from gathering data.
+
+    '
   syntax:
     content: disable_profiler()
   type: function
@@ -52,8 +54,10 @@ items:
       path: /bindings/python\cntk\debugging\profiler.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 30
-  summary: Enable profiler to gather data. Note that in training_session, profiler
+  summary: 'Enable profiler to gather data. Note that in training_session, profiler
     would be enabled automatically after the first check point
+
+    '
   syntax:
     content: enable_profiler()
   type: function
@@ -72,24 +76,38 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 9
   summary: 'Start profiler to prepare performance statistics gathering. Note that
-    the profiler is not enabled after start (>>:cntkwiki:`example <BrainScript-and-Python-Performance-Profiler#for-python>`<<).
+
+    the profiler is not enabled after start
+
+    (>>:cntkwiki:`example <BrainScript-and-Python-Performance-Profiler#for-python>`<<).
+
 
     <SYSTEM MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\debugging\profiler.py:docstring
     of cntk.debugging.profiler.start_profiler:1: (INFO/1) No role entry for "cntkwiki"
-    in module "docutils.parsers.rst.languages.en". Trying "cntkwiki" as canonical
-    role name.>
+    in module "docutils.parsers.rst.languages.en".
+
+    Trying "cntkwiki" as canonical role name.>
+
 
     <SYSTEM MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\debugging\profiler.py:docstring
     of cntk.debugging.profiler.start_profiler:1: (ERROR/3) Unknown interpreted text
-    role "cntkwiki".>'
+    role "cntkwiki".>
+
+    '
   syntax:
     content: start_profiler(dir='profiler', sync_gpu=True, reserve_mem=33554432)
     parameters:
-    - description: directory for profiler output
+    - description: 'directory for profiler output
+
+        '
       id: dir
-    - description: whether profiler syncs CPU with GPU when timing
+    - description: 'whether profiler syncs CPU with GPU when timing
+
+        '
       id: sync_gpu
-    - description: size in byte for profiler memory reserved
+    - description: 'size in byte for profiler memory reserved
+
+        '
       id: reserve_mem
   type: function
   uid: cntk.debugging.profiler.start_profiler
@@ -106,7 +124,10 @@ items:
       path: /bindings/python\cntk\debugging\profiler.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 23
-  summary: Stop profiler from gathering performance statistics and flush them to file
+  summary: 'Stop profiler from gathering performance statistics and flush them to
+    file
+
+    '
   syntax:
     content: stop_profiler()
   type: function

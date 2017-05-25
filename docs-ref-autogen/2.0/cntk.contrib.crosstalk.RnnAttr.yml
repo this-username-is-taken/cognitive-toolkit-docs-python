@@ -32,6 +32,12 @@ items:
 
     '
   syntax:
+    attribute:
+    - bidirectional
+    - forget_bias
+    - hidden_dim
+    - input_dim
+    - op_type
     content: RnnAttr(bidirectional, op_type, input_dim, hidden_dim, forget_bias)
   type: class
   uid: cntk.contrib.crosstalk.RnnAttr
@@ -49,7 +55,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Alias for field number 0
+  summary: 'Alias for field number 0
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.contrib.crosstalk.RnnAttr.bidirectional
@@ -67,7 +75,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Alias for field number 4
+  summary: 'Alias for field number 4
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.contrib.crosstalk.RnnAttr.forget_bias
@@ -85,7 +95,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Alias for field number 3
+  summary: 'Alias for field number 3
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.contrib.crosstalk.RnnAttr.hidden_dim
@@ -103,7 +115,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Alias for field number 2
+  summary: 'Alias for field number 2
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.contrib.crosstalk.RnnAttr.input_dim
@@ -121,7 +135,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Alias for field number 1
+  summary: 'Alias for field number 1
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.contrib.crosstalk.RnnAttr.op_type

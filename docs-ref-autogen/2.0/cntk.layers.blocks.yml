@@ -43,8 +43,10 @@ items:
       path: /bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 68
-  summary: Decorator for defining a @Function as a BlockFunction. Same as @Function,
+  summary: 'Decorator for defining a @Function as a BlockFunction. Same as @Function,
     but wrap the content into an @cntk.ops.as_block.
+
+    '
   syntax:
     content: BlockFunction(op_name, name)
   type: function
@@ -58,7 +60,7 @@ items:
     \ + ones_like_input\n>>> out_fwd.resolve_to(out)\n>>> length = C.sequence.last(out)\n\
     >>> x0 = np.reshape(np.arange(6,dtype=np.float32),(1,3,2))\n>>> x0\n    array([[[\
     \ 0.,  1.],\n            [ 2.,  3.],\n            [ 4.,  5.]]], dtype=float32)\n\
-    >>> length(x0)\n    array([ 3.], dtype=float32)\n```"
+    >>> length(x0)\n    array([ 3.], dtype=float32)\n```\n"
   fullName: cntk.layers.blocks.ForwardDeclaration
   langs:
   - python
@@ -72,14 +74,22 @@ items:
       path: /bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 87
-  summary: Helper for recurrent network declarations. Returns a placeholder variable
-    with an added method `resolve_to()` to be called at the end to close the loop.
+  summary: 'Helper for recurrent network declarations.
+
+    Returns a placeholder variable with an added method `resolve_to()` to be called
+
+    at the end to close the loop.
+
     This is used for explicit graph building with recurrent connections.
+
+    '
   syntax:
     content: ForwardDeclaration(name='forward_declaration')
     return:
-      description: a placeholder variable with a method `resolve_to()` that resolves
+      description: 'a placeholder variable with a method `resolve_to()` that resolves
         it to another variable
+
+        '
       type:
       - Variable
   type: function
@@ -94,7 +104,9 @@ items:
 
     >>> gru_layer = Recurrence(GRU(500))
 
-    ```'
+    ```
+
+    '
   fullName: cntk.layers.blocks.GRU
   langs:
   - python
@@ -108,49 +120,80 @@ items:
       path: /bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 447
-  summary: Layer factory function to create a GRU block for use inside a recurrence.
+  summary: 'Layer factory function to create a GRU block for use inside a recurrence.
+
     The GRU block implements one step of the recurrence and is stateless. It accepts
-    the previous state as its first argument, and outputs its new state.
+    the previous state as its first argument,
+
+    and outputs its new state.
+
+    '
   syntax:
     content: GRU(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x000001E2B1888EF0>, init=<cntk.default_options.default_override_or
-      object at 0x000001E2B1888F60>, init_bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B1888F98>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x000001E2B1888FD0>, name='')
+      object at 0x000001B3C389C0B8>, init=<cntk.default_options.default_override_or
+      object at 0x000001B3C389C128>, init_bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C389C160>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x000001B3C389C198>, name='')
     parameters:
-    - description: vector or tensor dimension of the output of this layer
+    - description: 'vector or tensor dimension of the output of this layer
+
+        '
       id: shape
       type:
       - int or tuple of ints
-    - description: if given, then the output state is first computed at *cell_shape*
+    - description: 'if given, then the output state is first computed at *cell_shape*
+
         and linearly projected to *shape*
+
+        '
       id: cell_shape
       type:
       - tuple, defaults to None
-    - description: function to apply at the end, e.g. *relu*
+    - description: 'function to apply at the end, e.g. *relu*
+
+        '
       id: activation
       type:
-      - '@cntk.ops.functions.Function, defaults to @cntk.ops.tanh'
-    - description: initial value of weights *W*
+      - '@cntk.ops.functions.Function
+
+        , defaults to @cntk.ops.tanh
+
+        '
+    - description: 'initial value of weights *W*
+
+        '
       id: init
       type:
-      - scalar or NumPy array or @cntk.initializer, defaults to glorot_uniform
-    - description: initial value of weights *b*
+      - 'scalar or NumPy array or @cntk.initializer
+
+        , defaults to glorot_uniform'
+    - description: 'initial value of weights *b*
+
+        '
       id: init_bias
       type:
-      - scalar or NumPy array or @cntk.initializer, defaults to 0
-    - description: if *True* then add a @cntk.layers.blocks.Stabilizer to all state-related
-        projections (but not the data input)
+      - 'scalar or NumPy array or @cntk.initializer
+
+        , defaults to 0'
+    - description: 'if *True* then add a @cntk.layers.blocks.Stabilizer
+
+        to all state-related projections (but not the data input)
+
+        '
       id: enable_self_stabilization
       type:
       - bool, defaults to False
-    - description: the name of the Function instance in the network
+    - description: 'the name of the Function instance in the network
+
+        '
       id: name
       type:
       - str, defaults to ''
     return:
-      description: A function `(prev_h, input) -> h` that implements one step of a
-        recurrent GRU layer.
+      description: 'A function `(prev_h, input) -> h` that implements one step of
+        a recurrent GRU layer.
+
+        '
       type:
       - Function
   type: function
@@ -165,7 +208,9 @@ items:
 
     >>> lstm_layer = Recurrence(LSTM(500))
 
-    ```'
+    ```
+
+    '
   fullName: cntk.layers.blocks.LSTM
   langs:
   - python
@@ -179,55 +224,85 @@ items:
       path: /bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 360
-  summary: Layer factory function to create an LSTM block for use inside a recurrence.
+  summary: 'Layer factory function to create an LSTM block for use inside a recurrence.
+
     The LSTM block implements one step of the recurrence and is stateless. It accepts
-    the previous state as its first two arguments, and outputs its new state as a
-    two-valued tuple `(h,c)`.
+    the previous state as its first two arguments,
+
+    and outputs its new state as a two-valued tuple `(h,c)`.
+
+    '
   syntax:
     content: LSTM(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x000001E2B1888D68>, use_peepholes=<cntk.default_options.default_override_or
-      object at 0x000001E2B1888B38>, init=<cntk.default_options.default_override_or
-      object at 0x000001E2B1888CC0>, init_bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B1888CF8>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x000001E2B1888DA0>, name='')
+      object at 0x000001B3C3895EF0>, use_peepholes=<cntk.default_options.default_override_or
+      object at 0x000001B3C3895CC0>, init=<cntk.default_options.default_override_or
+      object at 0x000001B3C3895E48>, init_bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C3895E80>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x000001B3C3895F28>, name='')
     parameters:
-    - description: vector or tensor dimension of the output of this layer
+    - description: 'vector or tensor dimension of the output of this layer
+
+        '
       id: shape
       type:
       - int or tuple of ints
-    - description: if given, then the output state is first computed at *cell_shape*
+    - description: 'if given, then the output state is first computed at *cell_shape*
+
         and linearly projected to *shape*
+
+        '
       id: cell_shape
       type:
       - tuple, defaults to None
-    - description: function to apply at the end, e.g. *relu*
+    - description: 'function to apply at the end, e.g. *relu*
+
+        '
       id: activation
       type:
-      - '@cntk.ops.functions.Function, defaults to @cntk.ops.tanh'
+      - '@cntk.ops.functions.Function
+
+        , defaults to @cntk.ops.tanh
+
+        '
     - description: ''
       id: use_peepholes
       type:
       - bool, defaults to False
-    - description: initial value of weights *W*
+    - description: 'initial value of weights *W*
+
+        '
       id: init
       type:
-      - scalar or NumPy array or @cntk.initializer, defaults to glorot_uniform
-    - description: initial value of weights *b*
+      - 'scalar or NumPy array or @cntk.initializer
+
+        , defaults to glorot_uniform'
+    - description: 'initial value of weights *b*
+
+        '
       id: init_bias
       type:
-      - scalar or NumPy array or @cntk.initializer, defaults to 0
-    - description: if *True* then add a @cntk.layers.blocks.Stabilizer to all state-related
-        projections (but not the data input)
+      - 'scalar or NumPy array or @cntk.initializer
+
+        , defaults to 0'
+    - description: 'if *True* then add a @cntk.layers.blocks.Stabilizer
+
+        to all state-related projections (but not the data input)
+
+        '
       id: enable_self_stabilization
       type:
       - bool, defaults to False
-    - description: the name of the Function instance in the network
+    - description: 'the name of the Function instance in the network
+
+        '
       id: name
       type:
       - str, defaults to ''
     return:
-      description: A function `(prev_h, prev_c, input) -> (h, c)` that implements
+      description: 'A function `(prev_h, prev_c, input) -> (h, c)` that implements
         one step of a recurrent LSTM layer.
+
+        '
       type:
       - Function
   type: function
@@ -242,7 +317,9 @@ items:
 
     >>> relu_rnn_layer = Recurrence(RNNUnit(500, activation=C.relu))
 
-    ```'
+    ```
+
+    '
   fullName: cntk.layers.blocks.RNNUnit
   langs:
   - python
@@ -256,49 +333,78 @@ items:
       path: /bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 405
-  summary: Layer factory function to create a plain RNN block for use inside a recurrence.
+  summary: 'Layer factory function to create a plain RNN block for use inside a recurrence.
+
     The RNN block implements one step of the recurrence and is stateless. It accepts
-    the previous state as its first argument, and outputs its new state.
+    the previous state as its first argument,
+
+    and outputs its new state.
+
+    '
   syntax:
     content: RNNUnit(shape, cell_shape=None, activation=<cntk.default_options.default_override_or
-      object at 0x000001E2B1888DD8>, init=<cntk.default_options.default_override_or
-      object at 0x000001E2B1888E48>, init_bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B1888E80>, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x000001E2B1888EB8>, name='')
+      object at 0x000001B3C3895F60>, init=<cntk.default_options.default_override_or
+      object at 0x000001B3C3895FD0>, init_bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C389C048>, enable_self_stabilization=<cntk.default_options.default_override_or
+      object at 0x000001B3C389C080>, name='')
     parameters:
-    - description: vector or tensor dimension of the output of this layer
+    - description: 'vector or tensor dimension of the output of this layer
+
+        '
       id: shape
       type:
       - int or tuple of ints
-    - description: if given, then the output state is first computed at *cell_shape*
+    - description: 'if given, then the output state is first computed at *cell_shape*
+
         and linearly projected to *shape*
+
+        '
       id: cell_shape
       type:
       - tuple, defaults to None
-    - description: function to apply at the end, e.g. *relu*
+    - description: 'function to apply at the end, e.g. *relu*
+
+        '
       id: activation
       type:
-      - '@cntk.ops.functions.Function, defaults to signmoid'
-    - description: initial value of weights *W*
+      - '@cntk.ops.functions.Function
+
+        , defaults to signmoid'
+    - description: 'initial value of weights *W*
+
+        '
       id: init
       type:
-      - scalar or NumPy array or @cntk.initializer, defaults to glorot_uniform
-    - description: initial value of weights *b*
+      - 'scalar or NumPy array or @cntk.initializer
+
+        , defaults to glorot_uniform'
+    - description: 'initial value of weights *b*
+
+        '
       id: init_bias
       type:
-      - scalar or NumPy array or @cntk.initializer, defaults to 0
-    - description: if *True* then add a @cntk.layers.blocks.Stabilizer to all state-related
-        projections (but not the data input)
+      - 'scalar or NumPy array or @cntk.initializer
+
+        , defaults to 0'
+    - description: 'if *True* then add a @cntk.layers.blocks.Stabilizer
+
+        to all state-related projections (but not the data input)
+
+        '
       id: enable_self_stabilization
       type:
       - bool, defaults to False
-    - description: the name of the Function instance in the network
+    - description: 'the name of the Function instance in the network
+
+        '
       id: name
       type:
       - str, defaults to ''
     return:
-      description: A function `(prev_h, input) -> h` where `h = activation(input @
-        W + prev_h @ R + b)`
+      description: 'A function `(prev_h, input) -> h` where `h = activation(input
+        @ W + prev_h @ R + b)`
+
+        '
       type:
       - Function
   type: function
@@ -329,7 +435,9 @@ items:
 
     ...     ])
 
-    ```'
+    ```
+
+    '
   fullName: cntk.layers.blocks.Stabilizer
   langs:
   - python
@@ -343,43 +451,45 @@ items:
       path: /bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 141
-  summary: 'Layer factory function to create a [Droppo self-stabilizer](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/11/SelfLR.pdf).
-    It multiplies its input with a scalar that is learned.
-
-    This takes *enable_self_stabilization* as a flag that allows to disable itself.
-    Useful if this is a global default.
-
-    Note: Some other layers (specifically, recurrent units like @cntk.layers.blocks.LSTM)
-    also have the option to use the `Stabilizer()` layer internally. That is enabled
-    by passing *enable_self_stabilization=True* to those layers. In conjunction with
-    those, the rule is that an explicit `Stabilizer()` must be inserted by the user
-    for the main data input, whereas the recurrent layer will own the stabilizer(s)
-    for the internal recurrent connection(s).
-
-    Note: Unlike the original paper, which proposed a linear or exponential scalar,
-    CNTK uses a sharpened Softplus: 1/steepness ln(1+e^{steepness*beta}). The softplus
-    behaves linear for weights around and above 1 (like the linear scalar) while guaranteeing
-    positiveness (like the exponentional variant) but is also more robust by avoiding
-    exploding gradients.'
+  summary: "Layer factory function to create a [Droppo self-stabilizer](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/11/SelfLR.pdf).\n\
+    It multiplies its input with a scalar that is learned.\n\nThis takes *enable_self_stabilization*\
+    \ as a flag that allows to disable itself. Useful if this is a global default.\n\
+    \nNote: Some other layers (specifically, recurrent units like @cntk.layers.blocks.LSTM)\
+    \ also have the option to use the `Stabilizer()` layer internally. That is enabled\
+    \ by passing *enable_self_stabilization=True* to those layers. In conjunction\
+    \ with those, the rule is that an explicit `Stabilizer()` must be inserted by\
+    \ the user for the main data input, whereas the recurrent layer will own the stabilizer(s)\
+    \ for the internal recurrent connection(s). \n\nNote: Unlike the original paper,\
+    \ which proposed a linear or exponential scalar, CNTK uses a sharpened Softplus:\
+    \ 1/steepness ln(1+e^{steepness*beta}). The softplus behaves linear for weights\
+    \ around and above 1 (like the linear scalar) while guaranteeing positiveness\
+    \ (like the exponentional variant) but is also more robust by avoiding exploding\
+    \ gradients. \n"
   syntax:
     content: Stabilizer(steepness=4, enable_self_stabilization=<cntk.default_options.default_override_or
-      object at 0x000001E2B1888C50>, name='')
+      object at 0x000001B3C3895DD8>, name='')
     parameters:
     - description: ''
       id: steepness
       type:
       - int, defaults to 4
-    - description: a flag that allows to disable itself. Useful if this is a global
+    - description: 'a flag that allows to disable itself. Useful if this is a global
         default
+
+        '
       id: enable_self_stabilization
       type:
       - bool, defaults to False
-    - description: the name of the Function instance in the network
+    - description: 'the name of the Function instance in the network
+
+        '
       id: name
       type:
       - str, defaults to ''
     return:
-      description: A function
+      description: 'A function
+
+        '
       type:
       - Function
   type: function

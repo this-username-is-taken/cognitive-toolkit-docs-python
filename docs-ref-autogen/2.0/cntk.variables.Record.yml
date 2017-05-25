@@ -5,7 +5,7 @@ items:
   - cntk.variables.Record.updated_with
   class: cntk.variables.Record
   example:
-  - "```\n\n>>> r = Record(x = 13, y = 42)\n>>> r.x\n    13\n```"
+  - "```\n\n>>> r = Record(x = 13, y = 42)\n>>> r.x\n    13\n```\n"
   fullName: cntk.variables.Record
   inheritance:
   - inheritance:
@@ -26,21 +26,28 @@ items:
   summary: 'Easy construction of a record (=immutable singleton class) from keyword
     arguments.
 
+
     '
   syntax:
+    attribute:
+    - updated_with**kwargs
     content: Record(**args_dict)
     parameters:
-    - description: keyword arguments to turn into the record members
+    - description: 'keyword arguments to turn into the record members
+
+        '
       id: kwargs
     return:
-      description: A singleton class instance that has all passed kw args as immutable
+      description: 'A singleton class instance that has all passed kw args as immutable
         class members.
+
+        '
   type: class
   uid: cntk.variables.Record
 - class: cntk.variables.Record
   example:
   - "```\n\n>>> r = Record(x = 13)\n>>> r.x\n    13\n>>> r2 = r.updated_with(x = 42)\n\
-    >>> r2.x\n    42\n```"
+    >>> r2.x\n    42\n```\n"
   fullName: cntk.variables.Record.updated_with
   langs:
   - python
@@ -54,15 +61,21 @@ items:
       path: /bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 37
-  summary: Create a new Record from an existing one with members modified or added.
+  summary: 'Create a new Record from an existing one with members modified or added.
+
+    '
   syntax:
     content: updated_with(self, **kwargs)
     parameters:
-    - description: keyword arguments to turn into the record members
+    - description: 'keyword arguments to turn into the record members
+
+        '
       id: kwargs
     return:
-      description: A singleton class instance that has all passed kw args as immutable
+      description: 'A singleton class instance that has all passed kw args as immutable
         class members.
+
+        '
   type: method
   uid: cntk.variables.Record.updated_with
 references:

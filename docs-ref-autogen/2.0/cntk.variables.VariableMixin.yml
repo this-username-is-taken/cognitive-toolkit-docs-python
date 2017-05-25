@@ -32,7 +32,9 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 60
   summary: 'Standard properties for @cntk.variables.Variable and its derived classes
+
     @cntk.variables.Parameter and @cntk.variables.Constant.
+
 
 
 
@@ -48,6 +50,20 @@ items:
 
     '
   syntax:
+    attribute:
+    - dtype
+    - dynamic_axes
+    - is_constant
+    - is_input
+    - is_output
+    - is_parameter
+    - is_placeholder
+    - is_sparse
+    - name
+    - needs_gradient
+    - owner
+    - shape
+    - uid
     content: VariableMixin()
   type: class
   uid: cntk.variables.VariableMixin
@@ -65,7 +81,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: The NumPy type of this variable.
+  summary: 'The NumPy type of this variable.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.variables.VariableMixin.dtype
@@ -83,7 +101,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: The dynamic axes of this variable.
+  summary: 'The dynamic axes of this variable.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.variables.VariableMixin.dynamic_axes
@@ -101,7 +121,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Whether this variable is a constant.
+  summary: 'Whether this variable is a constant.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.variables.VariableMixin.is_constant
@@ -119,7 +141,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Whether this variable is an input.
+  summary: 'Whether this variable is an input.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.variables.VariableMixin.is_input
@@ -137,7 +161,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Whether this variable is an output.
+  summary: 'Whether this variable is an output.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.variables.VariableMixin.is_output
@@ -155,7 +181,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Whether this variable is a parameter.
+  summary: 'Whether this variable is a parameter.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.variables.VariableMixin.is_parameter
@@ -173,7 +201,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Whether this variable is a placeholder.
+  summary: 'Whether this variable is a placeholder.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.variables.VariableMixin.is_placeholder
@@ -191,7 +221,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Whether this variable is sparse.
+  summary: 'Whether this variable is sparse.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.variables.VariableMixin.is_sparse
@@ -209,7 +241,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: The name of this variable.
+  summary: 'The name of this variable.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.variables.VariableMixin.name
@@ -227,7 +261,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Whether this variable needs gradients.
+  summary: 'Whether this variable needs gradients.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.variables.VariableMixin.needs_gradient
@@ -245,7 +281,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: The function this variable is an output of.
+  summary: 'The function this variable is an output of.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.variables.VariableMixin.owner
@@ -263,7 +301,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: The shape of this variable as a tuple.
+  summary: 'The shape of this variable as a tuple.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.variables.VariableMixin.shape
@@ -281,7 +321,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: The internally generated unique name of the variable.
+  summary: 'The internally generated unique name of the variable.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.variables.VariableMixin.uid

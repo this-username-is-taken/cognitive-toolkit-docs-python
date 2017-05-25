@@ -1,213 +1,214 @@
-- href: cntk.yml
+- name: Reference
+  href: cntk.yml
   items:
-  - href: cntk.axis.yml
+  - name: axis
+    href: cntk.axis.yml
     items:
-    - href: cntk.axis.Axis.yml
-      name: cntk.axis.Axis
-    name: axis
-  - href: cntk.contrib.yml
+    - name: cntk.axis.Axis
+      href: cntk.axis.Axis.yml
+  - name: contrib
+    href: cntk.contrib.yml
     items:
-    - href: cntk.contrib.crosstalk.yml
+    - name: cntk.contrib.crosstalk
+      href: cntk.contrib.crosstalk.yml
       items:
-      - href: cntk.contrib.crosstalk.crosstalk_cntk.yml
+      - name: cntk.contrib.crosstalk.crosstalk_cntk
+        href: cntk.contrib.crosstalk.crosstalk_cntk.yml
         items:
-        - href: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.yml
-          name: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
-        name: cntk.contrib.crosstalk.crosstalk_cntk
-      - href: cntk.contrib.crosstalk.Conv2DArgs.yml
-        name: cntk.contrib.crosstalk.Conv2DArgs
-      - href: cntk.contrib.crosstalk.Conv2DAttr.yml
-        name: cntk.contrib.crosstalk.Conv2DAttr
-      - href: cntk.contrib.crosstalk.Crosstalk.yml
-        name: cntk.contrib.crosstalk.Crosstalk
-      - href: cntk.contrib.crosstalk.EmbedAttr.yml
-        name: cntk.contrib.crosstalk.EmbedAttr
-      - href: cntk.contrib.crosstalk.FuncInfo.yml
-        name: cntk.contrib.crosstalk.FuncInfo
-      - href: cntk.contrib.crosstalk.RnnArgs.yml
-        name: cntk.contrib.crosstalk.RnnArgs
-      - href: cntk.contrib.crosstalk.RnnAttr.yml
-        name: cntk.contrib.crosstalk.RnnAttr
-      - href: cntk.contrib.crosstalk.VarInfo.yml
-        name: cntk.contrib.crosstalk.VarInfo
-      name: cntk.contrib.crosstalk
-    name: contrib
-  - href: cntk.core.yml
+        - name: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+          href: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.yml
+      - name: cntk.contrib.crosstalk.Conv2DArgs
+        href: cntk.contrib.crosstalk.Conv2DArgs.yml
+      - name: cntk.contrib.crosstalk.Conv2DAttr
+        href: cntk.contrib.crosstalk.Conv2DAttr.yml
+      - name: cntk.contrib.crosstalk.Crosstalk
+        href: cntk.contrib.crosstalk.Crosstalk.yml
+      - name: cntk.contrib.crosstalk.EmbedAttr
+        href: cntk.contrib.crosstalk.EmbedAttr.yml
+      - name: cntk.contrib.crosstalk.FuncInfo
+        href: cntk.contrib.crosstalk.FuncInfo.yml
+      - name: cntk.contrib.crosstalk.RnnArgs
+        href: cntk.contrib.crosstalk.RnnArgs.yml
+      - name: cntk.contrib.crosstalk.RnnAttr
+        href: cntk.contrib.crosstalk.RnnAttr.yml
+      - name: cntk.contrib.crosstalk.VarInfo
+        href: cntk.contrib.crosstalk.VarInfo.yml
+  - name: core
+    href: cntk.core.yml
     items:
-    - href: cntk.core.NDArrayView.yml
-      name: cntk.core.NDArrayView
-    - href: cntk.core.Value.yml
-      name: cntk.core.Value
-    name: core
-  - href: cntk.debugging.yml
+    - name: cntk.core.NDArrayView
+      href: cntk.core.NDArrayView.yml
+    - name: cntk.core.Value
+      href: cntk.core.Value.yml
+  - name: debugging
+    href: cntk.debugging.yml
     items:
-    - href: cntk.debugging.debug.yml
-      name: cntk.debugging.debug
-    - href: cntk.debugging.profiler.yml
-      name: cntk.debugging.profiler
-    name: debugging
-  - href: cntk.default_options.yml
+    - name: cntk.debugging.debug
+      href: cntk.debugging.debug.yml
+    - name: cntk.debugging.profiler
+      href: cntk.debugging.profiler.yml
+  - name: default_options
+    href: cntk.default_options.yml
     items:
-    - href: cntk.default_options.default_override_or.yml
-      name: cntk.default_options.default_override_or
-    name: default_options
-  - href: cntk.device.yml
+    - name: cntk.default_options.default_override_or
+      href: cntk.default_options.default_override_or.yml
+  - name: device
+    href: cntk.device.yml
     items:
-    - href: cntk.device.DeviceDescriptor.yml
-      name: cntk.device.DeviceDescriptor
-    - href: cntk.device.DeviceKind.yml
-      name: cntk.device.DeviceKind
-    name: device
-  - href: cntk.eval.yml
+    - name: cntk.device.DeviceDescriptor
+      href: cntk.device.DeviceDescriptor.yml
+    - name: cntk.device.DeviceKind
+      href: cntk.device.DeviceKind.yml
+  - name: eval
+    href: cntk.eval.yml
     items:
-    - href: cntk.eval.evaluator.yml
+    - name: cntk.eval.evaluator
+      href: cntk.eval.evaluator.yml
       items:
-      - href: cntk.eval.evaluator.Evaluator.yml
-        name: cntk.eval.evaluator.Evaluator
-      name: cntk.eval.evaluator
-    name: eval
-  - href: cntk.initializer.yml
-    name: initializer
-  - href: cntk.io.yml
+      - name: cntk.eval.evaluator.Evaluator
+        href: cntk.eval.evaluator.Evaluator.yml
+  - name: initializer
+    href: cntk.initializer.yml
+  - name: io
+    href: cntk.io.yml
     items:
-    - href: cntk.io.transforms.yml
-      name: cntk.io.transforms
-    - href: cntk.io.MinibatchData.yml
-      name: cntk.io.MinibatchData
-    - href: cntk.io.MinibatchSource.yml
-      name: cntk.io.MinibatchSource
-    - href: cntk.io.StreamConfiguration.yml
-      name: cntk.io.StreamConfiguration
-    - href: cntk.io.StreamInformation.yml
-      name: cntk.io.StreamInformation
-    - href: cntk.io.UserMinibatchSource.yml
-      name: cntk.io.UserMinibatchSource
-    name: io
-  - href: cntk.layers.yml
+    - name: cntk.io.transforms
+      href: cntk.io.transforms.yml
+    - name: cntk.io.MinibatchData
+      href: cntk.io.MinibatchData.yml
+    - name: cntk.io.MinibatchSource
+      href: cntk.io.MinibatchSource.yml
+    - name: cntk.io.StreamConfiguration
+      href: cntk.io.StreamConfiguration.yml
+    - name: cntk.io.StreamInformation
+      href: cntk.io.StreamInformation.yml
+    - name: cntk.io.UserMinibatchSource
+      href: cntk.io.UserMinibatchSource.yml
+  - name: layers
+    href: cntk.layers.yml
     items:
-    - href: cntk.layers.blocks.yml
-      name: cntk.layers.blocks
-    - href: cntk.layers.higher_order_layers.yml
-      name: cntk.layers.higher_order_layers
-    - href: cntk.layers.layers.yml
-      name: cntk.layers.layers
-    - href: cntk.layers.models.yml
+    - name: cntk.layers.blocks
+      href: cntk.layers.blocks.yml
+    - name: cntk.layers.higher_order_layers
+      href: cntk.layers.higher_order_layers.yml
+    - name: cntk.layers.layers
+      href: cntk.layers.layers.yml
+    - name: cntk.layers.models
+      href: cntk.layers.models.yml
       items:
-      - href: cntk.layers.models.attention.yml
-        name: cntk.layers.models.attention
-      name: cntk.layers.models
-    - href: cntk.layers.sequence.yml
-      name: cntk.layers.sequence
-    - href: cntk.layers.typing.yml
+      - name: cntk.layers.models.attention
+        href: cntk.layers.models.attention.yml
+    - name: cntk.layers.sequence
+      href: cntk.layers.sequence.yml
+    - name: cntk.layers.typing
+      href: cntk.layers.typing.yml
       items:
-      - href: cntk.layers.typing.ParameterTensor.yml
-        name: cntk.layers.typing.ParameterTensor
-      - href: cntk.layers.typing.Sequence.yml
-        name: cntk.layers.typing.Sequence
-      - href: cntk.layers.typing.SequenceOver.yml
-        name: cntk.layers.typing.SequenceOver
-      - href: cntk.layers.typing.SequenceOverMeta.yml
-        name: cntk.layers.typing.SequenceOverMeta
-      - href: cntk.layers.typing.SparseTensor.yml
-        name: cntk.layers.typing.SparseTensor
-      - href: cntk.layers.typing.Tensor.yml
-        name: cntk.layers.typing.Tensor
-      name: cntk.layers.typing
-    name: layers
-  - href: cntk.learners.yml
+      - name: cntk.layers.typing.ParameterTensor
+        href: cntk.layers.typing.ParameterTensor.yml
+      - name: cntk.layers.typing.Sequence
+        href: cntk.layers.typing.Sequence.yml
+      - name: cntk.layers.typing.SequenceOver
+        href: cntk.layers.typing.SequenceOver.yml
+      - name: cntk.layers.typing.SequenceOverMeta
+        href: cntk.layers.typing.SequenceOverMeta.yml
+      - name: cntk.layers.typing.SparseTensor
+        href: cntk.layers.typing.SparseTensor.yml
+      - name: cntk.layers.typing.Tensor
+        href: cntk.layers.typing.Tensor.yml
+  - name: learners
+    href: cntk.learners.yml
     items:
-    - href: cntk.learners.Learner.yml
-      name: cntk.learners.Learner
-    - href: cntk.learners.UnitType.yml
-      name: cntk.learners.UnitType
-    - href: cntk.learners.UserLearner.yml
-      name: cntk.learners.UserLearner
-    name: learners
-  - href: cntk.logging.yml
+    - name: cntk.learners.Learner
+      href: cntk.learners.Learner.yml
+    - name: cntk.learners.UnitType
+      href: cntk.learners.UnitType.yml
+    - name: cntk.learners.UserLearner
+      href: cntk.learners.UserLearner.yml
+  - name: logging
+    href: cntk.logging.yml
     items:
-    - href: cntk.logging.graph.yml
-      name: cntk.logging.graph
-    - href: cntk.logging.progress_print.yml
+    - name: cntk.logging.graph
+      href: cntk.logging.graph.yml
+    - name: cntk.logging.progress_print
+      href: cntk.logging.progress_print.yml
       items:
-      - href: cntk.logging.progress_print.ProgressPrinter.yml
-        name: cntk.logging.progress_print.ProgressPrinter
-      - href: cntk.logging.progress_print.TensorBoardProgressWriter.yml
-        name: cntk.logging.progress_print.TensorBoardProgressWriter
-      name: cntk.logging.progress_print
-    - href: cntk.logging.TraceLevel.yml
-      name: cntk.logging.TraceLevel
-    name: logging
-  - href: cntk.losses.yml
-    name: losses
-  - href: cntk.metrics.yml
-    name: metrics
-  - href: cntk.misc.yml
+      - name: cntk.logging.progress_print.ProgressPrinter
+        href: cntk.logging.progress_print.ProgressPrinter.yml
+      - name: cntk.logging.progress_print.TensorBoardProgressWriter
+        href: cntk.logging.progress_print.TensorBoardProgressWriter.yml
+    - name: cntk.logging.TraceLevel
+      href: cntk.logging.TraceLevel.yml
+  - name: losses
+    href: cntk.losses.yml
+  - name: metrics
+    href: cntk.metrics.yml
+  - name: misc
+    href: cntk.misc.yml
     items:
-    - href: cntk.misc.optimized_rnnstack_converter.yml
-      name: cntk.misc.optimized_rnnstack_converter
-    name: misc
-  - href: cntk.ops.yml
+    - name: cntk.misc.optimized_rnnstack_converter
+      href: cntk.misc.optimized_rnnstack_converter.yml
+  - name: ops
+    href: cntk.ops.yml
     items:
-    - href: cntk.ops.functions.yml
+    - name: cntk.ops.functions
+      href: cntk.ops.functions.yml
       items:
-      - href: cntk.ops.functions.CloneMethod.yml
-        name: cntk.ops.functions.CloneMethod
-      - href: cntk.ops.functions.Function.yml
-        name: cntk.ops.functions.Function
-      - href: cntk.ops.functions.UserFunction.yml
-        name: cntk.ops.functions.UserFunction
-      name: cntk.ops.functions
-    - href: cntk.ops.sequence.yml
-      name: cntk.ops.sequence
-    name: ops
-  - href: cntk.sample_installer.yml
-    name: sample_installer
-  - href: cntk.tensor.yml
+      - name: cntk.ops.functions.CloneMethod
+        href: cntk.ops.functions.CloneMethod.yml
+      - name: cntk.ops.functions.Function
+        href: cntk.ops.functions.Function.yml
+      - name: cntk.ops.functions.UserFunction
+        href: cntk.ops.functions.UserFunction.yml
+    - name: cntk.ops.sequence
+      href: cntk.ops.sequence.yml
+  - name: sample_installer
+    href: cntk.sample_installer.yml
+  - name: tensor
+    href: cntk.tensor.yml
     items:
-    - href: cntk.tensor.ArrayMixin.yml
-      name: cntk.tensor.ArrayMixin
-    - href: cntk.tensor.TensorOpsMixin.yml
-      name: cntk.tensor.TensorOpsMixin
-    name: tensor
-  - href: cntk.train.yml
+    - name: cntk.tensor.ArrayMixin
+      href: cntk.tensor.ArrayMixin.yml
+    - name: cntk.tensor.TensorOpsMixin
+      href: cntk.tensor.TensorOpsMixin.yml
+  - name: train
+    href: cntk.train.yml
     items:
-    - href: cntk.train.distributed.yml
+    - name: cntk.train.distributed
+      href: cntk.train.distributed.yml
       items:
-      - href: cntk.train.distributed.Communicator.yml
-        name: cntk.train.distributed.Communicator
-      - href: cntk.train.distributed.DistributedLearner.yml
-        name: cntk.train.distributed.DistributedLearner
-      - href: cntk.train.distributed.WorkerDescriptor.yml
-        name: cntk.train.distributed.WorkerDescriptor
-      name: cntk.train.distributed
-    - href: cntk.train.trainer.yml
+      - name: cntk.train.distributed.Communicator
+        href: cntk.train.distributed.Communicator.yml
+      - name: cntk.train.distributed.DistributedLearner
+        href: cntk.train.distributed.DistributedLearner.yml
+      - name: cntk.train.distributed.WorkerDescriptor
+        href: cntk.train.distributed.WorkerDescriptor.yml
+    - name: cntk.train.trainer
+      href: cntk.train.trainer.yml
       items:
-      - href: cntk.train.trainer.Trainer.yml
-        name: cntk.train.trainer.Trainer
-      name: cntk.train.trainer
-    - href: cntk.train.training_session.yml
+      - name: cntk.train.trainer.Trainer
+        href: cntk.train.trainer.Trainer.yml
+    - name: cntk.train.training_session
+      href: cntk.train.training_session.yml
       items:
-      - href: cntk.train.training_session.CheckpointConfig.yml
-        name: cntk.train.training_session.CheckpointConfig
-      - href: cntk.train.training_session.CrossValidationConfig.yml
-        name: cntk.train.training_session.CrossValidationConfig
-      - href: cntk.train.training_session.TestConfig.yml
-        name: cntk.train.training_session.TestConfig
-      - href: cntk.train.training_session.TrainingSession.yml
-        name: cntk.train.training_session.TrainingSession
-      name: cntk.train.training_session
-    name: train
-  - href: cntk.variables.yml
+      - name: cntk.train.training_session.CheckpointConfig
+        href: cntk.train.training_session.CheckpointConfig.yml
+      - name: cntk.train.training_session.CrossValidationConfig
+        href: cntk.train.training_session.CrossValidationConfig.yml
+      - name: cntk.train.training_session.TestConfig
+        href: cntk.train.training_session.TestConfig.yml
+      - name: cntk.train.training_session.TrainingSession
+        href: cntk.train.training_session.TrainingSession.yml
+  - name: variables
+    href: cntk.variables.yml
     items:
-    - href: cntk.variables.Constant.yml
-      name: cntk.variables.Constant
-    - href: cntk.variables.Parameter.yml
-      name: cntk.variables.Parameter
-    - href: cntk.variables.Record.yml
-      name: cntk.variables.Record
-    - href: cntk.variables.Variable.yml
-      name: cntk.variables.Variable
-    - href: cntk.variables.VariableMixin.yml
-      name: cntk.variables.VariableMixin
-    name: variables
-  name: Reference
+    - name: cntk.variables.Constant
+      href: cntk.variables.Constant.yml
+    - name: cntk.variables.Parameter
+      href: cntk.variables.Parameter.yml
+    - name: cntk.variables.Record
+      href: cntk.variables.Record.yml
+    - name: cntk.variables.Variable
+      href: cntk.variables.Variable.yml
+    - name: cntk.variables.VariableMixin
+      href: cntk.variables.VariableMixin.yml
+  universal_conceptual_toc: /python/cognitive-toolkit/toc.json

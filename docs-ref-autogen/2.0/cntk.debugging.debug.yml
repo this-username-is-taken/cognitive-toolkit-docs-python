@@ -20,14 +20,14 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   summary: "In order to debug a graph one simply needs to wrap the root node as follows::\n\
-    \n    # ... setting up the model in z\n    from cntk.debugging import debug_model\n\
-    \    z = debug_model(z)\n\nThen, when ``z`` is evaluated or trained (i.e. when\
+    \n\n    # ... setting up the model in z\n    from cntk.debugging import debug_model\n\
+    \    z = debug_model(z)\n\n\nThen, when ``z`` is evaluated or trained (i.e. when\
     \ either\n:meth:`~cntk.ops.functions.Function.forward` or\n:meth:`~cntk.ops.functions.Function.backward`\
-    \ is called, you will see the\nfollowing command-line interface::\n\n    ===================================\
+    \ is called, you will see the\nfollowing command-line interface::\n\n\n    ===================================\
     \ forward  ===================================\n    Parameter node with uid='Parameter28'\
     \ shape=[](2,)\n    [CNTK forward] >>> help\n        Commands:\n        n - execute\
-    \ the next node\n        n <number> - execute the next <number> nodes\n\n    \
-    \    u f - execute until forward pass (like 'n' when already in forward pass)\n\
+    \ the next node\n        n <number> - execute the next <number> nodes\n\n\n  \
+    \      u f - execute until forward pass (like 'n' when already in forward pass)\n\
     \        u b - execute until backward pass (like 'n' when already in backward\
     \ pass)\n        u name - execute until a node with that name is hit\n       \
     \ u <lambda> - execute until the lambda expression is True. Examples:\n      \
@@ -35,17 +35,17 @@ items:
     \ node: node.op_name == 'Times'\n                     Until a node is hit that\
     \ has 3 dimensions:\n                         lambda arg, node: len(node.shape)\
     \ == 3\n                     Until the variance of the input exceeds 1 (np = numpy):\n\
-    \                         lambda arg, node: np.var(arg) > 1\n\n        c - execute\
+    \                         lambda arg, node: np.var(arg) > 1\n\n\n        c - execute\
     \ until end\n        p - print input (forward) or root gradients (backward)\n\
-    \        d - drop into a pdb shell\n        q - quit\n\n    [CNTK backward] >>>\
-    \ n\n\n    Times node with uid='Times29' shape=[*,*](2,)\n    [CNTK forward] >>>\
-    \ n\n    =================================== backward ===================================\n\
+    \        d - drop into a pdb shell\n        q - quit\n\n\n    [CNTK backward]\
+    \ >>> n\n\n\n    Times node with uid='Times29' shape=[*,*](2,)\n    [CNTK forward]\
+    \ >>> n\n    =================================== backward ===================================\n\
     \    Times node with uid='Times29' shape=[*,*](2,)\n    [CNTK backward] >>> p\n\
     \    State: None\n    Root gradients:\n    [[[-0.79412955  0.79412955]]\n    \
     \ [[-0.79412955  0.79412955]]\n     [[ 0.20587046 -0.20587045]]\n     [[ 0.20587046\
     \ -0.20587045]]\n     [[ 0.20587046 -0.20587045]]\n     [[ 0.20587046 -0.20587045]]\n\
     \     [[-0.79412955  0.79412955]]\n     [[ 0.20587046 -0.20587045]]\n     [[ 0.20587039\
-    \ -0.20587039]]\n     [[-0.79412961  0.79412961]]]\n\nAt every stop the following\
+    \ -0.20587039]]\n     [[-0.79412961  0.79412961]]]\n\n\nAt every stop the following\
     \ information is given:\n * Forward or backward pass\n * Node type (e.g. 'Times')\n\
     \ * Name if given, otherwise it is omitted\n * uid, which is a unique reference\
     \ within the graph\n * shape having the format [dynamic axis](static axes). E.g.\
@@ -66,33 +66,51 @@ items:
       path: /bindings/python\cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 402
-  summary: Returns a cloned model that has debug nodes inserted everywhere. When the
+  summary: 'Returns a cloned model that has debug nodes inserted everywhere. When
+    the
+
     graph is evaluated or trained, those nodes will allow to inspect the graph.
+
+    '
   syntax:
     content: debug_model(model, in_stream=<_io.TextIOWrapper name='<stdin>' mode='r'
       encoding='cp936'>, out_stream=<colorama.ansitowin32.StreamWrapper object at
-      0x000001E2ACC07470>, exit_func=<built-in function exit>)
+      0x000001B3BE3E7470>, exit_func=<built-in function exit>)
     parameters:
-    - description: root node until which the nodes are to be debugged
+    - description: 'root node until which the nodes are to be debugged
+
+        '
       id: model
       type:
       - root node
-    - description: '*readline()* will be called on it to obtain user input'
+    - description: '*readline()*
+
+        will be called on it to obtain user input
+
+        '
       id: in_stream
       type:
       - object behaving like sys.stdin, default stdin
-    - description: '*write()* and *flush()* will be called on it to output debug info
-        to the user'
+    - description: '*write()*
+
+        and *flush()* will be called on it to output debug info to the user
+
+        '
       id: out_stream
       type:
       - object behaving like sys.stdout, default stdout
-    - description: callable that takes an exit code and is called, when the user exits
-        the debugging process
+    - description: 'callable that takes an exit code and is called,
+
+        when the user exits the debugging process
+
+        '
       id: exit_func
       type:
       - callable, default sys.exit
     return:
-      description: a clone of the model that has debugging enabled
+      description: 'a clone of the model that has debugging enabled
+
+        '
   type: function
   uid: cntk.debugging.debug.debug_model
 - fullName: cntk.debugging.debug.save_as_legacy_model
@@ -108,16 +126,25 @@ items:
       path: /bindings/python\cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 84
-  summary: Save the network of `root_op` in `filename`. For debugging purposes only,
-    very likely to be deprecated in the future.
+  summary: 'Save the network of `root_op` in `filename`.
+
+    For debugging purposes only, very likely to be deprecated in the future.
+
+    '
   syntax:
     content: save_as_legacy_model(root_op, filename)
     parameters:
-    - description: op of the graph to save
+    - description: 'op of the graph to save
+
+        '
       id: root_op
       type:
-      - '@cntk.ops.functions.Function'
-    - description: filename to store the model in.
+      - '@cntk.ops.functions.Function
+
+        '
+    - description: 'filename to store the model in.
+
+        '
       id: filename
       type:
       - str
@@ -136,14 +163,17 @@ items:
       path: /bindings/python\cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 107
-  summary: '   Checked mode enables additional runtime verification such as:      *
-    Tracking NaN occurences in sequence gaps.      * Function graph verification after
-    binding of free static axes to actual values at runtime   Enabling checked mode
-    incurs additional runtime costs and is meant to be used as a debugging aid.'
+  summary: "   Checked mode enables additional runtime verification such as:\n   \
+    \   * Tracking NaN occurences in sequence gaps. \n\n      * Function graph verification\
+    \ after binding of free static axes to actual values at runtime \n\n   Enabling\
+    \ checked mode incurs additional runtime costs and is meant to be used as a debugging\
+    \ aid.\n"
   syntax:
     content: set_checked_mode(enable)
     parameters:
-    - description: whether to enable checked mode (with performance impact)
+    - description: 'whether to enable checked mode (with performance impact)
+
+        '
       id: enable
       type:
       - bool
@@ -163,14 +193,16 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 121
   summary: "Set trace level to the computation network. Currently supported values:\n\
-    \   0      turn off trace   1      output nodes' dimensions and some other static\
-    \ info   1000      output each node's abs sum of elements in its value matrix\
-    \ for every forward/backward   1000000      output each node's full matrix for\
-    \ every forward/backward"
+    \n   0\n      turn off trace\n\n   1\n      output nodes' dimensions and some\
+    \ other static info\n\n   1000\n      output each node's abs sum of elements in\
+    \ its value matrix for every forward/backward\n\n   1000000\n      output each\
+    \ node's full matrix for every forward/backward\n"
   syntax:
     content: set_computation_network_trace_level(level)
     parameters:
-    - description: trace level
+    - description: 'trace level
+
+        '
       id: level
       type:
       - int

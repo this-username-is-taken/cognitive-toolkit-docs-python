@@ -20,28 +20,41 @@ items:
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 340
-  summary: Stream information container that is used to describe streams when implementing
-    custom minibatch source through `UserMinibatchSource`.
+  summary: 'Stream information container that is used to describe streams when
+
+    implementing custom minibatch source through `UserMinibatchSource`.
+
+    '
   syntax:
     content: StreamInformation(name, stream_id, storage_format, dtype, shape)
     parameters:
-    - description: name of the stream
+    - description: 'name of the stream
+
+        '
       id: name
       type:
       - str
-    - description: unique ID of the stream
+    - description: 'unique ID of the stream
+
+        '
       id: stream_id
       type:
       - int
-    - description: '''dense'' or ''sparse'''
+    - description: '''dense'' or ''sparse''
+
+        '
       id: storage_format
       type:
       - str
-    - description: data type
+    - description: 'data type
+
+        '
       id: dtype
       type:
       - NumPy type
-    - description: shape of the elements
+    - description: 'shape of the elements
+
+        '
       id: shape
       type:
       - tuple

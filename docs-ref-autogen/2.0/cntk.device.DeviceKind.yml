@@ -23,8 +23,12 @@ items:
   summary: 'Describes different device kinds like CPU or GPU.
 
 
+
     '
   syntax:
+    attribute:
+    - CPU = 0
+    - GPU = 1
     content: DeviceKind(value, names=None, *, module=None, qualname=None, type=None,
       start=1)
   type: class

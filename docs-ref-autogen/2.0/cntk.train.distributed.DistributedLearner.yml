@@ -28,8 +28,12 @@ items:
     multiple MPI workers
 
 
+
     '
   syntax:
+    attribute:
+    - communicator
+    - total_number_of_samples_seen
     content: DistributedLearner(*args, **kwargs)
   type: class
   uid: cntk.train.distributed.DistributedLearner
@@ -47,11 +51,15 @@ items:
       path: /bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 105
-  summary: Returns the distributed communicator that talks to other MPI workers
+  summary: 'Returns the distributed communicator that talks to other MPI workers
+
+    '
   syntax:
     content: communicator(self)
     return:
-      description: descriptor of current process.
+      description: 'descriptor of current process.
+
+        '
       type:
       - Communicator
   type: method
@@ -70,7 +78,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: The number of samples seen by the distributed learner.
+  summary: 'The number of samples seen by the distributed learner.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.train.distributed.DistributedLearner.total_number_of_samples_seen

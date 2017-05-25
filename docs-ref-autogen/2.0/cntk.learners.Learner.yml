@@ -25,16 +25,26 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 110
   summary: 'Abstraction for learning a subset of parameters of a learnable function
-    using first order gradient values. For example momentum, AdaGrad, RMSProp, etc.
-    are different types of learners with their own algorithms for learning parameter
-    values using first order gradients. To instantiate a concrete learner, use the
-    factory methods in this module.
+    using first order gradient values.
+
+    For example momentum, AdaGrad, RMSProp, etc. are different types of learners with
+    their own algorithms for
+
+    learning parameter values using first order gradients.
+
+    To instantiate a concrete learner, use the factory methods in this module.
+
 
 
 
 
     '
   syntax:
+    attribute:
+    - learning_rate
+    - parameters
+    - reset_learning_ratelearning_rate
+    - updategradient_values, training_sample_count
     content: Learner(parameters, learningRateSchedule)
   type: class
   uid: cntk.learners.Learner
@@ -52,7 +62,9 @@ items:
       path: /bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 159
-  summary: Current learning rate.
+  summary: 'Current learning rate.
+
+    '
   syntax:
     content: learning_rate(self)
   type: method
@@ -71,7 +83,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: The set of parameters associated with this learner.
+  summary: 'The set of parameters associated with this learner.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.learners.Learner.parameters
@@ -90,16 +104,25 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 145
   summary: 'Resets the learning rate. The new schedule is adjusted to be relative
-    to the current number of elapsed samples/sweeps: the 0 offset in the new schedule
-    corresponds to the current value of elapsed samples/sweeps, and it takes effect
-    from the current position in the training process onwards.'
+
+    to the current number of elapsed samples/sweeps: the 0 offset in
+
+    the new schedule corresponds to the current value of elapsed samples/sweeps,
+
+    and it takes effect from the current position in the training process onwards.
+
+    '
   syntax:
     content: reset_learning_rate(self, learning_rate)
     parameters:
-    - description: learning rate to reset to
+    - description: 'learning rate to reset to
+
+        '
       id: learning_rate
       type:
-      - output of `learning_rate_schedule()`
+      - 'output of `learning_rate_schedule()`
+
+        '
   type: method
   uid: cntk.learners.Learner.reset_learning_rate
 - class: cntk.learners.Learner
@@ -116,22 +139,33 @@ items:
       path: /bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 119
-  summary: Update the parameters associated with this learner.
+  summary: 'Update the parameters associated with this learner.
+
+    '
   syntax:
     content: update(self, gradient_values, training_sample_count)
     parameters:
-    - description: maps @cntk.variables.Parameter to a NumPy array containing the
-        first order gradient values for the Parameter w.r.t. the training objective.
+    - description: 'maps @cntk.variables.Parameter to
+
+        a NumPy array containing the first order gradient values for the
+
+        Parameter w.r.t. the training objective.
+
+        '
       id: gradient_values
       type:
       - dict
-    - description: number of samples in the minibatch
+    - description: 'number of samples in the minibatch
+
+        '
       id: training_sample_count
       type:
       - int
     return:
       description: '*False* to indicate that learning has stopped for all of the parameters
-        associated with this learner'
+        associated with this learner
+
+        '
       type:
       - bool
   type: method

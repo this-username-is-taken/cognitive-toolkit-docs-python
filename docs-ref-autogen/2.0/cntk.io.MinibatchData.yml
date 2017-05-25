@@ -31,8 +31,10 @@ items:
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 25
-  summary: 'Holds a minibatch of input data. This is never directly created, but only
-    returned by `MinibatchSource` instances.
+  summary: 'Holds a minibatch of input data. This is never directly created, but
+
+    only returned by `MinibatchSource` instances.
+
 
 
 
@@ -43,6 +45,15 @@ items:
 
     '
   syntax:
+    attribute:
+    - as_sequencesvariable=None
+    - data
+    - end_of_sweep
+    - is_sparse
+    - mask
+    - num_samples
+    - num_sequences
+    - shape
     content: MinibatchData(value, num_sequences, num_samples, sweep_end)
   type: class
   uid: cntk.io.MinibatchData
@@ -60,12 +71,17 @@ items:
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 50
-  summary: Convert the value of this minibatch instance to a sequence of NumPy arrays
-    that have their masked entries removed.
+  summary: 'Convert the value of this minibatch instance to a sequence of NumPy
+
+    arrays that have their masked entries removed.
+
+    '
   syntax:
     content: as_sequences(self, variable=None)
     return:
-      description: a list of NumPy arrays if dense, otherwise a SciPy CSR array
+      description: 'a list of NumPy arrays if dense, otherwise a SciPy CSR array
+
+        '
   type: method
   uid: cntk.io.MinibatchData.as_sequences
 - class: cntk.io.MinibatchData
@@ -82,7 +98,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Retrieves the underlying @cntk.core instance.
+  summary: 'Retrieves the underlying @cntk.core instance.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.io.MinibatchData.data
@@ -100,8 +118,13 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Indicates whether the data in this minibatch comes from a sweep end or
-    crosses a sweep boundary (and as a result includes data from different sweeps).
+  summary: 'Indicates whether the data in this minibatch comes from a sweep end
+
+    or crosses a sweep boundary (and as a result includes data from
+
+    different sweeps).
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.io.MinibatchData.end_of_sweep
@@ -119,7 +142,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: Whether the data in this minibatch is sparse.
+  summary: 'Whether the data in this minibatch is sparse.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.io.MinibatchData.is_sparse
@@ -137,8 +162,13 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: The mask object of the minibatch. In it, *2* marks the beginning of a sequence,
-    *1* marks a sequence element as valid, and *0* marks it as invalid.
+  summary: 'The mask object of the minibatch. In it, *2* marks the beginning of a
+
+    sequence, *1* marks a sequence element as valid, and *0* marks it as
+
+    invalid.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.io.MinibatchData.mask
@@ -156,7 +186,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: The number of samples in this minibatch
+  summary: 'The number of samples in this minibatch
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.io.MinibatchData.num_samples
@@ -174,7 +206,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: The number of sequences in this minibatch
+  summary: 'The number of sequences in this minibatch
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.io.MinibatchData.num_sequences
@@ -192,7 +226,9 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: The shape of the data in this minibatch as tuple.
+  summary: 'The shape of the data in this minibatch as tuple.
+
+    '
   syntax: {}
   type: attribute
   uid: cntk.io.MinibatchData.shape

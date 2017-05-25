@@ -57,7 +57,9 @@ items:
 
     >>> model = Dense(500, activation=C.relu) >> Dense(10)
 
-    ```'
+    ```
+
+    '
   fullName: cntk.layers.layers.Activation
   langs:
   - python
@@ -71,26 +73,40 @@ items:
       path: /bindings/python\cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1110
-  summary: Layer factory function to create an activation layer. Activation functions
-    can be used directly in CNTK, so there is no difference between `y = relu(x)`
-    and `y = Activation(relu)(x)`. This layer is useful if one wants to configure
-    the activation function with `default_options`, or when its invocation should
-    be named.
+  summary: 'Layer factory function to create an activation layer.
+
+    Activation functions can be used directly in CNTK, so there is no difference between
+
+    `y = relu(x)` and `y = Activation(relu)(x)`.
+
+    This layer is useful if one wants to configure the activation function
+
+    with `default_options`, or when its invocation should be named.
+
+    '
   syntax:
     content: Activation(activation=<cntk.default_options.default_override_or object
-      at 0x000001E2B189D470>, name='')
+      at 0x000001B3C38A9630>, name='')
     parameters:
-    - description: function to apply at the end, e.g. *relu*
+    - description: 'function to apply at the end, e.g. *relu*
+
+        '
       id: activation
       type:
-      - '@cntk.ops.functions.Function, defaults to identity'
-    - description: the name of the function instance in the network
+      - '@cntk.ops.functions.Function
+
+        , defaults to identity'
+    - description: 'the name of the function instance in the network
+
+        '
       id: name
       type:
       - str, defaults to ''
     return:
-      description: A function that accepts one argument and applies the operation
+      description: 'A function that accepts one argument and applies the operation
         to it
+
+        '
       type:
       - cntk.ops.functions.Function
   type: function
@@ -100,13 +116,13 @@ items:
     \ pooling over windows of 3x3\n>>> h = C.input_variable((32,240,320))  # e.g.\
     \ 32-dim feature map\n>>> hp = f(h)\n>>> hp.shape  # spatial dimension has been\
     \ halved due to stride, and lost one due to 3x3 window without padding\n    (32,\
-    \ 119, 159)\n\n>>> f = AveragePooling((2,2), strides=2)\n>>> f.update_signature((1,4,4))\n\
+    \ 119, 159)\n```\n\n```\n\n>>> f = AveragePooling((2,2), strides=2)\n>>> f.update_signature((1,4,4))\n\
     >>> im = np.array([[[3, 5, 2, 6], [4, 2, 8, 3], [1, 6, 4, 7], [7, 3, 5, 9]]])\
     \  # a 4x4 image (feature-map depth 1 for simplicity)\n>>> im\n    array([[[3,\
     \ 5, 2, 6],\n            [4, 2, 8, 3],\n            [1, 6, 4, 7],\n          \
     \  [7, 3, 5, 9]]])\n>>> f([[im]])  # due to strides=2, this computes the averages\
     \ of each 2x2 sub-block\n    array([[[[ 3.5 ,  4.75],\n             [ 4.25,  6.25]]]],\
-    \ dtype=float32)\n```"
+    \ dtype=float32)\n```\n"
   fullName: cntk.layers.layers.AveragePooling
   langs:
   - python
@@ -122,42 +138,66 @@ items:
     startLine: 936
   summary: 'Layer factory function to create an average-pooling layer.
 
-    Like `Convolution()`, `AveragePooling()` processes items arranged on an N-dimensional
-    grid, such as an image. Typically, each item is a vector. For each item, average-pooling
-    computes the element-wise mean over a window ("receptive field") of items surrounding
-    the item''s position on the grid.
 
-    The size (spatial extent) of the receptive field is given by `filter_shape`. E.g.
-    for 2D pooling, `filter_shape` should be a tuple of two integers, such as *(5,5)*.'
+    Like `Convolution()`, `AveragePooling()` processes items arranged on an N-dimensional
+    grid, such as an image.
+
+    Typically, each item is a vector.
+
+    For each item, average-pooling computes the element-wise mean over a window ("receptive
+    field") of items surrounding the item''s position on the grid.
+
+
+    The size (spatial extent) of the receptive field is given by `filter_shape`.
+
+    E.g. for 2D pooling, `filter_shape` should be a tuple of two integers, such as
+    *(5,5)*.
+
+    '
   syntax:
     content: AveragePooling(filter_shape, strides=1, pad=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D3C8>, name='')
+      object at 0x000001B3C38A9588>, name='')
     parameters:
-    - description: shape (spatial extent) of the receptive field, *not* including
+    - description: 'shape (spatial extent) of the receptive field, *not* including
         the input feature-map depth. E.g. (3,3) for a 2D convolution.
+
+        '
       id: filter_shape
       type:
       - int or tuple of ints
-    - description: stride (increment when sliding over the input). Use a *tuple* to
-        specify a per-axis value.
+    - description: 'stride (increment when sliding over the input). Use a *tuple*
+        to specify a per-axis value.
+
+        '
       id: strides
       type:
       - int or tuple of ints, defaults to 1
-    - description: if *False*, then the pooling operation will be shifted over the
-        "valid" area of input, that is, no value outside the area is used. If `pad=True`
-        on the other hand, pooling will be applied to all input positions, and positions
-        outside the valid region will be excluded from the averaging. Use a *tuple*
-        to specify a per-axis value.
+    - description: 'if *False*, then the pooling operation will be shifted over the
+        "valid"
+
+        area of input, that is, no value outside the area is used. If `pad=True` on
+        the other hand,
+
+        pooling will be applied to all input positions, and positions outside the
+        valid region will be excluded from the averaging.
+
+        Use a *tuple* to specify a per-axis value.
+
+        '
       id: pad
       type:
       - bool or tuple of bools, defaults to False
-    - description: the name of the function instance in the network
+    - description: 'the name of the function instance in the network
+
+        '
       id: name
       type:
       - str, defaults to ''
     return:
-      description: A function that accepts one argument and applies the average-pooling
+      description: 'A function that accepts one argument and applies the average-pooling
         operation to it
+
+        '
       type:
       - cntk.ops.functions.Function
   type: function
@@ -166,7 +206,7 @@ items:
   - "```\n\n>>> # BatchNorm on an image with spatial pooling\n>>> f = BatchNormalization(map_rank=1)\n\
     >>> f.update_signature((3,480,640))\n>>> f.bias.shape, f.scale.shape  # due to\
     \ spatial pooling (map_rank=1), there are only 3 biases and scales, shared across\
-    \ all pixel positions\n    ((3,), (3,))\n```"
+    \ all pixel positions\n    ((3,), (3,))\n```\n"
   fullName: cntk.layers.layers.BatchNormalization
   langs:
   - python
@@ -182,62 +222,92 @@ items:
     startLine: 1143
   summary: 'Layer factory function to create a batch-normalization layer.
 
+
     Batch normalization applies this formula to every input element (element-wise):
-    `y = (x - batch_mean) / (batch_stddev + epsilon) * scale + bias` where `batch_mean`
-    and `batch_stddev` are estimated on the minibatch and `scale` and `bias` are learned
-    parameters.
+
+    `y = (x - batch_mean) / (batch_stddev + epsilon) * scale + bias`
+
+    where `batch_mean` and `batch_stddev` are estimated on the minibatch and `scale`
+    and `bias` are learned parameters.
+
 
     During operation, this layer also estimates an aggregate running mean and standard
     deviation for use in inference.
 
+
     A `BatchNormalization` layer instance owns its learnable parameter tensors and
-    exposes them as attributes `.scale` and `.bias`. The aggregate estimates are exposed
-    as attributes `aggregate_mean`, `aggregate_variance`, and `aggregate_count`.
+    exposes them as attributes `.scale` and `.bias`.
+
+    The aggregate estimates are exposed as attributes `aggregate_mean`, `aggregate_variance`,
+    and `aggregate_count`.
+
 
     <SYSTEM MESSAGE: C:\peter\ms_code\cntk_all\CNTK\bindings\python\doc\cntk.layers.layers.rst:37:
     (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
+
     Trying "todo" as canonical directive name.>
+
 
     <SYSTEM MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\layers\layers.py:docstring
     of cntk.layers.layers.BatchNormalization:37: (ERROR/3) Unknown directive type
-    "todo".  .. todo:: Add paper reference.>'
+    "todo".
+
+
+    .. todo:: Add paper reference.>
+
+    '
   syntax:
     content: BatchNormalization(map_rank=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D4A8>, init_scale=1, normalization_time_constant=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D4E0>, blend_time_constant=0, epsilon=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D518>, use_cntk_engine=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D550>, name='')
+      object at 0x000001B3C38A9668>, init_scale=1, normalization_time_constant=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A96A0>, blend_time_constant=0, epsilon=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A96D8>, use_cntk_engine=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A9710>, name='')
     parameters:
-    - description: passing 1 means spatially-pooled batch-normalization, where normalization
-        values will be tied across all pixel positions; while `None` will normalize
-        all elements of the input tensor independently
+    - description: 'passing 1 means spatially-pooled batch-normalization, where normalization
+        values will be tied across all pixel positions; while `None`
+
+        will normalize all elements of the input tensor independently
+
+        '
       id: map_rank
       type:
       - 1 or None
-    - description: initial value for the `scale` parameter
+    - description: 'initial value for the `scale` parameter
+
+        '
       id: init_scale
       type:
       - float, default 1
-    - description: time constant for smoothing the batch statistics in order to compute
+    - description: 'time constant for smoothing the batch statistics in order to compute
         aggregate estimates for inference.
+
+        '
       id: normalization_time_constant
       type:
       - int, default 5000
-    - description: epsilon added to the variance to avoid division by 0
+    - description: 'epsilon added to the variance to avoid division by 0
+
+        '
       id: epsilon
       type:
       - float, default 0.00001
-    - description: if `True` then use CNTK's own engine instead of NVidia's.
+    - description: 'if `True` then use CNTK''s own engine instead of NVidia''s.
+
+        '
       id: use_cntk_engine
       type:
       - bool, default False
-    - description: the name of the function instance in the network
+    - description: 'the name of the function instance in the network
+
+        '
       id: name
       type:
       - str, optional
     return:
-      description: A function that accepts one argument and applies the operation
+      description: 'A function that accepts one argument and applies the operation
         to it
+
+        '
       type:
       - cntk.ops.functions.Function
   type: function
@@ -247,18 +317,18 @@ items:
     \ 128:\n>>> f = Convolution((5,4), 128, activation=C.relu)\n>>> x = C.input_variable((3,480,640))\
     \  # 3-channel color image\n>>> h = f(x)\n>>> h.shape\n    (128, 476, 637)\n>>>\
     \ f.W.shape  # will have the form (num_filters, input_depth, *filter_shape)\n\
-    \    (128, 3, 5, 4)\n\n>>> # 2D convolution over a one-channel black-and-white\
+    \    (128, 3, 5, 4)\n```\n\n```\n\n>>> # 2D convolution over a one-channel black-and-white\
     \ image, padding, and stride 2 along width dimension\n>>> f = Convolution((3,3),\
     \ 128, reduction_rank=0, pad=True, strides=(1,2), activation=C.relu)\n>>> x =\
     \ C.input_variable((480,640))\n>>> h = f(x)\n>>> h.shape\n    (128, 480, 320)\n\
-    >>> f.W.shape\n    (128, 1, 3, 3)\n\n>>> # 3D convolution along dynamic axis over\
-    \ a sequence of 2D color images\n>>> from cntk.layers.typing import Sequence,\
-    \ Tensor\n>>> f = Convolution((2,5,4), 128, sequential=True, activation=C.relu)\
+    >>> f.W.shape\n    (128, 1, 3, 3)\n```\n\n```\n\n>>> # 3D convolution along dynamic\
+    \ axis over a sequence of 2D color images\n>>> from cntk.layers.typing import\
+    \ Sequence, Tensor\n>>> f = Convolution((2,5,4), 128, sequential=True, activation=C.relu)\
     \ # over 2 consecutive frames\n>>> x = C.input_variable(**Sequence[Tensor[3,480,640]])\
     \  # a variable-length video of 640x480 RGB images\n>>> h = f(x)\n>>> h.shape\
     \   # this is the shape per video frame: 637x476 activation vectors of length\
     \ 128 each\n    (128, 476, 637)\n>>> f.W.shape # (output featuer map depth, input\
-    \ depth, and the three filter dimensions)\n    (128, 3, 2, 5, 4)\n```"
+    \ depth, and the three filter dimensions)\n    (128, 3, 2, 5, 4)\n```\n"
   fullName: cntk.layers.layers.Convolution
   langs:
   - python
@@ -274,120 +344,195 @@ items:
     startLine: 287
   summary: 'Layer factory function to create a convolution layer.
 
+
     This implements a convolution operation over items arranged on an N-dimensional
-    grid, such as pixels in an image. Typically, each item is a vector (e.g. pixel:
-    R,G,B), and the result is, in turn, a vector. The item-grid dimensions are referred
-    to as the *spatial* dimensions (e.g. dimensions of an image), while the vector
-    dimension of the individual items is often called *feature-map depth*.
+    grid, such as pixels in an image.
+
+    Typically, each item is a vector (e.g. pixel: R,G,B), and the result is, in turn,
+    a vector.
+
+    The item-grid dimensions are referred to as the *spatial* dimensions (e.g. dimensions
+    of an image),
+
+    while the vector dimension of the individual items is often called *feature-map
+    depth*.
+
 
     For each item, convolution gathers a window ("receptive field") of items surrounding
-    the item''s position on the grid, and applies a little fully-connected network
-    to it (the same little network is applied to all item positions). The size (spatial
-    extent) of the receptive field is given by `filter_shape`. E.g. to specify a 2D
-    convolution, `filter_shape` should be a tuple of two integers, such as *(5,5)*;
+    the item''s position on the grid,
+
+    and applies a little fully-connected network to it (the same little network is
+    applied to all item positions).
+
+    The size (spatial extent) of the receptive field is given by `filter_shape`.
+
+    E.g. to specify a 2D convolution, `filter_shape` should be a tuple of two integers,
+    such as *(5,5)*;
+
     an example for a 3D convolution (e.g. video or an MRI scan) would be `filter_shape=(3,3,3)`;
+
     while for a 1D convolution (e.g. audio or text), `filter_shape` has one element,
     such as (3,) or just 3.
 
+
     The dimension of the input items (input feature-map depth) is not to be specified.
-    It is known from the input. The dimension of the output items (output feature-map
-    depth) generated for each item position is given by `num_filters`.
+    It is known from the input.
+
+    The dimension of the output items (output feature-map depth) generated for each
+    item position is given by `num_filters`.
+
 
     If the input is a sequence, the sequence elements are by default treated independently.
-    To convolve along the sequence dimension as well, pass `sequential=True`. This
-    is useful for variable-length inputs, such as video or natural-language processing
-    (word n-grams). Note, however, that convolution does not support sparse inputs.
+
+    To convolve along the sequence dimension as well, pass `sequential=True`.
+
+    This is useful for variable-length inputs, such as video
+
+    or natural-language processing (word n-grams).
+
+    Note, however, that convolution does not support sparse inputs.
+
 
     Both input and output items can be scalars intead of vectors. For scalar-valued
-    input items, such as pixels on a black-and-white image, or samples of an audio
-    clip, specify `reduction_rank=0`. If the output items are scalar, pass `num_filters=()`
-    or `None`.
+    input items,
+
+    such as pixels on a black-and-white image, or samples of an audio clip, specify
+    `reduction_rank=0`.
+
+    If the output items are scalar, pass `num_filters=()` or `None`.
+
 
     A `Convolution` instance owns its weight parameter tensors *W* and *b*, and exposes
-    them as an attributes `.W` and `.b`. The weights will have the shape `(num_filters,
-    input_feature_map_depth, *filter_shape)`'
+    them as an attributes `.W` and `.b`.
+
+    The weights will have the shape `(num_filters, input_feature_map_depth, *filter_shape)`
+
+    '
   syntax:
     content: Convolution(filter_shape, num_filters=None, sequential=False, activation=<cntk.default_options.default_override_or
-      object at 0x000001E2B18978D0>, init=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897940>, pad=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897978>, strides=1, sharing=True, bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B18979B0>, init_bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B18979E8>, reduction_rank=1, transpose_weight=False, max_temp_mem_size_in_samples=0,
+      object at 0x000001B3C38A2A90>, init=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A2B00>, pad=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A2B38>, strides=1, sharing=True, bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A2B70>, init_bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A2BA8>, reduction_rank=1, transpose_weight=False, max_temp_mem_size_in_samples=0,
       op_name='Convolution', name='')
     parameters:
-    - description: shape (spatial extent) of the receptive field, *not* including
+    - description: 'shape (spatial extent) of the receptive field, *not* including
         the input feature-map depth. E.g. (3,3) for a 2D convolution.
+
+        '
       id: filter_shape
       type:
       - int or tuple of ints
-    - description: number of filters (output feature-map depth), or `()` to denote
+    - description: 'number of filters (output feature-map depth), or `()` to denote
         scalar output items (output shape will have no depth axis).
+
+        '
       id: num_filters
       type:
       - int, defaults to None
-    - description: if *True*, also convolve along the dynamic axis. `filter_shape[0]`
+    - description: 'if *True*, also convolve along the dynamic axis. `filter_shape[0]`
         corresponds to dynamic axis.
+
+        '
       id: sequential
       type:
       - bool, defaults to False
-    - description: optional function to apply at the end, e.g. *relu*
+    - description: 'optional function to apply at the end, e.g. *relu*
+
+        '
       id: activation
       type:
-      - '@cntk.ops.functions.Function, defaults to identity'
-    - description: initial value of weights *W*
+      - '@cntk.ops.functions.Function
+
+        , defaults to identity'
+    - description: 'initial value of weights *W*
+
+        '
       id: init
       type:
-      - scalar or NumPy array or @cntk.initializer, defaults to @cntk.initializer
-    - description: if *False*, then the filter will be shifted over the "valid" area
-        of input, that is, no value outside the area is used. If `pad=True` on the
-        other hand, the filter will be applied to all input positions, and positions
-        outside the valid region will be considered containing zero. Use a *tuple*
-        to specify a per-axis value.
+      - 'scalar or NumPy array or @cntk.initializer
+
+        , defaults to @cntk.initializer
+
+        '
+    - description: 'if *False*, then the filter will be shifted over the "valid"
+
+        area of input, that is, no value outside the area is used. If `pad=True` on
+        the other hand,
+
+        the filter will be applied to all input positions, and positions outside the
+        valid region will be considered containing zero.
+
+        Use a *tuple* to specify a per-axis value.
+
+        '
       id: pad
       type:
       - bool or tuple of bools, defaults to False
-    - description: stride of the convolution (increment when sliding the filter over
+    - description: 'stride of the convolution (increment when sliding the filter over
         the input). Use a *tuple* to specify a per-axis value.
+
+        '
       id: strides
       type:
       - int or tuple of ints, defaults to 1
-    - description: When *True*, every position uses the same Convolution kernel.  When
+    - description: 'When *True*, every position uses the same Convolution kernel.  When
         *False*, you can have a different Convolution kernel per position, but *False*
         is not supported.
+
+        '
       id: sharing
       type:
       - bool, defaults to True
-    - description: the layer will have no bias if *False* is passed here
+    - description: 'the layer will have no bias if *False* is passed here
+
+        '
       id: bias
       type:
       - bool, optional, defaults to True
-    - description: initial value of weights *b*
+    - description: 'initial value of weights *b*
+
+        '
       id: init_bias
       type:
-      - scalar or NumPy array or @cntk.initializer, defaults to 0
-    - description: set to 0 if input items are scalars (input has no depth axis),
-        e.g. an audio signal or a black-and-white image that is stored with tensor
-        shape (H,W) instead of (1,H,W)
+      - 'scalar or NumPy array or @cntk.initializer
+
+        , defaults to 0'
+    - description: 'set to 0 if input items are scalars (input has no depth axis),
+        e.g. an audio signal or a black-and-white image
+
+        that is stored with tensor shape (H,W) instead of (1,H,W)
+
+        '
       id: reduction_rank
       type:
       - int, defaults to 1
-    - description: When this is *True* this is convolution, otherwise this is correlation
+    - description: 'When this is *True* this is convolution, otherwise this is correlation
         (which is common for most toolkits)
+
+        '
       id: transpose_weight
       type:
       - bool, defaults to False
-    - description: Limits the amount of memory for intermediate convolution results.  A
+    - description: 'Limits the amount of memory for intermediate convolution results.  A
         value of 0 means, memory is automatically managed.
+
+        '
       id: max_temp_mem_size_in_samples
       type:
       - int, defaults to 0
-    - description: the name of the function instance in the network
+    - description: 'the name of the function instance in the network
+
+        '
       id: name
       type:
       - str, defaults to ''
     return:
-      description: A function that accepts one argument and applies the convolution
+      description: 'A function that accepts one argument and applies the convolution
         operation to it
+
+        '
       type:
       - cntk.ops.functions.Function
   type: function
@@ -405,69 +550,109 @@ items:
       path: /bindings/python\cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 495
-  summary: Layer factory function to create a 1D convolution layer with optional non-linearity.
+  summary: 'Layer factory function to create a 1D convolution layer with optional
+    non-linearity.
+
     Same as *Convolution()* except that filter_shape is verified to be 1-dimensional.
+
     See *Convolution()* for extensive documentation.
+
+    '
   syntax:
     content: Convolution1D(filter_shape, num_filters=None, activation=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897A20>, init=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897A90>, pad=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897AC8>, strides=1, bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897B00>, init_bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897B38>, reduction_rank=1, name='')
+      object at 0x000001B3C38A2BE0>, init=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A2C50>, pad=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A2C88>, strides=1, bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A2CC0>, init_bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A2CF8>, reduction_rank=1, name='')
     parameters:
-    - description: shape (spatial extent) of the receptive field, *not* including
+    - description: 'shape (spatial extent) of the receptive field, *not* including
         the input feature-map depth. E.g. (3,3) for a 2D convolution.
+
+        '
       id: filter_shape
       type:
       - int or tuple of ints
-    - description: number of filters (output feature-map depth), or `()` to denote
+    - description: 'number of filters (output feature-map depth), or `()` to denote
         scalar output items (output shape will have no depth axis).
+
+        '
       id: num_filters
       type:
       - int, defaults to None
-    - description: optional function to apply at the end, e.g. *relu*
+    - description: 'optional function to apply at the end, e.g. *relu*
+
+        '
       id: activation
       type:
-      - '@cntk.ops.functions.Function, defaults to identity'
-    - description: initial value of weights *W*
+      - '@cntk.ops.functions.Function
+
+        , defaults to identity'
+    - description: 'initial value of weights *W*
+
+        '
       id: init
       type:
-      - scalar or NumPy array or @cntk.initializer, defaults to @cntk.initializer
-    - description: if *False*, then the filter will be shifted over the "valid" area
-        of input, that is, no value outside the area is used. If `pad=True` on the
-        other hand, the filter will be applied to all input positions, and positions
-        outside the valid region will be considered containing zero. Use a *tuple*
-        to specify a per-axis value.
+      - 'scalar or NumPy array or @cntk.initializer
+
+        , defaults to @cntk.initializer
+
+        '
+    - description: 'if *False*, then the filter will be shifted over the "valid"
+
+        area of input, that is, no value outside the area is used. If `pad=True` on
+        the other hand,
+
+        the filter will be applied to all input positions, and positions outside the
+        valid region will be considered containing zero.
+
+        Use a *tuple* to specify a per-axis value.
+
+        '
       id: pad
       type:
       - bool or tuple of bools, defaults to False
-    - description: stride of the convolution (increment when sliding the filter over
+    - description: 'stride of the convolution (increment when sliding the filter over
         the input). Use a *tuple* to specify a per-axis value.
+
+        '
       id: strides
       type:
       - int or tuple of ints, defaults to 1
-    - description: the layer will have no bias if *False* is passed here
+    - description: 'the layer will have no bias if *False* is passed here
+
+        '
       id: bias
       type:
       - bool, defaults to True
-    - description: initial value of weights *b*
+    - description: 'initial value of weights *b*
+
+        '
       id: init_bias
       type:
-      - scalar or NumPy array or @cntk.initializer, defaults to 0
-    - description: set to 0 if input items are scalars (input has no depth axis),
-        e.g. an audio signal or a black-and-white image that is stored with tensor
-        shape (H,W) instead of (1,H,W)
+      - 'scalar or NumPy array or @cntk.initializer
+
+        , defaults to 0'
+    - description: 'set to 0 if input items are scalars (input has no depth axis),
+        e.g. an audio signal or a black-and-white image
+
+        that is stored with tensor shape (H,W) instead of (1,H,W)
+
+        '
       id: reduction_rank
       type:
       - int, defaults to 1
-    - description: the name of the function instance in the network
+    - description: 'the name of the function instance in the network
+
+        '
       id: name
       type:
       - str, defaults to ''
     return:
-      description: A function that accepts one argument and applies the convolution
+      description: 'A function that accepts one argument and applies the convolution
         operation to it
+
+        '
       type:
       - cntk.ops.functions.Function
   type: function
@@ -485,69 +670,109 @@ items:
       path: /bindings/python\cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 544
-  summary: Layer factory function to create a 2D convolution layer with optional non-linearity.
+  summary: 'Layer factory function to create a 2D convolution layer with optional
+    non-linearity.
+
     Same as *Convolution()* except that filter_shape is verified to be 2-dimensional.
+
     See *Convolution()* for extensive documentation.
+
+    '
   syntax:
     content: Convolution2D(filter_shape, num_filters=None, activation=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897B70>, init=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897BE0>, pad=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897C18>, strides=1, bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897C50>, init_bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897C88>, reduction_rank=1, name='')
+      object at 0x000001B3C38A2D30>, init=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A2DA0>, pad=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A2DD8>, strides=1, bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A2E10>, init_bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A2E48>, reduction_rank=1, name='')
     parameters:
-    - description: shape (spatial extent) of the receptive field, *not* including
+    - description: 'shape (spatial extent) of the receptive field, *not* including
         the input feature-map depth. E.g. (3,3) for a 2D convolution.
+
+        '
       id: filter_shape
       type:
       - int or tuple of ints
-    - description: number of filters (output feature-map depth), or `()` to denote
+    - description: 'number of filters (output feature-map depth), or `()` to denote
         scalar output items (output shape will have no depth axis).
+
+        '
       id: num_filters
       type:
       - int, defaults to None
-    - description: optional function to apply at the end, e.g. *relu*
+    - description: 'optional function to apply at the end, e.g. *relu*
+
+        '
       id: activation
       type:
-      - '@cntk.ops.functions.Function, defaults to identity'
-    - description: initial value of weights *W*
+      - '@cntk.ops.functions.Function
+
+        , defaults to identity'
+    - description: 'initial value of weights *W*
+
+        '
       id: init
       type:
-      - scalar or NumPy array or @cntk.initializer, defaults to @cntk.initializer
-    - description: if *False*, then the filter will be shifted over the "valid" area
-        of input, that is, no value outside the area is used. If `pad=True` on the
-        other hand, the filter will be applied to all input positions, and positions
-        outside the valid region will be considered containing zero. Use a *tuple*
-        to specify a per-axis value.
+      - 'scalar or NumPy array or @cntk.initializer
+
+        , defaults to @cntk.initializer
+
+        '
+    - description: 'if *False*, then the filter will be shifted over the "valid"
+
+        area of input, that is, no value outside the area is used. If `pad=True` on
+        the other hand,
+
+        the filter will be applied to all input positions, and positions outside the
+        valid region will be considered containing zero.
+
+        Use a *tuple* to specify a per-axis value.
+
+        '
       id: pad
       type:
       - bool or tuple of bools, defaults to False
-    - description: stride of the convolution (increment when sliding the filter over
+    - description: 'stride of the convolution (increment when sliding the filter over
         the input). Use a *tuple* to specify a per-axis value.
+
+        '
       id: strides
       type:
       - int or tuple of ints, defaults to 1
-    - description: the layer will have no bias if *False* is passed here
+    - description: 'the layer will have no bias if *False* is passed here
+
+        '
       id: bias
       type:
       - bool, defaults to True
-    - description: initial value of weights *b*
+    - description: 'initial value of weights *b*
+
+        '
       id: init_bias
       type:
-      - scalar or NumPy array or @cntk.initializer, defaults to 0
-    - description: set to 0 if input items are scalars (input has no depth axis),
-        e.g. an audio signal or a black-and-white image that is stored with tensor
-        shape (H,W) instead of (1,H,W)
+      - 'scalar or NumPy array or @cntk.initializer
+
+        , defaults to 0'
+    - description: 'set to 0 if input items are scalars (input has no depth axis),
+        e.g. an audio signal or a black-and-white image
+
+        that is stored with tensor shape (H,W) instead of (1,H,W)
+
+        '
       id: reduction_rank
       type:
       - int, defaults to 1
-    - description: the name of the function instance in the network
+    - description: 'the name of the function instance in the network
+
+        '
       id: name
       type:
       - str, defaults to ''
     return:
-      description: A function that accepts one argument and applies the convolution
+      description: 'A function that accepts one argument and applies the convolution
         operation to it
+
+        '
       type:
       - cntk.ops.functions.Function
   type: function
@@ -565,69 +790,109 @@ items:
       path: /bindings/python\cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 594
-  summary: Layer factory function to create a 3D convolution layer with optional non-linearity.
+  summary: 'Layer factory function to create a 3D convolution layer with optional
+    non-linearity.
+
     Same as *Convolution()* except that filter_shape is verified to be 3-dimensional.
+
     See *Convolution()* for extensive documentation.
+
+    '
   syntax:
     content: Convolution3D(filter_shape, num_filters=None, activation=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897CC0>, init=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897D30>, pad=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897D68>, strides=1, bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897DA0>, init_bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897DD8>, reduction_rank=1, name='')
+      object at 0x000001B3C38A2E80>, init=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A2EF0>, pad=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A2F28>, strides=1, bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A2F60>, init_bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A2F98>, reduction_rank=1, name='')
     parameters:
-    - description: shape (spatial extent) of the receptive field, *not* including
+    - description: 'shape (spatial extent) of the receptive field, *not* including
         the input feature-map depth. E.g. (3,3) for a 2D convolution.
+
+        '
       id: filter_shape
       type:
       - int or tuple of ints
-    - description: number of filters (output feature-map depth), or `()` to denote
+    - description: 'number of filters (output feature-map depth), or `()` to denote
         scalar output items (output shape will have no depth axis).
+
+        '
       id: num_filters
       type:
       - int, defaults to None
-    - description: optional function to apply at the end, e.g. *relu*
+    - description: 'optional function to apply at the end, e.g. *relu*
+
+        '
       id: activation
       type:
-      - '@cntk.ops.functions.Function, defaults to identity'
-    - description: initial value of weights *W*
+      - '@cntk.ops.functions.Function
+
+        , defaults to identity'
+    - description: 'initial value of weights *W*
+
+        '
       id: init
       type:
-      - scalar or NumPy array or @cntk.initializer, defaults to @cntk.initializer
-    - description: if *False*, then the filter will be shifted over the "valid" area
-        of input, that is, no value outside the area is used. If `pad=True` on the
-        other hand, the filter will be applied to all input positions, and positions
-        outside the valid region will be considered containing zero. Use a *tuple*
-        to specify a per-axis value.
+      - 'scalar or NumPy array or @cntk.initializer
+
+        , defaults to @cntk.initializer
+
+        '
+    - description: 'if *False*, then the filter will be shifted over the "valid"
+
+        area of input, that is, no value outside the area is used. If `pad=True` on
+        the other hand,
+
+        the filter will be applied to all input positions, and positions outside the
+        valid region will be considered containing zero.
+
+        Use a *tuple* to specify a per-axis value.
+
+        '
       id: pad
       type:
       - bool or tuple of bools, defaults to False
-    - description: stride of the convolution (increment when sliding the filter over
+    - description: 'stride of the convolution (increment when sliding the filter over
         the input). Use a *tuple* to specify a per-axis value.
+
+        '
       id: strides
       type:
       - int or tuple of ints, defaults to 1
-    - description: the layer will have no bias if *False* is passed here
+    - description: 'the layer will have no bias if *False* is passed here
+
+        '
       id: bias
       type:
       - bool, defaults to True
-    - description: initial value of weights *b*
+    - description: 'initial value of weights *b*
+
+        '
       id: init_bias
       type:
-      - scalar or NumPy array or @cntk.initializer, defaults to 0
-    - description: set to 0 if input items are scalars (input has no depth axis),
-        e.g. an audio signal or a black-and-white image that is stored with tensor
-        shape (H,W) instead of (1,H,W)
+      - 'scalar or NumPy array or @cntk.initializer
+
+        , defaults to 0'
+    - description: 'set to 0 if input items are scalars (input has no depth axis),
+        e.g. an audio signal or a black-and-white image
+
+        that is stored with tensor shape (H,W) instead of (1,H,W)
+
+        '
       id: reduction_rank
       type:
       - int, defaults to 1
-    - description: the name of the function instance in the network
+    - description: 'the name of the function instance in the network
+
+        '
       id: name
       type:
       - str, defaults to ''
     return:
-      description: A function that accepts one argument and applies the convolution
+      description: 'A function that accepts one argument and applies the convolution
         operation to it
+
+        '
       type:
       - cntk.ops.functions.Function
   type: function
@@ -637,7 +902,7 @@ items:
     \ depth 128:\n>>> f = ConvolutionTranspose((3,4), 128, activation=C.relu)\n>>>\
     \ x = C.input_variable((3,480,640))  # 3-channel color image\n>>> h = f(x)\n>>>\
     \ h.shape\n    (128, 482, 643)\n>>> f.W.shape  # will have the form (input_depth,\
-    \ num_filters, *filter_shape)\n    (3, 128, 3, 4)\n```"
+    \ num_filters, *filter_shape)\n    (3, 128, 3, 4)\n```\n"
   fullName: cntk.layers.layers.ConvolutionTranspose
   langs:
   - python
@@ -653,111 +918,184 @@ items:
     startLine: 646
   summary: 'Layer factory function to create a convolution transpose layer.
 
+
     This implements a convolution_transpose operation over items arranged on an N-dimensional
-    grid, such as pixels in an image. Typically, each item is a vector (e.g. pixel:
-    R,G,B), and the result is, in turn, a vector. The item-grid dimensions are referred
-    to as the *spatial* dimensions (e.g. dimensions of an image), while the vector
-    dimensions of the individual items are often called *feature-map depth*.
+    grid, such as pixels in an image.
+
+    Typically, each item is a vector (e.g. pixel: R,G,B), and the result is, in turn,
+    a vector.
+
+    The item-grid dimensions are referred to as the *spatial* dimensions (e.g. dimensions
+    of an image),
+
+    while the vector dimensions of the individual items are often called *feature-map
+    depth*.
+
 
     Convolution transpose is also known as `fractionally strided convolutional layers`,
-    or, `deconvolution`. This operation is used in image and language processing applications.
-    It supports arbitrary dimensions, strides, and padding.
+    or, `deconvolution`.
+
+    This operation is used in image and language processing applications. It supports
+    arbitrary
+
+    dimensions, strides, and padding.
+
 
     The forward and backward computation of convolution transpose is the inverse of
-    convolution. That is, during forward pass the input layer''s items are spread
-    into the output same as the backward spread of gradients in convolution. The backward
-    pass, on the other hand, performs a convolution same as the forward pass of convolution.
+    convolution. That is, during forward
+
+    pass the input layer''s items are spread into the output same as the backward
+    spread of gradients in convolution. The
+
+    backward pass, on the other hand, performs a convolution same as the forward pass
+    of convolution.
+
 
     The size (spatial extent) of the receptive field for convolution transpose is
-    given by `filter_shape`. E.g. to specify a 2D convolution transpose, `filter_shape`
-    should be a tuple of two integers, such as *(5,5)*; an example for a 3D convolution
-    transpose (e.g. video or an MRI scan) would be `filter_shape=(3,3,3)`; while for
-    a 1D convolution transpose (e.g. audio or text), `filter_shape` has one element,
-    such as (3,).
+    given by `filter_shape`.
+
+    E.g. to specify a 2D convolution transpose, `filter_shape` should be a tuple of
+    two integers, such as *(5,5)*;
+
+    an example for a 3D convolution transpose (e.g. video or an MRI scan) would be
+    `filter_shape=(3,3,3)`;
+
+    while for a 1D convolution transpose (e.g. audio or text), `filter_shape` has
+    one element, such as (3,).
+
 
     The dimension of the input items (feature-map depth) is not specified, but known
-    from the input. The dimension of the output items generated for each item position
-    is given by `num_filters`.
+    from the input.
+
+    The dimension of the output items generated for each item position is given by
+    `num_filters`.
+
 
     A `ConvolutionTranspose` instance owns its weight parameter tensors *W* and *b*,
-    and exposes them as an attributes `.W` and `.b`. The weights will have the shape
-    `(input_feature_map_depth, num_filters, *filter_shape)`.'
+    and exposes them as an attributes `.W` and `.b`.
+
+    The weights will have the shape `(input_feature_map_depth, num_filters, *filter_shape)`.
+
+    '
   syntax:
     content: ConvolutionTranspose(filter_shape, num_filters, activation=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897E10>, init=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897E80>, pad=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897EB8>, strides=1, sharing=True, bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897EF0>, init_bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897F28>, output_shape=None, reduction_rank=1, max_temp_mem_size_in_samples=0,
+      object at 0x000001B3C38A2FD0>, init=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A9080>, pad=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A90B8>, strides=1, sharing=True, bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A90F0>, init_bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A9128>, output_shape=None, reduction_rank=1, max_temp_mem_size_in_samples=0,
       name='')
     parameters:
-    - description: shape (spatial extent) of the receptive field, *not* including
+    - description: 'shape (spatial extent) of the receptive field, *not* including
         the input feature-map depth. E.g. (3,3) for a 2D convolution.
+
+        '
       id: filter_shape
       type:
       - int or tuple of ints
-    - description: number of filters (output feature-map depth), or `()` to denote
+    - description: 'number of filters (output feature-map depth), or `()` to denote
         scalar output items (output shape will have no depth axis).
+
+        '
       id: num_filters
       type:
       - int
-    - description: optional function to apply at the end, e.g. *relu*
+    - description: 'optional function to apply at the end, e.g. *relu*
+
+        '
       id: activation
       type:
-      - '@cntk.ops.functions.Function, optional'
-    - description: initial value of weights *W*
+      - '@cntk.ops.functions.Function
+
+        , optional'
+    - description: 'initial value of weights *W*
+
+        '
       id: init
       type:
-      - scalar or @cntk.initializer, default @cntk.initializer
-    - description: if *False*, then the filter will be shifted over the "valid" area
-        of input, that is, no value outside the area is used. If `pad=True` on the
-        other hand, the filter will be applied to all input positions, and positions
-        outside the valid region will be considered containing zero. Use a *tuple*
-        to specify a per-axis value.
+      - 'scalar or @cntk.initializer
+
+        , default @cntk.initializer
+
+        '
+    - description: 'if *False*, then the filter will be shifted over the "valid"
+
+        area of input, that is, no value outside the area is used. If `pad=True` on
+        the other hand,
+
+        the filter will be applied to all input positions, and positions outside the
+        valid region will be considered containing zero.
+
+        Use a *tuple* to specify a per-axis value.
+
+        '
       id: pad
       type:
       - bool or tuple of bools, default False
-    - description: stride of the convolution (increment when sliding the filter over
+    - description: 'stride of the convolution (increment when sliding the filter over
         the input). Use a *tuple* to specify a per-axis value.
+
+        '
       id: strides
       type:
       - int or tuple of ints, default 1
-    - description: weight sharing, must be True for now.
+    - description: 'weight sharing, must be True for now.
+
+        '
       id: sharing
       type:
       - bool, default True
-    - description: the layer will have no bias if *False* is passed here
+    - description: 'the layer will have no bias if *False* is passed here
+
+        '
       id: bias
       type:
       - bool, optional, default True
-    - description: initial value of weights *b*
+    - description: 'initial value of weights *b*
+
+        '
       id: init_bias
       type:
-      - scalar or NumPy array or @cntk.initializer
-    - description: output shape. When strides > 2, the output shape is non-deterministic.
-        User can specify the wanted output shape. Note the specified shape must satisify
-        the condition that if a convolution is perform from the output with the same
-        setting, the result must have same shape as the input.
+      - 'scalar or NumPy array or @cntk.initializer
+
+        '
+    - description: 'output shape. When strides > 2, the output shape is non-deterministic.
+        User can specify the wanted output shape. Note the
+
+        specified shape must satisify the condition that if a convolution is perform
+        from the output with the same setting, the result must have same shape as
+        the input.
+
+        '
       id: output_shape
       type:
       - int or tuple of ints
-    - description: must be 1 for now. that is stored with tensor shape (H,W) instead
-        of (1,H,W)
+    - description: 'must be 1 for now.
+
+        that is stored with tensor shape (H,W) instead of (1,H,W)
+
+        '
       id: reduction_rank
       type:
       - int, default 1
-    - description: set to a positive number to define the maximum workspace memory
+    - description: 'set to a positive number to define the maximum workspace memory
         for convolution.
+
+        '
       id: max_temp_mem_size_in_samples
       type:
       - int, default 0
-    - description: the name of the Function instance in the network
+    - description: 'the name of the Function instance in the network
+
+        '
       id: name
       type:
       - str, optional
     return:
       description: '@cntk.ops.functions.Function that accepts one argument and applies
-        the convolution operation to it'
+        the convolution operation to it
+
+        '
   type: function
   uid: cntk.layers.layers.ConvolutionTranspose
 - fullName: cntk.layers.layers.ConvolutionTranspose1D
@@ -773,16 +1111,21 @@ items:
       path: /bindings/python\cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 773
-  summary: Layer factory function to create a 1D convolution transpose layer with
-    optional non-linearity. Same as *ConvolutionTranspose()* except that filter_shape
-    is verified to be 1-dimensional. See *ConvolutionTranspose()* for extensive documentation.
+  summary: 'Layer factory function to create a 1D convolution transpose layer with
+    optional non-linearity.
+
+    Same as *ConvolutionTranspose()* except that filter_shape is verified to be 1-dimensional.
+
+    See *ConvolutionTranspose()* for extensive documentation.
+
+    '
   syntax:
     content: ConvolutionTranspose1D(filter_shape, num_filters, activation=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897F60>, init=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897FD0>, pad=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D048>, strides=1, bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D080>, init_bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D0B8>, output_shape=None, name='')
+      object at 0x000001B3C38A9160>, init=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A91D0>, pad=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A9208>, strides=1, bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A9240>, init_bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A9278>, output_shape=None, name='')
   type: function
   uid: cntk.layers.layers.ConvolutionTranspose1D
 - fullName: cntk.layers.layers.ConvolutionTranspose2D
@@ -798,16 +1141,21 @@ items:
       path: /bindings/python\cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 801
-  summary: Layer factory function to create a 2D convolution transpose layer with
-    optional non-linearity. Same as *ConvolutionTranspose()* except that filter_shape
-    is verified to be 2-dimensional. See *ConvolutionTranspose()* for extensive documentation.
+  summary: 'Layer factory function to create a 2D convolution transpose layer with
+    optional non-linearity.
+
+    Same as *ConvolutionTranspose()* except that filter_shape is verified to be 2-dimensional.
+
+    See *ConvolutionTranspose()* for extensive documentation.
+
+    '
   syntax:
     content: ConvolutionTranspose2D(filter_shape, num_filters, activation=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D0F0>, init=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D160>, pad=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D198>, strides=1, bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D1D0>, init_bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D208>, output_shape=None, name='')
+      object at 0x000001B3C38A92B0>, init=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A9320>, pad=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A9358>, strides=1, bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A9390>, init_bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A93C8>, output_shape=None, name='')
   type: function
   uid: cntk.layers.layers.ConvolutionTranspose2D
 - fullName: cntk.layers.layers.ConvolutionTranspose3D
@@ -823,16 +1171,21 @@ items:
       path: /bindings/python\cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 830
-  summary: Layer factory function to create a 3D convolution transpose layer with
-    optional non-linearity. Same as *ConvolutionTranspose()* except that filter_shape
-    is verified to be 3-dimensional. See *ConvolutionTranspose()* for extensive documentation.
+  summary: 'Layer factory function to create a 3D convolution transpose layer with
+    optional non-linearity.
+
+    Same as *ConvolutionTranspose()* except that filter_shape is verified to be 3-dimensional.
+
+    See *ConvolutionTranspose()* for extensive documentation.
+
+    '
   syntax:
     content: ConvolutionTranspose3D(filter_shape, num_filters, activation=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D240>, init=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D2B0>, pad=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D2E8>, strides=1, bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D320>, init_bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D358>, output_shape=None, name='')
+      object at 0x000001B3C38A9400>, init=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A9470>, pad=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A94A8>, strides=1, bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A94E0>, init_bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A9518>, output_shape=None, name='')
   type: function
   uid: cntk.layers.layers.ConvolutionTranspose3D
 - example:
@@ -856,6 +1209,11 @@ items:
 
     (3, 3, 5)
 
+    ```
+
+
+    ```
+
 
     >>> f = Dense(5, activation=C.softmax, map_rank=2)
 
@@ -878,7 +1236,9 @@ items:
 
     >>> assert z.shape == (1, 4, 6, 5)
 
-    ```'
+    ```
+
+    '
   fullName: cntk.layers.layers.Dense
   langs:
   - python
@@ -893,65 +1253,110 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 24
   summary: 'Layer factory function to create an instance of a fully-connected linear
-    layer of the form *activation(input @ W + b)* with weights *W* and bias *b*, and
-    *activation* and *b* being optional. *shape* may describe a tensor as well.
+    layer of the form
+
+    *activation(input @ W + b)* with weights *W* and bias *b*, and *activation* and
+    *b* being optional.
+
+    *shape* may describe a tensor as well.
+
 
     A `Dense` layer instance owns its parameter tensors *W* and *b*, and exposes them
     as attributes `.W` and `.b`.
 
+
     The `Dense` layer can be applied to inputs that are tensors, not just vectors.
+
     This is useful, e.g., at the top of a image-processing cascade, where after many
+
     convolutions with padding and strides it is difficult to know the precise dimensions.
-    For this case, CNTK has an extended definition of matrix product, in which the
-    input tensor will be treated as if it had been automatically flattened. The weight
-    matrix will be a tensor that reflects the "flattened" dimensions in its axes.
+
+    For this case, CNTK has an extended definition of matrix product, in which
+
+    the input tensor will be treated as if it had been automatically flattened.
+
+    The weight matrix will be a tensor that reflects the "flattened" dimensions in
+    its axes.
+
 
     This behavior can be modified by telling CNTK either the number of axes that should
-    not be projected (`map_rank`) or the rank of the input (`input_rank`). If neither
-    is specified, all input dimensions are projected, as in the example above.'
+    not be projected (`map_rank`)
+
+    or the rank of the input (`input_rank`). If neither is specified, all input dimensions
+    are
+
+    projected, as in the example above.
+
+    '
   syntax:
     content: Dense(shape, activation=<cntk.default_options.default_override_or object
-      at 0x000001E2B1897710>, init=<cntk.default_options.default_override_or object
-      at 0x000001E2B1897780>, input_rank=None, map_rank=None, bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B18977B8>, init_bias=<cntk.default_options.default_override_or
-      object at 0x000001E2B18977F0>, name='')
+      at 0x000001B3C38A28D0>, init=<cntk.default_options.default_override_or object
+      at 0x000001B3C38A2940>, input_rank=None, map_rank=None, bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A2978>, init_bias=<cntk.default_options.default_override_or
+      object at 0x000001B3C38A29B0>, name='')
     parameters:
-    - description: vector or tensor dimension of the output of this layer
+    - description: 'vector or tensor dimension of the output of this layer
+
+        '
       id: shape
       type:
       - int or tuple of ints
-    - description: optional function to apply at the end, e.g. *relu*
+    - description: 'optional function to apply at the end, e.g. *relu*
+
+        '
       id: activation
       type:
-      - '@cntk.ops.functions.Function, defaults to identity'
-    - description: initial value of weights *W*
+      - '@cntk.ops.functions.Function
+
+        , defaults to identity'
+    - description: 'initial value of weights *W*
+
+        '
       id: init
       type:
-      - scalar or NumPy array or @cntk.initializer, defaults to @cntk.initializer
-    - description: number of inferred axes to add to W (*map_rank* must not be given)
+      - 'scalar or NumPy array or @cntk.initializer
+
+        , defaults to @cntk.initializer
+
+        '
+    - description: 'number of inferred axes to add to W (*map_rank* must not be given)
+
+        '
       id: input_rank
       type:
       - int, defaults to None
-    - description: expand W to leave exactly *map_rank* axes (*input_rank* must not
+    - description: 'expand W to leave exactly *map_rank* axes (*input_rank* must not
         be given)
+
+        '
       id: map_rank
       type:
       - int, defaults to None
-    - description: the layer will have no bias if *False* is passed here
+    - description: 'the layer will have no bias if *False* is passed here
+
+        '
       id: bias
       type:
       - bool, optional, defaults to True
-    - description: initial value of weights *b*
+    - description: 'initial value of weights *b*
+
+        '
       id: init_bias
       type:
-      - scalar or NumPy array or @cntk.initializer, defualts to 0
-    - description: the name of the function instance in the network
+      - 'scalar or NumPy array or @cntk.initializer
+
+        , defualts to 0'
+    - description: 'the name of the function instance in the network
+
+        '
       id: name
       type:
       - str, defaults to ''
     return:
-      description: A function that accepts one argument and applies the operation
+      description: 'A function that accepts one argument and applies the operation
         to it
+
+        '
       type:
       - cntk.ops.functions.Function
   type: function
@@ -966,6 +1371,11 @@ items:
 
     >>> hd = f(h)
 
+    ```
+
+
+    ```
+
 
     >>> f = Dropout(keep_prob=0.8)   # "keep 80%"
 
@@ -973,7 +1383,9 @@ items:
 
     >>> hd = f(h)
 
-    ```'
+    ```
+
+    '
   fullName: cntk.layers.layers.Dropout
   langs:
   - python
@@ -989,46 +1401,62 @@ items:
     startLine: 1065
   summary: 'Layer factory function to create a drop-out layer.
 
+
     The dropout rate can be specified as the probability of *dropping* a value (`dropout_rate`).
-    E.g. `Dropout(0.3)` means "drop 30% o the activation values." Alternatively, it
-    can also be specified as the probability of *keeping* a value (`keep_prob`).'
+
+    E.g. `Dropout(0.3)` means "drop 30% o the activation values."
+
+    Alternatively, it can also be specified as the probability of *keeping* a value
+    (`keep_prob`).
+
+    '
   syntax:
     content: Dropout(dropout_rate=None, keep_prob=None, seed=4294967293, name='')
     parameters:
-    - description: probability of dropping out an element, mutually exclusive with
+    - description: 'probability of dropping out an element, mutually exclusive with
         `keep_prob`
+
+        '
       id: dropout_rate
       type:
       - float
-    - description: probability of keeping an element, mutually exclusive with `dropout_rate`
+    - description: 'probability of keeping an element, mutually exclusive with `dropout_rate`
+
+        '
       id: keep_prob
       type:
       - float
-    - description: random seed.
+    - description: 'random seed.
+
+        '
       id: seed
       type:
       - int
-    - description: the name of the function instance in the network
+    - description: 'the name of the function instance in the network
+
+        '
       id: name
       type:
       - str, defaults to ''
     return:
-      description: A function that accepts one argument and applies the operation
+      description: 'A function that accepts one argument and applies the operation
         to it
+
+        '
       type:
       - cntk.ops.functions.Function
   type: function
   uid: cntk.layers.layers.Dropout
 - example:
   - "```\n\n>>> # learnable embedding\n>>> f = Embedding(5)\n>>> x = C.input_variable(3)\n\
-    >>> e = f(x)\n>>> e.shape\n    (5,)\n>>> f.E.shape\n    (3, 5)\n\n>>> # user-supplied\
-    \ embedding\n>>> f = Embedding(weights=[[.5, .3, .1, .4, .2], [.7, .6, .3, .2,\
-    \ .9]])\n>>> f.E.value\n    array([[ 0.5,  0.3,  0.1,  0.4,  0.2],\n         \
-    \  [ 0.7,  0.6,  0.3,  0.2,  0.9]], dtype=float32)\n>>> x = C.input_variable(2,\
+    >>> e = f(x)\n>>> e.shape\n    (5,)\n>>> f.E.shape\n    (3, 5)\n```\n\n```\n\n\
+    >>> # user-supplied embedding\n>>> f = Embedding(weights=[[.5, .3, .1, .4, .2],\
+    \ [.7, .6, .3, .2, .9]])\n>>> f.E.value\n    array([[ 0.5,  0.3,  0.1,  0.4, \
+    \ 0.2],\n           [ 0.7,  0.6,  0.3,  0.2,  0.9]], dtype=float32)\n>>> x = C.input_variable(2,\
     \ is_sparse=True)\n>>> e = f(x)\n>>> e.shape\n    (5,)\n>>> e(C.Value.one_hot([[1],\
     \ [0], [0], [1]], num_classes=2))\narray([[ 0.7,  0.6,  0.3,  0.2,  0.9],\n  \
     \     [ 0.5,  0.3,  0.1,  0.4,  0.2],\n       [ 0.5,  0.3,  0.1,  0.4,  0.2],\n\
-    \       [ 0.7,  0.6,  0.3,  0.2,  0.9]], dtype=float32)\n```"
+    \       [ 0.7,  0.6,  0.3,  0.2,  0.9]], dtype=float32)\n```\n"
   fullName: cntk.layers.layers.Embedding
   langs:
   - python
@@ -1042,55 +1470,63 @@ items:
       path: /bindings/python\cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 154
-  summary: 'Layer factory function to create a embedding layer.
-
-    An embedding is conceptually a lookup table. For every input token (e.g. a word
-    or any category label), the corresponding entry in in the lookup table is returned.
-
-    In CNTK, discrete items such as words are represented as one-hot vectors. The
-    table lookup is realized as a matrix product, with a matrix whose rows are the
-    embedding vectors. Note that multiplying a matrix from the left with a one-hot
-    vector is the same as copying out the row for which the input vector is 1. CNTK
-    has special optimizations to make this operation as efficient as an actual table
-    lookup if the input is sparse.
-
-    The lookup table in this layer is learnable, unless a user-specified one is supplied
-    through the `weights` parameter. For example, to use an existing embedding table
-    from a file in numpy format, use this:
-
-    <!-- literal_block {"xml:space": "preserve", "names": [], "dupnames": [], "classes":
-    [], "ids": [], "backrefs": []} -->````   Embedding(weights=np.load(''PATH.npy''))   ````
-
-    To initialize a learnable lookup table with a given numpy array that is to be
-    used as the initial value, pass that array to the `init` parameter (not `weights`).
-
-    An `Embedding` instance owns its weight parameter tensor *E*, and exposes it as
-    an attribute `.E`.'
+  summary: "Layer factory function to create a embedding layer.\n\nAn embedding is\
+    \ conceptually a lookup table. For every input token (e.g. a word or any category\
+    \ label), the corresponding\nentry in in the lookup table is returned.\n\nIn CNTK,\
+    \ discrete items such as words are represented as one-hot vectors.\nThe table\
+    \ lookup is realized as a matrix product, with a matrix\nwhose rows are the embedding\
+    \ vectors.\nNote that multiplying a matrix from the left with a one-hot vector\
+    \ is the same as copying\nout the row for which the input vector is 1.\nCNTK has\
+    \ special optimizations to make this operation as efficient as an actual table\
+    \ lookup if the input is sparse.\n\nThe lookup table in this layer is learnable,\n\
+    unless a user-specified one is supplied through the `weights` parameter.\nFor\
+    \ example, to use an existing embedding table from a file in numpy format, use\
+    \ this:\n\n<!-- literal_block {\"names\": [], \"dupnames\": [], \"backrefs\":\
+    \ [], \"ids\": [], \"classes\": [], \"xml:space\": \"preserve\"} -->\n\n````\n\
+    \n   Embedding(weights=np.load('PATH.npy'))\n   ````\n\nTo initialize a learnable\
+    \ lookup table with a given numpy array that is to be used as\nthe initial value,\
+    \ pass that array to the `init` parameter (not `weights`).\n\nAn `Embedding` instance\
+    \ owns its weight parameter tensor *E*, and exposes it as an attribute `.E`.\n"
   syntax:
     content: Embedding(shape=None, init=<cntk.default_options.default_override_or
-      object at 0x000001E2B1897860>, weights=None, name='')
+      object at 0x000001B3C38A2A20>, weights=None, name='')
     parameters:
-    - description: vector or tensor dimension of the output of this layer
+    - description: 'vector or tensor dimension of the output of this layer
+
+        '
       id: shape
       type:
       - int or tuple of ints
-    - description: (learnable embedding only) initial value of weights *E*
+    - description: '(learnable embedding only) initial value of weights *E*
+
+        '
       id: init
       type:
-      - scalar or NumPy array or @cntk.initializer, defaults to @cntk.initializer
-    - description: (user-supplied embedding only) the lookup table. The matrix rows
-        are the embedding vectors, `weights[i,:]` being the embedding that corresponds
-        to input category *i*.
+      - 'scalar or NumPy array or @cntk.initializer
+
+        , defaults to @cntk.initializer
+
+        '
+    - description: '(user-supplied embedding only) the lookup table.
+
+        The matrix rows are the embedding vectors, `weights[i,:]` being the embedding
+        that corresponds to input category *i*.
+
+        '
       id: weights
       type:
       - NumPy array, mutually exclusive with init, defuats to None
-    - description: the name of the function instance in the network
+    - description: 'the name of the function instance in the network
+
+        '
       id: name
       type:
       - str, defaults to ''
     return:
-      description: A function that accepts one argument and applies the embedding
+      description: 'A function that accepts one argument and applies the embedding
         operation to it
+
+        '
       type:
       - cntk.ops.functions.Function
   type: function
@@ -1100,7 +1536,7 @@ items:
     \ = np.array([[[3, 5, 2, 6], [4, 2, 8, 3], [1, 6, 4, 7], [7, 3, 5, 9]]])  # a\
     \ 4x4 image (feature-map depth 1 for simplicity)\n>>> im\n    array([[[3, 5, 2,\
     \ 6],\n            [4, 2, 8, 3],\n            [1, 6, 4, 7],\n            [7, 3,\
-    \ 5, 9]]])\n>>> f([[im]])\n    array([[[[ 4.6875]]]], dtype=float32)\n```"
+    \ 5, 9]]])\n>>> f([[im]])\n    array([[[[ 4.6875]]]], dtype=float32)\n```\n"
   fullName: cntk.layers.layers.GlobalAveragePooling
   langs:
   - python
@@ -1116,20 +1552,28 @@ items:
     startLine: 1018
   summary: 'Layer factory function to create a global average-pooling layer.
 
+
     The global average-pooling operation computes the element-wise mean over all items
     on an N-dimensional grid, such as an image.
 
-    This operation is the same as applying `reduce_mean()` to all grid dimensions.'
+
+    This operation is the same as applying `reduce_mean()` to all grid dimensions.
+
+    '
   syntax:
     content: GlobalAveragePooling(name='')
     parameters:
-    - description: the name of the function instance in the network
+    - description: 'the name of the function instance in the network
+
+        '
       id: name
       type:
       - str, defaults to ''
     return:
-      description: A function that accepts one argument and applies the operation
+      description: 'A function that accepts one argument and applies the operation
         to it
+
+        '
       type:
       - cntk.ops.functions.Function
   type: function
@@ -1139,7 +1583,7 @@ items:
     \ np.array([[[3, 5, 2, 6], [4, 2, 8, 3], [1, 6, 4, 7], [7, 3, 5, 9]]])  # a 4x4\
     \ image (feature-map depth 1 for simplicity)\n>>> im\n    array([[[3, 5, 2, 6],\n\
     \            [4, 2, 8, 3],\n            [1, 6, 4, 7],\n            [7, 3, 5, 9]]])\n\
-    >>> f([[im]])\n    array([[[[ 9.]]]], dtype=float32)\n```"
+    >>> f([[im]])\n    array([[[[ 9.]]]], dtype=float32)\n```\n"
   fullName: cntk.layers.layers.GlobalMaxPooling
   langs:
   - python
@@ -1155,20 +1599,28 @@ items:
     startLine: 988
   summary: 'Layer factory function to create a global max-pooling layer.
 
+
     The global max-pooling operation computes the element-wise maximum over all items
     on an N-dimensional grid, such as an image.
 
-    This operation is the same as applying `reduce_max()` to all grid dimensions.'
+
+    This operation is the same as applying `reduce_max()` to all grid dimensions.
+
+    '
   syntax:
     content: GlobalMaxPooling(name='')
     parameters:
-    - description: the name of the function instance in the network
+    - description: 'the name of the function instance in the network
+
+        '
       id: name
       type:
       - str, defaults to ''
     return:
-      description: A function that accepts one argument and applies the operation
+      description: 'A function that accepts one argument and applies the operation
         to it
+
+        '
       type:
       - cntk.ops.functions.Function
   type: function
@@ -1176,7 +1628,7 @@ items:
 - example:
   - "```\n\n>>> model = Dense(500) >> Label('hidden') >> Dense(10)\n>>> model.update_signature(10)\n\
     >>> intermediate_val = model.hidden\n>>> intermediate_val.shape\n    (500,)\n\
-    ```"
+    ```\n"
   fullName: cntk.layers.layers.Label
   langs:
   - python
@@ -1190,13 +1642,18 @@ items:
       path: /bindings/python\cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1258
-  summary: Layer factory function to create a dummy layer with a given name. This
-    can be used to access an intermediate value flowing through computation.
+  summary: 'Layer factory function to create a dummy layer with a given name.
+
+    This can be used to access an intermediate value flowing through computation.
+
+    '
   syntax:
     content: Label(name)
     return:
-      description: A function that accepts one argument and returns it with the desired
+      description: 'A function that accepts one argument and returns it with the desired
         name attached
+
+        '
       type:
       - cntk.ops.functions.Function
   type: function
@@ -1205,7 +1662,7 @@ items:
   - "```\n\n>>> f = LayerNormalization(initial_scale=2, initial_bias=1)\n>>> f.update_signature(4)\n\
     >>> f([np.array([4,0,0,4])])  # result has mean 1 and standard deviation 2, reflecting\
     \ the initial values for scale and bias\n    array([[ 2.99999, -0.99999, -0.99999,\
-    \  2.99999]], dtype=float32)\n```"
+    \  2.99999]], dtype=float32)\n```\n"
   fullName: cntk.layers.layers.LayerNormalization
   langs:
   - python
@@ -1221,40 +1678,61 @@ items:
     startLine: 1210
   summary: 'Layer factory function to create a function that implements layer normalization.
 
+
     Layer normalization applies this formula to every input element (element-wise):
-    `y = (x - mean(x)) / (stddev(x) + epsilon) * scale + bias` where `scale` and `bias`
-    are learned scalar parameters.
+
+    `y = (x - mean(x)) / (stddev(x) + epsilon) * scale + bias`
+
+    where `scale` and `bias` are learned scalar parameters.
+
 
     <SYSTEM MESSAGE: C:\peter\ms_code\cntk_all\CNTK\bindings\python\doc\cntk.layers.layers.rst:26:
     (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
+
     Trying "todo" as canonical directive name.>
+
 
     <SYSTEM MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\layers\layers.py:docstring
     of cntk.layers.layers.LayerNormalization:26: (ERROR/3) Unknown directive type
-    "todo".  .. todo:: Add paper reference.>'
+    "todo".
+
+
+    .. todo:: Add paper reference.>
+
+    '
   syntax:
     content: LayerNormalization(initial_scale=1, initial_bias=0, epsilon=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D588>, name='')
+      object at 0x000001B3C38A9748>, name='')
     parameters:
-    - description: initial value for the `scale` parameter
+    - description: 'initial value for the `scale` parameter
+
+        '
       id: initial_scale
       type:
       - float, default 1
-    - description: initial value for the `bias` parameter
+    - description: 'initial value for the `bias` parameter
+
+        '
       id: initial_bias
       type:
       - float, default 0
-    - description: epsilon added to the standard deviation to avoid division by 0
+    - description: 'epsilon added to the standard deviation to avoid division by 0
+
+        '
       id: epsilon
       type:
       - float, default 0.00001
-    - description: the name of the Function instance in the network
+    - description: 'the name of the Function instance in the network
+
+        '
       id: name
       type:
       - str, optional
     return:
-      description: A function that accepts one argument and applies the operation
+      description: 'A function that accepts one argument and applies the operation
         to it
+
+        '
       type:
       - cntk.ops.functions.Function
   type: function
@@ -1264,13 +1742,13 @@ items:
     \ over windows of 3x3\n>>> h = C.input_variable((32,240,320))  # e.g. 32-dim feature\
     \ map\n>>> hp = f(h)\n>>> hp.shape  # spatial dimension has been halved due to\
     \ stride, and lost one due to 3x3 window without padding\n    (32, 119, 159)\n\
-    \n>>> f = MaxPooling((2,2), strides=2)\n>>> f.update_signature((1,4,4))\n>>> im\
-    \ = np.array([[[3, 5, 2, 6], [4, 2, 8, 3], [1, 6, 4, 7], [7, 3, 5, 9]]])  # a\
-    \ 4x4 image (feature-map depth 1 for simplicity)\n>>> im\n    array([[[3, 5, 2,\
-    \ 6],\n            [4, 2, 8, 3],\n            [1, 6, 4, 7],\n            [7, 3,\
-    \ 5, 9]]])\n>>> f([[im]])  # due to strides=2, this picks the max out of each\
-    \ 2x2 sub-block\n    array([[[[ 5.,  8.],\n             [ 7.,  9.]]]], dtype=float32)\n\
-    ```"
+    ```\n\n```\n\n>>> f = MaxPooling((2,2), strides=2)\n>>> f.update_signature((1,4,4))\n\
+    >>> im = np.array([[[3, 5, 2, 6], [4, 2, 8, 3], [1, 6, 4, 7], [7, 3, 5, 9]]])\
+    \  # a 4x4 image (feature-map depth 1 for simplicity)\n>>> im\n    array([[[3,\
+    \ 5, 2, 6],\n            [4, 2, 8, 3],\n            [1, 6, 4, 7],\n          \
+    \  [7, 3, 5, 9]]])\n>>> f([[im]])  # due to strides=2, this picks the max out\
+    \ of each 2x2 sub-block\n    array([[[[ 5.,  8.],\n             [ 7.,  9.]]]],\
+    \ dtype=float32)\n```\n"
   fullName: cntk.layers.layers.MaxPooling
   langs:
   - python
@@ -1286,42 +1764,66 @@ items:
     startLine: 884
   summary: 'Layer factory function to create a max-pooling layer.
 
-    Like `Convolution()`, `MaxPooling()` processes items arranged on an N-dimensional
-    grid, such as an image. Typically, each item is a vector. For each item, max-pooling
-    computes the element-wise maximum over a window ("receptive field") of items surrounding
-    the item''s position on the grid.
 
-    The size (spatial extent) of the receptive field is given by `filter_shape`. E.g.
-    for 2D pooling, `filter_shape` should be a tuple of two integers, such as *(5,5)*.'
+    Like `Convolution()`, `MaxPooling()` processes items arranged on an N-dimensional
+    grid, such as an image.
+
+    Typically, each item is a vector.
+
+    For each item, max-pooling computes the element-wise maximum over a window ("receptive
+    field") of items surrounding the item''s position on the grid.
+
+
+    The size (spatial extent) of the receptive field is given by `filter_shape`.
+
+    E.g. for 2D pooling, `filter_shape` should be a tuple of two integers, such as
+    *(5,5)*.
+
+    '
   syntax:
     content: MaxPooling(filter_shape, strides=1, pad=<cntk.default_options.default_override_or
-      object at 0x000001E2B189D390>, name='')
+      object at 0x000001B3C38A9550>, name='')
     parameters:
-    - description: shape (spatial extent) of the receptive field, *not* including
+    - description: 'shape (spatial extent) of the receptive field, *not* including
         the input feature-map depth. E.g. (3,3) for a 2D convolution.
+
+        '
       id: filter_shape
       type:
       - int or tuple of ints
-    - description: stride (increment when sliding over the input). Use a *tuple* to
-        specify a per-axis value.
+    - description: 'stride (increment when sliding over the input). Use a *tuple*
+        to specify a per-axis value.
+
+        '
       id: strides
       type:
       - int or tuple of ints, defaults to 1
-    - description: if *False*, then the pooling operation will be shifted over the
-        "valid" area of input, that is, no value outside the area is used. If `pad=True`
-        on the other hand, pooling will be applied to all input positions, and positions
-        outside the valid region will be considered containing zero. Use a *tuple*
-        to specify a per-axis value.
+    - description: 'if *False*, then the pooling operation will be shifted over the
+        "valid"
+
+        area of input, that is, no value outside the area is used. If `pad=True` on
+        the other hand,
+
+        pooling will be applied to all input positions, and positions outside the
+        valid region will be considered containing zero.
+
+        Use a *tuple* to specify a per-axis value.
+
+        '
       id: pad
       type:
       - bool or tuple of bools, defaults to False
-    - description: the name of the function instance in the network
+    - description: 'the name of the function instance in the network
+
+        '
       id: name
       type:
       - str, defaults to ''
     return:
-      description: A function that accepts one argument and applies the max-pooling
+      description: 'A function that accepts one argument and applies the max-pooling
         operation to it
+
+        '
       type:
       - cntk.ops.functions.Function
   type: function

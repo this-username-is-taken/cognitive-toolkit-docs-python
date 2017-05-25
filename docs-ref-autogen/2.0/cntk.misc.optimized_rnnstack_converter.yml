@@ -31,16 +31,22 @@ items:
       path: /bindings/python\cntk\misc\optimized_rnnstack_converter.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 196
-  summary: converts model that contains cudnn optimized_rnnstack to use non-cudnn
+  summary: 'converts model that contains cudnn optimized_rnnstack to use non-cudnn
     functions, so it can be used in non-CUDA environment
+
+    '
   syntax:
     content: convert_optimized_rnnstack(cudnn_model)
     parameters:
-    - description: a model that contains optimized_rnnstacks
+    - description: 'a model that contains optimized_rnnstacks
+
+        '
       id: cudnn_model
     return:
-      description: converted model on GEMM based implementation of rnn that can be
+      description: 'converted model on GEMM based implementation of rnn that can be
         used on CPU
+
+        '
   type: function
   uid: cntk.misc.optimized_rnnstack_converter.convert_optimized_rnnstack
 references:

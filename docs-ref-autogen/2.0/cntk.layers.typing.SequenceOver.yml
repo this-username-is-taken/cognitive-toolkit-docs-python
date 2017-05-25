@@ -19,7 +19,9 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
   summary: 'Meta-meta-meta class to denote a sequence of data tensors over a custom
-    axis. Example: `userAxis = Axis(); SequenceOver[userAxis][Tensor[13,42]]`'
+    axis. Example: `userAxis = Axis(); SequenceOver[userAxis][Tensor[13,42]]`
+
+    '
   syntax:
     content: SequenceOver()
   type: class

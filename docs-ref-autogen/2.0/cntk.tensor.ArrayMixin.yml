@@ -20,6 +20,8 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 160
   syntax:
+    attribute:
+    - asarray
     content: ArrayMixin()
   type: class
   uid: cntk.tensor.ArrayMixin
@@ -37,7 +39,9 @@ items:
       path: /bindings/python\cntk\tensor.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 161
-  summary: Converts the instance's data to a NumPy array.
+  summary: 'Converts the instance''s data to a NumPy array.
+
+    '
   syntax:
     content: asarray(self)
   type: method

@@ -33,8 +33,15 @@ items:
 
 
 
+
     '
   syntax:
+    attribute:
+    - get_checkpoint_state
+    - next_minibatchnum_samples, number_of_workers, worker_rank, device=None
+    - restore_from_checkpointstate
+    - stream_infoname
+    - stream_infos
     content: UserMinibatchSource()
   type: class
   uid: cntk.io.UserMinibatchSource
@@ -52,11 +59,17 @@ items:
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 432
-  summary: Returns a dictionary describing the current state of the minibatch source.
+  summary: 'Returns a dictionary describing the current state of the minibatch
+
+    source.
+
+    '
   syntax:
     content: get_checkpoint_state(self)
     return:
-      description: dictionary, that can be later used on `restore_from_checkpoint()`.
+      description: 'dictionary, that can be later used on `restore_from_checkpoint()`.
+
+        '
   type: method
   uid: cntk.io.UserMinibatchSource.get_checkpoint_state
 - class: cntk.io.UserMinibatchSource
@@ -73,24 +86,34 @@ items:
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 398
-  summary: Function to be implemented by the user.
+  summary: 'Function to be implemented by the user.
+
+    '
   syntax:
     content: next_minibatch(self, num_samples, number_of_workers, worker_rank, device=None)
     parameters:
-    - description: number of samples to return
+    - description: 'number of samples to return
+
+        '
       id: num_samples
       type:
       - int
-    - description: number of workers in total
+    - description: 'number of workers in total
+
+        '
       id: number_of_workers
       type:
       - int
-    - description: worker for which the data is to be returned
+    - description: 'worker for which the data is to be returned
+
+        '
       id: worker_rank
       type:
       - int
     return:
-      description: mapping of @cntk.io.StreamInformation to @cntk.io.MinibatchData
+      description: 'mapping of @cntk.io.StreamInformation to @cntk.io.MinibatchData
+
+        '
   type: method
   uid: cntk.io.UserMinibatchSource.next_minibatch
 - class: cntk.io.UserMinibatchSource
@@ -107,11 +130,15 @@ items:
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 447
-  summary: Sets the state of the checkpoint.
+  summary: 'Sets the state of the checkpoint.
+
+    '
   syntax:
     content: restore_from_checkpoint(self, state)
     parameters:
-    - description: dictionary containing the state
+    - description: 'dictionary containing the state
+
+        '
       id: state
       type:
       - dict
@@ -131,8 +158,13 @@ items:
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 390
-  summary: Gets the description of the stream with given name. Throws an exception
-    if there are none or multiple streams with this same name.
+  summary: 'Gets the description of the stream with given name.
+
+    Throws an exception if there are none or multiple streams with this
+
+    same name.
+
+    '
   syntax:
     content: stream_info(self, name)
   type: method
@@ -151,11 +183,15 @@ items:
       path: /bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 376
-  summary: Function to be implemented by the user.
+  summary: 'Function to be implemented by the user.
+
+    '
   syntax:
     content: stream_infos(self)
     return:
-      description: list of @cntk.io.StreamInformation instances
+      description: 'list of @cntk.io.StreamInformation instances
+
+        '
   type: method
   uid: cntk.io.UserMinibatchSource.stream_infos
 references:
