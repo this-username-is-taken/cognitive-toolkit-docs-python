@@ -22,10 +22,10 @@ items:
   name: Variable
   source:
     id: Variable
-    path: /bindings/python\cntk\variables.py
+    path: bindings/python\cntk\variables.py
     remote:
       branch: master
-      path: /bindings/python\cntk\variables.py
+      path: bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 278
   summary: 'Denotes a symbolic entity corresponding to the inputs and outputs of a
@@ -39,7 +39,7 @@ items:
     - as_constant
     - as_parameter
     content: Variable(shape=None, dtype=None, needs_gradient=False, is_sparse=False,
-      dynamic_axes=[Axis('defaultBatchAxis'), Axis('defaultDynamicAxis')], name='')
+      dynamic_axes=[Axis.default_batch_axis(), Axis.default_dynamic_axis()], name='')
     parameters:
     - description: 'the shape of this variable.
 
@@ -95,17 +95,17 @@ items:
   name: as_constant
   source:
     id: as_constant
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 316
   summary: 'Converts this instance into a @cntk.variables.Constant
 
     '
   syntax:
-    content: as_constant(self)
+    content: as_constant()
   type: method
   uid: cntk.variables.Variable.as_constant
 - class: cntk.variables.Variable
@@ -116,17 +116,17 @@ items:
   name: as_parameter
   source:
     id: as_parameter
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 306
   summary: 'Converts this instance into a @cntk.variables.Parameter
 
     '
   syntax:
-    content: as_parameter(self)
+    content: as_parameter()
   type: method
   uid: cntk.variables.Variable.as_parameter
 references:

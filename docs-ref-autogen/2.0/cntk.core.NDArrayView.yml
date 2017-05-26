@@ -23,10 +23,10 @@ items:
   name: NDArrayView
   source:
     id: NDArrayView
-    path: /bindings/python\cntk\core.py
+    path: bindings/python\cntk\core.py
     remote:
       branch: master
-      path: /bindings/python\cntk\core.py
+      path: bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 26
   summary: 'Creates an empty dense internal data representation of a
@@ -132,10 +132,10 @@ items:
   name: from_csr
   source:
     id: from_csr
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 82
   summary: 'Create an @cntk.core.NDArrayView instance from a SciPy sparse array in
@@ -208,10 +208,10 @@ items:
   name: from_data
   source:
     id: from_data
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 133
   summary: 'Create an @cntk.core.NDArrayView instance from a NumPy or SciPy sparse
@@ -268,10 +268,10 @@ items:
   name: from_dense
   source:
     id: from_dense
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 49
   summary: 'Create an @cntk.core.NDArrayView instance from a NumPy array.
@@ -392,17 +392,17 @@ items:
   name: slice_view
   source:
     id: slice_view
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 176
   summary: 'Returns a sliced view of the instance.
 
     '
   syntax:
-    content: slice_view(self, start_offset, extent, read_only=True)
+    content: slice_view(start_offset, extent, read_only=True)
     parameters:
     - description: 'shape of the same rank as this Value
 

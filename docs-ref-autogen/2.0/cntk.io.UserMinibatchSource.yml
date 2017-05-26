@@ -21,10 +21,10 @@ items:
   name: UserMinibatchSource
   source:
     id: UserMinibatchSource
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 366
   summary: 'Base class of all user minibatch sources.
@@ -53,10 +53,10 @@ items:
   name: get_checkpoint_state
   source:
     id: get_checkpoint_state
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 432
   summary: 'Returns a dictionary describing the current state of the minibatch
@@ -65,9 +65,11 @@ items:
 
     '
   syntax:
-    content: get_checkpoint_state(self)
+    content: get_checkpoint_state()
+    parameters:
+    - id: self
     return:
-      description: 'dictionary, that can be later used on `restore_from_checkpoint()`.
+      description: 'dictionary, that can be later used on @restore_from_checkpoint.
 
         '
   type: method
@@ -80,17 +82,17 @@ items:
   name: next_minibatch
   source:
     id: next_minibatch
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 398
   summary: 'Function to be implemented by the user.
 
     '
   syntax:
-    content: next_minibatch(self, num_samples, number_of_workers, worker_rank, device=None)
+    content: next_minibatch(num_samples, number_of_workers, worker_rank, device=None)
     parameters:
     - description: 'number of samples to return
 
@@ -104,7 +106,8 @@ items:
       id: number_of_workers
       type:
       - int
-    - description: 'worker for which the data is to be returned
+    - defaultValue: None
+      description: 'worker for which the data is to be returned
 
         '
       id: worker_rank
@@ -124,18 +127,19 @@ items:
   name: restore_from_checkpoint
   source:
     id: restore_from_checkpoint
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 447
   summary: 'Sets the state of the checkpoint.
 
     '
   syntax:
-    content: restore_from_checkpoint(self, state)
+    content: restore_from_checkpoint(state)
     parameters:
+    - id: self
     - description: 'dictionary containing the state
 
         '
@@ -152,10 +156,10 @@ items:
   name: stream_info
   source:
     id: stream_info
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 390
   summary: 'Gets the description of the stream with given name.
@@ -166,7 +170,10 @@ items:
 
     '
   syntax:
-    content: stream_info(self, name)
+    content: stream_info(name)
+    parameters:
+    - id: self
+    - id: name
   type: method
   uid: cntk.io.UserMinibatchSource.stream_info
 - class: cntk.io.UserMinibatchSource
@@ -177,17 +184,19 @@ items:
   name: stream_infos
   source:
     id: stream_infos
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 376
   summary: 'Function to be implemented by the user.
 
     '
   syntax:
-    content: stream_infos(self)
+    content: stream_infos()
+    parameters:
+    - id: self
     return:
       description: 'list of @cntk.io.StreamInformation instances
 

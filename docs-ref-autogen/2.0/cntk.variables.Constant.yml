@@ -26,10 +26,10 @@ items:
   name: Constant
   source:
     id: Constant
-    path: /bindings/python\cntk\variables.py
+    path: bindings/python\cntk\variables.py
     remote:
       branch: master
-      path: /bindings/python\cntk\variables.py
+      path: bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 419
   summary: 'A constant value. It can be a scalar, vector, matrix, or tensor
@@ -60,8 +60,8 @@ items:
   syntax:
     attribute:
     - value
-    content: Constant(value=None, shape=None, dtype=<cntk.default_options.default_override_or
-      object at 0x000001B3C36AC9B0>, device=None, name='')
+    content: Constant(self, value=None, shape=None, dtype=np.float32, device=None,
+      name='')
     parameters:
     - description: 'Initial value.
 

@@ -17,10 +17,10 @@ items:
   name: Evaluator
   source:
     id: Evaluator
-    path: /bindings/python\cntk\eval\evaluator.py
+    path: bindings/python\cntk\eval\evaluator.py
     remote:
       branch: master
-      path: /bindings/python\cntk\eval\evaluator.py
+      path: bindings/python\cntk\eval\evaluator.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 15
   summary: 'Class for evaluation of minibatches against the specified evaluation function.
@@ -82,10 +82,10 @@ items:
   name: summarize_test_progress
   source:
     id: summarize_test_progress
-    path: /bindings/python\cntk\eval\evaluator.py
+    path: bindings/python\cntk\eval\evaluator.py
     remote:
       branch: master
-      path: /bindings/python\cntk\eval\evaluator.py
+      path: bindings/python\cntk\eval\evaluator.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 86
   summary: 'Updates the progress writers with the summary of test progress since start
@@ -95,7 +95,9 @@ items:
 
     '
   syntax:
-    content: summarize_test_progress(self)
+    content: summarize_test_progress()
+    parameters:
+    - id: self
   type: method
   uid: cntk.eval.evaluator.Evaluator.summarize_test_progress
 - class: cntk.eval.evaluator.Evaluator
@@ -106,17 +108,22 @@ items:
   name: test_minibatch
   source:
     id: test_minibatch
-    path: /bindings/python\cntk\eval\evaluator.py
+    path: bindings/python\cntk\eval\evaluator.py
     remote:
       branch: master
-      path: /bindings/python\cntk\eval\evaluator.py
+      path: bindings/python\cntk\eval\evaluator.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 38
   summary: "Test the evaluation function on the specified batch of samples.\n\nNote:\
     \ See @cntk.ops.functions.Function.forward for examples on passing input data.\
     \ \n"
   syntax:
-    content: test_minibatch(self, arguments, device=None)
+    content: test_minibatch(arguments, device=None)
+    parameters:
+    - defaultValue: None
+      id: self
+    - id: arguments
+    - id: device
     return:
       description: 'the average evaluation criterion value per sample for the
 

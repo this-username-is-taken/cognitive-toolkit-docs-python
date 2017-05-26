@@ -14,10 +14,10 @@ items:
   name: graph
   source:
     id: graph
-    path: /bindings/python\cntk\logging\graph.py
+    path: bindings/python\cntk\logging\graph.py
     remote:
       branch: master
-      path: /bindings/python\cntk\logging\graph.py
+      path: bindings/python\cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   type: module
@@ -29,10 +29,10 @@ items:
   name: depth_first_search
   source:
     id: depth_first_search
-    path: /bindings/python\cntk\logging\graph.py
+    path: bindings/python\cntk\logging\graph.py
     remote:
       branch: master
-      path: /bindings/python\cntk\logging\graph.py
+      path: bindings/python\cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 12
   summary: 'Generic function that walks through the graph starting at `root` and
@@ -45,7 +45,8 @@ items:
   syntax:
     content: depth_first_search(root, visitor, depth=0)
     parameters:
-    - description: 'the root to start the journey from
+    - defaultValue: '0'
+      description: 'the root to start the journey from
 
         '
       id: root
@@ -82,10 +83,10 @@ items:
     \ @cntk.ops.functions.Function. \n"
   source:
     id: find_all_with_name
-    path: /bindings/python\cntk\logging\graph.py
+    path: bindings/python\cntk\logging\graph.py
     remote:
       branch: master
-      path: /bindings/python\cntk\logging\graph.py
+      path: bindings/python\cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 79
   summary: 'Finds functions in the graph starting from `node` and doing a depth-first
@@ -96,7 +97,8 @@ items:
   syntax:
     content: find_all_with_name(node, node_name, depth=0)
     parameters:
-    - description: 'the node to start the journey from
+    - defaultValue: '0'
+      description: 'the node to start the journey from
 
         '
       id: node
@@ -131,10 +133,10 @@ items:
     \ \n"
   source:
     id: find_by_name
-    path: /bindings/python\cntk\logging\graph.py
+    path: bindings/python\cntk\logging\graph.py
     remote:
       branch: master
-      path: /bindings/python\cntk\logging\graph.py
+      path: bindings/python\cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 100
   summary: 'Finds a function in the graph starting from `node` and doing a depth-first
@@ -145,7 +147,8 @@ items:
   syntax:
     content: find_by_name(node, node_name, depth=0)
     parameters:
-    - description: 'the node to start the journey from
+    - defaultValue: '0'
+      description: 'the node to start the journey from
 
         '
       id: node
@@ -178,10 +181,10 @@ items:
   name: get_node_outputs
   source:
     id: get_node_outputs
-    path: /bindings/python\cntk\logging\graph.py
+    path: bindings/python\cntk\logging\graph.py
     remote:
       branch: master
-      path: /bindings/python\cntk\logging\graph.py
+      path: bindings/python\cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 347
   summary: 'Walks through every node of the graph starting at `node`
@@ -192,7 +195,9 @@ items:
   syntax:
     content: get_node_outputs(node, depth=0)
     parameters:
-    - description: 'the node to start the journey from
+    - id: node
+    - defaultValue: '0'
+      description: 'the node to start the journey from
 
         '
       id: node
@@ -211,10 +216,10 @@ items:
   name: plot
   source:
     id: plot
-    path: /bindings/python\cntk\logging\graph.py
+    path: bindings/python\cntk\logging\graph.py
     remote:
       branch: master
-      path: /bindings/python\cntk\logging\graph.py
+      path: bindings/python\cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 136
   summary: "Walks through every node of the graph starting at `root`,\ncreates a network\
@@ -235,7 +240,8 @@ items:
       id: node
       type:
       - graph node
-    - description: 'file with extension ''.dot'', ''png'', ''pdf'', or ''svg''
+    - defaultValue: None
+      description: 'file with extension ''.dot'', ''png'', ''pdf'', or ''svg''
 
         to denote what format should be written. If *None* then nothing
 

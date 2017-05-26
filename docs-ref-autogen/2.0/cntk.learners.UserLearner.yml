@@ -15,10 +15,10 @@ items:
   name: UserLearner
   source:
     id: UserLearner
-    path: /bindings/python\cntk\learners\__init__.py
+    path: bindings/python\cntk\learners\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\learners\__init__.py
+      path: bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 166
   summary: 'Base class of all user-defined learners. To implement your own learning
@@ -46,18 +46,19 @@ items:
   name: update
   source:
     id: update
-    path: /bindings/python\cntk\learners\__init__.py
+    path: bindings/python\cntk\learners\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\learners\__init__.py
+      path: bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 207
   summary: 'Update the parameters associated with this learner.
 
     '
   syntax:
-    content: update(self, gradient_values, training_sample_count, sweep_end)
+    content: update(gradient_values, training_sample_count, sweep_end)
     parameters:
+    - id: self
     - description: 'maps @cntk.variables.Parameter to
 
         a NumPy array containing the first order gradient values for the

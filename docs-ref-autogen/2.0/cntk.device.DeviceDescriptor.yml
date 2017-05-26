@@ -17,10 +17,10 @@ items:
   name: DeviceDescriptor
   source:
     id: DeviceDescriptor
-    path: /bindings/python\cntk\device.py
+    path: bindings/python\cntk\device.py
     remote:
       branch: master
-      path: /bindings/python\cntk\device.py
+      path: bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 32
   summary: 'Describes a device by a unique id and its type. If the device corresponds
@@ -47,17 +47,19 @@ items:
   name: id
   source:
     id: id
-    path: /bindings/python\cntk\device.py
+    path: bindings/python\cntk\device.py
     remote:
       branch: master
-      path: /bindings/python\cntk\device.py
+      path: bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 38
   summary: 'Returns id of device descriptor
 
     '
   syntax:
-    content: id(self)
+    content: id()
+    parameters:
+    - id: self
     return:
       description: 'id
 
@@ -74,10 +76,10 @@ items:
   name: is_locked
   source:
     id: is_locked
-    path: /bindings/python\cntk\device.py
+    path: bindings/python\cntk\device.py
     remote:
       branch: master
-      path: /bindings/python\cntk\device.py
+      path: bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 56
   summary: 'Returns *True* if another CNTK process already holds an exclusive lock
@@ -86,7 +88,9 @@ items:
 
     '
   syntax:
-    content: is_locked(self)
+    content: is_locked()
+    parameters:
+    - id: self
   type: method
   uid: cntk.device.DeviceDescriptor.is_locked
 - class: cntk.device.DeviceDescriptor
@@ -97,17 +101,19 @@ items:
   name: type
   source:
     id: type
-    path: /bindings/python\cntk\device.py
+    path: bindings/python\cntk\device.py
     remote:
       branch: master
-      path: /bindings/python\cntk\device.py
+      path: bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 47
   summary: 'Returns type of device descriptor. 1 if it is a GPU device or 0 if CPU.
 
     '
   syntax:
-    content: type(self)
+    content: type()
+    parameters:
+    - id: self
     return:
       description: 'type
 

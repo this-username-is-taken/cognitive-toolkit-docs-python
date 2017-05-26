@@ -14,10 +14,10 @@ items:
   name: core
   source:
     id: core
-    path: /bindings/python\cntk\core.py
+    path: bindings/python\cntk\core.py
     remote:
       branch: master
-      path: /bindings/python\cntk\core.py
+      path: bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   type: module
@@ -29,10 +29,10 @@ items:
   name: asarray
   source:
     id: asarray
-    path: /bindings/python\cntk\core.py
+    path: bindings/python\cntk\core.py
     remote:
       branch: master
-      path: /bindings/python\cntk\core.py
+      path: bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 625
   summary: 'Converts a Value object to a sequence of NumPy arrays (if dense) or CSR
@@ -41,6 +41,10 @@ items:
     '
   syntax:
     content: asarray(value, dtype=None)
+    parameters:
+    - id: value
+    - defaultValue: None
+      id: dtype
   type: function
   uid: cntk.core.asarray
 - fullName: cntk.core.asvalue
@@ -50,10 +54,10 @@ items:
   name: asvalue
   source:
     id: asvalue
-    path: /bindings/python\cntk\core.py
+    path: bindings/python\cntk\core.py
     remote:
       branch: master
-      path: /bindings/python\cntk\core.py
+      path: bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 641
   summary: 'Converts a sequence of NumPy arrays or CSR arrays to a Value object.
@@ -61,6 +65,9 @@ items:
     '
   syntax:
     content: asvalue(variable, data_array)
+    parameters:
+    - id: variable
+    - id: data_array
   type: function
   uid: cntk.core.asvalue
 - fullName: cntk.core.user_function
@@ -70,10 +77,10 @@ items:
   name: user_function
   source:
     id: user_function
-    path: /bindings/python\cntk\core.py
+    path: bindings/python\cntk\core.py
     remote:
       branch: master
-      path: /bindings/python\cntk\core.py
+      path: bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 616
   summary: 'Wraps the passed Function to create a composite representing the
@@ -83,6 +90,8 @@ items:
     '
   syntax:
     content: user_function(user_func)
+    parameters:
+    - id: user_func
   type: function
   uid: cntk.core.user_function
 references:

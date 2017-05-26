@@ -13,10 +13,10 @@ items:
   name: sample_installer
   source:
     id: sample_installer
-    path: /bindings/python\cntk\sample_installer.py
+    path: bindings/python\cntk\sample_installer.py
     remote:
       branch: master
-      path: /bindings/python\cntk\sample_installer.py
+      path: bindings/python\cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   type: module
@@ -28,10 +28,10 @@ items:
   name: default_sample_dir
   source:
     id: default_sample_dir
-    path: /bindings/python\cntk\sample_installer.py
+    path: bindings/python\cntk\sample_installer.py
     remote:
       branch: master
-      path: /bindings/python\cntk\sample_installer.py
+      path: bindings/python\cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 24
   syntax:
@@ -45,10 +45,10 @@ items:
   name: default_sample_url
   source:
     id: default_sample_url
-    path: /bindings/python\cntk\sample_installer.py
+    path: bindings/python\cntk\sample_installer.py
     remote:
       branch: master
-      path: /bindings/python\cntk\sample_installer.py
+      path: bindings/python\cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 31
   syntax:
@@ -62,10 +62,10 @@ items:
   name: install_samples
   source:
     id: install_samples
-    path: /bindings/python\cntk\sample_installer.py
+    path: bindings/python\cntk\sample_installer.py
     remote:
       branch: master
-      path: /bindings/python\cntk\sample_installer.py
+      path: bindings/python\cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 34
   summary: 'Fetch the CNTK samples from a URL, extract to local directory, and install
@@ -76,13 +76,15 @@ items:
   syntax:
     content: install_samples(url=None, directory=None, quiet=False)
     parameters:
-    - description: 'the URL of the sample zip file (if passed `None`, which is default,
+    - defaultValue: None
+      description: 'the URL of the sample zip file (if passed `None`, which is default,
 
         the sample URL matching the CNTK module release is chosen)
 
         '
       id: url
-    - description: 'the directory to extract the samples into (if passed
+    - defaultValue: None
+      description: 'the directory to extract the samples into (if passed
 
         `None`, which is default, a name matching the CNTK module release is
 
@@ -103,10 +105,10 @@ items:
   name: module_is_unreleased
   source:
     id: module_is_unreleased
-    path: /bindings/python\cntk\sample_installer.py
+    path: bindings/python\cntk\sample_installer.py
     remote:
       branch: master
-      path: /bindings/python\cntk\sample_installer.py
+      path: bindings/python\cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 21
   syntax:

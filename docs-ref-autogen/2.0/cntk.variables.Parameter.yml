@@ -31,10 +31,10 @@ items:
   name: Parameter
   source:
     id: Parameter
-    path: /bindings/python\cntk\variables.py
+    path: bindings/python\cntk\variables.py
     remote:
       branch: master
-      path: /bindings/python\cntk\variables.py
+      path: bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 326
   summary: 'A trainable parameter. It can be a scalar, vector, matrix, or tensor
@@ -51,8 +51,8 @@ items:
   syntax:
     attribute:
     - value
-    content: Parameter(shape=None, init=None, dtype=<cntk.default_options.default_override_or
-      object at 0x000001B3C36AC978>, device=None, name='')
+    content: Parameter(self, shape=None, init=None, dtype=np.float32, device=None,
+      name='')
     parameters:
     - description: 'the shape of the tensor holding the parameters
 

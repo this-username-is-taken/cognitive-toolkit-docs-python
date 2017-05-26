@@ -13,10 +13,10 @@ items:
   name: debugging
   source:
     id: debugging
-    path: /bindings/python\cntk\debugging\__init__.py
+    path: bindings/python\cntk\debugging\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\debugging\__init__.py
+      path: bindings/python\cntk\debugging\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   summary: 'Helper functions for debugging graphs.
@@ -31,14 +31,18 @@ items:
   name: dump_function
   source:
     id: dump_function
-    path: /bindings/python\cntk\debugging\__init__.py
+    path: bindings/python\cntk\debugging\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\debugging\__init__.py
+      path: bindings/python\cntk\debugging\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 33
   syntax:
     content: dump_function(root, tag=None)
+    parameters:
+    - id: root
+    - defaultValue: None
+      id: tag
   type: function
   uid: cntk.debugging.dump_function
 - fullName: cntk.debugging.dump_signature
@@ -48,10 +52,10 @@ items:
   name: dump_signature
   source:
     id: dump_signature
-    path: /bindings/python\cntk\debugging\__init__.py
+    path: bindings/python\cntk\debugging\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\debugging\__init__.py
+      path: bindings/python\cntk\debugging\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 17
   summary: 'Debug helper that prints the signature of a Function.
@@ -59,6 +63,10 @@ items:
     '
   syntax:
     content: dump_signature(root, tag=None)
+    parameters:
+    - id: root
+    - defaultValue: None
+      id: tag
   type: function
   uid: cntk.debugging.dump_signature
 references:

@@ -23,10 +23,10 @@ items:
   name: UserFunction
   source:
     id: UserFunction
-    path: /bindings/python\cntk\ops\functions.py
+    path: bindings/python\cntk\ops\functions.py
     remote:
       branch: master
-      path: /bindings/python\cntk\ops\functions.py
+      path: bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1274
   summary: 'Base class of all user extension functions.
@@ -49,7 +49,7 @@ items:
     - infer_outputs
     - op_name
     - serialize
-    content: UserFunction(*args, **kwargs)
+    content: UserFunction(inputs, as_numpy=True, name='')
     parameters:
     - description: 'inputs to this function
 
@@ -83,10 +83,10 @@ items:
   name: clone
   source:
     id: clone
-    path: /bindings/python\cntk\ops\functions.py
+    path: bindings/python\cntk\ops\functions.py
     remote:
       branch: master
-      path: /bindings/python\cntk\ops\functions.py
+      path: bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1431
   summary: 'Creates a clone of this user-defined function.
@@ -102,8 +102,9 @@ items:
 
     '
   syntax:
-    content: clone(self, cloned_inputs)
+    content: clone(cloned_inputs)
     parameters:
+    - id: self
     - description: 'list of cloned inputs to the new user-defined
 
         Function clone to be created.
@@ -124,10 +125,10 @@ items:
   name: deserialize
   source:
     id: deserialize
-    path: /bindings/python\cntk\ops\functions.py
+    path: bindings/python\cntk\ops\functions.py
     remote:
       branch: master
-      path: /bindings/python\cntk\ops\functions.py
+      path: bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1453
   summary: 'A stub deserialize method for illustration purposes. User-defined functions
@@ -174,10 +175,10 @@ items:
   name: infer_outputs
   source:
     id: infer_outputs
-    path: /bindings/python\cntk\ops\functions.py
+    path: bindings/python\cntk\ops\functions.py
     remote:
       branch: master
-      path: /bindings/python\cntk\ops\functions.py
+      path: bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1421
   summary: 'Returns a list of all output variables this user-defined function
@@ -191,7 +192,9 @@ items:
 
     '
   syntax:
-    content: infer_outputs(self)
+    content: infer_outputs()
+    parameters:
+    - id: self
   type: method
   uid: cntk.ops.functions.UserFunction.infer_outputs
 - class: cntk.ops.functions.UserFunction
@@ -224,10 +227,10 @@ items:
   name: serialize
   source:
     id: serialize
-    path: /bindings/python\cntk\ops\functions.py
+    path: bindings/python\cntk\ops\functions.py
     remote:
       branch: master
-      path: /bindings/python\cntk\ops\functions.py
+      path: bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1479
   summary: 'Generates a dictionary that captures the state of this user-defined function.
@@ -239,7 +242,9 @@ items:
 
     '
   syntax:
-    content: serialize(self)
+    content: serialize()
+    parameters:
+    - id: self
   type: method
   uid: cntk.ops.functions.UserFunction.serialize
 references:

@@ -17,10 +17,10 @@ items:
   name: CloneMethod
   source:
     id: CloneMethod
-    path: /bindings/python\cntk\ops\functions.py
+    path: bindings/python\cntk\ops\functions.py
     remote:
       branch: master
-      path: /bindings/python\cntk\ops\functions.py
+      path: bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 24
   summary: 'Describes different ways how @cntk.ops.functions.Function.clone
@@ -36,8 +36,6 @@ items:
     - clone = 'clone'
     - freeze = 'freeze'
     - share = 'share'
-    content: CloneMethod(value, names=None, *, module=None, qualname=None, type=None,
-      start=1)
   type: class
   uid: cntk.ops.functions.CloneMethod
 - class: cntk.ops.functions.CloneMethod

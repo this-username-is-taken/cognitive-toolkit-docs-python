@@ -22,10 +22,10 @@ items:
   name: MinibatchSource
   source:
     id: MinibatchSource
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 111
   summary: '
@@ -48,10 +48,10 @@ items:
     - stream_infoname
     - stream_infos
     - streams
-    content: 'MinibatchSource(deserializers, max_samples=18446744073709551615, max_sweeps=18446744073709551615,
-      randomization_window_in_chunks=128, randomization_window_in_samples=0, randomization_seed=0,
-      trace_level=<TraceLevel.Warning: 1>, multithreaded_deserializer=False, frame_mode=False,
-      truncation_length=0, randomize=True)'
+    content: MinibatchSource(deserializers, max_samples=cntk.io.INFINITELY_REPEAT,
+      max_sweeps=cntk.io.INFINITELY_REPEAT, randomization_window_in_chunks=cntk.io.DEFAULT_RANDOMIZATION_WINDOW,
+      randomization_window_in_samples=0, randomization_seed=0, trace_level=cntk.logging.get_trace_level(),
+      multithreaded_deserializer=False, frame_mode=False, truncation_length=0, randomize=True)
     parameters:
     - description: 'deserializers to be used in the composite reader
 
@@ -72,7 +72,7 @@ items:
 
         **Important:**
 
-        Click >>:cntkwiki:`here <BrainScript-epochSize-and-Python-epoch_size-in-CNTK>`<<
+        Click [here](https://github.com/Microsoft/CNTK/wiki/BrainScript-epochSize-and-Python-epoch_size-in-CNTK)
 
         for a description of input and label samples.
 
@@ -236,17 +236,19 @@ items:
   name: get_checkpoint_state
   source:
     id: get_checkpoint_state
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 295
   summary: 'Gets the checkpoint state of the MinibatchSource.
 
     '
   syntax:
-    content: get_checkpoint_state(self)
+    content: get_checkpoint_state()
+    parameters:
+    - id: self
     return:
       description: 'A @cntk.cntk_py.Dictionary that has the checkpoint state
 
@@ -285,10 +287,10 @@ items:
   name: next_minibatch
   source:
     id: next_minibatch
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 241
   summary: 'Reads a minibatch that contains data for all input streams.  The
@@ -305,7 +307,7 @@ items:
 
     '
   syntax:
-    content: next_minibatch(self, minibatch_size_in_samples, input_map=None, device=None,
+    content: next_minibatch(minibatch_size_in_samples, input_map=None, device=None,
       num_data_partitions=None, partition_index=None)
     parameters:
     - description: 'number of samples to retrieve for
@@ -314,7 +316,7 @@ items:
 
         **Important:**
 
-        Click >>:cntkwiki:`here <BrainScript-minibatchSize-and-Python-minibatch_size_in_samples-in-CNTK>`<<
+        Click [here](https://github.com/Microsoft/CNTK/wiki/BrainScript-minibatchSize-and-Python-minibatch_size_in_samples-in-CNTK)
         for a full description of this parameter.
 
         '
@@ -323,7 +325,7 @@ items:
       - int
     - description: 'mapping of @cntk.variables.Variable
 
-        to `StreamInformation` which will be used to convert the
+        to @StreamInformation which will be used to convert the
 
         returned data.
 
@@ -351,7 +353,7 @@ items:
       type:
       - int, defaults to None
     return:
-      description: 'A mapping of `StreamInformation` to @cntk.io.MinibatchData if
+      description: 'A mapping of @StreamInformation to @cntk.io.MinibatchData if
 
         *input_map* was not specified. Otherwise, the returned value will
 
@@ -370,18 +372,19 @@ items:
   name: restore_from_checkpoint
   source:
     id: restore_from_checkpoint
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 306
   summary: 'Restores the MinibatchSource state from the specified checkpoint.
 
     '
   syntax:
-    content: restore_from_checkpoint(self, checkpoint)
+    content: restore_from_checkpoint(checkpoint)
     parameters:
+    - id: self
     - description: 'checkpoint to restore from
 
         '
@@ -400,10 +403,10 @@ items:
   name: stream_info
   source:
     id: stream_info
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 215
   summary: 'Gets the description of the stream with given name.
@@ -414,8 +417,9 @@ items:
 
     '
   syntax:
-    content: stream_info(self, name)
+    content: stream_info(name)
     parameters:
+    - id: self
     - description: 'stream name to fetch
 
         '
@@ -423,7 +427,7 @@ items:
       type:
       - str
     return:
-      description: '`StreamInformation`
+      description: '@StreamInformation
 
         The information for the given stream name.
 
@@ -438,19 +442,21 @@ items:
   name: stream_infos
   source:
     id: stream_infos
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 192
   summary: 'Describes the streams this minibatch source produces.
 
     '
   syntax:
-    content: stream_infos(self)
+    content: stream_infos()
+    parameters:
+    - id: self
     return:
-      description: 'A list of instances of `StreamInformation`
+      description: 'A list of instances of @StreamInformation
 
         '
   type: method
@@ -476,7 +482,7 @@ items:
     return:
       description: 'A *dict* mapping input names to instances of
 
-        `StreamInformation`
+        @StreamInformation
 
         '
   type: attribute

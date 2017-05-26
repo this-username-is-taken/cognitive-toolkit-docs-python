@@ -12,10 +12,10 @@ items:
   name: progress_print
   source:
     id: progress_print
-    path: /bindings/python\cntk\logging\progress_print.py
+    path: bindings/python\cntk\logging\progress_print.py
     remote:
       branch: master
-      path: /bindings/python\cntk\logging\progress_print.py
+      path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   type: module
@@ -27,14 +27,18 @@ items:
   name: log_number_of_parameters
   source:
     id: log_number_of_parameters
-    path: /bindings/python\cntk\logging\progress_print.py
+    path: bindings/python\cntk\logging\progress_print.py
     remote:
       branch: master
-      path: /bindings/python\cntk\logging\progress_print.py
+      path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 519
   syntax:
     content: log_number_of_parameters(model, trace_level=0)
+    parameters:
+    - id: model
+    - defaultValue: '0'
+      id: trace_level
   type: function
   uid: cntk.logging.progress_print.log_number_of_parameters
 references:

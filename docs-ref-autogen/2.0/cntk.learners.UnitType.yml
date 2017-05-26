@@ -16,10 +16,10 @@ items:
   name: UnitType
   source:
     id: UnitType
-    path: /bindings/python\cntk\learners\__init__.py
+    path: bindings/python\cntk\learners\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\learners\__init__.py
+      path: bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 17
   summary: 'Indicates whether the values in the schedule are specified on the per-sample
@@ -34,8 +34,6 @@ items:
     attribute:
     - minibatch = 'minibatch'
     - sample = 'sample'
-    content: UnitType(value, names=None, *, module=None, qualname=None, type=None,
-      start=1)
   type: class
   uid: cntk.learners.UnitType
 - class: cntk.learners.UnitType

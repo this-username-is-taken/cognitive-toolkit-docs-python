@@ -12,10 +12,10 @@ items:
   name: metrics
   source:
     id: metrics
-    path: /bindings/python\cntk\metrics\__init__.py
+    path: bindings/python\cntk\metrics\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\metrics\__init__.py
+      path: bindings/python\cntk\metrics\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   type: module
@@ -60,10 +60,10 @@ items:
   name: classification_error
   source:
     id: classification_error
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 59
   summary: 'This operation computes the classification error. It finds the index of
@@ -134,10 +134,10 @@ items:
   name: edit_distance_error
   source:
     id: edit_distance_error
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 98
   summary: 'Edit distance error evaluation node with the option of specifying penalty
@@ -261,10 +261,10 @@ items:
   name: ndcg_at_1
   source:
     id: ndcg_at_1
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 13
   summary: 'Groups samples according to `group`, sorts
