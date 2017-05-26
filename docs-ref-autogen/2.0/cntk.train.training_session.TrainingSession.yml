@@ -16,10 +16,10 @@ items:
   name: TrainingSession
   source:
     id: TrainingSession
-    path: /bindings/python\cntk\train\training_session.py
+    path: bindings/python\cntk\train\training_session.py
     remote:
       branch: master
-      path: /bindings/python\cntk\train\training_session.py
+      path: bindings/python\cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 132
   summary: 'The instance of the class should be created by using @cntk.train.training_session.training_session
@@ -117,10 +117,10 @@ items:
   name: on_cross_validation_end
   source:
     id: on_cross_validation_end
-    path: /bindings/python\cntk\train\training_session.py
+    path: bindings/python\cntk\train\training_session.py
     remote:
       branch: master
-      path: /bindings/python\cntk\train\training_session.py
+      path: bindings/python\cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 209
   summary: 'Callback that gets executed at the end of cross validation.
@@ -168,10 +168,10 @@ items:
   name: train
   source:
     id: train
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 194
   summary: 'Perform training on a specified device.

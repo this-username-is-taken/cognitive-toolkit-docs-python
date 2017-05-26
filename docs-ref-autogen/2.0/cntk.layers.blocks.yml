@@ -16,10 +16,10 @@ items:
   name: blocks
   source:
     id: blocks
-    path: /bindings/python\cntk\layers\blocks.py
+    path: bindings/python\cntk\layers\blocks.py
     remote:
       branch: master
-      path: /bindings/python\cntk\layers\blocks.py
+      path: bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   summary: 'Basic building blocks that are semantically not layers (not used in a
@@ -37,10 +37,10 @@ items:
   name: BlockFunction
   source:
     id: BlockFunction
-    path: /bindings/python\cntk\layers\blocks.py
+    path: bindings/python\cntk\layers\blocks.py
     remote:
       branch: master
-      path: /bindings/python\cntk\layers\blocks.py
+      path: bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 68
   summary: 'Decorator for defining a @Function as a BlockFunction. Same as @Function,
@@ -71,10 +71,10 @@ items:
   name: ForwardDeclaration
   source:
     id: ForwardDeclaration
-    path: /bindings/python\cntk\layers\blocks.py
+    path: bindings/python\cntk\layers\blocks.py
     remote:
       branch: master
-      path: /bindings/python\cntk\layers\blocks.py
+      path: bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 87
   summary: 'Helper for recurrent network declarations.
@@ -119,10 +119,10 @@ items:
   name: GRU
   source:
     id: GRU
-    path: /bindings/python\cntk\layers\blocks.py
+    path: bindings/python\cntk\layers\blocks.py
     remote:
       branch: master
-      path: /bindings/python\cntk\layers\blocks.py
+      path: bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 447
   summary: 'Layer factory function to create a GRU block for use inside a recurrence.
@@ -152,7 +152,7 @@ items:
       id: cell_shape
       type:
       - tuple, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECA9EB8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA177AF98>
       description: 'function to apply at the end, e.g. *relu*
 
         '
@@ -163,7 +163,7 @@ items:
         , defaults to @cntk.ops.tanh
 
         '
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECA9E80>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA177AF60>
       description: 'initial value of weights *W*
 
         '
@@ -172,7 +172,7 @@ items:
       - 'scalar or NumPy array or @cntk.initializer
 
         , defaults to glorot_uniform'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECA9E48>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA177AF28>
       description: 'initial value of weights *b*
 
         '
@@ -181,7 +181,7 @@ items:
       - 'scalar or NumPy array or @cntk.initializer
 
         , defaults to 0'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECA9DD8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA177AEB8>
       description: 'if *True* then add a @cntk.layers.blocks.Stabilizer
 
         to all state-related projections (but not the data input)
@@ -226,10 +226,10 @@ items:
   name: LSTM
   source:
     id: LSTM
-    path: /bindings/python\cntk\layers\blocks.py
+    path: bindings/python\cntk\layers\blocks.py
     remote:
       branch: master
-      path: /bindings/python\cntk\layers\blocks.py
+      path: bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 360
   summary: 'Layer factory function to create an LSTM block for use inside a recurrence.
@@ -259,7 +259,7 @@ items:
       id: cell_shape
       type:
       - tuple, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECA9C88>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA177AD68>
       description: 'function to apply at the end, e.g. *relu*
 
         '
@@ -270,12 +270,12 @@ items:
         , defaults to @cntk.ops.tanh
 
         '
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECA9BE0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA177ACC0>
       description: ''
       id: use_peepholes
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECA9C18>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA177AC88>
       description: 'initial value of weights *W*
 
         '
@@ -284,7 +284,7 @@ items:
       - 'scalar or NumPy array or @cntk.initializer
 
         , defaults to glorot_uniform'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECA9C50>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA177AB00>
       description: 'initial value of weights *b*
 
         '
@@ -293,7 +293,7 @@ items:
       - 'scalar or NumPy array or @cntk.initializer
 
         , defaults to 0'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECA9B70>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA177AD30>
       description: 'if *True* then add a @cntk.layers.blocks.Stabilizer
 
         to all state-related projections (but not the data input)
@@ -338,10 +338,10 @@ items:
   name: RNNUnit
   source:
     id: RNNUnit
-    path: /bindings/python\cntk\layers\blocks.py
+    path: bindings/python\cntk\layers\blocks.py
     remote:
       branch: master
-      path: /bindings/python\cntk\layers\blocks.py
+      path: bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 405
   summary: 'Layer factory function to create a plain RNN block for use inside a recurrence.
@@ -371,7 +371,7 @@ items:
       id: cell_shape
       type:
       - tuple, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECA9DA0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA177AE80>
       description: 'function to apply at the end, e.g. *relu*
 
         '
@@ -380,7 +380,7 @@ items:
       - '@cntk.ops.functions.Function
 
         , defaults to signmoid'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECA9D68>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA177AE48>
       description: 'initial value of weights *W*
 
         '
@@ -389,7 +389,7 @@ items:
       - 'scalar or NumPy array or @cntk.initializer
 
         , defaults to glorot_uniform'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECA9D30>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA177AE10>
       description: 'initial value of weights *b*
 
         '
@@ -398,7 +398,7 @@ items:
       - 'scalar or NumPy array or @cntk.initializer
 
         , defaults to 0'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECA9CC0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA177ADA0>
       description: 'if *True* then add a @cntk.layers.blocks.Stabilizer
 
         to all state-related projections (but not the data input)
@@ -459,10 +459,10 @@ items:
   name: Stabilizer
   source:
     id: Stabilizer
-    path: /bindings/python\cntk\layers\blocks.py
+    path: bindings/python\cntk\layers\blocks.py
     remote:
       branch: master
-      path: /bindings/python\cntk\layers\blocks.py
+      path: bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 141
   summary: "Layer factory function to create a [Droppo self-stabilizer](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/11/SelfLR.pdf).\n\
@@ -482,7 +482,7 @@ items:
   syntax:
     content: Stabilizer(steepness=4, enable_self_stabilization=True, name='')
     parameters:
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528E78D208>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA177AC18>
       description: ''
       id: steepness
       type:
@@ -516,10 +516,10 @@ items:
   name: UntestedBranchError
   source:
     id: UntestedBranchError
-    path: /bindings/python\cntk\layers\blocks.py
+    path: bindings/python\cntk\layers\blocks.py
     remote:
       branch: master
-      path: /bindings/python\cntk\layers\blocks.py
+      path: bindings/python\cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 28
   syntax:

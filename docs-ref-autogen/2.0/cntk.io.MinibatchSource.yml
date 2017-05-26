@@ -22,10 +22,10 @@ items:
   name: MinibatchSource
   source:
     id: MinibatchSource
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 111
   summary: '
@@ -72,7 +72,7 @@ items:
 
         **Important:**
 
-        Click >>:cntkwiki:`here <BrainScript-epochSize-and-Python-epoch_size-in-CNTK>`<<
+        Click [here](https://github.com/Microsoft/CNTK/wiki/BrainScript-epochSize-and-Python-epoch_size-in-CNTK)
 
         for a description of input and label samples.
 
@@ -236,10 +236,10 @@ items:
   name: get_checkpoint_state
   source:
     id: get_checkpoint_state
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 295
   summary: 'Gets the checkpoint state of the MinibatchSource.
@@ -287,10 +287,10 @@ items:
   name: next_minibatch
   source:
     id: next_minibatch
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 241
   summary: 'Reads a minibatch that contains data for all input streams.  The
@@ -316,7 +316,7 @@ items:
 
         **Important:**
 
-        Click >>:cntkwiki:`here <BrainScript-minibatchSize-and-Python-minibatch_size_in_samples-in-CNTK>`<<
+        Click [here](https://github.com/Microsoft/CNTK/wiki/BrainScript-minibatchSize-and-Python-minibatch_size_in_samples-in-CNTK)
         for a full description of this parameter.
 
         '
@@ -372,10 +372,10 @@ items:
   name: restore_from_checkpoint
   source:
     id: restore_from_checkpoint
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 306
   summary: 'Restores the MinibatchSource state from the specified checkpoint.
@@ -403,10 +403,10 @@ items:
   name: stream_info
   source:
     id: stream_info
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 215
   summary: 'Gets the description of the stream with given name.
@@ -442,10 +442,10 @@ items:
   name: stream_infos
   source:
     id: stream_infos
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 192
   summary: 'Describes the streams this minibatch source produces.

@@ -14,10 +14,10 @@ items:
   name: default_options
   source:
     id: default_options
-    path: /bindings/python\cntk\default_options.py
+    path: bindings/python\cntk\default_options.py
     remote:
       branch: master
-      path: /bindings/python\cntk\default_options.py
+      path: bindings/python\cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   summary: 'default_options: ``with default_options():`` and ``with default_options_for():``
@@ -33,10 +33,10 @@ items:
   name: default_options
   source:
     id: default_options
-    path: /bindings/python\cntk\default_options.py
+    path: bindings/python\cntk\default_options.py
     remote:
       branch: master
-      path: /bindings/python\cntk\default_options.py
+      path: bindings/python\cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 33
   syntax:
@@ -50,10 +50,10 @@ items:
   name: default_options_for
   source:
     id: default_options_for
-    path: /bindings/python\cntk\default_options.py
+    path: bindings/python\cntk\default_options.py
     remote:
       branch: master
-      path: /bindings/python\cntk\default_options.py
+      path: bindings/python\cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 41
   syntax:
@@ -69,10 +69,10 @@ items:
   name: get_default_override
   source:
     id: get_default_override
-    path: /bindings/python\cntk\default_options.py
+    path: bindings/python\cntk\default_options.py
     remote:
       branch: master
-      path: /bindings/python\cntk\default_options.py
+      path: bindings/python\cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 59
   summary: 'Looks up an option default override.
@@ -84,8 +84,8 @@ items:
     content: get_default_override(function_or_class, **kwargs)
     parameters:
     - description: "the function that calls this.\nFor example:\n\n<!-- literal_block\
-        \ {\"classes\": [], \"dupnames\": [], \"names\": [], \"backrefs\": [], \"\
-        ids\": [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   def Convolution(args,\
+        \ {\"ids\": [], \"names\": [], \"xml:space\": \"preserve\", \"dupnames\":\
+        \ [], \"classes\": [], \"backrefs\": []} -->\n\n````\n\n   def Convolution(args,\
         \ init=default_override_or(glorot_uniform()), activation=default_override_or(identity),\
         \ pad=default_override_or(False)):\n   init = _get_default_override(Convolution,\
         \ init=init) # pass default under the same name\n   ````\n"
@@ -99,10 +99,10 @@ items:
   name: is_default_override
   source:
     id: is_default_override
-    path: /bindings/python\cntk\default_options.py
+    path: bindings/python\cntk\default_options.py
     remote:
       branch: master
-      path: /bindings/python\cntk\default_options.py
+      path: bindings/python\cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 56
   syntax:

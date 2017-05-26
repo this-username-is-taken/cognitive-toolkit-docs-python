@@ -21,10 +21,10 @@ items:
   name: UserMinibatchSource
   source:
     id: UserMinibatchSource
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 366
   summary: 'Base class of all user minibatch sources.
@@ -53,10 +53,10 @@ items:
   name: get_checkpoint_state
   source:
     id: get_checkpoint_state
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 432
   summary: 'Returns a dictionary describing the current state of the minibatch
@@ -82,10 +82,10 @@ items:
   name: next_minibatch
   source:
     id: next_minibatch
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 398
   summary: 'Function to be implemented by the user.
@@ -127,10 +127,10 @@ items:
   name: restore_from_checkpoint
   source:
     id: restore_from_checkpoint
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 447
   summary: 'Sets the state of the checkpoint.
@@ -156,10 +156,10 @@ items:
   name: stream_info
   source:
     id: stream_info
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 390
   summary: 'Gets the description of the stream with given name.
@@ -184,10 +184,10 @@ items:
   name: stream_infos
   source:
     id: stream_infos
-    path: /bindings/python\cntk\io\__init__.py
+    path: bindings/python\cntk\io\__init__.py
     remote:
       branch: master
-      path: /bindings/python\cntk\io\__init__.py
+      path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 376
   summary: 'Function to be implemented by the user.

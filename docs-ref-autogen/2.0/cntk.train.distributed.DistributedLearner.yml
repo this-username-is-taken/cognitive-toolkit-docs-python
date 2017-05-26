@@ -18,10 +18,10 @@ items:
   name: DistributedLearner
   source:
     id: DistributedLearner
-    path: /bindings/python\cntk\train\distributed.py
+    path: bindings/python\cntk\train\distributed.py
     remote:
       branch: master
-      path: /bindings/python\cntk\train\distributed.py
+      path: bindings/python\cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 100
   summary: 'A distributed learner that handles data like gradients/momentums across
@@ -45,10 +45,10 @@ items:
   name: communicator
   source:
     id: communicator
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 105
   summary: 'Returns the distributed communicator that talks to other MPI workers

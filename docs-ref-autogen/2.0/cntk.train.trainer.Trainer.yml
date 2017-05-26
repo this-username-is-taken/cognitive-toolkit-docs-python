@@ -30,10 +30,10 @@ items:
   name: Trainer
   source:
     id: Trainer
-    path: /bindings/python\cntk\train\trainer.py
+    path: bindings/python\cntk\train\trainer.py
     remote:
       branch: master
-      path: /bindings/python\cntk\train\trainer.py
+      path: bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 22
   summary: 'Class for training the model parameters of a models'' specified loss function,
@@ -279,10 +279,10 @@ items:
   name: restore_from_checkpoint
   source:
     id: restore_from_checkpoint
-    path: /bindings/python\cntk\train\trainer.py
+    path: bindings/python\cntk\train\trainer.py
     remote:
       branch: master
-      path: /bindings/python\cntk\train\trainer.py
+      path: bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 239
   summary: 'Restores a checkpoint of the model and Trainer state from the
@@ -310,10 +310,10 @@ items:
   name: save_checkpoint
   source:
     id: save_checkpoint
-    path: /bindings/python\cntk\train\trainer.py
+    path: bindings/python\cntk\train\trainer.py
     remote:
       branch: master
-      path: /bindings/python\cntk\train\trainer.py
+      path: bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 225
   summary: 'Saves a checkpoint of the model and other Trainer state at the
@@ -346,10 +346,10 @@ items:
   name: summarize_test_progress
   source:
     id: summarize_test_progress
-    path: /bindings/python\cntk\train\trainer.py
+    path: bindings/python\cntk\train\trainer.py
     remote:
       branch: master
-      path: /bindings/python\cntk\train\trainer.py
+      path: bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 317
   summary: 'Updates the progress writers with the summary of test progress since start
@@ -372,10 +372,10 @@ items:
   name: summarize_training_progress
   source:
     id: summarize_training_progress
-    path: /bindings/python\cntk\train\trainer.py
+    path: bindings/python\cntk\train\trainer.py
     remote:
       branch: master
-      path: /bindings/python\cntk\train\trainer.py
+      path: bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 310
   summary: 'Updates the progress writers with the summary of training progress since
@@ -398,10 +398,10 @@ items:
   name: test_minibatch
   source:
     id: test_minibatch
-    path: /bindings/python\cntk\train\trainer.py
+    path: bindings/python\cntk\train\trainer.py
     remote:
       branch: master
-      path: /bindings/python\cntk\train\trainer.py
+      path: bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 177
   summary: "Test the model on the specified batch of samples using the evaluation\n\
@@ -453,10 +453,10 @@ items:
   name: train_minibatch
   source:
     id: train_minibatch
-    path: /bindings/python\cntk\train\trainer.py
+    path: bindings/python\cntk\train\trainer.py
     remote:
       branch: master
-      path: /bindings/python\cntk\train\trainer.py
+      path: bindings/python\cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 96
   summary: "Optimize model parameters using the specified 'arguments' minibatch of\

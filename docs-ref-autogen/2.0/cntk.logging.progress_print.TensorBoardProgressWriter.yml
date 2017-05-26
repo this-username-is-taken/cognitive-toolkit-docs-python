@@ -21,10 +21,10 @@ items:
   name: TensorBoardProgressWriter
   source:
     id: TensorBoardProgressWriter
-    path: /bindings/python\cntk\logging\progress_print.py
+    path: bindings/python\cntk\logging\progress_print.py
     remote:
       branch: master
-      path: /bindings/python\cntk\logging\progress_print.py
+      path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 425
   summary: 'Allows writing various statistics (e.g. loss and metric) to TensorBoard
@@ -93,10 +93,10 @@ items:
   name: close
   source:
     id: close
-    path: /bindings/python\cntk\logging\progress_print.py
+    path: bindings/python\cntk\logging\progress_print.py
     remote:
       branch: master
-      path: /bindings/python\cntk\logging\progress_print.py
+      path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 477
   summary: 'Make sure that any outstanding records are immediately persisted, then
@@ -119,10 +119,10 @@ items:
   name: flush
   source:
     id: flush
-    path: /bindings/python\cntk\logging\progress_print.py
+    path: bindings/python\cntk\logging\progress_print.py
     remote:
       branch: master
-      path: /bindings/python\cntk\logging\progress_print.py
+      path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 469
   summary: 'Make sure that any outstanding records are immediately persisted.
@@ -142,10 +142,10 @@ items:
   name: on_write_test_summary
   source:
     id: on_write_test_summary
-    path: /bindings/python\cntk\logging\progress_print.py
+    path: bindings/python\cntk\logging\progress_print.py
     remote:
       branch: master
-      path: /bindings/python\cntk\logging\progress_print.py
+      path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 507
   syntax:
@@ -168,10 +168,10 @@ items:
   name: on_write_test_update
   source:
     id: on_write_test_update
-    path: /bindings/python\cntk\logging\progress_print.py
+    path: bindings/python\cntk\logging\progress_print.py
     remote:
       branch: master
-      path: /bindings/python\cntk\logging\progress_print.py
+      path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 494
   syntax:
@@ -191,10 +191,10 @@ items:
   name: on_write_training_summary
   source:
     id: on_write_training_summary
-    path: /bindings/python\cntk\logging\progress_print.py
+    path: bindings/python\cntk\logging\progress_print.py
     remote:
       branch: master
-      path: /bindings/python\cntk\logging\progress_print.py
+      path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 501
   syntax:
@@ -218,10 +218,10 @@ items:
   name: on_write_training_update
   source:
     id: on_write_training_update
-    path: /bindings/python\cntk\logging\progress_print.py
+    path: bindings/python\cntk\logging\progress_print.py
     remote:
       branch: master
-      path: /bindings/python\cntk\logging\progress_print.py
+      path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 489
   syntax:
@@ -242,10 +242,10 @@ items:
   name: write_value
   source:
     id: write_value
-    path: /bindings/python\cntk\logging\progress_print.py
+    path: bindings/python\cntk\logging\progress_print.py
     remote:
       branch: master
-      path: /bindings/python\cntk\logging\progress_print.py
+      path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 454
   summary: 'Record value of a scalar variable at the given time step.

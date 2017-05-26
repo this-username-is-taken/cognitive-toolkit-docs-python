@@ -71,10 +71,10 @@ items:
   name: Function
   source:
     id: Function
-    path: /bindings/python\cntk\ops\functions.py
+    path: bindings/python\cntk\ops\functions.py
     remote:
       branch: master
-      path: /bindings/python\cntk\ops\functions.py
+      path: bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 48
   summary: "Base class of all primitive tensor operators.\n\nIf it has only one output,\
@@ -87,12 +87,12 @@ items:
     \ types\nof the arguments. In this case, the @Function decorator creates a CNTK\
     \ Function\nwhose arguments are input variables.\n\nIf you use Python 3, Functions\
     \ with types are declared using Python annotation syntax, e.g.:\n\n<!-- literal_block\
-    \ {\"classes\": [], \"dupnames\": [], \"names\": [], \"backrefs\": [], \"ids\"\
-    : [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   @Function\n   def f(x:Tensor[13]):\n\
+    \ {\"ids\": [], \"names\": [], \"xml:space\": \"preserve\", \"dupnames\": [],\
+    \ \"classes\": [], \"backrefs\": []} -->\n\n````\n\n   @Function\n   def f(x:Tensor[13]):\n\
     \       return x * x\n   ````\n\nIf you are working with Python 2.7, use CNTK's\
-    \ @cntk.layers.typing decorator instead:\n\n<!-- literal_block {\"classes\": [],\
-    \ \"dupnames\": [], \"names\": [], \"backrefs\": [], \"ids\": [], \"xml:space\"\
-    : \"preserve\"} -->\n\n````\n\n   >>> from cntk.layers.typing import *\n   >>>\
+    \ @cntk.layers.typing decorator instead:\n\n<!-- literal_block {\"ids\": [], \"\
+    names\": [], \"xml:space\": \"preserve\", \"dupnames\": [], \"classes\": [], \"\
+    backrefs\": []} -->\n\n````\n\n   >>> from cntk.layers.typing import *\n   >>>\
     \ @Function\n   ... @Signature(Tensor[13])\n   ... def f(x):\n   ...     return\
     \ x * x\n   >>> debugging.dump_signature(f)\n   Function(x: Tensor[13]) -> Tensor[13]\n\
     \   ````\n\n`make_block=True` is an internal parameter used to implement @cntk.layers.blocks.\n\
@@ -148,10 +148,10 @@ items:
   name: argument_map
   source:
     id: argument_map
-    path: /bindings/python\cntk\ops\functions.py
+    path: bindings/python\cntk\ops\functions.py
     remote:
       branch: master
-      path: /bindings/python\cntk\ops\functions.py
+      path: bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 247
   summary: 'Determines the {placeholder: variable} map for use with various call operations
@@ -252,10 +252,10 @@ items:
   name: backward
   source:
     id: backward
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 767
   summary: "Backpropagates supplied `root_gradients` for one or more of the output\n\
@@ -329,10 +329,10 @@ items:
   name: clone
   source:
     id: clone
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 527
   summary: 'Clones the function. The parameters of the Function are either cloned,
@@ -398,10 +398,10 @@ items:
   name: declare_args
   source:
     id: declare_args
-    path: /bindings/python\cntk\ops\functions.py
+    path: bindings/python\cntk\ops\functions.py
     remote:
       branch: master
-      path: /bindings/python\cntk\ops\functions.py
+      path: bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 326
   summary: 'Back-compat wrapper for update_signature() (beta12 and before).
@@ -421,10 +421,10 @@ items:
   name: eval
   source:
     id: eval
-    path: /bindings/python\cntk\ops\functions.py
+    path: bindings/python\cntk\ops\functions.py
     remote:
       branch: master
-      path: /bindings/python\cntk\ops\functions.py
+      path: bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 567
   summary: "Evaluate the Function's outputs using the specified `arguments` as input.\n\
@@ -482,10 +482,10 @@ items:
   seealsoContent: "See also: @find_by_name \n"
   source:
     id: find_all_with_name
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1066
   summary: 'Returns a list of primitive function with `name` in the graph
@@ -564,10 +564,10 @@ items:
   seealsoContent: "See also: @cntk.ops.functions.Function.find_all_with_name \n"
   source:
     id: find_by_name
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1098
   summary: 'Returns a primitive function with `name` in the graph starting from
@@ -629,10 +629,10 @@ items:
   name: forward
   source:
     id: forward
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 629
   summary: 'Computes the values of speficied variables in `outputs`, using values
@@ -740,10 +740,10 @@ items:
   name: grad
   source:
     id: grad
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 827
   summary: 'Computes the gradient of this Function at location `at` with respect to
@@ -947,10 +947,10 @@ items:
   name: load
   source:
     id: load
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1189
   summary: 'Load the `model`, that has been saved using @cntk.ops.functions.Function.save.
@@ -1128,10 +1128,10 @@ items:
   name: register_udf_deserialize_callback
   source:
     id: register_udf_deserialize_callback
-    path: /bindings/python\cntk\ops\functions.py
+    path: bindings/python\cntk\ops\functions.py
     remote:
       branch: master
-      path: /bindings/python\cntk\ops\functions.py
+      path: bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1163
   summary: 'Register a callback function to be invoked when deserializing a user-
@@ -1185,10 +1185,10 @@ items:
   name: replace_placeholder
   source:
     id: replace_placeholder
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1049
   summary: 'In-place replace the only placeholder in the function graph with the
@@ -1230,10 +1230,10 @@ items:
   name: replace_placeholders
   source:
     id: replace_placeholders
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1032
   summary: 'In-place replace specified placeholders in the Function graph with the
@@ -1266,10 +1266,10 @@ items:
   name: restore
   source:
     id: restore
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1150
   summary: 'Restore the models parameters (in-place) from a saved model file
@@ -1322,10 +1322,10 @@ items:
   name: save
   source:
     id: save
-    path: /bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python\cntk\internal\swig_helper.py
     remote:
       branch: master
-      path: /bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1136
   summary: 'Save this function graph into a model file using protobuf-based
@@ -1357,10 +1357,10 @@ items:
   name: set_attribute
   source:
     id: set_attribute
-    path: /bindings/python\cntk\ops\functions.py
+    path: bindings/python\cntk\ops\functions.py
     remote:
       branch: master
-      path: /bindings/python\cntk\ops\functions.py
+      path: bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 505
   summary: 'Allows to change a function attribute.
@@ -1460,10 +1460,10 @@ items:
   name: update_signature
   source:
     id: update_signature
-    path: /bindings/python\cntk\ops\functions.py
+    path: bindings/python\cntk\ops\functions.py
     remote:
       branch: master
-      path: /bindings/python\cntk\ops\functions.py
+      path: bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 299
   summary: 'Defines input shapes, in-place

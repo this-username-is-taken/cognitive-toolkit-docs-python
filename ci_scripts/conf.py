@@ -25,6 +25,7 @@ htmlhelp_basename = 'pyexampledoc'
 
 extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.napoleon',
+              'sphinx.ext.extlinks',
               'extension']
 
 napoleon_use_admonition_for_examples = True 
@@ -34,4 +35,14 @@ exclude_patterns = [
   '*.tests.rst'
 ]
 
-source_prefix = '/bindings/python'
+source_prefix = 'bindings/python'
+
+
+# = 'https://github.com/Microsoft/CNTK/blob/'
+
+# sphinx.ext.extlinks options
+extlinks = {
+    'cntk': (source_prefix + '/%s', ''),
+    'cntktut': (source_prefix + '/Tutorials/%s.ipynb', ''),
+    'cntkwiki': ('https://github.com/Microsoft/CNTK/wiki/%s', 'CNTK Wiki - ')
+}

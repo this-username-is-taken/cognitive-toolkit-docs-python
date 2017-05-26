@@ -15,10 +15,10 @@ items:
   name: sequence
   source:
     id: sequence
-    path: /bindings/python\cntk\layers\sequence.py
+    path: bindings/python\cntk\layers\sequence.py
     remote:
       branch: master
-      path: /bindings/python\cntk\layers\sequence.py
+      path: bindings/python\cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   summary: 'First / higher-order functions over sequences, like :func:`Recurrence`.
@@ -45,10 +45,10 @@ items:
   name: Delay
   source:
     id: Delay
-    path: /bindings/python\cntk\layers\sequence.py
+    path: bindings/python\cntk\layers\sequence.py
     remote:
       branch: master
-      path: /bindings/python\cntk\layers\sequence.py
+      path: bindings/python\cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 17
   summary: 'Layer factory function to create a layer that delays input the input by
@@ -61,7 +61,7 @@ items:
   syntax:
     content: Delay(T=1, initial_state=0, name='')
     parameters:
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECB1860>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA1780940>
       description: 'the number of time steps to look into the past, where negative
         values mean to look into the future, and 0 means a no-op (default 1).
 
@@ -112,10 +112,10 @@ items:
   name: Fold
   source:
     id: Fold
-    path: /bindings/python\cntk\layers\sequence.py
+    path: bindings/python\cntk\layers\sequence.py
     remote:
       branch: master
-      path: /bindings/python\cntk\layers\sequence.py
+      path: bindings/python\cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 396
   summary: 'Layer factory function to create a function that runs a step function
@@ -187,7 +187,7 @@ items:
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECB19B0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA1780A90>
       description: 'if `True` and the step function has more than one
 
         state variable, then the layer returns the final value of a all state variables
@@ -200,7 +200,7 @@ items:
       id: return_full_state
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECB1978>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA1780A58>
       description: 'the name of the Function instance in the network
 
         '
@@ -237,10 +237,10 @@ items:
   name: PastValueWindow
   source:
     id: PastValueWindow
-    path: /bindings/python\cntk\layers\sequence.py
+    path: bindings/python\cntk\layers\sequence.py
     remote:
       branch: master
-      path: /bindings/python\cntk\layers\sequence.py
+      path: bindings/python\cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 72
   summary: 'Layer factory function to create a function that returns a static, maskable
@@ -267,7 +267,7 @@ items:
   syntax:
     content: PastValueWindow(window_size, axis, go_backwards=False, name='')
     parameters:
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECB1898>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA1780978>
       id: window_size
     - description: 'maximum number of items in sequences. The *axis* will have this
         dimension.
@@ -328,10 +328,10 @@ items:
   name: Recurrence
   source:
     id: Recurrence
-    path: /bindings/python\cntk\layers\sequence.py
+    path: bindings/python\cntk\layers\sequence.py
     remote:
       branch: master
-      path: /bindings/python\cntk\layers\sequence.py
+      path: bindings/python\cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 279
   summary: 'Layer factory function to create a function that runs a step function
@@ -428,7 +428,7 @@ items:
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECB1940>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA1780A20>
       description: 'if `True` and the step function has more than one
 
         state variable, then the layer returns a all state variables (a tuple of sequences);
@@ -440,7 +440,7 @@ items:
       id: return_full_state
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECB1908>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA17809E8>
       description: 'the name of the Function instance in the network
 
         '
@@ -511,10 +511,10 @@ items:
   name: RecurrenceFrom
   source:
     id: RecurrenceFrom
-    path: /bindings/python\cntk\layers\sequence.py
+    path: bindings/python\cntk\layers\sequence.py
     remote:
       branch: master
-      path: /bindings/python\cntk\layers\sequence.py
+      path: bindings/python\cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 166
   summary: 'Layer factory function to create a function that runs a cell function
@@ -582,7 +582,7 @@ items:
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECB18D0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA17809B0>
       description: 'if `True` and the step function has more than one
 
         state variable, then the layer returns a all state variables (a tuple of sequences);
@@ -619,10 +619,10 @@ items:
   name: UnfoldFrom
   source:
     id: UnfoldFrom
-    path: /bindings/python\cntk\layers\sequence.py
+    path: bindings/python\cntk\layers\sequence.py
     remote:
       branch: master
-      path: /bindings/python\cntk\layers\sequence.py
+      path: bindings/python\cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 481
   summary: 'Layer factory function to create a function that implements a recurrent

@@ -14,10 +14,10 @@ items:
   name: core
   source:
     id: core
-    path: /bindings/python\cntk\core.py
+    path: bindings/python\cntk\core.py
     remote:
       branch: master
-      path: /bindings/python\cntk\core.py
+      path: bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   type: module
@@ -29,10 +29,10 @@ items:
   name: asarray
   source:
     id: asarray
-    path: /bindings/python\cntk\core.py
+    path: bindings/python\cntk\core.py
     remote:
       branch: master
-      path: /bindings/python\cntk\core.py
+      path: bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 625
   summary: 'Converts a Value object to a sequence of NumPy arrays (if dense) or CSR
@@ -54,10 +54,10 @@ items:
   name: asvalue
   source:
     id: asvalue
-    path: /bindings/python\cntk\core.py
+    path: bindings/python\cntk\core.py
     remote:
       branch: master
-      path: /bindings/python\cntk\core.py
+      path: bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 641
   summary: 'Converts a sequence of NumPy arrays or CSR arrays to a Value object.
@@ -77,10 +77,10 @@ items:
   name: user_function
   source:
     id: user_function
-    path: /bindings/python\cntk\core.py
+    path: bindings/python\cntk\core.py
     remote:
       branch: master
-      path: /bindings/python\cntk\core.py
+      path: bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 616
   summary: 'Wraps the passed Function to create a composite representing the
