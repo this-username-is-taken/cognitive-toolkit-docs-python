@@ -413,7 +413,9 @@ future.
 
 ### Example:
 
+```python
     c = Convolution((3,3), 64, pad=True, strides=(1,1), bias=False)(x)
+```
 
 ## MaxPooling(), AveragePooling()
 
@@ -605,8 +607,10 @@ data from disk. Here is an example of reading sparse text input with the
 If, instead, the embedding vectors already exist and should be loaded
 from a file, it would look like this:
 
+```python
     input = Input(87636, is_sparse=True)   # word sequence, as one-hot vector, sparse format
     embEn = Embedding(300, weights=np.load_txt('embedding-en.txt'))(w) # embedding from disk
+```
 
 where the file `'embedding-en.txt'` is the name of a file that would
 be expected to consist of 87,636 text rows, each of which consisting of
@@ -696,6 +700,7 @@ dimension compared to above), use this:
 Factory functions to create a stateless LSTM/GRU/RNN ``Function``, typically for
 use with `Recurrence()`.
 
+```python
     LSTM(shape, cell_shape=None, activation=default_override_or(tanh), use_peepholes=default_override_or(False),
          init=default_override_or(glorot_uniform()), init_bias=default_override_or(0),
          enable_self_stabilization=default_override_or(False),
@@ -708,6 +713,7 @@ use with `Recurrence()`.
             init=default_override_or(glorot_uniform()), init_bias=default_override_or(0),
             enable_self_stabilization=default_override_or(False),
             name='')
+```
 
 ### Parameters
 
@@ -769,7 +775,7 @@ overlapping word triples.
 Consider an input sequence "a b c b", which shall be encoded as a
 sequence of 3-dimensional one-hot vectors as follows:
 
-```python
+```
     1 0 0
     0 1 0
     0 0 1
@@ -779,7 +785,7 @@ sequence of 3-dimensional one-hot vectors as follows:
 Here, every row is a one-hot vector and corresponds to a word. Applying
 ``Delay(T=1)`` to this input will generate this sequence:
 
-```python
+```
     0 0 0
     1 0 0
     0 1 0
@@ -791,7 +797,7 @@ All tokens get delayed by one, and the first position gets filled in by
 (negative delay) will give access to the future values, and pad from the
 end with a zero:
 
-```python
+```
     0 1 0
     0 0 1
     0 1 0
@@ -808,11 +814,12 @@ This layer is a wrapper around the ``sequence.past_value()`` and
 The following shows how to stack three neighbor words into a trigram
 vector:
 
-
+```python
     x  = ...                   # input value, e.g. a N-dimensional one-hot vector
     xp = Delay()(x)            # previous value
     xn = Delay(T=-1)(x)        # next value (negative delay)
     tg = splice (xp, x, xn)    # concatenate all into a 3N-dimensional three-hot vector
+```
 
 ## BatchNormalization(), LayerNormalization(), Stabilizer()
 
