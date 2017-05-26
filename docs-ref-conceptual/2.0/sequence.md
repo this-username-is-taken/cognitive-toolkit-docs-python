@@ -3,7 +3,7 @@ title: Working with Sequences
 author: 
 ms.author: 
 ms.date: 05/31/2017
-ms.topic: concepts
+ms.topic: conceptual
 ms.service: cognitive-services
 ---
 
@@ -94,7 +94,7 @@ the query and the document. With rich enough training data it is possible to hav
 another level of nesting, namely a session, in which multiple related queries belong
 to.
 
-### Sequence classification
+## Sequence classification
 
 One of the most exciting areas in deep learning is the powerful idea of recurrent 
 neural networks (RNNs). RNNs are in some ways the Hidden Markov Models of the deep 
@@ -280,7 +280,7 @@ sequence classification that can scale with huge amounts of training data. Note 
 the LSTM by increasing the number of hidden dimensions. Further, one can get an even more complex network by stacking layers of LSTMs. Conceptually,
 stacking LSTM layers is similar to stacking layers in a feedforward net. Selecting a good architecture however is very task-specific.
 
-### Feeding Sequences with NumPy
+## Feeding Sequences with NumPy
 
 While CNTK has very efficient built-in readers that take care of many details for you
 (randomization, prefetching, reduced memory usage, etc.) sometimes your data is already
