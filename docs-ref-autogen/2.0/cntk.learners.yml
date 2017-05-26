@@ -85,12 +85,9 @@ items:
 
     '
   syntax:
-    content: adadelta(parameters, lr=<cntk.cntk_py.training_parameter_per_sample_schedule;
-      proxy of <Swig Object of type 'CNTK::TrainingParameterPerUnitSchedule< double,CNTK::TrainingParameterSchedule<
-      double >::UnitType::Sample > *' at 0x000001B3C36AE6F0> >, rho=0.95, epsilon=1e-08,
-      l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
-      gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
-      use_mean_gradient=False)
+    content: adadelta(parameters, lr, rho, epsilon, l1_regularization_weight=0, l2_regularization_weight=0,
+      gaussian_noise_injection_std_dev=0, gradient_clipping_threshold_per_sample=np.inf,
+      gradient_clipping_with_truncation=True)
     parameters:
     - description: 'list of network parameters to tune.
 
@@ -105,7 +102,7 @@ items:
         '
       id: lr
       type:
-      - 'output of `learning_rate_schedule()`
+      - 'output of @learning_rate_schedule
 
         '
     - description: 'exponential smooth factor for each minibatch.
@@ -162,7 +159,7 @@ items:
       - bool, default True
     - description: 'use averaged gradient as input to learner.
 
-        Defaults to the value returned by `default_use_mean_gradient_value()`.
+        Defaults to the value returned by @default_use_mean_gradient_value.
 
         '
       id: use_mean_gradient
@@ -200,9 +197,9 @@ items:
 
     '
   syntax:
-    content: adagrad(parameters, lr, need_ave_multiplier=True, l1_regularization_weight=0.0,
-      l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0, gradient_clipping_threshold_per_sample=inf,
-      gradient_clipping_with_truncation=True, use_mean_gradient=False)
+    content: adagrad(parameters, lr, need_ave_multiplier=True, l1_regularization_weight=0,
+      l2_regularization_weight=0, gaussian_noise_injection_std_dev=0, gradient_clipping_threshold_per_sample=np.inf,
+      gradient_clipping_with_truncation=True)
     parameters:
     - description: 'list of network parameters to tune.
 
@@ -217,7 +214,7 @@ items:
         '
       id: lr
       type:
-      - 'output of `learning_rate_schedule()`
+      - 'output of @learning_rate_schedule
 
         '
     - description: ''
@@ -266,7 +263,7 @@ items:
       - bool, default True
     - description: 'use averaged gradient as input to learner.
 
-        Defaults to the value returned by `default_use_mean_gradient_value()`.
+        Defaults to the value returned by @default_use_mean_gradient_value.
 
         '
       id: use_mean_gradient
@@ -305,11 +302,10 @@ items:
 
     '
   syntax:
-    content: adam(parameters, lr, momentum, unit_gain=True, variance_momentum=<cntk.cntk_py.momentum_as_time_constant_schedule;
-      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x000001B3C37855D0>
-      >, l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
-      gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
-      use_mean_gradient=False, epsilon=1e-08, adamax=False)
+    content: adam(parameters, lr, momentum, unit_gain=default_unit_gain_value(), variance_momentum=momentum_as_time_constant_schedule(720000),
+      l1_regularization_weight=0, l2_regularization_weight=0, gaussian_noise_injection_std_dev=0,
+      gradient_clipping_threshold_per_sample=np.inf, gradient_clipping_with_truncation=True,
+      epsilon=1e-8, adamax=False)
     parameters:
     - description: 'list of network parameters to tune.
 
@@ -324,7 +320,7 @@ items:
         '
       id: lr
       type:
-      - 'output of `learning_rate_schedule()`
+      - 'output of @learning_rate_schedule
 
         '
     - description: 'momentum schedule.
@@ -335,10 +331,10 @@ items:
         '
       id: momentum
       type:
-      - "output of `momentum_schedule()`\n or `momentum_as_time_constant_schedule()`\n"
+      - "output of @momentum_schedule\n or @momentum_as_time_constant_schedule\n"
     - description: 'when `True`, momentum is interpreted as a unit-gain filter. Defaults
 
-        to the value returned by `default_unit_gain_value()`.
+        to the value returned by @default_unit_gain_value.
 
         '
       id: unit_gain
@@ -349,7 +345,7 @@ items:
         '
       id: variance_momentum
       type:
-      - "output of `momentum_schedule()`\n or `momentum_as_time_constant_schedule()`\n"
+      - "output of @momentum_schedule\n or @momentum_as_time_constant_schedule\n"
     - description: 'the L1 regularization weight per sample,
 
         defaults to 0.0
@@ -392,7 +388,7 @@ items:
       - bool, default True
     - description: 'use averaged gradient as input to learner.
 
-        Defaults to the value returned by `default_use_mean_gradient_value()`.
+        Defaults to the value returned by @default_use_mean_gradient_value.
 
         '
       id: use_mean_gradient
@@ -480,11 +476,10 @@ items:
 
     '
   syntax:
-    content: fsadagrad(parameters, lr, momentum, unit_gain=True, variance_momentum=<cntk.cntk_py.momentum_as_time_constant_schedule;
-      proxy of <Swig Object of type 'CNTK::MomentumAsTimeConstantSchedule *' at 0x000001B3C3785570>
-      >, l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
-      gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
-      use_mean_gradient=False)
+    content: fsadagrad(parameters, lr, momentum, unit_gain=default_unit_gain_value(),
+      variance_momentum=momentum_as_time_constant_schedule(720000), l1_regularization_weight=0,
+      l2_regularization_weight=0, gaussian_noise_injection_std_dev=0, gradient_clipping_threshold_per_sample=np.inf,
+      gradient_clipping_with_truncation=True)
     parameters:
     - description: 'list of network parameters to tune.
 
@@ -499,7 +494,7 @@ items:
         '
       id: lr
       type:
-      - 'output of `learning_rate_schedule()`
+      - 'output of @learning_rate_schedule
 
         '
     - description: 'momentum schedule.
@@ -510,7 +505,7 @@ items:
         '
       id: momentum
       type:
-      - "output of `momentum_schedule()`\n or `momentum_as_time_constant_schedule()`\n"
+      - "output of @momentum_schedule\n or @momentum_as_time_constant_schedule\n"
     - description: 'when `True`, momentum is interpreted as a unit-gain filter. Defaults
 
         to the value returned by @cntk.learners.default_unit_gain_value.
@@ -524,7 +519,7 @@ items:
         '
       id: variance_momentum
       type:
-      - "output of `momentum_schedule()`\n or `momentum_as_time_constant_schedule()`\n"
+      - "output of @momentum_schedule\n or @momentum_as_time_constant_schedule\n"
     - description: 'the L1 regularization weight per sample,
 
         defaults to 0.0
@@ -588,7 +583,7 @@ items:
   - python
   module: cntk.learners
   name: learning_rate_schedule
-  seealsoContent: "See also: `training_parameter_schedule()` \n"
+  seealsoContent: "See also: @training_parameter_schedule \n"
   source:
     id: learning_rate_schedule
     path: /bindings/python\cntk\internal\swig_helper.py
@@ -599,7 +594,7 @@ items:
     startLine: 298
   summary: 'Create a learning rate schedule (using the same semantics as
 
-    `training_parameter_schedule()`).
+    @training_parameter_schedule).
 
     '
   syntax:
@@ -607,7 +602,7 @@ items:
     parameters:
     - description: 'see parameter `schedule` in
 
-        `training_parameter_schedule()`.
+        @training_parameter_schedule.
 
         '
       id: lr
@@ -615,7 +610,7 @@ items:
       - float or list
     - description: 'see parameter
 
-        `unit` in `training_parameter_schedule()`.
+        `unit` in @training_parameter_schedule.
 
         '
       id: unit
@@ -625,7 +620,7 @@ items:
         '
     - description: 'see parameter `epoch_size` in
 
-        `training_parameter_schedule()`.
+        @training_parameter_schedule.
 
         '
       id: epoch_size
@@ -675,7 +670,7 @@ items:
     startLine: 359
   summary: 'Create a momentum schedule in a minibatch-size agnostic way
 
-    (using the same semantics as `training_parameter_schedule()`
+    (using the same semantics as @training_parameter_schedule
 
     with *unit=UnitType.sample*).
 
@@ -691,7 +686,7 @@ items:
 
     If you want to specify the momentum per sample (or per minibatch),
 
-    use `momentum_schedule()`.
+    use @momentum_schedule.
 
     '
   syntax:
@@ -762,7 +757,7 @@ items:
     startLine: 321
   summary: 'Create a per-minibatch momentum schedule (using the same semantics as
 
-    `training_parameter_schedule()` with the *unit=UnitType.minibatch*).
+    @training_parameter_schedule with the *unit=UnitType.minibatch*).
 
 
     If you want to provide momentum values in a minibatch-size
@@ -795,9 +790,9 @@ items:
 
     '
   syntax:
-    content: momentum_sgd(parameters, lr, momentum, unit_gain=True, l1_regularization_weight=0.0,
-      l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0, gradient_clipping_threshold_per_sample=inf,
-      gradient_clipping_with_truncation=True, use_mean_gradient=False)
+    content: momentum_sgd(parameters, lr, momentum, unit_gain=default_unit_gain_value(),
+      l1_regularization_weight=0.0, l2_regularization_weight=0, gaussian_noise_injection_std_dev=0,
+      gradient_clipping_threshold_per_sample=np.inf, gradient_clipping_with_truncation=True)
     parameters:
     - description: 'list of network parameters to tune.
 
@@ -915,9 +910,9 @@ items:
 
     '
   syntax:
-    content: nesterov(parameters, lr, momentum, unit_gain=True, l1_regularization_weight=0.0,
-      l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0, gradient_clipping_threshold_per_sample=inf,
-      gradient_clipping_with_truncation=True, use_mean_gradient=False)
+    content: nesterov(parameters, lr, momentum, unit_gain=default_unit_gain_value(),
+      l1_regularization_weight=0, l2_regularization_weight=0, gaussian_noise_injection_std_dev=0,
+      gradient_clipping_threshold_per_sample=np.inf, gradient_clipping_with_truncation=True)
     parameters:
     - description: 'list of network parameters to tune.
 
@@ -1026,9 +1021,8 @@ items:
     '
   syntax:
     content: rmsprop(parameters, lr, gamma, inc, dec, max, min, need_ave_multiplier=True,
-      l1_regularization_weight=0.0, l2_regularization_weight=0.0, gaussian_noise_injection_std_dev=0.0,
-      gradient_clipping_threshold_per_sample=inf, gradient_clipping_with_truncation=True,
-      use_mean_gradient=False)
+      l1_regularization_weight=0, l2_regularization_weight=0, gaussian_noise_injection_std_dev=0,
+      gradient_clipping_threshold_per_sample=np.inf, gradient_clipping_with_truncation=True)
     parameters:
     - description: 'list of network parameters to tune.
 
@@ -1157,6 +1151,8 @@ items:
     '
   syntax:
     content: set_default_unit_gain_value(value)
+    parameters:
+    - id: value
   type: function
   uid: cntk.learners.set_default_unit_gain_value
 - fullName: cntk.learners.set_default_use_mean_gradient_value
@@ -1177,6 +1173,8 @@ items:
     '
   syntax:
     content: set_default_use_mean_gradient_value(value)
+    parameters:
+    - id: value
   type: function
   uid: cntk.learners.set_default_use_mean_gradient_value
 - fullName: cntk.learners.sgd
@@ -1200,9 +1198,9 @@ items:
 
     '
   syntax:
-    content: sgd(parameters, lr, l1_regularization_weight=0.0, l2_regularization_weight=0.0,
-      gaussian_noise_injection_std_dev=0.0, gradient_clipping_threshold_per_sample=inf,
-      gradient_clipping_with_truncation=True, use_mean_gradient=False)
+    content: sgd(parameters, lr, l1_regularization_weight=0, l2_regularization_weight=0,
+      gaussian_noise_injection_std_dev=0, gradient_clipping_threshold_per_sample=np.inf,
+      gradient_clipping_with_truncation=True)
     parameters:
     - description: 'list of network parameters to tune.
 

@@ -43,10 +43,21 @@ items:
     '
   syntax:
     content: AttentionModel(attention_dim, attention_span=None, attention_axis=None,
-      init=<cntk.default_options.default_override_or object at 0x000001B3C38A9AC8>,
-      go_backwards=<cntk.default_options.default_override_or object at 0x000001B3C38A9B00>,
-      enable_self_stabilization=<cntk.default_options.default_override_or object at
-      0x000001B3C38A9B38>, name='')
+      init=glorot_uniform(), go_backwards=False, enable_self_stabilization=True, name='')
+    parameters:
+    - id: attention_dim
+    - defaultValue: ''
+      id: attention_span
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECBF898>
+      id: attention_axis
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECBF860>
+      id: init
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000002528ECBF828>
+      id: go_backwards
+    - defaultValue: None
+      id: enable_self_stabilization
+    - defaultValue: None
+      id: name
   type: function
   uid: cntk.layers.models.attention.AttentionModel
 references:

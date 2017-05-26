@@ -87,11 +87,11 @@ items:
     \ types\nof the arguments. In this case, the @Function decorator creates a CNTK\
     \ Function\nwhose arguments are input variables.\n\nIf you use Python 3, Functions\
     \ with types are declared using Python annotation syntax, e.g.:\n\n<!-- literal_block\
-    \ {\"names\": [], \"dupnames\": [], \"backrefs\": [], \"ids\": [], \"classes\"\
+    \ {\"classes\": [], \"dupnames\": [], \"names\": [], \"backrefs\": [], \"ids\"\
     : [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   @Function\n   def f(x:Tensor[13]):\n\
     \       return x * x\n   ````\n\nIf you are working with Python 2.7, use CNTK's\
-    \ @cntk.layers.typing decorator instead:\n\n<!-- literal_block {\"names\": [],\
-    \ \"dupnames\": [], \"backrefs\": [], \"ids\": [], \"classes\": [], \"xml:space\"\
+    \ @cntk.layers.typing decorator instead:\n\n<!-- literal_block {\"classes\": [],\
+    \ \"dupnames\": [], \"names\": [], \"backrefs\": [], \"ids\": [], \"xml:space\"\
     : \"preserve\"} -->\n\n````\n\n   >>> from cntk.layers.typing import *\n   >>>\
     \ @Function\n   ... @Signature(Tensor[13])\n   ... def f(x):\n   ...     return\
     \ x * x\n   >>> debugging.dump_signature(f)\n   Function(x: Tensor[13]) -> Tensor[13]\n\
@@ -171,7 +171,9 @@ items:
 
     '
   syntax:
-    content: argument_map(self, *args, **kwargs)
+    content: argument_map(*args, **kwargs)
+    parameters:
+    - id: self
   type: method
   uid: cntk.ops.functions.Function.argument_map
 - class: cntk.ops.functions.Function
@@ -263,7 +265,7 @@ items:
     \nNote: See @cntk.ops.functions.Function.forward for more examples on passing\
     \ input data. \n"
   syntax:
-    content: backward(self, state, root_gradients, variables, as_numpy=True)
+    content: backward(state, root_gradients, variables, as_numpy=True)
     return:
       description: 'mapping of `variables` to NumPy arrays
 
@@ -341,7 +343,7 @@ items:
 
     '
   syntax:
-    content: clone(self, method, substitutions=None)
+    content: clone(method, substitutions=None)
     parameters:
     - description: "one of\n\n* 'clone': the returned function gets its own copy of\
         \ parameters (default) \n\n* 'share': the returned function shares its parameters\
@@ -406,7 +408,9 @@ items:
 
     '
   syntax:
-    content: declare_args(self, *arg_types)
+    content: declare_args(*arg_types)
+    parameters:
+    - id: self
   type: method
   uid: cntk.ops.functions.Function.declare_args
 - class: cntk.ops.functions.Function
@@ -427,7 +431,17 @@ items:
     \nNote: See @cntk.ops.functions.Function.forward for examples on passing input\
     \ data. \n"
   syntax:
-    content: eval(self, arguments=None, outputs=None, device=None, as_numpy=True)
+    content: eval(arguments=None, outputs=None, device=None, as_numpy=True)
+    parameters:
+    - id: self
+    - defaultValue: 'True'
+      id: arguments
+    - defaultValue: None
+      id: outputs
+    - defaultValue: None
+      id: device
+    - defaultValue: None
+      id: as_numpy
     return:
       description: 'Dict with keys of ouput variable names and values of
 
@@ -465,7 +479,7 @@ items:
   - python
   module: cntk.ops.functions
   name: find_all_with_name
-  seealsoContent: "See also: `find_by_name()` \n"
+  seealsoContent: "See also: @find_by_name \n"
   source:
     id: find_all_with_name
     path: /bindings/python\cntk\internal\swig_helper.py
@@ -480,11 +494,11 @@ items:
 
     multiple times. If you expect only one function to be returned, use
 
-    `find_by_name()`.
+    @find_by_name.
 
     '
   syntax:
-    content: find_all_with_name(self, name, depth=0)
+    content: find_all_with_name(name, depth=0)
     parameters:
     - description: 'names to look for
 
@@ -566,7 +580,7 @@ items:
 
     '
   syntax:
-    content: find_by_name(self, name, depth=0)
+    content: find_by_name(name, depth=0)
     parameters:
     - description: 'names to look for
 
@@ -629,7 +643,7 @@ items:
 
     '
   syntax:
-    content: forward(self, arguments, outputs=None, keep_for_backward=None, device=None,
+    content: forward(arguments, outputs=None, keep_for_backward=None, device=None,
       as_numpy=True)
     parameters:
     - description: "maps variables to their input data. The interpretation depends\
@@ -739,7 +753,7 @@ items:
 
     '
   syntax:
-    content: grad(self, at, wrt=None, outputs=None, device=None, as_numpy=True, grad_root=None)
+    content: grad(at, wrt=None, outputs=None, device=None, as_numpy=True, grad_root=None)
     parameters:
     - description: 'mapping of the Function''s arguments to values
 
@@ -1183,7 +1197,7 @@ items:
 
     '
   syntax:
-    content: replace_placeholder(self, substitution)
+    content: replace_placeholder(substitution)
     exceptions:
     - description: 'when the function has multiple placeholders.
 
@@ -1228,7 +1242,7 @@ items:
 
     '
   syntax:
-    content: replace_placeholders(self, substitutions)
+    content: replace_placeholders(substitutions)
     parameters:
     - description: 'map from placeholder to variables
 
@@ -1262,7 +1276,7 @@ items:
 
     '
   syntax:
-    content: restore(self, filename)
+    content: restore(filename)
     parameters:
     - description: 'saved model path
 
@@ -1325,7 +1339,7 @@ items:
 
     '
   syntax:
-    content: save(self, filename)
+    content: save(filename)
     parameters:
     - description: 'model path
 
@@ -1353,8 +1367,9 @@ items:
 
     '
   syntax:
-    content: set_attribute(self, name, value)
+    content: set_attribute(name, value)
     parameters:
+    - id: self
     - description: "one of\n\n* 'dropoutRate': modifies the dropout rate of a dropout\
         \ function (can only be invoked on a function instance returned either from\
         \ @cntk.ops or @cntk.ops.functions.Function.find_by_name). \n\n* 'rngSeed':\
@@ -1463,7 +1478,9 @@ items:
 
     '
   syntax:
-    content: update_signature(self, *arg_types, **kwarg_types)
+    content: update_signature(*arg_types, **kwarg_types)
+    parameters:
+    - id: self
   type: method
   uid: cntk.ops.functions.Function.update_signature
 references:

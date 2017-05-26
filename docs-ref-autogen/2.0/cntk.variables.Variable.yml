@@ -39,7 +39,7 @@ items:
     - as_constant
     - as_parameter
     content: Variable(shape=None, dtype=None, needs_gradient=False, is_sparse=False,
-      dynamic_axes=[Axis('defaultBatchAxis'), Axis('defaultDynamicAxis')], name='')
+      dynamic_axes=[Axis.default_batch_axis(), Axis.default_dynamic_axis()], name='')
     parameters:
     - description: 'the shape of this variable.
 
@@ -105,7 +105,7 @@ items:
 
     '
   syntax:
-    content: as_constant(self)
+    content: as_constant()
   type: method
   uid: cntk.variables.Variable.as_constant
 - class: cntk.variables.Variable
@@ -126,7 +126,7 @@ items:
 
     '
   syntax:
-    content: as_parameter(self)
+    content: as_parameter()
   type: method
   uid: cntk.variables.Variable.as_parameter
 references:

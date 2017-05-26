@@ -22,7 +22,6 @@ items:
   syntax:
     attribute:
     - asarray
-    content: ArrayMixin()
   type: class
   uid: cntk.tensor.ArrayMixin
 - class: cntk.tensor.ArrayMixin
@@ -43,7 +42,9 @@ items:
 
     '
   syntax:
-    content: asarray(self)
+    content: asarray()
+    parameters:
+    - id: self
   type: method
   uid: cntk.tensor.ArrayMixin.asarray
 references:

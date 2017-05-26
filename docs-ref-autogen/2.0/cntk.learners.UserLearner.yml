@@ -56,8 +56,9 @@ items:
 
     '
   syntax:
-    content: update(self, gradient_values, training_sample_count, sweep_end)
+    content: update(gradient_values, training_sample_count, sweep_end)
     parameters:
+    - id: self
     - description: 'maps @cntk.variables.Parameter to
 
         a NumPy array containing the first order gradient values for the

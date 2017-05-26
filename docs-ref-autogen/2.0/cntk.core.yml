@@ -41,6 +41,10 @@ items:
     '
   syntax:
     content: asarray(value, dtype=None)
+    parameters:
+    - id: value
+    - defaultValue: None
+      id: dtype
   type: function
   uid: cntk.core.asarray
 - fullName: cntk.core.asvalue
@@ -61,6 +65,9 @@ items:
     '
   syntax:
     content: asvalue(variable, data_array)
+    parameters:
+    - id: variable
+    - id: data_array
   type: function
   uid: cntk.core.asvalue
 - fullName: cntk.core.user_function
@@ -83,6 +90,8 @@ items:
     '
   syntax:
     content: user_function(user_func)
+    parameters:
+    - id: user_func
   type: function
   uid: cntk.core.user_function
 references:

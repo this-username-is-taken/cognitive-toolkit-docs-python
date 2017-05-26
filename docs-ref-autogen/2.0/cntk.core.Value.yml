@@ -113,7 +113,11 @@ items:
 
     '
   syntax:
-    content: as_sequences(self, variable=None)
+    content: as_sequences(variable=None)
+    parameters:
+    - id: self
+    - defaultValue: None
+      id: variable
     return:
       description: 'If variable contains more dynamic axes than the batch axis, a
         list

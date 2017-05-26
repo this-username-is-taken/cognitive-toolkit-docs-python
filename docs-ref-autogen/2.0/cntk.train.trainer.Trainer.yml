@@ -291,8 +291,9 @@ items:
 
     '
   syntax:
-    content: restore_from_checkpoint(self, filename)
+    content: restore_from_checkpoint(filename)
     parameters:
+    - id: self
     - description: 'filename to restore the checkpoint from
 
         '
@@ -326,9 +327,10 @@ items:
 
     '
   syntax:
-    content: save_checkpoint(self, filename, external_state={})
+    content: save_checkpoint(filename, external_state={})
     parameters:
-    - description: 'filename to store the checkpoint.
+    - defaultValue: '{}'
+      description: 'filename to store the checkpoint.
 
         '
       id: filename
@@ -357,7 +359,9 @@ items:
 
     '
   syntax:
-    content: summarize_test_progress(self)
+    content: summarize_test_progress()
+    parameters:
+    - id: self
   type: method
   uid: cntk.train.trainer.Trainer.summarize_test_progress
 - class: cntk.train.trainer.Trainer
@@ -381,7 +385,9 @@ items:
 
     '
   syntax:
-    content: summarize_training_progress(self)
+    content: summarize_training_progress()
+    parameters:
+    - id: self
   type: method
   uid: cntk.train.trainer.Trainer.summarize_training_progress
 - class: cntk.train.trainer.Trainer
@@ -402,7 +408,12 @@ items:
     Function specified during construction of the Trainer.\n\nNote: See @cntk.ops.functions\
     \ for examples on passing input data. \n"
   syntax:
-    content: test_minibatch(self, arguments, device=None)
+    content: test_minibatch(arguments, device=None)
+    parameters:
+    - defaultValue: None
+      id: self
+    - id: arguments
+    - id: device
     return:
       description: 'the average evaluation criterion value per sample for the
 
@@ -452,7 +463,14 @@ items:
     \ training samples.\n\nNote: See @cntk.ops.functions for examples on passing input\
     \ data. \n"
   syntax:
-    content: train_minibatch(self, arguments, outputs=None, device=None)
+    content: train_minibatch(arguments, outputs=None, device=None)
+    parameters:
+    - defaultValue: None
+      id: self
+    - id: arguments
+    - id: outputs
+    - defaultValue: None
+      id: device
     return:
       description: 'If `outputs` have not been provided, the returned value is *True*
 

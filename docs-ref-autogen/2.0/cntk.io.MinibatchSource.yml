@@ -48,10 +48,10 @@ items:
     - stream_infoname
     - stream_infos
     - streams
-    content: 'MinibatchSource(deserializers, max_samples=18446744073709551615, max_sweeps=18446744073709551615,
-      randomization_window_in_chunks=128, randomization_window_in_samples=0, randomization_seed=0,
-      trace_level=<TraceLevel.Warning: 1>, multithreaded_deserializer=False, frame_mode=False,
-      truncation_length=0, randomize=True)'
+    content: MinibatchSource(deserializers, max_samples=cntk.io.INFINITELY_REPEAT,
+      max_sweeps=cntk.io.INFINITELY_REPEAT, randomization_window_in_chunks=cntk.io.DEFAULT_RANDOMIZATION_WINDOW,
+      randomization_window_in_samples=0, randomization_seed=0, trace_level=cntk.logging.get_trace_level(),
+      multithreaded_deserializer=False, frame_mode=False, truncation_length=0, randomize=True)
     parameters:
     - description: 'deserializers to be used in the composite reader
 
@@ -246,7 +246,9 @@ items:
 
     '
   syntax:
-    content: get_checkpoint_state(self)
+    content: get_checkpoint_state()
+    parameters:
+    - id: self
     return:
       description: 'A @cntk.cntk_py.Dictionary that has the checkpoint state
 
@@ -305,7 +307,7 @@ items:
 
     '
   syntax:
-    content: next_minibatch(self, minibatch_size_in_samples, input_map=None, device=None,
+    content: next_minibatch(minibatch_size_in_samples, input_map=None, device=None,
       num_data_partitions=None, partition_index=None)
     parameters:
     - description: 'number of samples to retrieve for
@@ -323,7 +325,7 @@ items:
       - int
     - description: 'mapping of @cntk.variables.Variable
 
-        to `StreamInformation` which will be used to convert the
+        to @StreamInformation which will be used to convert the
 
         returned data.
 
@@ -351,7 +353,7 @@ items:
       type:
       - int, defaults to None
     return:
-      description: 'A mapping of `StreamInformation` to @cntk.io.MinibatchData if
+      description: 'A mapping of @StreamInformation to @cntk.io.MinibatchData if
 
         *input_map* was not specified. Otherwise, the returned value will
 
@@ -380,8 +382,9 @@ items:
 
     '
   syntax:
-    content: restore_from_checkpoint(self, checkpoint)
+    content: restore_from_checkpoint(checkpoint)
     parameters:
+    - id: self
     - description: 'checkpoint to restore from
 
         '
@@ -414,8 +417,9 @@ items:
 
     '
   syntax:
-    content: stream_info(self, name)
+    content: stream_info(name)
     parameters:
+    - id: self
     - description: 'stream name to fetch
 
         '
@@ -423,7 +427,7 @@ items:
       type:
       - str
     return:
-      description: '`StreamInformation`
+      description: '@StreamInformation
 
         The information for the given stream name.
 
@@ -448,9 +452,11 @@ items:
 
     '
   syntax:
-    content: stream_infos(self)
+    content: stream_infos()
+    parameters:
+    - id: self
     return:
-      description: 'A list of instances of `StreamInformation`
+      description: 'A list of instances of @StreamInformation
 
         '
   type: method
@@ -476,7 +482,7 @@ items:
     return:
       description: 'A *dict* mapping input names to instances of
 
-        `StreamInformation`
+        @StreamInformation
 
         '
   type: attribute

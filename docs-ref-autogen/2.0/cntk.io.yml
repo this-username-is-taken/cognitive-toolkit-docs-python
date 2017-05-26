@@ -52,14 +52,15 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 579
   summary: "Configures the image reader that reads base64 encoded images and corresponding\n\
-    labels from a file of the form:\n\n<!-- literal_block {\"names\": [], \"dupnames\"\
-    : [], \"backrefs\": [], \"ids\": [], \"classes\": [], \"xml:space\": \"preserve\"\
+    labels from a file of the form:\n\n<!-- literal_block {\"classes\": [], \"dupnames\"\
+    : [], \"names\": [], \"backrefs\": [], \"ids\": [], \"xml:space\": \"preserve\"\
     } -->\n\n````\n\n   [sequenceId <tab>] <numerical label (0-based class id)> <tab>\
     \ <base64 encoded image>\n   ````\n\nSimilarly to the ImageDeserializer, the sequenceId\
     \ prefix is optional and can be omitted.\n"
   syntax:
     content: Base64ImageDeserializer(filename, streams)
     parameters:
+    - id: filename
     - description: 'file name of the input file dataset that contains images
 
         and corresponding labels
@@ -91,10 +92,10 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 599
   summary: "Configures the CNTK text-format reader that reads text-based files with\n\
-    lines of the form:\n\n<!-- literal_block {\"names\": [], \"dupnames\": [], \"\
-    backrefs\": [], \"ids\": [], \"classes\": [], \"xml:space\": \"preserve\"} -->\n\
+    lines of the form:\n\n<!-- literal_block {\"classes\": [], \"dupnames\": [], \"\
+    names\": [], \"backrefs\": [], \"ids\": [], \"xml:space\": \"preserve\"} -->\n\
     \n````\n\n   [Sequence_Id] (Sample)+\n   ````\n\nwhere:\n\n<!-- literal_block\
-    \ {\"names\": [], \"dupnames\": [], \"backrefs\": [], \"ids\": [], \"classes\"\
+    \ {\"classes\": [], \"dupnames\": [], \"names\": [], \"backrefs\": [], \"ids\"\
     : [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   Sample=|Input_Name (Value\
     \ )*\n   ````\n"
   syntax:
@@ -108,7 +109,7 @@ items:
       - str
     - description: 'any dictionary-like object that contains a mapping from stream
 
-        names to `StreamDef` objects. Each StreamDef object configures
+        names to @StreamDef objects. Each StreamDef object configures
 
         an input stream.
 
@@ -137,7 +138,7 @@ items:
     parameters:
     - description: 'any dictionary-like object that contains a mapping from stream
 
-        names to `StreamDef` objects. Each StreamDef object configures
+        names to @StreamDef objects. Each StreamDef object configures
 
         a feature stream.
 
@@ -166,7 +167,8 @@ items:
   syntax:
     content: HTKMLFDeserializer(label_mapping_file, streams, phoneBoundaries=False)
     parameters:
-    - description: 'path to the label mapping file
+    - defaultValue: 'False'
+      description: 'path to the label mapping file
 
         '
       id: label_mapping_file
@@ -174,7 +176,7 @@ items:
       - str
     - description: 'any dictionary-like object that contains a mapping from stream
 
-        names to `StreamDef` objects. Each StreamDef object configures
+        names to @StreamDef objects. Each StreamDef object configures
 
         a label stream.
 
@@ -210,15 +212,16 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 557
   summary: "Configures the image reader that reads images and corresponding\nlabels\
-    \ from a file of the form:\n\n<!-- literal_block {\"names\": [], \"dupnames\"\
-    : [], \"backrefs\": [], \"ids\": [], \"classes\": [], \"xml:space\": \"preserve\"\
+    \ from a file of the form:\n\n<!-- literal_block {\"classes\": [], \"dupnames\"\
+    : [], \"names\": [], \"backrefs\": [], \"ids\": [], \"xml:space\": \"preserve\"\
     } -->\n\n````\n\n   <full path to image> <tab> <numerical label (0-based class\
-    \ id)>\n   ````\n\nor:\n\n<!-- literal_block {\"names\": [], \"dupnames\": [],\
-    \ \"backrefs\": [], \"ids\": [], \"classes\": [], \"xml:space\": \"preserve\"\
-    } -->\n\n````\n\n   sequenceId <tab> path <tab> label\n   ````\n"
+    \ id)>\n   ````\n\nor:\n\n<!-- literal_block {\"classes\": [], \"dupnames\": [],\
+    \ \"names\": [], \"backrefs\": [], \"ids\": [], \"xml:space\": \"preserve\"} -->\n\
+    \n````\n\n   sequenceId <tab> path <tab> label\n   ````\n"
   syntax:
     content: ImageDeserializer(filename, streams)
     parameters:
+    - id: filename
     - description: 'file name of the map file that associates images to
 
         classes
@@ -249,14 +252,16 @@ items:
     content: StreamDef(field=None, shape=None, is_sparse=False, transforms=None, context=None,
       scp=None, mlf=None, broadcast=None, defines_mb_size=False)
     parameters:
-    - description: "this is the name of the stream\n\n* for CTFDeserializer the name\
+    - defaultValue: None
+      description: "this is the name of the stream\n\n* for CTFDeserializer the name\
         \ is inside the CTF file \n\n* for ImageDeserializer the acceptable names\
         \ are *image* or *label* \n\n* for HTKFeatureDeserializer and HTKMLFDeserializer\
         \ only the default value of None is acceptable \n"
       id: field
       type:
       - str, defaults to None
-    - description: 'dimensions of this
+    - defaultValue: None
+      description: 'dimensions of this
 
         stream. HTKFeatureDeserializer, HTKMLFDeserializer, and
 
@@ -268,7 +273,8 @@ items:
       id: shape
       type:
       - int or tuple, defaults to None
-    - description: 'whether the provided data is
+    - defaultValue: None
+      description: 'whether the provided data is
 
         sparse. *False* by default, unless mlf is provided.
 
@@ -276,7 +282,8 @@ items:
       id: is_sparse
       type:
       - bool, defaults to False
-    - description: 'list of transforms to be
+    - defaultValue: None
+      description: 'list of transforms to be
 
         applied by the Deserializer. Currently only ImageDeserializer
 
@@ -286,7 +293,8 @@ items:
       id: transforms
       type:
       - list, defaults to None
-    - description: 'left and right context to
+    - defaultValue: None
+      description: 'left and right context to
 
         consider when reading in HTK data. Only supported by
 
@@ -296,19 +304,22 @@ items:
       id: context
       type:
       - tuple, defaults to None
-    - description: 'scp files for HTK data
+    - defaultValue: 'False'
+      description: 'scp files for HTK data
 
         '
       id: scp
       type:
       - str or list, defaults to None
-    - description: 'mlf files for HTK data
+    - defaultValue: None
+      description: 'mlf files for HTK data
 
         '
       id: mlf
       type:
       - str or list, defaults to None
-    - description: 'whether the features in this
+    - defaultValue: None
+      description: 'whether the features in this
 
         stream should be broadcast to the whole sequence (useful in e.g.
 

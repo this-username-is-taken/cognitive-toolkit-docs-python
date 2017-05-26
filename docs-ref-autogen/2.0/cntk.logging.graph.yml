@@ -45,7 +45,8 @@ items:
   syntax:
     content: depth_first_search(root, visitor, depth=0)
     parameters:
-    - description: 'the root to start the journey from
+    - defaultValue: '0'
+      description: 'the root to start the journey from
 
         '
       id: root
@@ -96,7 +97,8 @@ items:
   syntax:
     content: find_all_with_name(node, node_name, depth=0)
     parameters:
-    - description: 'the node to start the journey from
+    - defaultValue: '0'
+      description: 'the node to start the journey from
 
         '
       id: node
@@ -145,7 +147,8 @@ items:
   syntax:
     content: find_by_name(node, node_name, depth=0)
     parameters:
-    - description: 'the node to start the journey from
+    - defaultValue: '0'
+      description: 'the node to start the journey from
 
         '
       id: node
@@ -192,7 +195,9 @@ items:
   syntax:
     content: get_node_outputs(node, depth=0)
     parameters:
-    - description: 'the node to start the journey from
+    - id: node
+    - defaultValue: '0'
+      description: 'the node to start the journey from
 
         '
       id: node
@@ -235,7 +240,8 @@ items:
       id: node
       type:
       - graph node
-    - description: 'file with extension ''.dot'', ''png'', ''pdf'', or ''svg''
+    - defaultValue: None
+      description: 'file with extension ''.dot'', ''png'', ''pdf'', or ''svg''
 
         to denote what format should be written. If *None* then nothing
 

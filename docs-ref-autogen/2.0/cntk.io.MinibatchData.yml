@@ -33,7 +33,7 @@ items:
     startLine: 25
   summary: 'Holds a minibatch of input data. This is never directly created, but
 
-    only returned by `MinibatchSource` instances.
+    only returned by @MinibatchSource instances.
 
 
 
@@ -77,7 +77,11 @@ items:
 
     '
   syntax:
-    content: as_sequences(self, variable=None)
+    content: as_sequences(variable=None)
+    parameters:
+    - id: self
+    - defaultValue: None
+      id: variable
     return:
       description: 'a list of NumPy arrays if dense, otherwise a SciPy CSR array
 

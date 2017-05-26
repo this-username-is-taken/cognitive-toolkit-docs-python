@@ -76,13 +76,15 @@ items:
   syntax:
     content: install_samples(url=None, directory=None, quiet=False)
     parameters:
-    - description: 'the URL of the sample zip file (if passed `None`, which is default,
+    - defaultValue: None
+      description: 'the URL of the sample zip file (if passed `None`, which is default,
 
         the sample URL matching the CNTK module release is chosen)
 
         '
       id: url
-    - description: 'the directory to extract the samples into (if passed
+    - defaultValue: None
+      description: 'the directory to extract the samples into (if passed
 
         `None`, which is default, a name matching the CNTK module release is
 

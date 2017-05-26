@@ -65,9 +65,11 @@ items:
 
     '
   syntax:
-    content: get_checkpoint_state(self)
+    content: get_checkpoint_state()
+    parameters:
+    - id: self
     return:
-      description: 'dictionary, that can be later used on `restore_from_checkpoint()`.
+      description: 'dictionary, that can be later used on @restore_from_checkpoint.
 
         '
   type: method
@@ -90,7 +92,7 @@ items:
 
     '
   syntax:
-    content: next_minibatch(self, num_samples, number_of_workers, worker_rank, device=None)
+    content: next_minibatch(num_samples, number_of_workers, worker_rank, device=None)
     parameters:
     - description: 'number of samples to return
 
@@ -104,7 +106,8 @@ items:
       id: number_of_workers
       type:
       - int
-    - description: 'worker for which the data is to be returned
+    - defaultValue: None
+      description: 'worker for which the data is to be returned
 
         '
       id: worker_rank
@@ -134,8 +137,9 @@ items:
 
     '
   syntax:
-    content: restore_from_checkpoint(self, state)
+    content: restore_from_checkpoint(state)
     parameters:
+    - id: self
     - description: 'dictionary containing the state
 
         '
@@ -166,7 +170,10 @@ items:
 
     '
   syntax:
-    content: stream_info(self, name)
+    content: stream_info(name)
+    parameters:
+    - id: self
+    - id: name
   type: method
   uid: cntk.io.UserMinibatchSource.stream_info
 - class: cntk.io.UserMinibatchSource
@@ -187,7 +194,9 @@ items:
 
     '
   syntax:
-    content: stream_infos(self)
+    content: stream_infos()
+    parameters:
+    - id: self
     return:
       description: 'list of @cntk.io.StreamInformation instances
 

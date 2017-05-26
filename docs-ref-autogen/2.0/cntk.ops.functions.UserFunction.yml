@@ -49,7 +49,7 @@ items:
     - infer_outputs
     - op_name
     - serialize
-    content: UserFunction(*args, **kwargs)
+    content: UserFunction(inputs, as_numpy=True, name='')
     parameters:
     - description: 'inputs to this function
 
@@ -102,8 +102,9 @@ items:
 
     '
   syntax:
-    content: clone(self, cloned_inputs)
+    content: clone(cloned_inputs)
     parameters:
+    - id: self
     - description: 'list of cloned inputs to the new user-defined
 
         Function clone to be created.
@@ -191,7 +192,9 @@ items:
 
     '
   syntax:
-    content: infer_outputs(self)
+    content: infer_outputs()
+    parameters:
+    - id: self
   type: method
   uid: cntk.ops.functions.UserFunction.infer_outputs
 - class: cntk.ops.functions.UserFunction
@@ -239,7 +242,9 @@ items:
 
     '
   syntax:
-    content: serialize(self)
+    content: serialize()
+    parameters:
+    - id: self
   type: method
   uid: cntk.ops.functions.UserFunction.serialize
 references:

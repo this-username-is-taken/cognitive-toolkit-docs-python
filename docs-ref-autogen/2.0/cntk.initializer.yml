@@ -86,19 +86,22 @@ items:
     content: glorot_normal(scale=1, output_rank=2147483647, filter_rank=2147483647,
       seed=None)
     parameters:
-    - description: 'scale
+    - defaultValue: '2147483647'
+      description: 'scale
 
         '
       id: scale
       type:
       - float
-    - description: 'output rank
+    - defaultValue: '2147483647'
+      description: 'output rank
 
         '
       id: output_rank
       type:
       - int
-    - description: 'filter rank
+    - defaultValue: '1'
+      description: 'filter rank
 
         '
       id: filter_rank
@@ -140,19 +143,22 @@ items:
     content: glorot_uniform(scale=1, output_rank=2147483647, filter_rank=2147483647,
       seed=None)
     parameters:
-    - description: 'scale
+    - defaultValue: '2147483647'
+      description: 'scale
 
         '
       id: scale
       type:
       - float
-    - description: 'output rank
+    - defaultValue: '2147483647'
+      description: 'output rank
 
         '
       id: output_rank
       type:
       - int
-    - description: 'filter rank
+    - defaultValue: '1'
+      description: 'filter rank
 
         '
       id: filter_rank
@@ -193,19 +199,22 @@ items:
   syntax:
     content: he_normal(scale=1, output_rank=2147483647, filter_rank=2147483647, seed=None)
     parameters:
-    - description: 'scale
+    - defaultValue: '2147483647'
+      description: 'scale
 
         '
       id: scale
       type:
       - float
-    - description: 'output rank
+    - defaultValue: '2147483647'
+      description: 'output rank
 
         '
       id: output_rank
       type:
       - int
-    - description: 'filter rank
+    - defaultValue: '1'
+      description: 'filter rank
 
         '
       id: filter_rank
@@ -246,19 +255,22 @@ items:
   syntax:
     content: he_uniform(scale=1, output_rank=2147483647, filter_rank=2147483647, seed=None)
     parameters:
-    - description: 'scale
+    - defaultValue: '2147483647'
+      description: 'scale
 
         '
       id: scale
       type:
       - float
-    - description: 'output rank
+    - defaultValue: '2147483647'
+      description: 'output rank
 
         '
       id: output_rank
       type:
       - int
-    - description: 'filter rank
+    - defaultValue: '1'
+      description: 'filter rank
 
         '
       id: filter_rank
@@ -306,13 +318,15 @@ items:
 
         '
       id: initializer
-    - description: 'new output rank value
+    - defaultValue: None
+      description: 'new output rank value
 
         '
       id: output_rank
       type:
       - int
-    - description: 'new filter rank value
+    - defaultValue: None
+      description: 'new filter rank value
 
         '
       id: filter_rank
@@ -350,19 +364,22 @@ items:
       id: scale
       type:
       - float
-    - description: 'output rank
+    - defaultValue: None
+      description: 'output rank
 
         '
       id: output_rank
       type:
       - int
-    - description: 'filter rank
+    - defaultValue: '2147483647'
+      description: 'filter rank
 
         '
       id: filter_rank
       type:
       - int
-    - description: 'random seed
+    - defaultValue: '2147483647'
+      description: 'random seed
 
         '
       id: seed
@@ -405,7 +422,8 @@ items:
       id: stdev
       type:
       - float
-    - description: 'random seed
+    - defaultValue: None
+      description: 'random seed
 
         '
       id: seed
@@ -444,7 +462,8 @@ items:
       id: scale
       type:
       - float
-    - description: 'random seed
+    - defaultValue: None
+      description: 'random seed
 
         '
       id: seed
@@ -479,19 +498,22 @@ items:
   syntax:
     content: xavier(scale=1, output_rank=2147483647, filter_rank=2147483647, seed=None)
     parameters:
-    - description: 'scale
+    - defaultValue: '2147483647'
+      description: 'scale
 
         '
       id: scale
       type:
       - float
-    - description: 'output rank
+    - defaultValue: '2147483647'
+      description: 'output rank
 
         '
       id: output_rank
       type:
       - int
-    - description: 'filter rank
+    - defaultValue: '1'
+      description: 'filter rank
 
         '
       id: filter_rank

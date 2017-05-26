@@ -152,13 +152,13 @@ items:
 
     globally default (neither auto-selected nor explicitly specified by
 
-    `try_set_default_device()`). For example, to avoid auto-selecting the
+    @try_set_default_device). For example, to avoid auto-selecting the
 
     CPU, invoke `set_excluded_devices([cpu()])`. However, after the default
 
     device has been selected and frozen (by a call to
 
-    `use_default_device()`), invoking this methods has no effect, it
+    @use_default_device), invoking this methods has no effect, it
 
     becomes essentially a no-op.
 
@@ -220,7 +220,8 @@ items:
       - '@cntk.device.DeviceDescriptor
 
         '
-    - description: 'whether or not a lock
+    - defaultValue: 'False'
+      description: 'whether or not a lock
 
         should be acquired for the specified device.
 

@@ -97,11 +97,13 @@ items:
   syntax:
     content: start_profiler(dir='profiler', sync_gpu=True, reserve_mem=33554432)
     parameters:
-    - description: 'directory for profiler output
+    - defaultValue: 'True'
+      description: 'directory for profiler output
 
         '
       id: dir
-    - description: 'whether profiler syncs CPU with GPU when timing
+    - defaultValue: profiler
+      description: 'whether profiler syncs CPU with GPU when timing
 
         '
       id: sync_gpu

@@ -379,9 +379,11 @@ items:
 
     '
   syntax:
-    content: static_axis_index(self, checked=True)
+    content: static_axis_index(checked=True)
     parameters:
-    - description: 'if True then this function will throw an exception if the axis
+    - id: self
+    - defaultValue: 'True'
+      description: 'if True then this function will throw an exception if the axis
         is not static.
 
         '

@@ -570,16 +570,6 @@ items:
 
         '
       id: left
-    - description: 'right side tensor
-
-        '
-      id: right
-    - description: 'the name of the Function instance in the network
-
-        '
-      id: name
-      type:
-      - str, optional
     return:
       description: '@cntk.ops.functions.Function
 
@@ -1273,7 +1263,7 @@ items:
         '
       id: name
       type:
-      - '`str`
+      - '@str
 
         , optional'
     return:
@@ -1374,16 +1364,6 @@ items:
 
         '
       id: arg2
-    - description: 'additional inputs
-
-        '
-      id: '*more_args'
-    - description: 'the name of the Function instance in the network
-
-        '
-      id: name
-      type:
-      - str, optional
     return:
       description: '@cntk.ops.functions.Function
 
@@ -1420,16 +1400,6 @@ items:
 
         '
       id: arg2
-    - description: 'additional inputs
-
-        '
-      id: '*more_args'
-    - description: 'the name of the Function instance in the network
-
-        '
-      id: name
-      type:
-      - str, optional
     return:
       description: '@cntk.ops.functions.Function
 
@@ -1557,16 +1527,6 @@ items:
 
         '
       id: arg2
-    - description: 'additional inputs
-
-        '
-      id: '*more_args'
-    - description: 'the name of the Function instance in the network
-
-        '
-      id: name
-      type:
-      - str, optional
     return:
       description: '@cntk.ops.functions.Function
 
@@ -2078,8 +2038,8 @@ items:
 
     '
   syntax:
-    content: input(shape, dtype=<cntk.default_options.default_override_or object at
-      0x000001B3C387C710>, needs_gradient=False, is_sparse=False, dynamic_axes=[Axis('defaultBatchAxis')],
+    content: input(shape, dtype=<cntk.default_options.default_override_or object>,
+      needs_gradient=False, is_sparse=False, dynamic_axes=[Axis('defaultBatchAxis')],
       name='')
     parameters:
     - description: 'the shape of the input tensor
@@ -2143,9 +2103,8 @@ items:
 
     '
   syntax:
-    content: input_variable(shape, dtype=<cntk.default_options.default_override_or
-      object at 0x000001B3C387C780>, needs_gradient=False, is_sparse=False, dynamic_axes=[Axis('defaultBatchAxis')],
-      name='')
+    content: input_variable(shape, dtype=np.float32, needs_gradient=False, is_sparse=False,
+      dynamic_axes=[Axis.default_batch_axis()], name='')
     parameters:
     - description: 'the shape of the input tensor
 
@@ -2510,16 +2469,6 @@ items:
 
         '
       id: arg2
-    - description: 'additional inputs
-
-        '
-      id: '*more_args'
-    - description: 'the name of the Function instance in the network
-
-        '
-      id: name
-      type:
-      - str, optional
     return:
       description: '@cntk.ops.functions.Function
 
@@ -3131,16 +3080,6 @@ items:
 
         '
       id: arg2
-    - description: 'additional inputs
-
-        '
-      id: '*more_args'
-    - description: 'the name of the Function instance in the network
-
-        '
-      id: name
-      type:
-      - str, optional
     return:
       description: '@cntk.ops.functions.Function
 
@@ -3354,7 +3293,7 @@ items:
         '
       id: name
       type:
-      - '`str`
+      - '@str
 
         , optional'
     return:
@@ -4627,11 +4566,11 @@ items:
     \ matrix.\nThe operator '@' has been overloaded such that in Python 3.5 and later\
     \ X @ W equals times(X, W).\n\nFor better performance on times operation on sequence\
     \ which is followed by sequence.reduce_sum, use\ninfer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK,\
-    \ i.e. replace following:\n\n<!-- literal_block {\"names\": [], \"dupnames\":\
-    \ [], \"backrefs\": [], \"ids\": [], \"classes\": [], \"xml:space\": \"preserve\"\
+    \ i.e. replace following:\n\n<!-- literal_block {\"classes\": [], \"dupnames\"\
+    : [], \"names\": [], \"backrefs\": [], \"ids\": [], \"xml:space\": \"preserve\"\
     } -->\n\n````\n\n   sequence.reduce_sum(times(seq1, seq2))\n   ````\n\nwith:\n\
-    \n<!-- literal_block {\"names\": [], \"dupnames\": [], \"backrefs\": [], \"ids\"\
-    : [], \"classes\": [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   times(seq1,\
+    \n<!-- literal_block {\"classes\": [], \"dupnames\": [], \"names\": [], \"backrefs\"\
+    : [], \"ids\": [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   times(seq1,\
     \ seq2, infer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK)\n\
     \   ````\n"
   syntax:

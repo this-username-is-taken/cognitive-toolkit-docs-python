@@ -91,7 +91,16 @@ items:
 
     '
   syntax:
-    content: assign(self, name, value=None, load=False, load_name=None)
+    content: assign(name, value=None, load=False, load_name=None)
+    parameters:
+    - defaultValue: None
+      id: self
+    - id: name
+    - id: value
+    - defaultValue: None
+      id: load
+    - defaultValue: 'False'
+      id: load_name
   type: method
   uid: cntk.contrib.crosstalk.Crosstalk.assign
 - class: cntk.contrib.crosstalk.Crosstalk
@@ -113,7 +122,18 @@ items:
 
     '
   syntax:
-    content: compare(self, name, compare_name=None, rtol=1e-05, atol=1e-08, equal_nan=False)
+    content: compare(name, compare_name=None, rtol=1e-05, atol=1e-08, equal_nan=False)
+    parameters:
+    - defaultValue: None
+      id: self
+    - id: name
+    - id: compare_name
+    - defaultValue: 'False'
+      id: rtol
+    - defaultValue: 1e-08
+      id: atol
+    - defaultValue: 1e-05
+      id: equal_nan
   type: method
   uid: cntk.contrib.crosstalk.Crosstalk.compare
 - class: cntk.contrib.crosstalk.Crosstalk
@@ -134,7 +154,12 @@ items:
 
     '
   syntax:
-    content: fetch(self, name, save=False)
+    content: fetch(name, save=False)
+    parameters:
+    - defaultValue: 'False'
+      id: self
+    - id: name
+    - id: save
   type: method
   uid: cntk.contrib.crosstalk.Crosstalk.fetch
 - class: cntk.contrib.crosstalk.Crosstalk
@@ -155,7 +180,10 @@ items:
 
     '
   syntax:
-    content: load(self, names)
+    content: load(names)
+    parameters:
+    - id: self
+    - id: names
   type: method
   uid: cntk.contrib.crosstalk.Crosstalk.load
 - class: cntk.contrib.crosstalk.Crosstalk
@@ -176,7 +204,10 @@ items:
 
     '
   syntax:
-    content: load_raw_value(self, name)
+    content: load_raw_value(name)
+    parameters:
+    - id: self
+    - id: name
   type: method
   uid: cntk.contrib.crosstalk.Crosstalk.load_raw_value
 - class: cntk.contrib.crosstalk.Crosstalk
@@ -197,7 +228,9 @@ items:
 
     '
   syntax:
-    content: next_pass(self)
+    content: next_pass()
+    parameters:
+    - id: self
   type: method
   uid: cntk.contrib.crosstalk.Crosstalk.next_pass
 - class: cntk.contrib.crosstalk.Crosstalk
@@ -218,7 +251,14 @@ items:
 
     '
   syntax:
-    content: register_funcs(self, var_type, setter=None, getter=None)
+    content: register_funcs(var_type, setter=None, getter=None)
+    parameters:
+    - defaultValue: None
+      id: self
+    - id: var_type
+    - id: setter
+    - defaultValue: None
+      id: getter
   type: method
   uid: cntk.contrib.crosstalk.Crosstalk.register_funcs
 - class: cntk.contrib.crosstalk.Crosstalk
@@ -239,7 +279,9 @@ items:
 
     '
   syntax:
-    content: reset(self)
+    content: reset()
+    parameters:
+    - id: self
   type: method
   uid: cntk.contrib.crosstalk.Crosstalk.reset
 - class: cntk.contrib.crosstalk.Crosstalk
@@ -260,7 +302,10 @@ items:
 
     '
   syntax:
-    content: save(self, names)
+    content: save(names)
+    parameters:
+    - id: self
+    - id: names
   type: method
   uid: cntk.contrib.crosstalk.Crosstalk.save
 - class: cntk.contrib.crosstalk.Crosstalk
@@ -281,7 +326,9 @@ items:
 
     '
   syntax:
-    content: save_all(self)
+    content: save_all()
+    parameters:
+    - id: self
   type: method
   uid: cntk.contrib.crosstalk.Crosstalk.save_all
 - class: cntk.contrib.crosstalk.Crosstalk
@@ -303,7 +350,10 @@ items:
 
     '
   syntax:
-    content: set_workdir(self, dir)
+    content: set_workdir(dir)
+    parameters:
+    - id: self
+    - id: dir
   type: method
   uid: cntk.contrib.crosstalk.Crosstalk.set_workdir
 - class: cntk.contrib.crosstalk.Crosstalk
@@ -326,7 +376,15 @@ items:
 
     '
   syntax:
-    content: watch(self, var, name, var_type=None, attr=None)
+    content: watch(var, name, var_type=None, attr=None)
+    parameters:
+    - defaultValue: None
+      id: self
+    - defaultValue: None
+      id: var
+    - id: name
+    - id: var_type
+    - id: attr
   type: method
   uid: cntk.contrib.crosstalk.Crosstalk.watch
 references:

@@ -78,6 +78,8 @@ items:
   syntax:
     content: For(what_range, constructor, name='')
     parameters:
+    - defaultValue: ''
+      id: what_range
     - description: 'a Python range to loop over
 
         '
@@ -137,7 +139,9 @@ items:
   syntax:
     content: ResNetBlock(f, name='')
     parameters:
-    - description: 'the function to add the skip connection to.
+    - id: f
+    - defaultValue: ''
+      description: 'the function to add the skip connection to.
 
         '
       id: f
@@ -222,7 +226,9 @@ items:
   syntax:
     content: Sequential(layers, name='')
     parameters:
-    - description: 'the list of functions to apply in sequence.
+    - id: layers
+    - defaultValue: ''
+      description: 'the list of functions to apply in sequence.
 
         A tuple aplies each of its items to the input and results in a tuple value.
 
@@ -273,7 +279,9 @@ items:
   syntax:
     content: SequentialClique(functions, name='')
     parameters:
-    - description: 'functions to be applied.
+    - id: functions
+    - defaultValue: ''
+      description: 'functions to be applied.
 
         '
       id: functions

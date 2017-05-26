@@ -40,7 +40,8 @@ items:
   syntax:
     content: color(brightness_radius=0.0, contrast_radius=0.0, saturation_radius=0.0)
     parameters:
-    - description: 'Radius for brightness change. Must be
+    - defaultValue: '0.0'
+      description: 'Radius for brightness change. Must be
 
         set within [0.0, 1.0]. For example, assume brightness_radius = 0.2, a random
 
@@ -54,7 +55,8 @@ items:
       id: brightness_radius
       type:
       - float, default 0.0
-    - description: 'Radius for contrast change. Must be
+    - defaultValue: '0.0'
+      description: 'Radius for contrast change. Must be
 
         set within [0.0, 1.0]. For example, assume contrast_radius = 0.2, a random
 
@@ -105,7 +107,8 @@ items:
     content: crop(crop_type='center', crop_size=0, side_ratio=0.0, area_ratio=0.0,
       aspect_ratio=1.0, jitter_type='none')
     parameters:
-    - description: '''center'', ''randomside'', ''randomarea'',
+    - defaultValue: '1.0'
+      description: '''center'', ''randomside'', ''randomarea'',
 
         or ''multiview10''.  ''randomside'' and ''randomarea'' are usually used during
 
@@ -129,7 +132,8 @@ items:
       id: crop_type
       type:
       - str, default 'center'
-    - description: 'crop size in pixels. Ignored if set to 0.
+    - defaultValue: '0.0'
+      description: 'crop size in pixels. Ignored if set to 0.
 
         When crop_size is non-zero, for example, crop_size=256, it means a cropping
 
@@ -145,7 +149,8 @@ items:
       id: crop_size
       type:
       - int, default 0
-    - description: 'It specifies the ratio of final image
+    - defaultValue: '0.0'
+      description: 'It specifies the ratio of final image
 
         side (width or height) with respect to the original image. Ignored if set
 
@@ -167,7 +172,8 @@ items:
       id: side_ratio
       type:
       - float, default 0.0
-    - description: 'It specifies the area ratio of final image
+    - defaultValue: '0'
+      description: 'It specifies the area ratio of final image
 
         with respect to the original image. Ignored if set to 0.0. Otherwise, must
         be
@@ -188,7 +194,8 @@ items:
       id: area_ratio
       type:
       - float, default 0.0
-    - description: 'It specifies the aspect ratio (width/height
+    - defaultValue: center
+      description: 'It specifies the aspect ratio (width/height
 
         or height/width) of the crop window. Must be set within *(0,1]*. For example,
 
@@ -279,13 +286,15 @@ items:
     content: scale(width, height, channels, interpolations='linear', scale_mode='fill',
       pad_value=-1)
     parameters:
-    - description: 'width of the image in pixels
+    - defaultValue: fill
+      description: 'width of the image in pixels
 
         '
       id: width
       type:
       - int
-    - description: 'height of the image in pixels
+    - defaultValue: linear
+      description: 'height of the image in pixels
 
         '
       id: height
@@ -319,7 +328,8 @@ items:
       id: scale_mode
       type:
       - str, default 'fill'
-    - description: '-1 or int value. The pad value used for the ''pad'' mode.
+    - defaultValue: '-1'
+      description: '-1 or int value. The pad value used for the ''pad'' mode.
 
         If set to -1 then the border will be replicated.
 

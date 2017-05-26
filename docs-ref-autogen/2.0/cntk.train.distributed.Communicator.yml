@@ -70,7 +70,9 @@ items:
 
     '
   syntax:
-    content: barrier(self)
+    content: barrier()
+    parameters:
+    - id: self
   type: method
   uid: cntk.train.distributed.Communicator.barrier
 - class: cntk.train.distributed.Communicator
@@ -91,7 +93,7 @@ items:
 
     '
   syntax:
-    content: current_worker(self)
+    content: current_worker()
     return:
       description: 'descriptor of current process.
 
@@ -141,7 +143,9 @@ items:
 
     '
   syntax:
-    content: is_main(self)
+    content: is_main()
+    parameters:
+    - id: self
   type: method
   uid: cntk.train.distributed.Communicator.is_main
 - class: cntk.train.distributed.Communicator
@@ -204,7 +208,7 @@ items:
 
     '
   syntax:
-    content: workers(self)
+    content: workers()
     return:
       description: 'workers in this communicator.
 

@@ -402,7 +402,7 @@ items:
 
     '
   syntax:
-    content: slice_view(self, start_offset, extent, read_only=True)
+    content: slice_view(start_offset, extent, read_only=True)
     parameters:
     - description: 'shape of the same rank as this Value
 
