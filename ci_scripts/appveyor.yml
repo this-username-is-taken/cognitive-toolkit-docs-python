@@ -1,0 +1,61 @@
+version: 1.0.{build}
+skip_tags: true
+build_cloud: cntk-python-ci-build
+image: appveyor-build
+configuration: Release
+
+init:
+    - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+
+environment:
+  github_access_token:
+    secure: kXK95TSkOJShIcqMV91li5J1hbpfUrN8zVML962Ob4lvm1lA2guZzyk1iwgk/Cud
+    
+  APPVEYOR_RDP_PASSWORD: '#Bugsfor$'
+  
+clone_script:
+    - git config --global core.autocrlf true
+    - git config core.autocrlf
+
+    - cd c:\projects
+    - git clone http://github.com/Microsoft/cntk
+
+    - cd c:\projects\cntk
+    - git submodule update --init -- Source/Multiverso
+ 
+    - cd c:\projects
+    - git clone --depth 1 https://github.com/bianliu1013/cntk_yml_docs
+    
+before_build:
+    - cd c:\projects\cntk\Tools\devInstall\Windows
+    - ps: .\DevInstall.ps1 -NoConfirm
+    - git checkout master
+    - git config --global credential.helper store
+    - ps: ac "$env:USERPROFILE\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
+    - ps: Write-Host "appveyor.xml in cntk_yml docs repo"
+
+    
+build:
+  project: c:\projects\cntk\CNTK.sln
+  parallel: true
+  verbosity: minimal
+  
+on_finish:
+    - ps: Write-Host "appveyor.xml on_finish"
+    - cd c:\projects\CNTK\x64\Release\Python
+    - dir
+    - ps: $files = gci -name *.whl
+    - ps: pip install $files
+    - cd c:\projects\cntk\bindings\python\doc
+    - call build.bat
+    - ps: Write-Host "begin on_success"
+    - ps: Copy-Item -Path C:\projects\CNTK\bindings\python\doc\_build -Destination c:\projects\cntk_yml_docs\docs ¨CRecurse
+    - git config --global credential.helper store
+    - ps: ac "$env:USERPROFILE\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
+    - cd c:\projects\cntk_yml_docs
+    - git status
+    - git config --global user.name "bianliu1013"
+    - git config --global user.email "bianliu1013@163.com"
+    - git add . 
+    - git commit -a -m "appveyor ci - update yml files" 
+    - git push -u origin master -f
