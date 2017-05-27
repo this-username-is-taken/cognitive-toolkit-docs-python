@@ -69,19 +69,6 @@ items:
 
     '
   syntax:
-    attribute:
-    - static all_axes
-    - static all_static_axes
-    - static default_batch_axis
-    - static default_dynamic_axis
-    - static default_input_variable_dynamic_axes
-    - is_ordered
-    - is_static_axis
-    - name
-    - static new_leading_axis
-    - static new_unique_dynamic_axisname
-    - static_axis_indexchecked=True
-    - static unknown_dynamic_axes
     content: Axis(*args)
   type: class
   uid: cntk.axis.Axis

@@ -38,16 +38,6 @@ items:
 
     '
   syntax:
-    attribute:
-    - current_position
-    - get_checkpoint_state
-    - is_distributed
-    - next_minibatchminibatch_size_in_samples, input_map=None, device=None, num_data_partitions=None,
-      partition_index=None
-    - restore_from_checkpointcheckpoint
-    - stream_infoname
-    - stream_infos
-    - streams
     content: MinibatchSource(deserializers, max_samples=cntk.io.INFINITELY_REPEAT,
       max_sweeps=cntk.io.INFINITELY_REPEAT, randomization_window_in_chunks=cntk.io.DEFAULT_RANDOMIZATION_WINDOW,
       randomization_window_in_samples=0, randomization_seed=0, trace_level=cntk.logging.get_trace_level(),
@@ -325,7 +315,7 @@ items:
       - int
     - description: 'mapping of @cntk.variables.Variable
 
-        to @StreamInformation which will be used to convert the
+        to @cntk.io.StreamInformation which will be used to convert the
 
         returned data.
 
@@ -353,7 +343,8 @@ items:
       type:
       - int, defaults to None
     return:
-      description: 'A mapping of @StreamInformation to @cntk.io.MinibatchData if
+      description: 'A mapping of @cntk.io.StreamInformation to @cntk.io.MinibatchData
+        if
 
         *input_map* was not specified. Otherwise, the returned value will
 
@@ -427,7 +418,7 @@ items:
       type:
       - str
     return:
-      description: '@StreamInformation
+      description: '@cntk.io.StreamInformation
 
         The information for the given stream name.
 
@@ -456,7 +447,7 @@ items:
     parameters:
     - id: self
     return:
-      description: 'A list of instances of @StreamInformation
+      description: 'A list of instances of @cntk.io.StreamInformation
 
         '
   type: method
@@ -482,7 +473,7 @@ items:
     return:
       description: 'A *dict* mapping input names to instances of
 
-        @StreamInformation
+        @cntk.io.StreamInformation
 
         '
   type: attribute

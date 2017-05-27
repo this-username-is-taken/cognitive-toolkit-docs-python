@@ -36,12 +36,6 @@ items:
 
     '
   syntax:
-    attribute:
-    - get_checkpoint_state
-    - next_minibatchnum_samples, number_of_workers, worker_rank, device=None
-    - restore_from_checkpointstate
-    - stream_infoname
-    - stream_infos
     content: UserMinibatchSource()
   type: class
   uid: cntk.io.UserMinibatchSource
@@ -69,7 +63,7 @@ items:
     parameters:
     - id: self
     return:
-      description: 'dictionary, that can be later used on @restore_from_checkpoint.
+      description: 'dictionary, that can be later used on @cntk.io.UserMinibatchSource.restore_from_checkpoint.
 
         '
   type: method

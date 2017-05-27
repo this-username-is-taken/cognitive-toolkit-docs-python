@@ -61,7 +61,7 @@ items:
   syntax:
     content: Delay(T=1, initial_state=0, name='')
     parameters:
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA1780940>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000001BAA18A6048>
       description: 'the number of time steps to look into the past, where negative
         values mean to look into the future, and 0 means a no-op (default 1).
 
@@ -187,7 +187,7 @@ items:
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA1780A90>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000001BAA18A6198>
       description: 'if `True` and the step function has more than one
 
         state variable, then the layer returns the final value of a all state variables
@@ -200,7 +200,7 @@ items:
       id: return_full_state
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA1780A58>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000001BAA18A6160>
       description: 'the name of the Function instance in the network
 
         '
@@ -267,7 +267,7 @@ items:
   syntax:
     content: PastValueWindow(window_size, axis, go_backwards=False, name='')
     parameters:
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA1780978>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000001BAA18A6080>
       id: window_size
     - description: 'maximum number of items in sequences. The *axis* will have this
         dimension.
@@ -428,7 +428,7 @@ items:
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA1780A20>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000001BAA18A6128>
       description: 'if `True` and the step function has more than one
 
         state variable, then the layer returns a all state variables (a tuple of sequences);
@@ -440,7 +440,7 @@ items:
       id: return_full_state
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA17809E8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000001BAA18A60F0>
       description: 'the name of the Function instance in the network
 
         '
@@ -582,7 +582,7 @@ items:
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000002BEA17809B0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000001BAA18A60B8>
       description: 'if `True` and the step function has more than one
 
         state variable, then the layer returns a all state variables (a tuple of sequences);

@@ -46,8 +46,8 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 579
   summary: "Configures the image reader that reads base64 encoded images and corresponding\n\
-    labels from a file of the form:\n\n<!-- literal_block {\"ids\": [], \"names\"\
-    : [], \"xml:space\": \"preserve\", \"dupnames\": [], \"classes\": [], \"backrefs\"\
+    labels from a file of the form:\n\n<!-- literal_block {\"classes\": [], \"ids\"\
+    : [], \"dupnames\": [], \"xml:space\": \"preserve\", \"names\": [], \"backrefs\"\
     : []} -->\n\n````\n\n   [sequenceId <tab>] <numerical label (0-based class id)>\
     \ <tab> <base64 encoded image>\n   ````\n\nSimilarly to the ImageDeserializer,\
     \ the sequenceId prefix is optional and can be omitted.\n"
@@ -81,11 +81,11 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 599
   summary: "Configures the CNTK text-format reader that reads text-based files with\n\
-    lines of the form:\n\n<!-- literal_block {\"ids\": [], \"names\": [], \"xml:space\"\
-    : \"preserve\", \"dupnames\": [], \"classes\": [], \"backrefs\": []} -->\n\n````\n\
-    \n   [Sequence_Id] (Sample)+\n   ````\n\nwhere:\n\n<!-- literal_block {\"ids\"\
-    : [], \"names\": [], \"xml:space\": \"preserve\", \"dupnames\": [], \"classes\"\
-    : [], \"backrefs\": []} -->\n\n````\n\n   Sample=|Input_Name (Value )*\n   ````\n"
+    lines of the form:\n\n<!-- literal_block {\"classes\": [], \"ids\": [], \"dupnames\"\
+    : [], \"xml:space\": \"preserve\", \"names\": [], \"backrefs\": []} -->\n\n````\n\
+    \n   [Sequence_Id] (Sample)+\n   ````\n\nwhere:\n\n<!-- literal_block {\"classes\"\
+    : [], \"ids\": [], \"dupnames\": [], \"xml:space\": \"preserve\", \"names\": [],\
+    \ \"backrefs\": []} -->\n\n````\n\n   Sample=|Input_Name (Value )*\n   ````\n"
   syntax:
     content: CTFDeserializer(filename, streams)
     parameters:
@@ -97,7 +97,7 @@ items:
       - str
     - description: 'any dictionary-like object that contains a mapping from stream
 
-        names to @StreamDef objects. Each StreamDef object configures
+        names to @cntk.io.StreamDef objects. Each StreamDef object configures
 
         an input stream.
 
@@ -126,7 +126,7 @@ items:
     parameters:
     - description: 'any dictionary-like object that contains a mapping from stream
 
-        names to @StreamDef objects. Each StreamDef object configures
+        names to @cntk.io.StreamDef objects. Each StreamDef object configures
 
         a feature stream.
 
@@ -164,7 +164,7 @@ items:
       - str
     - description: 'any dictionary-like object that contains a mapping from stream
 
-        names to @StreamDef objects. Each StreamDef object configures
+        names to @cntk.io.StreamDef objects. Each StreamDef object configures
 
         a label stream.
 
@@ -195,12 +195,12 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 557
   summary: "Configures the image reader that reads images and corresponding\nlabels\
-    \ from a file of the form:\n\n<!-- literal_block {\"ids\": [], \"names\": [],\
-    \ \"xml:space\": \"preserve\", \"dupnames\": [], \"classes\": [], \"backrefs\"\
-    : []} -->\n\n````\n\n   <full path to image> <tab> <numerical label (0-based class\
-    \ id)>\n   ````\n\nor:\n\n<!-- literal_block {\"ids\": [], \"names\": [], \"xml:space\"\
-    : \"preserve\", \"dupnames\": [], \"classes\": [], \"backrefs\": []} -->\n\n````\n\
-    \n   sequenceId <tab> path <tab> label\n   ````\n"
+    \ from a file of the form:\n\n<!-- literal_block {\"classes\": [], \"ids\": [],\
+    \ \"dupnames\": [], \"xml:space\": \"preserve\", \"names\": [], \"backrefs\":\
+    \ []} -->\n\n````\n\n   <full path to image> <tab> <numerical label (0-based class\
+    \ id)>\n   ````\n\nor:\n\n<!-- literal_block {\"classes\": [], \"ids\": [], \"\
+    dupnames\": [], \"xml:space\": \"preserve\", \"names\": [], \"backrefs\": []}\
+    \ -->\n\n````\n\n   sequenceId <tab> path <tab> label\n   ````\n"
   syntax:
     content: ImageDeserializer(filename, streams)
     parameters:

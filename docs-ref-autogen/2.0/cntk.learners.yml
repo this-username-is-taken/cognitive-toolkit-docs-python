@@ -102,7 +102,7 @@ items:
         '
       id: lr
       type:
-      - 'output of @learning_rate_schedule
+      - 'output of @cntk.learners.learning_rate_schedule
 
         '
     - description: 'exponential smooth factor for each minibatch.
@@ -159,7 +159,7 @@ items:
       - bool, default True
     - description: 'use averaged gradient as input to learner.
 
-        Defaults to the value returned by @default_use_mean_gradient_value.
+        Defaults to the value returned by @cntk.learners.default_use_mean_gradient_value.
 
         '
       id: use_mean_gradient
@@ -214,7 +214,7 @@ items:
         '
       id: lr
       type:
-      - 'output of @learning_rate_schedule
+      - 'output of @cntk.learners.learning_rate_schedule
 
         '
     - description: ''
@@ -263,7 +263,7 @@ items:
       - bool, default True
     - description: 'use averaged gradient as input to learner.
 
-        Defaults to the value returned by @default_use_mean_gradient_value.
+        Defaults to the value returned by @cntk.learners.default_use_mean_gradient_value.
 
         '
       id: use_mean_gradient
@@ -320,7 +320,7 @@ items:
         '
       id: lr
       type:
-      - 'output of @learning_rate_schedule
+      - 'output of @cntk.learners.learning_rate_schedule
 
         '
     - description: 'momentum schedule.
@@ -330,10 +330,10 @@ items:
         '
       id: momentum
       type:
-      - "output of @momentum_schedule\n or @momentum_as_time_constant_schedule\n"
+      - "output of @cntk.learners.momentum_schedule\n or @cntk.learners.momentum_as_time_constant_schedule\n"
     - description: 'when `True`, momentum is interpreted as a unit-gain filter. Defaults
 
-        to the value returned by @default_unit_gain_value.
+        to the value returned by @cntk.learners.default_unit_gain_value.
 
         '
       id: unit_gain
@@ -344,7 +344,7 @@ items:
         '
       id: variance_momentum
       type:
-      - "output of @momentum_schedule\n or @momentum_as_time_constant_schedule\n"
+      - "output of @cntk.learners.momentum_schedule\n or @cntk.learners.momentum_as_time_constant_schedule\n"
     - description: 'the L1 regularization weight per sample,
 
         defaults to 0.0
@@ -387,7 +387,7 @@ items:
       - bool, default True
     - description: 'use averaged gradient as input to learner.
 
-        Defaults to the value returned by @default_use_mean_gradient_value.
+        Defaults to the value returned by @cntk.learners.default_use_mean_gradient_value.
 
         '
       id: use_mean_gradient
@@ -493,7 +493,7 @@ items:
         '
       id: lr
       type:
-      - 'output of @learning_rate_schedule
+      - 'output of @cntk.learners.learning_rate_schedule
 
         '
     - description: 'momentum schedule.
@@ -503,7 +503,7 @@ items:
         '
       id: momentum
       type:
-      - "output of @momentum_schedule\n or @momentum_as_time_constant_schedule\n"
+      - "output of @cntk.learners.momentum_schedule\n or @cntk.learners.momentum_as_time_constant_schedule\n"
     - description: 'when `True`, momentum is interpreted as a unit-gain filter. Defaults
 
         to the value returned by @cntk.learners.default_unit_gain_value.
@@ -517,7 +517,7 @@ items:
         '
       id: variance_momentum
       type:
-      - "output of @momentum_schedule\n or @momentum_as_time_constant_schedule\n"
+      - "output of @cntk.learners.momentum_schedule\n or @cntk.learners.momentum_as_time_constant_schedule\n"
     - description: 'the L1 regularization weight per sample,
 
         defaults to 0.0
@@ -581,7 +581,7 @@ items:
   - python
   module: cntk.learners
   name: learning_rate_schedule
-  seealsoContent: "See also: @training_parameter_schedule \n"
+  seealsoContent: "See also: @cntk.learners.training_parameter_schedule \n"
   source:
     id: learning_rate_schedule
     path: bindings/python\cntk\internal\swig_helper.py
@@ -592,7 +592,7 @@ items:
     startLine: 298
   summary: 'Create a learning rate schedule (using the same semantics as
 
-    @training_parameter_schedule).
+    @cntk.learners.training_parameter_schedule).
 
     '
   syntax:
@@ -600,7 +600,7 @@ items:
     parameters:
     - description: 'see parameter `schedule` in
 
-        @training_parameter_schedule.
+        @cntk.learners.training_parameter_schedule.
 
         '
       id: lr
@@ -608,7 +608,7 @@ items:
       - float or list
     - description: 'see parameter
 
-        `unit` in @training_parameter_schedule.
+        `unit` in @cntk.learners.training_parameter_schedule.
 
         '
       id: unit
@@ -618,7 +618,7 @@ items:
         '
     - description: 'see parameter `epoch_size` in
 
-        @training_parameter_schedule.
+        @cntk.learners.training_parameter_schedule.
 
         '
       id: epoch_size
@@ -668,7 +668,7 @@ items:
     startLine: 359
   summary: 'Create a momentum schedule in a minibatch-size agnostic way
 
-    (using the same semantics as @training_parameter_schedule
+    (using the same semantics as @cntk.learners.training_parameter_schedule
 
     with *unit=UnitType.sample*).
 
@@ -684,7 +684,7 @@ items:
 
     If you want to specify the momentum per sample (or per minibatch),
 
-    use @momentum_schedule.
+    use @cntk.learners.momentum_schedule.
 
     '
   syntax:
@@ -755,7 +755,7 @@ items:
     startLine: 321
   summary: 'Create a per-minibatch momentum schedule (using the same semantics as
 
-    @training_parameter_schedule with the *unit=UnitType.minibatch*).
+    @cntk.learners.training_parameter_schedule with the *unit=UnitType.minibatch*).
 
 
     If you want to provide momentum values in a minibatch-size

@@ -49,21 +49,7 @@ items:
 
 
     '
-  syntax:
-    attribute:
-    - dtype
-    - dynamic_axes
-    - is_constant
-    - is_input
-    - is_output
-    - is_parameter
-    - is_placeholder
-    - is_sparse
-    - name
-    - needs_gradient
-    - owner
-    - shape
-    - uid
+  syntax: {}
   type: class
   uid: cntk.variables.VariableMixin
 - class: cntk.variables.VariableMixin

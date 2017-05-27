@@ -32,12 +32,6 @@ items:
 
     '
   syntax:
-    attribute:
-    - bidirectional
-    - forget_bias
-    - hidden_dim
-    - input_dim
-    - op_type
     content: RnnAttr(bidirectional, op_type, input_dim, hidden_dim, forget_bias)
   type: class
   uid: cntk.contrib.crosstalk.RnnAttr

@@ -33,7 +33,7 @@ items:
     startLine: 25
   summary: 'Holds a minibatch of input data. This is never directly created, but
 
-    only returned by @MinibatchSource instances.
+    only returned by @cntk.io.MinibatchSource instances.
 
 
 
@@ -45,15 +45,6 @@ items:
 
     '
   syntax:
-    attribute:
-    - as_sequencesvariable=None
-    - data
-    - end_of_sweep
-    - is_sparse
-    - mask
-    - num_samples
-    - num_sequences
-    - shape
     content: MinibatchData(value, num_sequences, num_samples, sweep_end)
   type: class
   uid: cntk.io.MinibatchData

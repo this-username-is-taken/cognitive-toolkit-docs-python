@@ -31,9 +31,6 @@ items:
 
     '
   syntax:
-    attribute:
-    - communicator
-    - total_number_of_samples_seen
     content: DistributedLearner(*args, **kwargs)
   type: class
   uid: cntk.train.distributed.DistributedLearner

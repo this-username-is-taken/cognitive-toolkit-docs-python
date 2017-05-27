@@ -30,10 +30,6 @@ items:
 
     '
   syntax:
-    attribute:
-    - evaluation_function
-    - summarize_test_progress
-    - test_minibatcharguments, device=None
     content: Evaluator(eval_function, progress_writers=None)
     parameters:
     - description: 'evaluation function.

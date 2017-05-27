@@ -47,19 +47,6 @@ items:
 
     '
   syntax:
-    attribute:
-    - ONE_HOT_SKIP = 18446744073709551615
-    - as_sequencesvariable=None
-    - static createvar, data, seq_starts=None, device=None, read_only=False
-    - data
-    - device
-    - dtype
-    - is_read_only
-    - is_sparse
-    - is_valid
-    - mask
-    - static one_hotbatch, num_classes, dtype=None, device=None
-    - shape
     content: Value(batch, seq_starts=None, device=None)
     parameters:
     - description: "batch input for *var*.\nIt can be:\n\n   * a pure Python structure\

@@ -43,12 +43,6 @@ items:
 
     '
   syntax:
-    attribute:
-    - clonecloned_inputs
-    - static deserializeinputs, name, state
-    - infer_outputs
-    - op_name
-    - serialize
     content: UserFunction(inputs, as_numpy=True, name='')
     parameters:
     - description: 'inputs to this function

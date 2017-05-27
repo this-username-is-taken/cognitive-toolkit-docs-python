@@ -35,9 +35,6 @@ items:
 
     '
   syntax:
-    attribute:
-    - as_constant
-    - as_parameter
     content: Variable(shape=None, dtype=None, needs_gradient=False, is_sparse=False,
       dynamic_axes=[Axis.default_batch_axis(), Axis.default_dynamic_axis()], name='')
     parameters:

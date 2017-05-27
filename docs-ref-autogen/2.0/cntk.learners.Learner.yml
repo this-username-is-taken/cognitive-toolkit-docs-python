@@ -40,11 +40,6 @@ items:
 
     '
   syntax:
-    attribute:
-    - learning_rate
-    - parameters
-    - reset_learning_ratelearning_rate
-    - updategradient_values, training_sample_count
     content: Learner(parameters, learningRateSchedule)
   type: class
   uid: cntk.learners.Learner
@@ -123,7 +118,7 @@ items:
         '
       id: learning_rate
       type:
-      - 'output of @learning_rate_schedule
+      - 'output of @cntk.learners.learning_rate_schedule
 
         '
   type: method
