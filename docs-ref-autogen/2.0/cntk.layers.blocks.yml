@@ -55,7 +55,7 @@ items:
   type: function
   uid: cntk.layers.blocks.BlockFunction
 - example:
-  - "```\n\n>>> # create a graph with a recurrent loop to compute the length of an\
+  - "```python\n\n>>> # create a graph with a recurrent loop to compute the length of an\
     \ input sequence\n>>> from cntk.layers.typing import *\n>>> x = C.input_variable(**Sequence[Tensor[2]])\n\
     >>> ones_like_input = C.sequence.broadcast_as(1, x)  # sequence of scalar ones\
     \ of same length as input\n>>> out_fwd = ForwardDeclaration()  # placeholder for\
@@ -100,7 +100,7 @@ items:
   type: function
   uid: cntk.layers.blocks.ForwardDeclaration
 - example:
-  - '```
+  - '```python
 
 
     >>> # a gated recurrent layer
@@ -207,7 +207,7 @@ items:
   type: function
   uid: cntk.layers.blocks.GRU
 - example:
-  - '```
+  - '```python
 
 
     >>> # a typical recurrent LSTM layer
@@ -319,7 +319,7 @@ items:
   type: function
   uid: cntk.layers.blocks.LSTM
 - example:
-  - '```
+  - '```python
 
 
     >>> # a plain relu RNN layer
@@ -424,7 +424,7 @@ items:
   type: function
   uid: cntk.layers.blocks.RNNUnit
 - example:
-  - '```
+  - '```python
 
 
     >>> # recurrent model with self-stabilization
