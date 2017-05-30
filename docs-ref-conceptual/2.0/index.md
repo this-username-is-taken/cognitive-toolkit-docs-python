@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.service: cognitive-services
 ---
 
-# Python API for CNTK (2.0)
+# Cognitive Toolkit Python API (2.0)
 
 [CNTK](https://www.microsoft.com/en-us/cognitive-toolkit/), the Microsoft Cognitive Toolkit, is a system for describing, training,
 and executing computational networks. It is also a framework for describing
