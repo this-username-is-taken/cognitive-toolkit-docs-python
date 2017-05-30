@@ -30,12 +30,18 @@ items:
 
 
 
+
+
+    clone = ''clone''
+
+
+    freeze = ''freeze''
+
+
+    share = ''share''
+
     '
-  syntax:
-    attribute:
-    - clone = 'clone'
-    - freeze = 'freeze'
-    - share = 'share'
+  syntax: {}
   type: class
   uid: cntk.ops.functions.CloneMethod
 - class: cntk.ops.functions.CloneMethod

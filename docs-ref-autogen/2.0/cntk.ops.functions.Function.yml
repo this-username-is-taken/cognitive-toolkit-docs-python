@@ -87,11 +87,11 @@ items:
     \ types\nof the arguments. In this case, the @Function decorator creates a CNTK\
     \ Function\nwhose arguments are input variables.\n\nIf you use Python 3, Functions\
     \ with types are declared using Python annotation syntax, e.g.:\n\n<!-- literal_block\
-    \ {\"ids\": [], \"names\": [], \"xml:space\": \"preserve\", \"dupnames\": [],\
-    \ \"classes\": [], \"backrefs\": []} -->\n\n````\n\n   @Function\n   def f(x:Tensor[13]):\n\
+    \ {\"classes\": [], \"xml:space\": \"preserve\", \"dupnames\": [], \"ids\": [],\
+    \ \"names\": [], \"backrefs\": []} -->\n\n````\n\n   @Function\n   def f(x:Tensor[13]):\n\
     \       return x * x\n   ````\n\nIf you are working with Python 2.7, use CNTK's\
-    \ @cntk.layers.typing decorator instead:\n\n<!-- literal_block {\"ids\": [], \"\
-    names\": [], \"xml:space\": \"preserve\", \"dupnames\": [], \"classes\": [], \"\
+    \ @cntk.layers.typing decorator instead:\n\n<!-- literal_block {\"classes\": [],\
+    \ \"xml:space\": \"preserve\", \"dupnames\": [], \"ids\": [], \"names\": [], \"\
     backrefs\": []} -->\n\n````\n\n   >>> from cntk.layers.typing import *\n   >>>\
     \ @Function\n   ... @Signature(Tensor[13])\n   ... def f(x):\n   ...     return\
     \ x * x\n   >>> debugging.dump_signature(f)\n   Function(x: Tensor[13]) -> Tensor[13]\n\
@@ -100,43 +100,6 @@ items:
     \ using the supplied `op_name` and `name` parameters, which are otherwise ignored.\n\
     \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
   syntax:
-    attribute:
-    - argument_map*args, **kwargs
-    - arguments
-    - attributes
-    - backwardstate, root_gradients, variables, as_numpy=True
-    - block_arguments_mapping
-    - block_root
-    - clonemethod, substitutions=None
-    - constants
-    - declare_args*arg_types
-    - evalarguments=None, outputs=None, device=None, as_numpy=True
-    - find_all_with_namename, depth=0
-    - find_by_namename, depth=0
-    - forwardarguments, outputs=None, keep_for_backward=None, device=None, as_numpy=True
-    - gradat, wrt=None, outputs=None, device=None, as_numpy=True, grad_root=None
-    - inputs
-    - is_block
-    - is_composite
-    - is_primitive
-    - static loadmodel, device=None
-    - name
-    - op_name
-    - output
-    - outputs
-    - parameters
-    - placeholders
-    - static register_udf_deserialize_callbackop_name, callback
-    - replace_placeholdersubstitution
-    - replace_placeholderssubstitutions
-    - restorefilename
-    - root_function
-    - savefilename
-    - set_attributename, value
-    - signature
-    - type
-    - uid
-    - update_signature*arg_types, **kwarg_types
     content: Function(*args, **kwargs)
   type: class
   uid: cntk.ops.functions.Function
@@ -479,7 +442,7 @@ items:
   - python
   module: cntk.ops.functions
   name: find_all_with_name
-  seealsoContent: "See also: @find_by_name \n"
+  seealsoContent: "See also: @cntk.ops.functions.find_by_name \n"
   source:
     id: find_all_with_name
     path: bindings/python\cntk\internal\swig_helper.py
@@ -494,7 +457,7 @@ items:
 
     multiple times. If you expect only one function to be returned, use
 
-    @find_by_name.
+    @cntk.ops.functions.find_by_name.
 
     '
   syntax:

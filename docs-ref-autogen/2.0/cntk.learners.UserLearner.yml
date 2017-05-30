@@ -33,8 +33,6 @@ items:
 
     '
   syntax:
-    attribute:
-    - updategradient_values, training_sample_count, sweep_end
     content: UserLearner(parameters, lr_schedule, as_numpy=True)
   type: class
   uid: cntk.learners.UserLearner

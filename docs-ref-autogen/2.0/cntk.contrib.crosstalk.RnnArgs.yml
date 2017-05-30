@@ -34,13 +34,6 @@ items:
 
     '
   syntax:
-    attribute:
-    - bw_H
-    - bw_W
-    - bw_b
-    - fw_H
-    - fw_W
-    - fw_b
     content: RnnArgs(fw_W, fw_H, fw_b, bw_W, bw_H, bw_b)
   type: class
   uid: cntk.contrib.crosstalk.RnnArgs

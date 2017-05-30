@@ -61,26 +61,6 @@ items:
 
     '
   syntax:
-    attribute:
-    - avg_loss_since_last
-    - avg_loss_since_start
-    - avg_metric_since_last
-    - avg_metric_since_start
-    - end_progress_printmsg=''
-    - epoch_summarywith_metric=False
-    - logmessage
-    - on_training_update_end
-    - on_write_distributed_sync_updatesamples, updates, aggregate_metric
-    - on_write_test_summarysamples, updates, summaries, aggregate_metric, elapsed_milliseconds
-    - on_write_test_updatesamples, updates, aggregate_metric
-    - on_write_training_summarysamples, updates, summaries, aggregate_loss, aggregate_metric,
-      elapsed_milliseconds
-    - on_write_training_updatesamples, updates, aggregate_loss, aggregate_metric
-    - reset_last
-    - reset_start
-    - updateloss, minibatch_size, metric=None
-    - update_with_trainertrainer, with_metric=False
-    - writekey, value
     content: ProgressPrinter(freq=None, first=0, tag='', log_to_file=None, rank=None,
       gen_heartbeat=False, num_epochs=300, test_freq=None, test_first=0, metric_is_pct=True,
       distributed_freq=None, distributed_first=0)

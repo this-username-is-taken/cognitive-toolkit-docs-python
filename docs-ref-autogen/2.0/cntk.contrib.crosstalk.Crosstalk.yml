@@ -57,19 +57,6 @@ items:
 
     '
   syntax:
-    attribute:
-    - assignname, value=None, load=False, load_name=None
-    - comparename, compare_name=None, rtol=1e-05, atol=1e-08, equal_nan=False
-    - fetchname, save=False
-    - loadnames
-    - load_raw_valuename
-    - next_pass
-    - register_funcsvar_type, setter=None, getter=None
-    - reset
-    - savenames
-    - save_all
-    - set_workdirdir
-    - watchvar, name, var_type=None, attr=None
     content: Crosstalk()
   type: class
   uid: cntk.contrib.crosstalk.Crosstalk

@@ -37,9 +37,6 @@ items:
 
     '
   syntax:
-    attribute:
-    - on_cross_validation_endindex, average_error, num_samples, num_minibatches
-    - traindevice=None
     content: TrainingSession(trainer, mb_source, mb_size, model_inputs_to_streams,
       max_samples, progress_frequency, checkpoint_config, cv_config, test_config)
     parameters:

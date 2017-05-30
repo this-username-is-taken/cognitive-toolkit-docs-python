@@ -48,16 +48,6 @@ items:
 
     '
   syntax:
-    attribute:
-    - device
-    - dtype
-    - static from_csrcsr_array, device=None, read_only=False, borrow=False, shape=None
-    - static from_datadata, device=None, read_only=False, borrow=False
-    - static from_densenp_array, device=None, read_only=False, borrow=False
-    - is_read_only
-    - is_sparse
-    - shape
-    - slice_viewstart_offset, extent, read_only=True
     content: NDArrayView(shape, data_type, device=None)
     parameters:
     - description: 'shape of the data

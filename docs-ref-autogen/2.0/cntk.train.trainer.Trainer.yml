@@ -79,21 +79,6 @@ items:
 
     '
   syntax:
-    attribute:
-    - evaluation_function
-    - loss_function
-    - model
-    - parameter_learners
-    - previous_minibatch_evaluation_average
-    - previous_minibatch_loss_average
-    - previous_minibatch_sample_count
-    - restore_from_checkpointfilename
-    - save_checkpointfilename, external_state={}
-    - summarize_test_progress
-    - summarize_training_progress
-    - test_minibatcharguments, device=None
-    - total_number_of_samples_seen
-    - train_minibatcharguments, outputs=None, device=None
     content: Trainer(model, criterion, parameter_learners, progress_writers=None)
     parameters:
     - description: 'root node of the function to train
