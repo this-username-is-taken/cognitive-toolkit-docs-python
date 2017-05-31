@@ -4,7 +4,7 @@ author:
 ms.author: 
 ms.date: 05/31/2017
 ms.topic: conceptual
-ms.service: cognitive-services
+ms.service: cognitive-toolkit
 ---
 
 # Working with Sequences
@@ -106,7 +106,7 @@ input into their next state. In other words, they allow information
 to persist. So, while a traditional neural network layer can be thought of as having data 
 flow through as in the figure on the left below, an RNN layer can be seen as the figure on the right.
 
-[![alt text](images/nn_layers.png?view=cntk-2.0&branch=master "NN Layers")](images/nn_layers.png?view=cntk-2.0&branch=master)
+[![alt text](/python/cognitive-toolkit/images/nn_layers.png "NN Layers")](/python/cognitive-toolkit/images/nn_layers.png)
 
 As is apparent from the figure above on the right, RNNs are the natural structure for 
 dealing with sequences. This includes everything from text to music to video; anything 

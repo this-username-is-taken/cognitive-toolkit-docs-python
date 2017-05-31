@@ -4,7 +4,7 @@ author:
 ms.author: 
 ms.date: 05/31/2017
 ms.topic: conceptual
-ms.service: cognitive-services
+ms.service: cognitive-toolkit
 ---
 
 # Getting started 
