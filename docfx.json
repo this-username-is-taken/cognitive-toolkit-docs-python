@@ -3,15 +3,38 @@
     "content": [
       {
         "files": [
-          "**/*.md"
+          "**/*.md",
+          "**/*.yml"
         ],
+        "src": "docs-ref-conceptual/2.0",
+        "version": "cntk-py-2.0",
+        "dest": "cognitive-toolkit",
         "exclude": [
           "**/obj/**",
-          "**/includes/**",
-          "README.md",
-          "LICENSE",
-          "LICENSE-CODE",
-          "ThirdPartyNotices"
+          "**/includes/**"
+        ]
+      },
+      {
+        "files": [
+          "**/*.yml"
+        ],
+        "src": "docs-ref-autogen/2.0",
+        "version": "cntk-py-2.0",
+        "dest": "api",
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
+        ]
+      },
+      {
+        "files": [
+          "**/*.yml"
+        ],
+        "src": "breadcrumb",
+        "dest": "breadcrumb",
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**"
         ]
       }
     ],
@@ -21,17 +44,34 @@
           "**/*.png",
           "**/*.jpg"
         ],
+        "src": "docs-ref-conceptual/2.0",
+        "version": "cntk-py-2.0",
+        "dest": "cognitive-toolkit",
         "exclude": [
           "**/obj/**",
           "**/includes/**"
         ]
       }
     ],
+    "versions": {
+      "cntk-py-2.0": {
+        "dest": "cntk-py-2.0"
+      }
+    },
     "overwrite": [],
     "externalReference": [],
-    "globalMetadata": {},
-    "fileMetadata": {},
+    "globalMetadata": {
+      "breadcrumb_path": "/python/breadcrumb/toc.json"
+    },
+    "fileMetadata": {
+      "author": {
+        "docs-ref-autogen/2.0/**/*.yml": "VSC-Service-Account"
+      },
+      "ms.devlang": {
+        "docs-ref-autogen/2.0/**/*.yml": "python"
+      }
+    },
     "template": [],
-    "dest": "cntktest"
+    "dest": "cntk"
   }
 }

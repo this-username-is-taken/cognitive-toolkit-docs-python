@@ -1,0 +1,55 @@
+#YamlMime:PythonReference
+api_name: []
+items:
+- children: []
+  class: cntk.train.training_session.TestConfig
+  fullName: cntk.train.training_session.TestConfig
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: cntk.cntk_py.TestConfig
+  langs:
+  - python
+  module: cntk.train.training_session
+  name: TestConfig
+  source:
+    id: TestConfig
+    path: bindings/python\cntk\train\training_session.py
+    remote:
+      branch: master
+      path: bindings/python\cntk\train\training_session.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 104
+  summary: 'A test configuration for the training session.
+
+    '
+  syntax:
+    content: TestConfig(source, mb_size=None, model_inputs_to_streams=None)
+    parameters:
+    - description: 'minibatch source used for testing
+
+        '
+      id: source
+      type:
+      - '@cntk.io
+
+        '
+    - description: 'minibatch schedule for testing
+
+        '
+      id: mb_size
+      type:
+      - '@cntk.cntk_py.minibatch_size_schedule
+
+        '
+    - description: 'mapping between input variables and input streams
+
+        If None, the mapping provided to the training session constructor is used.
+
+        '
+      id: model_inputs_to_streams
+      type:
+      - dict
+  type: class
+  uid: cntk.train.training_session.TestConfig
+references: []

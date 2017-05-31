@@ -1,0 +1,82 @@
+#YamlMime:PythonReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalk.FuncInfo.getter
+  - cntk.contrib.crosstalk.FuncInfo.setter
+  class: cntk.contrib.crosstalk.FuncInfo
+  fullName: cntk.contrib.crosstalk.FuncInfo
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: builtins.tuple
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: FuncInfo
+  source:
+    id: FuncInfo
+    path: null
+    remote:
+      branch: master
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: '
+
+    '
+  syntax:
+    content: FuncInfo(setter, getter)
+  type: class
+  uid: cntk.contrib.crosstalk.FuncInfo
+- class: cntk.contrib.crosstalk.FuncInfo
+  fullName: cntk.contrib.crosstalk.FuncInfo.getter
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: getter
+  source:
+    id: getter
+    path: null
+    remote:
+      branch: master
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Alias for field number 1
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.contrib.crosstalk.FuncInfo.getter
+- class: cntk.contrib.crosstalk.FuncInfo
+  fullName: cntk.contrib.crosstalk.FuncInfo.setter
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: setter
+  source:
+    id: setter
+    path: null
+    remote:
+      branch: master
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Alias for field number 0
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.contrib.crosstalk.FuncInfo.setter
+references:
+- fullName: cntk.contrib.crosstalk.FuncInfo.getter
+  isExternal: false
+  name: getter
+  parent: cntk.contrib.crosstalk.FuncInfo
+  uid: cntk.contrib.crosstalk.FuncInfo.getter
+- fullName: cntk.contrib.crosstalk.FuncInfo.setter
+  isExternal: false
+  name: setter
+  parent: cntk.contrib.crosstalk.FuncInfo
+  uid: cntk.contrib.crosstalk.FuncInfo.setter

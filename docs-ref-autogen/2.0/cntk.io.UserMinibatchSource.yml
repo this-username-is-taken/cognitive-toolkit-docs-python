@@ -1,0 +1,225 @@
+#YamlMime:PythonReference
+api_name: []
+items:
+- children:
+  - cntk.io.UserMinibatchSource.get_checkpoint_state
+  - cntk.io.UserMinibatchSource.next_minibatch
+  - cntk.io.UserMinibatchSource.restore_from_checkpoint
+  - cntk.io.UserMinibatchSource.stream_info
+  - cntk.io.UserMinibatchSource.stream_infos
+  class: cntk.io.UserMinibatchSource
+  fullName: cntk.io.UserMinibatchSource
+  inheritance:
+  - inheritance:
+    - inheritance:
+      - type: builtins.object
+      type: cntk.cntk_py.MinibatchSource
+    type: cntk.cntk_py.SwigMinibatchSource
+  langs:
+  - python
+  module: cntk.io
+  name: UserMinibatchSource
+  source:
+    id: UserMinibatchSource
+    path: bindings/python\cntk\io\__init__.py
+    remote:
+      branch: master
+      path: bindings/python\cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 366
+  summary: 'Base class of all user minibatch sources.
+
+
+
+
+
+
+    '
+  syntax:
+    content: UserMinibatchSource()
+  type: class
+  uid: cntk.io.UserMinibatchSource
+- class: cntk.io.UserMinibatchSource
+  fullName: cntk.io.UserMinibatchSource.get_checkpoint_state
+  langs:
+  - python
+  module: cntk.io
+  name: get_checkpoint_state
+  source:
+    id: get_checkpoint_state
+    path: bindings/python\cntk\io\__init__.py
+    remote:
+      branch: master
+      path: bindings/python\cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 432
+  summary: 'Returns a dictionary describing the current state of the minibatch
+
+    source.
+
+    '
+  syntax:
+    content: get_checkpoint_state()
+    parameters:
+    - id: self
+    return:
+      description: 'dictionary, that can be later used on @cntk.io.UserMinibatchSource.restore_from_checkpoint.
+
+        '
+  type: method
+  uid: cntk.io.UserMinibatchSource.get_checkpoint_state
+- class: cntk.io.UserMinibatchSource
+  fullName: cntk.io.UserMinibatchSource.next_minibatch
+  langs:
+  - python
+  module: cntk.io
+  name: next_minibatch
+  source:
+    id: next_minibatch
+    path: bindings/python\cntk\io\__init__.py
+    remote:
+      branch: master
+      path: bindings/python\cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 398
+  summary: 'Function to be implemented by the user.
+
+    '
+  syntax:
+    content: next_minibatch(num_samples, number_of_workers, worker_rank, device=None)
+    parameters:
+    - description: 'number of samples to return
+
+        '
+      id: num_samples
+      type:
+      - int
+    - description: 'number of workers in total
+
+        '
+      id: number_of_workers
+      type:
+      - int
+    - defaultValue: None
+      description: 'worker for which the data is to be returned
+
+        '
+      id: worker_rank
+      type:
+      - int
+    return:
+      description: 'mapping of @cntk.io.StreamInformation to @cntk.io.MinibatchData
+
+        '
+  type: method
+  uid: cntk.io.UserMinibatchSource.next_minibatch
+- class: cntk.io.UserMinibatchSource
+  fullName: cntk.io.UserMinibatchSource.restore_from_checkpoint
+  langs:
+  - python
+  module: cntk.io
+  name: restore_from_checkpoint
+  source:
+    id: restore_from_checkpoint
+    path: bindings/python\cntk\io\__init__.py
+    remote:
+      branch: master
+      path: bindings/python\cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 447
+  summary: 'Sets the state of the checkpoint.
+
+    '
+  syntax:
+    content: restore_from_checkpoint(state)
+    parameters:
+    - id: self
+    - description: 'dictionary containing the state
+
+        '
+      id: state
+      type:
+      - dict
+  type: method
+  uid: cntk.io.UserMinibatchSource.restore_from_checkpoint
+- class: cntk.io.UserMinibatchSource
+  fullName: cntk.io.UserMinibatchSource.stream_info
+  langs:
+  - python
+  module: cntk.io
+  name: stream_info
+  source:
+    id: stream_info
+    path: bindings/python\cntk\io\__init__.py
+    remote:
+      branch: master
+      path: bindings/python\cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 390
+  summary: 'Gets the description of the stream with given name.
+
+    Throws an exception if there are none or multiple streams with this
+
+    same name.
+
+    '
+  syntax:
+    content: stream_info(name)
+    parameters:
+    - id: self
+    - id: name
+  type: method
+  uid: cntk.io.UserMinibatchSource.stream_info
+- class: cntk.io.UserMinibatchSource
+  fullName: cntk.io.UserMinibatchSource.stream_infos
+  langs:
+  - python
+  module: cntk.io
+  name: stream_infos
+  source:
+    id: stream_infos
+    path: bindings/python\cntk\io\__init__.py
+    remote:
+      branch: master
+      path: bindings/python\cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 376
+  summary: 'Function to be implemented by the user.
+
+    '
+  syntax:
+    content: stream_infos()
+    parameters:
+    - id: self
+    return:
+      description: 'list of @cntk.io.StreamInformation instances
+
+        '
+  type: method
+  uid: cntk.io.UserMinibatchSource.stream_infos
+references:
+- fullName: cntk.io.UserMinibatchSource.get_checkpoint_state
+  isExternal: false
+  name: get_checkpoint_state
+  parent: cntk.io.UserMinibatchSource
+  uid: cntk.io.UserMinibatchSource.get_checkpoint_state
+- fullName: cntk.io.UserMinibatchSource.next_minibatch
+  isExternal: false
+  name: next_minibatch
+  parent: cntk.io.UserMinibatchSource
+  uid: cntk.io.UserMinibatchSource.next_minibatch
+- fullName: cntk.io.UserMinibatchSource.restore_from_checkpoint
+  isExternal: false
+  name: restore_from_checkpoint
+  parent: cntk.io.UserMinibatchSource
+  uid: cntk.io.UserMinibatchSource.restore_from_checkpoint
+- fullName: cntk.io.UserMinibatchSource.stream_info
+  isExternal: false
+  name: stream_info
+  parent: cntk.io.UserMinibatchSource
+  uid: cntk.io.UserMinibatchSource.stream_info
+- fullName: cntk.io.UserMinibatchSource.stream_infos
+  isExternal: false
+  name: stream_infos
+  parent: cntk.io.UserMinibatchSource
+  uid: cntk.io.UserMinibatchSource.stream_infos
