@@ -6,7 +6,9 @@ items:
   - cntk.default_options.default_options_for
   - cntk.default_options.default_override_or
   - cntk.default_options.get_default_override
+  - cntk.default_options.get_global_option
   - cntk.default_options.is_default_override
+  - cntk.default_options.set_global_option
   fullName: cntk.default_options
   langs:
   - python
@@ -84,14 +86,34 @@ items:
     content: get_default_override(function_or_class, **kwargs)
     parameters:
     - description: "the function that calls this.\nFor example:\n\n<!-- literal_block\
-        \ {\"classes\": [], \"xml:space\": \"preserve\", \"dupnames\": [], \"ids\"\
-        : [], \"names\": [], \"backrefs\": []} -->\n\n````\n\n   def Convolution(args,\
+        \ {\"ids\": [], \"xml:space\": \"preserve\", \"names\": [], \"classes\": [],\
+        \ \"backrefs\": [], \"dupnames\": []} -->\n\n````\n\n   def Convolution(args,\
         \ init=default_override_or(glorot_uniform()), activation=default_override_or(identity),\
         \ pad=default_override_or(False)):\n   init = _get_default_override(Convolution,\
         \ init=init) # pass default under the same name\n   ````\n"
       id: function
   type: function
   uid: cntk.default_options.get_default_override
+- fullName: cntk.default_options.get_global_option
+  langs:
+  - python
+  module: cntk.default_options
+  name: get_global_option
+  source:
+    id: get_global_option
+    path: bindings/python\cntk\default_options.py
+    remote:
+      branch: master
+      path: bindings/python\cntk\default_options.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 111
+  syntax:
+    content: get_global_option(key, default_value)
+    parameters:
+    - id: key
+    - id: default_value
+  type: function
+  uid: cntk.default_options.get_global_option
 - fullName: cntk.default_options.is_default_override
   langs:
   - python
@@ -111,6 +133,26 @@ items:
     - id: value
   type: function
   uid: cntk.default_options.is_default_override
+- fullName: cntk.default_options.set_global_option
+  langs:
+  - python
+  module: cntk.default_options
+  name: set_global_option
+  source:
+    id: set_global_option
+    path: bindings/python\cntk\default_options.py
+    remote:
+      branch: master
+      path: bindings/python\cntk\default_options.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 104
+  syntax:
+    content: set_global_option(key, value)
+    parameters:
+    - id: key
+    - id: value
+  type: function
+  uid: cntk.default_options.set_global_option
 references:
 - fullName: cntk.default_options.default_options
   isExternal: false
@@ -132,8 +174,18 @@ references:
   name: get_default_override
   parent: cntk.default_options
   uid: cntk.default_options.get_default_override
+- fullName: cntk.default_options.get_global_option
+  isExternal: false
+  name: get_global_option
+  parent: cntk.default_options
+  uid: cntk.default_options.get_global_option
 - fullName: cntk.default_options.is_default_override
   isExternal: false
   name: is_default_override
   parent: cntk.default_options
   uid: cntk.default_options.is_default_override
+- fullName: cntk.default_options.set_global_option
+  isExternal: false
+  name: set_global_option
+  parent: cntk.default_options
+  uid: cntk.default_options.set_global_option
