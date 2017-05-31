@@ -1074,10 +1074,10 @@ items:
     , i.e. a -sized structure, where each entry (pixel) consists of a 3-tuple.\n\n\
     *convolution_transpose* convolves the input `operand` with a  rank tensor of (typically\
     \ learnable) filters called\n`convolution_map` of shape  (typically ).\nThe first\
-    \ dimension, , is the nunber of convolution filters (i.e. the number of\nchannels\
-    \ in the output). The second dimension, , must match the number of channels in\
-    \ the input.\nThe last n dimensions are the spatial extent of the filter. I.e.\
-    \ for each output position, a vector of\ndimension  is computed. Hence, the total\
+    \ dimension, , must match the number of channels in the input. The second dimension,\
+    \ , is the number of convolution filters (i.e. the number of\nchannels in the\
+    \ output).\nThe last n dimensions are the spatial extent of the filter. I.e. for\
+    \ each output position, a vector of\ndimension  is computed. Hence, the total\
     \ number of filter parameters is \n"
   syntax:
     content: convolution_transpose(convolution_map, operand, strides=(1,), sharing=[True],
@@ -4566,11 +4566,11 @@ items:
     \ matrix.\nThe operator '@' has been overloaded such that in Python 3.5 and later\
     \ X @ W equals times(X, W).\n\nFor better performance on times operation on sequence\
     \ which is followed by sequence.reduce_sum, use\ninfer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK,\
-    \ i.e. replace following:\n\n<!-- literal_block {\"classes\": [], \"xml:space\"\
-    : \"preserve\", \"dupnames\": [], \"ids\": [], \"names\": [], \"backrefs\": []}\
+    \ i.e. replace following:\n\n<!-- literal_block {\"ids\": [], \"xml:space\": \"\
+    preserve\", \"names\": [], \"classes\": [], \"backrefs\": [], \"dupnames\": []}\
     \ -->\n\n````\n\n   sequence.reduce_sum(times(seq1, seq2))\n   ````\n\nwith:\n\
-    \n<!-- literal_block {\"classes\": [], \"xml:space\": \"preserve\", \"dupnames\"\
-    : [], \"ids\": [], \"names\": [], \"backrefs\": []} -->\n\n````\n\n   times(seq1,\
+    \n<!-- literal_block {\"ids\": [], \"xml:space\": \"preserve\", \"names\": [],\
+    \ \"classes\": [], \"backrefs\": [], \"dupnames\": []} -->\n\n````\n\n   times(seq1,\
     \ seq2, infer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK)\n\
     \   ````\n"
   syntax:
@@ -4703,7 +4703,7 @@ items:
     static axis
 
 
-    <SYSTEM MESSAGE: C:\peter\ms_code\cntk_all\CNTK\bindings\python\doc\cntk.ops.rst:19:
+    <SYSTEM MESSAGE: F:\WorkFiles\Projects\CNTK\bindings\python\doc\cntk.ops.rst:19:
     (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
 
     Trying "todo" as canonical directive name.>
@@ -4770,7 +4770,7 @@ items:
     obtained from the ''dynamic_axes_like'' operand.
 
 
-    <SYSTEM MESSAGE: C:\peter\ms_code\cntk_all\CNTK\bindings\python\doc\cntk.ops.rst:14:
+    <SYSTEM MESSAGE: F:\WorkFiles\Projects\CNTK\bindings\python\doc\cntk.ops.rst:14:
     (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
 
     Trying "todo" as canonical directive name.>
