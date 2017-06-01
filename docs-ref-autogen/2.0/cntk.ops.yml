@@ -4703,20 +4703,6 @@ items:
     assumed to be of the same length; i.e. dimensionality of the most significant
 
     static axis
-
-
-    <SYSTEM MESSAGE: F:\WorkFiles\Projects\CNTK\bindings\python\doc\cntk.ops.rst:19:
-    (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
-
-    Trying "todo" as canonical directive name.>
-
-
-    <SYSTEM MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\ops\__init__.py:docstring
-    of cntk.ops.to_sequence:19: (ERROR/3) Unknown directive type "todo".
-
-
-    .. todo:: add an example>
-
     '
   syntax:
     content: to_sequence(x, sequence_lengths=None, sequence_axis_name_prefix='toSequence_',
@@ -4770,20 +4756,6 @@ items:
     static axis [0] as the sequence axis. The length of the sequences are
 
     obtained from the ''dynamic_axes_like'' operand.
-
-
-    <SYSTEM MESSAGE: F:\WorkFiles\Projects\CNTK\bindings\python\doc\cntk.ops.rst:14:
-    (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
-
-    Trying "todo" as canonical directive name.>
-
-
-    <SYSTEM MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\ops\__init__.py:docstring
-    of cntk.ops.to_sequence_like:14: (ERROR/3) Unknown directive type "todo".
-
-
-    .. todo:: add an example>
-
     '
   syntax:
     content: to_sequence_like(x, dynamic_axes_like, name='')
