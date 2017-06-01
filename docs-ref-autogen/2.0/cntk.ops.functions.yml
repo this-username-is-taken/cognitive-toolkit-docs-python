@@ -2,6 +2,7 @@
 api_name: []
 items:
 - children:
+  - cntk.ops.functions.BlockFunction
   - cntk.ops.functions.CloneMethod
   - cntk.ops.functions.Function
   - cntk.ops.functions.UserFunction
@@ -23,6 +24,30 @@ items:
     startLine: 0
   type: module
   uid: cntk.ops.functions
+- fullName: cntk.ops.functions.BlockFunction
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: BlockFunction
+  source:
+    id: BlockFunction
+    path: bindings/python\cntk\ops\functions.py
+    remote:
+      branch: master
+      path: bindings/python\cntk\ops\functions.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 1545
+  summary: 'Decorator for defining a @Function as a BlockFunction. Same as @Function,
+    but wrap the content into an @cntk.ops.
+
+    '
+  syntax:
+    content: BlockFunction(op_name, name)
+    parameters:
+    - id: op_name
+    - id: name
+  type: function
+  uid: cntk.ops.functions.BlockFunction
 - fullName: cntk.ops.functions.load_model
   langs:
   - python
@@ -35,7 +60,7 @@ items:
       branch: master
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1267
+    startLine: 1594
   summary: 'Alias for @cntk.ops.functions.Function.load.
 
     '
@@ -55,7 +80,7 @@ items:
       branch: master
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1244
+    startLine: 1571
   summary: 'Creates an instance of a user-defined Function previously registered using
     the
 
@@ -108,7 +133,7 @@ items:
       branch: master
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1224
+    startLine: 1551
   summary: 'Registers a native user-defined Function that can be subsequently instantiated
 
     using the ''native_user_function'' method.
@@ -154,6 +179,11 @@ items:
   type: function
   uid: cntk.ops.functions.register_native_user_function
 references:
+- fullName: cntk.ops.functions.BlockFunction
+  isExternal: false
+  name: BlockFunction
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.BlockFunction
 - fullName: cntk.ops.functions.CloneMethod
   isExternal: false
   name: CloneMethod

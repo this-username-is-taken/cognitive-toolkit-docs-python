@@ -12,7 +12,7 @@ ms.service: cognitive-toolkit
 ## CNTK Concepts
 
 CNTK inputs, outputs and parameters are organized as *tensors*. Each tensor has a *rank*:
-A scalar is a tensor of rank 0, a vector is a tensor of rank 1, a matrix is a tensor 
+a scalar is a tensor of rank 0, a vector is a tensor of rank 1, a matrix is a tensor 
 of rank 2, and so on. We refer to these different dimensions as *axes*.
 
 Every CNTK tensor has some *static axes* and some *dynamic axes*.

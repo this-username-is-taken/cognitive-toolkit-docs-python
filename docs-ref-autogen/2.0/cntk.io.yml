@@ -9,6 +9,7 @@ items:
   - cntk.io.ImageDeserializer
   - cntk.io.MinibatchData
   - cntk.io.MinibatchSource
+  - cntk.io.MinibatchSourceFromData
   - cntk.io.StreamConfiguration
   - cntk.io.StreamDef
   - cntk.io.StreamInformation
@@ -35,7 +36,7 @@ items:
   - python
   module: cntk.io
   name: Base64ImageDeserializer
-  seealsoContent: "See also: [Base64ImageDeserializer options](https://github.com/Microsoft/CNTK/wiki/BrainScript-and-Python---Understanding-and-Extending-Readers#base64imagedeserializer-options)\
+  seealsoContent: "See also: [Base64ImageDeserializer options](https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-and-Python---Understanding-and-Extending-Readers#base64imagedeserializer-options)\
     \ \n"
   source:
     id: Base64ImageDeserializer
@@ -44,10 +45,10 @@ items:
       branch: master
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 579
+    startLine: 826
   summary: "Configures the image reader that reads base64 encoded images and corresponding\n\
-    labels from a file of the form:\n\n<!-- literal_block {\"ids\": [], \"xml:space\"\
-    : \"preserve\", \"names\": [], \"classes\": [], \"backrefs\": [], \"dupnames\"\
+    labels from a file of the form:\n\n<!-- literal_block {\"backrefs\": [], \"names\"\
+    : [], \"xml:space\": \"preserve\", \"dupnames\": [], \"classes\": [], \"ids\"\
     : []} -->\n\n````\n\n   [sequenceId <tab>] <numerical label (0-based class id)>\
     \ <tab> <base64 encoded image>\n   ````\n\nSimilarly to the ImageDeserializer,\
     \ the sequenceId prefix is optional and can be omitted.\n"
@@ -70,7 +71,7 @@ items:
   - python
   module: cntk.io
   name: CTFDeserializer
-  seealsoContent: "See also: [CNTKTextReader format](https://github.com/Microsoft/CNTK/wiki/BrainScript-CNTKTextFormat-Reader)\
+  seealsoContent: "See also: [CNTKTextReader format](https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-CNTKTextFormat-Reader)\
     \ \n"
   source:
     id: CTFDeserializer
@@ -79,13 +80,14 @@ items:
       branch: master
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 599
+    startLine: 846
   summary: "Configures the CNTK text-format reader that reads text-based files with\n\
-    lines of the form:\n\n<!-- literal_block {\"ids\": [], \"xml:space\": \"preserve\"\
-    , \"names\": [], \"classes\": [], \"backrefs\": [], \"dupnames\": []} -->\n\n\
-    ````\n\n   [Sequence_Id] (Sample)+\n   ````\n\nwhere:\n\n<!-- literal_block {\"\
-    ids\": [], \"xml:space\": \"preserve\", \"names\": [], \"classes\": [], \"backrefs\"\
-    : [], \"dupnames\": []} -->\n\n````\n\n   Sample=|Input_Name (Value )*\n   ````\n"
+    lines of the form:\n\n<!-- literal_block {\"backrefs\": [], \"names\": [], \"\
+    xml:space\": \"preserve\", \"dupnames\": [], \"classes\": [], \"ids\": []} -->\n\
+    \n````\n\n   [Sequence_Id] (Sample)+\n   ````\n\nwhere:\n\n<!-- literal_block\
+    \ {\"backrefs\": [], \"names\": [], \"xml:space\": \"preserve\", \"dupnames\"\
+    : [], \"classes\": [], \"ids\": []} -->\n\n````\n\n   Sample=|Input_Name (Value\
+    \ )*\n   ````\n"
   syntax:
     content: CTFDeserializer(filename, streams)
     parameters:
@@ -117,7 +119,7 @@ items:
       branch: master
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 470
+    startLine: 717
   summary: 'Configures the HTK feature reader that reads speech data from scp files.
 
     '
@@ -146,7 +148,7 @@ items:
       branch: master
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 502
+    startLine: 749
   summary: 'Configures an HTK label reader that reads speech HTK format MLF (Master
 
     Label File)
@@ -184,7 +186,7 @@ items:
   - python
   module: cntk.io
   name: ImageDeserializer
-  seealsoContent: "See also: [Image reader definition](https://github.com/Microsoft/CNTK/wiki/BrainScript-Image-reader)\
+  seealsoContent: "See also: [Image reader definition](https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-Image-reader)\
     \ \n"
   source:
     id: ImageDeserializer
@@ -193,14 +195,14 @@ items:
       branch: master
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 557
+    startLine: 804
   summary: "Configures the image reader that reads images and corresponding\nlabels\
-    \ from a file of the form:\n\n<!-- literal_block {\"ids\": [], \"xml:space\":\
-    \ \"preserve\", \"names\": [], \"classes\": [], \"backrefs\": [], \"dupnames\"\
+    \ from a file of the form:\n\n<!-- literal_block {\"backrefs\": [], \"names\"\
+    : [], \"xml:space\": \"preserve\", \"dupnames\": [], \"classes\": [], \"ids\"\
     : []} -->\n\n````\n\n   <full path to image> <tab> <numerical label (0-based class\
-    \ id)>\n   ````\n\nor:\n\n<!-- literal_block {\"ids\": [], \"xml:space\": \"preserve\"\
-    , \"names\": [], \"classes\": [], \"backrefs\": [], \"dupnames\": []} -->\n\n\
-    ````\n\n   sequenceId <tab> path <tab> label\n   ````\n"
+    \ id)>\n   ````\n\nor:\n\n<!-- literal_block {\"backrefs\": [], \"names\": [],\
+    \ \"xml:space\": \"preserve\", \"dupnames\": [], \"classes\": [], \"ids\": []}\
+    \ -->\n\n````\n\n   sequenceId <tab> path <tab> label\n   ````\n"
   syntax:
     content: ImageDeserializer(filename, streams)
     parameters:
@@ -227,7 +229,7 @@ items:
       branch: master
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 653
+    startLine: 900
   summary: "   Configuration of a stream for use with the builtin Deserializers.\n\
     \   The meanings of some configuration keys have a mild dependency on the\n  \
     \ exact deserializer, and certain keys are meaningless for certain\n   deserializers.\n"
@@ -334,7 +336,7 @@ items:
       branch: master
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 765
+    startLine: 1012
   summary: 'Converts a list of NumPy arrays representing tensors of inputs into a
 
     format that is readable by @cntk.io.CTFDeserializer.
@@ -358,7 +360,7 @@ items:
       type:
       - dict
     return:
-      description: 'String representation in [CNTKTextReader format](https://github.com/Microsoft/CNTK/wiki/BrainScript-CNTKTextFormat-Reader)
+      description: 'String representation in [CNTKTextReader format](https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-CNTKTextFormat-Reader)
 
         '
       type:
@@ -401,6 +403,11 @@ references:
   name: MinibatchSource
   parent: cntk.io
   uid: cntk.io.MinibatchSource
+- fullName: cntk.io.MinibatchSourceFromData
+  isExternal: false
+  name: MinibatchSourceFromData
+  parent: cntk.io
+  uid: cntk.io.MinibatchSourceFromData
 - fullName: cntk.io.StreamConfiguration
   isExternal: false
   name: StreamConfiguration

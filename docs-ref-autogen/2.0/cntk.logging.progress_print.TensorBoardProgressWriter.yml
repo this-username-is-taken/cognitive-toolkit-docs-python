@@ -26,7 +26,7 @@ items:
       branch: master
       path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 425
+    startLine: 429
   summary: 'Allows writing various statistics (e.g. loss and metric) to TensorBoard
     event files during training/evaluation.
 
@@ -89,7 +89,7 @@ items:
       branch: master
       path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 477
+    startLine: 481
   summary: 'Make sure that any outstanding records are immediately persisted, then
     close any open files.
 
@@ -115,7 +115,7 @@ items:
       branch: master
       path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 469
+    startLine: 473
   summary: 'Make sure that any outstanding records are immediately persisted.
 
     '
@@ -138,7 +138,7 @@ items:
       branch: master
       path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 507
+    startLine: 511
   syntax:
     content: on_write_test_summary(samples, updates, summaries, aggregate_metric,
       elapsed_milliseconds)
@@ -164,7 +164,7 @@ items:
       branch: master
       path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 494
+    startLine: 498
   syntax:
     content: on_write_test_update(samples, updates, aggregate_metric)
     parameters:
@@ -187,7 +187,7 @@ items:
       branch: master
       path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 501
+    startLine: 505
   syntax:
     content: on_write_training_summary(samples, updates, summaries, aggregate_loss,
       aggregate_metric, elapsed_milliseconds)
@@ -214,7 +214,7 @@ items:
       branch: master
       path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 489
+    startLine: 493
   syntax:
     content: on_write_training_update(samples, updates, aggregate_loss, aggregate_metric)
     parameters:
@@ -238,7 +238,7 @@ items:
       branch: master
       path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 454
+    startLine: 458
   summary: 'Record value of a scalar variable at the given time step.
 
     '

@@ -1,82 +1,31 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- children:
-  - cntk.contrib.crosstalk.Conv2DArgs.W
-  - cntk.contrib.crosstalk.Conv2DArgs.b
+- children: []
   class: cntk.contrib.crosstalk.Conv2DArgs
   fullName: cntk.contrib.crosstalk.Conv2DArgs
   inheritance:
   - inheritance:
-    - type: builtins.object
-    type: builtins.tuple
+    - inheritance:
+      - type: builtins.object
+      type: builtins.tuple
+    type: cntk.contrib.crosstalk.Conv2DArgs
   langs:
   - python
   module: cntk.contrib.crosstalk
   name: Conv2DArgs
   source:
     id: Conv2DArgs
-    path: null
+    path: bindings/python\cntk\contrib\crosstalk\__init__.py
     remote:
       branch: master
-      path: null
+      path: bindings/python\cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: null
-  summary: '
-
-    '
-  syntax:
-    content: Conv2DArgs(W, b)
+    startLine: 53
+  summary: "Args inside Conv2D variable. Conv2D output is in NCHW format\n\nW\n  \
+    \ The numpy ndarray of filter parameter in shape (num_filters, filter_w, filter_h,))\n\
+    \nb\n   The numpy ndarray of bias parameter in shape (num_filters,)\n"
+  syntax: {}
   type: class
   uid: cntk.contrib.crosstalk.Conv2DArgs
-- class: cntk.contrib.crosstalk.Conv2DArgs
-  fullName: cntk.contrib.crosstalk.Conv2DArgs.W
-  langs:
-  - python
-  module: cntk.contrib.crosstalk
-  name: W
-  source:
-    id: W
-    path: null
-    remote:
-      branch: master
-      path: null
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: null
-  summary: 'Alias for field number 0
-
-    '
-  syntax: {}
-  type: attribute
-  uid: cntk.contrib.crosstalk.Conv2DArgs.W
-- class: cntk.contrib.crosstalk.Conv2DArgs
-  fullName: cntk.contrib.crosstalk.Conv2DArgs.b
-  langs:
-  - python
-  module: cntk.contrib.crosstalk
-  name: b
-  source:
-    id: b
-    path: null
-    remote:
-      branch: master
-      path: null
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: null
-  summary: 'Alias for field number 1
-
-    '
-  syntax: {}
-  type: attribute
-  uid: cntk.contrib.crosstalk.Conv2DArgs.b
-references:
-- fullName: cntk.contrib.crosstalk.Conv2DArgs.W
-  isExternal: false
-  name: W
-  parent: cntk.contrib.crosstalk.Conv2DArgs
-  uid: cntk.contrib.crosstalk.Conv2DArgs.W
-- fullName: cntk.contrib.crosstalk.Conv2DArgs.b
-  isExternal: false
-  name: b
-  parent: cntk.contrib.crosstalk.Conv2DArgs
-  uid: cntk.contrib.crosstalk.Conv2DArgs.b
+references: []

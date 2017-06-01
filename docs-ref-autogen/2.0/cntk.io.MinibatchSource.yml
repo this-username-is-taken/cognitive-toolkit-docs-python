@@ -27,7 +27,7 @@ items:
       branch: master
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 111
+    startLine: 112
   summary: '
 
 
@@ -41,7 +41,7 @@ items:
     content: MinibatchSource(deserializers, max_samples=cntk.io.INFINITELY_REPEAT,
       max_sweeps=cntk.io.INFINITELY_REPEAT, randomization_window_in_chunks=cntk.io.DEFAULT_RANDOMIZATION_WINDOW,
       randomization_window_in_samples=0, randomization_seed=0, trace_level=cntk.logging.get_trace_level(),
-      multithreaded_deserializer=False, frame_mode=False, truncation_length=0, randomize=True)
+      multithreaded_deserializer=None, frame_mode=False, truncation_length=0, randomize=True)
     parameters:
     - description: 'deserializers to be used in the composite reader
 
@@ -62,7 +62,7 @@ items:
 
         **Important:**
 
-        Click [here](https://github.com/Microsoft/CNTK/wiki/BrainScript-epochSize-and-Python-epoch_size-in-CNTK)
+        Click [here](https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-epochSize-and-Python-epoch_size-in-CNTK)
 
         for a description of input and label samples.
 
@@ -135,12 +135,18 @@ items:
         '
     - description: 'specifies if the deserialization should be
 
-        done on a single or multiple threads.
+        done on a single or multiple threads. Defaults to *None*, which is effectively
+        "auto" (multhithreading
+
+        is disabled unless ImageDeserializer is present in the deserializers list).
+        *False* and *True*
+
+        faithfully turn the multithreading off/on.
 
         '
       id: multithreaded_deserializer
       type:
-      - bool, defaults to False
+      - bool
     - description: 'switches the frame mode on and off. If the frame mode
 
         is enabled the input data will be processed as individual frames ignoring
@@ -231,7 +237,7 @@ items:
       branch: master
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 295
+    startLine: 302
   summary: 'Gets the checkpoint state of the MinibatchSource.
 
     '
@@ -282,7 +288,7 @@ items:
       branch: master
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 241
+    startLine: 247
   summary: 'Reads a minibatch that contains data for all input streams.  The
 
     minibatch size is specified in terms of #samples and/or #sequences for
@@ -306,7 +312,7 @@ items:
 
         **Important:**
 
-        Click [here](https://github.com/Microsoft/CNTK/wiki/BrainScript-minibatchSize-and-Python-minibatch_size_in_samples-in-CNTK)
+        Click [here](https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-minibatchSize-and-Python-minibatch_size_in_samples-in-CNTK)
         for a full description of this parameter.
 
         '
@@ -350,6 +356,9 @@ items:
 
         be a mapping of @cntk.variables.Variable to class:*MinibatchData*.
 
+        When the maximum number of epochs/samples is exhausted, the return value is
+        an empty dict.
+
         '
       type:
       - cntk.io.MinibatchData
@@ -368,7 +377,7 @@ items:
       branch: master
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 306
+    startLine: 313
   summary: 'Restores the MinibatchSource state from the specified checkpoint.
 
     '
@@ -399,7 +408,7 @@ items:
       branch: master
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 215
+    startLine: 221
   summary: 'Gets the description of the stream with given name.
 
     Throws an exception if there are none or multiple streams with this
@@ -438,7 +447,7 @@ items:
       branch: master
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 192
+    startLine: 198
   summary: 'Describes the streams this minibatch source produces.
 
     '

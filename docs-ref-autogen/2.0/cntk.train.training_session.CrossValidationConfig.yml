@@ -24,23 +24,16 @@ items:
 
     '
   syntax:
-    content: CrossValidationConfig(source=None, mb_size=None, frequency=None, callback=None,
-      max_samples=None, model_inputs_to_streams=None)
+    content: CrossValidationConfig(minibatch_source=None, frequency=None, minibatch_size=32,
+      callback=None, max_samples=None, model_inputs_to_streams=None, criterion=None,
+      source=None, mb_size=None)
     parameters:
     - description: 'minibatch source used for cross validation
 
         '
-      id: source
+      id: minibatch_source
       type:
       - '@cntk.io
-
-        '
-    - description: 'minibatch schedule for cross validation
-
-        '
-      id: mb_size
-      type:
-      - '@cntk.cntk_py.minibatch_size_schedule
 
         '
     - description: 'frequency in samples for cross validation
@@ -52,6 +45,14 @@ items:
       id: frequency
       type:
       - int
+    - description: 'minibatch schedule for cross validation
+
+        '
+      id: minibatch_size
+      type:
+      - 'int or @cntk.cntk_py.minibatch_size_schedule
+
+        , defaults to 32'
     - description: 'Callback that will
 
         be called with frequency which can implement custom cross validation logic,
@@ -70,14 +71,42 @@ items:
       id: max_samples
       type:
       - int, default None
-    - description: 'mapping between input variables and input streams.
+    - description: 'mapping between input variables and input streams
 
         If None, the mapping provided to the training session constructor is used.
+
+        Don''t specify this if *minibatch_source* is a tuple of numpy/scipy arrays.
 
         '
       id: model_inputs_to_streams
       type:
-      - dict, default None
+      - dict
+    - description: 'criterion function.
+
+        Must be specified if *minibatch_source* is a tuple of numpy/scipy arrays.
+
+        '
+      id: criterion
+      type:
+      - '@cntk.ops.functions
+
+        '
+    - description: 'DEPRECATED, use minibatch_source instead
+
+        '
+      id: source
+      type:
+      - '@cntk.io
+
+        '
+    - description: 'DEPRECATED, use minibatch_size instead
+
+        '
+      id: mb_size
+      type:
+      - 'int or @cntk.cntk_py.minibatch_size_schedule
+
+        , defaults to 32'
   type: class
   uid: cntk.train.training_session.CrossValidationConfig
 references: []

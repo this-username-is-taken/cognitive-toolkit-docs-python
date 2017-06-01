@@ -18,6 +18,7 @@ items:
   - cntk.metrics
   - cntk.misc
   - cntk.ops
+  - cntk.random
   - cntk.sample_installer
   - cntk.tensor
   - cntk.train
@@ -118,6 +119,11 @@ references:
   name: ops
   parent: cntk
   uid: cntk.ops
+- fullName: cntk.random
+  isExternal: false
+  name: random
+  parent: cntk
+  uid: cntk.random
 - fullName: cntk.sample_installer
   isExternal: false
   name: sample_installer

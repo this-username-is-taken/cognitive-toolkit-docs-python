@@ -22,14 +22,10 @@
         name: cntk.contrib.crosstalk.Crosstalk
       - href: cntk.contrib.crosstalk.EmbedAttr.yml
         name: cntk.contrib.crosstalk.EmbedAttr
-      - href: cntk.contrib.crosstalk.FuncInfo.yml
-        name: cntk.contrib.crosstalk.FuncInfo
       - href: cntk.contrib.crosstalk.RnnArgs.yml
         name: cntk.contrib.crosstalk.RnnArgs
       - href: cntk.contrib.crosstalk.RnnAttr.yml
         name: cntk.contrib.crosstalk.RnnAttr
-      - href: cntk.contrib.crosstalk.VarInfo.yml
-        name: cntk.contrib.crosstalk.VarInfo
       name: cntk.contrib.crosstalk
     name: contrib
   - href: cntk.core.yml
@@ -76,6 +72,8 @@
       name: cntk.io.MinibatchData
     - href: cntk.io.MinibatchSource.yml
       name: cntk.io.MinibatchSource
+    - href: cntk.io.MinibatchSourceFromData.yml
+      name: cntk.io.MinibatchSourceFromData
     - href: cntk.io.StreamConfiguration.yml
       name: cntk.io.StreamConfiguration
     - href: cntk.io.StreamInformation.yml
@@ -133,6 +131,8 @@
         name: cntk.logging.progress_print.ProgressPrinter
       - href: cntk.logging.progress_print.TensorBoardProgressWriter.yml
         name: cntk.logging.progress_print.TensorBoardProgressWriter
+      - href: cntk.logging.progress_print.TrainingSummaryProgressCallback.yml
+        name: cntk.logging.progress_print.TrainingSummaryProgressCallback
       name: cntk.logging.progress_print
     - href: cntk.logging.TraceLevel.yml
       name: cntk.logging.TraceLevel
@@ -143,6 +143,8 @@
     name: metrics
   - href: cntk.misc.yml
     items:
+    - href: cntk.misc.converter.yml
+      name: cntk.misc.converter
     - href: cntk.misc.optimized_rnnstack_converter.yml
       name: cntk.misc.optimized_rnnstack_converter
     name: misc
@@ -160,6 +162,8 @@
     - href: cntk.ops.sequence.yml
       name: cntk.ops.sequence
     name: ops
+  - href: cntk.random.yml
+    name: random
   - href: cntk.sample_installer.yml
     name: sample_installer
   - href: cntk.tensor.yml

@@ -19,14 +19,51 @@ items:
       branch: master
       path: bindings/python\cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 104
+    startLine: 125
   summary: 'A test configuration for the training session.
 
     '
   syntax:
-    content: TestConfig(source, mb_size=None, model_inputs_to_streams=None)
+    content: TestConfig(minibatch_source=None, minibatch_size=32, model_inputs_to_streams=None,
+      criterion=None, source=None, mb_size=None)
     parameters:
-    - description: 'minibatch source used for testing
+    - description: 'minibatch source used for cross validation
+
+        '
+      id: minibatch_source
+      type:
+      - '@cntk.io
+
+        '
+    - description: 'minibatch schedule for cross validation
+
+        '
+      id: minibatch_size
+      type:
+      - 'int or @cntk.cntk_py.minibatch_size_schedule
+
+        , defaults to 32'
+    - description: 'mapping between input variables and input streams
+
+        If None, the mapping provided to the training session constructor is used.
+
+        Don''t specify this if *minibatch_source* is a tuple of numpy/scipy arrays.
+
+        '
+      id: model_inputs_to_streams
+      type:
+      - dict
+    - description: 'criterion function.
+
+        Must be specified if *minibatch_source* is a tuple of numpy/scipy arrays.
+
+        '
+      id: criterion
+      type:
+      - '@cntk.ops.functions
+
+        '
+    - description: 'DEPRECATED, use minibatch_source instead
 
         '
       id: source
@@ -34,22 +71,14 @@ items:
       - '@cntk.io
 
         '
-    - description: 'minibatch schedule for testing
+    - description: 'DEPRECATED, use minibatch_size instead
 
         '
       id: mb_size
       type:
-      - '@cntk.cntk_py.minibatch_size_schedule
+      - 'int or @cntk.cntk_py.minibatch_size_schedule
 
-        '
-    - description: 'mapping between input variables and input streams
-
-        If None, the mapping provided to the training session constructor is used.
-
-        '
-      id: model_inputs_to_streams
-      type:
-      - dict
+        , defaults to 32'
   type: class
   uid: cntk.train.training_session.TestConfig
 references: []

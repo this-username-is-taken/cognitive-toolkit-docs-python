@@ -864,20 +864,6 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 331
   summary: 'Slice the input sequence.
-
-
-    <SYSTEM MESSAGE: F:\WorkFiles\Projects\CNTK\bindings\python\doc\cntk.ops.sequence.rst:15:
-    (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
-
-    Trying "todo" as canonical directive name.>
-
-
-    <SYSTEM MESSAGE: docstring of cntk.ops.sequence.slice:15: (ERROR/3) Unknown directive
-    type "todo".
-
-
-    .. todo:: add an example>
-
     '
   syntax:
     content: slice(seq, begin_index, end_index, name='')
@@ -945,20 +931,6 @@ items:
     output
 
     due to differences across lengths of the sequences in the operand.
-
-
-    <SYSTEM MESSAGE: F:\WorkFiles\Projects\CNTK\bindings\python\doc\cntk.ops.sequence.rst:18:
-    (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
-
-    Trying "todo" as canonical directive name.>
-
-
-    <SYSTEM MESSAGE: docstring of cntk.ops.sequence.unpack:18: (ERROR/3) Unknown directive
-    type "todo".
-
-
-    .. todo:: add an example>
-
     '
   syntax:
     content: unpack(x, padding_value, no_mask_output=False, name='')

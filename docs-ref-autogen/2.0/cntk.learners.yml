@@ -68,8 +68,8 @@ items:
   - python
   module: cntk.learners
   name: adadelta
-  seealsoContent: "See also: [1]  Matthew D. Zeiler1, [ADADELTA: AN ADAPTIVE LEARNING\
-    \ RATE METHOD](https://arxiv.org/pdf/1212.5701.pdf). \n"
+  seealsoContent: "See also: [1]  Matthew D. Zeiler, [ADADELTA: An Adaptive Learning\
+    \ Rate Method](https://arxiv.org/pdf/1212.5701.pdf). \n"
   source:
     id: adadelta
     path: bindings/python\cntk\internal\swig_helper.py
@@ -325,7 +325,7 @@ items:
         '
     - description: 'momentum schedule.
 
-        For additional information, please refer to the [this CNTK Wiki article](https://github.com/Microsoft/CNTK/wiki/BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits).
+        For additional information, please refer to the [this CNTK Wiki article](https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits).
 
         '
       id: momentum
@@ -498,7 +498,7 @@ items:
         '
     - description: 'momentum schedule.
 
-        For additional information, please refer to the [this CNTK Wiki article](https://github.com/Microsoft/CNTK/wiki/BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits).
+        For additional information, please refer to the [this CNTK Wiki article](https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits).
 
         '
       id: momentum
@@ -810,7 +810,7 @@ items:
         '
     - description: 'momentum schedule.
 
-        For additional information, please refer to the [this CNTK Wiki article](https://github.com/Microsoft/CNTK/wiki/BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits).
+        For additional information, please refer to the [this CNTK Wiki article](https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits).
 
         '
       id: momentum
@@ -929,7 +929,7 @@ items:
         '
     - description: 'momentum schedule.
 
-        For additional information, please refer to the [this CNTK Wiki article](https://github.com/Microsoft/CNTK/wiki/BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits).
+        For additional information, please refer to the [this CNTK Wiki article](https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits).
 
         '
       id: momentum
@@ -1395,13 +1395,21 @@ items:
   - '```
 
 
-    >>> def my_adagrad(p,g):
+    >>> def my_adagrad(parameters, gradients):
 
-    ...     accumulator = C.constant(0, shape=p.shape, dtype=p.dtype, name=''accum'')
+    ...     accumulators = [C.constant(0, shape=p.shape, dtype=p.dtype, name=''accum'')
+    for p in parameters]
 
-    ...     accum_new = C.assign(accumulator, g * g)
+    ...     update_funcs = []
 
-    ...     return C.assign(p, p - 0.01 * g / C.sqrt(accum_new + 1e-6))
+    ...     for p, g, a in zip(parameters, gradients, accumulators):
+
+    ...         accum_new = C.assign(a, g * g)
+
+    ...         update_funcs.append(C.assign(p, p - 0.01 * g / C.sqrt(accum_new +
+    1e-6)))
+
+    ...     return C.combine(update_funcs)
 
     ...
 
@@ -1441,7 +1449,7 @@ items:
   syntax:
     content: universal(update_func, parameters)
     parameters:
-    - description: 'function that takes a parameter and a gradient as arguments and
+    - description: 'function that takes parameters and gradients as arguments and
 
         returns a @cntk.ops.functions.Function that performs the
 
