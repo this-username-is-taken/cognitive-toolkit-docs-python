@@ -39,20 +39,6 @@ items:
     startLine: 90
   summary: 'Computes the binary cross entropy (aka logistic loss) between the `output`
     and `target`.
-
-
-    <SYSTEM MESSAGE: F:\WorkFiles\Projects\CNTK\bindings\python\doc\cntk.losses.rst:10:
-    (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
-
-    Trying "todo" as canonical directive name.>
-
-
-    <SYSTEM MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\losses\__init__.py:docstring
-    of cntk.losses.binary_cross_entropy:10: (ERROR/3) Unknown directive type "todo".
-
-
-    .. todo:: add an example>
-
     '
   syntax:
     content: binary_cross_entropy(output, target, name='')
@@ -457,21 +443,6 @@ items:
     startLine: 112
   summary: 'This operation computes the weighted binary cross entropy (aka logistic
     loss) between the `output` and `target`.
-
-
-    <SYSTEM MESSAGE: F:\WorkFiles\Projects\CNTK\bindings\python\doc\cntk.losses.rst:11:
-    (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
-
-    Trying "todo" as canonical directive name.>
-
-
-    <SYSTEM MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\losses\__init__.py:docstring
-    of cntk.losses.weighted_binary_cross_entropy:11: (ERROR/3) Unknown directive type
-    "todo".
-
-
-    .. todo:: add an example>
-
     '
   syntax:
     content: weighted_binary_cross_entropy(output, target, weight, name='')

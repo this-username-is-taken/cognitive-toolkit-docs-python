@@ -32,7 +32,7 @@ napoleon_use_admonition_for_examples = True
 
 exclude_patterns = [
   '_build',
-  '*.tests.rst'
+  '*tests.rst'
 ]
 
 source_prefix = 'bindings/python'
@@ -44,5 +44,5 @@ source_prefix = 'bindings/python'
 extlinks = {
     'cntk': (source_prefix + '/%s', ''),
     'cntktut': (source_prefix + '/Tutorials/%s.ipynb', ''),
-    'cntkwiki': ('https://github.com/Microsoft/CNTK/wiki/%s', 'CNTK Wiki - ')
+    'cntkwiki': ('https://docs.microsoft.com/en-us/cognitive-toolkit/%s', 'CNTK Doc - ')
 }

@@ -1,163 +1,33 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- children:
-  - cntk.contrib.crosstalk.RnnAttr.bidirectional
-  - cntk.contrib.crosstalk.RnnAttr.forget_bias
-  - cntk.contrib.crosstalk.RnnAttr.hidden_dim
-  - cntk.contrib.crosstalk.RnnAttr.input_dim
-  - cntk.contrib.crosstalk.RnnAttr.op_type
+- children: []
   class: cntk.contrib.crosstalk.RnnAttr
   fullName: cntk.contrib.crosstalk.RnnAttr
   inheritance:
   - inheritance:
-    - type: builtins.object
-    type: builtins.tuple
+    - inheritance:
+      - type: builtins.object
+      type: builtins.tuple
+    type: cntk.contrib.crosstalk.RnnAttr
   langs:
   - python
   module: cntk.contrib.crosstalk
   name: RnnAttr
   source:
     id: RnnAttr
-    path: null
+    path: bindings/python\cntk\contrib\crosstalk\__init__.py
     remote:
       branch: master
-      path: null
+      path: bindings/python\cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: null
-  summary: '
-
-
-
-
-    '
-  syntax:
-    content: RnnAttr(bidirectional, op_type, input_dim, hidden_dim, forget_bias)
+    startLine: 63
+  summary: "Attribute for RNN variable\n\nbidirectional\n   True for bidirectional\
+    \ RNN, False for unidirection. Currently only support bidirectional=True\n\nop_type\n\
+    \   RNN cell type, currently only support 'lstm'\n\ninput_dim\n   Input dimension\n\
+    \nhidden_dim\n   Hidden dimension in RNN cell\n\nforget_bias\n   forget gate bias\
+    \ in LSTM\n"
+  syntax: {}
   type: class
   uid: cntk.contrib.crosstalk.RnnAttr
-- class: cntk.contrib.crosstalk.RnnAttr
-  fullName: cntk.contrib.crosstalk.RnnAttr.bidirectional
-  langs:
-  - python
-  module: cntk.contrib.crosstalk
-  name: bidirectional
-  source:
-    id: bidirectional
-    path: null
-    remote:
-      branch: master
-      path: null
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: null
-  summary: 'Alias for field number 0
-
-    '
-  syntax: {}
-  type: attribute
-  uid: cntk.contrib.crosstalk.RnnAttr.bidirectional
-- class: cntk.contrib.crosstalk.RnnAttr
-  fullName: cntk.contrib.crosstalk.RnnAttr.forget_bias
-  langs:
-  - python
-  module: cntk.contrib.crosstalk
-  name: forget_bias
-  source:
-    id: forget_bias
-    path: null
-    remote:
-      branch: master
-      path: null
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: null
-  summary: 'Alias for field number 4
-
-    '
-  syntax: {}
-  type: attribute
-  uid: cntk.contrib.crosstalk.RnnAttr.forget_bias
-- class: cntk.contrib.crosstalk.RnnAttr
-  fullName: cntk.contrib.crosstalk.RnnAttr.hidden_dim
-  langs:
-  - python
-  module: cntk.contrib.crosstalk
-  name: hidden_dim
-  source:
-    id: hidden_dim
-    path: null
-    remote:
-      branch: master
-      path: null
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: null
-  summary: 'Alias for field number 3
-
-    '
-  syntax: {}
-  type: attribute
-  uid: cntk.contrib.crosstalk.RnnAttr.hidden_dim
-- class: cntk.contrib.crosstalk.RnnAttr
-  fullName: cntk.contrib.crosstalk.RnnAttr.input_dim
-  langs:
-  - python
-  module: cntk.contrib.crosstalk
-  name: input_dim
-  source:
-    id: input_dim
-    path: null
-    remote:
-      branch: master
-      path: null
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: null
-  summary: 'Alias for field number 2
-
-    '
-  syntax: {}
-  type: attribute
-  uid: cntk.contrib.crosstalk.RnnAttr.input_dim
-- class: cntk.contrib.crosstalk.RnnAttr
-  fullName: cntk.contrib.crosstalk.RnnAttr.op_type
-  langs:
-  - python
-  module: cntk.contrib.crosstalk
-  name: op_type
-  source:
-    id: op_type
-    path: null
-    remote:
-      branch: master
-      path: null
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: null
-  summary: 'Alias for field number 1
-
-    '
-  syntax: {}
-  type: attribute
-  uid: cntk.contrib.crosstalk.RnnAttr.op_type
-references:
-- fullName: cntk.contrib.crosstalk.RnnAttr.bidirectional
-  isExternal: false
-  name: bidirectional
-  parent: cntk.contrib.crosstalk.RnnAttr
-  uid: cntk.contrib.crosstalk.RnnAttr.bidirectional
-- fullName: cntk.contrib.crosstalk.RnnAttr.forget_bias
-  isExternal: false
-  name: forget_bias
-  parent: cntk.contrib.crosstalk.RnnAttr
-  uid: cntk.contrib.crosstalk.RnnAttr.forget_bias
-- fullName: cntk.contrib.crosstalk.RnnAttr.hidden_dim
-  isExternal: false
-  name: hidden_dim
-  parent: cntk.contrib.crosstalk.RnnAttr
-  uid: cntk.contrib.crosstalk.RnnAttr.hidden_dim
-- fullName: cntk.contrib.crosstalk.RnnAttr.input_dim
-  isExternal: false
-  name: input_dim
-  parent: cntk.contrib.crosstalk.RnnAttr
-  uid: cntk.contrib.crosstalk.RnnAttr.input_dim
-- fullName: cntk.contrib.crosstalk.RnnAttr.op_type
-  isExternal: false
-  name: op_type
-  parent: cntk.contrib.crosstalk.RnnAttr
-  uid: cntk.contrib.crosstalk.RnnAttr.op_type
+references: []

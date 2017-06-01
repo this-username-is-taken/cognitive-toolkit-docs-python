@@ -4,7 +4,7 @@ author:
 ms.author: 
 ms.date: 05/31/2017
 ms.topic: conceptual
-ms.service: cognitive-services
+ms.service: cognitive-toolkit
 ---
 
 # Extending CNTK
@@ -19,7 +19,7 @@ CNTK provides extension possibilities through
 Implementing a custom operator in pure Python is simple matter of
 
  - inheriting from <xref:cntk.ops.functions.UserFunction>
- - implementing `forward()` and `backward()`, whose signatures dependent on the number of inputs and outputs
+ - implementing `forward()` and `backward()`, whose signatures depend on the number of inputs and outputs
  - specifying the outputs' shape, data type and dynamic axes in
    `infer_outputs()`
  - providing a static `deserialize()` method to inflate previously saved function
@@ -282,7 +282,7 @@ whether your learner is already available.
 
 In order to make use of CNTK's training session, one has to provide the input data as an
 instance of <xref:cntk.io.MinibatchSource>. Although <xref:cntk.io> already provides means to read
-image, text, and speech data, there might be the need (e.g. in distributed scnearios) to
+image, text, and speech data, there might be the need (e.g. in distributed scenarios) to
 roll out one's own custom minibatch
 source. This is possible in pure Python as simple matter of
 

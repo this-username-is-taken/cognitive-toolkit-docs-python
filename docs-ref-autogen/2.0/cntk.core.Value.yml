@@ -93,7 +93,7 @@ items:
       branch: master
       path: bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 268
+    startLine: 270
   summary: 'Convert a Value to a sequence of NumPy arrays that have their masked
 
     entries removed.
@@ -129,7 +129,7 @@ items:
       branch: master
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 354
+    startLine: 356
   summary: 'Creates a @cntk.core.Value object.
 
     '
@@ -357,7 +357,12 @@ items:
     \ 0.],\n         [ 0.,  0.,  0.,  0.,  0.,  1.]],\n        [[ 0.,  0.,  0.,  1.,\
     \  0.,  0.],\n         [ 0.,  0.,  1.,  0.,  0.,  0.]]], dtype=float32),\n array([[[\
     \ 0.,  0.,  0.,  0.,  1.,  0.],\n         [ 0.,  1.,  0.,  0.,  0.,  0.]]], dtype=float32)]\n\
-    ```\n"
+    >>> # this example has no sequence axis:\n>>> num_classes = 6\n>>> sample_shape\
+    \ = (num_classes,)\n>>> sparse_indices = [1,5,3,2]\n>>> i0 = C.input_variable(shape=sample_shape,\
+    \ is_sparse=True)\n>>> z = C.times(i0, np.eye(num_classes))\n>>> value = C.Value.one_hot(sparse_indices,\
+    \ sample_shape)\n>>> z.eval({i0: value})\narray([[ 0.,  1.,  0.,  0.,  0.,  0.],\n\
+    \       [ 0.,  0.,  0.,  0.,  0.,  1.],\n       [ 0.,  0.,  0.,  1.,  0.,  0.],\n\
+    \       [ 0.,  0.,  1.,  0.,  0.,  0.]], dtype=float32)\n```\n"
   fullName: cntk.core.Value.one_hot
   langs:
   - python
@@ -370,7 +375,7 @@ items:
       branch: master
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 459
+    startLine: 462
   summary: 'Converts `batch` into a @cntk.core.Value object of `dtype`
 
     such that the integer data in `batch` is interpreted as the indices

@@ -1,82 +1,30 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- children:
-  - cntk.contrib.crosstalk.EmbedAttr.dict
-  - cntk.contrib.crosstalk.EmbedAttr.input_dim
+- children: []
   class: cntk.contrib.crosstalk.EmbedAttr
   fullName: cntk.contrib.crosstalk.EmbedAttr
   inheritance:
   - inheritance:
-    - type: builtins.object
-    type: builtins.tuple
+    - inheritance:
+      - type: builtins.object
+      type: builtins.tuple
+    type: cntk.contrib.crosstalk.EmbedAttr
   langs:
   - python
   module: cntk.contrib.crosstalk
   name: EmbedAttr
   source:
     id: EmbedAttr
-    path: null
+    path: bindings/python\cntk\contrib\crosstalk\__init__.py
     remote:
       branch: master
-      path: null
+      path: bindings/python\cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: null
-  summary: '
-
-    '
-  syntax:
-    content: EmbedAttr(dict, input_dim)
+    startLine: 104
+  summary: "Attribute for embedding variable\n\ndict\n   The list of vocabulary of\
+    \ the embedding\n\ninput_dim\n   The input dimension of the embedding\n"
+  syntax: {}
   type: class
   uid: cntk.contrib.crosstalk.EmbedAttr
-- class: cntk.contrib.crosstalk.EmbedAttr
-  fullName: cntk.contrib.crosstalk.EmbedAttr.dict
-  langs:
-  - python
-  module: cntk.contrib.crosstalk
-  name: dict
-  source:
-    id: dict
-    path: null
-    remote:
-      branch: master
-      path: null
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: null
-  summary: 'Alias for field number 0
-
-    '
-  syntax: {}
-  type: attribute
-  uid: cntk.contrib.crosstalk.EmbedAttr.dict
-- class: cntk.contrib.crosstalk.EmbedAttr
-  fullName: cntk.contrib.crosstalk.EmbedAttr.input_dim
-  langs:
-  - python
-  module: cntk.contrib.crosstalk
-  name: input_dim
-  source:
-    id: input_dim
-    path: null
-    remote:
-      branch: master
-      path: null
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: null
-  summary: 'Alias for field number 1
-
-    '
-  syntax: {}
-  type: attribute
-  uid: cntk.contrib.crosstalk.EmbedAttr.input_dim
-references:
-- fullName: cntk.contrib.crosstalk.EmbedAttr.dict
-  isExternal: false
-  name: dict
-  parent: cntk.contrib.crosstalk.EmbedAttr
-  uid: cntk.contrib.crosstalk.EmbedAttr.dict
-- fullName: cntk.contrib.crosstalk.EmbedAttr.input_dim
-  isExternal: false
-  name: input_dim
-  parent: cntk.contrib.crosstalk.EmbedAttr
-  uid: cntk.contrib.crosstalk.EmbedAttr.input_dim
+references: []

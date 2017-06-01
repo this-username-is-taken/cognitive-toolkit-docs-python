@@ -4,12 +4,12 @@ author:
 ms.author: 
 ms.date: 05/31/2017
 ms.topic: conceptual
-ms.service: cognitive-services
+ms.service: cognitive-toolkit
 ---
 
 # Layers Library Overview
 
-Note: This documentation has not yet been completely updated with respect to the latest update of the Layers library.
+Note: This documentation has not yet been completely updated with respect to the latest update of the Layers Library.
 It should be correct but misses several new options and layer types.
 
 CNTK predefines a number of common "layers," which makes it very easy to
@@ -93,7 +93,7 @@ The following options can be overridden with the ``with`` statement:
 - `bias` (default: `True`): have a bias, for `Dense()` and `Convolution()`
 - `init_bias` (default: `0`): initializer specification for the bias, for `Dense()` and `Convolution()`
 - `initial_state` (default: `None`): initial state to use in [Recurrence()](#recurrence)
-- `use_peepholes` (default: `False`): use peephole connections in [LSTM()](#lstm-gru-rnnunit)
+- `use_peepholes` (default: `False`): use peephole connections in [LSTM()](#lstm-gru-rnnstep)
 
 The second form allows to set default options on a
 per-layer type. This is, for example, valuable for the ``pad``
@@ -648,6 +648,21 @@ This implements the recurrence to be applied to an input sequence along
 a dynamic axis. This operation automatically handles batches of
 variable-length input sequences. The initial value(s) of the hidden
 state variable(s) are 0 unless specified by ``initial_state``.
+A recurrence layer's operation can be best described by pseudo-code
+(but note that the real implementation is more complicated since it
+handles automatic minibatching even if not all sequences are of the same length):
+
+```python
+    # pseudo-code for y = Recurrence(step_function)(x)
+    #  x: input sequence of tensors along the dynamic axis
+    #  y: resulting sequence of outputs along the same dynamic axis
+    y = []              # result sequence goes here
+    s = initial_state   # s = output of previous step ("state")
+    for x_n in x:       # pseudo-code for looping over all steps of input sequence along its dynamic axis
+        s = step_function(s, x_n)  # pass previous state and new data to step_function -> new state
+        y.append(s)
+```
+ 
 
 The `step_function` must be a CNTK Function that takes the previous state
 and a new input, and outputs a new state.
@@ -695,7 +710,7 @@ dimension compared to above), use this:
     h = splice (h_fwd, h_bwd)
 ```
 
-## LSTM(), GRU(), RNNUnit()
+## LSTM(), GRU(), RNNStep()
 
 Factory functions to create a stateless LSTM/GRU/RNN ``Function``, typically for
 use with `Recurrence()`.
@@ -709,7 +724,7 @@ use with `Recurrence()`.
         init=default_override_or(glorot_uniform()), init_bias=default_override_or(0),
         enable_self_stabilization=default_override_or(False),
         name='')
-    RNNUnit(shape, cell_shape=None, activation=default_override_or(sigmoid),
+    RNNStep(shape, cell_shape=None, activation=default_override_or(sigmoid),
             init=default_override_or(glorot_uniform()), init_bias=default_override_or(0),
             enable_self_stabilization=default_override_or(False),
             name='')

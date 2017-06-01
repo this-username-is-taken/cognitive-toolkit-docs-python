@@ -1,82 +1,30 @@
 #YamlMime:PythonReference
 api_name: []
 items:
-- children:
-  - cntk.contrib.crosstalk.Conv2DAttr.filter_shape
-  - cntk.contrib.crosstalk.Conv2DAttr.num_filters
+- children: []
   class: cntk.contrib.crosstalk.Conv2DAttr
   fullName: cntk.contrib.crosstalk.Conv2DAttr
   inheritance:
   - inheritance:
-    - type: builtins.object
-    type: builtins.tuple
+    - inheritance:
+      - type: builtins.object
+      type: builtins.tuple
+    type: cntk.contrib.crosstalk.Conv2DAttr
   langs:
   - python
   module: cntk.contrib.crosstalk
   name: Conv2DAttr
   source:
     id: Conv2DAttr
-    path: null
+    path: bindings/python\cntk\contrib\crosstalk\__init__.py
     remote:
       branch: master
-      path: null
+      path: bindings/python\cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: null
-  summary: '
-
-    '
-  syntax:
-    content: Conv2DAttr(filter_shape, num_filters)
+    startLine: 43
+  summary: "Attribute for Conv2D variable\n\nfilter_shape\n   The filter shape\n\n\
+    num_filters\n   Number of filters\n"
+  syntax: {}
   type: class
   uid: cntk.contrib.crosstalk.Conv2DAttr
-- class: cntk.contrib.crosstalk.Conv2DAttr
-  fullName: cntk.contrib.crosstalk.Conv2DAttr.filter_shape
-  langs:
-  - python
-  module: cntk.contrib.crosstalk
-  name: filter_shape
-  source:
-    id: filter_shape
-    path: null
-    remote:
-      branch: master
-      path: null
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: null
-  summary: 'Alias for field number 0
-
-    '
-  syntax: {}
-  type: attribute
-  uid: cntk.contrib.crosstalk.Conv2DAttr.filter_shape
-- class: cntk.contrib.crosstalk.Conv2DAttr
-  fullName: cntk.contrib.crosstalk.Conv2DAttr.num_filters
-  langs:
-  - python
-  module: cntk.contrib.crosstalk
-  name: num_filters
-  source:
-    id: num_filters
-    path: null
-    remote:
-      branch: master
-      path: null
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: null
-  summary: 'Alias for field number 1
-
-    '
-  syntax: {}
-  type: attribute
-  uid: cntk.contrib.crosstalk.Conv2DAttr.num_filters
-references:
-- fullName: cntk.contrib.crosstalk.Conv2DAttr.filter_shape
-  isExternal: false
-  name: filter_shape
-  parent: cntk.contrib.crosstalk.Conv2DAttr
-  uid: cntk.contrib.crosstalk.Conv2DAttr.filter_shape
-- fullName: cntk.contrib.crosstalk.Conv2DAttr.num_filters
-  isExternal: false
-  name: num_filters
-  parent: cntk.contrib.crosstalk.Conv2DAttr
-  uid: cntk.contrib.crosstalk.Conv2DAttr.num_filters
+references: []
