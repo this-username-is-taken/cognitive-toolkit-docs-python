@@ -242,21 +242,6 @@ items:
 
     The aggregate estimates are exposed as attributes `aggregate_mean`, `aggregate_variance`,
     and `aggregate_count`.
-
-
-    <SYSTEM MESSAGE: F:\WorkFiles\Projects\CNTK\bindings\python\doc\cntk.layers.layers.rst:37:
-    (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
-
-    Trying "todo" as canonical directive name.>
-
-
-    <SYSTEM MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\layers\layers.py:docstring
-    of cntk.layers.layers.BatchNormalization:37: (ERROR/3) Unknown directive type
-    "todo".
-
-
-    .. todo:: Add paper reference.>
-
     '
   syntax:
     content: BatchNormalization(map_rank=None, init_scale=1, normalization_time_constant=5000,
@@ -1791,21 +1776,6 @@ items:
     `y = (x - mean(x)) / (stddev(x) + epsilon) * scale + bias`
 
     where `scale` and `bias` are learned scalar parameters.
-
-
-    <SYSTEM MESSAGE: F:\WorkFiles\Projects\CNTK\bindings\python\doc\cntk.layers.layers.rst:26:
-    (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
-
-    Trying "todo" as canonical directive name.>
-
-
-    <SYSTEM MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\layers\layers.py:docstring
-    of cntk.layers.layers.LayerNormalization:26: (ERROR/3) Unknown directive type
-    "todo".
-
-
-    .. todo:: Add paper reference.>
-
     '
   syntax:
     content: LayerNormalization(initial_scale=1, initial_bias=0, epsilon=0.00001,
