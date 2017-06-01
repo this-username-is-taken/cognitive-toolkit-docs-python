@@ -9,7 +9,7 @@ ms.service: cognitive-toolkit
 
 # Layers Library Overview
 
-Note: This documentation has not yet been completely updated with respect to the latest update of the Layers library.
+Note: This documentation has not yet been completely updated with respect to the latest update of the Layers Library.
 It should be correct but misses several new options and layer types.
 
 CNTK predefines a number of common "layers," which makes it very easy to

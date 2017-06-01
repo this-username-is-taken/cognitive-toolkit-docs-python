@@ -24,8 +24,8 @@ you can start using CNTK from Python right away (don't forget to ``activate`` yo
     >>> cntk.minus([1, 2, 3], [4, 5, 6]).eval()
     array([-3., -3., -3.], dtype=float32)
 ```
-The above makes use of the CNTK `minus` node with two array constants. Every operator has an `eval()` method that can be called which runs a forward 
-pass for that node using its inputs, and returns the result of the forward pass. A slightly more interesting example that uses input variables (the 
+The above makes use of the CNTK `minus` node with two array constants. Every operator has an `eval()` method that runs a forward 
+pass for that node using its inputs, and returns the result. A slightly more interesting example that uses input variables (the 
 more common case) is as follows:
 
 ```python
@@ -43,7 +43,7 @@ inputs. Within the `eval()` method we can setup the input-mapping of the data fo
 The squared error is then of course `(2-4)**2 + (1-6)**2 = 29`.
 
 Most of the data containers like parameters, constants, values, etc. implement
-the asarray() method, which returns a NumPy interface.
+the `asarray()` method, which returns a NumPy interface.
 
 ```python
     >>> import cntk as C
@@ -56,20 +56,20 @@ the asarray() method, which returns a NumPy interface.
            [ 1.,  1.,  1.]], dtype=float32)
 ```
 
-For values that have a sequence axis, `asarray()` cannot work since, it requires
+For values that have a sequence axis, `asarray()` cannot work since it requires
 the shape to be rectangular and sequences most of the time have different
 lengths. In that case, `as_sequences(var)` returns a list of NumPy arrays,
-where every NumPy arrays has the shape of the static axes of `var`.
+where every NumPy array has the shape of the static axes of `var`.
 
 ## Overview and first run
 
-CNTK2 is a major overhaul of CNTK in that one now has full control over the data and how it is read in, the training and testing loops, and minibatch 
+CNTK v2 is a major overhaul of CNTK in that one now has full control over the data and how it is read in, the training and testing loops, and minibatch 
 construction. The Python bindings provide direct access to the created network graph, and data can be manipulated outside of the readers not only 
 for more powerful and complex networks, but also for interactive Python sessions while a model is being created and debugged.
 
-CNTK2 also includes a number of ready-to-extend examples and a layers library. The latter allows one to simply build a powerful deep network by 
+CNTK v2 also includes a number of ready-to-extend examples and a layers library. The latter allows one to simply build a powerful deep network by 
 snapping together building blocks such as convolution layers, recurrent neural net layers (LSTMs, etc.), and fully-connected layers. To begin, we will take a 
-look at a standard fully connected deep network in our first basic use.
+look at a standard fully connected deep network in the next section.
 
 ### First basic use
 
@@ -171,10 +171,10 @@ Running `python simplenet.py` (using the correct python environment) will genera
 
 
 The example above sets up a 2-layer fully connected deep neural network with 50 hidden dimensions per layer. We first setup two input variables, one for 
-the input data and one for the labels. We then called the fully connected classifier network model function which simply sets up the required weights, 
+the input data and one for the labels. We then call the fully connected classifier network model function which simply sets up the required weights, 
 biases, and activation functions for each layer.
 
-We set two root nodes in the network: `ce` is the cross entropy which defined our model's loss function, and `pe` is the classification error. We 
+We set two root nodes in the network: `ce` is the cross entropy which defines our model's loss function, and `pe` is the classification error. We 
 set up a trainer object with the root nodes of the network and a learner. In this case we pass in the standard SGD learner with default parameters and a 
 learning rate of 0.02.
 
@@ -186,7 +186,8 @@ as easy as that!
 
 Now that we've seen some of the basics of setting up and training a network using the CNTK Python API, let's look at a more interesting deep 
 learning problem in more detail (for the full example above along with the function to generate random data, please see 
-`Tutorials/NumpyInterop/FeedForwardNet.py`).
+[Tutorials/NumpyInterop/FeedForwardNet.py](https://github.com/Microsoft/CNTK/blob/v2.0.rc3/Tutorials/NumpyInterop/FeedForwardNet.py)).
+
 
 
 
