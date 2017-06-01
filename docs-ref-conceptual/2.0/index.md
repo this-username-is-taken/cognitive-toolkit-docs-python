@@ -27,9 +27,3 @@ them on sample data in real time. Please give feedback through these [channels](
    - [Extending CNTK](extend.md)
    - [Layers Library Reference](layerref.md)
    - [Python API Reference](/python/api/cntk)
-
-## Indices and tables
-
-* [Index](https://cntk.ai/pythondocs/genindex.html)
-* [Module Index](https://cntk.ai/pythondocs/py-modindex.html)
-* [Search](https://cntk.ai/pythondocs/search.html)
