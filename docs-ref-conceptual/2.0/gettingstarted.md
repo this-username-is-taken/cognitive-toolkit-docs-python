@@ -11,13 +11,15 @@ ms.service: cognitive-toolkit
 
 You can optionally try the [tutorials](https://notebooks.azure.com/cntk/libraries/tutorials) with pre-installed CNTK running in Azure Notebook hosted environment (for free) if you have not installed the toolkit in your own machine.
 
+> If you are coming from another deep learning toolkit you can start with an [overview for advanced users](https://github.com/Microsoft/CNTK/blob/v2.0.rc3/Tutorials/CNTK_200_GuidedTour.ipynb).
+
 If you have installed CNTK on your machine, after going through the [installation steps](/cognitive-toolkit/Setup-CNTK-on-your-machine),
-you can start using CNTK from Python right away (don't forget to `activate` your Python environment):
+you can start using CNTK from Python right away (don't forget to ``activate`` your Python environment if you did not install CNTK into your root environment):
 
 ```python
     >>> import cntk
     >>> cntk.__version__
-    '2.0rc2+'
+    '2.0rc3'
     
     >>> cntk.minus([1, 2, 3], [4, 5, 6]).eval()
     array([-3., -3., -3.], dtype=float32)
@@ -75,8 +77,8 @@ The first step in training or running a network in CNTK is to decide which devic
 can be vastly improved. To explicitly set the device to GPU, set the target device as follows:
 
 ```python
-    from cntk.device import set_default_device, gpu
-    set_default_device(gpu(0))
+    from cntk.device import try_set_default_device, gpu
+    try_set_default_device(gpu(0))
 ```
 
 Now let's setup a network that will learn a classifier with fully connected layers using only the functions <xref:cntk.layers.higher_order_layers.Sequential>
