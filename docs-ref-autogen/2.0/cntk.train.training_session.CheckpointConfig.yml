@@ -32,8 +32,8 @@ items:
       id: filename
       type:
       - str
-    - description: 'checkpoint frequency in samples. If 0, no checkpointing takes
-        place.
+    - description: 'checkpointing period (number samples between checkpoints). If
+        *None*, no checkpointing takes place.
 
         If `sys.maxsize`, a single checkpoint is taken at the end of the training.
 

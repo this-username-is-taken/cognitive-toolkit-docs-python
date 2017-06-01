@@ -23,7 +23,7 @@ items:
       branch: master
       path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 192
+    startLine: 205
   summary: 'CNTK implementation for crosstalk
 
 
@@ -48,7 +48,7 @@ items:
       branch: master
       path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 211
+    startLine: 227
   summary: 'Check if var with name is a parameter
 
     '
@@ -56,7 +56,12 @@ items:
     content: is_param(name)
     parameters:
     - id: self
-    - id: name
+    - description: 'Variable name to check
+
+        '
+      id: name
+      type:
+      - str
   type: method
   uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.is_param
 - class: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
@@ -72,8 +77,8 @@ items:
       branch: master
       path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 218
-  summary: 'Load all parameters from files
+    startLine: 237
+  summary: 'Load all parameters from files in working directory
 
     '
   syntax:
@@ -95,8 +100,8 @@ items:
       branch: master
       path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 224
-  summary: 'Save all parameters to files
+    startLine: 243
+  summary: 'Save all parameters to files in working directory
 
     '
   syntax:
@@ -118,7 +123,7 @@ items:
       branch: master
       path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 204
+    startLine: 217
   summary: 'Set mapped data for variable evaluation
 
     '
@@ -126,7 +131,10 @@ items:
     content: set_data(data)
     parameters:
     - id: self
-    - id: data
+    - description: 'The input data as arguments parameter in @cntk.ops.functions.Function.eval
+
+        '
+      id: data
   type: method
   uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.set_data
 references:

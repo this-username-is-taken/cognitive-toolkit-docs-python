@@ -6,10 +6,8 @@ items:
   - cntk.contrib.crosstalk.Conv2DAttr
   - cntk.contrib.crosstalk.Crosstalk
   - cntk.contrib.crosstalk.EmbedAttr
-  - cntk.contrib.crosstalk.FuncInfo
   - cntk.contrib.crosstalk.RnnArgs
   - cntk.contrib.crosstalk.RnnAttr
-  - cntk.contrib.crosstalk.VarInfo
   - cntk.contrib.crosstalk.crosstalk_cntk
   fullName: cntk.contrib.crosstalk
   langs:
@@ -24,6 +22,20 @@ items:
       path: bindings/python\cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
+  summary: 'Crosstalk (Contrib) for debugging/conversion among toolkits
+
+
+
+    It is the utility to manage variables for debugging/conversion across scripts
+    in different toolkits.
+
+    With crosstalk, user can define named watch points to variables or parameters,
+    and setting up a work dir.
+
+    Then crosstalk can save/load variables to corresponding files from python debugger,
+    and compare values using numpy.
+
+    '
   type: package
   uid: cntk.contrib.crosstalk
 references:
@@ -47,11 +59,6 @@ references:
   name: EmbedAttr
   parent: cntk.contrib.crosstalk
   uid: cntk.contrib.crosstalk.EmbedAttr
-- fullName: cntk.contrib.crosstalk.FuncInfo
-  isExternal: false
-  name: FuncInfo
-  parent: cntk.contrib.crosstalk
-  uid: cntk.contrib.crosstalk.FuncInfo
 - fullName: cntk.contrib.crosstalk.RnnArgs
   isExternal: false
   name: RnnArgs
@@ -62,11 +69,6 @@ references:
   name: RnnAttr
   parent: cntk.contrib.crosstalk
   uid: cntk.contrib.crosstalk.RnnAttr
-- fullName: cntk.contrib.crosstalk.VarInfo
-  isExternal: false
-  name: VarInfo
-  parent: cntk.contrib.crosstalk
-  uid: cntk.contrib.crosstalk.VarInfo
 - fullName: cntk.contrib.crosstalk.crosstalk_cntk
   isExternal: false
   name: crosstalk_cntk

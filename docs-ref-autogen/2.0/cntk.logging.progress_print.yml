@@ -4,6 +4,7 @@ items:
 - children:
   - cntk.logging.progress_print.ProgressPrinter
   - cntk.logging.progress_print.TensorBoardProgressWriter
+  - cntk.logging.progress_print.TrainingSummaryProgressCallback
   - cntk.logging.progress_print.log_number_of_parameters
   fullName: cntk.logging.progress_print
   langs:
@@ -32,7 +33,7 @@ items:
       branch: master
       path: bindings/python\cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 519
+    startLine: 555
   syntax:
     content: log_number_of_parameters(model, trace_level=0)
     parameters:
@@ -52,6 +53,11 @@ references:
   name: TensorBoardProgressWriter
   parent: cntk.logging.progress_print
   uid: cntk.logging.progress_print.TensorBoardProgressWriter
+- fullName: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  isExternal: false
+  name: TrainingSummaryProgressCallback
+  parent: cntk.logging.progress_print
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback
 - fullName: cntk.logging.progress_print.log_number_of_parameters
   isExternal: false
   name: log_number_of_parameters

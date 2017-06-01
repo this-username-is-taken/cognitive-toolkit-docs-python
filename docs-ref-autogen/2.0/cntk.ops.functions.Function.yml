@@ -35,9 +35,12 @@ items:
   - cntk.ops.functions.Function.save
   - cntk.ops.functions.Function.set_attribute
   - cntk.ops.functions.Function.signature
+  - cntk.ops.functions.Function.test
+  - cntk.ops.functions.Function.train
   - cntk.ops.functions.Function.type
   - cntk.ops.functions.Function.uid
   - cntk.ops.functions.Function.update_signature
+  - cntk.ops.functions.Function.with_signature
   class: cntk.ops.functions.Function
   example:
   - '```
@@ -49,11 +52,9 @@ items:
 
     ...     return x * x
 
-    >>> from cntk import debugging
+    >>> print(f)    # inspect the Function''s type
 
-    >>> debugging.dump_signature(f)
-
-    Function(x: Sequence[tensor]) -> Sequence[tensor]
+    ElementTimes(x: Sequence[tensor]) -> Sequence[tensor]
 
     ```
 
@@ -76,7 +77,7 @@ items:
       branch: master
       path: bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 48
+    startLine: 49
   summary: "Base class of all primitive tensor operators.\n\nIf it has only one output,\
     \ one can invoke Variable methods on it, which it\nwill relay to its only output.\n\
     \n*Function* objects can also be constructed directly from a Python lambda,\n\
@@ -87,18 +88,18 @@ items:
     \ types\nof the arguments. In this case, the @Function decorator creates a CNTK\
     \ Function\nwhose arguments are input variables.\n\nIf you use Python 3, Functions\
     \ with types are declared using Python annotation syntax, e.g.:\n\n<!-- literal_block\
-    \ {\"ids\": [], \"xml:space\": \"preserve\", \"names\": [], \"classes\": [], \"\
-    backrefs\": [], \"dupnames\": []} -->\n\n````\n\n   @Function\n   def f(x:Tensor[13]):\n\
+    \ {\"backrefs\": [], \"names\": [], \"xml:space\": \"preserve\", \"dupnames\"\
+    : [], \"classes\": [], \"ids\": []} -->\n\n````\n\n   @Function\n   def f(x:Tensor[13]):\n\
     \       return x * x\n   ````\n\nIf you are working with Python 2.7, use CNTK's\
-    \ @cntk.layers.typing decorator instead:\n\n<!-- literal_block {\"ids\": [], \"\
-    xml:space\": \"preserve\", \"names\": [], \"classes\": [], \"backrefs\": [], \"\
-    dupnames\": []} -->\n\n````\n\n   >>> from cntk.layers.typing import *\n   >>>\
-    \ @Function\n   ... @Signature(Tensor[13])\n   ... def f(x):\n   ...     return\
-    \ x * x\n   >>> debugging.dump_signature(f)\n   Function(x: Tensor[13]) -> Tensor[13]\n\
-    \   ````\n\n`make_block=True` is an internal parameter used to implement @cntk.layers.blocks.\n\
+    \ @cntk.layers.typing decorator instead:\n\n<!-- literal_block {\"backrefs\":\
+    \ [], \"names\": [], \"xml:space\": \"preserve\", \"dupnames\": [], \"classes\"\
+    : [], \"ids\": []} -->\n\n````\n\n   >>> from cntk.layers.typing import *\n  \
+    \ >>> @Function\n   ... @Signature(Tensor[13])\n   ... def f(x):\n   ...     return\
+    \ x * x\n   >>> print(f)\n   ElementTimes(x: Tensor[13]) -> Tensor[13]\n   ````\n\
+    \n`make_block=True` is an internal parameter used to implement @cntk.ops.functions.BlockFunction.\n\
     If *BlockFunction()* passes *True*, then the result will be wrapped\nin @cntk.ops,\
     \ using the supplied `op_name` and `name` parameters, which are otherwise ignored.\n\
-    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
   syntax:
     content: Function(*args, **kwargs)
   type: class
@@ -450,7 +451,7 @@ items:
       branch: master
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1066
+    startLine: 1115
   summary: 'Returns a list of primitive function with `name` in the graph
 
     starting from this node. Throws an exception if `name` occurs
@@ -532,7 +533,7 @@ items:
       branch: master
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1098
+    startLine: 1147
   summary: 'Returns a primitive function with `name` in the graph starting from
 
     this node. Throws an exception if `name` occurs multiple times. If
@@ -915,7 +916,7 @@ items:
       branch: master
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1189
+    startLine: 1482
   summary: 'Load the `model`, that has been saved using @cntk.ops.functions.Function.save.
 
     '
@@ -1096,7 +1097,7 @@ items:
       branch: master
       path: bindings/python\cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1163
+    startLine: 1456
   summary: 'Register a callback function to be invoked when deserializing a user-
 
     defined function with the corresponding op name.
@@ -1153,7 +1154,7 @@ items:
       branch: master
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1049
+    startLine: 1098
   summary: 'In-place replace the only placeholder in the function graph with the
 
     specified substitution.
@@ -1198,7 +1199,7 @@ items:
       branch: master
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1032
+    startLine: 1081
   summary: 'In-place replace specified placeholders in the Function graph with the
 
     specified replacements in the map.
@@ -1234,7 +1235,7 @@ items:
       branch: master
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1150
+    startLine: 1443
   summary: 'Restore the models parameters (in-place) from a saved model file
 
     '
@@ -1290,7 +1291,7 @@ items:
       branch: master
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1136
+    startLine: 1429
   summary: 'Save this function graph into a model file using protobuf-based
 
     serialization.
@@ -1376,6 +1377,271 @@ items:
   type: attribute
   uid: cntk.ops.functions.Function.signature
 - class: cntk.ops.functions.Function
+  fullName: cntk.ops.functions.Function.test
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: test
+  source:
+    id: test
+    path: bindings/python\cntk\ops\functions.py
+    remote:
+      branch: master
+      path: bindings/python\cntk\ops\functions.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 1379
+  summary: 'Measures the performance of a model, given by its criterion function,
+    in the form of
+
+    average metric value (or loss if model has only one output) on a set of data.
+
+
+    This is a convenience wrapper around @cntk.eval.evaluator.
+
+    '
+  syntax:
+    content: test(minibatch_source, minibatch_size=32, streams=None, model_inputs_to_streams=None,
+      callbacks=None)
+    parameters:
+    - defaultValue: '32'
+      id: self
+    - description: 'minibatch source for the test data
+
+        '
+      id: minibatch_source
+      type:
+      - '@cntk.io
+
+        '
+    - description: 'minibatch size for evaluation
+
+        '
+      id: minibatch_size
+      type:
+      - "@cntk.cntk_py.minibatch_size_schedule\n or int"
+    - defaultValue: None
+      description: 'the streams of the minibatch_source in argument order
+
+        '
+      id: streams
+      type:
+      - tuple
+    - defaultValue: None
+      description: 'mapping between input variables and input streams
+
+        '
+      id: model_inputs_to_streams
+      type:
+      - dict
+    - defaultValue: None
+      description: 'optionally, list of
+
+        progress writers from @cntk.logging to automatically track training
+
+        progress.
+
+        '
+      id: callbacks
+      type:
+      - progress writer or list of them
+    return:
+      description: 'An object *test_summary* with *test_summary.metric* being the
+        average metric, and *test_summary.samples* the number of labels in the test
+        set.
+
+        '
+  type: method
+  uid: cntk.ops.functions.Function.test
+- class: cntk.ops.functions.Function
+  example:
+  - '```
+
+
+    >>> # a simple logistic-regression model
+
+    >>> N = 250
+
+    >>> np.random.seed(0)
+
+    >>> Y = np.random.randint(size=N, low=0, high=2)  # labels
+
+    >>> X = (np.random.randn(N, 2)+3) * (Y[:,None]+1)   # data
+
+    >>> # Our model expects float32 features, and cross-entropy expects one-hot encoded
+    labels.
+
+    >>> import scipy.sparse
+
+    >>> Y = scipy.sparse.csr_matrix((np.ones(N,np.float32), (range(N), Y)), shape=(N,
+    2))
+
+    >>> X = X.astype(np.float32)
+
+    >>> model = cntk.layers.Dense(2, activation=None) # model function
+
+    >>> import cntk.layers
+
+    >>> @cntk.Function.with_signature(cntk.layers.Tensor[2], cntk.layers.SparseTensor[2])
+    # criterion function
+
+    ... def criterion(data, label_one_hot):
+
+    ...     z = model(data)  # apply model. Computes a non-normalized log probability
+    for every output class.
+
+    ...     return cntk.cross_entropy_with_softmax(z, label_one_hot)
+
+    >>> learner = cntk.sgd(model.parameters, cntk.learning_rate_schedule(0.1, cntk.UnitType.minibatch))
+
+    >>> progress = criterion.train((X, Y), minibatch_size=25, max_epochs=2, epoch_size=125,
+    parameter_learners=[learner])
+
+    >>> print("%.2f" % progress.epoch_summaries[-1].loss) # get the final epoch''s
+    loss value
+
+    0.76
+
+    ```
+
+    '
+  fullName: cntk.ops.functions.Function.train
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: train
+  source:
+    id: train
+    path: bindings/python\cntk\ops\functions.py
+    remote:
+      branch: master
+      path: bindings/python\cntk\ops\functions.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 1218
+  summary: 'Trains a model, given by its criterion function, using the specified training
+    parameters and configs.
+
+    Different aspects of training such as data sources, checkpointing, cross validation,
+    progress printing
+
+    can be configured using the corresponding config classes.
+
+
+    The input data can be specified as a data reader (@cntk.io)
+
+    for large corpora; or directly as numpy/scipy arrays if the data is so small that
+    it
+
+    is feasible to keep it all in RAM.
+
+
+    Data is processed in minibatches. The minibatch size defaults to 32, which is
+    a choice that commonly works well.
+
+    However, for maximum efficiency, we recommend to experiment with minibatch sizes
+
+    and choose the largest that converges well and does not exceed the GPU RAM.
+
+    This is particularly important for distributed training, where
+
+    often, the minibatch size can be increased throughout the training, which reduces
+    data bandwidth
+
+    and thus speeds up parallel training.
+
+
+    If input data is given through a data reader (as opposed to directly as a numpy/scipy
+    array),
+
+    the user must also specify the epoch size. This is because data readers are used
+    for
+
+    large corpora, and the traditional definition of epoch size as number of samples
+    in the corpus
+
+    is not very relevant. Instead, CNTK really means the number of samples
+
+    between summary actions, such as printing training progress, adjusting the learning
+    rate, and/or checkpointing the model.
+
+
+    The function returns an object that contains these members: *epoch_summaries*
+    is a list that
+
+    contains the progression of epoch loss (*.loss*) and metric (*.metric*) values
+    and the corresponding
+
+    number of labels (*.samples*) that they were averaged over. This is the same value
+    that a progress printer would print as epoch
+
+    summaries. *updates* is a similar list with the more fine-grained minibatch updates.
+
+    If a *TestConfig* was specified, then *test_summary* is the metric and sample
+    count on the specified test set
+
+    for the final model.
+
+
+    A number of callback mechanisms can optionally be specified as a list as *callbacks*.
+
+    CNTK has a fixed set of callback types, and only those types are allowed in the
+    *callbacks* list:
+
+    An object of type @cntk.cntk_py.ProgressWriter from @cntk.logging is used for
+    progress logging;
+
+    a @cntk.train.training_session.CheckpointConfig configures the checkpointing mechanism,
+    which
+
+    keeps copies of models at regular intervals and allows to seamlessly restart from
+    a last checkpoint;
+
+    a @cntk.train.training_session.TestConfig allows to specify a test set that is
+    evaluated at the end of the training;
+
+    and a @cntk.train.training_session.CrossValidationConfig specifies a user callback
+    that can be used to adjust learning
+
+    hyper-parameters or to denote to stop training, optionally based on a separate
+    cross-validation data set.
+
+
+    This is a convenience wrapper around @cntk.train.trainer.Trainer @cntk.train.training_session.TrainingSession.
+
+    '
+  syntax:
+    content: train(minibatch_source, minibatch_size=32, streams=None, model_inputs_to_streams=None,
+      parameter_learners=[], callbacks=[], progress_frequency=None, max_epochs=None,
+      epoch_size=None, max_samples=None)
+    parameters:
+    - defaultValue: '32'
+      id: self
+    - id: minibatch_source
+    - id: minibatch_size
+    - defaultValue: None
+      id: streams
+    - defaultValue: None
+      id: model_inputs_to_streams
+    - defaultValue: None
+      id: parameter_learners
+    - defaultValue: None
+      id: callbacks
+    - defaultValue: '[]'
+      id: progress_frequency
+    - defaultValue: '[]'
+      id: max_epochs
+    - defaultValue: None
+      id: epoch_size
+    - defaultValue: None
+      id: max_samples
+    return:
+      description: "An object *progress* with *progress.epoch_summaries* and *progress.updates*\
+        \ being the progressions of av loss, av metric, and number of labels\n   for\
+        \ epochs and updates (groups of minibatches), respectively. If a *TestConfig*\
+        \ was given, then *progress.test_summary*\n   includes the result (.metric\
+        \ and .samples)\n"
+  type: method
+  uid: cntk.ops.functions.Function.train
+- class: cntk.ops.functions.Function
   fullName: cntk.ops.functions.Function.type
   langs:
   - python
@@ -1446,6 +1712,61 @@ items:
     - id: self
   type: method
   uid: cntk.ops.functions.Function.update_signature
+- class: cntk.ops.functions.Function
+  example:
+  - '```
+
+
+    >>> from cntk.layers.typing import *
+
+    >>> @Function.with_signature(Tensor[13])
+
+    ... def f(x):
+
+    ...     return x * x
+
+    >>> print(f)
+
+    ElementTimes(x: Tensor[13]) -> Tensor[13]
+
+    >>> # which is equivalent to this:
+
+    >>> @Function
+
+    ... @Signature(Tensor[13])
+
+    ... def f(x):
+
+    ...     return x * x
+
+    >>> print(f)
+
+    ElementTimes(x: Tensor[13]) -> Tensor[13]
+
+    ```
+
+    '
+  fullName: cntk.ops.functions.Function.with_signature
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: with_signature
+  source:
+    id: with_signature
+    path: bindings/python\cntk\ops\functions.py
+    remote:
+      branch: master
+      path: bindings/python\cntk\ops\functions.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 1517
+  summary: 'Decorator for defining a @Function with a given signature. Same as @Function
+    followed by @Signature.
+
+    '
+  syntax:
+    content: with_signature(*args, **kwargs)
+  type: method
+  uid: cntk.ops.functions.Function.with_signature
 references:
 - fullName: cntk.ops.functions.Function.argument_map
   isExternal: false
@@ -1612,6 +1933,16 @@ references:
   name: signature
   parent: cntk.ops.functions.Function
   uid: cntk.ops.functions.Function.signature
+- fullName: cntk.ops.functions.Function.test
+  isExternal: false
+  name: test
+  parent: cntk.ops.functions.Function
+  uid: cntk.ops.functions.Function.test
+- fullName: cntk.ops.functions.Function.train
+  isExternal: false
+  name: train
+  parent: cntk.ops.functions.Function
+  uid: cntk.ops.functions.Function.train
 - fullName: cntk.ops.functions.Function.type
   isExternal: false
   name: type
@@ -1627,3 +1958,8 @@ references:
   name: update_signature
   parent: cntk.ops.functions.Function
   uid: cntk.ops.functions.Function.update_signature
+- fullName: cntk.ops.functions.Function.with_signature
+  isExternal: false
+  name: with_signature
+  parent: cntk.ops.functions.Function
+  uid: cntk.ops.functions.Function.with_signature

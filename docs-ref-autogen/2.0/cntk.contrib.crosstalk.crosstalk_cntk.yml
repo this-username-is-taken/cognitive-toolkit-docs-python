@@ -3,19 +3,7 @@ api_name: []
 items:
 - children:
   - cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
-  - cntk.contrib.crosstalk.crosstalk_cntk.conv2d_getter
-  - cntk.contrib.crosstalk.crosstalk_cntk.conv2d_setter
-  - cntk.contrib.crosstalk.crosstalk_cntk.dict_parameter_getter
-  - cntk.contrib.crosstalk.crosstalk_cntk.dict_parameter_setter
-  - cntk.contrib.crosstalk.crosstalk_cntk.embed_getter
-  - cntk.contrib.crosstalk.crosstalk_cntk.embed_setter
   - cntk.contrib.crosstalk.crosstalk_cntk.find_func_param
-  - cntk.contrib.crosstalk.crosstalk_cntk.function_getter
-  - cntk.contrib.crosstalk.crosstalk_cntk.parameter_getter
-  - cntk.contrib.crosstalk.crosstalk_cntk.parameter_setter
-  - cntk.contrib.crosstalk.crosstalk_cntk.rnn_getter
-  - cntk.contrib.crosstalk.crosstalk_cntk.rnn_setter
-  - cntk.contrib.crosstalk.crosstalk_cntk.variable_getter
   fullName: cntk.contrib.crosstalk.crosstalk_cntk
   langs:
   - python
@@ -31,131 +19,6 @@ items:
     startLine: 0
   type: module
   uid: cntk.contrib.crosstalk.crosstalk_cntk
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.conv2d_getter
-  langs:
-  - python
-  module: cntk.contrib.crosstalk.crosstalk_cntk
-  name: conv2d_getter
-  source:
-    id: conv2d_getter
-    path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-    remote:
-      branch: master
-      path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 54
-  syntax:
-    content: conv2d_getter(f, attr)
-    parameters:
-    - id: f
-    - id: attr
-  type: function
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.conv2d_getter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.conv2d_setter
-  langs:
-  - python
-  module: cntk.contrib.crosstalk.crosstalk_cntk
-  name: conv2d_setter
-  source:
-    id: conv2d_setter
-    path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-    remote:
-      branch: master
-      path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 63
-  syntax:
-    content: conv2d_setter(f, raw_value, attr)
-    parameters:
-    - id: f
-    - id: raw_value
-    - id: attr
-  type: function
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.conv2d_setter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.dict_parameter_getter
-  langs:
-  - python
-  module: cntk.contrib.crosstalk.crosstalk_cntk
-  name: dict_parameter_getter
-  source:
-    id: dict_parameter_getter
-    path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-    remote:
-      branch: master
-      path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 41
-  syntax:
-    content: dict_parameter_getter(pd, attr=None)
-    parameters:
-    - id: pd
-    - defaultValue: None
-      id: attr
-  type: function
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.dict_parameter_getter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.dict_parameter_setter
-  langs:
-  - python
-  module: cntk.contrib.crosstalk.crosstalk_cntk
-  name: dict_parameter_setter
-  source:
-    id: dict_parameter_setter
-    path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-    remote:
-      branch: master
-      path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 33
-  syntax:
-    content: dict_parameter_setter(pd, raw_value, attr=None)
-    parameters:
-    - defaultValue: None
-      id: pd
-    - id: raw_value
-    - id: attr
-  type: function
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.dict_parameter_setter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.embed_getter
-  langs:
-  - python
-  module: cntk.contrib.crosstalk.crosstalk_cntk
-  name: embed_getter
-  source:
-    id: embed_getter
-    path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-    remote:
-      branch: master
-      path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 179
-  syntax:
-    content: embed_getter(p, attr)
-    parameters:
-    - id: p
-    - id: attr
-  type: function
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.embed_getter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.embed_setter
-  langs:
-  - python
-  module: cntk.contrib.crosstalk.crosstalk_cntk
-  name: embed_setter
-  source:
-    id: embed_setter
-    path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-    remote:
-      branch: master
-      path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 186
-  syntax:
-    content: embed_setter(p, raw_value, attr)
-    parameters:
-    - id: p
-    - id: raw_value
-    - id: attr
-  type: function
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.embed_setter
 - fullName: cntk.contrib.crosstalk.crosstalk_cntk.find_func_param
   langs:
   - python
@@ -169,208 +32,58 @@ items:
       path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 12
+  summary: 'Find a single parameter in a function by name or by shape when the function
+    has multiple parameters.
+
+    If the function only has one parameter it''s directly returned.
+
+    '
   syntax:
     content: find_func_param(func, name=None, shape=None, allow_not_found=False)
     parameters:
-    - id: func
+    - description: 'The function to search parameter for
+
+        '
+      id: func
+      type:
+      - '@cntk.ops.functions.Function
+
+        '
     - defaultValue: 'False'
+      description: 'The name of the parameter
+
+        '
       id: name
+      type:
+      - string
     - defaultValue: None
+      description: 'The shape of the parameter
+
+        '
       id: shape
+      type:
+      - tuple
     - defaultValue: None
+      description: 'Set to True to avoid raise exception when not found
+
+        '
       id: allow_not_found
+      type:
+      - bool
+    return:
+      description: 'The @cntk.variables.Parameter that is found
+
+        '
   type: function
   uid: cntk.contrib.crosstalk.crosstalk_cntk.find_func_param
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.function_getter
-  langs:
-  - python
-  module: cntk.contrib.crosstalk.crosstalk_cntk
-  name: function_getter
-  source:
-    id: function_getter
-    path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-    remote:
-      branch: master
-      path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 44
-  syntax:
-    content: function_getter(data)
-    parameters:
-    - id: data
-  type: function
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.function_getter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.parameter_getter
-  langs:
-  - python
-  module: cntk.contrib.crosstalk.crosstalk_cntk
-  name: parameter_getter
-  source:
-    id: parameter_getter
-    path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-    remote:
-      branch: master
-      path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 30
-  syntax:
-    content: parameter_getter(p, attr=None)
-    parameters:
-    - id: p
-    - defaultValue: None
-      id: attr
-  type: function
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.parameter_getter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.parameter_setter
-  langs:
-  - python
-  module: cntk.contrib.crosstalk.crosstalk_cntk
-  name: parameter_setter
-  source:
-    id: parameter_setter
-    path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-    remote:
-      branch: master
-      path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 25
-  syntax:
-    content: parameter_setter(p, raw_value, attr=None)
-    parameters:
-    - defaultValue: None
-      id: p
-    - id: raw_value
-    - id: attr
-  type: function
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.parameter_setter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.rnn_getter
-  langs:
-  - python
-  module: cntk.contrib.crosstalk.crosstalk_cntk
-  name: rnn_getter
-  source:
-    id: rnn_getter
-    path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-    remote:
-      branch: master
-      path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 132
-  syntax:
-    content: rnn_getter(f, attr)
-    parameters:
-    - id: f
-    - id: attr
-  type: function
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.rnn_getter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.rnn_setter
-  langs:
-  - python
-  module: cntk.contrib.crosstalk.crosstalk_cntk
-  name: rnn_setter
-  source:
-    id: rnn_setter
-    path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-    remote:
-      branch: master
-      path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 154
-  syntax:
-    content: rnn_setter(f, raw_value, attr)
-    parameters:
-    - id: f
-    - id: raw_value
-    - id: attr
-  type: function
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.rnn_setter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.variable_getter
-  langs:
-  - python
-  module: cntk.contrib.crosstalk.crosstalk_cntk
-  name: variable_getter
-  source:
-    id: variable_getter
-    path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-    remote:
-      branch: master
-      path: bindings/python\cntk\contrib\crosstalk\crosstalk_cntk.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 49
-  syntax:
-    content: variable_getter(data)
-    parameters:
-    - id: data
-  type: function
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.variable_getter
 references:
 - fullName: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
   isExternal: false
   name: CNTKCrosstalk
   parent: cntk.contrib.crosstalk.crosstalk_cntk
   uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.conv2d_getter
-  isExternal: false
-  name: conv2d_getter
-  parent: cntk.contrib.crosstalk.crosstalk_cntk
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.conv2d_getter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.conv2d_setter
-  isExternal: false
-  name: conv2d_setter
-  parent: cntk.contrib.crosstalk.crosstalk_cntk
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.conv2d_setter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.dict_parameter_getter
-  isExternal: false
-  name: dict_parameter_getter
-  parent: cntk.contrib.crosstalk.crosstalk_cntk
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.dict_parameter_getter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.dict_parameter_setter
-  isExternal: false
-  name: dict_parameter_setter
-  parent: cntk.contrib.crosstalk.crosstalk_cntk
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.dict_parameter_setter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.embed_getter
-  isExternal: false
-  name: embed_getter
-  parent: cntk.contrib.crosstalk.crosstalk_cntk
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.embed_getter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.embed_setter
-  isExternal: false
-  name: embed_setter
-  parent: cntk.contrib.crosstalk.crosstalk_cntk
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.embed_setter
 - fullName: cntk.contrib.crosstalk.crosstalk_cntk.find_func_param
   isExternal: false
   name: find_func_param
   parent: cntk.contrib.crosstalk.crosstalk_cntk
   uid: cntk.contrib.crosstalk.crosstalk_cntk.find_func_param
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.function_getter
-  isExternal: false
-  name: function_getter
-  parent: cntk.contrib.crosstalk.crosstalk_cntk
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.function_getter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.parameter_getter
-  isExternal: false
-  name: parameter_getter
-  parent: cntk.contrib.crosstalk.crosstalk_cntk
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.parameter_getter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.parameter_setter
-  isExternal: false
-  name: parameter_setter
-  parent: cntk.contrib.crosstalk.crosstalk_cntk
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.parameter_setter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.rnn_getter
-  isExternal: false
-  name: rnn_getter
-  parent: cntk.contrib.crosstalk.crosstalk_cntk
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.rnn_getter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.rnn_setter
-  isExternal: false
-  name: rnn_setter
-  parent: cntk.contrib.crosstalk.crosstalk_cntk
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.rnn_setter
-- fullName: cntk.contrib.crosstalk.crosstalk_cntk.variable_getter
-  isExternal: false
-  name: variable_getter
-  parent: cntk.contrib.crosstalk.crosstalk_cntk
-  uid: cntk.contrib.crosstalk.crosstalk_cntk.variable_getter

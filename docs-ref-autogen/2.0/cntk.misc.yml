@@ -2,6 +2,7 @@
 api_name: []
 items:
 - children:
+  - cntk.misc.converter
   - cntk.misc.optimized_rnnstack_converter
   fullName: cntk.misc
   langs:
@@ -19,6 +20,11 @@ items:
   type: package
   uid: cntk.misc
 references:
+- fullName: cntk.misc.converter
+  isExternal: false
+  name: converter
+  parent: cntk.misc
+  uid: cntk.misc.converter
 - fullName: cntk.misc.optimized_rnnstack_converter
   isExternal: false
   name: optimized_rnnstack_converter

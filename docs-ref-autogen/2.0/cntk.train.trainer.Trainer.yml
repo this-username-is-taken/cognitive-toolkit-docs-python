@@ -48,14 +48,14 @@ items:
     can be used for tracking the trained model''s quality.
 
 
-    <SYSTEM MESSAGE: F:\WorkFiles\Projects\CNTK\bindings\python\doc\cntk.train.trainer.rst:19:
+    <SYSTEM MESSAGE: F:\WorkFiles\Projects\CNTK\bindings\python\doc\cntk.train.trainer.rst:20:
     (INFO/1) No directive entry for "todo" in module "docutils.parsers.rst.languages.en".
 
     Trying "todo" as canonical directive name.>
 
 
     <SYSTEM MESSAGE: c:\local\anaconda3-4.1.1-windows-x86_64\lib\site-packages\cntk\train\trainer.py:docstring
-    of cntk.train.trainer.Trainer:19: (ERROR/3) Unknown directive type "todo".
+    of cntk.train.trainer.Trainer:20: (ERROR/3) Unknown directive type "todo".
 
 
     .. todo:: Allow to skip some parameters that should not be updated.
@@ -103,16 +103,20 @@ items:
       - "tuple of @cntk.ops.functions\n or @cntk.variables.Variable\n"
     - description: 'list of learners from @cntk.learners
 
-        progress_writers (progress writer or list of them): optionally, list of
-
-        progress writers from @cntk.utils to automatically track training
-
-        progress.
-
         '
       id: parameter_learners
       type:
       - list
+    - description: 'optionally, list of
+
+        progress writers from @cntk.logging to automatically track training
+
+        progress.
+
+        '
+      id: progress_writers
+      type:
+      - progress writer or list of them
   type: class
   uid: cntk.train.trainer.Trainer
 - class: cntk.train.trainer.Trainer
