@@ -23,7 +23,6 @@ We have a new type system in the layers module to make the input type more reada
 This new type system is subject to change, please give us feedback on github or stackoverflow.
 
    - [Getting Started](gettingstarted.md)
-   - [Concepts](concepts.md)
    - [Tutorials](tutorials.md)
    - [Examples](examples.md)
    - [Working with Sequences](sequence.md)
