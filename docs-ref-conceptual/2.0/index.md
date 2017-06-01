@@ -31,9 +31,3 @@ This new type system is subject to change, please give us feedback on github or 
    - [Extending CNTK](extend.md)
    - [Layers Library Reference](layerref.md)
    - [Python API Reference](/python/api/cntk)
-
-## Indices and tables
-
-* [Index](https://cntk.ai/pythondocs/genindex.html)
-* [Module Index](https://cntk.ai/pythondocs/py-modindex.html)
-* [Search](https://cntk.ai/pythondocs/search.html)
