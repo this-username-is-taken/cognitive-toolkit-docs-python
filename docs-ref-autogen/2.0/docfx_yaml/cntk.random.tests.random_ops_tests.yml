@@ -1,0 +1,67 @@
+api_name: []
+items:
+- _type: module
+  children: []
+  module: cntk.random.tests.random_ops_tests
+  name: cntk.random.tests.random_ops_tests
+  summary: 'Unit tests for random number generation operations; forward only of course
+
+    '
+  type: Namespace
+  uid: cntk.random.tests.random_ops_tests
+- _type: class
+  children:
+  - cntk.random.tests.random_ops_tests.test_normal_diff_along_batch
+  - cntk.random.tests.random_ops_tests.test_normal_diff_along_sequence
+  - cntk.random.tests.random_ops_tests.test_normal_pair
+  - cntk.random.tests.random_ops_tests.test_placeholder
+  - cntk.random.tests.random_ops_tests.test_random_moments
+  - cntk.random.tests.random_ops_tests.test_randomlike_moments
+  - cntk.random.tests.random_ops_tests.test_two_times_n_vs_one_time_2n
+  module: cntk.random.tests.random_ops_tests
+  name: cntk.random.tests.random_ops_tests.Global
+  summary: Proxy object to hold module level functions
+  type: Class
+  uid: cntk.random.tests.random_ops_tests.Global
+- _type: function
+  module: cntk.random.tests.random_ops_tests
+  name: cntk.random.tests.random_ops_tests.test_normal_diff_along_batch
+  summary: ''
+  type: Method
+  uid: cntk.random.tests.random_ops_tests.test_normal_diff_along_batch
+- _type: function
+  module: cntk.random.tests.random_ops_tests
+  name: cntk.random.tests.random_ops_tests.test_normal_diff_along_sequence
+  summary: ''
+  type: Method
+  uid: cntk.random.tests.random_ops_tests.test_normal_diff_along_sequence
+- _type: function
+  module: cntk.random.tests.random_ops_tests
+  name: cntk.random.tests.random_ops_tests.test_normal_pair
+  summary: ''
+  type: Method
+  uid: cntk.random.tests.random_ops_tests.test_normal_pair
+- _type: function
+  module: cntk.random.tests.random_ops_tests
+  name: cntk.random.tests.random_ops_tests.test_placeholder
+  summary: ''
+  type: Method
+  uid: cntk.random.tests.random_ops_tests.test_placeholder
+- _type: function
+  module: cntk.random.tests.random_ops_tests
+  name: cntk.random.tests.random_ops_tests.test_random_moments
+  summary: ''
+  type: Method
+  uid: cntk.random.tests.random_ops_tests.test_random_moments
+- _type: function
+  module: cntk.random.tests.random_ops_tests
+  name: cntk.random.tests.random_ops_tests.test_randomlike_moments
+  summary: ''
+  type: Method
+  uid: cntk.random.tests.random_ops_tests.test_randomlike_moments
+- _type: function
+  module: cntk.random.tests.random_ops_tests
+  name: cntk.random.tests.random_ops_tests.test_two_times_n_vs_one_time_2n
+  summary: ''
+  type: Method
+  uid: cntk.random.tests.random_ops_tests.test_two_times_n_vs_one_time_2n

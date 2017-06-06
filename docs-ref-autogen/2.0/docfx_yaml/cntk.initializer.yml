@@ -1,0 +1,141 @@
+api_name: []
+items:
+- _type: module
+  children: []
+  module: cntk.initializer
+  name: cntk.initializer
+  summary: ''
+  type: Namespace
+  uid: cntk.initializer
+- _type: class
+  children:
+  - cntk.initializer.bilinear
+  - cntk.initializer.glorot_normal
+  - cntk.initializer.glorot_uniform
+  - cntk.initializer.he_normal
+  - cntk.initializer.he_uniform
+  - cntk.initializer.initializer_with_rank
+  - cntk.initializer.normal
+  - cntk.initializer.truncated_normal
+  - cntk.initializer.uniform
+  - cntk.initializer.xavier
+  module: cntk.initializer
+  name: cntk.initializer.Global
+  summary: Proxy object to hold module level functions
+  type: Class
+  uid: cntk.initializer.Global
+- _type: function
+  module: cntk.initializer
+  name: cntk.initializer.bilinear
+  summary: "initializer\n\n:param kernel_width: kernel width\n:type kernel_width:\
+    \ int\n:param kernel_height: kernel height\n:type kernel_height: int\n\n:returns:\
+    \ initializer for :class:`~cntk.variables.Parameter`\n          useful for deconvolution\
+    \ layer\n"
+  type: Method
+  uid: cntk.initializer.bilinear
+- _type: function
+  module: cntk.initializer
+  name: cntk.initializer.glorot_normal
+  summary: "initializer\n\n:param scale: scale\n:type scale: float\n:param output_rank:\
+    \ output rank\n:type output_rank: int\n:param filter_rank: filter rank\n:type\
+    \ filter_rank: int\n:param seed: random seed\n:type seed: int\n\n:returns: initializer\
+    \ for :class:`~cntk.variables.Parameter`\n          initialized to Gaussian distribution\
+    \ with mean `0` and standard\n          deviation $$scale*sqrt(2.0/(fanIn+fanOut))$$\n"
+  type: Method
+  uid: cntk.initializer.glorot_normal
+- _type: function
+  module: cntk.initializer
+  name: cntk.initializer.glorot_uniform
+  summary: "Glorot initializer\n\n:param scale: scale\n:type scale: float\n:param\
+    \ output_rank: output rank\n:type output_rank: int\n:param filter_rank: filter\
+    \ rank\n:type filter_rank: int\n:param seed: random seed\n:type seed: int\n\n\
+    :returns: initializer for :class:`~cntk.variables.Parameter`\n          initialized\
+    \ to uniform distribution between\n          $$scale*sqrt(6.0/(fanIn+fanOut))*[-1,1]$$\n"
+  type: Method
+  uid: cntk.initializer.glorot_uniform
+- _type: function
+  module: cntk.initializer
+  name: cntk.initializer.he_normal
+  summary: "initializer\n\n:param scale: scale\n:type scale: float\n:param output_rank:\
+    \ output rank\n:type output_rank: int\n:param filter_rank: filter rank\n:type\
+    \ filter_rank: int\n:param seed: random seed\n:type seed: int\n\n:returns: initializer\
+    \ for :class:`~cntk.variables.Parameter`\n          initialized to Gaussian distribution\
+    \ with mean `0` and standard\n          deviation $$scale*sqrt(2.0/fanIn)$$\n"
+  type: Method
+  uid: cntk.initializer.he_normal
+- _type: function
+  module: cntk.initializer
+  name: cntk.initializer.he_uniform
+  summary: "initializer\n\n:param scale: scale\n:type scale: float\n:param output_rank:\
+    \ output rank\n:type output_rank: int\n:param filter_rank: filter rank\n:type\
+    \ filter_rank: int\n:param seed: random seed\n:type seed: int\n\n:returns: initializer\
+    \ for :class:`~cntk.variables.Parameter`\n          initialized to uniform distribution\
+    \ between\n          $$scale*sqrt(6.0/fanIn)*[-1,1]$$\n"
+  type: Method
+  uid: cntk.initializer.he_uniform
+- _type: function
+  module: cntk.initializer
+  name: cntk.initializer.initializer_with_rank
+  summary: 'override output_rank and filter_rank specification in a random initializer
+
+    constructed without an explicit output_rank and filter_rank specification
+
+
+    :param initializer: initializer whose output_rank and filter_rank parameters are
+    to be overriden
+
+    :param output_rank: new output rank value
+
+    :type output_rank: int
+
+    :param filter_rank: new filter rank value
+
+    :type filter_rank: int
+
+
+    :returns: new initializer for :class:`~cntk.variables.Parameter` with specified
+    output_rank and filter_rank
+
+    '
+  type: Method
+  uid: cntk.initializer.initializer_with_rank
+- _type: function
+  module: cntk.initializer
+  name: cntk.initializer.normal
+  summary: "Normal initializer\n\n:param scale: scale\n:type scale: float\n:param\
+    \ output_rank: output rank\n:type output_rank: int\n:param filter_rank: filter\
+    \ rank\n:type filter_rank: int\n:param seed: random seed\n:type seed: int\n\n\
+    :returns: initializer for :class:`~cntk.variables.Parameter`\n          initialized\
+    \ to normal distribution with mean `0` and standard deviation `scale`.\n"
+  type: Method
+  uid: cntk.initializer.normal
+- _type: function
+  module: cntk.initializer
+  name: cntk.initializer.truncated_normal
+  summary: "Truncated normal initializer. The resulting values are drawn from\na truncated\
+    \ normal distribution and are always within two\nstandard deviations from the\
+    \ mean (which is 0).\n\n:param stdev: standard deviation\n:type stdev: float\n\
+    :param seed: random seed\n:type seed: int\n\n:returns: initializer for :class:`~cntk.variables.Parameter`\n\
+    \          initialized to truncated Gaussian distribution between `2*stdev[-1,\
+    \ 1]`\n"
+  type: Method
+  uid: cntk.initializer.truncated_normal
+- _type: function
+  module: cntk.initializer
+  name: cntk.initializer.uniform
+  summary: "Uniform initializer\n\n:param scale: scale\n:type scale: float\n:param\
+    \ seed: random seed\n:type seed: int\n\n:returns: initializer for :class:`~cntk.variables.Parameter`\n\
+    \          initialized to uniform distribution between `scale*[-1.0, 1.0]`.\n\
+    \          Note: this maps to the \"uniform1\" distribution in BrainScript.\n"
+  type: Method
+  uid: cntk.initializer.uniform
+- _type: function
+  module: cntk.initializer
+  name: cntk.initializer.xavier
+  summary: "Xavier initializer\n\n:param scale: scale\n:type scale: float\n:param\
+    \ output_rank: output rank\n:type output_rank: int\n:param filter_rank: filter\
+    \ rank\n:type filter_rank: int\n:param seed: random seed\n:type seed: int\n\n\
+    :returns: initializer for :class:`~cntk.variables.Parameter`\n          initialized\
+    \ to Gaussian distribution with mean `0` and standard\n          deviation $$scale*sqrt(3.0/fanIn)$$\n"
+  type: Method
+  uid: cntk.initializer.xavier

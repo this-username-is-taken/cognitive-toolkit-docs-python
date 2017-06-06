@@ -1,0 +1,185 @@
+api_name: []
+items:
+- _type: module
+  children:
+  - cntk.device.DeviceDescriptor
+  - cntk.device.DeviceKind
+  module: cntk.device
+  name: cntk.device
+  summary: ''
+  type: Namespace
+  uid: cntk.device
+- _type: class
+  children:
+  - cntk.device.all_devices
+  - cntk.device.cpu
+  - cntk.device.get_gpu_properties
+  - cntk.device.gpu
+  - cntk.device.set_excluded_devices
+  - cntk.device.try_set_default_device
+  - cntk.device.use_default_device
+  module: cntk.device
+  name: cntk.device.Global
+  summary: Proxy object to hold module level functions
+  type: Class
+  uid: cntk.device.Global
+- _type: class
+  children:
+  - cntk.device.DeviceDescriptor.id
+  - cntk.device.DeviceDescriptor.is_locked
+  - cntk.device.DeviceDescriptor.type
+  module: cntk.device
+  name: cntk.device.DeviceDescriptor
+  summary: 'Describes a device by a unique id and its type. If the device corresponds
+
+    to a GPU its type is 1, otherwise, it is 0
+
+    '
+  type: Class
+  uid: cntk.device.DeviceDescriptor
+- _type: method
+  class: cntk.device.DeviceDescriptor
+  module: cntk.device
+  name: cntk.device.DeviceDescriptor.id
+  summary: 'Returns id of device descriptor
+
+
+    :returns: id
+
+    :rtype: int
+
+    '
+  type: Method
+  uid: cntk.device.DeviceDescriptor.id
+- _type: method
+  class: cntk.device.DeviceDescriptor
+  module: cntk.device
+  name: cntk.device.DeviceDescriptor.is_locked
+  summary: 'Returns `True` if another CNTK process already holds an exclusive lock
+
+    on this device.
+
+    '
+  type: Method
+  uid: cntk.device.DeviceDescriptor.is_locked
+- _type: method
+  class: cntk.device.DeviceDescriptor
+  module: cntk.device
+  name: cntk.device.DeviceDescriptor.type
+  summary: 'Returns type of device descriptor. 1 if it is a GPU device or 0 if CPU.
+
+
+    :returns: type
+
+    :rtype: int
+
+    '
+  type: Method
+  uid: cntk.device.DeviceDescriptor.type
+- _type: class
+  children: []
+  module: cntk.device
+  name: cntk.device.DeviceKind
+  summary: 'Describes different device kinds like CPU or GPU.
+
+    '
+  type: Class
+  uid: cntk.device.DeviceKind
+- _type: function
+  module: cntk.device
+  name: cntk.device.all_devices
+  summary: 'Returns a device descriptor list with all the available devices
+
+
+    :returns: all device descriptors
+
+    :rtype: :class:`~cntk.device.DeviceDescriptor` list
+
+    '
+  type: Method
+  uid: cntk.device.all_devices
+- _type: function
+  module: cntk.device
+  name: cntk.device.cpu
+  summary: 'Returns CPU device descriptor
+
+
+    :returns: CPU device descriptor
+
+    :rtype: :class:`~cntk.device.DeviceDescriptor`
+
+    '
+  type: Method
+  uid: cntk.device.cpu
+- _type: function
+  module: cntk.device
+  name: cntk.device.get_gpu_properties
+  summary: "Retrieves and returns additional properties (total memory, number of CUDA\n\
+    cores, etc.) for the specified GPU device. This method will raise an\nexception\
+    \ if a CPU device is specified as an argument.\n\n:param device: a GPU device\n\
+    \               descriptor.\n:type device: :class:`~cntk.device.DeviceDescriptor`\n\
+    \n Returns:\n    :class:`~cntk.cntk_py.GPUProperties`: GPU device properties\n"
+  type: Method
+  uid: cntk.device.get_gpu_properties
+- _type: function
+  module: cntk.device
+  name: cntk.device.gpu
+  summary: 'Returns GPU device descriptor
+
+
+    :returns: GPU device descriptor
+
+    :rtype: :class:`~cntk.device.DeviceDescriptor`
+
+    '
+  type: Method
+  uid: cntk.device.gpu
+- _type: function
+  module: cntk.device
+  name: cntk.device.set_excluded_devices
+  summary: "Allows to specify a list of excluded devices that cannot be used as\n\
+    globally default (neither auto-selected nor explicitly specified by\n:func:`try_set_default_device`).\
+    \ For example, to avoid auto-selecting the\nCPU, invoke ``set_excluded_devices([cpu()])``.\
+    \ However, after the default\ndevice has been selected and frozen (by a call to\n\
+    :func:`use_default_device`), invoking this methods has no effect, it\nbecomes\
+    \ essentially a no-op.\n\n:param excluded_devices: a\n                       \
+    \  list of device descriptors to exclude.\n:type excluded_devices: list of :class:`~cntk.device.DeviceDescriptor`\n"
+  type: Method
+  uid: cntk.device.set_excluded_devices
+- _type: function
+  module: cntk.device
+  name: cntk.device.try_set_default_device
+  summary: "Tries to set the specified device as the globally default, optionally\n\
+    acquiring an exclusive (cooperative) lock on the device (only a GPU device\ncan\
+    \ be locked).\n\n:param new_default_device: a\n                           descriptor\
+    \ of the device to be used as a globally default.\n:type new_default_device: :class:`~cntk.device.DeviceDescriptor`\n\
+    :param acquire_device_lock: whether or not a lock\n                          \
+    \  should be acquired for the specified device.\n:type acquire_device_lock: bool,\
+    \ defaults to `False`\n\nThe default device can only be changed if it has not\
+    \ yet been frozen by\nbeing implicitly used in any previous CNTK operation.\n\n\
+    CNTK uses cooperative locking for the device access, whereby only a single\nprocess\
+    \ can acquire a device lock. This locking mechanism allows CNTK\nprocesses to\
+    \ avoid device oversubscription only if they collectively\nchoose so. In other\
+    \ words, the device locked by one CNTK process, can\nstill be accessed by another\
+    \ CNTK process without acquiring any locks\n(i.e, the existing device lock can\
+    \ be ignored by other CNTK processes).\nThis cooperative locking mechanism does\
+    \ not guarantee any kind of\nexclusive access to the device. The proper way to\
+    \ ensure exclusivity  is\nto use tools provided by NVIDIA (nvidia smi).\n\nReturns:\
+    \ `False` if\n    * the specified device appears in the list of excluded devices;\n\
+    \    * `acquire_device_lock` is `True` and another process already holds a lock\
+    \ on the device;\n    * `acquire_device_lock` is `True` and `new_default_device`\
+    \ corresponds to a CPU device\n      (which cannot be locked).\n"
+  type: Method
+  uid: cntk.device.try_set_default_device
+- _type: function
+  module: cntk.device
+  name: cntk.device.use_default_device
+  summary: "Freezes the default device of the current CNTK process disallowing further\n\
+    changes through calls to :func:`try_set_default_device`. This default\ndevice\
+    \ will used for all CNTK operations where a device needs to be\nspecified and\
+    \ where none was explicitly provided. If no device has been\nspecified with a\
+    \ call to :func:`try_set_default_device`, on the first\ninvocation, this methods\
+    \ will auto-select one of the available (non-locked)\ndevices as the default.\n\
+    \n:returns: descriptor of the globally\n          default device\n:rtype: :class:`~cntk.device.DeviceDescriptor`\n"
+  type: Method
+  uid: cntk.device.use_default_device

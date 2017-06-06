@@ -1,0 +1,106 @@
+api_name: []
+items:
+- _type: module
+  children:
+  - cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+  module: cntk.contrib.crosstalk.crosstalk_cntk
+  name: cntk.contrib.crosstalk.crosstalk_cntk
+  summary: ''
+  type: Namespace
+  uid: cntk.contrib.crosstalk.crosstalk_cntk
+- _type: class
+  children:
+  - cntk.contrib.crosstalk.crosstalk_cntk.find_func_param
+  module: cntk.contrib.crosstalk.crosstalk_cntk
+  name: cntk.contrib.crosstalk.crosstalk_cntk.Global
+  summary: Proxy object to hold module level functions
+  type: Class
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.Global
+- _type: class
+  children:
+  - cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.is_param
+  - cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.load_all_params
+  - cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.save_all_params
+  - cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.set_data
+  module: cntk.contrib.crosstalk.crosstalk_cntk
+  name: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+  summary: 'CNTK implementation for crosstalk
+
+    '
+  type: Class
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+- _type: method
+  class: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+  module: cntk.contrib.crosstalk.crosstalk_cntk
+  name: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.is_param
+  summary: 'Check if var with name is a parameter
+
+
+    :param name: Variable name to check
+
+    :type name: `str`
+
+    '
+  type: Method
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.is_param
+- _type: method
+  class: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+  module: cntk.contrib.crosstalk.crosstalk_cntk
+  name: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.load_all_params
+  summary: 'Load all parameters from files in working directory
+
+    '
+  type: Method
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.load_all_params
+- _type: method
+  class: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+  module: cntk.contrib.crosstalk.crosstalk_cntk
+  name: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.save_all_params
+  summary: 'Save all parameters to files in working directory
+
+    '
+  type: Method
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.save_all_params
+- _type: method
+  class: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+  module: cntk.contrib.crosstalk.crosstalk_cntk
+  name: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.set_data
+  summary: 'Set mapped data for variable evaluation
+
+
+    :param data: The input data as arguments parameter in :func:`~cntk.ops.functions.Function.eval`
+
+    '
+  type: Method
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.set_data
+- _type: function
+  module: cntk.contrib.crosstalk.crosstalk_cntk
+  name: cntk.contrib.crosstalk.crosstalk_cntk.find_func_param
+  summary: 'Find a single parameter in a function by name or by shape when the function
+    has multiple parameters.
+
+    If the function only has one parameter it''s directly returned.
+
+
+    :param func: The function to search parameter for
+
+    :type func: :class:`~cntk.ops.functions.Function`
+
+    :param name: The name of the parameter
+
+    :type name: string
+
+    :param shape: The shape of the parameter
+
+    :type shape: tuple
+
+    :param allow_not_found: Set to True to avoid raise exception when not found
+
+    :type allow_not_found: bool
+
+
+    :returns: The :class:`~cntk.variables.Parameter` that is found
+
+    '
+  type: Method
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.find_func_param
