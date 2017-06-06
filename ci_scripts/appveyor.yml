@@ -38,6 +38,9 @@ before_build:
     - ps: ac "$env:USERPROFILE\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
     - ps: Write-Host "appveyor.xml in cntk_yml docs repo"
 
+    # in case of cuda dll missing
+    - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/nvml.dll -Destination c:\\projects\\cntk\\x64\\Release\\nvml.dll -force
+
     
 build:
   project: c:\projects\cntk\CNTK.sln
