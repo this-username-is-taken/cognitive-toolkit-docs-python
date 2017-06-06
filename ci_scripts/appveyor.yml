@@ -53,6 +53,7 @@ on_finish:
     - ps: pip install $files
     - cd c:\projects\cntk\bindings\python\doc
     - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/conf.py -Destination c:/projects/cntk/bindings/python/doc/conf.py -force
+    - call build.bat  # to generate rst files
     - sphinx-build.exe . _build
     
     # copy yml fils generated
