@@ -914,7 +914,7 @@ items:
         '
       id: device
       type:
-      - '@cntk.device
+      - 'cntk.device
 
         '
     - description: 'the name of the Function instance in the network
@@ -1263,7 +1263,7 @@ items:
         '
       id: name
       type:
-      - '@cntk.ops.str
+      - 'cntk.ops.str
 
         , optional'
     return:
@@ -2813,7 +2813,7 @@ items:
         '
       id: alpha
       type:
-      - '@cntk.variables.Parameter
+      - 'cntk.variables.Parameter
 
         '
     - description: 'any @cntk.ops.functions.Function that outputs a tensor.
@@ -2899,7 +2899,7 @@ items:
         '
       id: device
       type:
-      - '@cntk.device
+      - 'cntk.device
 
         '
     - description: 'the name of the Parameter instance in the network
@@ -3295,7 +3295,7 @@ items:
         '
       id: name
       type:
-      - '@cntk.ops.str
+      - 'cntk.ops.str
 
         , optional'
     return:
@@ -4568,11 +4568,11 @@ items:
     \ matrix.\nThe operator '@' has been overloaded such that in Python 3.5 and later\
     \ X @ W equals times(X, W).\n\nFor better performance on times operation on sequence\
     \ which is followed by sequence.reduce_sum, use\ninfer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK,\
-    \ i.e. replace following:\n\n<!-- literal_block {\"backrefs\": [], \"names\":\
-    \ [], \"xml:space\": \"preserve\", \"dupnames\": [], \"classes\": [], \"ids\"\
-    : []} -->\n\n````\n\n   sequence.reduce_sum(times(seq1, seq2))\n   ````\n\nwith:\n\
-    \n<!-- literal_block {\"backrefs\": [], \"names\": [], \"xml:space\": \"preserve\"\
-    , \"dupnames\": [], \"classes\": [], \"ids\": []} -->\n\n````\n\n   times(seq1,\
+    \ i.e. replace following:\n\n<!-- literal_block {\"dupnames\": [], \"backrefs\"\
+    : [], \"ids\": [], \"names\": [], \"xml:space\": \"preserve\", \"classes\": []}\
+    \ -->\n\n````\n\n   sequence.reduce_sum(times(seq1, seq2))\n   ````\n\nwith:\n\
+    \n<!-- literal_block {\"dupnames\": [], \"backrefs\": [], \"ids\": [], \"names\"\
+    : [], \"xml:space\": \"preserve\", \"classes\": []} -->\n\n````\n\n   times(seq1,\
     \ seq2, infer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK)\n\
     \   ````\n"
   syntax:

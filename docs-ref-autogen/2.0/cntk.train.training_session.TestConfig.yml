@@ -32,7 +32,7 @@ items:
         '
       id: minibatch_source
       type:
-      - '@cntk.io
+      - 'cntk.io
 
         '
     - description: 'minibatch schedule for cross validation
@@ -60,7 +60,7 @@ items:
         '
       id: criterion
       type:
-      - '@cntk.ops.functions
+      - 'cntk.ops.functions
 
         '
     - description: 'DEPRECATED, use minibatch_source instead
@@ -68,7 +68,7 @@ items:
         '
       id: source
       type:
-      - '@cntk.io
+      - 'cntk.io
 
         '
     - description: 'DEPRECATED, use minibatch_size instead

@@ -51,7 +51,7 @@ items:
         '
       id: root
       type:
-      - "@cntk.ops.functions.Function\n or @cntk.variables.Variable\n"
+      - "cntk.ops.functions.Function\n or @cntk.variables.Variable\n"
     - description: 'function that takes a node as
 
         argument and returns `True` if that node should be returned.
@@ -103,7 +103,7 @@ items:
         '
       id: node
       type:
-      - "@cntk.ops.functions.Function\n or @cntk.variables.Variable\n"
+      - "cntk.ops.functions.Function\n or @cntk.variables.Variable\n"
     - description: 'name for which we are search nodes
 
         '
@@ -153,7 +153,7 @@ items:
         '
       id: node
       type:
-      - "@cntk.ops.functions.Function\n or @cntk.variables.Variable\n"
+      - "cntk.ops.functions.Function\n or @cntk.variables.Variable\n"
     - description: 'name for which we are search nodes
 
         '

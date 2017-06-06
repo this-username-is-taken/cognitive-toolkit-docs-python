@@ -88,12 +88,12 @@ items:
     \ types\nof the arguments. In this case, the @Function decorator creates a CNTK\
     \ Function\nwhose arguments are input variables.\n\nIf you use Python 3, Functions\
     \ with types are declared using Python annotation syntax, e.g.:\n\n<!-- literal_block\
-    \ {\"backrefs\": [], \"names\": [], \"xml:space\": \"preserve\", \"dupnames\"\
-    : [], \"classes\": [], \"ids\": []} -->\n\n````\n\n   @Function\n   def f(x:Tensor[13]):\n\
+    \ {\"dupnames\": [], \"backrefs\": [], \"ids\": [], \"names\": [], \"xml:space\"\
+    : \"preserve\", \"classes\": []} -->\n\n````\n\n   @Function\n   def f(x:Tensor[13]):\n\
     \       return x * x\n   ````\n\nIf you are working with Python 2.7, use CNTK's\
-    \ @cntk.layers.typing decorator instead:\n\n<!-- literal_block {\"backrefs\":\
-    \ [], \"names\": [], \"xml:space\": \"preserve\", \"dupnames\": [], \"classes\"\
-    : [], \"ids\": []} -->\n\n````\n\n   >>> from cntk.layers.typing import *\n  \
+    \ @cntk.layers.typing decorator instead:\n\n<!-- literal_block {\"dupnames\":\
+    \ [], \"backrefs\": [], \"ids\": [], \"names\": [], \"xml:space\": \"preserve\"\
+    , \"classes\": []} -->\n\n````\n\n   >>> from cntk.layers.typing import *\n  \
     \ >>> @Function\n   ... @Signature(Tensor[13])\n   ... def f(x):\n   ...     return\
     \ x * x\n   >>> print(f)\n   ElementTimes(x: Tensor[13]) -> Tensor[13]\n   ````\n\
     \n`make_block=True` is an internal parameter used to implement @cntk.ops.functions.BlockFunction.\n\
@@ -315,7 +315,7 @@ items:
         \ (constant). \n"
       id: method
       type:
-      - '@cntk.ops.functions.CloneMethod
+      - 'cntk.ops.functions.CloneMethod
 
         '
     - description: 'a dictionary mapping variables in this
@@ -664,7 +664,7 @@ items:
         '
       id: device
       type:
-      - '@cntk.device
+      - 'cntk.device
 
         , default None'
     - description: 'whether to return the result as a NumPy array. Default True.
@@ -753,7 +753,7 @@ items:
         '
       id: device
       type:
-      - '@cntk.device
+      - 'cntk.device
 
         , default None'
     - description: 'whether to return the gradients as a NumPy array. Default True.
@@ -779,7 +779,7 @@ items:
         '
       id: grad_root
       type:
-      - '@cntk.variables.Variable
+      - 'cntk.variables.Variable
 
         , optional'
     return:
@@ -936,7 +936,7 @@ items:
         '
       id: device
       type:
-      - '@cntk.device
+      - 'cntk.device
 
         , defaults to the current globally default device'
     return:
@@ -1175,7 +1175,7 @@ items:
         '
       id: substitution
       type:
-      - '@cntk.variables.Variable
+      - 'cntk.variables.Variable
 
         '
     return:
@@ -1410,7 +1410,7 @@ items:
         '
       id: minibatch_source
       type:
-      - '@cntk.io
+      - 'cntk.io
 
         '
     - description: 'minibatch size for evaluation
@@ -1418,7 +1418,7 @@ items:
         '
       id: minibatch_size
       type:
-      - "@cntk.cntk_py.minibatch_size_schedule\n or int"
+      - "cntk.cntk_py.minibatch_size_schedule\n or int"
     - defaultValue: None
       description: 'the streams of the minibatch_source in argument order
 

@@ -146,7 +146,7 @@ items:
         '
       id: f
       type:
-      - "@cntk.ops.functions.Function\n or equivalent Python function"
+      - "cntk.ops.functions.Function\n or equivalent Python function"
     return:
       description: 'A function that accepts one argument, applies `f` to it, and adds
         the original argument.

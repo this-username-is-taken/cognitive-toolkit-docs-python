@@ -90,7 +90,7 @@ items:
       id: in_stream
       type:
       - object behaving like sys.stdin, default stdin
-    - defaultValue: <colorama.ansitowin32.StreamWrapper object at 0x000001D43F230080>
+    - defaultValue: <colorama.ansitowin32.StreamWrapper object at 0x00000260E99D0080>
       description: '*write()*
 
         and *flush()* will be called on it to output debug info to the user
@@ -140,7 +140,7 @@ items:
         '
       id: root_op
       type:
-      - '@cntk.ops.functions.Function
+      - 'cntk.ops.functions.Function
 
         '
     - description: 'filename to store the model in.
