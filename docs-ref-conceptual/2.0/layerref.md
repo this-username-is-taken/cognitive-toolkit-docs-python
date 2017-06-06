@@ -578,7 +578,7 @@ to represent the gradient in "row-sparse" form.
 Known issue: The above-mentioned row-sparse gradient form is currently
 not supported by our [1-bit SGD](/cognitive-toolkit/multiple-gpus-and-machines#5-data-parallel-training-with-1-bit-sgd) 
 parallelization technique. Please use the
-[block-momentum](/cognitive-toolkit/multiple-gpus-and-machines#22-block-momentum-sgd)
+[block-momentum](/cognitive-toolkit/multiple-gpus-and-machines#6-block-momentum-sgd)
 technique instead.
 
 ### Example
