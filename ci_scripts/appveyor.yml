@@ -39,6 +39,7 @@ before_build:
     - ps: Write-Host "appveyor.xml in cntk_yml docs repo"
 
     # in case of cuda dll missing
+    - mkdir c:\\projects\\cntk\\x64\\Release
     - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/nvml.dll -Destination c:\\projects\\cntk\\x64\\Release\\nvml.dll -force
 
     
