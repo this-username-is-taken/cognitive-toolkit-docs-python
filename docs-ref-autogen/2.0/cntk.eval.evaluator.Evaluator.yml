@@ -27,24 +27,17 @@ items:
 
 
 
-
     '
   syntax:
     content: Evaluator(eval_function, progress_writers=None)
     parameters:
-    - description: 'evaluation function.
-
-        '
+    - description: evaluation function.
       id: eval_function
       type:
-      - 'cntk.ops.functions.Function
-
-        '
+      - cntk.ops.functions.Function
     - description: 'optionally, list of progress writers from @cntk.utils to track
 
-        training progress.
-
-        '
+        training progress.'
       id: progress_writers
       type:
       - list
@@ -64,9 +57,7 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: 'The evaluation function that the evaluator is using.
-
-    '
+  summary: The evaluation function that the evaluator is using.
   syntax: {}
   type: attribute
   uid: cntk.eval.evaluator.Evaluator.evaluation_function
@@ -87,9 +78,7 @@ items:
   summary: 'Updates the progress writers with the summary of test progress since start
     and resets the internal
 
-    accumulators.
-
-    '
+    accumulators.'
   syntax:
     content: summarize_test_progress()
     parameters:
@@ -110,9 +99,9 @@ items:
       path: bindings/python\cntk\eval\evaluator.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 38
-  summary: "Test the evaluation function on the specified batch of samples.\n\nNote:\
-    \ See @cntk.ops.functions.Function.forward for examples on passing input data.\
-    \ \n"
+  summary: 'Test the evaluation function on the specified batch of samples.
+
+    Note: See @cntk.ops.functions.Function.forward for examples on passing input data. '
   syntax:
     content: test_minibatch(arguments, device=None)
     parameters:
@@ -123,9 +112,7 @@ items:
     return:
       description: 'the average evaluation criterion value per sample for the
 
-        tested minibatch.
-
-        '
+        tested minibatch.'
       type:
       - float
   type: method
