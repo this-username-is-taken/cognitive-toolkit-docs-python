@@ -1,0 +1,54 @@
+api_name: []
+items:
+- _type: module
+  children:
+  - cntk.logging.TraceLevel
+  module: cntk.logging
+  name: cntk.logging
+  summary: ''
+  type: Namespace
+  uid: cntk.logging
+- _type: class
+  children:
+  - cntk.logging.get_trace_level
+  - cntk.logging.set_trace_level
+  module: cntk.logging
+  name: cntk.logging.Global
+  summary: Proxy object to hold module level functions
+  type: Class
+  uid: cntk.logging.Global
+- _type: class
+  children: []
+  module: cntk.logging
+  name: cntk.logging.TraceLevel
+  summary: 'Describes different logging verbosity levels.
+
+    '
+  type: Class
+  uid: cntk.logging.TraceLevel
+- _type: function
+  module: cntk.logging
+  name: cntk.logging.get_trace_level
+  summary: 'Returns current logging verbosity level.
+
+
+    :returns: current verbosity level.
+
+    :rtype: :class:`~cntk.logging.TraceLevel`
+
+    '
+  type: Method
+  uid: cntk.logging.get_trace_level
+- _type: function
+  module: cntk.logging
+  name: cntk.logging.set_trace_level
+  summary: 'Specifies global logging verbosity level.
+
+
+    :param value: required verbosity level.
+
+    :type value: :class:`~cntk.logging.TraceLevel`
+
+    '
+  type: Method
+  uid: cntk.logging.set_trace_level

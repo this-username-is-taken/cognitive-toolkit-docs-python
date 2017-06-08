@@ -1,0 +1,455 @@
+api_name: []
+items:
+- _type: module
+  children:
+  - cntk.logging.progress_print.ProgressPrinter
+  - cntk.logging.progress_print.TensorBoardProgressWriter
+  - cntk.logging.progress_print.TrainingSummaryProgressCallback
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print
+  summary: ''
+  type: Namespace
+  uid: cntk.logging.progress_print
+- _type: class
+  children:
+  - cntk.logging.progress_print.log_number_of_parameters
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.Global
+  summary: Proxy object to hold module level functions
+  type: Class
+  uid: cntk.logging.progress_print.Global
+- _type: class
+  children:
+  - cntk.logging.progress_print.ProgressPrinter.avg_loss_since_last
+  - cntk.logging.progress_print.ProgressPrinter.avg_loss_since_start
+  - cntk.logging.progress_print.ProgressPrinter.avg_metric_since_last
+  - cntk.logging.progress_print.ProgressPrinter.avg_metric_since_start
+  - cntk.logging.progress_print.ProgressPrinter.end_progress_print
+  - cntk.logging.progress_print.ProgressPrinter.epoch_summary
+  - cntk.logging.progress_print.ProgressPrinter.log
+  - cntk.logging.progress_print.ProgressPrinter.on_training_update_end
+  - cntk.logging.progress_print.ProgressPrinter.on_write_distributed_sync_update
+  - cntk.logging.progress_print.ProgressPrinter.on_write_test_summary
+  - cntk.logging.progress_print.ProgressPrinter.on_write_test_update
+  - cntk.logging.progress_print.ProgressPrinter.on_write_training_summary
+  - cntk.logging.progress_print.ProgressPrinter.on_write_training_update
+  - cntk.logging.progress_print.ProgressPrinter.reset_last
+  - cntk.logging.progress_print.ProgressPrinter.reset_start
+  - cntk.logging.progress_print.ProgressPrinter.update
+  - cntk.logging.progress_print.ProgressPrinter.update_with_trainer
+  - cntk.logging.progress_print.ProgressPrinter.write
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter
+  summary: "Allows printing various statistics (e.g. loss and metric) as training/evaluation\
+    \ progresses.\n\n:param freq: determines how often printing of training progress\
+    \ will occur.\n             A value of 0 means a geometric schedule (1,2,4,...).\n\
+    \             A value > 0 means an arithmetic schedule (print for minibatch number:\
+    \ ``freq``,\n             print for minibatch number: ``2 * freq``, print for\
+    \ minibatch number: ``3 * freq``,...).\n             A value of None means no\
+    \ per-minibatch log.\n:type freq: `int` or `None`, default `None`\n:param first:\
+    \ Only start printing after the training minibatch number is greater or equal\
+    \ to\n              ``first``.\n:type first: `int`, default 0\n:param tag: prepend\
+    \ minibatch log lines with your own string\n:type tag: `string`, default EmptyString\n\
+    :param log_to_file: if None, output log data to stdout.\n                    If\
+    \ a string is passed, the string is path to a file for log data.\n:type log_to_file:\
+    \ `string` or `None`, default `None`\n:param rank: set this to distributed.rank\
+    \ if you are using distributed\n             parallelism -- each rank's log will\
+    \ go to separate file.\n:type rank: `int` or `None`, default `None`\n:param gen_heartbeat:\
+    \ If True output a progress message every 10 seconds or so to stdout.\n:type gen_heartbeat:\
+    \ `bool`, default `False`\n:param num_epochs: The total number of epochs to be\
+    \ trained.  Used for some metadata.\n                   This parameter is optional.\n\
+    :type num_epochs: `int`, default None\n:param test_freq: similar to ``freq``,\
+    \ but applies to printing intermediate\n                  test results.\n:type\
+    \ test_freq: `int` or `None`, default `None`\n:param test_first: similar to ``first``,\
+    \ but applies to printing intermediate test results.\n:type test_first: `int`,\
+    \ default 0\n:param metric_is_pct: Treat metric as a percentage for output purposes.\n\
+    :type metric_is_pct: `bool`, default True\n:param distributed_freq: similar to\
+    \ ``freq``, but applies to printing distributed-training\n                   \
+    \      worker synchronization info.\n:type distributed_freq: `int` or `None`,\
+    \ default `None`\n:param distributed_first: similar to ``first``, but applies\
+    \ to printing distributed-training\n                          worker synchronization\
+    \ info.\n:type distributed_first: `int`, default 0\n"
+  type: Class
+  uid: cntk.logging.progress_print.ProgressPrinter
+- _type: method
+  class: cntk.logging.progress_print.ProgressPrinter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter.avg_loss_since_last
+  summary: 'DEPRECATED.
+
+
+    Returns: the average loss since the last print
+
+    '
+  type: Method
+  uid: cntk.logging.progress_print.ProgressPrinter.avg_loss_since_last
+- _type: method
+  class: cntk.logging.progress_print.ProgressPrinter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter.avg_loss_since_start
+  summary: 'DEPRECATED.
+
+
+    Returns: the average loss since the start of accumulation
+
+    '
+  type: Method
+  uid: cntk.logging.progress_print.ProgressPrinter.avg_loss_since_start
+- _type: method
+  class: cntk.logging.progress_print.ProgressPrinter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter.avg_metric_since_last
+  summary: 'DEPRECATED.
+
+
+    Returns: the average metric since the last print
+
+    '
+  type: Method
+  uid: cntk.logging.progress_print.ProgressPrinter.avg_metric_since_last
+- _type: method
+  class: cntk.logging.progress_print.ProgressPrinter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter.avg_metric_since_start
+  summary: 'DEPRECATED.
+
+
+    Returns: the average metric since the start of accumulation
+
+    '
+  type: Method
+  uid: cntk.logging.progress_print.ProgressPrinter.avg_metric_since_start
+- _type: method
+  class: cntk.logging.progress_print.ProgressPrinter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter.end_progress_print
+  summary: 'Prints the given message signifying the end of training.
+
+
+    :param msg: message to print.
+
+    :type msg: `string`, default ''''
+
+    '
+  type: Method
+  uid: cntk.logging.progress_print.ProgressPrinter.end_progress_print
+- _type: method
+  class: cntk.logging.progress_print.ProgressPrinter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter.epoch_summary
+  summary: 'DEPRECATED.
+
+
+    If on an arithmetic schedule print an epoch summary using the ''start'' accumulators.
+
+    If on a geometric schedule does nothing.
+
+
+    :param with_metric: if `False` it only prints the loss, otherwise it prints both
+    the loss and the metric
+
+    :type with_metric: `bool`
+
+    '
+  type: Method
+  uid: cntk.logging.progress_print.ProgressPrinter.epoch_summary
+- _type: method
+  class: cntk.logging.progress_print.ProgressPrinter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter.log
+  summary: 'Prints any message the user wishes to place in the log.
+
+
+    :param msg: message to print.
+
+    :type msg: `string`
+
+    '
+  type: Method
+  uid: cntk.logging.progress_print.ProgressPrinter.log
+- _type: method
+  class: cntk.logging.progress_print.ProgressPrinter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter.on_training_update_end
+  summary: ''
+  type: Method
+  uid: cntk.logging.progress_print.ProgressPrinter.on_training_update_end
+- _type: method
+  class: cntk.logging.progress_print.ProgressPrinter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter.on_write_distributed_sync_update
+  summary: ''
+  type: Method
+  uid: cntk.logging.progress_print.ProgressPrinter.on_write_distributed_sync_update
+- _type: method
+  class: cntk.logging.progress_print.ProgressPrinter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter.on_write_test_summary
+  summary: ''
+  type: Method
+  uid: cntk.logging.progress_print.ProgressPrinter.on_write_test_summary
+- _type: method
+  class: cntk.logging.progress_print.ProgressPrinter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter.on_write_test_update
+  summary: ''
+  type: Method
+  uid: cntk.logging.progress_print.ProgressPrinter.on_write_test_update
+- _type: method
+  class: cntk.logging.progress_print.ProgressPrinter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter.on_write_training_summary
+  summary: ''
+  type: Method
+  uid: cntk.logging.progress_print.ProgressPrinter.on_write_training_summary
+- _type: method
+  class: cntk.logging.progress_print.ProgressPrinter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter.on_write_training_update
+  summary: ''
+  type: Method
+  uid: cntk.logging.progress_print.ProgressPrinter.on_write_training_update
+- _type: method
+  class: cntk.logging.progress_print.ProgressPrinter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter.reset_last
+  summary: 'DEPRECATED.
+
+
+    Resets the ''last'' accumulators
+
+
+    Returns: tuple of (average loss since last, average metric since last, samples
+    since last)
+
+    '
+  type: Method
+  uid: cntk.logging.progress_print.ProgressPrinter.reset_last
+- _type: method
+  class: cntk.logging.progress_print.ProgressPrinter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter.reset_start
+  summary: 'DEPRECATED.
+
+
+    Resets the ''start'' accumulators
+
+
+    Returns: tuple of (average loss since start, average metric since start, samples
+    since start)
+
+    '
+  type: Method
+  uid: cntk.logging.progress_print.ProgressPrinter.reset_start
+- _type: method
+  class: cntk.logging.progress_print.ProgressPrinter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter.update
+  summary: "DEPRECATED.\n\nUpdates the accumulators using the loss, the minibatch_size\
+    \ and the optional metric.\n\n:param loss: the value with which to update the\
+    \ loss accumulators\n:type loss: `float`\n:param minibatch_size: the value with\
+    \ which to update the samples accumulator\n:type minibatch_size: `int`\n:param\
+    \ metric: if `None` do not update the metric\n               accumulators, otherwise\
+    \ update with the given value\n:type metric: `float` or `None`\n"
+  type: Method
+  uid: cntk.logging.progress_print.ProgressPrinter.update
+- _type: method
+  class: cntk.logging.progress_print.ProgressPrinter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter.update_with_trainer
+  summary: 'DEPRECATED.
+
+
+    Update the current loss, the minibatch size and optionally the metric using the
+    information from the
+
+    ``trainer``.
+
+
+    :param trainer: trainer from which information is gathered
+
+    :type trainer: :class:`cntk.train.trainer.Trainer`
+
+    :param with_metric: whether to update the metric accumulators
+
+    :type with_metric: `bool`
+
+    '
+  type: Method
+  uid: cntk.logging.progress_print.ProgressPrinter.update_with_trainer
+- _type: method
+  class: cntk.logging.progress_print.ProgressPrinter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.ProgressPrinter.write
+  summary: ''
+  type: Method
+  uid: cntk.logging.progress_print.ProgressPrinter.write
+- _type: class
+  children:
+  - cntk.logging.progress_print.TensorBoardProgressWriter.close
+  - cntk.logging.progress_print.TensorBoardProgressWriter.flush
+  - cntk.logging.progress_print.TensorBoardProgressWriter.on_write_test_summary
+  - cntk.logging.progress_print.TensorBoardProgressWriter.on_write_test_update
+  - cntk.logging.progress_print.TensorBoardProgressWriter.on_write_training_summary
+  - cntk.logging.progress_print.TensorBoardProgressWriter.on_write_training_update
+  - cntk.logging.progress_print.TensorBoardProgressWriter.write_value
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.TensorBoardProgressWriter
+  summary: "Allows writing various statistics (e.g. loss and metric) to TensorBoard\
+    \ event files during training/evaluation.\nThe generated files can be opened in\
+    \ TensorBoard to visualize the progress.\n\n:param freq: frequency at which training\
+    \ progress is written.\n             None indicates that progress is logged only\
+    \ at the end of training.\n             Must be a positive integer otherwise.\n\
+    :type freq: `int` or `None`, default `None`\n:param log_dir: directory where to\
+    \ create a TensorBoard event file.\n:type log_dir: `string`, default '.'\n:param\
+    \ rank: rank of a worker when using distributed training, or `None` if\n     \
+    \        training locally. If not `None`, event files will be created only by\
+    \ rank 0.\n:type rank: `int` or `None`, default `None`\n:param model: model graph\
+    \ to plot.\n:type model: :class:`cntk.ops.functions.Function` or `None`, default\
+    \ `None`\n"
+  type: Class
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter
+- _type: method
+  class: cntk.logging.progress_print.TensorBoardProgressWriter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.TensorBoardProgressWriter.close
+  summary: 'Make sure that any outstanding records are immediately persisted, then
+    close any open files.
+
+    Any subsequent attempt to use the object will cause a RuntimeError.
+
+    '
+  type: Method
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.close
+- _type: method
+  class: cntk.logging.progress_print.TensorBoardProgressWriter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.TensorBoardProgressWriter.flush
+  summary: 'Make sure that any outstanding records are immediately persisted.
+
+    '
+  type: Method
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.flush
+- _type: method
+  class: cntk.logging.progress_print.TensorBoardProgressWriter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_test_summary
+  summary: ''
+  type: Method
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_test_summary
+- _type: method
+  class: cntk.logging.progress_print.TensorBoardProgressWriter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_test_update
+  summary: ''
+  type: Method
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_test_update
+- _type: method
+  class: cntk.logging.progress_print.TensorBoardProgressWriter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_training_summary
+  summary: ''
+  type: Method
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_training_summary
+- _type: method
+  class: cntk.logging.progress_print.TensorBoardProgressWriter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_training_update
+  summary: ''
+  type: Method
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_training_update
+- _type: method
+  class: cntk.logging.progress_print.TensorBoardProgressWriter
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.TensorBoardProgressWriter.write_value
+  summary: 'Record value of a scalar variable at the given time step.
+
+
+    :param name: name of a variable.
+
+    :type name: `string`
+
+    :param value: value of the variable.
+
+    :type value: `float`
+
+    :param step: time step at which the value is recorded.
+
+    :type step: `int`
+
+    '
+  type: Method
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.write_value
+- _type: class
+  children:
+  - cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_test_summary
+  - cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_test_update
+  - cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_training_summary
+  - cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_training_update
+  - cntk.logging.progress_print.TrainingSummaryProgressCallback.write
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  summary: 'Helper to pass a callback function to be called after each training epoch
+
+    to :class:`~cntk.train.trainer.Trainer`,
+
+    :class:`~cntk.eval.evaluator.Evaluator`, and :class:`~cntk.train.training_session.TrainingSession`,
+
+    as well a :func:`cntk.ops.functions.Function.train`, :func:`cntk.ops.functions.Function.test`.
+
+
+    This allows the user to add additional logging after each training epoch.
+
+
+    :param epoch_size: periodically call the callback after processing this many samples
+
+    :type epoch_size: int
+
+    :param callback: function(epoch_index, epoch_loss, epoch_metric, epoch_samples)
+
+    :type callback: function
+
+    '
+  type: Class
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback
+- _type: method
+  class: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_test_summary
+  summary: ''
+  type: Method
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_test_summary
+- _type: method
+  class: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_test_update
+  summary: ''
+  type: Method
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_test_update
+- _type: method
+  class: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_training_summary
+  summary: ''
+  type: Method
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_training_summary
+- _type: method
+  class: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_training_update
+  summary: ''
+  type: Method
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_training_update
+- _type: method
+  class: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.TrainingSummaryProgressCallback.write
+  summary: ''
+  type: Method
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback.write
+- _type: function
+  module: cntk.logging.progress_print
+  name: cntk.logging.progress_print.log_number_of_parameters
+  summary: ''
+  type: Method
+  uid: cntk.logging.progress_print.log_number_of_parameters
