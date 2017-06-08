@@ -5,9 +5,9 @@ items:
   - cntk.variables.Parameter.value
   class: cntk.variables.Parameter
   example:
-  - "```\n\n>>> p = C.Parameter((13,42,7), init=C.glorot_uniform())\n>>> p.shape\n\
-    \    (13, 42, 7)\n```\n\n```\n\n>>> # example with inferred dimensions\n>>> W\
-    \ = C.Parameter((C.InferredDimension, 42), init=C.glorot_uniform())\n>>> W.shape\
+  - "\n```\n\n>>> p = C.Parameter((13,42,7), init=C.glorot_uniform())\n>>> p.shape\n\
+    \    (13, 42, 7)\n```\n\n\n```\n\n>>> # example with inferred dimensions\n>>>\
+    \ W = C.Parameter((C.InferredDimension, 42), init=C.glorot_uniform())\n>>> W.shape\
     \   # -1 indicates dimension yet to be inferred\n    (-1, 42)\n>>> x = C.input_variable(13)\n\
     >>> y = C.times(x, W)  # times operation now knows that the input dimension of\
     \ W must be 13\n>>> W.shape          # hence, the shape has been updated\n   \

@@ -631,7 +631,9 @@ items:
   type: function
   uid: cntk.learners.learning_rate_schedule
 - example:
-  - '```
+  - '
+
+    ```
 
 
     >>> # Use a fixed momentum of 1100 for all samples
@@ -639,6 +641,7 @@ items:
     >>> m = momentum_as_time_constant_schedule(1100)
 
     ```
+
 
 
     ```
@@ -696,7 +699,9 @@ items:
   type: function
   uid: cntk.learners.momentum_as_time_constant_schedule
 - example:
-  - '```
+  - '
+
+    ```
 
 
     >>> # Use a fixed momentum of 0.99 for all samples
@@ -704,6 +709,7 @@ items:
     >>> m = momentum_schedule(0.99)
 
     ```
+
 
 
     ```
@@ -720,6 +726,7 @@ items:
     (0.99, 0.99, 0.9, 0.9)
 
     ```
+
 
 
     ```
@@ -1037,31 +1044,35 @@ items:
 
         '
     - description: 'Trade-off factor for current and previous gradients. Common value
-        is 0.95
+        is 0.95. Should be in range (0.0, 1.0)
 
         '
       id: gamma
       type:
       - float
-    - description: 'Increasing factor when trying to adjust current learning_rate
+    - description: 'Increasing factor when trying to adjust current learning_rate.
+        Should be greater than 1
 
         '
       id: inc
       type:
       - float
-    - description: 'Decreasing factor when trying to adjust current learning_rate
+    - description: 'Decreasing factor when trying to adjust current learning_rate.
+        Should be in range (0.0, 1.0)
 
         '
       id: dec
       type:
       - float
-    - description: 'Maximum scale allowed for the initial learning_rate
+    - description: 'Maximum scale allowed for the initial learning_rate. Should be
+        greater than zero and min
 
         '
       id: max
       type:
       - float
-    - description: 'Minimum scale allowed for the initial learning_rate
+    - description: 'Minimum scale allowed for the initial learning_rate. Should be
+        greater than zero
 
         '
       id: min
@@ -1275,7 +1286,9 @@ items:
   type: function
   uid: cntk.learners.sgd
 - example:
-  - '```
+  - '
+
+    ```
 
 
     >>> # Use a fixed value 0.01 for all samples
@@ -1287,6 +1300,7 @@ items:
     (0.01, 0.01)
 
     ```
+
 
 
     ```
@@ -1301,6 +1315,7 @@ items:
     (0.01, 0.01, 0.001, 0.001)
 
     ```
+
 
 
     ```
@@ -1392,7 +1407,9 @@ items:
   type: function
   uid: cntk.learners.training_parameter_schedule
 - example:
-  - '```
+  - '
+
+    ```
 
 
     >>> def my_adagrad(parameters, gradients):

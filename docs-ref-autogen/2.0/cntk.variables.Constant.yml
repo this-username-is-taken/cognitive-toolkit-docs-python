@@ -5,7 +5,7 @@ items:
   - cntk.variables.Constant.value
   class: cntk.variables.Constant
   example:
-  - "```\n\n>>> c = C.Constant(1, (2,3))\n>>> c.value\n    array([[ 1.,  1.,  1.],\n\
+  - "\n```\n\n>>> c = C.Constant(1, (2,3))\n>>> c.value\n    array([[ 1.,  1.,  1.],\n\
     \           [ 1.,  1.,  1.]], dtype=float32)\n```\n"
   fullName: cntk.variables.Constant
   inheritance:
@@ -38,6 +38,10 @@ items:
 
 
     A Constant is a @cntk.variables.Variable and therefore inherits all its methods.
+
+
+
+
     '
   syntax:
     content: Constant(self, value=None, shape=None, dtype=np.float32, device=None,

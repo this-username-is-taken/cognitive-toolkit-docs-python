@@ -7,25 +7,29 @@ configuration: Release
 init:
     - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
+
 environment:
   github_access_token:
-    secure: kXK95TSkOJShIcqMV91li5J1hbpfUrN8zVML962Ob4lvm1lA2guZzyk1iwgk/Cud
+    secure: DpN0M7pZDocpyv+muc15qHDKz9lMJ7Zr34aMC0HtOdeVkbTERuKkxq4WHAd3S33v
     
   APPVEYOR_RDP_PASSWORD: '#Bugsfor$'
   
+
 clone_script:
     - git config --global core.autocrlf true
     - git config core.autocrlf
 
+    # get cntk 
     - cd c:\projects
     - git clone http://github.com/Microsoft/cntk
-
     - cd c:\projects\cntk
     - git submodule update --init -- Source/Multiverso
  
+    # get MicrosoftDocs/cognitive-toolkit-docs-python
     - cd c:\projects
-    - git clone --depth 1 https://github.com/bianliu1013/cntk_yml_docs
+    - git clone -q --branch=jinhwa/ci_test https://github.com/MicrosoftDocs/cognitive-toolkit-docs-python.git
     
+
 before_build:
     - cd c:\projects\cntk\Tools\devInstall\Windows
     - ps: .\DevInstall.ps1 -NoConfirm
@@ -34,12 +38,17 @@ before_build:
     - ps: ac "$env:USERPROFILE\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
     - ps: Write-Host "appveyor.xml in cntk_yml docs repo"
 
+    # in case of cuda dll missing
+    - mkdir c:\\projects\\cntk\\x64\\Release
+    - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/nvml.dll -Destination c:\\projects\\cntk\\x64\\Release\\nvml.dll -force
+
     
 build:
   project: c:\projects\cntk\CNTK.sln
   parallel: true
   verbosity: minimal
   
+
 on_finish:
     - ps: Write-Host "appveyor.xml on_finish"
     - cd c:\projects\CNTK\x64\Release\Python
@@ -47,15 +56,22 @@ on_finish:
     - ps: $files = gci -name *.whl
     - ps: pip install $files
     - cd c:\projects\cntk\bindings\python\doc
-    - call build.bat
-    - ps: Write-Host "begin on_success"
-    - ps: Copy-Item -Path C:\projects\CNTK\bindings\python\doc\_build -Destination c:\projects\cntk_yml_docs\docs ¨CRecurse
+    - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/conf.py -Destination c:/projects/cntk/bindings/python/doc/conf.py -force
+    - call build.bat  # to generate rst files
+    - sphinx-build.exe . _build
+    
+    # remove old yml fils
+    - ps: Remove-Item c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\2.0\* -recurse
+    # copy yml fils generated
+    - ps: Copy-Item -Path C:\projects\CNTK\bindings\python\doc\_build\docfx_yaml\* -Destination c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\2.0\ -recurse -force
+
+    # upload yml to MicrosoftDocs/cognitive-toolkit-docs-python
     - git config --global credential.helper store
     - ps: ac "$env:USERPROFILE\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
-    - cd c:\projects\cntk_yml_docs
+    - cd c:\projects\cognitive-toolkit-docs-python
     - git status
-    - git config --global user.name "bianliu1013"
-    - git config --global user.email "bianliu1013@163.com"
+    - git config --global user.name "VSC-Service-Account"
+    - git config --global user.email "vscavu@microsoft.com"
     - git add . 
     - git commit -a -m "appveyor ci - update yml files" 
-    - git push -u origin master -f
+    - git push -u origin jinhwa/ci_test:jinhwa/ci_test -f

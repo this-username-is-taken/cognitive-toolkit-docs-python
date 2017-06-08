@@ -21,7 +21,9 @@ items:
   type: module
   uid: cntk.metrics
 - example:
-  - '```
+  - '
+
+    ```
 
 
     >>> C.classification_error([[1., 2., 3., 4.]], [[0., 0., 0., 1.]]).eval()
@@ -29,6 +31,7 @@ items:
     array([[ 0.]], dtype=float32)
 
     ```
+
 
 
     ```
@@ -39,6 +42,7 @@ items:
     array([[ 1.]], dtype=float32)
 
     ```
+
 
 
     ```
@@ -232,7 +236,9 @@ items:
   type: function
   uid: cntk.metrics.edit_distance_error
 - example:
-  - '```
+  - '
+
+    ```
 
 
     >>> group = C.input_variable((1,))

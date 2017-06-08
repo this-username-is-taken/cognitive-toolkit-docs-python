@@ -344,7 +344,7 @@ items:
   uid: cntk.core.Value.mask
 - class: cntk.core.Value
   example:
-  - "```\n\n>>> num_classes = 6\n>>> sparse_indices = [[1,C.Value.ONE_HOT_SKIP,5],[4]]\n\
+  - "\n```\n\n>>> num_classes = 6\n>>> sparse_indices = [[1,C.Value.ONE_HOT_SKIP,5],[4]]\n\
     >>> i0 = C.sequence.input_variable(shape=num_classes, is_sparse=True)\n>>> z =\
     \ C.times(i0, np.eye(num_classes))\n>>> value = C.Value.one_hot(sparse_indices,\
     \ num_classes)\n>>> z.eval({i0: value})\n[array([[ 0.,  1.,  0.,  0.,  0.,  0.],\n\
