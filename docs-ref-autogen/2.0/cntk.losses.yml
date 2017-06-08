@@ -39,6 +39,9 @@ items:
     startLine: 90
   summary: 'Computes the binary cross entropy (aka logistic loss) between the `output`
     and `target`.
+
+
+
     '
   syntax:
     content: binary_cross_entropy(output, target, name='')
@@ -65,7 +68,7 @@ items:
   type: function
   uid: cntk.losses.binary_cross_entropy
 - example:
-  - "```\n\n>>> a = np.asarray([-1, -1, -1, 1, 1, -1, 1, 1, -1, 1, 1, -1]).reshape(3,2,2)\n\
+  - "\n```\n\n>>> a = np.asarray([-1, -1, -1, 1, 1, -1, 1, 1, -1, 1, 1, -1]).reshape(3,2,2)\n\
     >>> b = np.asarray([1, 1, -1, 1, 1, -1, 1, -1, -1, -1, -1, 1]).reshape(3,2,2)\n\
     >>> x = C.sequence.input_variable(shape=(2,))\n>>> y = C.sequence.input_variable(shape=(2,))\n\
     >>> np.round(C.cosine_distance(x,y).eval({x:a,y:b}),5)\narray([[-1.,  1.],\n \
@@ -107,7 +110,7 @@ items:
   type: function
   uid: cntk.losses.cosine_distance
 - example:
-  - "```\n\n>>> qry = np.asarray([1., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 1.],\
+  - "\n```\n\n>>> qry = np.asarray([1., 1., 0., 0., 0., 1., 1., 0., 0., 0., 1., 1.],\
     \ dtype=np.float32).reshape(3, 1, 4)\n>>> doc = np.asarray([1., 1., 0., 0., 0.,\
     \ 1., 1., 0., 0., 0., 1., 1.], dtype=np.float32).reshape(3, 1, 4)\n>>> x = C.sequence.input_variable(shape=(4,))\n\
     >>> y = C.sequence.input_variable(shape=(4,))\n>>> model = C.cosine_distance_with_negative_samples(x,\
@@ -188,7 +191,9 @@ items:
   type: function
   uid: cntk.losses.cosine_distance_with_negative_samples
 - example:
-  - '```
+  - '
+
+    ```
 
 
     >>> C.cross_entropy_with_softmax([[1., 1., 1., 50.]], [[0., 0., 0., 1.]]).eval()
@@ -196,6 +201,7 @@ items:
     array([[ 0.]], dtype=float32)
 
     ```
+
 
 
     ```
@@ -278,7 +284,7 @@ items:
   type: function
   uid: cntk.losses.cross_entropy_with_softmax
 - example:
-  - "```\n\n>>> group = C.input_variable((1,))\n>>> score = C.input_variable((1,),\
+  - "\n```\n\n>>> group = C.input_variable((1,))\n>>> score = C.input_variable((1,),\
     \ needs_gradient=True)\n>>> gain  = C.input_variable((1,))\n>>> g = np.array([1,\
     \ 1, 2, 2], dtype=np.float32).reshape(4,1)\n>>> s = np.array([1, 2, 3, 4], dtype=np.float32).reshape(4,1)\n\
     >>> n = np.array([7, 1, 3, 1], dtype=np.float32).reshape(4,1)\n>>> f = C.lambda_rank(score,\
@@ -357,7 +363,9 @@ items:
   type: function
   uid: cntk.losses.lambda_rank
 - example:
-  - '```
+  - '
+
+    ```
 
 
     >>> i1 = C.input_variable((1,2))
@@ -370,6 +378,7 @@ items:
     array([ 29.], dtype=float32)
 
     ```
+
 
 
     ```
@@ -443,6 +452,9 @@ items:
     startLine: 112
   summary: 'This operation computes the weighted binary cross entropy (aka logistic
     loss) between the `output` and `target`.
+
+
+
     '
   syntax:
     content: weighted_binary_cross_entropy(output, target, weight, name='')

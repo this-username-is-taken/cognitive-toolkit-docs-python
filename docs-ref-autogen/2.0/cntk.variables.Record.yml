@@ -5,7 +5,7 @@ items:
   - cntk.variables.Record.updated_with
   class: cntk.variables.Record
   example:
-  - "```\n\n>>> r = Record(x = 13, y = 42)\n>>> r.x\n    13\n```\n"
+  - "\n```\n\n>>> r = Record(x = 13, y = 42)\n>>> r.x\n    13\n```\n"
   fullName: cntk.variables.Record
   inheritance:
   - inheritance:
@@ -44,8 +44,8 @@ items:
   uid: cntk.variables.Record
 - class: cntk.variables.Record
   example:
-  - "```\n\n>>> r = Record(x = 13)\n>>> r.x\n    13\n>>> r2 = r.updated_with(x = 42)\n\
-    >>> r2.x\n    42\n```\n"
+  - "\n```\n\n>>> r = Record(x = 13)\n>>> r.x\n    13\n>>> r2 = r.updated_with(x =\
+    \ 42)\n>>> r2.x\n    42\n```\n"
   fullName: cntk.variables.Record.updated_with
   langs:
   - python
