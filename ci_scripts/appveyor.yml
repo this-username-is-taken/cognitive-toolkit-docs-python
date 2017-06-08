@@ -60,8 +60,10 @@ on_finish:
     - call build.bat  # to generate rst files
     - sphinx-build.exe . _build
     
+    # remove old yml fils
+    - ps: Remove-Item c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\2.0\* -recurse
     # copy yml fils generated
-    - ps: Copy-Item -Path C:\projects\CNTK\bindings\python\doc\_build\docfx_yaml -Destination c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\2.0  -Recurse -force
+    - ps: Copy-Item -Path C:\projects\CNTK\bindings\python\doc\_build\docfx_yaml\* -Destination c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\2.0\ -recurse -force
 
     # upload yml to MicrosoftDocs/cognitive-toolkit-docs-python
     - git config --global credential.helper store
