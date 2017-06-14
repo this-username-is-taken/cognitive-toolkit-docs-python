@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -15,10 +15,13 @@ items:
     id: sample_installer
     path: bindings/python\cntk\sample_installer.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
+  summary: 'Utilities for fetching CNTK samples data.
+
+    '
   type: module
   uid: cntk.sample_installer
 - fullName: cntk.sample_installer.default_sample_dir
@@ -30,10 +33,10 @@ items:
     id: default_sample_dir
     path: bindings/python\cntk\sample_installer.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 24
+    startLine: 28
   syntax:
     content: default_sample_dir()
   type: function
@@ -47,10 +50,10 @@ items:
     id: default_sample_url
     path: bindings/python\cntk\sample_installer.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 31
+    startLine: 35
   syntax:
     content: default_sample_url()
   type: function
@@ -64,10 +67,10 @@ items:
     id: install_samples
     path: bindings/python\cntk\sample_installer.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 34
+    startLine: 38
   summary: 'Fetch the CNTK samples from a URL, extract to local directory, and install
 
     Python package requirements.
@@ -107,10 +110,10 @@ items:
     id: module_is_unreleased
     path: bindings/python\cntk\sample_installer.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 21
+    startLine: 25
   syntax:
     content: module_is_unreleased()
   type: function

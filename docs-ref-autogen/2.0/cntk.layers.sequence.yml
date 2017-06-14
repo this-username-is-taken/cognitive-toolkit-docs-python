@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -17,7 +17,7 @@ items:
     id: sequence
     path: bindings/python\cntk\layers\sequence.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -47,7 +47,7 @@ items:
     id: Delay
     path: bindings/python\cntk\layers\sequence.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 17
@@ -61,7 +61,7 @@ items:
   syntax:
     content: Delay(T=1, initial_state=0, name='')
     parameters:
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000027393866278>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000000005425FD0>
       description: 'the number of time steps to look into the past, where negative
         values mean to look into the future, and 0 means a no-op (default 1).
 
@@ -114,15 +114,15 @@ items:
     id: Fold
     path: bindings/python\cntk\layers\sequence.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 421
   summary: "Layer factory function to create a function that runs a step function\
     \ recurrently over an input sequence,\nand returns the final state.\nThis is often\
     \ used for embeddings of sequences, e.g. in a sequence-to-sequence model.\nPseudo-code:\n\
-    \n<!-- literal_block {\"names\": [], \"xml:space\": \"preserve\", \"backrefs\"\
-    : [], \"ids\": [], \"dupnames\": [], \"classes\": []} -->\n\n````\n\n   # pseudo-code\
+    \n<!-- literal_block {\"xml:space\": \"preserve\", \"names\": [], \"classes\"\
+    : [], \"ids\": [], \"backrefs\": [], \"dupnames\": []} -->\n\n````\n\n   # pseudo-code\
     \ for h = Fold(step_function)(x)\n   #  x: input sequence of tensors along the\
     \ dynamic axis\n   #  h: resulting final step-function output tensor that no longer\
     \ has a dynamic axis\n   h = initial_state   # h = output of previous step (\"\
@@ -153,7 +153,7 @@ items:
         '
       id: folder_function
       type:
-      - "@cntk.ops.functions.Function\n or equivalent Python function"
+      - "cntk.ops.functions.Function\n or equivalent Python function"
     - defaultValue: ''
       description: 'if `True` then run the recurrence from the end of the sequence
         to the start.
@@ -175,7 +175,7 @@ items:
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - defaultValue: <cntk.default_options.default_override_or object at 0x00000273938663C8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000000541D160>
       description: 'if `True` and the step function has more than one
 
         state variable, then the layer returns the final value of a all state variables
@@ -188,7 +188,7 @@ items:
       id: return_full_state
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000027393866390>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000000541D128>
       description: 'the name of the Function instance in the network
 
         '
@@ -227,7 +227,7 @@ items:
     id: PastValueWindow
     path: bindings/python\cntk\layers\sequence.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 72
@@ -255,7 +255,7 @@ items:
   syntax:
     content: PastValueWindow(window_size, axis, go_backwards=False, name='')
     parameters:
-    - defaultValue: <cntk.default_options.default_override_or object at 0x00000273938662B0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000000541D048>
       id: window_size
     - description: 'maximum number of items in sequences. The *axis* will have this
         dimension.
@@ -319,7 +319,7 @@ items:
     id: Recurrence
     path: bindings/python\cntk\layers\sequence.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 287
@@ -328,9 +328,9 @@ items:
     \ that runs a step function recurrently over an input sequence,\nwhere in each\
     \ step, Recurrence() will pass to the step function a data input as well as the\
     \ output of the\nprevious step.\nThe following pseudo-code repesents what happens\
-    \ when you call a *Recurrence()* layer:\n\n<!-- literal_block {\"names\": [],\
-    \ \"xml:space\": \"preserve\", \"backrefs\": [], \"ids\": [], \"dupnames\": [],\
-    \ \"classes\": []} -->\n\n````\n\n   # pseudo-code for y = Recurrence(step_function)(x)\n\
+    \ when you call a *Recurrence()* layer:\n\n<!-- literal_block {\"xml:space\":\
+    \ \"preserve\", \"names\": [], \"classes\": [], \"ids\": [], \"backrefs\": [],\
+    \ \"dupnames\": []} -->\n\n````\n\n   # pseudo-code for y = Recurrence(step_function)(x)\n\
     \   #  x: input sequence of tensors along the dynamic axis\n   #  y: resulting\
     \ sequence of outputs along the same dynamic axis\n   y = []              # result\
     \ sequence goes here\n   s = initial_state   # s = output of previous step (\"\
@@ -374,7 +374,7 @@ items:
         '
       id: step_function
       type:
-      - "@cntk.ops.functions.Function\n or equivalent Python function"
+      - "cntk.ops.functions.Function\n or equivalent Python function"
     - defaultValue: ''
       description: 'if `True` then run the recurrence from the end of the sequence
         to the start.
@@ -396,7 +396,7 @@ items:
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000027393866358>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000000541D0F0>
       description: 'if `True` and the step function has more than one
 
         state variable, then the layer returns a all state variables (a tuple of sequences);
@@ -408,7 +408,7 @@ items:
       id: return_full_state
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000027393866320>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000000541D0B8>
       description: 'the name of the Function instance in the network
 
         '
@@ -485,7 +485,7 @@ items:
     id: RecurrenceFrom
     path: bindings/python\cntk\layers\sequence.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 166
@@ -497,19 +497,19 @@ items:
     \ like *Recurrence()*, as an initialization parameter to the factory function.\n\
     This form is meant for use in sequence-to-sequence scenarios.\nThis documentation\
     \ only covers this case; for additional information on parameters, see @cntk.layers.sequence.Recurrence.\n\
-    In pseudo-code:\n\n<!-- literal_block {\"names\": [], \"xml:space\": \"preserve\"\
-    , \"backrefs\": [], \"ids\": [], \"dupnames\": [], \"classes\": []} -->\n\n````\n\
-    \n   # pseudo-code for y = RecurrenceFrom(step_function)(s,x)\n   #  x: input\
-    \ sequence of tensors along the dynamic axis\n   #  s: initial state for the recurrence\
-    \ (computed from input data elsewhew)\n   #  y: resulting sequence of outputs\
-    \ along the same dynamic axis\n   y = []              # result sequence goes here\n\
-    \   for x_n in x:       # pseudo-code for looping over all steps of input sequence\
-    \ along its dynamic axis\n       s = step_function(s, x_n)  # pass previous state\
-    \ and new data to step_function -> new state\n       y.append(s)\n   ````\n\n\
-    The layer function returned by this factory function accepts the initial state\
-    \ as data argument(s).\nThe initial state can be non-sequential data, as one would\
-    \ have for a plain sequence-to-sequence model,\nor sequential data. In the latter\
-    \ case, the last item is the initial state.\n"
+    In pseudo-code:\n\n<!-- literal_block {\"xml:space\": \"preserve\", \"names\"\
+    : [], \"classes\": [], \"ids\": [], \"backrefs\": [], \"dupnames\": []} -->\n\n\
+    ````\n\n   # pseudo-code for y = RecurrenceFrom(step_function)(s,x)\n   #  x:\
+    \ input sequence of tensors along the dynamic axis\n   #  s: initial state for\
+    \ the recurrence (computed from input data elsewhew)\n   #  y: resulting sequence\
+    \ of outputs along the same dynamic axis\n   y = []              # result sequence\
+    \ goes here\n   for x_n in x:       # pseudo-code for looping over all steps of\
+    \ input sequence along its dynamic axis\n       s = step_function(s, x_n)  # pass\
+    \ previous state and new data to step_function -> new state\n       y.append(s)\n\
+    \   ````\n\nThe layer function returned by this factory function accepts the initial\
+    \ state as data argument(s).\nThe initial state can be non-sequential data, as\
+    \ one would have for a plain sequence-to-sequence model,\nor sequential data.\
+    \ In the latter case, the last item is the initial state.\n"
   syntax:
     content: RecurrenceFrom(step_function, go_backwards=False, return_full_state=False,
       name='')
@@ -522,7 +522,7 @@ items:
         '
       id: step_function
       type:
-      - "@cntk.ops.functions.Function\n or equivalent Python function"
+      - "cntk.ops.functions.Function\n or equivalent Python function"
     - defaultValue: ''
       description: 'if `True` then run the recurrence from the end of the sequence
         to the start.
@@ -544,7 +544,7 @@ items:
       id: initial_state
       type:
       - scalar or tensor without batch dimension; or a tuple thereof
-    - defaultValue: <cntk.default_options.default_override_or object at 0x00000273938662E8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000000541D080>
       description: 'if `True` and the step function has more than one
 
         state variable, then the layer returns a all state variables (a tuple of sequences);
@@ -583,7 +583,7 @@ items:
     id: UnfoldFrom
     path: bindings/python\cntk\layers\sequence.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 515
@@ -593,9 +593,9 @@ items:
     \ a maximum number of steps, or earlier when, if provided, *until_predicate* evaluates\
     \ to True for the current output.\nThe maximum number of steps is based on a second\
     \ input from which only the dynamic-axis information is used.\nThis is best explained\
-    \ in pseudo-code:\n\n<!-- literal_block {\"names\": [], \"xml:space\": \"preserve\"\
-    , \"backrefs\": [], \"ids\": [], \"dupnames\": [], \"classes\": []} -->\n\n````\n\
-    \n   # pseudo-code for y = UnfoldFrom(generator_function, until_predicate)(s,axis_like)\n\
+    \ in pseudo-code:\n\n<!-- literal_block {\"xml:space\": \"preserve\", \"names\"\
+    : [], \"classes\": [], \"ids\": [], \"backrefs\": [], \"dupnames\": []} -->\n\n\
+    ````\n\n   # pseudo-code for y = UnfoldFrom(generator_function, until_predicate)(s,axis_like)\n\
     \   #  s:         initial state for the recurrence (computed from input data elsewhew),\n\
     \   #  axis_like: any input with a dynamic axis, unfold will happen along the\
     \ same dynamic axis,\n   #  y:         resulting sequence of outputs along the\
@@ -634,7 +634,7 @@ items:
         '
       id: generator_function
       type:
-      - "@cntk.ops.functions.Function\n or equivalent Python function"
+      - "cntk.ops.functions.Function\n or equivalent Python function"
     - defaultValue: ''
       description: 'A function that denotes when the last element of the unfold has
         been emitted.
@@ -653,7 +653,7 @@ items:
         '
       id: until_predicate
       type:
-      - "@cntk.ops.functions.Function\n or equivalent Python function"
+      - "cntk.ops.functions.Function\n or equivalent Python function"
     - defaultValue: '1'
       description: 'the maximum number of output items is equal to the
 

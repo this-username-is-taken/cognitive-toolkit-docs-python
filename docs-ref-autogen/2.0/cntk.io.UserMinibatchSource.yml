@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -23,10 +23,10 @@ items:
     id: UserMinibatchSource
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 377
+    startLine: 382
   summary: 'Base class of all user minibatch sources.
 
 
@@ -49,10 +49,10 @@ items:
     id: get_checkpoint_state
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 443
+    startLine: 449
   summary: 'Returns a dictionary describing the current state of the minibatch
 
     source. Needs to be overwritten if the state of the minibatch source
@@ -80,35 +80,42 @@ items:
     id: next_minibatch
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 409
+    startLine: 414
   summary: 'Function to be implemented by the user.
 
     '
   syntax:
     content: next_minibatch(num_samples, number_of_workers, worker_rank, device=None)
     parameters:
+    - id: self
     - description: 'number of samples to return
 
         '
       id: num_samples
       type:
       - int
-    - description: 'number of workers in total
+    - defaultValue: None
+      description: 'number of workers in total
 
         '
       id: number_of_workers
       type:
       - int
-    - defaultValue: None
-      description: 'worker for which the data is to be returned
+    - description: 'worker for which the data is to be returned
 
         '
       id: worker_rank
       type:
       - int
+    - description: 'CNTK DeviceDescriptor
+
+        '
+      id: device
+      type:
+      - DeviceDescriptor, defaults to None
     return:
       description: 'mapping of @cntk.io.StreamInformation to @cntk.io.MinibatchData
 
@@ -125,10 +132,10 @@ items:
     id: restore_from_checkpoint
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 454
+    startLine: 460
   summary: 'Sets the state of the checkpoint.
 
     '
@@ -154,10 +161,10 @@ items:
     id: stream_info
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 401
+    startLine: 406
   summary: 'Gets the description of the stream with given name.
 
     Throws an exception if there are none or multiple streams with this
@@ -182,10 +189,10 @@ items:
     id: stream_infos
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 387
+    startLine: 392
   summary: 'Function to be implemented by the user.
 
     '

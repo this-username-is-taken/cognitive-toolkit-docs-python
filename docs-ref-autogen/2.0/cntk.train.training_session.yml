@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -17,7 +17,7 @@ items:
     id: training_session
     path: bindings/python\cntk\train\training_session.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -88,10 +88,10 @@ items:
     id: minibatch_size_schedule
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 296
+    startLine: 67
   summary: 'Creates a minibatch size schedule.
 
     '
@@ -131,10 +131,10 @@ items:
     id: training_session
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 339
+    startLine: 67
   summary: 'A factory function to create a training session object.
 
     '
@@ -148,25 +148,19 @@ items:
         '
       id: trainer
       type:
-      - '@cntk.train.trainer
-
-        '
+      - cntk.train.trainer
     - description: 'minibatch source used for training
 
         '
       id: mb_source
       type:
-      - '@cntk.io
-
-        '
+      - cntk.io
     - description: 'minibatch schedule for training
 
         '
       id: mb_size
       type:
-      - '@cntk.cntk_py.minibatch_size_schedule
-
-        '
+      - cntk.cntk_py.minibatch_size_schedule
     - description: 'mapping between input variables and input streams
 
         '
@@ -190,25 +184,19 @@ items:
         '
       id: checkpoint_config
       type:
-      - '@cntk.train.training_session.CheckpointConfig
-
-        '
+      - cntk.train.training_session.CheckpointConfig
     - description: 'cross validation configuration
 
         '
       id: cv_config
       type:
-      - '@cntk.train.training_session.CrossValidationConfig
-
-        '
+      - cntk.train.training_session.CrossValidationConfig
     - description: 'test configuration
 
         '
       id: test_config
       type:
-      - '@cntk.train.training_session.TestConfig
-
-        '
+      - cntk.train.training_session.TestConfig
     return:
       description: 'Instance of @cntk.train.training_session.TrainingSession
 

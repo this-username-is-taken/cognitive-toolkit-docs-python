@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -16,10 +16,11 @@ items:
     id: logging
     path: bindings/python\cntk\logging\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\logging\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
+  summary: "Utilities for logging. \n"
   type: package
   uid: cntk.logging
 - fullName: cntk.logging.get_trace_level
@@ -31,10 +32,10 @@ items:
     id: get_trace_level
     path: bindings/python\cntk\logging\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\logging\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 42
+    startLine: 44
   summary: 'Returns current logging verbosity level.
 
     '
@@ -57,10 +58,10 @@ items:
     id: set_trace_level
     path: bindings/python\cntk\logging\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\logging\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 30
+    startLine: 32
   summary: 'Specifies global logging verbosity level.
 
     '
@@ -72,9 +73,7 @@ items:
         '
       id: value
       type:
-      - '@cntk.logging.TraceLevel
-
-        '
+      - cntk.logging.TraceLevel
   type: function
   uid: cntk.logging.set_trace_level
 references:

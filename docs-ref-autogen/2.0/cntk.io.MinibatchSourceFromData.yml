@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -56,10 +56,10 @@ items:
     id: MinibatchSourceFromData
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 477
+    startLine: 483
   summary: 'This wraps in-memory data as a CNTK MinibatchSource object (aka "reader"),
     used to feed the data into a TrainingSession.
 
@@ -143,10 +143,10 @@ items:
     id: get_checkpoint_state
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 695
+    startLine: 701
   summary: 'Gets the checkpoint state of the MinibatchSource.
 
     '
@@ -174,10 +174,10 @@ items:
     id: next_minibatch
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 640
+    startLine: 646
   syntax:
     content: next_minibatch(num_samples, number_of_workers=1, worker_rank=0, device=None)
     parameters:
@@ -201,10 +201,10 @@ items:
     id: restore_from_checkpoint
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 706
+    startLine: 712
   summary: 'Restores the MinibatchSource state from the specified checkpoint.
 
     '
@@ -217,9 +217,7 @@ items:
         '
       id: checkpoint
       type:
-      - '@cntk.cntk_py.Dictionary
-
-        '
+      - cntk.cntk_py.Dictionary
   type: method
   uid: cntk.io.MinibatchSourceFromData.restore_from_checkpoint
 - class: cntk.io.MinibatchSourceFromData
@@ -232,10 +230,10 @@ items:
     id: stream_infos
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 635
+    startLine: 641
   syntax:
     content: stream_infos()
     parameters:

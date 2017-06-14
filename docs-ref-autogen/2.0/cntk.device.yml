@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -20,10 +20,12 @@ items:
     id: device
     path: bindings/python\cntk\device.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
+  summary: "Utilities to specify device on which CNTK computation can be executed.\
+    \ \n"
   type: module
   uid: cntk.device
 - fullName: cntk.device.all_devices
@@ -35,10 +37,10 @@ items:
     id: all_devices
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 64
+    startLine: 67
   summary: 'Returns a device descriptor list with all the available devices
 
     '
@@ -61,10 +63,10 @@ items:
     id: cpu
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 75
+    startLine: 67
   summary: 'Returns CPU device descriptor
 
     '
@@ -87,10 +89,10 @@ items:
     id: get_gpu_properties
     path: bindings/python\cntk\device.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 167
+    startLine: 169
   summary: 'Retrieves and returns additional properties (total memory, number of CUDA
 
     cores, etc.) for the specified GPU device. This method will raise an
@@ -118,10 +120,10 @@ items:
     id: gpu
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 86
+    startLine: 67
   summary: 'Returns GPU device descriptor
 
     '
@@ -144,10 +146,10 @@ items:
     id: set_excluded_devices
     path: bindings/python\cntk\device.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 150
+    startLine: 152
   summary: 'Allows to specify a list of excluded devices that cannot be used as
 
     globally default (neither auto-selected nor explicitly specified by
@@ -187,10 +189,10 @@ items:
     id: try_set_default_device
     path: bindings/python\cntk\device.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 115
+    startLine: 117
   summary: "Tries to set the specified device as the globally default, optionally\n\
     acquiring an exclusive (cooperative) lock on the device (only a GPU device\ncan\
     \ be locked).\n\nThe default device can only be changed if it has not yet been\
@@ -217,9 +219,7 @@ items:
         '
       id: new_default_device
       type:
-      - '@cntk.device.DeviceDescriptor
-
-        '
+      - cntk.device.DeviceDescriptor
     - defaultValue: 'False'
       description: 'whether or not a lock
 
@@ -240,10 +240,10 @@ items:
     id: use_default_device
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 97
+    startLine: 67
   summary: 'Freezes the default device of the current CNTK process disallowing further
 
     changes through calls to @cntk.device.try_set_default_device. This default

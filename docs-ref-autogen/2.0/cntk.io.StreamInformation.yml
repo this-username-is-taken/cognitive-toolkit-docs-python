@@ -1,7 +1,8 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
-- children: []
+- children:
+  - cntk.io.StreamInformation.name
   class: cntk.io.StreamInformation
   fullName: cntk.io.StreamInformation
   inheritance:
@@ -16,10 +17,10 @@ items:
     id: StreamInformation
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 347
+    startLine: 352
   summary: 'Stream information container that is used to describe streams when
 
     implementing custom minibatch source through @cntk.io.UserMinibatchSource.
@@ -61,4 +62,26 @@ items:
       - tuple
   type: class
   uid: cntk.io.StreamInformation
-references: []
+- class: cntk.io.StreamInformation
+  fullName: cntk.io.StreamInformation.name
+  langs:
+  - python
+  module: cntk.io
+  name: name
+  source:
+    id: name
+    path: null
+    remote:
+      branch: release/2.0
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  syntax: {}
+  type: attribute
+  uid: cntk.io.StreamInformation.name
+references:
+- fullName: cntk.io.StreamInformation.name
+  isExternal: false
+  name: name
+  parent: cntk.io.StreamInformation
+  uid: cntk.io.StreamInformation.name

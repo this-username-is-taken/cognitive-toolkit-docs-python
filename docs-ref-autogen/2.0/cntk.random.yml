@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -20,10 +20,13 @@ items:
     id: random
     path: bindings/python\cntk\random\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\random\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
+  summary: 'Functions that generate random numbers with respect to designated distributions.
+
+    '
   type: package
   uid: cntk.random
 - example:
@@ -40,10 +43,10 @@ items:
     id: bernoulli
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 101
+    startLine: 67
   summary: 'Generates samples from the Bernoulli distribution with success probability
     *mean*.
 
@@ -105,10 +108,10 @@ items:
     id: bernoulli_like
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 225
+    startLine: 67
   summary: 'Generates samples from the Bernoulli distribution with success probability
     *mean*.
 
@@ -162,10 +165,10 @@ items:
     id: gumbel
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 70
+    startLine: 67
   summary: 'Generates samples from the Gumbel distribution with location *loc* and
     scale *scale*.
 
@@ -237,10 +240,10 @@ items:
     id: gumbel_like
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 188
+    startLine: 67
   summary: 'Generates samples from the Gumbel distribution with location *loc* and
     scale *scale*.
 
@@ -298,10 +301,10 @@ items:
     id: normal
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 43
+    startLine: 67
   summary: 'Generates samples from the normal distribution with mean *mean* and standard
     deviation *scale*.
 
@@ -371,10 +374,10 @@ items:
     id: normal_like
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 156
+    startLine: 67
   summary: 'Generates samples from the normal distribution with mean *mean* and standard
     deviation *scale*.
 
@@ -432,10 +435,10 @@ items:
     id: uniform
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 15
+    startLine: 67
   summary: 'Generates samples from the uniform distribution in the interval [*low*,`high`).
 
     '
@@ -502,10 +505,10 @@ items:
     id: uniform_like
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 127
+    startLine: 67
   summary: 'Generates samples from the uniform distribution in the interval [*low*,`high`).
 
     '

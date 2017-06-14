@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -17,7 +17,7 @@ items:
     id: distributed
     path: bindings/python\cntk\train\distributed.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -39,10 +39,10 @@ items:
     id: block_momentum_distributed_learner
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 148
+    startLine: 67
   summary: 'Creates a block momentum distributed learner. See [1] for more
 
     information.
@@ -118,10 +118,10 @@ items:
     id: data_parallel_distributed_learner
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 122
+    startLine: 67
   summary: 'Creates a data parallel distributed learner
 
     '
@@ -166,10 +166,10 @@ items:
     id: mpi_communicator
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 199
+    startLine: 67
   summary: 'Creates a non quantized MPI communicator.
 
     '

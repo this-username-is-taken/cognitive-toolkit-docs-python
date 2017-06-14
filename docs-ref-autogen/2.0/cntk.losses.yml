@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -18,11 +18,14 @@ items:
     id: losses
     path: bindings/python\cntk\losses\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\losses\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: module
+  summary: 'Loss functions.
+
+    '
+  type: package
   uid: cntk.losses
 - fullName: cntk.losses.binary_cross_entropy
   langs:
@@ -33,10 +36,10 @@ items:
     id: binary_cross_entropy
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 90
+    startLine: 67
   summary: 'Computes the binary cross entropy (aka logistic loss) between the `output`
     and `target`.
 
@@ -82,10 +85,10 @@ items:
     id: cosine_distance
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 18
+    startLine: 67
   summary: 'Computes the cosine distance between `x` and `y`:
 
     '
@@ -126,10 +129,10 @@ items:
     id: cosine_distance_with_negative_samples
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 47
+    startLine: 67
   summary: 'Given minibatches for `x` and `y`, this function computes for each element
     in *x* the cosine distance between
 
@@ -223,10 +226,10 @@ items:
     id: cross_entropy_with_softmax
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 136
+    startLine: 67
   summary: 'This operation computes the cross entropy between the `target_vector`
     and
 
@@ -300,10 +303,10 @@ items:
     id: lambda_rank
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 208
+    startLine: 67
   summary: 'Groups samples according to `group`, sorts
 
     them within each group based on `output` and
@@ -401,10 +404,10 @@ items:
     id: squared_error
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 178
+    startLine: 67
   summary: 'This operation computes the sum of the squared difference between elements
 
     in the two input matrices. The result is a scalar (i.e., one by one matrix).
@@ -446,10 +449,10 @@ items:
     id: weighted_binary_cross_entropy
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 112
+    startLine: 67
   summary: 'This operation computes the weighted binary cross entropy (aka logistic
     loss) between the `output` and `target`.
 

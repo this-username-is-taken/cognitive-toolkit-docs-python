@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -14,11 +14,14 @@ items:
     id: metrics
     path: bindings/python\cntk\metrics\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\metrics\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: module
+  summary: 'Evaluation metrics.
+
+    '
+  type: package
   uid: cntk.metrics
 - example:
   - '
@@ -66,10 +69,10 @@ items:
     id: classification_error
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 59
+    startLine: 67
   summary: 'This operation computes the classification error. It finds the index of
     the highest
 
@@ -140,10 +143,10 @@ items:
     id: edit_distance_error
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 98
+    startLine: 67
   summary: 'Edit distance error evaluation node with the option of specifying penalty
     of substitution, deletion and insertion, as well as squashing the input sequences
     and ignoring certain samples.
@@ -269,10 +272,10 @@ items:
     id: ndcg_at_1
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 13
+    startLine: 67
   summary: 'Groups samples according to `group`, sorts
 
     them within each group based on `output` and

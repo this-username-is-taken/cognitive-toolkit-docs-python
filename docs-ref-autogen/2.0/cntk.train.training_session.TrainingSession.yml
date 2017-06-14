@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -18,7 +18,7 @@ items:
     id: TrainingSession
     path: bindings/python\cntk\train\training_session.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 171
@@ -45,23 +45,19 @@ items:
         '
       id: trainer
       type:
-      - '@cntk.train.trainer
-
-        '
+      - cntk.train.trainer
     - description: 'minibatch source used for training
 
         '
       id: mb_source
       type:
-      - '@cntk.io
-
-        '
+      - cntk.io
     - description: 'minibatch size schedule for training
 
         '
       id: mb_size
       type:
-      - "@cntk.cntk_py.minibatch_size_schedule\n or int"
+      - "cntk.cntk_py.minibatch_size_schedule\n or int"
     - description: 'mapping between input variables and input streams
 
         '
@@ -85,25 +81,19 @@ items:
         '
       id: checkpoint_config
       type:
-      - '@cntk.train.training_session.CheckpointConfig
-
-        '
+      - cntk.train.training_session.CheckpointConfig
     - description: 'cross validation configuration
 
         '
       id: cv_config
       type:
-      - '@cntk.train.training_session.CrossValidationConfig
-
-        '
+      - cntk.train.training_session.CrossValidationConfig
     - description: 'test configuration
 
         '
       id: test_config
       type:
-      - '@cntk.train.training_session.TestConfig
-
-        '
+      - cntk.train.training_session.TestConfig
   type: class
   uid: cntk.train.training_session.TrainingSession
 - class: cntk.train.training_session.TrainingSession
@@ -116,7 +106,7 @@ items:
     id: on_cross_validation_end
     path: bindings/python\cntk\train\training_session.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 278
@@ -167,10 +157,10 @@ items:
     id: train
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 263
+    startLine: 67
   summary: 'Perform training on a specified device.
 
     '
@@ -184,9 +174,7 @@ items:
         '
       id: device
       type:
-      - '@cntk.device
-
-        '
+      - cntk.device
   type: method
   uid: cntk.train.training_session.TrainingSession.train
 references:

@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -20,10 +20,10 @@ items:
     id: Learner
     path: bindings/python\cntk\learners\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 110
+    startLine: 114
   summary: 'Abstraction for learning a subset of parameters of a learnable function
     using first order gradient values.
 
@@ -53,10 +53,10 @@ items:
     id: learning_rate
     path: bindings/python\cntk\learners\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 159
+    startLine: 163
   summary: 'Current learning rate schedule.
 
     '
@@ -76,7 +76,7 @@ items:
     id: parameters
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -96,10 +96,10 @@ items:
     id: reset_learning_rate
     path: bindings/python\cntk\learners\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 145
+    startLine: 149
   summary: 'Resets the learning rate. The new schedule is adjusted to be relative
 
     to the current number of elapsed samples/sweeps: the 0 offset in
@@ -133,10 +133,10 @@ items:
     id: update
     path: bindings/python\cntk\learners\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 119
+    startLine: 123
   summary: 'Update the parameters associated with this learner.
 
     '

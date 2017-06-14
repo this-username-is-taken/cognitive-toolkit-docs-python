@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -29,11 +29,15 @@ items:
     id: sequence
     path: bindings/python\cntk\ops\sequence\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\ops\sequence\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  type: module
+  summary: 'CNTK operators that are specialized in sequences.  Calling these operators
+    creates nodes in the CNTK computational graph.
+
+    '
+  type: package
   uid: cntk.ops.sequence
 - example:
   - "\n```\n\n>>> x = C.sequence.input_variable(shape=(3,2))\n>>> t = C.sequence.last(x)\n\
@@ -53,10 +57,10 @@ items:
     id: broadcast_as
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 556
+    startLine: 67
   summary: 'Creates a sequence out of a non-sequence by endowing the `operand`
 
     with dynamic axes of the same type as the `broadcast_as_operand`
@@ -98,10 +102,10 @@ items:
     id: delay
     path: bindings/python\cntk\ops\sequence\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\ops\sequence\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 256
+    startLine: 258
   summary: 'This function combines @cntk.ops.sequence.past_value and @cntk.ops.sequence.future_value
     into a single function.
 
@@ -153,10 +157,10 @@ items:
     id: first
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 356
+    startLine: 67
   summary: 'Returns the first element of its symbolic input sequence `seq`
 
     '
@@ -197,10 +201,10 @@ items:
     id: future_value
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 100
+    startLine: 67
   summary: 'This function returns the future value w.r.t. `x`. It is most often used
     when
 
@@ -267,10 +271,10 @@ items:
     id: gather
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 453
+    startLine: 67
   summary: 'Takes two sequences of the same length and returns a new sequence whose
 
     elements are those elements of sequence `seq` whose corresponding element
@@ -327,10 +331,10 @@ items:
     id: input
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 17
+    startLine: 67
   summary: 'DEPRECATED.
 
 
@@ -373,9 +377,7 @@ items:
         '
       id: sequence_axis
       type:
-      - '@cntk.axis
-
-        '
+      - cntk.axis
     - description: 'the name of the Function instance in the network
 
         '
@@ -397,10 +399,10 @@ items:
     id: input_variable
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 44
+    startLine: 67
   summary: 'It creates an input in the network: a place where data,
 
     such as features and labels, should be provided.
@@ -439,9 +441,7 @@ items:
         '
       id: sequence_axis
       type:
-      - '@cntk.axis
-
-        '
+      - cntk.axis
     - description: 'the name of the Function instance in the network
 
         '
@@ -484,10 +484,10 @@ items:
     id: is_first
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 279
+    startLine: 67
   summary: 'Returns a symbolic sequence of booleans with the same length as `seq`.
     The
 
@@ -543,10 +543,10 @@ items:
     id: is_last
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 305
+    startLine: 67
   summary: 'Returns a symbolic sequence of booleans with the same length as `seq`.
     The
 
@@ -586,10 +586,10 @@ items:
     id: last
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 382
+    startLine: 67
   summary: 'Returns the last element of its symbolic input sequence `seq`
 
     '
@@ -647,10 +647,10 @@ items:
     id: past_value
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 155
+    startLine: 67
   summary: 'This function returns the past value w.r.t. `x`. It is most often used
     when
 
@@ -710,10 +710,10 @@ items:
     id: reduce_max
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 630
+    startLine: 67
   summary: 'Computes the max of the input sequence''s elements across the sequence
     axis.
 
@@ -751,10 +751,10 @@ items:
     id: reduce_sum
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 603
+    startLine: 67
   summary: 'Computes the sum of the input sequence''s elements across the sequence
     axis.
 
@@ -796,10 +796,10 @@ items:
     id: scatter
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 499
+    startLine: 67
   summary: 'Performs the inverse of gather. The sequence `seq` must have as many
 
     elements as the number of True values in the sequence `condition`.
@@ -863,10 +863,10 @@ items:
     id: slice
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 331
+    startLine: 67
   summary: 'Slice the input sequence.
 
 
@@ -889,10 +889,10 @@ items:
     id: softmax
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 647
+    startLine: 67
   summary: 'Computes the softmax of the input across the sequence axis.
 
     '
@@ -924,10 +924,10 @@ items:
     id: unpack
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 71
+    startLine: 67
   summary: 'This function unpacks the specified sequence operand ''x'' along the most
 
     significant static axis [-1] and pads any gaps with the specified ''padding_value''.
@@ -998,10 +998,10 @@ items:
     id: where
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 409
+    startLine: 67
   summary: 'Given a symbolic sequence `condition` of boolean-like (1/0) values, it
     will return
 

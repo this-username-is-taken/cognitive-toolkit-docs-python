@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -19,7 +19,7 @@ items:
     id: Evaluator
     path: bindings/python\cntk\eval\evaluator.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\eval\evaluator.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 15
@@ -37,9 +37,7 @@ items:
         '
       id: eval_function
       type:
-      - '@cntk.ops.functions.Function
-
-        '
+      - cntk.ops.functions.Function
     - description: 'optionally, list of progress writers from @cntk.utils to track
 
         training progress.
@@ -60,7 +58,7 @@ items:
     id: evaluation_function
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -80,7 +78,7 @@ items:
     id: summarize_test_progress
     path: bindings/python\cntk\eval\evaluator.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\eval\evaluator.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 86
@@ -106,7 +104,7 @@ items:
     id: test_minibatch
     path: bindings/python\cntk\eval\evaluator.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\eval\evaluator.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 38
