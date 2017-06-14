@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -27,10 +27,10 @@ items:
     id: Value
     path: bindings/python\cntk\core.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 234
+    startLine: 244
   summary: 'Internal representation of minibatch data.
 
 
@@ -75,9 +75,7 @@ items:
         '
       id: device
       type:
-      - '@cntk.device.DeviceDescriptor
-
-        '
+      - cntk.device.DeviceDescriptor
   type: class
   uid: cntk.core.Value
 - class: cntk.core.Value
@@ -90,10 +88,10 @@ items:
     id: as_sequences
     path: bindings/python\cntk\core.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 270
+    startLine: 280
   summary: 'Convert a Value to a sequence of NumPy arrays that have their masked
 
     entries removed.
@@ -126,10 +124,10 @@ items:
     id: create
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 356
+    startLine: 67
   summary: 'Creates a @cntk.core.Value object.
 
     '
@@ -143,9 +141,7 @@ items:
         '
       id: var
       type:
-      - '@cntk.variables.Variable
-
-        '
+      - cntk.variables.Variable
     - description: "data for *var*.\nIt can be:\n\n   * a single NumPy array denoting\
         \ the full minibatch \n\n   * a list of NumPy arrays or SciPy sparse CSR matrices\
         \ \n\n   * a single NumPy array denoting one parameter or constant \n"
@@ -171,7 +167,7 @@ items:
         '
       id: device
       type:
-      - '@cntk.device.DeviceDescriptor
+      - 'cntk.device.DeviceDescriptor
 
         , default None'
     - description: 'whether the data is read only
@@ -196,7 +192,7 @@ items:
     id: data
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -216,7 +212,7 @@ items:
     id: device
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -236,7 +232,7 @@ items:
     id: dtype
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -256,7 +252,7 @@ items:
     id: is_read_only
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -276,7 +272,7 @@ items:
     id: is_sparse
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -296,7 +292,7 @@ items:
     id: is_valid
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -331,7 +327,7 @@ items:
     id: mask
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -344,7 +340,7 @@ items:
   uid: cntk.core.Value.mask
 - class: cntk.core.Value
   example:
-  - "```\n\n>>> num_classes = 6\n>>> sparse_indices = [[1,C.Value.ONE_HOT_SKIP,5],[4]]\n\
+  - "\n```\n\n>>> num_classes = 6\n>>> sparse_indices = [[1,C.Value.ONE_HOT_SKIP,5],[4]]\n\
     >>> i0 = C.sequence.input_variable(shape=num_classes, is_sparse=True)\n>>> z =\
     \ C.times(i0, np.eye(num_classes))\n>>> value = C.Value.one_hot(sparse_indices,\
     \ num_classes)\n>>> z.eval({i0: value})\n[array([[ 0.,  1.,  0.,  0.,  0.,  0.],\n\
@@ -372,10 +368,10 @@ items:
     id: one_hot
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 462
+    startLine: 67
   summary: 'Converts `batch` into a @cntk.core.Value object of `dtype`
 
     such that the integer data in `batch` is interpreted as the indices
@@ -413,7 +409,7 @@ items:
         '
       id: device
       type:
-      - '@cntk.device.DeviceDescriptor
+      - 'cntk.device.DeviceDescriptor
 
         , default None'
     return:
@@ -435,7 +431,7 @@ items:
     id: shape
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null

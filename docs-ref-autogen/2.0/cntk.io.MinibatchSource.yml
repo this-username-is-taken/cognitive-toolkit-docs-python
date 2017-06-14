@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -24,10 +24,10 @@ items:
     id: MinibatchSource
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 112
+    startLine: 117
   summary: '
 
 
@@ -193,7 +193,7 @@ items:
     id: current_position
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -209,9 +209,7 @@ items:
         '
       id: getter
       type:
-      - '@cntk.cntk_py.Dictionary
-
-        '
+      - cntk.cntk_py.Dictionary
     - description: 'position returned by
 
         the getter
@@ -219,9 +217,7 @@ items:
         '
       id: setter
       type:
-      - '@cntk.cntk_py.Dictionary
-
-        '
+      - cntk.cntk_py.Dictionary
   type: attribute
   uid: cntk.io.MinibatchSource.current_position
 - class: cntk.io.MinibatchSource
@@ -234,10 +230,10 @@ items:
     id: get_checkpoint_state
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 302
+    startLine: 307
   summary: 'Gets the checkpoint state of the MinibatchSource.
 
     '
@@ -265,7 +261,7 @@ items:
     id: is_distributed
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -285,10 +281,10 @@ items:
     id: next_minibatch
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 247
+    startLine: 67
   summary: 'Reads a minibatch that contains data for all input streams.  The
 
     minibatch size is specified in terms of #samples and/or #sequences for
@@ -374,10 +370,10 @@ items:
     id: restore_from_checkpoint
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 313
+    startLine: 318
   summary: 'Restores the MinibatchSource state from the specified checkpoint.
 
     '
@@ -390,9 +386,7 @@ items:
         '
       id: checkpoint
       type:
-      - '@cntk.cntk_py.Dictionary
-
-        '
+      - cntk.cntk_py.Dictionary
   type: method
   uid: cntk.io.MinibatchSource.restore_from_checkpoint
 - class: cntk.io.MinibatchSource
@@ -405,10 +399,10 @@ items:
     id: stream_info
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 221
+    startLine: 226
   summary: 'Gets the description of the stream with given name.
 
     Throws an exception if there are none or multiple streams with this
@@ -444,10 +438,10 @@ items:
     id: stream_infos
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 198
+    startLine: 203
   summary: 'Describes the streams this minibatch source produces.
 
     '
@@ -471,7 +465,7 @@ items:
     id: streams
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null

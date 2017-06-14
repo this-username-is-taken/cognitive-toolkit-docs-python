@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -20,7 +20,7 @@ items:
     id: DistributedLearner
     path: bindings/python\cntk\train\distributed.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 100
@@ -44,10 +44,10 @@ items:
     id: communicator
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 105
+    startLine: 67
   summary: 'Returns the distributed communicator that talks to other MPI workers
 
     '
@@ -71,7 +71,7 @@ items:
     id: total_number_of_samples_seen
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null

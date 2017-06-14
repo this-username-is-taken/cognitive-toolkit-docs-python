@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -12,7 +12,7 @@ items:
     id: attention
     path: bindings/python\cntk\layers\models\attention.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\layers\models\attention.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -30,7 +30,7 @@ items:
     id: AttentionModel
     path: bindings/python\cntk\layers\models\attention.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\layers\models\attention.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 23
@@ -48,11 +48,11 @@ items:
     - id: attention_dim
     - defaultValue: ''
       id: attention_span
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000001D4449735F8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000000543C080>
       id: attention_axis
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000001D4449735C0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000000543C048>
       id: init
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000001D444973588>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000000005434FD0>
       id: go_backwards
     - defaultValue: None
       id: enable_self_stabilization

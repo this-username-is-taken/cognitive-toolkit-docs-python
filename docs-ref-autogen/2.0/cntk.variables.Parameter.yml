@@ -1,13 +1,13 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
   - cntk.variables.Parameter.value
   class: cntk.variables.Parameter
   example:
-  - "```\n\n>>> p = C.Parameter((13,42,7), init=C.glorot_uniform())\n>>> p.shape\n\
-    \    (13, 42, 7)\n```\n\n```\n\n>>> # example with inferred dimensions\n>>> W\
-    \ = C.Parameter((C.InferredDimension, 42), init=C.glorot_uniform())\n>>> W.shape\
+  - "\n```\n\n>>> p = C.Parameter((13,42,7), init=C.glorot_uniform())\n>>> p.shape\n\
+    \    (13, 42, 7)\n```\n\n\n```\n\n>>> # example with inferred dimensions\n>>>\
+    \ W = C.Parameter((C.InferredDimension, 42), init=C.glorot_uniform())\n>>> W.shape\
     \   # -1 indicates dimension yet to be inferred\n    (-1, 42)\n>>> x = C.input_variable(13)\n\
     >>> y = C.times(x, W)  # times operation now knows that the input dimension of\
     \ W must be 13\n>>> W.shape          # hence, the shape has been updated\n   \
@@ -33,10 +33,10 @@ items:
     id: Parameter
     path: bindings/python\cntk\variables.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 326
+    startLine: 331
   summary: 'A trainable parameter. It can be a scalar, vector, matrix, or tensor
 
     of floating point numbers that can be modified by a training
@@ -81,9 +81,7 @@ items:
         '
       id: device
       type:
-      - '@cntk.device
-
-        '
+      - cntk.device
     - description: 'an optional name for this parameter
 
         '
@@ -102,7 +100,7 @@ items:
     id: value
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null

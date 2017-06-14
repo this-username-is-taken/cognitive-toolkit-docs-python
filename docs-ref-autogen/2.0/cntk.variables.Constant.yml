@@ -1,11 +1,11 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
   - cntk.variables.Constant.value
   class: cntk.variables.Constant
   example:
-  - "```\n\n>>> c = C.Constant(1, (2,3))\n>>> c.value\n    array([[ 1.,  1.,  1.],\n\
+  - "\n```\n\n>>> c = C.Constant(1, (2,3))\n>>> c.value\n    array([[ 1.,  1.,  1.],\n\
     \           [ 1.,  1.,  1.]], dtype=float32)\n```\n"
   fullName: cntk.variables.Constant
   inheritance:
@@ -28,16 +28,20 @@ items:
     id: Constant
     path: bindings/python\cntk\variables.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 419
+    startLine: 424
   summary: 'A constant value. It can be a scalar, vector, matrix, or tensor
 
     of floating point numbers that cannot be modified.
 
 
     A Constant is a @cntk.variables.Variable and therefore inherits all its methods.
+
+
+
+
     '
   syntax:
     content: Constant(self, value=None, shape=None, dtype=np.float32, device=None,
@@ -60,9 +64,7 @@ items:
         '
       id: device
       type:
-      - '@cntk.device
-
-        '
+      - cntk.device
     - description: 'an optional name for this constant.
 
         '
@@ -81,7 +83,7 @@ items:
     id: value
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null

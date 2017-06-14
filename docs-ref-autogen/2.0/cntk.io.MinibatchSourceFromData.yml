@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -8,30 +8,30 @@ items:
   - cntk.io.MinibatchSourceFromData.stream_infos
   class: cntk.io.MinibatchSourceFromData
   example:
-  - "```\n\n>>> N = 5\n>>> X = np.arange(3*N).reshape(N,3).astype(np.float32) # 6\
-    \ rows of 3 values\n>>> s = C.io.MinibatchSourceFromData(dict(x=X), max_samples=len(X))\n\
+  - "\n```\n\n>>> N = 5\n>>> X = np.arange(3*N).reshape(N,3).astype(np.float32) #\
+    \ 6 rows of 3 values\n>>> s = C.io.MinibatchSourceFromData(dict(x=X), max_samples=len(X))\n\
     >>> mb = s.next_minibatch(3) # get a minibatch of 3\n>>> d = mb[s.streams['x']]\n\
     >>> d.data.asarray()\narray([[ 0.,  1.,  2.],\n       [ 3.,  4.,  5.],\n     \
     \  [ 6.,  7.,  8.]], dtype=float32)\n>>> mb = s.next_minibatch(3) # note: only\
     \ 2 left\n>>> d = mb[s.streams['x']]\n>>> d.data.asarray()\narray([[  9.,  10.,\
     \  11.],\n       [ 12.,  13.,  14.]], dtype=float32)\n>>> mb = s.next_minibatch(3)\n\
-    >>> mb\n{}\n```\n\n```\n\n>>> # example of a sparse input\n>>> Y = np.array([i\
+    >>> mb\n{}\n```\n\n\n```\n\n>>> # example of a sparse input\n>>> Y = np.array([i\
     \ % 3 == 0 for i in range(N)], np.float32)\n>>> import scipy.sparse\n>>> Y = scipy.sparse.csr_matrix((np.ones(N,np.float32),\
     \ (range(N), Y)), shape=(N, 2))\n>>> s = C.io.MinibatchSourceFromData(dict(x=X,\
     \ y=Y)) # also not setting max_samples -> will repeat\n>>> mb = s.next_minibatch(3)\n\
     >>> d = mb[s.streams['y']]\n>>> d.data.asarray().todense()\nmatrix([[ 0.,  1.],\n\
     \        [ 1.,  0.],\n        [ 1.,  0.]], dtype=float32)\n>>> mb = s.next_minibatch(3)\
     \ # at end only 2 sequences\n>>> d = mb[s.streams['y']]\n>>> d.data.asarray().todense()\n\
-    matrix([[ 0.,  1.],\n        [ 1.,  0.]], dtype=float32)\n```\n\n```\n\n>>> #\
-    \ if we do not set max_samples, then it will start over once the end is hit\n\
+    matrix([[ 0.,  1.],\n        [ 1.,  0.]], dtype=float32)\n```\n\n\n```\n\n>>>\
+    \ # if we do not set max_samples, then it will start over once the end is hit\n\
     >>> mb = s.next_minibatch(3)\n>>> d = mb[s.streams['y']]\n>>> d.data.asarray().todense()\n\
     matrix([[ 0.,  1.],\n        [ 1.,  0.],\n        [ 1.,  0.]], dtype=float32)\n\
-    ```\n\n```\n\n>>> # values can also be GPU-side CNTK Value objects (if everything\
+    ```\n\n\n```\n\n>>> # values can also be GPU-side CNTK Value objects (if everything\
     \ fits into the GPU at once)\n>>> s = C.io.MinibatchSourceFromData(dict(x=C.Value(X),\
     \ y=C.Value(Y)))\n>>> mb = s.next_minibatch(3)\n>>> d = mb[s.streams['y']]\n>>>\
     \ d.data.asarray().todense()\nmatrix([[ 0.,  1.],\n        [ 1.,  0.],\n     \
-    \   [ 1.,  0.]], dtype=float32)\n```\n\n```\n\n>>> # data can be sequences\n>>>\
-    \ import cntk.layers.typing\n>>> XX = [np.array([1,3,2], np.float32),np.array([4,1],\
+    \   [ 1.,  0.]], dtype=float32)\n```\n\n\n```\n\n>>> # data can be sequences\n\
+    >>> import cntk.layers.typing\n>>> XX = [np.array([1,3,2], np.float32),np.array([4,1],\
     \ np.float32)]  # 2 sequences\n>>> YY = [scipy.sparse.csr_matrix(np.array([[0,1],[1,0],[1,0]],\
     \ np.float32)), scipy.sparse.csr_matrix(np.array([[1,0],[1,0]], np.float32))]\n\
     >>> s = cntk.io.MinibatchSourceFromData(dict(xx=(XX, cntk.layers.typing.Sequence[cntk.layers.typing.tensor]),\
@@ -56,10 +56,10 @@ items:
     id: MinibatchSourceFromData
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 477
+    startLine: 483
   summary: 'This wraps in-memory data as a CNTK MinibatchSource object (aka "reader"),
     used to feed the data into a TrainingSession.
 
@@ -143,10 +143,10 @@ items:
     id: get_checkpoint_state
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 695
+    startLine: 701
   summary: 'Gets the checkpoint state of the MinibatchSource.
 
     '
@@ -174,10 +174,10 @@ items:
     id: next_minibatch
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 640
+    startLine: 646
   syntax:
     content: next_minibatch(num_samples, number_of_workers=1, worker_rank=0, device=None)
     parameters:
@@ -201,10 +201,10 @@ items:
     id: restore_from_checkpoint
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 706
+    startLine: 712
   summary: 'Restores the MinibatchSource state from the specified checkpoint.
 
     '
@@ -217,9 +217,7 @@ items:
         '
       id: checkpoint
       type:
-      - '@cntk.cntk_py.Dictionary
-
-        '
+      - cntk.cntk_py.Dictionary
   type: method
   uid: cntk.io.MinibatchSourceFromData.restore_from_checkpoint
 - class: cntk.io.MinibatchSourceFromData
@@ -232,10 +230,10 @@ items:
     id: stream_infos
     path: bindings/python\cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 635
+    startLine: 641
   syntax:
     content: stream_infos()
     parameters:

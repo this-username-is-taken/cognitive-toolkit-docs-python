@@ -1,0 +1,69 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalk.crosstalk_tensorflow.TensorFlowCrosstalk
+  - cntk.contrib.crosstalk.crosstalk_tensorflow.find_trainable
+  fullName: cntk.contrib.crosstalk.crosstalk_tensorflow
+  langs:
+  - python
+  module: cntk.contrib.crosstalk.crosstalk_tensorflow
+  name: crosstalk_tensorflow
+  source:
+    id: crosstalk_tensorflow
+    path: bindings/python\cntk\contrib\crosstalk\crosstalk_tensorflow.py
+    remote:
+      branch: release/2.0
+      path: bindings/python\cntk\contrib\crosstalk\crosstalk_tensorflow.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: module
+  uid: cntk.contrib.crosstalk.crosstalk_tensorflow
+- fullName: cntk.contrib.crosstalk.crosstalk_tensorflow.find_trainable
+  langs:
+  - python
+  module: cntk.contrib.crosstalk.crosstalk_tensorflow
+  name: find_trainable
+  source:
+    id: find_trainable
+    path: bindings/python\cntk\contrib\crosstalk\crosstalk_tensorflow.py
+    remote:
+      branch: release/2.0
+      path: bindings/python\cntk\contrib\crosstalk\crosstalk_tensorflow.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 14
+  summary: 'Find a single trainable variable in a function by name when the function
+    has multiple parameters.
+
+    '
+  syntax:
+    content: find_trainable(name, scope=None)
+    parameters:
+    - description: 'The function to search
+
+        '
+      id: func
+    - defaultValue: None
+      description: 'The name of the parameter
+
+        '
+      id: name
+      type:
+      - str
+    return:
+      description: 'The trainable variable that is found
+
+        '
+  type: function
+  uid: cntk.contrib.crosstalk.crosstalk_tensorflow.find_trainable
+references:
+- fullName: cntk.contrib.crosstalk.crosstalk_tensorflow.TensorFlowCrosstalk
+  isExternal: false
+  name: TensorFlowCrosstalk
+  parent: cntk.contrib.crosstalk.crosstalk_tensorflow
+  uid: cntk.contrib.crosstalk.crosstalk_tensorflow.TensorFlowCrosstalk
+- fullName: cntk.contrib.crosstalk.crosstalk_tensorflow.find_trainable
+  isExternal: false
+  name: find_trainable
+  parent: cntk.contrib.crosstalk.crosstalk_tensorflow
+  uid: cntk.contrib.crosstalk.crosstalk_tensorflow.find_trainable

@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -31,11 +31,11 @@ items:
     id: learners
     path: bindings/python\cntk\learners\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  summary: 'Learner tunes a set of parameters during the training process. One can
+  summary: 'A learner tunes a set of parameters during the training process. One can
     use
 
     different learners for different sets of parameters. Currently, CNTK supports
@@ -44,24 +44,26 @@ items:
 
 
 
-    - AdaDelta
+    - :func:`AdaDelta <adadelta>`
 
-    - AdaGrad
+    - :func:`AdaGrad <adagrad>`
 
-    - FSAdaGrad
+    - :func:`FSAdaGrad <fsadagrad>`
 
-    - Adam
+    - :func:`Adam <adam>`
 
-    - MomentumSGD
+    - :func:`MomentumSGD <momentum_sgd>`
 
-    - Nesterov
+    - :func:`Nesterov <nesterov>`
 
-    - RMSProp
+    - :func:`RMSProp <rmsprop>`
 
-    - SGD
+    - :func:`SGD <sgd>`
+
+    - :func:`Learner with a customized update function <universal>`
 
     '
-  type: module
+  type: package
   uid: cntk.learners
 - fullName: cntk.learners.adadelta
   langs:
@@ -74,10 +76,10 @@ items:
     id: adadelta
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 573
+    startLine: 67
   summary: 'Creates an AdaDelta learner instance to learn the parameters. See [1]
     for
 
@@ -187,10 +189,10 @@ items:
     id: adagrad
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 625
+    startLine: 67
   summary: 'Creates an AdaGrad learner instance to learn the parameters. See [1] for
 
     more information.
@@ -291,10 +293,10 @@ items:
     id: adam
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 735
+    startLine: 67
   summary: 'Creates an Adam learner instance to learn the parameters. See [1] for
     more
 
@@ -427,10 +429,10 @@ items:
     id: default_unit_gain_value
     path: bindings/python\cntk\learners\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 52
+    startLine: 56
   summary: 'Returns true if by default momentum is applied in the unit-gain fashion.
 
     '
@@ -447,10 +449,10 @@ items:
     id: default_use_mean_gradient_value
     path: bindings/python\cntk\learners\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 65
+    startLine: 69
   summary: 'Returns true if by default input gradient to learner is averaged.
 
     '
@@ -467,10 +469,10 @@ items:
     id: fsadagrad
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 679
+    startLine: 67
   summary: 'Creates an FSAdaGrad learner instance to learn the parameters.
 
     '
@@ -586,10 +588,10 @@ items:
     id: learning_rate_schedule
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 298
+    startLine: 67
   summary: 'Create a learning rate schedule (using the same semantics as
 
     @cntk.learners.training_parameter_schedule).
@@ -613,9 +615,7 @@ items:
         '
       id: unit
       type:
-      - '@cntk.learners.UnitType
-
-        '
+      - cntk.learners.UnitType
     - description: 'see parameter `epoch_size` in
 
         @cntk.learners.training_parameter_schedule.
@@ -631,7 +631,9 @@ items:
   type: function
   uid: cntk.learners.learning_rate_schedule
 - example:
-  - '```
+  - '
+
+    ```
 
 
     >>> # Use a fixed momentum of 1100 for all samples
@@ -639,6 +641,7 @@ items:
     >>> m = momentum_as_time_constant_schedule(1100)
 
     ```
+
 
 
     ```
@@ -662,10 +665,10 @@ items:
     id: momentum_as_time_constant_schedule
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 359
+    startLine: 67
   summary: 'Create a momentum schedule in a minibatch-size agnostic way
 
     (using the same semantics as @cntk.learners.training_parameter_schedule
@@ -696,7 +699,9 @@ items:
   type: function
   uid: cntk.learners.momentum_as_time_constant_schedule
 - example:
-  - '```
+  - '
+
+    ```
 
 
     >>> # Use a fixed momentum of 0.99 for all samples
@@ -704,6 +709,7 @@ items:
     >>> m = momentum_schedule(0.99)
 
     ```
+
 
 
     ```
@@ -720,6 +726,7 @@ items:
     (0.99, 0.99, 0.9, 0.9)
 
     ```
+
 
 
     ```
@@ -749,10 +756,10 @@ items:
     id: momentum_schedule
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 321
+    startLine: 67
   summary: 'Create a per-minibatch momentum schedule (using the same semantics as
 
     @cntk.learners.training_parameter_schedule with the *unit=UnitType.minibatch*).
@@ -780,10 +787,10 @@ items:
     id: momentum_sgd
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 461
+    startLine: 67
   summary: 'Creates a Momentum SGD learner instance to learn the parameters.
 
     '
@@ -894,10 +901,10 @@ items:
     id: nesterov
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 512
+    startLine: 67
   summary: 'Creates a Nesterov SGD learner instance to learn the parameters. This
     was
 
@@ -1008,10 +1015,10 @@ items:
     id: rmsprop
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 800
+    startLine: 67
   summary: 'Creates an RMSProp learner instance to learn the parameters.
 
     '
@@ -1037,31 +1044,35 @@ items:
 
         '
     - description: 'Trade-off factor for current and previous gradients. Common value
-        is 0.95
+        is 0.95. Should be in range (0.0, 1.0)
 
         '
       id: gamma
       type:
       - float
-    - description: 'Increasing factor when trying to adjust current learning_rate
+    - description: 'Increasing factor when trying to adjust current learning_rate.
+        Should be greater than 1
 
         '
       id: inc
       type:
       - float
-    - description: 'Decreasing factor when trying to adjust current learning_rate
+    - description: 'Decreasing factor when trying to adjust current learning_rate.
+        Should be in range (0.0, 1.0)
 
         '
       id: dec
       type:
       - float
-    - description: 'Maximum scale allowed for the initial learning_rate
+    - description: 'Maximum scale allowed for the initial learning_rate. Should be
+        greater than zero and min
 
         '
       id: max
       type:
       - float
-    - description: 'Minimum scale allowed for the initial learning_rate
+    - description: 'Minimum scale allowed for the initial learning_rate. Should be
+        greater than zero
 
         '
       id: min
@@ -1138,10 +1149,10 @@ items:
     id: set_default_unit_gain_value
     path: bindings/python\cntk\learners\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 59
+    startLine: 63
   summary: 'Sets globally default unit-gain flag value.
 
     '
@@ -1160,10 +1171,10 @@ items:
     id: set_default_use_mean_gradient_value
     path: bindings/python\cntk\learners\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 72
+    startLine: 76
   summary: 'Sets globally default use_mean_gradient_value.
 
     '
@@ -1184,10 +1195,10 @@ items:
     id: sgd
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 409
+    startLine: 67
   summary: 'Creates an SGD learner instance to learn the parameters. See [1] for more
 
     information on how to set the parameters.
@@ -1275,7 +1286,9 @@ items:
   type: function
   uid: cntk.learners.sgd
 - example:
-  - '```
+  - '
+
+    ```
 
 
     >>> # Use a fixed value 0.01 for all samples
@@ -1287,6 +1300,7 @@ items:
     (0.01, 0.01)
 
     ```
+
 
 
     ```
@@ -1301,6 +1315,7 @@ items:
     (0.01, 0.01, 0.001, 0.001)
 
     ```
+
 
 
     ```
@@ -1330,10 +1345,10 @@ items:
     id: training_parameter_schedule
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 226
+    startLine: 67
   summary: 'Create a training parameter schedule containing either per-sample (default)
 
     or per-minibatch values.
@@ -1364,9 +1379,7 @@ items:
         '
       id: unit
       type:
-      - '@cntk.learners.UnitType
-
-        '
+      - cntk.learners.UnitType
     - description: 'number of samples as a scheduling unit.
 
         Parameters in the schedule change their values every `epoch_size`
@@ -1392,7 +1405,9 @@ items:
   type: function
   uid: cntk.learners.training_parameter_schedule
 - example:
-  - '```
+  - '
+
+    ```
 
 
     >>> def my_adagrad(parameters, gradients):
@@ -1439,10 +1454,10 @@ items:
     id: universal
     path: bindings/python\cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 854
+    startLine: 67
   summary: 'Creates a learner which uses a CNTK function to update the parameters.
 
     '

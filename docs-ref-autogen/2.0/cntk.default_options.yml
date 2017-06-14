@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -18,14 +18,12 @@ items:
     id: default_options
     path: bindings/python\cntk\default_options.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  summary: 'default_options: ``with default_options():`` and ``with default_options_for():``
-    patterns
-
-    '
+  summary: "Default options of CNTK functions. \n\n\n\nUsage: \n\n\n* ``with default_options():``,\
+    \ and\n* ``with default_options_for():``\n"
   type: module
   uid: cntk.default_options
 - fullName: cntk.default_options.default_options
@@ -37,10 +35,10 @@ items:
     id: default_options
     path: bindings/python\cntk\default_options.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 33
+    startLine: 39
   syntax:
     content: default_options(**kwargs)
   type: function
@@ -54,10 +52,10 @@ items:
     id: default_options_for
     path: bindings/python\cntk\default_options.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 41
+    startLine: 47
   syntax:
     content: default_options_for(functions, **kwargs)
     parameters:
@@ -73,10 +71,10 @@ items:
     id: get_default_override
     path: bindings/python\cntk\default_options.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 59
+    startLine: 65
   summary: 'Looks up an option default override.
 
     Meant to be used inside functions that use this facility.
@@ -86,8 +84,8 @@ items:
     content: get_default_override(function_or_class, **kwargs)
     parameters:
     - description: "the function that calls this.\nFor example:\n\n<!-- literal_block\
-        \ {\"backrefs\": [], \"names\": [], \"xml:space\": \"preserve\", \"dupnames\"\
-        : [], \"classes\": [], \"ids\": []} -->\n\n````\n\n   def Convolution(args,\
+        \ {\"xml:space\": \"preserve\", \"names\": [], \"classes\": [], \"ids\": [],\
+        \ \"backrefs\": [], \"dupnames\": []} -->\n\n````\n\n   def Convolution(args,\
         \ init=default_override_or(glorot_uniform()), activation=default_override_or(identity),\
         \ pad=default_override_or(False)):\n   init = _get_default_override(Convolution,\
         \ init=init) # pass default under the same name\n   ````\n"
@@ -103,10 +101,10 @@ items:
     id: get_global_option
     path: bindings/python\cntk\default_options.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 111
+    startLine: 117
   syntax:
     content: get_global_option(key, default_value)
     parameters:
@@ -123,10 +121,10 @@ items:
     id: is_default_override
     path: bindings/python\cntk\default_options.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 56
+    startLine: 62
   syntax:
     content: is_default_override(value)
     parameters:
@@ -142,10 +140,10 @@ items:
     id: set_global_option
     path: bindings/python\cntk\default_options.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 104
+    startLine: 110
   syntax:
     content: set_global_option(key, value)
     parameters:

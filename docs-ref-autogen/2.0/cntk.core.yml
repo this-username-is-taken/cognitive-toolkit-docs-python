@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -16,10 +16,19 @@ items:
     id: core
     path: bindings/python\cntk\core.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
+  summary: 'Core numerical constructs.
+
+
+
+    * :class:`NDArrayView`
+
+    * :class:`Value`
+
+    '
   type: module
   uid: cntk.core
 - fullName: cntk.core.asarray
@@ -31,10 +40,10 @@ items:
     id: asarray
     path: bindings/python\cntk\core.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 650
+    startLine: 660
   summary: 'Converts a Value object to a sequence of NumPy arrays (if dense) or CSR
     arrays (if sparse).
 
@@ -56,10 +65,10 @@ items:
     id: asvalue
     path: bindings/python\cntk\core.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 666
+    startLine: 676
   summary: 'Converts a sequence of NumPy arrays or CSR arrays to a Value object.
 
     '
@@ -79,10 +88,10 @@ items:
     id: user_function
     path: bindings/python\cntk\core.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 641
+    startLine: 651
   summary: 'Wraps the passed Function to create a composite representing the
 
     composite Function graph rooted at the passed root Function.

@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -15,7 +15,7 @@ items:
     id: debug
     path: bindings/python\cntk\debugging\debug.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -62,7 +62,7 @@ items:
     id: debug_model
     path: bindings/python\cntk\debugging\debug.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 402
@@ -90,7 +90,7 @@ items:
       id: in_stream
       type:
       - object behaving like sys.stdin, default stdin
-    - defaultValue: <colorama.ansitowin32.StreamWrapper object at 0x000001D43F230080>
+    - defaultValue: <colorama.ansitowin32.StreamWrapper object at 0x00000000030B3CF8>
       description: '*write()*
 
         and *flush()* will be called on it to output debug info to the user
@@ -123,7 +123,7 @@ items:
     id: save_as_legacy_model
     path: bindings/python\cntk\debugging\debug.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 84
@@ -140,9 +140,7 @@ items:
         '
       id: root_op
       type:
-      - '@cntk.ops.functions.Function
-
-        '
+      - cntk.ops.functions.Function
     - description: 'filename to store the model in.
 
         '
@@ -160,7 +158,7 @@ items:
     id: set_checked_mode
     path: bindings/python\cntk\debugging\debug.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 107
@@ -189,7 +187,7 @@ items:
     id: set_computation_network_trace_level
     path: bindings/python\cntk\debugging\debug.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python\cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 121
