@@ -23,6 +23,19 @@
         "dest": "api",
         "exclude": [
           "**/obj/**",
+          "**/includes/**",
+          "**/toc.yml"
+        ]
+      },
+      {
+        "files": [
+          "**/toc.yml"
+        ],
+        "src": "docs-ref-autogen/2.0",
+        "version": "cntk-py-2.0",
+        "dest": "api/cognitive-toolkit",
+        "exclude": [
+          "**/obj/**",
           "**/includes/**"
         ]
       },
