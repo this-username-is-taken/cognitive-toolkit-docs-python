@@ -2,7 +2,7 @@
   - items:
     - name: cntk.axis.Axis
       uid: cntk.axis.Axis
-    name: cntk.axis
+    name: axis
     uid: cntk.axis
   - items:
     - items:
@@ -30,33 +30,33 @@
         uid: cntk.contrib.crosstalk.RnnAttr
       name: cntk.contrib.crosstalk
       uid: cntk.contrib.crosstalk
-    name: cntk.contrib
+    name: contrib
     uid: cntk.contrib
   - items:
     - name: cntk.core.NDArrayView
       uid: cntk.core.NDArrayView
     - name: cntk.core.Value
       uid: cntk.core.Value
-    name: cntk.core
+    name: core
     uid: cntk.core
   - items:
     - name: cntk.debugging.debug
       uid: cntk.debugging.debug
     - name: cntk.debugging.profiler
       uid: cntk.debugging.profiler
-    name: cntk.debugging
+    name: debugging
     uid: cntk.debugging
   - items:
     - name: cntk.default_options.default_override_or
       uid: cntk.default_options.default_override_or
-    name: cntk.default_options
+    name: default_options
     uid: cntk.default_options
   - items:
     - name: cntk.device.DeviceDescriptor
       uid: cntk.device.DeviceDescriptor
     - name: cntk.device.DeviceKind
       uid: cntk.device.DeviceKind
-    name: cntk.device
+    name: device
     uid: cntk.device
   - items:
     - items:
@@ -64,9 +64,9 @@
         uid: cntk.eval.evaluator.Evaluator
       name: cntk.eval.evaluator
       uid: cntk.eval.evaluator
-    name: cntk.eval
+    name: eval
     uid: cntk.eval
-  - name: cntk.initializer
+  - name: initializer
     uid: cntk.initializer
   - items:
     - name: cntk.io.transforms
@@ -83,7 +83,7 @@
       uid: cntk.io.StreamInformation
     - name: cntk.io.UserMinibatchSource
       uid: cntk.io.UserMinibatchSource
-    name: cntk.io
+    name: io
     uid: cntk.io
   - items:
     - name: cntk.layers.blocks
@@ -114,7 +114,7 @@
         uid: cntk.layers.typing.Tensor
       name: cntk.layers.typing
       uid: cntk.layers.typing
-    name: cntk.layers
+    name: layers
     uid: cntk.layers
   - items:
     - name: cntk.learners.Learner
@@ -123,7 +123,7 @@
       uid: cntk.learners.UnitType
     - name: cntk.learners.UserLearner
       uid: cntk.learners.UserLearner
-    name: cntk.learners
+    name: learners
     uid: cntk.learners
   - items:
     - name: cntk.logging.graph
@@ -139,18 +139,18 @@
       uid: cntk.logging.progress_print
     - name: cntk.logging.TraceLevel
       uid: cntk.logging.TraceLevel
-    name: cntk.logging
+    name: logging
     uid: cntk.logging
-  - name: cntk.losses
+  - name: losses
     uid: cntk.losses
-  - name: cntk.metrics
+  - name: metrics
     uid: cntk.metrics
   - items:
     - name: cntk.misc.converter
       uid: cntk.misc.converter
     - name: cntk.misc.optimized_rnnstack_converter
       uid: cntk.misc.optimized_rnnstack_converter
-    name: cntk.misc
+    name: misc
     uid: cntk.misc
   - items:
     - items:
@@ -164,7 +164,7 @@
       uid: cntk.ops.functions
     - name: cntk.ops.sequence
       uid: cntk.ops.sequence
-    name: cntk.ops
+    name: ops
     uid: cntk.ops
   - items:
     - items:
@@ -172,16 +172,16 @@
         uid: cntk.random.tests.random_ops_tests
       name: cntk.random.tests
       uid: cntk.random.tests
-    name: cntk.random
+    name: random
     uid: cntk.random
-  - name: cntk.sample_installer
+  - name: sample_installer
     uid: cntk.sample_installer
   - items:
     - name: cntk.tensor.ArrayMixin
       uid: cntk.tensor.ArrayMixin
     - name: cntk.tensor.TensorOpsMixin
       uid: cntk.tensor.TensorOpsMixin
-    name: cntk.tensor
+    name: tensor
     uid: cntk.tensor
   - items:
     - items:
@@ -209,7 +209,7 @@
         uid: cntk.train.training_session.TrainingSession
       name: cntk.train.training_session
       uid: cntk.train.training_session
-    name: cntk.train
+    name: train
     uid: cntk.train
   - items:
     - name: cntk.variables.Constant
@@ -222,7 +222,7 @@
       uid: cntk.variables.Variable
     - name: cntk.variables.VariableMixin
       uid: cntk.variables.VariableMixin
-    name: cntk.variables
+    name: variables
     uid: cntk.variables
-  name: cntk
+  name: Reference
   uid: cntk
