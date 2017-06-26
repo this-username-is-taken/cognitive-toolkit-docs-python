@@ -1,17 +1,18 @@
 # -*- coding: utf-8 -*-
 
 import io
-import shutil
+import os
 import yaml
 
 # Write YAML file
-    #shutil.move('.\\_build\\docfx_yaml\\toc.yml', '.\\_build\\docfx_yaml\\toc.yml.back')
-def rewrite_yml(data):
-    with io.open('.\\_build\\docfx_yaml\\toc.yml', 'w', encoding='utf8') as outfile:
+def rewrite_yml(data, yml_file):
+    with io.open(yml_file, 'w', encoding='utf8') as outfile:
         yaml.dump(data, outfile, default_flow_style=False, allow_unicode=True)
 
-        
-with open(".\\_build\\docfx_yaml\\toc.yml", 'r') as stream:
+
+toc_yml_full_path = os.getcwd() + '\\_build\\docfx_yaml\\toc.yml'
+
+with open(toc_yml_full_path, 'r') as stream:
     try:
         data_loaded = yaml.load(stream)
 
@@ -30,7 +31,6 @@ with open(".\\_build\\docfx_yaml\\toc.yml", 'r') as stream:
                             item['name'] = item['name'][5:]
                             print('update old name to %s' % item['name'])
 
-        rewrite_yml(data_loaded)
+        rewrite_yml(data_loaded, toc_yml_full_path)
     except yaml.YAMLError as exc:
         print(exc)
-
