@@ -57,11 +57,18 @@ on_finish:
     - ps: pip install $files
     - cd c:\projects\cntk\bindings\python\doc
     - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/conf.py -Destination c:/projects/cntk/bindings/python/doc/conf.py -force
-    - call build.bat  # to generate rst files
+
+    # generate rst files
+    - call build.bat
     - sphinx-build.exe . _build
-    
+
+    # postprocess for toc.yml
+    - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/postprocess_toc_yml.py -Destination c:/projects/cntk/bindings/python/doc/postprocess_toc_yml.py -force
+    - python postprocess_toc_yml.py
+
     # remove old yml fils
     - ps: Remove-Item c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\2.0\* -recurse
+
     # copy yml fils generated
     - ps: Copy-Item -Path C:\projects\CNTK\bindings\python\doc\_build\docfx_yaml\* -Destination c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\2.0\ -recurse -force
 
