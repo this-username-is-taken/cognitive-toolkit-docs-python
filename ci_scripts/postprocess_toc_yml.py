@@ -12,6 +12,7 @@ def rewrite_yml(data, yml_file):
 
 toc_yml_full_path = os.getcwd() + '\\_build\\docfx_yaml\\toc.yml'
 
+print(toc_yml_full_path)
 with open(toc_yml_full_path, 'r') as stream:
     try:
         data_loaded = yaml.load(stream)
