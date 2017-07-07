@@ -48,7 +48,7 @@ items:
     \ -0.20587039]]\n     [[-0.79412961  0.79412961]]]\n\n\nAt every stop the following\
     \ information is given:\n * Forward or backward pass\n * Node type (e.g. 'Times')\n\
     \ * Name if given, otherwise it is omitted\n * uid, which is a unique reference\
-    \ within the graph\n * shape having the format [dynamic axis](static axes). E.g.\
+    \ within the graph\n * shape having the format ``[dynamic axis](static axes)``. E.g.\
     \ ``[*,*](2,)``\n   means that the node's output has two dynamic axes (batch and\
     \ sequence) and\n   one static axis (2 dimensions)\n"
   type: module
