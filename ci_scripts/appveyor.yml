@@ -11,6 +11,7 @@ init:
 environment:
   github_access_token:
     secure: DpN0M7pZDocpyv+muc15qHDKz9lMJ7Zr34aMC0HtOdeVkbTERuKkxq4WHAd3S33v
+  APPVEYOR_RDP_PASSWORD: "Bugsfor"
 
 clone_script:
     - git config --global core.autocrlf true
