@@ -52,7 +52,9 @@ on_finish:
     - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/conf.py -Destination c:/projects/cntk/bindings/python/doc/conf.py -force
     
     # Install sphinx-docfx-yaml
+    - ps: pip uninstall sphinx-docfx-yaml
     - ps: pip install sphinx-docfx-yaml
+    - ps: pip show sphinx-docfx-yaml
     
     # generate rst files
     - call build.bat
