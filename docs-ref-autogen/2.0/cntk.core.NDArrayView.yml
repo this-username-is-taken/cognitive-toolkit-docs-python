@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -23,12 +23,12 @@ items:
   name: NDArrayView
   source:
     id: NDArrayView
-    path: bindings/python\cntk\core.py
+    path: bindings/pythoncntk\core.py
     remote:
       branch: master
-      path: bindings/python\cntk\core.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 26
+      path: bindings/pythoncntk\core.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 33
   summary: 'Creates an empty dense internal data representation of a
 
     @cntk.core.Value object.
@@ -69,9 +69,7 @@ items:
         '
       id: device
       type:
-      - '@cntk.device.DeviceDescriptor
-
-        '
+      - cntk.device.DeviceDescriptor
   type: class
   uid: cntk.core.NDArrayView
 - class: cntk.core.NDArrayView
@@ -86,7 +84,7 @@ items:
     remote:
       branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'Retrieves the @cntk.device.DeviceDescriptor instance.
 
@@ -106,7 +104,7 @@ items:
     remote:
       branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'NumPy data type of the instance
 
@@ -122,12 +120,12 @@ items:
   name: from_csr
   source:
     id: from_csr
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/pythoncntk\internal\swig_helper.py
     remote:
       branch: master
-      path: bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 82
+      path: bindings/pythoncntk\internal\swig_helper.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 92
   summary: 'Create an @cntk.core.NDArrayView instance from a SciPy sparse array in
     CSR
 
@@ -152,9 +150,7 @@ items:
         '
       id: device
       type:
-      - '@cntk.device.DeviceDescriptor
-
-        '
+      - cntk.device.DeviceDescriptor
     - description: 'whether the data can be modified or
 
         not (default False)
@@ -163,7 +159,7 @@ items:
       id: read_only
       type:
       - bool, optional
-    - description: 'whether nd_arrary memory can be
+    - description: 'whether nd_array memory can be
 
         borrowed internally to speed up the data creation
 
@@ -198,12 +194,12 @@ items:
   name: from_data
   source:
     id: from_data
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/pythoncntk\internal\swig_helper.py
     remote:
       branch: master
-      path: bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 133
+      path: bindings/pythoncntk\internal\swig_helper.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 143
   summary: 'Create an @cntk.core.NDArrayView instance from a NumPy or SciPy sparse
 
     array in CSR format.
@@ -225,9 +221,7 @@ items:
         '
       id: device
       type:
-      - '@cntk.device.DeviceDescriptor
-
-        '
+      - cntk.device.DeviceDescriptor
     - description: 'whether the data can be modified or
 
         not (default False)
@@ -236,7 +230,7 @@ items:
       id: read_only
       type:
       - bool, optional
-    - description: 'whether nd_arrary memory can be
+    - description: 'whether nd_array memory can be
 
         borrowed internally to speed up the data creation
 
@@ -258,12 +252,12 @@ items:
   name: from_dense
   source:
     id: from_dense
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/pythoncntk\internal\swig_helper.py
     remote:
       branch: master
-      path: bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 49
+      path: bindings/pythoncntk\internal\swig_helper.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 57
   summary: 'Create an @cntk.core.NDArrayView instance from a NumPy array.
 
     '
@@ -283,10 +277,8 @@ items:
         '
       id: device
       type:
-      - '@cntk.device.DeviceDescriptor
-
-        '
-    - description: 'whether nd_arrary memory can be
+      - cntk.device.DeviceDescriptor
+    - description: 'whether nd_array memory can be
 
         borrowed internally to speed up the data creation
 
@@ -320,7 +312,7 @@ items:
     remote:
       branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'Whether the data is read-only
 
@@ -340,7 +332,7 @@ items:
     remote:
       branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'Whether the data is sparse or dense
 
@@ -360,7 +352,7 @@ items:
     remote:
       branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'The shape of this instance.
 
@@ -382,12 +374,12 @@ items:
   name: slice_view
   source:
     id: slice_view
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/pythoncntk\internal\swig_helper.py
     remote:
       branch: master
-      path: bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 176
+      path: bindings/pythoncntk\internal\swig_helper.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 186
   summary: 'Returns a sliced view of the instance.
 
     '

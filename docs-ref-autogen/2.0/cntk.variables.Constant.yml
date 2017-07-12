@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -26,12 +26,12 @@ items:
   name: Constant
   source:
     id: Constant
-    path: bindings/python\cntk\variables.py
+    path: bindings/pythoncntk\variables.py
     remote:
       branch: master
-      path: bindings/python\cntk\variables.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 419
+      path: bindings/pythoncntk\variables.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 424
   summary: 'A constant value. It can be a scalar, vector, matrix, or tensor
 
     of floating point numbers that cannot be modified.
@@ -64,9 +64,7 @@ items:
         '
       id: device
       type:
-      - '@cntk.device
-
-        '
+      - cntk.device.DeviceDescriptor
     - description: 'an optional name for this constant.
 
         '
@@ -87,7 +85,7 @@ items:
     remote:
       branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'NumPy array of the value
 

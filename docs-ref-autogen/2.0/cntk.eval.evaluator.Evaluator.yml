@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -17,11 +17,11 @@ items:
   name: Evaluator
   source:
     id: Evaluator
-    path: bindings/python\cntk\eval\evaluator.py
+    path: bindings/pythoncntk\eval\evaluator.py
     remote:
       branch: master
-      path: bindings/python\cntk\eval\evaluator.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\eval\evaluator.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 15
   summary: 'Class for evaluation of minibatches against the specified evaluation function.
 
@@ -37,9 +37,7 @@ items:
         '
       id: eval_function
       type:
-      - '@cntk.ops.functions.Function
-
-        '
+      - cntk.ops.functions.Function
     - description: 'optionally, list of progress writers from @cntk.utils to track
 
         training progress.
@@ -62,7 +60,7 @@ items:
     remote:
       branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'The evaluation function that the evaluator is using.
 
@@ -78,11 +76,11 @@ items:
   name: summarize_test_progress
   source:
     id: summarize_test_progress
-    path: bindings/python\cntk\eval\evaluator.py
+    path: bindings/pythoncntk\eval\evaluator.py
     remote:
       branch: master
-      path: bindings/python\cntk\eval\evaluator.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\eval\evaluator.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 86
   summary: 'Updates the progress writers with the summary of test progress since start
     and resets the internal
@@ -104,11 +102,11 @@ items:
   name: test_minibatch
   source:
     id: test_minibatch
-    path: bindings/python\cntk\eval\evaluator.py
+    path: bindings/pythoncntk\eval\evaluator.py
     remote:
       branch: master
-      path: bindings/python\cntk\eval\evaluator.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\eval\evaluator.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 38
   summary: "Test the evaluation function on the specified batch of samples.\n\nNote:\
     \ See @cntk.ops.functions.Function.forward for examples on passing input data.\
@@ -116,10 +114,10 @@ items:
   syntax:
     content: test_minibatch(arguments, device=None)
     parameters:
-    - defaultValue: None
-      id: self
+    - id: self
     - id: arguments
-    - id: device
+    - defaultValue: None
+      id: device
     return:
       description: 'the average evaluation criterion value per sample for the
 
@@ -127,7 +125,7 @@ items:
 
         '
       type:
-      - float
+      - '*float*'
   type: method
   uid: cntk.eval.evaluator.Evaluator.test_minibatch
 references:

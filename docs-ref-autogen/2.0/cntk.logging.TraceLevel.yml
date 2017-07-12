@@ -1,7 +1,10 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
-- children: []
+- children:
+  - cntk.logging.TraceLevel.Error
+  - cntk.logging.TraceLevel.Info
+  - cntk.logging.TraceLevel.Warning
   class: cntk.logging.TraceLevel
   fullName: cntk.logging.TraceLevel
   inheritance:
@@ -14,29 +17,61 @@ items:
   name: TraceLevel
   source:
     id: TraceLevel
-    path: bindings/python\cntk\logging\__init__.py
+    path: bindings/pythoncntk\logging\__init__.py
     remote:
       branch: master
-      path: bindings/python\cntk\logging\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 13
+      path: bindings/pythoncntk\logging\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 15
   summary: 'Describes different logging verbosity levels.
 
 
 
 
-
-
-    Error = 0
-
-
-    Info = 2
-
-
-    Warning = 1
-
     '
   syntax: {}
   type: class
   uid: cntk.logging.TraceLevel
+- fullName: cntk.logging.TraceLevel.Error
+  id: Error
+  langs:
+  - python
+  module: cntk.logging
+  name: Error
+  parent: cntk.logging.TraceLevel
+  syntax:
+    content: Error = 0
+    return:
+      type:
+      - cntk.logging.TraceLevel
+  type: attribute
+  uid: cntk.logging.TraceLevel.Error
+- fullName: cntk.logging.TraceLevel.Info
+  id: Info
+  langs:
+  - python
+  module: cntk.logging
+  name: Info
+  parent: cntk.logging.TraceLevel
+  syntax:
+    content: Info = 2
+    return:
+      type:
+      - cntk.logging.TraceLevel
+  type: attribute
+  uid: cntk.logging.TraceLevel.Info
+- fullName: cntk.logging.TraceLevel.Warning
+  id: Warning
+  langs:
+  - python
+  module: cntk.logging
+  name: Warning
+  parent: cntk.logging.TraceLevel
+  syntax:
+    content: Warning = 1
+    return:
+      type:
+      - cntk.logging.TraceLevel
+  type: attribute
+  uid: cntk.logging.TraceLevel.Warning
 references: []

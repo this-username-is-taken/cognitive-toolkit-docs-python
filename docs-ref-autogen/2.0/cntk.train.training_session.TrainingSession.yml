@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -16,11 +16,11 @@ items:
   name: TrainingSession
   source:
     id: TrainingSession
-    path: bindings/python\cntk\train\training_session.py
+    path: bindings/pythoncntk\train\training_session.py
     remote:
       branch: master
-      path: bindings/python\cntk\train\training_session.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\train\training_session.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 171
   summary: 'The instance of the class should be created by using @cntk.train.training_session.training_session
     function.
@@ -45,23 +45,19 @@ items:
         '
       id: trainer
       type:
-      - '@cntk.train.trainer
-
-        '
+      - cntk.train.trainer.Trainer
     - description: 'minibatch source used for training
 
         '
       id: mb_source
       type:
-      - '@cntk.io
-
-        '
+      - cntk.io.MinibatchSource
     - description: 'minibatch size schedule for training
 
         '
       id: mb_size
       type:
-      - "@cntk.cntk_py.minibatch_size_schedule\n or int"
+      - "cntk.cntk_py.minibatch_size_schedule\n or int"
     - description: 'mapping between input variables and input streams
 
         '
@@ -85,25 +81,19 @@ items:
         '
       id: checkpoint_config
       type:
-      - '@cntk.train.training_session.CheckpointConfig
-
-        '
+      - cntk.train.training_session.CheckpointConfig
     - description: 'cross validation configuration
 
         '
       id: cv_config
       type:
-      - '@cntk.train.training_session.CrossValidationConfig
-
-        '
+      - cntk.train.training_session.CrossValidationConfig
     - description: 'test configuration
 
         '
       id: test_config
       type:
-      - '@cntk.train.training_session.TestConfig
-
-        '
+      - cntk.train.training_session.TestConfig
   type: class
   uid: cntk.train.training_session.TrainingSession
 - class: cntk.train.training_session.TrainingSession
@@ -114,11 +104,11 @@ items:
   name: on_cross_validation_end
   source:
     id: on_cross_validation_end
-    path: bindings/python\cntk\train\training_session.py
+    path: bindings/pythoncntk\train\training_session.py
     remote:
       branch: master
-      path: bindings/python\cntk\train\training_session.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\train\training_session.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 278
   summary: 'Callback that gets executed at the end of cross validation.
 
@@ -126,7 +116,6 @@ items:
   syntax:
     content: on_cross_validation_end(index, average_error, num_samples, num_minibatches)
     parameters:
-    - id: self
     - description: 'index of the current callback.
 
         '
@@ -165,11 +154,11 @@ items:
   name: train
   source:
     id: train
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/pythoncntk\internal\swig_helper.py
     remote:
       branch: master
-      path: bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\internal\swig_helper.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 263
   summary: 'Perform training on a specified device.
 
@@ -184,9 +173,7 @@ items:
         '
       id: device
       type:
-      - '@cntk.device
-
-        '
+      - cntk.device.DeviceDescriptor
   type: method
   uid: cntk.train.training_session.TrainingSession.train
 references:

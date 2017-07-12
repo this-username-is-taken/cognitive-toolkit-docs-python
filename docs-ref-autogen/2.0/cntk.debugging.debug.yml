@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -13,11 +13,11 @@ items:
   name: debug
   source:
     id: debug
-    path: bindings/python\cntk\debugging\debug.py
+    path: bindings/pythoncntk\debugging\debug.py
     remote:
       branch: master
-      path: bindings/python\cntk\debugging\debug.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\debugging\debug.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 0
   summary: "In order to debug a graph one simply needs to wrap the root node as follows::\n\
     \n\n    # ... setting up the model in z\n    from cntk.debugging import debug_model\n\
@@ -60,11 +60,11 @@ items:
   name: debug_model
   source:
     id: debug_model
-    path: bindings/python\cntk\debugging\debug.py
+    path: bindings/pythoncntk\debugging\debug.py
     remote:
       branch: master
-      path: bindings/python\cntk\debugging\debug.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\debugging\debug.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 402
   summary: 'Returns a cloned model that has debug nodes inserted everywhere. When
     the
@@ -81,7 +81,7 @@ items:
       id: model
       type:
       - root node
-    - defaultValue: <built-in function exit>
+    - defaultValue: <_io.TextIOWrapper name='<stdin>' mode='r' encoding='cp437'>
       description: '*readline()*
 
         will be called on it to obtain user input
@@ -90,7 +90,7 @@ items:
       id: in_stream
       type:
       - object behaving like sys.stdin, default stdin
-    - defaultValue: <colorama.ansitowin32.StreamWrapper object at 0x000002738EEBDB38>
+    - defaultValue: <colorama.ansitowin32.StreamWrapper object at 0x000000A21DADE198>
       description: '*write()*
 
         and *flush()* will be called on it to output debug info to the user
@@ -99,7 +99,7 @@ items:
       id: out_stream
       type:
       - object behaving like sys.stdout, default stdout
-    - defaultValue: <_io.TextIOWrapper name='<stdin>' mode='r' encoding='cp936'>
+    - defaultValue: <built-in function exit>
       description: 'callable that takes an exit code and is called,
 
         when the user exits the debugging process
@@ -121,11 +121,11 @@ items:
   name: save_as_legacy_model
   source:
     id: save_as_legacy_model
-    path: bindings/python\cntk\debugging\debug.py
+    path: bindings/pythoncntk\debugging\debug.py
     remote:
       branch: master
-      path: bindings/python\cntk\debugging\debug.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\debugging\debug.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 84
   summary: 'Save the network of `root_op` in `filename`.
 
@@ -140,9 +140,7 @@ items:
         '
       id: root_op
       type:
-      - '@cntk.ops.functions.Function
-
-        '
+      - cntk.ops.functions.Function
     - description: 'filename to store the model in.
 
         '
@@ -158,14 +156,14 @@ items:
   name: set_checked_mode
   source:
     id: set_checked_mode
-    path: bindings/python\cntk\debugging\debug.py
+    path: bindings/pythoncntk\debugging\debug.py
     remote:
       branch: master
-      path: bindings/python\cntk\debugging\debug.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\debugging\debug.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 107
   summary: "   Checked mode enables additional runtime verification such as:\n   \
-    \   * Tracking NaN occurences in sequence gaps. \n\n      * Function graph verification\
+    \   * Tracking NaN occurrences in sequence gaps. \n\n      * Function graph verification\
     \ after binding of free static axes to actual values at runtime \n\n   Enabling\
     \ checked mode incurs additional runtime costs and is meant to be used as a debugging\
     \ aid.\n"
@@ -187,11 +185,11 @@ items:
   name: set_computation_network_trace_level
   source:
     id: set_computation_network_trace_level
-    path: bindings/python\cntk\debugging\debug.py
+    path: bindings/pythoncntk\debugging\debug.py
     remote:
       branch: master
-      path: bindings/python\cntk\debugging\debug.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\debugging\debug.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 121
   summary: "Set trace level to the computation network. Currently supported values:\n\
     \n   0\n      turn off trace\n\n   1\n      output nodes' dimensions and some\

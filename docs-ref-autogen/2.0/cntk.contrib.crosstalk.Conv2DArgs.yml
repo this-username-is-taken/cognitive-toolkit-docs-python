@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children: []
@@ -16,11 +16,11 @@ items:
   name: Conv2DArgs
   source:
     id: Conv2DArgs
-    path: bindings/python\cntk\contrib\crosstalk\__init__.py
+    path: bindings/pythoncntk\contrib\crosstalk\__init__.py
     remote:
       branch: master
-      path: bindings/python\cntk\contrib\crosstalk\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\contrib\crosstalk\__init__.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 53
   summary: "Args inside Conv2D variable. Conv2D output is in NCHW format\n\nW\n  \
     \ The numpy ndarray of filter parameter in shape (num_filters, filter_w, filter_h,))\n\

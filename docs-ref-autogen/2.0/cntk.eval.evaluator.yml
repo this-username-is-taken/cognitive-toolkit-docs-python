@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -10,11 +10,11 @@ items:
   name: evaluator
   source:
     id: evaluator
-    path: bindings/python\cntk\eval\evaluator.py
+    path: bindings/pythoncntk\eval\evaluator.py
     remote:
       branch: master
-      path: bindings/python\cntk\eval\evaluator.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\eval\evaluator.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 0
   summary: 'An evaluator provides functionality to evaluate minibatches against the
     specified evaluation function.

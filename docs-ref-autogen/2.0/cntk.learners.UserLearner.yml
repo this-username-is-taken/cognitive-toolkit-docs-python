@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -15,12 +15,12 @@ items:
   name: UserLearner
   source:
     id: UserLearner
-    path: bindings/python\cntk\learners\__init__.py
+    path: bindings/pythoncntk\learners\__init__.py
     remote:
       branch: master
-      path: bindings/python\cntk\learners\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 166
+      path: bindings/pythoncntk\learners\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 170
   summary: 'Base class of all user-defined learners. To implement your own learning
 
     algorithm, derive from this class and override the @cntk.learners.UserLearner.update.
@@ -44,19 +44,18 @@ items:
   name: update
   source:
     id: update
-    path: bindings/python\cntk\learners\__init__.py
+    path: bindings/pythoncntk\learners\__init__.py
     remote:
       branch: master
-      path: bindings/python\cntk\learners\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 207
+      path: bindings/pythoncntk\learners\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 211
   summary: 'Update the parameters associated with this learner.
 
     '
   syntax:
     content: update(gradient_values, training_sample_count, sweep_end)
     parameters:
-    - id: self
     - description: 'maps @cntk.variables.Parameter to
 
         a NumPy array containing the first order gradient values for the

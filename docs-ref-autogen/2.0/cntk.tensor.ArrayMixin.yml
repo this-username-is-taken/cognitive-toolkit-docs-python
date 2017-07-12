@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -13,12 +13,12 @@ items:
   name: ArrayMixin
   source:
     id: ArrayMixin
-    path: bindings/python\cntk\tensor.py
+    path: bindings/pythoncntk\tensor.py
     remote:
       branch: master
-      path: bindings/python\cntk\tensor.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 167
+      path: bindings/pythoncntk\tensor.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 171
   syntax: {}
   type: class
   uid: cntk.tensor.ArrayMixin
@@ -30,12 +30,12 @@ items:
   name: asarray
   source:
     id: asarray
-    path: bindings/python\cntk\tensor.py
+    path: bindings/pythoncntk\tensor.py
     remote:
       branch: master
-      path: bindings/python\cntk\tensor.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 168
+      path: bindings/pythoncntk\tensor.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 172
   summary: 'Converts the instance''s data to a NumPy array.
 
     '

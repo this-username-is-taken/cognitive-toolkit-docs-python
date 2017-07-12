@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -17,12 +17,12 @@ items:
   name: Record
   source:
     id: Record
-    path: bindings/python\cntk\variables.py
+    path: bindings/pythoncntk\variables.py
     remote:
       branch: master
-      path: bindings/python\cntk\variables.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 11
+      path: bindings/pythoncntk\variables.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 16
   summary: 'Easy construction of a record (=immutable singleton class) from keyword
     arguments.
 
@@ -53,12 +53,12 @@ items:
   name: updated_with
   source:
     id: updated_with
-    path: bindings/python\cntk\variables.py
+    path: bindings/pythoncntk\variables.py
     remote:
       branch: master
-      path: bindings/python\cntk\variables.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 37
+      path: bindings/pythoncntk\variables.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 42
   summary: 'Create a new Record from an existing one with members modified or added.
 
     '

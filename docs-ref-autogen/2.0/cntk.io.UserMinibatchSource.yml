@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -21,12 +21,12 @@ items:
   name: UserMinibatchSource
   source:
     id: UserMinibatchSource
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/pythoncntk\io\__init__.py
     remote:
       branch: master
-      path: bindings/python\cntk\io\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 377
+      path: bindings/pythoncntk\io\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 389
   summary: 'Base class of all user minibatch sources.
 
 
@@ -47,12 +47,12 @@ items:
   name: get_checkpoint_state
   source:
     id: get_checkpoint_state
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/pythoncntk\io\__init__.py
     remote:
       branch: master
-      path: bindings/python\cntk\io\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 443
+      path: bindings/pythoncntk\io\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 458
   summary: 'Returns a dictionary describing the current state of the minibatch
 
     source. Needs to be overwritten if the state of the minibatch source
@@ -78,12 +78,12 @@ items:
   name: next_minibatch
   source:
     id: next_minibatch
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/pythoncntk\io\__init__.py
     remote:
       branch: master
-      path: bindings/python\cntk\io\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 409
+      path: bindings/pythoncntk\io\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 421
   summary: 'Function to be implemented by the user.
 
     '
@@ -102,13 +102,23 @@ items:
       id: number_of_workers
       type:
       - int
-    - defaultValue: None
-      description: 'worker for which the data is to be returned
+    - description: 'worker for which the data is to be returned
 
         '
       id: worker_rank
       type:
       - int
+    - defaultValue: None
+      description: 'the device
+
+        descriptor that contains the type and id of the device on which the
+
+        computation is performed. If *None*, the default device is used.
+
+        '
+      id: device
+      type:
+      - DeviceDescriptor, defaults to None
     return:
       description: 'mapping of @cntk.io.StreamInformation to @cntk.io.MinibatchData
 
@@ -123,19 +133,18 @@ items:
   name: restore_from_checkpoint
   source:
     id: restore_from_checkpoint
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/pythoncntk\io\__init__.py
     remote:
       branch: master
-      path: bindings/python\cntk\io\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 454
+      path: bindings/pythoncntk\io\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 469
   summary: 'Sets the state of the checkpoint.
 
     '
   syntax:
     content: restore_from_checkpoint(state)
     parameters:
-    - id: self
     - description: 'dictionary containing the state
 
         '
@@ -152,12 +161,12 @@ items:
   name: stream_info
   source:
     id: stream_info
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/pythoncntk\io\__init__.py
     remote:
       branch: master
-      path: bindings/python\cntk\io\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 401
+      path: bindings/pythoncntk\io\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 413
   summary: 'Gets the description of the stream with given name.
 
     Throws an exception if there are none or multiple streams with this
@@ -180,12 +189,12 @@ items:
   name: stream_infos
   source:
     id: stream_infos
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/pythoncntk\io\__init__.py
     remote:
       branch: master
-      path: bindings/python\cntk\io\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 387
+      path: bindings/pythoncntk\io\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 399
   summary: 'Function to be implemented by the user.
 
     '

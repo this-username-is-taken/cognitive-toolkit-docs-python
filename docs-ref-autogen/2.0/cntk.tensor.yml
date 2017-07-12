@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -11,12 +11,15 @@ items:
   name: tensor
   source:
     id: tensor
-    path: bindings/python\cntk\tensor.py
+    path: bindings/pythoncntk\tensor.py
     remote:
       branch: master
-      path: bindings/python\cntk\tensor.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\tensor.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 0
+  summary: 'Tensor operations.
+
+    '
   type: module
   uid: cntk.tensor
 references:

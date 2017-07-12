@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children: []
@@ -14,11 +14,11 @@ items:
   name: TestConfig
   source:
     id: TestConfig
-    path: bindings/python\cntk\train\training_session.py
+    path: bindings/pythoncntk\train\training_session.py
     remote:
       branch: master
-      path: bindings/python\cntk\train\training_session.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\train\training_session.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 125
   summary: 'A test configuration for the training session.
 
@@ -32,9 +32,7 @@ items:
         '
       id: minibatch_source
       type:
-      - '@cntk.io
-
-        '
+      - cntk.io.MinibatchSource
     - description: 'minibatch schedule for cross validation
 
         '
@@ -60,17 +58,13 @@ items:
         '
       id: criterion
       type:
-      - '@cntk.ops.functions
-
-        '
+      - cntk.ops.functions.Function
     - description: 'DEPRECATED, use minibatch_source instead
 
         '
       id: source
       type:
-      - '@cntk.io
-
-        '
+      - cntk.io.MinibatchSource
     - description: 'DEPRECATED, use minibatch_size instead
 
         '

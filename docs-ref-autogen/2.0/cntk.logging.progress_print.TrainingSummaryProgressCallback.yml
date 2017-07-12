@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -19,17 +19,17 @@ items:
   name: TrainingSummaryProgressCallback
   source:
     id: TrainingSummaryProgressCallback
-    path: bindings/python\cntk\logging\progress_print.py
+    path: bindings/pythoncntk\logging\progress_print.py
     remote:
       branch: master
-      path: bindings/python\cntk\logging\progress_print.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\logging\progress_print.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 522
   summary: 'Helper to pass a callback function to be called after each training epoch
 
     to @cntk.train.trainer.Trainer,
 
-    @cntk.eval.evaluator, and @cntk.train.training_session.TrainingSession,
+    @cntk.eval.evaluator.Evaluator, and @cntk.train.training_session.TrainingSession,
 
     as well a @cntk.ops.functions.Function.train, @cntk.ops.functions.Function.test.
 
@@ -67,11 +67,11 @@ items:
   name: on_write_test_summary
   source:
     id: on_write_test_summary
-    path: bindings/python\cntk\logging\progress_print.py
+    path: bindings/pythoncntk\logging\progress_print.py
     remote:
       branch: master
-      path: bindings/python\cntk\logging\progress_print.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\logging\progress_print.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 547
   syntax:
     content: on_write_test_summary(samples, updates, summaries, aggregate_metric,
@@ -93,11 +93,11 @@ items:
   name: on_write_test_update
   source:
     id: on_write_test_update
-    path: bindings/python\cntk\logging\progress_print.py
+    path: bindings/pythoncntk\logging\progress_print.py
     remote:
       branch: master
-      path: bindings/python\cntk\logging\progress_print.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\logging\progress_print.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 542
   syntax:
     content: on_write_test_update(*args, **kwargs)
@@ -113,11 +113,11 @@ items:
   name: on_write_training_summary
   source:
     id: on_write_training_summary
-    path: bindings/python\cntk\logging\progress_print.py
+    path: bindings/pythoncntk\logging\progress_print.py
     remote:
       branch: master
-      path: bindings/python\cntk\logging\progress_print.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\logging\progress_print.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 544
   syntax:
     content: on_write_training_summary(samples, updates, summaries, aggregate_loss,
@@ -140,11 +140,11 @@ items:
   name: on_write_training_update
   source:
     id: on_write_training_update
-    path: bindings/python\cntk\logging\progress_print.py
+    path: bindings/pythoncntk\logging\progress_print.py
     remote:
       branch: master
-      path: bindings/python\cntk\logging\progress_print.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\logging\progress_print.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 540
   syntax:
     content: on_write_training_update(samples, updates, aggregate_loss, aggregate_metric)
@@ -164,11 +164,11 @@ items:
   name: write
   source:
     id: write
-    path: bindings/python\cntk\logging\progress_print.py
+    path: bindings/pythoncntk\logging\progress_print.py
     remote:
       branch: master
-      path: bindings/python\cntk\logging\progress_print.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\logging\progress_print.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 549
   syntax:
     content: write(*args, **kwargs)

@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -18,11 +18,11 @@ items:
   name: DistributedLearner
   source:
     id: DistributedLearner
-    path: bindings/python\cntk\train\distributed.py
+    path: bindings/pythoncntk\train\distributed.py
     remote:
       branch: master
-      path: bindings/python\cntk\train\distributed.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\train\distributed.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 100
   summary: 'A distributed learner that handles data like gradients/momentums across
     multiple MPI workers
@@ -42,11 +42,11 @@ items:
   name: communicator
   source:
     id: communicator
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/pythoncntk\internal\swig_helper.py
     remote:
       branch: master
-      path: bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\internal\swig_helper.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 105
   summary: 'Returns the distributed communicator that talks to other MPI workers
 
@@ -58,7 +58,7 @@ items:
 
         '
       type:
-      - Communicator
+      - cntk.train.distributed.Communicator
   type: method
   uid: cntk.train.distributed.DistributedLearner.communicator
 - class: cntk.train.distributed.DistributedLearner
@@ -73,7 +73,7 @@ items:
     remote:
       branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'The number of samples seen by the distributed learner.
 

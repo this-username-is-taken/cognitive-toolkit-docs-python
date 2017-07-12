@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children: []
@@ -16,11 +16,11 @@ items:
   name: RnnArgs
   source:
     id: RnnArgs
-    path: bindings/python\cntk\contrib\crosstalk\__init__.py
+    path: bindings/pythoncntk\contrib\crosstalk\__init__.py
     remote:
       branch: master
-      path: bindings/python\cntk\contrib\crosstalk\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\contrib\crosstalk\__init__.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 82
   summary: "Args inside RNN variable.\n\nfw_W\n   The numpy ndarray of input projection\
     \ parameter for RNN forward in shape (input_dim, num_gates * hidden_dim)\n\nfw_H\n\

@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -31,12 +31,12 @@ items:
   name: Parameter
   source:
     id: Parameter
-    path: bindings/python\cntk\variables.py
+    path: bindings/pythoncntk\variables.py
     remote:
       branch: master
-      path: bindings/python\cntk\variables.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 326
+      path: bindings/pythoncntk\variables.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 331
   summary: 'A trainable parameter. It can be a scalar, vector, matrix, or tensor
 
     of floating point numbers that can be modified by a training
@@ -81,9 +81,7 @@ items:
         '
       id: device
       type:
-      - '@cntk.device
-
-        '
+      - cntk.device.DeviceDescriptor
     - description: 'an optional name for this parameter
 
         '
@@ -104,7 +102,7 @@ items:
     remote:
       branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'Value of the Parameter
 

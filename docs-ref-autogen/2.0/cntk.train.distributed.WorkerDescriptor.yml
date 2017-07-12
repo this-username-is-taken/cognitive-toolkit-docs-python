@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -16,11 +16,11 @@ items:
   name: WorkerDescriptor
   source:
     id: WorkerDescriptor
-    path: bindings/python\cntk\train\distributed.py
+    path: bindings/pythoncntk\train\distributed.py
     remote:
       branch: master
-      path: bindings/python\cntk\train\distributed.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\train\distributed.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 22
   summary: 'Distributed worker descriptor, returned by @cntk.train.distributed.Communicator
     instance.
@@ -44,7 +44,7 @@ items:
     remote:
       branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'The global rank of the worker.
 
@@ -64,7 +64,7 @@ items:
     remote:
       branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'The host id of the worker.
 

@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children: []
@@ -12,12 +12,12 @@ items:
   name: default_override_or
   source:
     id: default_override_or
-    path: bindings/python\cntk\default_options.py
+    path: bindings/pythoncntk\default_options.py
     remote:
       branch: master
-      path: bindings/python\cntk\default_options.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 49
+      path: bindings/pythoncntk\default_options.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 55
   syntax:
     content: default_override_or(value)
   type: class

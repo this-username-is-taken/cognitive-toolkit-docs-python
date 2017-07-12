@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -19,12 +19,15 @@ items:
   name: initializer
   source:
     id: initializer
-    path: bindings/python\cntk\initializer.py
+    path: bindings/pythoncntk\initializer.py
     remote:
       branch: master
-      path: bindings/python\cntk\initializer.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\initializer.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 0
+  summary: 'Initializers of parameters.
+
+    '
   type: module
   uid: cntk.initializer
 - fullName: cntk.initializer.bilinear
@@ -34,12 +37,12 @@ items:
   name: bilinear
   source:
     id: bilinear
-    path: bindings/python\cntk\initializer.py
+    path: bindings/pythoncntk\initializer.py
     remote:
       branch: master
-      path: bindings/python\cntk\initializer.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 149
+      path: bindings/pythoncntk\initializer.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 153
   summary: 'initializer
 
     '
@@ -73,12 +76,12 @@ items:
   name: glorot_normal
   source:
     id: glorot_normal
-    path: bindings/python\cntk\initializer.py
+    path: bindings/pythoncntk\initializer.py
     remote:
       branch: master
-      path: bindings/python\cntk\initializer.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 89
+      path: bindings/pythoncntk\initializer.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 93
   summary: 'initializer
 
     '
@@ -86,7 +89,7 @@ items:
     content: glorot_normal(scale=1, output_rank=2147483647, filter_rank=2147483647,
       seed=None)
     parameters:
-    - defaultValue: '2147483647'
+    - defaultValue: '1'
       description: 'scale
 
         '
@@ -100,14 +103,15 @@ items:
       id: output_rank
       type:
       - int
-    - defaultValue: '1'
+    - defaultValue: '2147483647'
       description: 'filter rank
 
         '
       id: filter_rank
       type:
       - int
-    - description: 'random seed
+    - defaultValue: None
+      description: 'random seed
 
         '
       id: seed
@@ -130,12 +134,12 @@ items:
   name: glorot_uniform
   source:
     id: glorot_uniform
-    path: bindings/python\cntk\initializer.py
+    path: bindings/pythoncntk\initializer.py
     remote:
       branch: master
-      path: bindings/python\cntk\initializer.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 69
+      path: bindings/pythoncntk\initializer.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 73
   summary: 'Glorot initializer
 
     '
@@ -143,7 +147,7 @@ items:
     content: glorot_uniform(scale=1, output_rank=2147483647, filter_rank=2147483647,
       seed=None)
     parameters:
-    - defaultValue: '2147483647'
+    - defaultValue: '1'
       description: 'scale
 
         '
@@ -157,14 +161,15 @@ items:
       id: output_rank
       type:
       - int
-    - defaultValue: '1'
+    - defaultValue: '2147483647'
       description: 'filter rank
 
         '
       id: filter_rank
       type:
       - int
-    - description: 'random seed
+    - defaultValue: None
+      description: 'random seed
 
         '
       id: seed
@@ -187,19 +192,19 @@ items:
   name: he_normal
   source:
     id: he_normal
-    path: bindings/python\cntk\initializer.py
+    path: bindings/pythoncntk\initializer.py
     remote:
       branch: master
-      path: bindings/python\cntk\initializer.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 129
+      path: bindings/pythoncntk\initializer.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 133
   summary: 'initializer
 
     '
   syntax:
     content: he_normal(scale=1, output_rank=2147483647, filter_rank=2147483647, seed=None)
     parameters:
-    - defaultValue: '2147483647'
+    - defaultValue: '1'
       description: 'scale
 
         '
@@ -213,14 +218,15 @@ items:
       id: output_rank
       type:
       - int
-    - defaultValue: '1'
+    - defaultValue: '2147483647'
       description: 'filter rank
 
         '
       id: filter_rank
       type:
       - int
-    - description: 'random seed
+    - defaultValue: None
+      description: 'random seed
 
         '
       id: seed
@@ -243,19 +249,19 @@ items:
   name: he_uniform
   source:
     id: he_uniform
-    path: bindings/python\cntk\initializer.py
+    path: bindings/pythoncntk\initializer.py
     remote:
       branch: master
-      path: bindings/python\cntk\initializer.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 109
+      path: bindings/pythoncntk\initializer.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 113
   summary: 'initializer
 
     '
   syntax:
     content: he_uniform(scale=1, output_rank=2147483647, filter_rank=2147483647, seed=None)
     parameters:
-    - defaultValue: '2147483647'
+    - defaultValue: '1'
       description: 'scale
 
         '
@@ -269,14 +275,15 @@ items:
       id: output_rank
       type:
       - int
-    - defaultValue: '1'
+    - defaultValue: '2147483647'
       description: 'filter rank
 
         '
       id: filter_rank
       type:
       - int
-    - description: 'random seed
+    - defaultValue: None
+      description: 'random seed
 
         '
       id: seed
@@ -299,12 +306,12 @@ items:
   name: initializer_with_rank
   source:
     id: initializer_with_rank
-    path: bindings/python\cntk\initializer.py
+    path: bindings/pythoncntk\initializer.py
     remote:
       branch: master
-      path: bindings/python\cntk\initializer.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 163
+      path: bindings/pythoncntk\initializer.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 167
   summary: 'override output_rank and filter_rank specification in a random initializer
 
     constructed without an explicit output_rank and filter_rank specification
@@ -346,12 +353,12 @@ items:
   name: normal
   source:
     id: normal
-    path: bindings/python\cntk\initializer.py
+    path: bindings/pythoncntk\initializer.py
     remote:
       branch: master
-      path: bindings/python\cntk\initializer.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 30
+      path: bindings/pythoncntk\initializer.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 34
   summary: 'Normal initializer
 
     '
@@ -364,7 +371,7 @@ items:
       id: scale
       type:
       - float
-    - defaultValue: None
+    - defaultValue: '2147483647'
       description: 'output rank
 
         '
@@ -378,7 +385,7 @@ items:
       id: filter_rank
       type:
       - int
-    - defaultValue: '2147483647'
+    - defaultValue: None
       description: 'random seed
 
         '
@@ -400,12 +407,12 @@ items:
   name: truncated_normal
   source:
     id: truncated_normal
-    path: bindings/python\cntk\initializer.py
+    path: bindings/pythoncntk\initializer.py
     remote:
       branch: master
-      path: bindings/python\cntk\initializer.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 183
+      path: bindings/pythoncntk\initializer.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 187
   summary: 'Truncated normal initializer. The resulting values are drawn from
 
     a truncated normal distribution and are always within two
@@ -444,12 +451,12 @@ items:
   name: uniform
   source:
     id: uniform
-    path: bindings/python\cntk\initializer.py
+    path: bindings/pythoncntk\initializer.py
     remote:
       branch: master
-      path: bindings/python\cntk\initializer.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 12
+      path: bindings/pythoncntk\initializer.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 16
   summary: 'Uniform initializer
 
     '
@@ -486,19 +493,19 @@ items:
   name: xavier
   source:
     id: xavier
-    path: bindings/python\cntk\initializer.py
+    path: bindings/pythoncntk\initializer.py
     remote:
       branch: master
-      path: bindings/python\cntk\initializer.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 49
+      path: bindings/pythoncntk\initializer.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 53
   summary: 'Xavier initializer
 
     '
   syntax:
     content: xavier(scale=1, output_rank=2147483647, filter_rank=2147483647, seed=None)
     parameters:
-    - defaultValue: '2147483647'
+    - defaultValue: '1'
       description: 'scale
 
         '
@@ -512,14 +519,15 @@ items:
       id: output_rank
       type:
       - int
-    - defaultValue: '1'
+    - defaultValue: '2147483647'
       description: 'filter rank
 
         '
       id: filter_rank
       type:
       - int
-    - description: 'random seed
+    - defaultValue: None
+      description: 'random seed
 
         '
       id: seed

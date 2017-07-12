@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -10,7 +10,6 @@ items:
   - cntk.random.normal_like
   - cntk.random.uniform
   - cntk.random.uniform_like
-  - cntk.random.tests
   fullName: cntk.random
   langs:
   - python
@@ -18,12 +17,15 @@ items:
   name: random
   source:
     id: random
-    path: bindings/python\cntk\random\__init__.py
+    path: bindings/pythoncntk\random\__init__.py
     remote:
       branch: master
-      path: bindings/python\cntk\random\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\random\__init__.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 0
+  summary: 'Functions that generate random numbers with respect to designated distributions.
+
+    '
   type: package
   uid: cntk.random
 - example:
@@ -38,12 +40,12 @@ items:
   name: bernoulli
   source:
     id: bernoulli
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/pythoncntk\internal\swig_helper.py
     remote:
       branch: master
-      path: bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 101
+      path: bindings/pythoncntk\internal\swig_helper.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 105
   summary: 'Generates samples from the Bernoulli distribution with success probability
     *mean*.
 
@@ -84,7 +86,7 @@ items:
       type:
       - str, optional
     return:
-      description: '@cntk.ops.functions
+      description: '@cntk.ops.functions.Function
 
         '
   type: function
@@ -103,12 +105,12 @@ items:
   name: bernoulli_like
   source:
     id: bernoulli_like
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/pythoncntk\internal\swig_helper.py
     remote:
       branch: master
-      path: bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 225
+      path: bindings/pythoncntk\internal\swig_helper.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 229
   summary: 'Generates samples from the Bernoulli distribution with success probability
     *mean*.
 
@@ -141,7 +143,7 @@ items:
       type:
       - str, optional
     return:
-      description: '@cntk.ops.functions
+      description: '@cntk.ops.functions.Function
 
         '
   type: function
@@ -160,12 +162,12 @@ items:
     \ \n"
   source:
     id: gumbel
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/pythoncntk\internal\swig_helper.py
     remote:
       branch: master
-      path: bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 70
+      path: bindings/pythoncntk\internal\swig_helper.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 74
   summary: 'Generates samples from the Gumbel distribution with location *loc* and
     scale *scale*.
 
@@ -212,7 +214,7 @@ items:
       type:
       - str, optional
     return:
-      description: '@cntk.ops.functions
+      description: '@cntk.ops.functions.Function
 
         '
   type: function
@@ -235,12 +237,12 @@ items:
     \ \n"
   source:
     id: gumbel_like
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/pythoncntk\internal\swig_helper.py
     remote:
       branch: master
-      path: bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 188
+      path: bindings/pythoncntk\internal\swig_helper.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 192
   summary: 'Generates samples from the Gumbel distribution with location *loc* and
     scale *scale*.
 
@@ -279,7 +281,7 @@ items:
       type:
       - str, optional
     return:
-      description: '@cntk.ops.functions
+      description: '@cntk.ops.functions.Function
 
         '
   type: function
@@ -296,12 +298,12 @@ items:
   name: normal
   source:
     id: normal
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/pythoncntk\internal\swig_helper.py
     remote:
       branch: master
-      path: bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 43
+      path: bindings/pythoncntk\internal\swig_helper.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 47
   summary: 'Generates samples from the normal distribution with mean *mean* and standard
     deviation *scale*.
 
@@ -348,7 +350,7 @@ items:
       type:
       - str, optional
     return:
-      description: '@cntk.ops.functions
+      description: '@cntk.ops.functions.Function
 
         '
   type: function
@@ -369,12 +371,12 @@ items:
   name: normal_like
   source:
     id: normal_like
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/pythoncntk\internal\swig_helper.py
     remote:
       branch: master
-      path: bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 156
+      path: bindings/pythoncntk\internal\swig_helper.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 160
   summary: 'Generates samples from the normal distribution with mean *mean* and standard
     deviation *scale*.
 
@@ -413,7 +415,7 @@ items:
       type:
       - str, optional
     return:
-      description: '@cntk.ops.functions
+      description: '@cntk.ops.functions.Function
 
         '
   type: function
@@ -430,12 +432,12 @@ items:
   name: uniform
   source:
     id: uniform
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/pythoncntk\internal\swig_helper.py
     remote:
       branch: master
-      path: bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 15
+      path: bindings/pythoncntk\internal\swig_helper.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 19
   summary: 'Generates samples from the uniform distribution in the interval [*low*,`high`).
 
     '
@@ -481,7 +483,7 @@ items:
       type:
       - str, optional
     return:
-      description: '@cntk.ops.functions
+      description: '@cntk.ops.functions.Function
 
         '
   type: function
@@ -500,12 +502,12 @@ items:
   name: uniform_like
   source:
     id: uniform_like
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/pythoncntk\internal\swig_helper.py
     remote:
       branch: master
-      path: bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 127
+      path: bindings/pythoncntk\internal\swig_helper.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 131
   summary: 'Generates samples from the uniform distribution in the interval [*low*,`high`).
 
     '
@@ -543,7 +545,7 @@ items:
       type:
       - str, optional
     return:
-      description: '@cntk.ops.functions
+      description: '@cntk.ops.functions.Function
 
         '
   type: function
@@ -589,8 +591,3 @@ references:
   name: uniform_like
   parent: cntk.random
   uid: cntk.random.uniform_like
-- fullName: cntk.random.tests
-  isExternal: false
-  name: tests
-  parent: cntk.random
-  uid: cntk.random.tests

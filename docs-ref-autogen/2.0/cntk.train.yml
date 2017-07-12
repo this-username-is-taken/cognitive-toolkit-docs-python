@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -12,12 +12,15 @@ items:
   name: train
   source:
     id: train
-    path: bindings/python\cntk\train\__init__.py
+    path: bindings/pythoncntk\train\__init__.py
     remote:
       branch: master
-      path: bindings/python\cntk\train\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\train\__init__.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 0
+  summary: 'Utilities for training.
+
+    '
   type: package
   uid: cntk.train
 references:

@@ -1,4 +1,4 @@
-#YamlMime:PythonReference
+### YamlMime:UniversalReference
 api_name: []
 items:
 - children:
@@ -14,12 +14,15 @@ items:
   name: logging
   source:
     id: logging
-    path: bindings/python\cntk\logging\__init__.py
+    path: bindings/pythoncntk\logging\__init__.py
     remote:
       branch: master
-      path: bindings/python\cntk\logging\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
+      path: bindings/pythoncntk\logging\__init__.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 0
+  summary: 'Utilities for logging.
+
+    '
   type: package
   uid: cntk.logging
 - fullName: cntk.logging.get_trace_level
@@ -29,12 +32,12 @@ items:
   name: get_trace_level
   source:
     id: get_trace_level
-    path: bindings/python\cntk\logging\__init__.py
+    path: bindings/pythoncntk\logging\__init__.py
     remote:
       branch: master
-      path: bindings/python\cntk\logging\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 42
+      path: bindings/pythoncntk\logging\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 44
   summary: 'Returns current logging verbosity level.
 
     '
@@ -45,7 +48,7 @@ items:
 
         '
       type:
-      - TraceLevel
+      - cntk.logging.TraceLevel
   type: function
   uid: cntk.logging.get_trace_level
 - fullName: cntk.logging.set_trace_level
@@ -55,12 +58,12 @@ items:
   name: set_trace_level
   source:
     id: set_trace_level
-    path: bindings/python\cntk\logging\__init__.py
+    path: bindings/pythoncntk\logging\__init__.py
     remote:
       branch: master
-      path: bindings/python\cntk\logging\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 30
+      path: bindings/pythoncntk\logging\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 32
   summary: 'Specifies global logging verbosity level.
 
     '
@@ -72,9 +75,7 @@ items:
         '
       id: value
       type:
-      - '@cntk.logging.TraceLevel
-
-        '
+      - cntk.logging.TraceLevel
   type: function
   uid: cntk.logging.set_trace_level
 references:
