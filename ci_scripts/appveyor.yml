@@ -5,15 +5,6 @@ image: appveyor-build
 configuration: Release
 
 init:
-    - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-
-
-environment:
-  github_access_token:
-    secure: DpN0M7pZDocpyv+muc15qHDKz9lMJ7Zr34aMC0HtOdeVkbTERuKkxq4WHAd3S33v
-  APPVEYOR_RDP_PASSWORD: "Bugsfor"
-
-clone_script:
     - git config --global core.autocrlf true
     - git config core.autocrlf
 
@@ -26,6 +17,27 @@ clone_script:
     # get MicrosoftDocs/cognitive-toolkit-docs-python
     - cd c:\projects
     - git clone -q --branch=jinhwa/ci_test https://github.com/MicrosoftDocs/cognitive-toolkit-docs-python.git
+    
+    - ps: c:\projects\cognitive-toolkit-docs-python\ci_scripts\enable-rdp.ps1
+
+
+environment:
+  github_access_token:
+    secure: DpN0M7pZDocpyv+muc15qHDKz9lMJ7Zr34aMC0HtOdeVkbTERuKkxq4WHAd3S33v
+
+clone_script:
+    #- git config --global core.autocrlf true
+    #- git config core.autocrlf
+
+    # get cntk 
+    #- cd c:\projects
+    #- git clone http://github.com/Microsoft/cntk
+    #- cd c:\projects\cntk
+    #- git submodule update --init -- Source/Multiverso
+ 
+    # get MicrosoftDocs/cognitive-toolkit-docs-python
+    #- cd c:\projects
+    #- git clone -q --branch=jinhwa/ci_test https://github.com/MicrosoftDocs/cognitive-toolkit-docs-python.git
     
 
 before_build:
