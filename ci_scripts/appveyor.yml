@@ -50,7 +50,10 @@ on_finish:
     - ps: pip install $files
     - cd c:\projects\cntk\bindings\python\doc
     - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/conf.py -Destination c:/projects/cntk/bindings/python/doc/conf.py -force
-
+    
+    # Install sphinx-docfx-yaml
+    - ps: pip install sphinx-docfx-yaml
+    
     # generate rst files
     - call build.bat
     - sphinx-build.exe . _build
