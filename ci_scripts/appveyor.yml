@@ -44,7 +44,7 @@ before_build:
     - mkdir c:\\projects\\cntk\\x64\\Release
     - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/nvml.dll -Destination c:\\projects\\cntk\\x64\\Release\\nvml.dll -force
     - echo %CNTK_ENABLE_ASGD%
-    - setx CNTK_ENABLE_ASGD true
+    - set CNTK_ENABLE_ASGD=true
     - echo %CNTK_ENABLE_ASGD%
     
 build:
