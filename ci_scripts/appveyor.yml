@@ -8,16 +8,9 @@ environment:
   github_access_token:
     secure: DpN0M7pZDocpyv+muc15qHDKz9lMJ7Zr34aMC0HtOdeVkbTERuKkxq4WHAd3S33v
 
-init:
-    - net user /add appveyor #Bugsfor$
-    - net localgroup administrators appveyor /add
-    - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-    
-
 clone_script:
     - dir c:\projects
     - dir c:\projects\cntk
-    - ps: Remove-Item c:\projects\cntk -Force -Recurse
     
     - git config --global core.autocrlf true
     - git config core.autocrlf
@@ -96,4 +89,4 @@ on_finish:
     - git commit -a -m "appveyor ci - update yml files" 
     - git push -u origin jinhwa/ci_test:jinhwa/ci_test -f
 
-    # ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  
