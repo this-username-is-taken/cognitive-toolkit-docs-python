@@ -9,6 +9,7 @@ environment:
     secure: DpN0M7pZDocpyv+muc15qHDKz9lMJ7Zr34aMC0HtOdeVkbTERuKkxq4WHAd3S33v
 
 clone_script:
+    - dir c:\projects
     - ps: Remove-Item c:\projects -Force -Recurse
     
     - git config --global core.autocrlf true
