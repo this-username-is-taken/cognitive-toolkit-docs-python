@@ -53,6 +53,7 @@ build:
   parallel: true
   verbosity: minimal
   
+test: off
 
 on_finish:
     - ps: Write-Host "appveyor.xml on_finish"
