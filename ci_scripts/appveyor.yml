@@ -2,7 +2,6 @@ version: 1.0.{build}
 skip_tags: true
 build_cloud: cntk-python-ci-build
 image: appveyor-build
-platform: x64
 configuration: Release
 
 environment:
@@ -17,7 +16,8 @@ init:
 
 clone_script:
     - dir c:\projects
-    # ps: Remove-Item c:\projects -Force -Recurse
+    - dir c:\projects\cntk
+    - ps: Remove-Item c:\projects\cntk -Force -Recurse
     
     - git config --global core.autocrlf true
     - git config core.autocrlf
