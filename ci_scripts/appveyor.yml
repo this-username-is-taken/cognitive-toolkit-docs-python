@@ -25,7 +25,7 @@ clone_script:
     - cd c:\projects
     - git clone -q --branch=master http://github.com/Microsoft/cntk
     - cd c:\projects\cntk
-    - git submodule update --init -- Source/Multiverso
+    # git submodule update --init -- Source/Multiverso
  
     # get MicrosoftDocs/cognitive-toolkit-docs-python
     - cd c:\projects
