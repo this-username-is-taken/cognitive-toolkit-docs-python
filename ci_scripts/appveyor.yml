@@ -2,6 +2,7 @@ version: 1.0.{build}
 skip_tags: true
 build_cloud: cntk-python-ci-build
 image: appveyor-build
+platform: x64
 configuration: Release
 
 environment:
