@@ -43,7 +43,7 @@ before_build:
     # in case of cuda dll missing
     - mkdir c:\\projects\\cntk\\x64\\Release
     - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/nvml.dll -Destination c:\\projects\\cntk\\x64\\Release\\nvml.dll -force
-
+    - echo %CNTK_ENABLE_ASGD%
     
 build:
   project: c:\projects\cntk\CNTK.sln
