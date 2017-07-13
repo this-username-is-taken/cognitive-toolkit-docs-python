@@ -23,7 +23,7 @@ clone_script:
 
     # get cntk 
     - cd c:\projects
-    - git clone http://github.com/Microsoft/cntk
+    - git clone -q --branch=master http://github.com/Microsoft/cntk
     - cd c:\projects\cntk
     - git submodule update --init -- Source/Multiverso
  
