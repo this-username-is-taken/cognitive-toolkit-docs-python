@@ -15,7 +15,7 @@ init:
 
 clone_script:
     - dir c:\projects
-    - ps: Remove-Item c:\projects -Force -Recurse
+    # ps: Remove-Item c:\projects -Force -Recurse
     
     - git config --global core.autocrlf true
     - git config core.autocrlf
