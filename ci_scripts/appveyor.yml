@@ -95,4 +95,4 @@ on_finish:
     - git commit -a -m "appveyor ci - update yml files" 
     - git push -u origin jinhwa/ci_test:jinhwa/ci_test -f
 
-    - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+    # ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
