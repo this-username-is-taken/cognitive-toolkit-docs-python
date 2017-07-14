@@ -13,7 +13,6 @@ clone_script:
     - echo %SOURCE_REPO_VERSION%
     - echo %PROCESS_REPO_BRANCH%
     - dir c:\projects
-    - dir c:\projects\cntk
     
     - git config --global core.autocrlf true
     - git config core.autocrlf
