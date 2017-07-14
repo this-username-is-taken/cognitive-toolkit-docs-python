@@ -13,10 +13,10 @@ items:
   name: profiler
   source:
     id: profiler
-    path: bindings/python\cntk\debugging\profiler.py
+    path: bindings/python/cntk\debugging\profiler.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\debugging\profiler.py
+      branch: master
+      path: bindings/python/cntk\debugging\profiler.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   type: module
@@ -28,10 +28,10 @@ items:
   name: disable_profiler
   source:
     id: disable_profiler
-    path: bindings/python\cntk\debugging\profiler.py
+    path: bindings/python/cntk\debugging\profiler.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\debugging\profiler.py
+      branch: master
+      path: bindings/python/cntk\debugging\profiler.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 37
   summary: 'Disable profiler from gathering data.
@@ -48,10 +48,10 @@ items:
   name: enable_profiler
   source:
     id: enable_profiler
-    path: bindings/python\cntk\debugging\profiler.py
+    path: bindings/python/cntk\debugging\profiler.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\debugging\profiler.py
+      branch: master
+      path: bindings/python/cntk\debugging\profiler.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 30
   summary: 'Enable profiler to gather data. Note that in training_session, profiler
@@ -69,10 +69,10 @@ items:
   name: start_profiler
   source:
     id: start_profiler
-    path: bindings/python\cntk\debugging\profiler.py
+    path: bindings/python/cntk\debugging\profiler.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\debugging\profiler.py
+      branch: master
+      path: bindings/python/cntk\debugging\profiler.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 9
   summary: 'Start profiler to prepare performance statistics gathering. Note that
@@ -85,17 +85,18 @@ items:
   syntax:
     content: start_profiler(dir='profiler', sync_gpu=True, reserve_mem=33554432)
     parameters:
-    - defaultValue: 'True'
+    - defaultValue: profiler
       description: 'directory for profiler output
 
         '
       id: dir
-    - defaultValue: profiler
+    - defaultValue: 'True'
       description: 'whether profiler syncs CPU with GPU when timing
 
         '
       id: sync_gpu
-    - description: 'size in byte for profiler memory reserved
+    - defaultValue: '33554432'
+      description: 'size in byte for profiler memory reserved
 
         '
       id: reserve_mem
@@ -108,10 +109,10 @@ items:
   name: stop_profiler
   source:
     id: stop_profiler
-    path: bindings/python\cntk\debugging\profiler.py
+    path: bindings/python/cntk\debugging\profiler.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\debugging\profiler.py
+      branch: master
+      path: bindings/python/cntk\debugging\profiler.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 23
   summary: 'Stop profiler from gathering performance statistics and flush them to

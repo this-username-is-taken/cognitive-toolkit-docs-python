@@ -54,12 +54,12 @@ items:
   name: MinibatchSourceFromData
   source:
     id: MinibatchSourceFromData
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
+      branch: master
+      path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 483
+    startLine: 492
   summary: 'This wraps in-memory data as a CNTK MinibatchSource object (aka "reader"),
     used to feed the data into a TrainingSession.
 
@@ -108,7 +108,7 @@ items:
         the reader can produce. If inputs are sequences, and the different streams
         have different
 
-        lengths, then each sequence counts with the the maximum length.
+        lengths, then each sequence counts with the maximum length.
 
         After this number has been reached, the reader
 
@@ -141,12 +141,12 @@ items:
   name: get_checkpoint_state
   source:
     id: get_checkpoint_state
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
+      branch: master
+      path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 701
+    startLine: 710
   summary: 'Gets the checkpoint state of the MinibatchSource.
 
     '
@@ -172,22 +172,22 @@ items:
   name: next_minibatch
   source:
     id: next_minibatch
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
+      branch: master
+      path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 646
+    startLine: 655
   syntax:
     content: next_minibatch(num_samples, number_of_workers=1, worker_rank=0, device=None)
     parameters:
-    - defaultValue: '1'
-      id: self
+    - id: self
     - id: num_samples
-    - id: number_of_workers
-    - defaultValue: None
-      id: worker_rank
+    - defaultValue: '1'
+      id: number_of_workers
     - defaultValue: '0'
+      id: worker_rank
+    - defaultValue: None
       id: device
   type: method
   uid: cntk.io.MinibatchSourceFromData.next_minibatch
@@ -199,19 +199,18 @@ items:
   name: restore_from_checkpoint
   source:
     id: restore_from_checkpoint
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
+      branch: master
+      path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 712
+    startLine: 721
   summary: 'Restores the MinibatchSource state from the specified checkpoint.
 
     '
   syntax:
     content: restore_from_checkpoint(checkpoint)
     parameters:
-    - id: self
     - description: 'checkpoint to restore from
 
         '
@@ -228,12 +227,12 @@ items:
   name: stream_infos
   source:
     id: stream_infos
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
+      branch: master
+      path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 641
+    startLine: 650
   syntax:
     content: stream_infos()
     parameters:

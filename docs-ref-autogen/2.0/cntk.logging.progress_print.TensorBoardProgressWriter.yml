@@ -21,10 +21,10 @@ items:
   name: TensorBoardProgressWriter
   source:
     id: TensorBoardProgressWriter
-    path: bindings/python\cntk\logging\progress_print.py
+    path: bindings/python/cntk\logging\progress_print.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\logging\progress_print.py
+      branch: master
+      path: bindings/python/cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 429
   summary: 'Allows writing various statistics (e.g. loss and metric) to TensorBoard
@@ -84,10 +84,10 @@ items:
   name: close
   source:
     id: close
-    path: bindings/python\cntk\logging\progress_print.py
+    path: bindings/python/cntk\logging\progress_print.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\logging\progress_print.py
+      branch: master
+      path: bindings/python/cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 481
   summary: 'Make sure that any outstanding records are immediately persisted, then
@@ -110,10 +110,10 @@ items:
   name: flush
   source:
     id: flush
-    path: bindings/python\cntk\logging\progress_print.py
+    path: bindings/python/cntk\logging\progress_print.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\logging\progress_print.py
+      branch: master
+      path: bindings/python/cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 473
   summary: 'Make sure that any outstanding records are immediately persisted.
@@ -133,10 +133,10 @@ items:
   name: on_write_test_summary
   source:
     id: on_write_test_summary
-    path: bindings/python\cntk\logging\progress_print.py
+    path: bindings/python/cntk\logging\progress_print.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\logging\progress_print.py
+      branch: master
+      path: bindings/python/cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 511
   syntax:
@@ -159,10 +159,10 @@ items:
   name: on_write_test_update
   source:
     id: on_write_test_update
-    path: bindings/python\cntk\logging\progress_print.py
+    path: bindings/python/cntk\logging\progress_print.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\logging\progress_print.py
+      branch: master
+      path: bindings/python/cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 498
   syntax:
@@ -182,10 +182,10 @@ items:
   name: on_write_training_summary
   source:
     id: on_write_training_summary
-    path: bindings/python\cntk\logging\progress_print.py
+    path: bindings/python/cntk\logging\progress_print.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\logging\progress_print.py
+      branch: master
+      path: bindings/python/cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 505
   syntax:
@@ -209,10 +209,10 @@ items:
   name: on_write_training_update
   source:
     id: on_write_training_update
-    path: bindings/python\cntk\logging\progress_print.py
+    path: bindings/python/cntk\logging\progress_print.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\logging\progress_print.py
+      branch: master
+      path: bindings/python/cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 493
   syntax:
@@ -233,10 +233,10 @@ items:
   name: write_value
   source:
     id: write_value
-    path: bindings/python\cntk\logging\progress_print.py
+    path: bindings/python/cntk\logging\progress_print.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\logging\progress_print.py
+      branch: master
+      path: bindings/python/cntk\logging\progress_print.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 458
   summary: 'Record value of a scalar variable at the given time step.
@@ -245,7 +245,6 @@ items:
   syntax:
     content: write_value(name, value, step)
     parameters:
-    - id: self
     - description: 'name of a variable.
 
         '

@@ -13,10 +13,10 @@ items:
   name: higher_order_layers
   source:
     id: higher_order_layers
-    path: bindings/python\cntk\layers\higher_order_layers.py
+    path: bindings/python/cntk\layers\higher_order_layers.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\layers\higher_order_layers.py
+      branch: master
+      path: bindings/python/cntk\layers\higher_order_layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   summary: 'Higher-order functions, like :func:`Sequential` and :func:`ResNetBlock`.
@@ -55,10 +55,10 @@ items:
   name: For
   source:
     id: For
-    path: bindings/python\cntk\layers\higher_order_layers.py
+    path: bindings/python/cntk\layers\higher_order_layers.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\layers\higher_order_layers.py
+      branch: master
+      path: bindings/python/cntk\layers\higher_order_layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 95
   summary: 'Layer factory function to create a composite through a pattern similar
@@ -79,8 +79,6 @@ items:
   syntax:
     content: For(what_range, constructor, name='')
     parameters:
-    - defaultValue: ''
-      id: what_range
     - description: 'a Python range to loop over
 
         '
@@ -93,6 +91,8 @@ items:
       id: constructor
       type:
       - Python function/lambda with 1 or 0 arguments
+    - defaultValue: ''
+      id: name
     return:
       description: 'A function that accepts one argument and applies the layers as
         constructed by `constructor` one after another.
@@ -127,10 +127,10 @@ items:
   name: ResNetBlock
   source:
     id: ResNetBlock
-    path: bindings/python\cntk\layers\higher_order_layers.py
+    path: bindings/python/cntk\layers\higher_order_layers.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\layers\higher_order_layers.py
+      branch: master
+      path: bindings/python/cntk\layers\higher_order_layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 204
   summary: 'Layer factory function to create a composite that adds a skip connection
@@ -142,14 +142,14 @@ items:
   syntax:
     content: ResNetBlock(f, name='')
     parameters:
-    - id: f
-    - defaultValue: ''
-      description: 'the function to add the skip connection to.
+    - description: 'the function to add the skip connection to.
 
         '
       id: f
       type:
       - "cntk.ops.functions.Function\n or equivalent Python function"
+    - defaultValue: ''
+      id: name
     return:
       description: 'A function that accepts one argument, applies `f` to it, and adds
         the original argument.
@@ -196,10 +196,10 @@ items:
   name: Sequential
   source:
     id: Sequential
-    path: bindings/python\cntk\layers\higher_order_layers.py
+    path: bindings/python/cntk\layers\higher_order_layers.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\layers\higher_order_layers.py
+      branch: master
+      path: bindings/python/cntk\layers\higher_order_layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 20
   summary: 'Layer factory function to create a composite that applies a sequence of
@@ -229,9 +229,7 @@ items:
   syntax:
     content: Sequential(layers, name='')
     parameters:
-    - id: layers
-    - defaultValue: ''
-      description: 'the list of functions to apply in sequence.
+    - description: 'the list of functions to apply in sequence.
 
         A tuple aplies each of its items to the input and results in a tuple value.
 
@@ -243,6 +241,8 @@ items:
       - 'list of @cntk.ops.functions.Function
 
         , equivalent Python functions, tuples of functions, or lists thereof'
+    - defaultValue: ''
+      id: name
     return:
       description: 'A function that accepts one argument and applies the given `functions`
         one after another.
@@ -264,10 +264,10 @@ items:
   name: SequentialClique
   source:
     id: SequentialClique
-    path: bindings/python\cntk\layers\higher_order_layers.py
+    path: bindings/python/cntk\layers\higher_order_layers.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\layers\higher_order_layers.py
+      branch: master
+      path: bindings/python/cntk\layers\higher_order_layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 167
   summary: 'Layer factory function to create a composite that applies a sequence of
@@ -282,9 +282,7 @@ items:
   syntax:
     content: SequentialClique(functions, name='')
     parameters:
-    - id: functions
-    - defaultValue: ''
-      description: 'functions to be applied.
+    - description: 'functions to be applied.
 
         '
       id: functions
@@ -292,6 +290,8 @@ items:
       - 'single or list of @cntk.ops.functions.Function
 
         '
+    - defaultValue: ''
+      id: name
     return:
       description: 'A function that accepts one argument and applies the sequence
         of functions.

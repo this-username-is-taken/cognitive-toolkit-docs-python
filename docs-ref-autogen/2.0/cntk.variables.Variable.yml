@@ -22,10 +22,10 @@ items:
   name: Variable
   source:
     id: Variable
-    path: bindings/python\cntk\variables.py
+    path: bindings/python/cntk\variables.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\variables.py
+      branch: master
+      path: bindings/python/cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 283
   summary: 'Denotes a symbolic entity corresponding to the inputs and outputs of a
@@ -73,7 +73,7 @@ items:
         '
       id: dynamic_axes
       type:
-      - 'list of @cntk.axis
+      - 'list of @cntk.axis.Axis
 
         '
     - description: 'an optional name for this parameter.
@@ -92,12 +92,12 @@ items:
   name: as_constant
   source:
     id: as_constant
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\internal\swig_helper.py
+      branch: master
+      path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 67
+    startLine: 321
   summary: 'Converts this instance into a @cntk.variables.Constant
 
     '
@@ -113,12 +113,12 @@ items:
   name: as_parameter
   source:
     id: as_parameter
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\internal\swig_helper.py
+      branch: master
+      path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 67
+    startLine: 311
   summary: 'Converts this instance into a @cntk.variables.Parameter
 
     '

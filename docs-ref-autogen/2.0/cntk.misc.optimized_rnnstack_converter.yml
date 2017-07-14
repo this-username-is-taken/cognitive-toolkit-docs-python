@@ -10,10 +10,10 @@ items:
   name: optimized_rnnstack_converter
   source:
     id: optimized_rnnstack_converter
-    path: bindings/python\cntk\misc\optimized_rnnstack_converter.py
+    path: bindings/python/cntk\misc\optimized_rnnstack_converter.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\misc\optimized_rnnstack_converter.py
+      branch: master
+      path: bindings/python/cntk\misc\optimized_rnnstack_converter.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   type: module
@@ -25,10 +25,10 @@ items:
   name: convert_optimized_rnnstack
   source:
     id: convert_optimized_rnnstack
-    path: bindings/python\cntk\misc\optimized_rnnstack_converter.py
+    path: bindings/python/cntk\misc\optimized_rnnstack_converter.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\misc\optimized_rnnstack_converter.py
+      branch: master
+      path: bindings/python/cntk\misc\optimized_rnnstack_converter.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 139
   summary: 'Converts model that contains cudnn optimized_rnnstack to use non-cudnn

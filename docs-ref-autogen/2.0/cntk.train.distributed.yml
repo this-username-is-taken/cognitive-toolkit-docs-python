@@ -15,10 +15,10 @@ items:
   name: distributed
   source:
     id: distributed
-    path: bindings/python\cntk\train\distributed.py
+    path: bindings/python/cntk\train\distributed.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\train\distributed.py
+      branch: master
+      path: bindings/python/cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   summary: 'Distributed learners manage learners in distributed environment.
@@ -37,12 +37,12 @@ items:
     \ Proceedings of ICASSP, 2016. \n"
   source:
     id: block_momentum_distributed_learner
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\internal\swig_helper.py
+      branch: master
+      path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 67
+    startLine: 148
   summary: 'Creates a block momentum distributed learner. See [1] for more
 
     information.
@@ -116,12 +116,12 @@ items:
   name: data_parallel_distributed_learner
   source:
     id: data_parallel_distributed_learner
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\internal\swig_helper.py
+      branch: master
+      path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 67
+    startLine: 122
   summary: 'Creates a data parallel distributed learner
 
     '
@@ -164,12 +164,12 @@ items:
   name: mpi_communicator
   source:
     id: mpi_communicator
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\internal\swig_helper.py
+      branch: master
+      path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 67
+    startLine: 199
   summary: 'Creates a non quantized MPI communicator.
 
     '

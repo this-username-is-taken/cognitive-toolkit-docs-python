@@ -21,12 +21,12 @@ items:
   name: UserMinibatchSource
   source:
     id: UserMinibatchSource
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
+      branch: master
+      path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 382
+    startLine: 389
   summary: 'Base class of all user minibatch sources.
 
 
@@ -47,12 +47,12 @@ items:
   name: get_checkpoint_state
   source:
     id: get_checkpoint_state
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
+      branch: master
+      path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 449
+    startLine: 458
   summary: 'Returns a dictionary describing the current state of the minibatch
 
     source. Needs to be overwritten if the state of the minibatch source
@@ -78,27 +78,25 @@ items:
   name: next_minibatch
   source:
     id: next_minibatch
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
+      branch: master
+      path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 414
+    startLine: 421
   summary: 'Function to be implemented by the user.
 
     '
   syntax:
     content: next_minibatch(num_samples, number_of_workers, worker_rank, device=None)
     parameters:
-    - id: self
     - description: 'number of samples to return
 
         '
       id: num_samples
       type:
       - int
-    - defaultValue: None
-      description: 'number of workers in total
+    - description: 'number of workers in total
 
         '
       id: number_of_workers
@@ -110,7 +108,12 @@ items:
       id: worker_rank
       type:
       - int
-    - description: 'CNTK DeviceDescriptor
+    - defaultValue: None
+      description: 'the device
+
+        descriptor that contains the type and id of the device on which the
+
+        computation is performed. If *None*, the default device is used.
 
         '
       id: device
@@ -130,19 +133,18 @@ items:
   name: restore_from_checkpoint
   source:
     id: restore_from_checkpoint
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
+      branch: master
+      path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 460
+    startLine: 469
   summary: 'Sets the state of the checkpoint.
 
     '
   syntax:
     content: restore_from_checkpoint(state)
     parameters:
-    - id: self
     - description: 'dictionary containing the state
 
         '
@@ -159,12 +161,12 @@ items:
   name: stream_info
   source:
     id: stream_info
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
+      branch: master
+      path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 406
+    startLine: 413
   summary: 'Gets the description of the stream with given name.
 
     Throws an exception if there are none or multiple streams with this
@@ -187,12 +189,12 @@ items:
   name: stream_infos
   source:
     id: stream_infos
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
+      branch: master
+      path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 392
+    startLine: 399
   summary: 'Function to be implemented by the user.
 
     '

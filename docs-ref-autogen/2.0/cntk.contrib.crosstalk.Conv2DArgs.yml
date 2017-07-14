@@ -16,10 +16,10 @@ items:
   name: Conv2DArgs
   source:
     id: Conv2DArgs
-    path: bindings/python\cntk\contrib\crosstalk\__init__.py
+    path: bindings/python/cntk\contrib\crosstalk\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\contrib\crosstalk\__init__.py
+      branch: master
+      path: bindings/python/cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 53
   summary: "Args inside Conv2D variable. Conv2D output is in NCHW format\n\nW\n  \

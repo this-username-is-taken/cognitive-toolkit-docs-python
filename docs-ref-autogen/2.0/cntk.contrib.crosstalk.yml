@@ -9,7 +9,6 @@ items:
   - cntk.contrib.crosstalk.RnnArgs
   - cntk.contrib.crosstalk.RnnAttr
   - cntk.contrib.crosstalk.crosstalk_cntk
-  - cntk.contrib.crosstalk.crosstalk_tensorflow
   fullName: cntk.contrib.crosstalk
   langs:
   - python
@@ -17,18 +16,26 @@ items:
   name: crosstalk
   source:
     id: crosstalk
-    path: bindings/python\cntk\contrib\crosstalk\__init__.py
+    path: bindings/python/cntk\contrib\crosstalk\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\contrib\crosstalk\__init__.py
+      branch: master
+      path: bindings/python/cntk\contrib\crosstalk\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  summary: "Crosstalk (Contrib) for debugging/conversion among toolkits\n\n\nIt is\
-    \ the utility to manage variables for debugging/conversion across scripts in different\
-    \ toolkits.\nWith crosstalk, user can define named watch points to variables or\
-    \ parameters, and setting up a work dir. \nThen crosstalk can save/load variables\
-    \ to corresponding files from python debugger, and compare values using numpy.\
-    \ \n"
+  summary: 'Crosstalk (Contrib) for debugging/conversion among toolkits
+
+
+
+    It is the utility to manage variables for debugging/conversion across scripts
+    in different toolkits.
+
+    With crosstalk, user can define named watch points to variables or parameters,
+    and setting up a work dir.
+
+    Then crosstalk can save/load variables to corresponding files from python debugger,
+    and compare values using numpy.
+
+    '
   type: package
   uid: cntk.contrib.crosstalk
 references:
@@ -67,8 +74,3 @@ references:
   name: crosstalk_cntk
   parent: cntk.contrib.crosstalk
   uid: cntk.contrib.crosstalk.crosstalk_cntk
-- fullName: cntk.contrib.crosstalk.crosstalk_tensorflow
-  isExternal: false
-  name: crosstalk_tensorflow
-  parent: cntk.contrib.crosstalk
-  uid: cntk.contrib.crosstalk.crosstalk_tensorflow

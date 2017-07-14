@@ -30,10 +30,10 @@ items:
   name: Trainer
   source:
     id: Trainer
-    path: bindings/python\cntk\train\trainer.py
+    path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\train\trainer.py
+      branch: master
+      path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 22
   summary: 'Class for training the model parameters of a models'' specified loss function,
@@ -72,7 +72,7 @@ items:
         '
       id: model
       type:
-      - cntk.ops.functions
+      - cntk.ops.functions.Function
     - description: 'Function with one or two outputs, representing loss and, if given,
         evaluation metric
 
@@ -84,7 +84,7 @@ items:
         '
       id: criterion
       type:
-      - "tuple of @cntk.ops.functions\n or @cntk.variables.Variable\n"
+      - "tuple of @cntk.ops.functions.Function\n or @cntk.variables.Variable\n"
     - description: 'list of learners from @cntk.learners
 
         '
@@ -113,7 +113,7 @@ items:
     id: evaluation_function
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -133,7 +133,7 @@ items:
     id: loss_function
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -153,7 +153,7 @@ items:
     id: model
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -173,7 +173,7 @@ items:
     id: parameter_learners
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -193,7 +193,7 @@ items:
     id: previous_minibatch_evaluation_average
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -214,7 +214,7 @@ items:
     id: previous_minibatch_loss_average
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -234,7 +234,7 @@ items:
     id: previous_minibatch_sample_count
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -252,10 +252,10 @@ items:
   name: restore_from_checkpoint
   source:
     id: restore_from_checkpoint
-    path: bindings/python\cntk\train\trainer.py
+    path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\train\trainer.py
+      branch: master
+      path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 240
   summary: 'Restores a checkpoint of the model and Trainer state from the
@@ -266,7 +266,6 @@ items:
   syntax:
     content: restore_from_checkpoint(filename)
     parameters:
-    - id: self
     - description: 'filename to restore the checkpoint from
 
         '
@@ -283,10 +282,10 @@ items:
   name: save_checkpoint
   source:
     id: save_checkpoint
-    path: bindings/python\cntk\train\trainer.py
+    path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\train\trainer.py
+      branch: master
+      path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 225
   summary: 'Saves a checkpoint of the model and other Trainer state at the
@@ -302,15 +301,14 @@ items:
   syntax:
     content: save_checkpoint(filename, external_state={})
     parameters:
-    - defaultValue: '{}'
-      id: self
     - description: 'filename to store the checkpoint.
 
         '
       id: filename
       type:
       - str
-    - description: 'additional external state
+    - defaultValue: '{}'
+      description: 'additional external state, default is empty.
 
         '
       id: external_state
@@ -326,10 +324,10 @@ items:
   name: summarize_test_progress
   source:
     id: summarize_test_progress
-    path: bindings/python\cntk\train\trainer.py
+    path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\train\trainer.py
+      branch: master
+      path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 318
   summary: 'Updates the progress writers with the summary of test progress since start
@@ -352,10 +350,10 @@ items:
   name: summarize_training_progress
   source:
     id: summarize_training_progress
-    path: bindings/python\cntk\train\trainer.py
+    path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\train\trainer.py
+      branch: master
+      path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 311
   summary: 'Updates the progress writers with the summary of training progress since
@@ -378,22 +376,22 @@ items:
   name: test_minibatch
   source:
     id: test_minibatch
-    path: bindings/python\cntk\train\trainer.py
+    path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\train\trainer.py
+      branch: master
+      path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 177
   summary: "Test the model on the specified batch of samples using the evaluation\n\
-    Function specified during construction of the Trainer.\n\nNote: See @cntk.ops.functions\
+    Function specified during construction of the Trainer.\n\nNote: See @cntk.ops.functions.Function.forward\
     \ for examples on passing input data. \n"
   syntax:
     content: test_minibatch(arguments, device=None)
     parameters:
-    - defaultValue: None
-      id: self
+    - id: self
     - id: arguments
-    - id: device
+    - defaultValue: None
+      id: device
     return:
       description: 'the average evaluation criterion value per sample for the
 
@@ -401,7 +399,7 @@ items:
 
         '
       type:
-      - float
+      - '*float*'
   type: method
   uid: cntk.train.trainer.Trainer.test_minibatch
 - class: cntk.train.trainer.Trainer
@@ -414,7 +412,7 @@ items:
     id: total_number_of_samples_seen
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -433,22 +431,22 @@ items:
   name: train_minibatch
   source:
     id: train_minibatch
-    path: bindings/python\cntk\train\trainer.py
+    path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\train\trainer.py
+      branch: master
+      path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 96
   summary: "Optimize model parameters using the specified 'arguments' minibatch of\
-    \ training samples.\n\nNote: See @cntk.ops.functions for examples on passing input\
-    \ data. \n"
+    \ training samples.\n\nNote: See @cntk.ops.functions.Function.forward for examples\
+    \ on passing input data. \n"
   syntax:
     content: train_minibatch(arguments, outputs=None, device=None)
     parameters:
-    - defaultValue: None
-      id: self
+    - id: self
     - id: arguments
-    - id: outputs
+    - defaultValue: None
+      id: outputs
     - defaultValue: None
       id: device
     return:
@@ -464,7 +462,8 @@ items:
 
         '
       type:
-      - bool or tuple
+      - '*bool*'
+      - '*tuple*'
   type: method
   uid: cntk.train.trainer.Trainer.train_minibatch
 references:

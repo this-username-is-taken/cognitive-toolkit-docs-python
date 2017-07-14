@@ -2,7 +2,7 @@
   - items:
     - name: cntk.axis.Axis
       uid: cntk.axis.Axis
-    name: axis
+    name: cntk.axis
     uid: cntk.axis
   - items:
     - items:
@@ -11,11 +11,6 @@
           uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
         name: cntk.contrib.crosstalk.crosstalk_cntk
         uid: cntk.contrib.crosstalk.crosstalk_cntk
-      - items:
-        - name: cntk.contrib.crosstalk.crosstalk_tensorflow.TensorFlowCrosstalk
-          uid: cntk.contrib.crosstalk.crosstalk_tensorflow.TensorFlowCrosstalk
-        name: cntk.contrib.crosstalk.crosstalk_tensorflow
-        uid: cntk.contrib.crosstalk.crosstalk_tensorflow
       - name: cntk.contrib.crosstalk.Conv2DArgs
         uid: cntk.contrib.crosstalk.Conv2DArgs
       - name: cntk.contrib.crosstalk.Conv2DAttr
@@ -30,33 +25,33 @@
         uid: cntk.contrib.crosstalk.RnnAttr
       name: cntk.contrib.crosstalk
       uid: cntk.contrib.crosstalk
-    name: contrib
+    name: cntk.contrib
     uid: cntk.contrib
   - items:
     - name: cntk.core.NDArrayView
       uid: cntk.core.NDArrayView
     - name: cntk.core.Value
       uid: cntk.core.Value
-    name: core
+    name: cntk.core
     uid: cntk.core
   - items:
     - name: cntk.debugging.debug
       uid: cntk.debugging.debug
     - name: cntk.debugging.profiler
       uid: cntk.debugging.profiler
-    name: debugging
+    name: cntk.debugging
     uid: cntk.debugging
   - items:
     - name: cntk.default_options.default_override_or
       uid: cntk.default_options.default_override_or
-    name: default_options
+    name: cntk.default_options
     uid: cntk.default_options
   - items:
     - name: cntk.device.DeviceDescriptor
       uid: cntk.device.DeviceDescriptor
     - name: cntk.device.DeviceKind
       uid: cntk.device.DeviceKind
-    name: device
+    name: cntk.device
     uid: cntk.device
   - items:
     - items:
@@ -64,9 +59,9 @@
         uid: cntk.eval.evaluator.Evaluator
       name: cntk.eval.evaluator
       uid: cntk.eval.evaluator
-    name: eval
+    name: cntk.eval
     uid: cntk.eval
-  - name: initializer
+  - name: cntk.initializer
     uid: cntk.initializer
   - items:
     - name: cntk.io.transforms
@@ -83,7 +78,7 @@
       uid: cntk.io.StreamInformation
     - name: cntk.io.UserMinibatchSource
       uid: cntk.io.UserMinibatchSource
-    name: io
+    name: cntk.io
     uid: cntk.io
   - items:
     - name: cntk.layers.blocks
@@ -114,7 +109,7 @@
         uid: cntk.layers.typing.Tensor
       name: cntk.layers.typing
       uid: cntk.layers.typing
-    name: layers
+    name: cntk.layers
     uid: cntk.layers
   - items:
     - name: cntk.learners.Learner
@@ -123,7 +118,7 @@
       uid: cntk.learners.UnitType
     - name: cntk.learners.UserLearner
       uid: cntk.learners.UserLearner
-    name: learners
+    name: cntk.learners
     uid: cntk.learners
   - items:
     - name: cntk.logging.graph
@@ -139,18 +134,18 @@
       uid: cntk.logging.progress_print
     - name: cntk.logging.TraceLevel
       uid: cntk.logging.TraceLevel
-    name: logging
+    name: cntk.logging
     uid: cntk.logging
-  - name: losses
+  - name: cntk.losses
     uid: cntk.losses
-  - name: metrics
+  - name: cntk.metrics
     uid: cntk.metrics
   - items:
     - name: cntk.misc.converter
       uid: cntk.misc.converter
     - name: cntk.misc.optimized_rnnstack_converter
       uid: cntk.misc.optimized_rnnstack_converter
-    name: misc
+    name: cntk.misc
     uid: cntk.misc
   - items:
     - items:
@@ -164,24 +159,18 @@
       uid: cntk.ops.functions
     - name: cntk.ops.sequence
       uid: cntk.ops.sequence
-    name: ops
+    name: cntk.ops
     uid: cntk.ops
-  - items:
-    - items:
-      - name: cntk.random.tests.random_ops_tests
-        uid: cntk.random.tests.random_ops_tests
-      name: cntk.random.tests
-      uid: cntk.random.tests
-    name: random
+  - name: cntk.random
     uid: cntk.random
-  - name: sample_installer
+  - name: cntk.sample_installer
     uid: cntk.sample_installer
   - items:
     - name: cntk.tensor.ArrayMixin
       uid: cntk.tensor.ArrayMixin
     - name: cntk.tensor.TensorOpsMixin
       uid: cntk.tensor.TensorOpsMixin
-    name: tensor
+    name: cntk.tensor
     uid: cntk.tensor
   - items:
     - items:
@@ -209,7 +198,7 @@
         uid: cntk.train.training_session.TrainingSession
       name: cntk.train.training_session
       uid: cntk.train.training_session
-    name: train
+    name: cntk.train
     uid: cntk.train
   - items:
     - name: cntk.variables.Constant
@@ -222,7 +211,9 @@
       uid: cntk.variables.Variable
     - name: cntk.variables.VariableMixin
       uid: cntk.variables.VariableMixin
-    name: variables
+    name: cntk.variables
     uid: cntk.variables
-  name: Reference
+  name: cntk
   uid: cntk
+- name: cntk.random.tests.random_ops_tests
+  uid: cntk.random.tests.random_ops_tests

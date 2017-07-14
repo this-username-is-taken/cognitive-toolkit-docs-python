@@ -18,10 +18,10 @@ items:
   name: Learner
   source:
     id: Learner
-    path: bindings/python\cntk\learners\__init__.py
+    path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\learners\__init__.py
+      branch: master
+      path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 114
   summary: 'Abstraction for learning a subset of parameters of a learnable function
@@ -51,10 +51,10 @@ items:
   name: learning_rate
   source:
     id: learning_rate
-    path: bindings/python\cntk\learners\__init__.py
+    path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\learners\__init__.py
+      branch: master
+      path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 163
   summary: 'Current learning rate schedule.
@@ -76,7 +76,7 @@ items:
     id: parameters
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -94,10 +94,10 @@ items:
   name: reset_learning_rate
   source:
     id: reset_learning_rate
-    path: bindings/python\cntk\learners\__init__.py
+    path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\learners\__init__.py
+      branch: master
+      path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 149
   summary: 'Resets the learning rate. The new schedule is adjusted to be relative
@@ -112,7 +112,6 @@ items:
   syntax:
     content: reset_learning_rate(learning_rate)
     parameters:
-    - id: self
     - description: 'learning rate to reset to
 
         '
@@ -131,10 +130,10 @@ items:
   name: update
   source:
     id: update
-    path: bindings/python\cntk\learners\__init__.py
+    path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\learners\__init__.py
+      branch: master
+      path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 123
   summary: 'Update the parameters associated with this learner.
@@ -143,7 +142,6 @@ items:
   syntax:
     content: update(gradient_values, training_sample_count)
     parameters:
-    - id: self
     - description: 'maps @cntk.variables.Parameter to
 
         a NumPy array containing the first order gradient values for the

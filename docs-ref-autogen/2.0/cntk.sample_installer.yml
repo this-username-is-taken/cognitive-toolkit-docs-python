@@ -13,10 +13,10 @@ items:
   name: sample_installer
   source:
     id: sample_installer
-    path: bindings/python\cntk\sample_installer.py
+    path: bindings/python/cntk\sample_installer.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\sample_installer.py
+      branch: master
+      path: bindings/python/cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   summary: 'Utilities for fetching CNTK samples data.
@@ -31,10 +31,10 @@ items:
   name: default_sample_dir
   source:
     id: default_sample_dir
-    path: bindings/python\cntk\sample_installer.py
+    path: bindings/python/cntk\sample_installer.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\sample_installer.py
+      branch: master
+      path: bindings/python/cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 28
   syntax:
@@ -48,10 +48,10 @@ items:
   name: default_sample_url
   source:
     id: default_sample_url
-    path: bindings/python\cntk\sample_installer.py
+    path: bindings/python/cntk\sample_installer.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\sample_installer.py
+      branch: master
+      path: bindings/python/cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 35
   syntax:
@@ -65,10 +65,10 @@ items:
   name: install_samples
   source:
     id: install_samples
-    path: bindings/python\cntk\sample_installer.py
+    path: bindings/python/cntk\sample_installer.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\sample_installer.py
+      branch: master
+      path: bindings/python/cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 38
   summary: 'Fetch the CNTK samples from a URL, extract to local directory, and install
@@ -95,7 +95,8 @@ items:
 
         '
       id: directory
-    - description: 'whether to suppress all output (defaults to `False`)
+    - defaultValue: 'False'
+      description: 'whether to suppress all output (defaults to `False`)
 
         '
       id: quiet
@@ -108,10 +109,10 @@ items:
   name: module_is_unreleased
   source:
     id: module_is_unreleased
-    path: bindings/python\cntk\sample_installer.py
+    path: bindings/python/cntk\sample_installer.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\sample_installer.py
+      branch: master
+      path: bindings/python/cntk\sample_installer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 25
   syntax:

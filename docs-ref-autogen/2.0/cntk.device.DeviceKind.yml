@@ -1,7 +1,9 @@
 ### YamlMime:UniversalReference
 api_name: []
 items:
-- children: []
+- children:
+  - cntk.device.DeviceKind.CPU
+  - cntk.device.DeviceKind.GPU
   class: cntk.device.DeviceKind
   fullName: cntk.device.DeviceKind
   inheritance:
@@ -14,25 +16,46 @@ items:
   name: DeviceKind
   source:
     id: DeviceKind
-    path: bindings/python\cntk\device.py
+    path: bindings/python/cntk\device.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\device.py
+      branch: master
+      path: bindings/python/cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 15
   summary: 'Describes different device kinds like CPU or GPU.
 
 
 
-
-
-    CPU = 0
-
-
-    GPU = 1
-
     '
   syntax: {}
   type: class
   uid: cntk.device.DeviceKind
+- fullName: cntk.device.DeviceKind.CPU
+  id: CPU
+  langs:
+  - python
+  module: cntk.device
+  name: CPU
+  parent: cntk.device.DeviceKind
+  syntax:
+    content: CPU = 0
+    return:
+      type:
+      - cntk.device.DeviceKind
+  type: attribute
+  uid: cntk.device.DeviceKind.CPU
+- fullName: cntk.device.DeviceKind.GPU
+  id: GPU
+  langs:
+  - python
+  module: cntk.device
+  name: GPU
+  parent: cntk.device.DeviceKind
+  syntax:
+    content: GPU = 1
+    return:
+      type:
+      - cntk.device.DeviceKind
+  type: attribute
+  uid: cntk.device.DeviceKind.GPU
 references: []
