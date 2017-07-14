@@ -17,19 +17,19 @@ clone_script:
 
     # get cntk 
     - cd c:\projects
-    - git clone -q --branch=release/2.0 https://github.com/Microsoft/CNTK.git
+    - git clone -q --branch=%SOURCE_REPO_BRANCH% https://github.com/Microsoft/CNTK.git
     - cd c:\projects\cntk
     - git submodule update --init -- Source/Multiverso
  
     # get MicrosoftDocs/cognitive-toolkit-docs-python
     - cd c:\projects
-    - git clone -q --branch=yannan/test1 https://github.com/MicrosoftDocs/cognitive-toolkit-docs-python.git
+    - git clone -q --branch=%PROCESS_REPO_BRANCH% https://github.com/MicrosoftDocs/cognitive-toolkit-docs-python.git
     
 
 before_build:
     - cd c:\projects\cntk\Tools\devInstall\Windows
     - ps: .\DevInstall.ps1 -NoConfirm
-    - git checkout release/2.0
+    - git checkout %SOURCE_REPO_BRANCH%
     - git config --global credential.helper store
     - ps: ac "$env:USERPROFILE\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
     - ps: Write-Host "appveyor.xml in cntk_yml docs repo"
@@ -73,10 +73,10 @@ on_finish:
     - python postprocess_toc_yml.py
 
     # remove old yml fils
-    - ps: Remove-Item c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\2.0\* -recurse
+    - ps: Remove-Item c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\%SOURCE_REPO_VERSION%\* -recurse
 
     # copy yml fils generated
-    - ps: Copy-Item -Path C:\projects\CNTK\bindings\python\doc\_build\docfx_yaml\* -Destination c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\2.0\ -recurse -force
+    - ps: Copy-Item -Path C:\projects\CNTK\bindings\python\doc\_build\docfx_yaml\* -Destination c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\%SOURCE_REPO_VERSION%\ -recurse -force
 
     # upload yml to MicrosoftDocs/cognitive-toolkit-docs-python
     - git config --global credential.helper store
@@ -87,6 +87,6 @@ on_finish:
     - git config --global user.email "vscavu@microsoft.com"
     - git add . 
     - git commit -a -m "appveyor ci - update yml files" 
-    - git push -u origin yannan/test1:yannan/test1 -f
+    - git push -u origin %PROCESS_REPO_BRANCH%:%PROCESS_REPO_BRANCH% -f
 
   
