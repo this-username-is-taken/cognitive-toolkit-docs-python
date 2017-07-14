@@ -29,7 +29,7 @@ clone_script:
 before_build:
     - cd c:\projects\cntk\Tools\devInstall\Windows
     - ps: .\DevInstall.ps1 -NoConfirm
-    - git checkout master
+    - git checkout release/2.0
     - git config --global credential.helper store
     - ps: ac "$env:USERPROFILE\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
     - ps: Write-Host "appveyor.xml in cntk_yml docs repo"
