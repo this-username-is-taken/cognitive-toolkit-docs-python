@@ -17,7 +17,7 @@ clone_script:
 
     # get cntk 
     - cd c:\projects
-    - git clone -q --branch=release/2.0 http://github.com/Microsoft/cntk
+    - git clone -q --branch=release/2.0 https://github.com/Microsoft/CNTK.git
     - cd c:\projects\cntk
     - git submodule update --init -- Source/Multiverso
  
