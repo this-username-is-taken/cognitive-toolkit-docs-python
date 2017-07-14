@@ -1,0 +1,77 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.io.TraceLevel.Error
+  - cntk.io.TraceLevel.Info
+  - cntk.io.TraceLevel.Warning
+  class: cntk.io.TraceLevel
+  fullName: cntk.io.TraceLevel
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: enum.Enum
+  langs:
+  - python
+  module: cntk.io
+  name: TraceLevel
+  source:
+    id: TraceLevel
+    path: bindings/python/cntk\io\__init__.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 116
+  summary: 'An enumeration.
+
+
+
+
+    '
+  syntax: {}
+  type: class
+  uid: cntk.io.TraceLevel
+- fullName: cntk.io.TraceLevel.Error
+  id: Error
+  langs:
+  - python
+  module: cntk.io
+  name: Error
+  parent: cntk.io.TraceLevel
+  syntax:
+    content: Error = 0
+    return:
+      type:
+      - cntk.io.TraceLevel
+  type: attribute
+  uid: cntk.io.TraceLevel.Error
+- fullName: cntk.io.TraceLevel.Info
+  id: Info
+  langs:
+  - python
+  module: cntk.io
+  name: Info
+  parent: cntk.io.TraceLevel
+  syntax:
+    content: Info = 2
+    return:
+      type:
+      - cntk.io.TraceLevel
+  type: attribute
+  uid: cntk.io.TraceLevel.Info
+- fullName: cntk.io.TraceLevel.Warning
+  id: Warning
+  langs:
+  - python
+  module: cntk.io
+  name: Warning
+  parent: cntk.io.TraceLevel
+  syntax:
+    content: Warning = 1
+    return:
+      type:
+      - cntk.io.TraceLevel
+  type: attribute
+  uid: cntk.io.TraceLevel.Warning
+references: []

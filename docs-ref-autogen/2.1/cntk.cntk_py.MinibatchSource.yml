@@ -1,0 +1,165 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.cntk_py.MinibatchSource.get_checkpoint_state
+  - cntk.cntk_py.MinibatchSource.get_next_minibatch
+  - cntk.cntk_py.MinibatchSource.restore_from_checkpoint
+  - cntk.cntk_py.MinibatchSource.stream_info
+  - cntk.cntk_py.MinibatchSource.stream_infos
+  class: cntk.cntk_py.MinibatchSource
+  fullName: cntk.cntk_py.MinibatchSource
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: MinibatchSource
+  source:
+    id: MinibatchSource
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2325
+  summary: '
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: MinibatchSource(*args, **kwargs)
+  type: class
+  uid: cntk.cntk_py.MinibatchSource
+- class: cntk.cntk_py.MinibatchSource
+  fullName: cntk.cntk_py.MinibatchSource.get_checkpoint_state
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: get_checkpoint_state
+  source:
+    id: get_checkpoint_state
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2340
+  syntax:
+    content: get_checkpoint_state()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.MinibatchSource.get_checkpoint_state
+- class: cntk.cntk_py.MinibatchSource
+  fullName: cntk.cntk_py.MinibatchSource.get_next_minibatch
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: get_next_minibatch
+  source:
+    id: get_next_minibatch
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2349
+  syntax:
+    content: get_next_minibatch(*args)
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.MinibatchSource.get_next_minibatch
+- class: cntk.cntk_py.MinibatchSource
+  fullName: cntk.cntk_py.MinibatchSource.restore_from_checkpoint
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: restore_from_checkpoint
+  source:
+    id: restore_from_checkpoint
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2343
+  syntax:
+    content: restore_from_checkpoint(arg2)
+    parameters:
+    - id: self
+    - id: arg2
+  type: method
+  uid: cntk.cntk_py.MinibatchSource.restore_from_checkpoint
+- class: cntk.cntk_py.MinibatchSource
+  fullName: cntk.cntk_py.MinibatchSource.stream_info
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: stream_info
+  source:
+    id: stream_info
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2346
+  syntax:
+    content: stream_info(*args)
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.MinibatchSource.stream_info
+- class: cntk.cntk_py.MinibatchSource
+  fullName: cntk.cntk_py.MinibatchSource.stream_infos
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: stream_infos
+  source:
+    id: stream_infos
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2335
+  syntax:
+    content: stream_infos()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.MinibatchSource.stream_infos
+references:
+- fullName: cntk.cntk_py.MinibatchSource.get_checkpoint_state
+  isExternal: false
+  name: get_checkpoint_state
+  parent: cntk.cntk_py.MinibatchSource
+  uid: cntk.cntk_py.MinibatchSource.get_checkpoint_state
+- fullName: cntk.cntk_py.MinibatchSource.get_next_minibatch
+  isExternal: false
+  name: get_next_minibatch
+  parent: cntk.cntk_py.MinibatchSource
+  uid: cntk.cntk_py.MinibatchSource.get_next_minibatch
+- fullName: cntk.cntk_py.MinibatchSource.restore_from_checkpoint
+  isExternal: false
+  name: restore_from_checkpoint
+  parent: cntk.cntk_py.MinibatchSource
+  uid: cntk.cntk_py.MinibatchSource.restore_from_checkpoint
+- fullName: cntk.cntk_py.MinibatchSource.stream_info
+  isExternal: false
+  name: stream_info
+  parent: cntk.cntk_py.MinibatchSource
+  uid: cntk.cntk_py.MinibatchSource.stream_info
+- fullName: cntk.cntk_py.MinibatchSource.stream_infos
+  isExternal: false
+  name: stream_infos
+  parent: cntk.cntk_py.MinibatchSource
+  uid: cntk.cntk_py.MinibatchSource.stream_infos

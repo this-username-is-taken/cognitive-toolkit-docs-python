@@ -1,0 +1,87 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.ops.functions.CloneMethod
+  - cntk.ops.functions.Function
+  - cntk.ops.functions.UserFunction
+  - cntk.ops.functions.load_model
+  - cntk.ops.functions.save_model
+  fullName: cntk.ops.functions
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: functions
+  source:
+    id: functions
+    path: bindings/python/cntk\ops\functions.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\ops\functions.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: module
+  uid: cntk.ops.functions
+- fullName: cntk.ops.functions.load_model
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: load_model
+  source:
+    id: load_model
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 1090
+  summary: 'Alias for @cntk.ops.functions.Function.load.
+
+    '
+  syntax:
+    content: load_model(filename, device=None)
+  type: function
+  uid: cntk.ops.functions.load_model
+- fullName: cntk.ops.functions.save_model
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: save_model
+  source:
+    id: save_model
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 1097
+  syntax:
+    content: save_model(model, filename)
+  type: function
+  uid: cntk.ops.functions.save_model
+references:
+- fullName: cntk.ops.functions.CloneMethod
+  isExternal: false
+  name: CloneMethod
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.CloneMethod
+- fullName: cntk.ops.functions.Function
+  isExternal: false
+  name: Function
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.Function
+- fullName: cntk.ops.functions.UserFunction
+  isExternal: false
+  name: UserFunction
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.UserFunction
+- fullName: cntk.ops.functions.load_model
+  isExternal: false
+  name: load_model
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.load_model
+- fullName: cntk.ops.functions.save_model
+  isExternal: false
+  name: save_model
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.save_model

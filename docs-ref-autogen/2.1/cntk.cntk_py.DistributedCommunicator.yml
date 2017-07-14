@@ -1,0 +1,275 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.cntk_py.DistributedCommunicator.aggregate
+  - cntk.cntk_py.DistributedCommunicator.aggregate_in_place
+  - cntk.cntk_py.DistributedCommunicator.barrier
+  - cntk.cntk_py.DistributedCommunicator.concatenate
+  - cntk.cntk_py.DistributedCommunicator.current_worker
+  - cntk.cntk_py.DistributedCommunicator.finalize
+  - cntk.cntk_py.DistributedCommunicator.gather
+  - cntk.cntk_py.DistributedCommunicator.sub_group
+  - cntk.cntk_py.DistributedCommunicator.workers
+  class: cntk.cntk_py.DistributedCommunicator
+  fullName: cntk.cntk_py.DistributedCommunicator
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: DistributedCommunicator
+  source:
+    id: DistributedCommunicator
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2575
+  summary: '
+
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: DistributedCommunicator(*args, **kwargs)
+  type: class
+  uid: cntk.cntk_py.DistributedCommunicator
+- class: cntk.cntk_py.DistributedCommunicator
+  fullName: cntk.cntk_py.DistributedCommunicator.aggregate
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: aggregate
+  source:
+    id: aggregate
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2603
+  syntax:
+    content: aggregate(values, outputValues, sendToWorkers)
+    parameters:
+    - id: self
+    - id: values
+    - id: outputValues
+    - id: sendToWorkers
+  type: method
+  uid: cntk.cntk_py.DistributedCommunicator.aggregate
+- class: cntk.cntk_py.DistributedCommunicator
+  fullName: cntk.cntk_py.DistributedCommunicator.aggregate_in_place
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: aggregate_in_place
+  source:
+    id: aggregate_in_place
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2600
+  syntax:
+    content: aggregate_in_place(values, sendToWorkers)
+    parameters:
+    - id: self
+    - id: values
+    - id: sendToWorkers
+  type: method
+  uid: cntk.cntk_py.DistributedCommunicator.aggregate_in_place
+- class: cntk.cntk_py.DistributedCommunicator
+  fullName: cntk.cntk_py.DistributedCommunicator.barrier
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: barrier
+  source:
+    id: barrier
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2612
+  syntax:
+    content: barrier()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.DistributedCommunicator.barrier
+- class: cntk.cntk_py.DistributedCommunicator
+  fullName: cntk.cntk_py.DistributedCommunicator.concatenate
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: concatenate
+  source:
+    id: concatenate
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2594
+  syntax:
+    content: concatenate(*args)
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.DistributedCommunicator.concatenate
+- class: cntk.cntk_py.DistributedCommunicator
+  fullName: cntk.cntk_py.DistributedCommunicator.current_worker
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: current_worker
+  source:
+    id: current_worker
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2588
+  syntax:
+    content: current_worker()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.DistributedCommunicator.current_worker
+- class: cntk.cntk_py.DistributedCommunicator
+  fullName: cntk.cntk_py.DistributedCommunicator.finalize
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: finalize
+  source:
+    id: finalize
+    path: null
+    remote:
+      branch: release/2.0.rc1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  syntax: {}
+  type: method
+  uid: cntk.cntk_py.DistributedCommunicator.finalize
+- class: cntk.cntk_py.DistributedCommunicator
+  fullName: cntk.cntk_py.DistributedCommunicator.gather
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: gather
+  source:
+    id: gather
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2597
+  syntax:
+    content: gather(input, output, sendToWorkers)
+    parameters:
+    - id: self
+    - id: input
+    - id: output
+    - id: sendToWorkers
+  type: method
+  uid: cntk.cntk_py.DistributedCommunicator.gather
+- class: cntk.cntk_py.DistributedCommunicator
+  fullName: cntk.cntk_py.DistributedCommunicator.sub_group
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: sub_group
+  source:
+    id: sub_group
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2591
+  syntax:
+    content: sub_group(subGroupWorkers)
+    parameters:
+    - id: self
+    - id: subGroupWorkers
+  type: method
+  uid: cntk.cntk_py.DistributedCommunicator.sub_group
+- class: cntk.cntk_py.DistributedCommunicator
+  fullName: cntk.cntk_py.DistributedCommunicator.workers
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: workers
+  source:
+    id: workers
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2585
+  syntax:
+    content: workers()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.DistributedCommunicator.workers
+references:
+- fullName: cntk.cntk_py.DistributedCommunicator.aggregate
+  isExternal: false
+  name: aggregate
+  parent: cntk.cntk_py.DistributedCommunicator
+  uid: cntk.cntk_py.DistributedCommunicator.aggregate
+- fullName: cntk.cntk_py.DistributedCommunicator.aggregate_in_place
+  isExternal: false
+  name: aggregate_in_place
+  parent: cntk.cntk_py.DistributedCommunicator
+  uid: cntk.cntk_py.DistributedCommunicator.aggregate_in_place
+- fullName: cntk.cntk_py.DistributedCommunicator.barrier
+  isExternal: false
+  name: barrier
+  parent: cntk.cntk_py.DistributedCommunicator
+  uid: cntk.cntk_py.DistributedCommunicator.barrier
+- fullName: cntk.cntk_py.DistributedCommunicator.concatenate
+  isExternal: false
+  name: concatenate
+  parent: cntk.cntk_py.DistributedCommunicator
+  uid: cntk.cntk_py.DistributedCommunicator.concatenate
+- fullName: cntk.cntk_py.DistributedCommunicator.current_worker
+  isExternal: false
+  name: current_worker
+  parent: cntk.cntk_py.DistributedCommunicator
+  uid: cntk.cntk_py.DistributedCommunicator.current_worker
+- fullName: cntk.cntk_py.DistributedCommunicator.finalize
+  isExternal: false
+  name: finalize
+  parent: cntk.cntk_py.DistributedCommunicator
+  uid: cntk.cntk_py.DistributedCommunicator.finalize
+- fullName: cntk.cntk_py.DistributedCommunicator.gather
+  isExternal: false
+  name: gather
+  parent: cntk.cntk_py.DistributedCommunicator
+  uid: cntk.cntk_py.DistributedCommunicator.gather
+- fullName: cntk.cntk_py.DistributedCommunicator.sub_group
+  isExternal: false
+  name: sub_group
+  parent: cntk.cntk_py.DistributedCommunicator
+  uid: cntk.cntk_py.DistributedCommunicator.sub_group
+- fullName: cntk.cntk_py.DistributedCommunicator.workers
+  isExternal: false
+  name: workers
+  parent: cntk.cntk_py.DistributedCommunicator
+  uid: cntk.cntk_py.DistributedCommunicator.workers
