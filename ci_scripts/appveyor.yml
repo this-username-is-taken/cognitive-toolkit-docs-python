@@ -4,30 +4,26 @@ build_cloud: cntk-python-ci-build
 image: appveyor-build
 configuration: Release
 
-init:
-    - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-
-
 environment:
   github_access_token:
     secure: DpN0M7pZDocpyv+muc15qHDKz9lMJ7Zr34aMC0HtOdeVkbTERuKkxq4WHAd3S33v
-    
-  APPVEYOR_RDP_PASSWORD: '#Bugsfor$'
-  
 
 clone_script:
+    - dir c:\projects
+    - dir c:\projects\cntk
+    
     - git config --global core.autocrlf true
     - git config core.autocrlf
 
     # get cntk 
     - cd c:\projects
-    - git clone http://github.com/Microsoft/cntk
+    - git clone -q --branch=release/2.0 http://github.com/Microsoft/cntk
     - cd c:\projects\cntk
     - git submodule update --init -- Source/Multiverso
  
     # get MicrosoftDocs/cognitive-toolkit-docs-python
     - cd c:\projects
-    - git clone -q --branch=jinhwa/ci_test https://github.com/MicrosoftDocs/cognitive-toolkit-docs-python.git
+    - git clone -q --branch=yannan/test1 https://github.com/MicrosoftDocs/cognitive-toolkit-docs-python.git
     
 
 before_build:
@@ -41,13 +37,16 @@ before_build:
     # in case of cuda dll missing
     - mkdir c:\\projects\\cntk\\x64\\Release
     - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/nvml.dll -Destination c:\\projects\\cntk\\x64\\Release\\nvml.dll -force
-
+    - echo %CNTK_ENABLE_ASGD%
+    - set CNTK_ENABLE_ASGD=true
+    - echo %CNTK_ENABLE_ASGD%
     
 build:
   project: c:\projects\cntk\CNTK.sln
   parallel: true
   verbosity: minimal
   
+test: off
 
 on_finish:
     - ps: Write-Host "appveyor.xml on_finish"
@@ -57,11 +56,25 @@ on_finish:
     - ps: pip install $files
     - cd c:\projects\cntk\bindings\python\doc
     - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/conf.py -Destination c:/projects/cntk/bindings/python/doc/conf.py -force
-    - call build.bat  # to generate rst files
-    - sphinx-build.exe . _build
     
+    # Install sphinx-docfx-yaml
+    - ps: pip uninstall -y sphinx-docfx-yaml
+    - ps: pip install sphinx-docfx-yaml
+    - ps: pip show sphinx-docfx-yaml
+    
+    # generate rst files
+    - call build.bat
+    - sphinx-build.exe . _build
+
+    # postprocess for toc.yml
+    - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/postprocess_toc_yml.py -Destination c:/projects/cntk/bindings/python/doc/postprocess_toc_yml.py -force
+    - cd c:\projects\cntk\bindings\python\doc
+    - dir _build\docfx_yaml
+    - python postprocess_toc_yml.py
+
     # remove old yml fils
     - ps: Remove-Item c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\2.0\* -recurse
+
     # copy yml fils generated
     - ps: Copy-Item -Path C:\projects\CNTK\bindings\python\doc\_build\docfx_yaml\* -Destination c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\2.0\ -recurse -force
 
@@ -74,4 +87,6 @@ on_finish:
     - git config --global user.email "vscavu@microsoft.com"
     - git add . 
     - git commit -a -m "appveyor ci - update yml files" 
-    - git push -u origin jinhwa/ci_test:jinhwa/ci_test -f
+    - git push -u origin yannan/test1:yannan/test1 -f
+
+  
