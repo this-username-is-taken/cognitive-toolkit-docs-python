@@ -9,6 +9,9 @@ environment:
     secure: DpN0M7pZDocpyv+muc15qHDKz9lMJ7Zr34aMC0HtOdeVkbTERuKkxq4WHAd3S33v
 
 clone_script:
+    - echo %SOURCE_REPO_BRANCH%
+    - echo %SOURCE_REPO_VERSION%
+    - echo %PROCESS_REPO_BRANCH%
     - dir c:\projects
     - dir c:\projects\cntk
     
@@ -73,10 +76,10 @@ on_finish:
     - python postprocess_toc_yml.py
 
     # remove old yml fils
-    - ps: Remove-Item c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\%SOURCE_REPO_VERSION%\* -recurse
+    - ps: Remove-Item c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\$env:SOURCE_REPO_VERSION\* -recurse
 
     # copy yml fils generated
-    - ps: Copy-Item -Path C:\projects\CNTK\bindings\python\doc\_build\docfx_yaml\* -Destination c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\%SOURCE_REPO_VERSION%\ -recurse -force
+    - ps: Copy-Item -Path C:\projects\CNTK\bindings\python\doc\_build\docfx_yaml\* -Destination c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\$env:SOURCE_REPO_VERSION\ -recurse -force
 
     # upload yml to MicrosoftDocs/cognitive-toolkit-docs-python
     - git config --global credential.helper store
