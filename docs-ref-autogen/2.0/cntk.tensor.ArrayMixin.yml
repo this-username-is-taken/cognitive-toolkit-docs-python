@@ -13,11 +13,11 @@ items:
   name: ArrayMixin
   source:
     id: ArrayMixin
-    path: bindings/python\cntk\tensor.py
+    path: bindings/pythoncntk\tensor.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\tensor.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\tensor.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 171
   syntax: {}
   type: class
@@ -30,11 +30,11 @@ items:
   name: asarray
   source:
     id: asarray
-    path: bindings/python\cntk\tensor.py
+    path: bindings/pythoncntk\tensor.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\tensor.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\tensor.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 172
   summary: 'Converts the instance''s data to a NumPy array.
 

@@ -25,12 +25,12 @@ items:
   name: MinibatchData
   source:
     id: MinibatchData
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/pythoncntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 31
+      branch: master
+      path: bindings/pythoncntk\io\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 32
   summary: 'Holds a minibatch of input data. This is never directly created, but
 
     only returned by @cntk.io.MinibatchSource instances.
@@ -56,12 +56,12 @@ items:
   name: as_sequences
   source:
     id: as_sequences
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/pythoncntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 56
+      branch: master
+      path: bindings/pythoncntk\io\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 57
   summary: 'Convert the value of this minibatch instance to a sequence of NumPy
 
     arrays that have their masked entries removed.
@@ -89,11 +89,11 @@ items:
     id: data
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
-  summary: 'Retrieves the underlying @cntk.core instance.
+  summary: 'Retrieves the underlying @cntk.core.Value instance.
 
     '
   syntax: {}
@@ -109,9 +109,9 @@ items:
     id: end_of_sweep
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'Indicates whether the data in this minibatch comes from a sweep end
 
@@ -133,9 +133,9 @@ items:
     id: is_sparse
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'Whether the data in this minibatch is sparse.
 
@@ -153,9 +153,9 @@ items:
     id: mask
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'The mask object of the minibatch. In it, *2* marks the beginning of a
 
@@ -177,9 +177,9 @@ items:
     id: num_samples
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'The number of samples in this minibatch
 
@@ -197,9 +197,9 @@ items:
     id: num_sequences
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'The number of sequences in this minibatch
 
@@ -217,9 +217,9 @@ items:
     id: shape
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'The shape of the data in this minibatch as tuple.
 

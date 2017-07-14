@@ -11,11 +11,11 @@ items:
   name: misc
   source:
     id: misc
-    path: bindings/python\cntk\misc\__init__.py
+    path: bindings/pythoncntk\misc\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\misc\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\misc\__init__.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 0
   summary: 'Miscellaneous utilities for CNTK, e.g. filtering and converting nodes
     in CNTK computation graph.

@@ -15,11 +15,11 @@ items:
   name: training_session
   source:
     id: training_session
-    path: bindings/python\cntk\train\training_session.py
+    path: bindings/pythoncntk\train\training_session.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\train\training_session.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\train\training_session.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 0
   summary: 'A training session encapsulates a typical training loop and binds together
     a minibatch source that is used for training, a :class:`~cntk.train.trainer.Trainer`
@@ -86,12 +86,12 @@ items:
   name: minibatch_size_schedule
   source:
     id: minibatch_size_schedule
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/pythoncntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 67
+      branch: master
+      path: bindings/pythoncntk\internal\swig_helper.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 296
   summary: 'Creates a minibatch size schedule.
 
     '
@@ -129,12 +129,12 @@ items:
   name: training_session
   source:
     id: training_session
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/pythoncntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 67
+      branch: master
+      path: bindings/pythoncntk\internal\swig_helper.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 339
   summary: 'A factory function to create a training session object.
 
     '
@@ -148,13 +148,13 @@ items:
         '
       id: trainer
       type:
-      - cntk.train.trainer
+      - cntk.train.trainer.Trainer
     - description: 'minibatch source used for training
 
         '
       id: mb_source
       type:
-      - cntk.io
+      - cntk.io.MinibatchSource
     - description: 'minibatch schedule for training
 
         '

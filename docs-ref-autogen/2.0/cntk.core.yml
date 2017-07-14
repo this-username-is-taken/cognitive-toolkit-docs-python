@@ -14,11 +14,11 @@ items:
   name: core
   source:
     id: core
-    path: bindings/python\cntk\core.py
+    path: bindings/pythoncntk\core.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\core.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\core.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 0
   summary: 'Core numerical constructs.
 
@@ -38,11 +38,11 @@ items:
   name: asarray
   source:
     id: asarray
-    path: bindings/python\cntk\core.py
+    path: bindings/pythoncntk\core.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\core.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\core.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 660
   summary: 'Converts a Value object to a sequence of NumPy arrays (if dense) or CSR
     arrays (if sparse).
@@ -63,11 +63,11 @@ items:
   name: asvalue
   source:
     id: asvalue
-    path: bindings/python\cntk\core.py
+    path: bindings/pythoncntk\core.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\core.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\core.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 676
   summary: 'Converts a sequence of NumPy arrays or CSR arrays to a Value object.
 
@@ -86,11 +86,11 @@ items:
   name: user_function
   source:
     id: user_function
-    path: bindings/python\cntk\core.py
+    path: bindings/pythoncntk\core.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\core.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\core.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 651
   summary: 'Wraps the passed Function to create a composite representing the
 

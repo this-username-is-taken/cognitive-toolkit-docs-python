@@ -11,11 +11,11 @@ items:
   name: tensor
   source:
     id: tensor
-    path: bindings/python\cntk\tensor.py
+    path: bindings/pythoncntk\tensor.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\tensor.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\tensor.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 0
   summary: 'Tensor operations.
 

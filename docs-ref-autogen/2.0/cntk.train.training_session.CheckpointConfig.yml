@@ -14,11 +14,11 @@ items:
   name: CheckpointConfig
   source:
     id: CheckpointConfig
-    path: bindings/python\cntk\train\training_session.py
+    path: bindings/pythoncntk\train\training_session.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\train\training_session.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\train\training_session.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 14
   summary: 'A checkpoint configuration for the training session.
 

@@ -10,11 +10,11 @@ items:
   name: converter
   source:
     id: converter
-    path: bindings/python\cntk\misc\converter.py
+    path: bindings/pythoncntk\misc\converter.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\misc\converter.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\misc\converter.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 0
   type: module
   uid: cntk.misc.converter
@@ -25,11 +25,11 @@ items:
   name: convert
   source:
     id: convert
-    path: bindings/python\cntk\misc\converter.py
+    path: bindings/pythoncntk\misc\converter.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\misc\converter.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\misc\converter.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 8
   summary: 'Clones the graph underlying root_func and in the clone substitutes
 

@@ -30,11 +30,11 @@ items:
   name: cntk
   source:
     id: cntk
-    path: bindings/python\cntk\__init__.py
+    path: bindings/pythoncntk\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\__init__.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 0
   type: package
   uid: cntk

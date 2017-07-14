@@ -23,11 +23,11 @@ items:
   name: io
   source:
     id: io
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/pythoncntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\io\__init__.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 0
   summary: 'CNTK IO utilities.
 
@@ -43,22 +43,21 @@ items:
     \ \n"
   source:
     id: Base64ImageDeserializer
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/pythoncntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 832
+      branch: master
+      path: bindings/pythoncntk\io\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 841
   summary: "Configures the image reader that reads base64 encoded images and corresponding\n\
-    labels from a file of the form:\n\n<!-- literal_block {\"xml:space\": \"preserve\"\
-    , \"names\": [], \"classes\": [], \"ids\": [], \"backrefs\": [], \"dupnames\"\
-    : []} -->\n\n````\n\n   [sequenceId <tab>] <numerical label (0-based class id)>\
+    labels from a file of the form:\n\n<!-- literal_block {\"names\": [], \"xml:space\"\
+    : \"preserve\", \"dupnames\": [], \"classes\": [], \"ids\": [], \"backrefs\":\
+    \ []} -->\n\n````\n\n   [sequenceId <tab>] <numerical label (0-based class id)>\
     \ <tab> <base64 encoded image>\n   ````\n\nSimilarly to the ImageDeserializer,\
     \ the sequenceId prefix is optional and can be omitted.\n"
   syntax:
     content: Base64ImageDeserializer(filename, streams)
     parameters:
-    - id: filename
     - description: 'file name of the input file dataset that contains images
 
         and corresponding labels
@@ -67,6 +66,7 @@ items:
       id: filename
       type:
       - str
+    - id: streams
   type: function
   uid: cntk.io.Base64ImageDeserializer
 - fullName: cntk.io.CTFDeserializer
@@ -78,18 +78,18 @@ items:
     \ \n"
   source:
     id: CTFDeserializer
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/pythoncntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 852
+      branch: master
+      path: bindings/pythoncntk\io\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 861
   summary: "Configures the CNTK text-format reader that reads text-based files with\n\
-    lines of the form:\n\n<!-- literal_block {\"xml:space\": \"preserve\", \"names\"\
-    : [], \"classes\": [], \"ids\": [], \"backrefs\": [], \"dupnames\": []} -->\n\n\
-    ````\n\n   [Sequence_Id] (Sample)+\n   ````\n\nwhere:\n\n<!-- literal_block {\"\
-    xml:space\": \"preserve\", \"names\": [], \"classes\": [], \"ids\": [], \"backrefs\"\
-    : [], \"dupnames\": []} -->\n\n````\n\n   Sample=|Input_Name (Value )*\n   ````\n"
+    lines of the form:\n\n<!-- literal_block {\"names\": [], \"xml:space\": \"preserve\"\
+    , \"dupnames\": [], \"classes\": [], \"ids\": [], \"backrefs\": []} -->\n\n````\n\
+    \n   [Sequence_Id] (Sample)+\n   ````\n\nwhere:\n\n<!-- literal_block {\"names\"\
+    : [], \"xml:space\": \"preserve\", \"dupnames\": [], \"classes\": [], \"ids\"\
+    : [], \"backrefs\": []} -->\n\n````\n\n   Sample=|Input_Name (Value )*\n   ````\n"
   syntax:
     content: CTFDeserializer(filename, streams)
     parameters:
@@ -116,12 +116,12 @@ items:
   name: HTKFeatureDeserializer
   source:
     id: HTKFeatureDeserializer
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/pythoncntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 723
+      branch: master
+      path: bindings/pythoncntk\io\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 732
   summary: 'Configures the HTK feature reader that reads speech data from scp files.
 
     '
@@ -145,12 +145,12 @@ items:
   name: HTKMLFDeserializer
   source:
     id: HTKMLFDeserializer
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/pythoncntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 755
+      branch: master
+      path: bindings/pythoncntk\io\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 764
   summary: 'Configures an HTK label reader that reads speech HTK format MLF (Master
 
     Label File)
@@ -159,8 +159,7 @@ items:
   syntax:
     content: HTKMLFDeserializer(label_mapping_file, streams, phoneBoundaries=False)
     parameters:
-    - defaultValue: 'False'
-      description: 'path to the label mapping file
+    - description: 'path to the label mapping file
 
         '
       id: label_mapping_file
@@ -174,7 +173,8 @@ items:
 
         '
       id: streams
-    - description: 'if phone boundaries should be considered (should be set to True
+    - defaultValue: 'False'
+      description: 'if phone boundaries should be considered (should be set to True
         for CTC training, False otherwise)
 
         '
@@ -192,23 +192,22 @@ items:
     \ \n"
   source:
     id: ImageDeserializer
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/pythoncntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 810
+      branch: master
+      path: bindings/pythoncntk\io\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 819
   summary: "Configures the image reader that reads images and corresponding\nlabels\
-    \ from a file of the form:\n\n<!-- literal_block {\"xml:space\": \"preserve\"\
-    , \"names\": [], \"classes\": [], \"ids\": [], \"backrefs\": [], \"dupnames\"\
-    : []} -->\n\n````\n\n   <full path to image> <tab> <numerical label (0-based class\
-    \ id)>\n   ````\n\nor:\n\n<!-- literal_block {\"xml:space\": \"preserve\", \"\
-    names\": [], \"classes\": [], \"ids\": [], \"backrefs\": [], \"dupnames\": []}\
+    \ from a file of the form:\n\n<!-- literal_block {\"names\": [], \"xml:space\"\
+    : \"preserve\", \"dupnames\": [], \"classes\": [], \"ids\": [], \"backrefs\":\
+    \ []} -->\n\n````\n\n   <full path to image> <tab> <numerical label (0-based class\
+    \ id)>\n   ````\n\nor:\n\n<!-- literal_block {\"names\": [], \"xml:space\": \"\
+    preserve\", \"dupnames\": [], \"classes\": [], \"ids\": [], \"backrefs\": []}\
     \ -->\n\n````\n\n   sequenceId <tab> path <tab> label\n   ````\n"
   syntax:
     content: ImageDeserializer(filename, streams)
     parameters:
-    - id: filename
     - description: 'file name of the map file that associates images to
 
         classes
@@ -217,6 +216,7 @@ items:
       id: filename
       type:
       - str
+    - id: streams
   type: function
   uid: cntk.io.ImageDeserializer
 - fullName: cntk.io.StreamDef
@@ -226,12 +226,12 @@ items:
   name: StreamDef
   source:
     id: StreamDef
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/pythoncntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 906
+      branch: master
+      path: bindings/pythoncntk\io\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 915
   summary: "   Configuration of a stream for use with the builtin Deserializers.\n\
     \   The meanings of some configuration keys have a mild dependency on the\n  \
     \ exact deserializer, and certain keys are meaningless for certain\n   deserializers.\n"
@@ -260,7 +260,7 @@ items:
       id: shape
       type:
       - int or tuple, defaults to None
-    - defaultValue: None
+    - defaultValue: 'False'
       description: 'whether the provided data is
 
         sparse. *False* by default, unless mlf is provided.
@@ -291,7 +291,7 @@ items:
       id: context
       type:
       - tuple, defaults to None
-    - defaultValue: 'False'
+    - defaultValue: None
       description: 'scp files for HTK data
 
         '
@@ -316,7 +316,8 @@ items:
       id: broadcast
       type:
       - bool, defaults to None
-    - description: 'whether this stream defines
+    - defaultValue: 'False'
+      description: 'whether this stream defines
 
         the minibatch size.
 
@@ -333,12 +334,12 @@ items:
   name: sequence_to_cntk_text_format
   source:
     id: sequence_to_cntk_text_format
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/pythoncntk\io\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1018
+      branch: master
+      path: bindings/pythoncntk\io\__init__.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 1027
   summary: 'Converts a list of NumPy arrays representing tensors of inputs into a
 
     format that is readable by @cntk.io.CTFDeserializer.

@@ -25,11 +25,11 @@ items:
   name: VariableMixin
   source:
     id: VariableMixin
-    path: bindings/python\cntk\variables.py
+    path: bindings/pythoncntk\variables.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\variables.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\variables.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 65
   summary: 'Standard properties for @cntk.variables.Variable and its derived classes
 
@@ -62,9 +62,9 @@ items:
     id: dtype
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'The NumPy type of this variable.
 
@@ -82,9 +82,9 @@ items:
     id: dynamic_axes
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'The dynamic axes of this variable.
 
@@ -102,9 +102,9 @@ items:
     id: is_constant
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'Whether this variable is a constant.
 
@@ -122,9 +122,9 @@ items:
     id: is_input
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'Whether this variable is an input.
 
@@ -142,9 +142,9 @@ items:
     id: is_output
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'Whether this variable is an output.
 
@@ -162,9 +162,9 @@ items:
     id: is_parameter
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'Whether this variable is a parameter.
 
@@ -182,9 +182,9 @@ items:
     id: is_placeholder
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'Whether this variable is a placeholder.
 
@@ -202,9 +202,9 @@ items:
     id: is_sparse
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'Whether this variable is sparse.
 
@@ -222,9 +222,9 @@ items:
     id: name
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'The name of this variable.
 
@@ -242,9 +242,9 @@ items:
     id: needs_gradient
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'Whether this variable needs gradients.
 
@@ -262,9 +262,9 @@ items:
     id: owner
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'The function this variable is an output of.
 
@@ -282,9 +282,9 @@ items:
     id: shape
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'The shape of this variable as a tuple.
 
@@ -302,9 +302,9 @@ items:
     id: uid
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'The internally generated unique name of the variable.
 

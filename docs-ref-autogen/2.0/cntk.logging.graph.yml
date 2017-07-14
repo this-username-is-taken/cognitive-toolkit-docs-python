@@ -14,11 +14,11 @@ items:
   name: graph
   source:
     id: graph
-    path: bindings/python\cntk\logging\graph.py
+    path: bindings/pythoncntk\logging\graph.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\logging\graph.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\logging\graph.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 0
   type: module
   uid: cntk.logging.graph
@@ -29,11 +29,11 @@ items:
   name: depth_first_search
   source:
     id: depth_first_search
-    path: bindings/python\cntk\logging\graph.py
+    path: bindings/pythoncntk\logging\graph.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\logging\graph.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\logging\graph.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 12
   summary: 'Generic function that walks through the graph starting at `root` and
 
@@ -45,8 +45,7 @@ items:
   syntax:
     content: depth_first_search(root, visitor, depth=0)
     parameters:
-    - defaultValue: '0'
-      description: 'the root to start the journey from
+    - description: 'the root to start the journey from
 
         '
       id: root
@@ -60,7 +59,8 @@ items:
       id: visitor
       type:
       - Python function or lambda
-    - description: 'how deep into the block hierarchy the DFS
+    - defaultValue: '0'
+      description: 'how deep into the block hierarchy the DFS
 
         algorithm should go into. Set to -1 for infinite depth.
 
@@ -83,11 +83,11 @@ items:
     \ @cntk.ops.functions.Function. \n"
   source:
     id: find_all_with_name
-    path: bindings/python\cntk\logging\graph.py
+    path: bindings/pythoncntk\logging\graph.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\logging\graph.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\logging\graph.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 79
   summary: 'Finds functions in the graph starting from `node` and doing a depth-first
 
@@ -97,8 +97,7 @@ items:
   syntax:
     content: find_all_with_name(node, node_name, depth=0)
     parameters:
-    - defaultValue: '0'
-      description: 'the node to start the journey from
+    - description: 'the node to start the journey from
 
         '
       id: node
@@ -110,7 +109,8 @@ items:
       id: node_name
       type:
       - str
-    - description: 'how deep into the block hierarchy the DFS
+    - defaultValue: '0'
+      description: 'how deep into the block hierarchy the DFS
 
         algorithm should go into. Set to -1 for infinite depth.
 
@@ -133,11 +133,11 @@ items:
     \ \n"
   source:
     id: find_by_name
-    path: bindings/python\cntk\logging\graph.py
+    path: bindings/pythoncntk\logging\graph.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\logging\graph.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\logging\graph.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 100
   summary: 'Finds a function in the graph starting from `node` and doing a depth-first
 
@@ -147,8 +147,7 @@ items:
   syntax:
     content: find_by_name(node, node_name, depth=0)
     parameters:
-    - defaultValue: '0'
-      description: 'the node to start the journey from
+    - description: 'the node to start the journey from
 
         '
       id: node
@@ -160,7 +159,8 @@ items:
       id: node_name
       type:
       - str
-    - description: 'how deep into the block hierarchy the DFS
+    - defaultValue: '0'
+      description: 'how deep into the block hierarchy the DFS
 
         algorithm should go into. Set to -1 for infinite depth.
 
@@ -181,11 +181,11 @@ items:
   name: get_node_outputs
   source:
     id: get_node_outputs
-    path: bindings/python\cntk\logging\graph.py
+    path: bindings/pythoncntk\logging\graph.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\logging\graph.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\logging\graph.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 347
   summary: 'Walks through every node of the graph starting at `node`
 
@@ -195,14 +195,14 @@ items:
   syntax:
     content: get_node_outputs(node, depth=0)
     parameters:
-    - id: node
-    - defaultValue: '0'
-      description: 'the node to start the journey from
+    - description: 'the node to start the journey from
 
         '
       id: node
       type:
       - graph node
+    - defaultValue: '0'
+      id: depth
     return:
       description: 'A list of all node outputs
 
@@ -216,11 +216,11 @@ items:
   name: plot
   source:
     id: plot
-    path: bindings/python\cntk\logging\graph.py
+    path: bindings/pythoncntk\logging\graph.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\logging\graph.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\logging\graph.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 136
   summary: "Walks through every node of the graph starting at `root`,\ncreates a network\
     \ graph, and returns a network description. If `filename` is\nspecified, it outputs\

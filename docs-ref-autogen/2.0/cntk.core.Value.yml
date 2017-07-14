@@ -25,11 +25,11 @@ items:
   name: Value
   source:
     id: Value
-    path: bindings/python\cntk\core.py
+    path: bindings/pythoncntk\core.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\core.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\core.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 244
   summary: 'Internal representation of minibatch data.
 
@@ -86,11 +86,11 @@ items:
   name: as_sequences
   source:
     id: as_sequences
-    path: bindings/python\cntk\core.py
+    path: bindings/pythoncntk\core.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\core.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\core.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 280
   summary: 'Convert a Value to a sequence of NumPy arrays that have their masked
 
@@ -122,12 +122,12 @@ items:
   name: create
   source:
     id: create
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/pythoncntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 67
+      branch: master
+      path: bindings/pythoncntk\internal\swig_helper.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 366
   summary: 'Creates a @cntk.core.Value object.
 
     '
@@ -192,9 +192,9 @@ items:
     id: data
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'Retrieves the underlying @cntk.core.NDArrayView instance.
 
@@ -212,9 +212,9 @@ items:
     id: device
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'Retrieves the @cntk.device.DeviceDescriptor instance.
 
@@ -232,9 +232,9 @@ items:
     id: dtype
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'NumPy data type of the instance
 
@@ -252,9 +252,9 @@ items:
     id: is_read_only
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'Whether the data is read-only
 
@@ -272,9 +272,9 @@ items:
     id: is_sparse
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'Whether the data is sparse or dense
 
@@ -292,9 +292,9 @@ items:
     id: is_valid
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'Whether the value is valid or has been invalidated by another forward
     and/or backward pass
@@ -327,9 +327,9 @@ items:
     id: mask
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: "The mask matrix of this value. Each row denotes a sequence with its\n\
     elements describing the mask of the element:\n\n   * 2: beginning of sequence\
@@ -366,12 +366,12 @@ items:
   name: one_hot
   source:
     id: one_hot
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/pythoncntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\internal\swig_helper.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 67
+      branch: master
+      path: bindings/pythoncntk\internal\swig_helper.py
+      repo: http://github.com/Microsoft/cntk
+    startLine: 472
   summary: 'Converts `batch` into a @cntk.core.Value object of `dtype`
 
     such that the integer data in `batch` is interpreted as the indices
@@ -431,9 +431,9 @@ items:
     id: shape
     path: null
     remote:
-      branch: release/2.0
+      branch: master
       path: null
-      repo: https://github.com/Microsoft/CNTK.git
+      repo: http://github.com/Microsoft/cntk
     startLine: null
   summary: 'The rectangular shape of this value. I.e., if this value has sequences
 

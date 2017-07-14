@@ -12,11 +12,11 @@ items:
   name: TensorOpsMixin
   source:
     id: TensorOpsMixin
-    path: bindings/python\cntk\tensor.py
+    path: bindings/pythoncntk\tensor.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\tensor.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\tensor.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 14
   summary: 'This class defines math overloads so that CNTK nodes can be written in
     math

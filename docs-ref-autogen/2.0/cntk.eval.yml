@@ -10,11 +10,11 @@ items:
   name: eval
   source:
     id: eval
-    path: bindings/python\cntk\eval\__init__.py
+    path: bindings/pythoncntk\eval\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\eval\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\eval\__init__.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 0
   summary: 'Utilities for model evaluation.
 

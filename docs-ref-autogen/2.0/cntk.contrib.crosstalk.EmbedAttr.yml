@@ -16,11 +16,11 @@ items:
   name: EmbedAttr
   source:
     id: EmbedAttr
-    path: bindings/python\cntk\contrib\crosstalk\__init__.py
+    path: bindings/pythoncntk\contrib\crosstalk\__init__.py
     remote:
-      branch: release/2.0
-      path: bindings/python\cntk\contrib\crosstalk\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
+      branch: master
+      path: bindings/pythoncntk\contrib\crosstalk\__init__.py
+      repo: http://github.com/Microsoft/cntk
     startLine: 104
   summary: "Attribute for embedding variable\n\ndict\n   The list of vocabulary of\
     \ the embedding\n\ninput_dim\n   The input dimension of the embedding\n"
