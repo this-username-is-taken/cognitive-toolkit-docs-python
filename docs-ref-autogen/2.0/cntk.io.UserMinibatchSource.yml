@@ -23,10 +23,10 @@ items:
     id: UserMinibatchSource
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 389
+    startLine: 382
   summary: 'Base class of all user minibatch sources.
 
 
@@ -49,10 +49,10 @@ items:
     id: get_checkpoint_state
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 458
+    startLine: 448
   summary: 'Returns a dictionary describing the current state of the minibatch
 
     source. Needs to be overwritten if the state of the minibatch source
@@ -80,10 +80,10 @@ items:
     id: next_minibatch
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 421
+    startLine: 414
   summary: 'Function to be implemented by the user.
 
     '
@@ -109,16 +109,7 @@ items:
       type:
       - int
     - defaultValue: None
-      description: 'the device
-
-        descriptor that contains the type and id of the device on which the
-
-        computation is performed. If *None*, the default device is used.
-
-        '
       id: device
-      type:
-      - DeviceDescriptor, defaults to None
     return:
       description: 'mapping of @cntk.io.StreamInformation to @cntk.io.MinibatchData
 
@@ -135,10 +126,10 @@ items:
     id: restore_from_checkpoint
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 469
+    startLine: 459
   summary: 'Sets the state of the checkpoint.
 
     '
@@ -163,10 +154,10 @@ items:
     id: stream_info
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 413
+    startLine: 406
   summary: 'Gets the description of the stream with given name.
 
     Throws an exception if there are none or multiple streams with this
@@ -191,10 +182,10 @@ items:
     id: stream_infos
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 399
+    startLine: 392
   summary: 'Function to be implemented by the user.
 
     '

@@ -18,7 +18,7 @@ items:
     id: default_options
     path: bindings/python/cntk\default_options.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -47,7 +47,7 @@ items:
     id: default_options
     path: bindings/python/cntk\default_options.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 39
@@ -64,7 +64,7 @@ items:
     id: default_options_for
     path: bindings/python/cntk\default_options.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 47
@@ -83,7 +83,7 @@ items:
     id: get_default_override
     path: bindings/python/cntk\default_options.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 65
@@ -96,8 +96,8 @@ items:
     content: get_default_override(function_or_class, **kwargs)
     parameters:
     - description: "the function that calls this.\nFor example:\n\n<!-- literal_block\
-        \ {\"classes\": [], \"dupnames\": [], \"backrefs\": [], \"names\": [], \"\
-        ids\": [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   def Convolution(args,\
+        \ {\"classes\": [], \"ids\": [], \"xml:space\": \"preserve\", \"names\": [],\
+        \ \"dupnames\": [], \"backrefs\": []} -->\n\n````\n\n   def Convolution(args,\
         \ init=default_override_or(glorot_uniform()), activation=default_override_or(identity),\
         \ pad=default_override_or(False)):\n   init = _get_default_override(Convolution,\
         \ init=init) # pass default under the same name\n   ````\n"
@@ -113,7 +113,7 @@ items:
     id: get_global_option
     path: bindings/python/cntk\default_options.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 117
@@ -133,7 +133,7 @@ items:
     id: is_default_override
     path: bindings/python/cntk\default_options.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 62
@@ -152,7 +152,7 @@ items:
     id: set_global_option
     path: bindings/python/cntk\default_options.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 110

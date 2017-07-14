@@ -31,7 +31,7 @@ items:
     id: layers
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -71,7 +71,7 @@ items:
     id: Activation
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1114
@@ -89,7 +89,7 @@ items:
   syntax:
     content: Activation(activation=identity, name='')
     parameters:
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5910390>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F390>
       description: 'function to apply at the end, e.g. *relu*
 
         '
@@ -135,7 +135,7 @@ items:
     id: AveragePooling
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 936
@@ -175,7 +175,7 @@ items:
       id: strides
       type:
       - int or tuple of ints, defaults to 1
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF59102E8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F2E8>
       description: 'if *False*, then the pooling operation will be shifted over the
         "valid"
 
@@ -221,7 +221,7 @@ items:
     id: BatchNormalization
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1147
@@ -253,7 +253,7 @@ items:
     content: BatchNormalization(map_rank=None, init_scale=1, normalization_time_constant=5000,
       blend_time_constant=0, epsilon=0.00001, use_cntk_engine=False, name='')
     parameters:
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF59103C8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F3C8>
       description: 'passing 1 means spatially-pooled batch-normalization, where normalization
         values will be tied across all pixel positions; while `None`
 
@@ -270,7 +270,7 @@ items:
       id: init_scale
       type:
       - float, default 1
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5910400>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F400>
       description: 'time constant for smoothing the batch statistics in order to compute
         aggregate estimates for inference.
 
@@ -285,14 +285,14 @@ items:
       id: epsilon
       type:
       - float, default 0.00001
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5910438>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F438>
       description: 'if `True` then use CNTK''s own engine instead of NVidia''s.
 
         '
       id: use_cntk_engine
       type:
       - bool, default False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5910470>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F470>
       description: 'the name of the function instance in the network
 
         '
@@ -336,7 +336,7 @@ items:
     id: Convolution
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 287
@@ -435,7 +435,7 @@ items:
       id: sequential
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF59087F0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D108797F0>
       description: 'optional function to apply at the end, e.g. *relu*
 
         '
@@ -444,7 +444,7 @@ items:
       - 'cntk.ops.functions.Function
 
         , defaults to identity'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908860>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879860>
       description: 'initial value of weights *W*
 
         '
@@ -455,7 +455,7 @@ items:
         , defaults to @cntk.initializer.glorot_uniform
 
         '
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908898>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879898>
       description: 'if *False*, then the filter will be shifted over the "valid"
 
         area of input, that is, no value outside the area is used. If `pad=True` on
@@ -487,14 +487,14 @@ items:
       id: sharing
       type:
       - bool, defaults to True
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF59088D0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D108798D0>
       description: 'the layer will have no bias if *False* is passed here
 
         '
       id: bias
       type:
       - bool, optional, defaults to True
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908908>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879908>
       description: 'initial value of weights *b*
 
         '
@@ -556,7 +556,7 @@ items:
     id: Convolution1D
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 495
@@ -587,7 +587,7 @@ items:
       id: num_filters
       type:
       - int, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908940>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879940>
       description: 'optional function to apply at the end, e.g. *relu*
 
         '
@@ -596,7 +596,7 @@ items:
       - 'cntk.ops.functions.Function
 
         , defaults to identity'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF59089B0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D108799B0>
       description: 'initial value of weights *W*
 
         '
@@ -607,7 +607,7 @@ items:
         , defaults to @cntk.initializer.glorot_uniform
 
         '
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF59089E8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D108799E8>
       description: 'if *False*, then the filter will be shifted over the "valid"
 
         area of input, that is, no value outside the area is used. If `pad=True` on
@@ -630,14 +630,14 @@ items:
       id: strides
       type:
       - int or tuple of ints, defaults to 1
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908A20>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879A20>
       description: 'the layer will have no bias if *False* is passed here
 
         '
       id: bias
       type:
       - bool, defaults to True
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908A58>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879A58>
       description: 'initial value of weights *b*
 
         '
@@ -681,7 +681,7 @@ items:
     id: Convolution2D
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 544
@@ -712,7 +712,7 @@ items:
       id: num_filters
       type:
       - int, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908A90>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879A90>
       description: 'optional function to apply at the end, e.g. *relu*
 
         '
@@ -721,7 +721,7 @@ items:
       - 'cntk.ops.functions.Function
 
         , defaults to identity'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908B00>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879B00>
       description: 'initial value of weights *W*
 
         '
@@ -732,7 +732,7 @@ items:
         , defaults to @cntk.initializer.glorot_uniform
 
         '
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908B38>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879B38>
       description: 'if *False*, then the filter will be shifted over the "valid"
 
         area of input, that is, no value outside the area is used. If `pad=True` on
@@ -755,14 +755,14 @@ items:
       id: strides
       type:
       - int or tuple of ints, defaults to 1
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908B70>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879B70>
       description: 'the layer will have no bias if *False* is passed here
 
         '
       id: bias
       type:
       - bool, defaults to True
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908BA8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879BA8>
       description: 'initial value of weights *b*
 
         '
@@ -806,7 +806,7 @@ items:
     id: Convolution3D
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 594
@@ -837,7 +837,7 @@ items:
       id: num_filters
       type:
       - int, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908BE0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879BE0>
       description: 'optional function to apply at the end, e.g. *relu*
 
         '
@@ -846,7 +846,7 @@ items:
       - 'cntk.ops.functions.Function
 
         , defaults to identity'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908C50>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879C50>
       description: 'initial value of weights *W*
 
         '
@@ -857,7 +857,7 @@ items:
         , defaults to @cntk.initializer.glorot_uniform
 
         '
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908C88>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879C88>
       description: 'if *False*, then the filter will be shifted over the "valid"
 
         area of input, that is, no value outside the area is used. If `pad=True` on
@@ -880,14 +880,14 @@ items:
       id: strides
       type:
       - int or tuple of ints, defaults to 1
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908CC0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879CC0>
       description: 'the layer will have no bias if *False* is passed here
 
         '
       id: bias
       type:
       - bool, defaults to True
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908CF8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879CF8>
       description: 'initial value of weights *b*
 
         '
@@ -937,7 +937,7 @@ items:
     id: ConvolutionTranspose
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 646
@@ -1021,7 +1021,7 @@ items:
       id: num_filters
       type:
       - int
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908D30>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879D30>
       description: 'optional function to apply at the end, e.g. *relu*
 
         '
@@ -1030,7 +1030,7 @@ items:
       - 'cntk.ops.functions.Function
 
         , optional'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908DA0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879DA0>
       description: 'initial value of weights *W*
 
         '
@@ -1041,7 +1041,7 @@ items:
         , default @cntk.initializer.glorot_uniform
 
         '
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908DD8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879DD8>
       description: 'if *False*, then the filter will be shifted over the "valid"
 
         area of input, that is, no value outside the area is used. If `pad=True` on
@@ -1071,14 +1071,14 @@ items:
       id: sharing
       type:
       - bool, default True
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908E10>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879E10>
       description: 'the layer will have no bias if *False* is passed here
 
         '
       id: bias
       type:
       - bool, optional, default True
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908E48>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879E48>
       description: 'initial value of weights *b*
 
         '
@@ -1139,7 +1139,7 @@ items:
     id: ConvolutionTranspose1D
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 773
@@ -1158,17 +1158,17 @@ items:
     parameters:
     - id: filter_shape
     - id: num_filters
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908E80>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879E80>
       id: activation
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908EF0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879EF0>
       id: init
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908F28>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879F28>
       id: pad
     - defaultValue: '1'
       id: strides
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908F60>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879F60>
       id: bias
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908F98>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879F98>
       id: init_bias
     - defaultValue: None
       id: output_shape
@@ -1185,7 +1185,7 @@ items:
     id: ConvolutionTranspose2D
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 801
@@ -1204,17 +1204,17 @@ items:
     parameters:
     - id: filter_shape
     - id: num_filters
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908FD0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879FD0>
       id: activation
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5910080>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F080>
       id: init
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF59100B8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F0B8>
       id: pad
     - defaultValue: '1'
       id: strides
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF59100F0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F0F0>
       id: bias
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5910128>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F128>
       id: init_bias
     - defaultValue: None
       id: output_shape
@@ -1231,7 +1231,7 @@ items:
     id: ConvolutionTranspose3D
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 830
@@ -1250,17 +1250,17 @@ items:
     parameters:
     - id: filter_shape
     - id: num_filters
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5910160>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F160>
       id: activation
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF59101D0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F1D0>
       id: init
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5910208>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F208>
       id: pad
     - defaultValue: '1'
       id: strides
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5910240>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F240>
       id: bias
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5910278>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F278>
       id: init_bias
     - defaultValue: None
       id: output_shape
@@ -1331,7 +1331,7 @@ items:
     id: Dense
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 24
@@ -1381,7 +1381,7 @@ items:
       id: shape
       type:
       - int or tuple of ints
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908630>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879630>
       description: 'optional function to apply at the end, e.g. *relu*
 
         '
@@ -1390,7 +1390,7 @@ items:
       - 'cntk.ops.functions.Function
 
         , defaults to identity'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF59086A0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D108796A0>
       description: 'initial value of weights *W*
 
         '
@@ -1416,14 +1416,14 @@ items:
       id: map_rank
       type:
       - int, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF59086D8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D108796D8>
       description: 'the layer will have no bias if *False* is passed here
 
         '
       id: bias
       type:
       - bool, optional, defaults to True
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908710>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879710>
       description: 'initial value of weights *b*
 
         '
@@ -1431,7 +1431,7 @@ items:
       type:
       - 'scalar or NumPy array or @cntk.initializer
 
-        , defaults to 0'
+        , defualts to 0'
     - defaultValue: ''
       description: 'the name of the function instance in the network
 
@@ -1485,7 +1485,7 @@ items:
     id: Dropout
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1065
@@ -1568,13 +1568,13 @@ items:
     id: Embedding
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 154
   summary: "Layer factory function to create a embedding layer.\n\nAn embedding is\
     \ conceptually a lookup table. For every input token (e.g. a word or any category\
-    \ label), the corresponding\nentry in the lookup table is returned.\n\nIn CNTK,\
+    \ label), the corresponding\nentry in in the lookup table is returned.\n\nIn CNTK,\
     \ discrete items such as words are represented as one-hot vectors.\nThe table\
     \ lookup is realized as a matrix product, with a matrix\nwhose rows are the embedding\
     \ vectors.\nNote that multiplying a matrix from the left with a one-hot vector\
@@ -1583,8 +1583,8 @@ items:
     \ lookup if the input is sparse.\n\nThe lookup table in this layer is learnable,\n\
     unless a user-specified one is supplied through the `weights` parameter.\nFor\
     \ example, to use an existing embedding table from a file in numpy format, use\
-    \ this:\n\n<!-- literal_block {\"classes\": [], \"dupnames\": [], \"backrefs\"\
-    : [], \"names\": [], \"ids\": [], \"xml:space\": \"preserve\"} -->\n\n````\n\n\
+    \ this:\n\n<!-- literal_block {\"classes\": [], \"ids\": [], \"xml:space\": \"\
+    preserve\", \"names\": [], \"dupnames\": [], \"backrefs\": []} -->\n\n````\n\n\
     \   Embedding(weights=np.load('PATH.npy'))\n   ````\n\nTo initialize a learnable\
     \ lookup table with a given numpy array that is to be used as\nthe initial value,\
     \ pass that array to the `init` parameter (not `weights`).\n\nAn `Embedding` instance\
@@ -1599,7 +1599,7 @@ items:
       id: shape
       type:
       - int or tuple of ints
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5908780>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D10879780>
       description: '(learnable embedding only) initial value of weights *E*
 
         '
@@ -1651,7 +1651,7 @@ items:
     id: GlobalAveragePooling
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1018
@@ -1699,7 +1699,7 @@ items:
     id: GlobalMaxPooling
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 988
@@ -1745,7 +1745,7 @@ items:
     id: Label
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1262
@@ -1781,7 +1781,7 @@ items:
     id: LayerNormalization
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1214
@@ -1815,7 +1815,7 @@ items:
       id: initial_bias
       type:
       - float, default 0
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF59104A8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F4A8>
       description: 'epsilon added to the standard deviation to avoid division by 0
 
         '
@@ -1859,7 +1859,7 @@ items:
     id: MaxPooling
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 884
@@ -1899,7 +1899,7 @@ items:
       id: strides
       type:
       - int or tuple of ints, defaults to 1
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF59102B0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F2B0>
       description: 'if *False*, then the pooling operation will be shifted over the
         "valid"
 
@@ -1940,7 +1940,7 @@ items:
     id: MaxUnpooling
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 1050

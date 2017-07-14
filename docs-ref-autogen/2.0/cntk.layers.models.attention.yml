@@ -12,7 +12,7 @@ items:
     id: attention
     path: bindings/python/cntk\layers\models\attention.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\models\attention.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -30,7 +30,7 @@ items:
     id: AttentionModel
     path: bindings/python/cntk\layers\models\attention.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\layers\models\attention.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 23
@@ -50,11 +50,11 @@ items:
       id: attention_span
     - defaultValue: None
       id: attention_axis
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5910860>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F860>
       id: init
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF5910898>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F898>
       id: go_backwards
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000DAF59108D0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x0000003D1087F8D0>
       id: enable_self_stabilization
     - defaultValue: ''
       id: name

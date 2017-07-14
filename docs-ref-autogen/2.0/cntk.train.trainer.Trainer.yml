@@ -32,7 +32,7 @@ items:
     id: Trainer
     path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 22
@@ -113,7 +113,7 @@ items:
     id: evaluation_function
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -133,7 +133,7 @@ items:
     id: loss_function
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -153,7 +153,7 @@ items:
     id: model
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -173,7 +173,7 @@ items:
     id: parameter_learners
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -193,7 +193,7 @@ items:
     id: previous_minibatch_evaluation_average
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -214,7 +214,7 @@ items:
     id: previous_minibatch_loss_average
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -234,7 +234,7 @@ items:
     id: previous_minibatch_sample_count
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -254,10 +254,10 @@ items:
     id: restore_from_checkpoint
     path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 240
+    startLine: 239
   summary: 'Restores a checkpoint of the model and Trainer state from the
 
     specified file location.
@@ -284,7 +284,7 @@ items:
     id: save_checkpoint
     path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 225
@@ -308,12 +308,7 @@ items:
       type:
       - str
     - defaultValue: '{}'
-      description: 'additional external state, default is empty.
-
-        '
       id: external_state
-      type:
-      - dict
   type: method
   uid: cntk.train.trainer.Trainer.save_checkpoint
 - class: cntk.train.trainer.Trainer
@@ -326,10 +321,10 @@ items:
     id: summarize_test_progress
     path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 318
+    startLine: 317
   summary: 'Updates the progress writers with the summary of test progress since start
     and resets the internal
 
@@ -352,10 +347,10 @@ items:
     id: summarize_training_progress
     path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 311
+    startLine: 310
   summary: 'Updates the progress writers with the summary of training progress since
     start and resets the internal
 
@@ -378,7 +373,7 @@ items:
     id: test_minibatch
     path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 177
@@ -412,7 +407,7 @@ items:
     id: total_number_of_samples_seen
     path: null
     remote:
-      branch: master
+      branch: release/2.0
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -433,7 +428,7 @@ items:
     id: train_minibatch
     path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 96

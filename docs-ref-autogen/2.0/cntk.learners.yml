@@ -31,7 +31,7 @@ items:
     id: learners
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -76,7 +76,7 @@ items:
     id: adadelta
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 577
@@ -189,7 +189,7 @@ items:
     id: adagrad
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 629
@@ -293,7 +293,7 @@ items:
     id: adam
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 739
@@ -429,7 +429,7 @@ items:
     id: default_unit_gain_value
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 56
@@ -449,7 +449,7 @@ items:
     id: default_use_mean_gradient_value
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 69
@@ -469,7 +469,7 @@ items:
     id: fsadagrad
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 683
@@ -588,7 +588,7 @@ items:
     id: learning_rate_schedule
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 302
@@ -665,7 +665,7 @@ items:
     id: momentum_as_time_constant_schedule
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 363
@@ -756,7 +756,7 @@ items:
     id: momentum_schedule
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 325
@@ -787,7 +787,7 @@ items:
     id: momentum_sgd
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 465
@@ -901,7 +901,7 @@ items:
     id: nesterov
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 516
@@ -1015,7 +1015,7 @@ items:
     id: rmsprop
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 804
@@ -1044,35 +1044,31 @@ items:
 
         '
     - description: 'Trade-off factor for current and previous gradients. Common value
-        is 0.95. Should be in range (0.0, 1.0)
+        is 0.95
 
         '
       id: gamma
       type:
       - float
-    - description: 'Increasing factor when trying to adjust current learning_rate.
-        Should be greater than 1
+    - description: 'Increasing factor when trying to adjust current learning_rate
 
         '
       id: inc
       type:
       - float
-    - description: 'Decreasing factor when trying to adjust current learning_rate.
-        Should be in range (0.0, 1.0)
+    - description: 'Decreasing factor when trying to adjust current learning_rate
 
         '
       id: dec
       type:
       - float
-    - description: 'Maximum scale allowed for the initial learning_rate. Should be
-        greater than zero and min
+    - description: 'Maximum scale allowed for the initial learning_rate
 
         '
       id: max
       type:
       - float
-    - description: 'Minimum scale allowed for the initial learning_rate. Should be
-        greater than zero
+    - description: 'Minimum scale allowed for the initial learning_rate
 
         '
       id: min
@@ -1149,7 +1145,7 @@ items:
     id: set_default_unit_gain_value
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 63
@@ -1171,7 +1167,7 @@ items:
     id: set_default_use_mean_gradient_value
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 76
@@ -1195,7 +1191,7 @@ items:
     id: sgd
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 413
@@ -1345,7 +1341,7 @@ items:
     id: training_parameter_schedule
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 230
@@ -1454,7 +1450,7 @@ items:
     id: universal
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: master
+      branch: release/2.0
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 858
