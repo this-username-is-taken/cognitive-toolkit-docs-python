@@ -35,7 +35,7 @@ exclude_patterns = [
   '*.tests.rst'
 ]
 
-source_prefix = 'bindings/python'
+source_prefix = 'bindings/python/'
 
 
 # = 'https://github.com/Microsoft/CNTK/blob/'
