@@ -1,0 +1,60 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.cntk_py.MinibatchData.asarray
+  class: cntk.cntk_py.MinibatchData
+  fullName: cntk.cntk_py.MinibatchData
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: MinibatchData
+  source:
+    id: MinibatchData
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2291
+  summary: '
+
+
+
+
+    '
+  syntax:
+    content: MinibatchData(*args)
+  type: class
+  uid: cntk.cntk_py.MinibatchData
+- class: cntk.cntk_py.MinibatchData
+  fullName: cntk.cntk_py.MinibatchData.asarray
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: asarray
+  source:
+    id: asarray
+    path: bindings/python/cntk\tensor.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\tensor.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 161
+  summary: 'Converts the instance''s data to a NumPy array.
+
+    '
+  syntax:
+    content: asarray()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.MinibatchData.asarray
+references:
+- fullName: cntk.cntk_py.MinibatchData.asarray
+  isExternal: false
+  name: asarray
+  parent: cntk.cntk_py.MinibatchData
+  uid: cntk.cntk_py.MinibatchData.asarray

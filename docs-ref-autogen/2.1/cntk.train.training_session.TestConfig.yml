@@ -1,0 +1,43 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children: []
+  class: cntk.train.training_session.TestConfig
+  fullName: cntk.train.training_session.TestConfig
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: cntk.cntk_py.TestConfig
+  langs:
+  - python
+  module: cntk.train.training_session
+  name: TestConfig
+  source:
+    id: TestConfig
+    path: bindings/python/cntk\train\training_session.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\train\training_session.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 93
+  summary: 'A test configuration for the training session.
+
+    '
+  syntax:
+    content: TestConfig(source, mb_size=None)
+    parameters:
+    - description: 'minibatch source used for testing
+
+        '
+      id: source
+      type:
+      - cntk.io.MinibatchSource
+    - description: 'minibatch schedule for testing
+
+        '
+      id: schedule
+      type:
+      - cntk.cntk_py.minibatch_size_schedule
+  type: class
+  uid: cntk.train.training_session.TestConfig
+references: []

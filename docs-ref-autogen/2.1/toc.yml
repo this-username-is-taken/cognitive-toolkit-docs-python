@@ -1,0 +1,282 @@
+- items:
+  - items:
+    - name: cntk.axis.Axis
+      uid: cntk.axis.Axis
+    name: axis
+    uid: cntk.axis
+  - name: blocks
+    uid: cntk.blocks
+  - items:
+    - name: cntk.cntk_py.AdditionalLearningOptions
+      uid: cntk.cntk_py.AdditionalLearningOptions
+    - name: cntk.cntk_py.Axis
+      uid: cntk.cntk_py.Axis
+    - name: cntk.cntk_py.BackPropState
+      uid: cntk.cntk_py.BackPropState
+    - name: cntk.cntk_py.CheckpointConfig
+      uid: cntk.cntk_py.CheckpointConfig
+    - name: cntk.cntk_py.Constant
+      uid: cntk.cntk_py.Constant
+    - name: cntk.cntk_py.CrossValidationConfig
+      uid: cntk.cntk_py.CrossValidationConfig
+    - name: cntk.cntk_py.DeviceDescriptor
+      uid: cntk.cntk_py.DeviceDescriptor
+    - name: cntk.cntk_py.Dictionary
+      uid: cntk.cntk_py.Dictionary
+    - name: cntk.cntk_py.DictionaryValue
+      uid: cntk.cntk_py.DictionaryValue
+    - name: cntk.cntk_py.DistributedCommunicator
+      uid: cntk.cntk_py.DistributedCommunicator
+    - name: cntk.cntk_py.DistributedLearner
+      uid: cntk.cntk_py.DistributedLearner
+    - name: cntk.cntk_py.DistributedWorkerDescriptor
+      uid: cntk.cntk_py.DistributedWorkerDescriptor
+    - name: cntk.cntk_py.Evaluator
+      uid: cntk.cntk_py.Evaluator
+    - name: cntk.cntk_py.Function
+      uid: cntk.cntk_py.Function
+    - name: cntk.cntk_py.GPUProperties
+      uid: cntk.cntk_py.GPUProperties
+    - name: cntk.cntk_py.HTKFeatureConfiguration
+      uid: cntk.cntk_py.HTKFeatureConfiguration
+    - name: cntk.cntk_py.IDictionarySerializable
+      uid: cntk.cntk_py.IDictionarySerializable
+    - name: cntk.cntk_py.Learner
+      uid: cntk.cntk_py.Learner
+    - name: cntk.cntk_py.MinibatchData
+      uid: cntk.cntk_py.MinibatchData
+    - name: cntk.cntk_py.MinibatchInfo
+      uid: cntk.cntk_py.MinibatchInfo
+    - name: cntk.cntk_py.MinibatchSource
+      uid: cntk.cntk_py.MinibatchSource
+    - name: cntk.cntk_py.MinibatchSourceConfig
+      uid: cntk.cntk_py.MinibatchSourceConfig
+    - name: cntk.cntk_py.NDArrayView
+      uid: cntk.cntk_py.NDArrayView
+    - name: cntk.cntk_py.NDMask
+      uid: cntk.cntk_py.NDMask
+    - name: cntk.cntk_py.NDShape
+      uid: cntk.cntk_py.NDShape
+    - name: cntk.cntk_py.Parameter
+      uid: cntk.cntk_py.Parameter
+    - name: cntk.cntk_py.ProgressWriter
+      uid: cntk.cntk_py.ProgressWriter
+    - name: cntk.cntk_py.QuantizedDistributedCommunicator
+      uid: cntk.cntk_py.QuantizedDistributedCommunicator
+    - name: cntk.cntk_py.SizeTWrapper
+      uid: cntk.cntk_py.SizeTWrapper
+    - name: cntk.cntk_py.StreamConfiguration
+      uid: cntk.cntk_py.StreamConfiguration
+    - name: cntk.cntk_py.StreamInformation
+      uid: cntk.cntk_py.StreamInformation
+    - name: cntk.cntk_py.SwigPyIterator
+      uid: cntk.cntk_py.SwigPyIterator
+    - name: cntk.cntk_py.TensorBoardFileWriter
+      uid: cntk.cntk_py.TensorBoardFileWriter
+    - name: cntk.cntk_py.TestConfig
+      uid: cntk.cntk_py.TestConfig
+    - name: cntk.cntk_py.Trainer
+      uid: cntk.cntk_py.Trainer
+    - name: cntk.cntk_py.TrainingSession
+      uid: cntk.cntk_py.TrainingSession
+    - name: cntk.cntk_py.UserBackPropState
+      uid: cntk.cntk_py.UserBackPropState
+    - name: cntk.cntk_py.Value
+      uid: cntk.cntk_py.Value
+    - name: cntk.cntk_py.Variable
+      uid: cntk.cntk_py.Variable
+    - name: cntk.cntk_py.minibatch_size_schedule
+      uid: cntk.cntk_py.minibatch_size_schedule
+    - name: cntk.cntk_py.momentum_as_time_constant_schedule
+      uid: cntk.cntk_py.momentum_as_time_constant_schedule
+    - name: cntk.cntk_py.training_parameter_per_minibatch_schedule
+      uid: cntk.cntk_py.training_parameter_per_minibatch_schedule
+    - name: cntk.cntk_py.training_parameter_per_sample_schedule
+      uid: cntk.cntk_py.training_parameter_per_sample_schedule
+    name: cntk_py
+    uid: cntk.cntk_py
+  - name: conftest
+    uid: cntk.conftest
+  - items:
+    - name: cntk.core.NDArrayView
+      uid: cntk.core.NDArrayView
+    - name: cntk.core.Value
+      uid: cntk.core.Value
+    name: core
+    uid: cntk.core
+  - items:
+    - name: cntk.debugging.debug
+      uid: cntk.debugging.debug
+    - name: cntk.debugging.profiler
+      uid: cntk.debugging.profiler
+    name: debugging
+    uid: cntk.debugging
+  - items:
+    - name: cntk.default_options.default_override_or
+      uid: cntk.default_options.default_override_or
+    name: default_options
+    uid: cntk.default_options
+  - items:
+    - name: cntk.device.DeviceDescriptor
+      uid: cntk.device.DeviceDescriptor
+    - name: cntk.device.DeviceKind
+      uid: cntk.device.DeviceKind
+    name: device
+    uid: cntk.device
+  - items:
+    - items:
+      - name: cntk.eval.evaluator.Evaluator
+        uid: cntk.eval.evaluator.Evaluator
+      name: cntk.eval.evaluator
+      uid: cntk.eval.evaluator
+    name: eval
+    uid: cntk.eval
+  - name: initializer
+    uid: cntk.initializer
+  - items:
+    - name: cntk.internal.sanitize
+      uid: cntk.internal.sanitize
+    - name: cntk.internal.swig_helper
+      uid: cntk.internal.swig_helper
+    - name: cntk.internal.utils
+      uid: cntk.internal.utils
+    name: internal
+    uid: cntk.internal
+  - items:
+    - name: cntk.io.transforms
+      uid: cntk.io.transforms
+    - name: cntk.io.MinibatchData
+      uid: cntk.io.MinibatchData
+    - name: cntk.io.MinibatchSource
+      uid: cntk.io.MinibatchSource
+    - name: cntk.io.StreamConfiguration
+      uid: cntk.io.StreamConfiguration
+    - name: cntk.io.TraceLevel
+      uid: cntk.io.TraceLevel
+    name: io
+    uid: cntk.io
+  - items:
+    - name: cntk.layers.blocks
+      uid: cntk.layers.blocks
+    - name: cntk.layers.higher_order_layers
+      uid: cntk.layers.higher_order_layers
+    - name: cntk.layers.layers
+      uid: cntk.layers.layers
+    - items:
+      - name: cntk.layers.models.attention
+        uid: cntk.layers.models.attention
+      name: cntk.layers.models
+      uid: cntk.layers.models
+    - name: cntk.layers.sequence
+      uid: cntk.layers.sequence
+    - items:
+      - name: cntk.layers.typing.ParameterTensor
+        uid: cntk.layers.typing.ParameterTensor
+      - name: cntk.layers.typing.Sequence
+        uid: cntk.layers.typing.Sequence
+      - name: cntk.layers.typing.SequenceOver
+        uid: cntk.layers.typing.SequenceOver
+      - name: cntk.layers.typing.SequenceOverMeta
+        uid: cntk.layers.typing.SequenceOverMeta
+      - name: cntk.layers.typing.SparseTensor
+        uid: cntk.layers.typing.SparseTensor
+      - name: cntk.layers.typing.Tensor
+        uid: cntk.layers.typing.Tensor
+      name: cntk.layers.typing
+      uid: cntk.layers.typing
+    name: layers
+    uid: cntk.layers
+  - items:
+    - name: cntk.learners.Learner
+      uid: cntk.learners.Learner
+    - name: cntk.learners.UnitType
+      uid: cntk.learners.UnitType
+    - name: cntk.learners.UserLearner
+      uid: cntk.learners.UserLearner
+    name: learners
+    uid: cntk.learners
+  - items:
+    - name: cntk.logging.graph
+      uid: cntk.logging.graph
+    - items:
+      - name: cntk.logging.progress_print.ProgressPrinter
+        uid: cntk.logging.progress_print.ProgressPrinter
+      - name: cntk.logging.progress_print.TensorBoardProgressWriter
+        uid: cntk.logging.progress_print.TensorBoardProgressWriter
+      name: cntk.logging.progress_print
+      uid: cntk.logging.progress_print
+    name: logging
+    uid: cntk.logging
+  - name: losses
+    uid: cntk.losses
+  - name: metrics
+    uid: cntk.metrics
+  - items:
+    - items:
+      - name: cntk.ops.functions.CloneMethod
+        uid: cntk.ops.functions.CloneMethod
+      - name: cntk.ops.functions.Function
+        uid: cntk.ops.functions.Function
+      - name: cntk.ops.functions.UserFunction
+        uid: cntk.ops.functions.UserFunction
+      name: cntk.ops.functions
+      uid: cntk.ops.functions
+    - name: cntk.ops.sequence
+      uid: cntk.ops.sequence
+    name: ops
+    uid: cntk.ops
+  - name: sample_installer
+    uid: cntk.sample_installer
+  - items:
+    - name: cntk.tensor.ArrayMixin
+      uid: cntk.tensor.ArrayMixin
+    - name: cntk.tensor.TensorOpsMixin
+      uid: cntk.tensor.TensorOpsMixin
+    name: tensor
+    uid: cntk.tensor
+  - items:
+    - items:
+      - name: cntk.train.distributed.Communicator
+        uid: cntk.train.distributed.Communicator
+      - name: cntk.train.distributed.DistributedLearner
+        uid: cntk.train.distributed.DistributedLearner
+      - name: cntk.train.distributed.WorkerDescriptor
+        uid: cntk.train.distributed.WorkerDescriptor
+      name: cntk.train.distributed
+      uid: cntk.train.distributed
+    - items:
+      - name: cntk.train.trainer.Trainer
+        uid: cntk.train.trainer.Trainer
+      name: cntk.train.trainer
+      uid: cntk.train.trainer
+    - items:
+      - name: cntk.train.training_session.CheckpointConfig
+        uid: cntk.train.training_session.CheckpointConfig
+      - name: cntk.train.training_session.CrossValidationConfig
+        uid: cntk.train.training_session.CrossValidationConfig
+      - name: cntk.train.training_session.TestConfig
+        uid: cntk.train.training_session.TestConfig
+      - name: cntk.train.training_session.TrainingSession
+        uid: cntk.train.training_session.TrainingSession
+      name: cntk.train.training_session
+      uid: cntk.train.training_session
+    name: train
+    uid: cntk.train
+  - items:
+    - name: cntk.variables.Constant
+      uid: cntk.variables.Constant
+    - name: cntk.variables.Parameter
+      uid: cntk.variables.Parameter
+    - name: cntk.variables.Record
+      uid: cntk.variables.Record
+    - name: cntk.variables.Variable
+      uid: cntk.variables.Variable
+    - items:
+      - name: cntk.variables.VariableMixin.Type
+        uid: cntk.variables.VariableMixin.Type
+      name: cntk.variables.VariableMixin
+      uid: cntk.variables.VariableMixin
+    name: variables
+    uid: cntk.variables
+  name: Reference
+  uid: cntk

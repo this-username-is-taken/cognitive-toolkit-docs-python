@@ -1,0 +1,164 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.cntk_py.DistributedLearner.get_communicator
+  - cntk.cntk_py.DistributedLearner.learning_rate
+  - cntk.cntk_py.DistributedLearner.parallelization_after
+  - cntk.cntk_py.DistributedLearner.reset_learning_rate
+  - cntk.cntk_py.DistributedLearner.reset_smoothed_gradients
+  class: cntk.cntk_py.DistributedLearner
+  fullName: cntk.cntk_py.DistributedLearner
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: cntk.cntk_py.Learner
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: DistributedLearner
+  source:
+    id: DistributedLearner
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2111
+  summary: '
+
+
+
+
+    '
+  syntax:
+    content: DistributedLearner(*args, **kwargs)
+  type: class
+  uid: cntk.cntk_py.DistributedLearner
+- class: cntk.cntk_py.DistributedLearner
+  fullName: cntk.cntk_py.DistributedLearner.get_communicator
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: get_communicator
+  source:
+    id: get_communicator
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2125
+  syntax:
+    content: get_communicator()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.DistributedLearner.get_communicator
+- class: cntk.cntk_py.DistributedLearner
+  fullName: cntk.cntk_py.DistributedLearner.learning_rate
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: learning_rate
+  source:
+    id: learning_rate
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2131
+  syntax:
+    content: learning_rate()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.DistributedLearner.learning_rate
+- class: cntk.cntk_py.DistributedLearner
+  fullName: cntk.cntk_py.DistributedLearner.parallelization_after
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: parallelization_after
+  source:
+    id: parallelization_after
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2137
+  syntax:
+    content: parallelization_after()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.DistributedLearner.parallelization_after
+- class: cntk.cntk_py.DistributedLearner
+  fullName: cntk.cntk_py.DistributedLearner.reset_learning_rate
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: reset_learning_rate
+  source:
+    id: reset_learning_rate
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2128
+  syntax:
+    content: reset_learning_rate(learningRateSchedule)
+    parameters:
+    - id: self
+    - id: learningRateSchedule
+  type: method
+  uid: cntk.cntk_py.DistributedLearner.reset_learning_rate
+- class: cntk.cntk_py.DistributedLearner
+  fullName: cntk.cntk_py.DistributedLearner.reset_smoothed_gradients
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: reset_smoothed_gradients
+  source:
+    id: reset_smoothed_gradients
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2134
+  syntax:
+    content: reset_smoothed_gradients()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.DistributedLearner.reset_smoothed_gradients
+references:
+- fullName: cntk.cntk_py.DistributedLearner.get_communicator
+  isExternal: false
+  name: get_communicator
+  parent: cntk.cntk_py.DistributedLearner
+  uid: cntk.cntk_py.DistributedLearner.get_communicator
+- fullName: cntk.cntk_py.DistributedLearner.learning_rate
+  isExternal: false
+  name: learning_rate
+  parent: cntk.cntk_py.DistributedLearner
+  uid: cntk.cntk_py.DistributedLearner.learning_rate
+- fullName: cntk.cntk_py.DistributedLearner.parallelization_after
+  isExternal: false
+  name: parallelization_after
+  parent: cntk.cntk_py.DistributedLearner
+  uid: cntk.cntk_py.DistributedLearner.parallelization_after
+- fullName: cntk.cntk_py.DistributedLearner.reset_learning_rate
+  isExternal: false
+  name: reset_learning_rate
+  parent: cntk.cntk_py.DistributedLearner
+  uid: cntk.cntk_py.DistributedLearner.reset_learning_rate
+- fullName: cntk.cntk_py.DistributedLearner.reset_smoothed_gradients
+  isExternal: false
+  name: reset_smoothed_gradients
+  parent: cntk.cntk_py.DistributedLearner
+  uid: cntk.cntk_py.DistributedLearner.reset_smoothed_gradients

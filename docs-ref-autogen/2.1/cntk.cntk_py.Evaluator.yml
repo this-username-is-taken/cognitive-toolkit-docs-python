@@ -1,0 +1,134 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.cntk_py.Evaluator.evaluation_function
+  - cntk.cntk_py.Evaluator.summarize_test_progress
+  - cntk.cntk_py.Evaluator.test_minibatch
+  - cntk.cntk_py.Evaluator.test_minibatch_overload_for_minibatchdata
+  class: cntk.cntk_py.Evaluator
+  fullName: cntk.cntk_py.Evaluator
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: Evaluator
+  source:
+    id: Evaluator
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2203
+  summary: '
+
+
+
+    '
+  syntax:
+    content: Evaluator(*args, **kwargs)
+  type: class
+  uid: cntk.cntk_py.Evaluator
+- class: cntk.cntk_py.Evaluator
+  fullName: cntk.cntk_py.Evaluator.evaluation_function
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: evaluation_function
+  source:
+    id: evaluation_function
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2219
+  syntax:
+    content: evaluation_function()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.Evaluator.evaluation_function
+- class: cntk.cntk_py.Evaluator
+  fullName: cntk.cntk_py.Evaluator.summarize_test_progress
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: summarize_test_progress
+  source:
+    id: summarize_test_progress
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2222
+  syntax:
+    content: summarize_test_progress()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.Evaluator.summarize_test_progress
+- class: cntk.cntk_py.Evaluator
+  fullName: cntk.cntk_py.Evaluator.test_minibatch
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: test_minibatch
+  source:
+    id: test_minibatch
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2216
+  syntax:
+    content: test_minibatch(*args)
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.Evaluator.test_minibatch
+- class: cntk.cntk_py.Evaluator
+  fullName: cntk.cntk_py.Evaluator.test_minibatch_overload_for_minibatchdata
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: test_minibatch_overload_for_minibatchdata
+  source:
+    id: test_minibatch_overload_for_minibatchdata
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2213
+  syntax:
+    content: test_minibatch_overload_for_minibatchdata(*args)
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.Evaluator.test_minibatch_overload_for_minibatchdata
+references:
+- fullName: cntk.cntk_py.Evaluator.evaluation_function
+  isExternal: false
+  name: evaluation_function
+  parent: cntk.cntk_py.Evaluator
+  uid: cntk.cntk_py.Evaluator.evaluation_function
+- fullName: cntk.cntk_py.Evaluator.summarize_test_progress
+  isExternal: false
+  name: summarize_test_progress
+  parent: cntk.cntk_py.Evaluator
+  uid: cntk.cntk_py.Evaluator.summarize_test_progress
+- fullName: cntk.cntk_py.Evaluator.test_minibatch
+  isExternal: false
+  name: test_minibatch
+  parent: cntk.cntk_py.Evaluator
+  uid: cntk.cntk_py.Evaluator.test_minibatch
+- fullName: cntk.cntk_py.Evaluator.test_minibatch_overload_for_minibatchdata
+  isExternal: false
+  name: test_minibatch_overload_for_minibatchdata
+  parent: cntk.cntk_py.Evaluator
+  uid: cntk.cntk_py.Evaluator.test_minibatch_overload_for_minibatchdata

@@ -25,10 +25,10 @@ items:
   name: MinibatchData
   source:
     id: MinibatchData
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/python/cntk\io\__init__.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
+      path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 31
   summary: 'Holds a minibatch of input data. This is never directly created, but
@@ -56,10 +56,10 @@ items:
   name: as_sequences
   source:
     id: as_sequences
-    path: bindings/python\cntk\io\__init__.py
+    path: bindings/python/cntk\io\__init__.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\io\__init__.py
+      path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 56
   summary: 'Convert the value of this minibatch instance to a sequence of NumPy
@@ -93,7 +93,7 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: 'Retrieves the underlying @cntk.core instance.
+  summary: 'Retrieves the underlying @cntk.core.Value instance.
 
     '
   syntax: {}

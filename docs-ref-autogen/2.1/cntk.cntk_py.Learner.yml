@@ -1,0 +1,244 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.cntk_py.Learner.create_checkpoint
+  - cntk.cntk_py.Learner.current_version
+  - cntk.cntk_py.Learner.learning_rate
+  - cntk.cntk_py.Learner.parameters
+  - cntk.cntk_py.Learner.reset_learning_rate
+  - cntk.cntk_py.Learner.reset_smoothed_gradients
+  - cntk.cntk_py.Learner.restore_from_checkpoint
+  - cntk.cntk_py.Learner.total_number_of_samples_seen
+  class: cntk.cntk_py.Learner
+  fullName: cntk.cntk_py.Learner
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: Learner
+  source:
+    id: Learner
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2026
+  summary: '
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: Learner(parameters, learningRateSchedule)
+  type: class
+  uid: cntk.cntk_py.Learner
+- class: cntk.cntk_py.Learner
+  fullName: cntk.cntk_py.Learner.create_checkpoint
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: create_checkpoint
+  source:
+    id: create_checkpoint
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2039
+  syntax:
+    content: create_checkpoint()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.Learner.create_checkpoint
+- class: cntk.cntk_py.Learner
+  fullName: cntk.cntk_py.Learner.current_version
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: current_version
+  source:
+    id: current_version
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2047
+  syntax:
+    content: current_version()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.Learner.current_version
+- class: cntk.cntk_py.Learner
+  fullName: cntk.cntk_py.Learner.learning_rate
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: learning_rate
+  source:
+    id: learning_rate
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2056
+  syntax:
+    content: learning_rate()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.Learner.learning_rate
+- class: cntk.cntk_py.Learner
+  fullName: cntk.cntk_py.Learner.parameters
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: parameters
+  source:
+    id: parameters
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2036
+  syntax:
+    content: parameters()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.Learner.parameters
+- class: cntk.cntk_py.Learner
+  fullName: cntk.cntk_py.Learner.reset_learning_rate
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: reset_learning_rate
+  source:
+    id: reset_learning_rate
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2050
+  syntax:
+    content: reset_learning_rate(learningRateSchedule)
+    parameters:
+    - id: self
+    - id: learningRateSchedule
+  type: method
+  uid: cntk.cntk_py.Learner.reset_learning_rate
+- class: cntk.cntk_py.Learner
+  fullName: cntk.cntk_py.Learner.reset_smoothed_gradients
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: reset_smoothed_gradients
+  source:
+    id: reset_smoothed_gradients
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2053
+  syntax:
+    content: reset_smoothed_gradients()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.Learner.reset_smoothed_gradients
+- class: cntk.cntk_py.Learner
+  fullName: cntk.cntk_py.Learner.restore_from_checkpoint
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: restore_from_checkpoint
+  source:
+    id: restore_from_checkpoint
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2042
+  syntax:
+    content: restore_from_checkpoint(arg0)
+    parameters:
+    - id: self
+    - id: arg0
+  type: method
+  uid: cntk.cntk_py.Learner.restore_from_checkpoint
+- class: cntk.cntk_py.Learner
+  fullName: cntk.cntk_py.Learner.total_number_of_samples_seen
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: total_number_of_samples_seen
+  source:
+    id: total_number_of_samples_seen
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2059
+  syntax:
+    content: total_number_of_samples_seen()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.Learner.total_number_of_samples_seen
+references:
+- fullName: cntk.cntk_py.Learner.create_checkpoint
+  isExternal: false
+  name: create_checkpoint
+  parent: cntk.cntk_py.Learner
+  uid: cntk.cntk_py.Learner.create_checkpoint
+- fullName: cntk.cntk_py.Learner.current_version
+  isExternal: false
+  name: current_version
+  parent: cntk.cntk_py.Learner
+  uid: cntk.cntk_py.Learner.current_version
+- fullName: cntk.cntk_py.Learner.learning_rate
+  isExternal: false
+  name: learning_rate
+  parent: cntk.cntk_py.Learner
+  uid: cntk.cntk_py.Learner.learning_rate
+- fullName: cntk.cntk_py.Learner.parameters
+  isExternal: false
+  name: parameters
+  parent: cntk.cntk_py.Learner
+  uid: cntk.cntk_py.Learner.parameters
+- fullName: cntk.cntk_py.Learner.reset_learning_rate
+  isExternal: false
+  name: reset_learning_rate
+  parent: cntk.cntk_py.Learner
+  uid: cntk.cntk_py.Learner.reset_learning_rate
+- fullName: cntk.cntk_py.Learner.reset_smoothed_gradients
+  isExternal: false
+  name: reset_smoothed_gradients
+  parent: cntk.cntk_py.Learner
+  uid: cntk.cntk_py.Learner.reset_smoothed_gradients
+- fullName: cntk.cntk_py.Learner.restore_from_checkpoint
+  isExternal: false
+  name: restore_from_checkpoint
+  parent: cntk.cntk_py.Learner
+  uid: cntk.cntk_py.Learner.restore_from_checkpoint
+- fullName: cntk.cntk_py.Learner.total_number_of_samples_seen
+  isExternal: false
+  name: total_number_of_samples_seen
+  parent: cntk.cntk_py.Learner
+  uid: cntk.cntk_py.Learner.total_number_of_samples_seen

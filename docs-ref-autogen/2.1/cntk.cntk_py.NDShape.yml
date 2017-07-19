@@ -1,0 +1,216 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.cntk_py.NDShape.as_string
+  - cntk.cntk_py.NDShape.dimensions
+  - cntk.cntk_py.NDShape.has_inferred_dimension
+  - cntk.cntk_py.NDShape.is_unknown
+  - cntk.cntk_py.NDShape.rank
+  - cntk.cntk_py.NDShape.sub_shape
+  - cntk.cntk_py.NDShape.total_size
+  class: cntk.cntk_py.NDShape
+  fullName: cntk.cntk_py.NDShape
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: NDShape
+  source:
+    id: NDShape
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 574
+  summary: '
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: NDShape(*args)
+  type: class
+  uid: cntk.cntk_py.NDShape
+- class: cntk.cntk_py.NDShape
+  fullName: cntk.cntk_py.NDShape.as_string
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: as_string
+  source:
+    id: as_string
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 603
+  syntax:
+    content: as_string()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.NDShape.as_string
+- class: cntk.cntk_py.NDShape
+  fullName: cntk.cntk_py.NDShape.dimensions
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: dimensions
+  source:
+    id: dimensions
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 609
+  syntax:
+    content: dimensions()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.NDShape.dimensions
+- class: cntk.cntk_py.NDShape
+  fullName: cntk.cntk_py.NDShape.has_inferred_dimension
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: has_inferred_dimension
+  source:
+    id: has_inferred_dimension
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 597
+  syntax:
+    content: has_inferred_dimension()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.NDShape.has_inferred_dimension
+- class: cntk.cntk_py.NDShape
+  fullName: cntk.cntk_py.NDShape.is_unknown
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: is_unknown
+  source:
+    id: is_unknown
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 588
+  syntax:
+    content: is_unknown()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.NDShape.is_unknown
+- class: cntk.cntk_py.NDShape
+  fullName: cntk.cntk_py.NDShape.rank
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: rank
+  source:
+    id: rank
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 591
+  syntax:
+    content: rank()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.NDShape.rank
+- class: cntk.cntk_py.NDShape
+  fullName: cntk.cntk_py.NDShape.sub_shape
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: sub_shape
+  source:
+    id: sub_shape
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 594
+  syntax:
+    content: sub_shape(*args)
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.NDShape.sub_shape
+- class: cntk.cntk_py.NDShape
+  fullName: cntk.cntk_py.NDShape.total_size
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: total_size
+  source:
+    id: total_size
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 600
+  syntax:
+    content: total_size()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.NDShape.total_size
+references:
+- fullName: cntk.cntk_py.NDShape.as_string
+  isExternal: false
+  name: as_string
+  parent: cntk.cntk_py.NDShape
+  uid: cntk.cntk_py.NDShape.as_string
+- fullName: cntk.cntk_py.NDShape.dimensions
+  isExternal: false
+  name: dimensions
+  parent: cntk.cntk_py.NDShape
+  uid: cntk.cntk_py.NDShape.dimensions
+- fullName: cntk.cntk_py.NDShape.has_inferred_dimension
+  isExternal: false
+  name: has_inferred_dimension
+  parent: cntk.cntk_py.NDShape
+  uid: cntk.cntk_py.NDShape.has_inferred_dimension
+- fullName: cntk.cntk_py.NDShape.is_unknown
+  isExternal: false
+  name: is_unknown
+  parent: cntk.cntk_py.NDShape
+  uid: cntk.cntk_py.NDShape.is_unknown
+- fullName: cntk.cntk_py.NDShape.rank
+  isExternal: false
+  name: rank
+  parent: cntk.cntk_py.NDShape
+  uid: cntk.cntk_py.NDShape.rank
+- fullName: cntk.cntk_py.NDShape.sub_shape
+  isExternal: false
+  name: sub_shape
+  parent: cntk.cntk_py.NDShape
+  uid: cntk.cntk_py.NDShape.sub_shape
+- fullName: cntk.cntk_py.NDShape.total_size
+  isExternal: false
+  name: total_size
+  parent: cntk.cntk_py.NDShape
+  uid: cntk.cntk_py.NDShape.total_size

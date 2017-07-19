@@ -1,0 +1,37 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children: []
+  class: cntk.variables.VariableMixin.Type
+  fullName: cntk.variables.VariableMixin.Type
+  inheritance:
+  - inheritance:
+    - inheritance:
+      - type: builtins.object
+      type: builtins.dict
+    type: cntk.variables.Record
+  langs:
+  - python
+  module: cntk.variables.VariableMixin
+  name: Type
+  source:
+    id: Type
+    path: bindings/python/cntk\variables.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\variables.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 148
+  summary: 'Describes a Variable''s type; that is, all arguments to instantiate a
+    Placeholder or Input.
+
+    These are meant to be passed to update_signature.
+
+    All are optional, meaning unspecified.
+
+    '
+  syntax:
+    content: Type(shape=None, dtype=None, needs_gradient=None, is_sparse=None, dynamic_axes=None)
+  type: class
+  uid: cntk.variables.VariableMixin.Type
+references: []

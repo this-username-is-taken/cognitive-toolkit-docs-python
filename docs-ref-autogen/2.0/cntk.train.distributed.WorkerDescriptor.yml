@@ -16,10 +16,10 @@ items:
   name: WorkerDescriptor
   source:
     id: WorkerDescriptor
-    path: bindings/python\cntk\train\distributed.py
+    path: bindings/python/cntk\train\distributed.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\train\distributed.py
+      path: bindings/python/cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 22
   summary: 'Distributed worker descriptor, returned by @cntk.train.distributed.Communicator

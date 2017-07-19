@@ -16,10 +16,10 @@ items:
   name: TrainingSession
   source:
     id: TrainingSession
-    path: bindings/python\cntk\train\training_session.py
+    path: bindings/python/cntk\train\training_session.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\train\training_session.py
+      path: bindings/python/cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 171
   summary: 'The instance of the class should be created by using @cntk.train.training_session.training_session
@@ -45,13 +45,13 @@ items:
         '
       id: trainer
       type:
-      - cntk.train.trainer
+      - cntk.train.trainer.Trainer
     - description: 'minibatch source used for training
 
         '
       id: mb_source
       type:
-      - cntk.io
+      - cntk.io.MinibatchSource
     - description: 'minibatch size schedule for training
 
         '
@@ -104,10 +104,10 @@ items:
   name: on_cross_validation_end
   source:
     id: on_cross_validation_end
-    path: bindings/python\cntk\train\training_session.py
+    path: bindings/python/cntk\train\training_session.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\train\training_session.py
+      path: bindings/python/cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 278
   summary: 'Callback that gets executed at the end of cross validation.
@@ -116,7 +116,6 @@ items:
   syntax:
     content: on_cross_validation_end(index, average_error, num_samples, num_minibatches)
     parameters:
-    - id: self
     - description: 'index of the current callback.
 
         '
@@ -155,12 +154,12 @@ items:
   name: train
   source:
     id: train
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python/cntk\internal\swig_helper.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 67
+    startLine: 263
   summary: 'Perform training on a specified device.
 
     '
@@ -174,7 +173,7 @@ items:
         '
       id: device
       type:
-      - cntk.device
+      - cntk.device.DeviceDescriptor
   type: method
   uid: cntk.train.training_session.TrainingSession.train
 references:

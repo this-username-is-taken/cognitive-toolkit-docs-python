@@ -1,0 +1,356 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.cntk_py.NDMask.alias
+  - cntk.cntk_py.NDMask.asarray
+  - cntk.cntk_py.NDMask.clear
+  - cntk.cntk_py.NDMask.copy_from
+  - cntk.cntk_py.NDMask.data_buffer
+  - cntk.cntk_py.NDMask.deep_clone
+  - cntk.cntk_py.NDMask.device
+  - cntk.cntk_py.NDMask.invalidate_section
+  - cntk.cntk_py.NDMask.mark_sequence_begin
+  - cntk.cntk_py.NDMask.masked_count
+  - cntk.cntk_py.NDMask.shape
+  - cntk.cntk_py.NDMask.to_ndarray
+  class: cntk.cntk_py.NDMask
+  fullName: cntk.cntk_py.NDMask
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: NDMask
+  source:
+    id: NDMask
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 712
+  summary: '
+
+
+
+
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: NDMask(*args)
+  type: class
+  uid: cntk.cntk_py.NDMask
+- class: cntk.cntk_py.NDMask
+  fullName: cntk.cntk_py.NDMask.alias
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: alias
+  source:
+    id: alias
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 752
+  syntax:
+    content: alias()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.NDMask.alias
+- class: cntk.cntk_py.NDMask
+  fullName: cntk.cntk_py.NDMask.asarray
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: asarray
+  source:
+    id: asarray
+    path: bindings/python/cntk\tensor.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\tensor.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 161
+  summary: 'Converts the instance''s data to a NumPy array.
+
+    '
+  syntax:
+    content: asarray()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.NDMask.asarray
+- class: cntk.cntk_py.NDMask
+  fullName: cntk.cntk_py.NDMask.clear
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: clear
+  source:
+    id: clear
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 734
+  syntax:
+    content: clear()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.NDMask.clear
+- class: cntk.cntk_py.NDMask
+  fullName: cntk.cntk_py.NDMask.copy_from
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: copy_from
+  source:
+    id: copy_from
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 755
+  syntax:
+    content: copy_from(source)
+    parameters:
+    - id: self
+    - id: source
+  type: method
+  uid: cntk.cntk_py.NDMask.copy_from
+- class: cntk.cntk_py.NDMask
+  fullName: cntk.cntk_py.NDMask.data_buffer
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: data_buffer
+  source:
+    id: data_buffer
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 746
+  syntax:
+    content: data_buffer()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.NDMask.data_buffer
+- class: cntk.cntk_py.NDMask
+  fullName: cntk.cntk_py.NDMask.deep_clone
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: deep_clone
+  source:
+    id: deep_clone
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 749
+  syntax:
+    content: deep_clone(*args)
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.NDMask.deep_clone
+- class: cntk.cntk_py.NDMask
+  fullName: cntk.cntk_py.NDMask.device
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: device
+  source:
+    id: device
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 740
+  syntax:
+    content: device()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.NDMask.device
+- class: cntk.cntk_py.NDMask
+  fullName: cntk.cntk_py.NDMask.invalidate_section
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: invalidate_section
+  source:
+    id: invalidate_section
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 728
+  syntax:
+    content: invalidate_section(sectionOffset, sectionShape)
+    parameters:
+    - id: self
+    - id: sectionOffset
+    - id: sectionShape
+  type: method
+  uid: cntk.cntk_py.NDMask.invalidate_section
+- class: cntk.cntk_py.NDMask
+  fullName: cntk.cntk_py.NDMask.mark_sequence_begin
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: mark_sequence_begin
+  source:
+    id: mark_sequence_begin
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 731
+  syntax:
+    content: mark_sequence_begin(*args)
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.NDMask.mark_sequence_begin
+- class: cntk.cntk_py.NDMask
+  fullName: cntk.cntk_py.NDMask.masked_count
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: masked_count
+  source:
+    id: masked_count
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 737
+  syntax:
+    content: masked_count()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.NDMask.masked_count
+- class: cntk.cntk_py.NDMask
+  fullName: cntk.cntk_py.NDMask.shape
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: shape
+  source:
+    id: shape
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 743
+  syntax:
+    content: shape()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.NDMask.shape
+- class: cntk.cntk_py.NDMask
+  fullName: cntk.cntk_py.NDMask.to_ndarray
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: to_ndarray
+  source:
+    id: to_ndarray
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 758
+  syntax:
+    content: to_ndarray()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.NDMask.to_ndarray
+references:
+- fullName: cntk.cntk_py.NDMask.alias
+  isExternal: false
+  name: alias
+  parent: cntk.cntk_py.NDMask
+  uid: cntk.cntk_py.NDMask.alias
+- fullName: cntk.cntk_py.NDMask.asarray
+  isExternal: false
+  name: asarray
+  parent: cntk.cntk_py.NDMask
+  uid: cntk.cntk_py.NDMask.asarray
+- fullName: cntk.cntk_py.NDMask.clear
+  isExternal: false
+  name: clear
+  parent: cntk.cntk_py.NDMask
+  uid: cntk.cntk_py.NDMask.clear
+- fullName: cntk.cntk_py.NDMask.copy_from
+  isExternal: false
+  name: copy_from
+  parent: cntk.cntk_py.NDMask
+  uid: cntk.cntk_py.NDMask.copy_from
+- fullName: cntk.cntk_py.NDMask.data_buffer
+  isExternal: false
+  name: data_buffer
+  parent: cntk.cntk_py.NDMask
+  uid: cntk.cntk_py.NDMask.data_buffer
+- fullName: cntk.cntk_py.NDMask.deep_clone
+  isExternal: false
+  name: deep_clone
+  parent: cntk.cntk_py.NDMask
+  uid: cntk.cntk_py.NDMask.deep_clone
+- fullName: cntk.cntk_py.NDMask.device
+  isExternal: false
+  name: device
+  parent: cntk.cntk_py.NDMask
+  uid: cntk.cntk_py.NDMask.device
+- fullName: cntk.cntk_py.NDMask.invalidate_section
+  isExternal: false
+  name: invalidate_section
+  parent: cntk.cntk_py.NDMask
+  uid: cntk.cntk_py.NDMask.invalidate_section
+- fullName: cntk.cntk_py.NDMask.mark_sequence_begin
+  isExternal: false
+  name: mark_sequence_begin
+  parent: cntk.cntk_py.NDMask
+  uid: cntk.cntk_py.NDMask.mark_sequence_begin
+- fullName: cntk.cntk_py.NDMask.masked_count
+  isExternal: false
+  name: masked_count
+  parent: cntk.cntk_py.NDMask
+  uid: cntk.cntk_py.NDMask.masked_count
+- fullName: cntk.cntk_py.NDMask.shape
+  isExternal: false
+  name: shape
+  parent: cntk.cntk_py.NDMask
+  uid: cntk.cntk_py.NDMask.shape
+- fullName: cntk.cntk_py.NDMask.to_ndarray
+  isExternal: false
+  name: to_ndarray
+  parent: cntk.cntk_py.NDMask
+  uid: cntk.cntk_py.NDMask.to_ndarray

@@ -1,0 +1,279 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.cntk_py.TrainingSession.get_minibatch_size
+  - cntk.cntk_py.TrainingSession.on_checkpoint_end
+  - cntk.cntk_py.TrainingSession.on_checkpoint_start
+  - cntk.cntk_py.TrainingSession.on_cross_validation_end
+  - cntk.cntk_py.TrainingSession.on_cross_validation_start
+  - cntk.cntk_py.TrainingSession.on_minibatch_end
+  - cntk.cntk_py.TrainingSession.on_minibatch_start
+  - cntk.cntk_py.TrainingSession.restore_from_checkpoint
+  - cntk.cntk_py.TrainingSession.train
+  class: cntk.cntk_py.TrainingSession
+  fullName: cntk.cntk_py.TrainingSession
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: TrainingSession
+  source:
+    id: TrainingSession
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2707
+  summary: '
+
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: TrainingSession(trainer, trainingSource, minibatchSizeSchedule, inputVarToStream,
+      maxNumTrainingSamples, progressFrequency, checkpointing, crossValidation, test)
+  type: class
+  uid: cntk.cntk_py.TrainingSession
+- class: cntk.cntk_py.TrainingSession
+  fullName: cntk.cntk_py.TrainingSession.get_minibatch_size
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: get_minibatch_size
+  source:
+    id: get_minibatch_size
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2733
+  syntax:
+    content: get_minibatch_size()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.TrainingSession.get_minibatch_size
+- class: cntk.cntk_py.TrainingSession
+  fullName: cntk.cntk_py.TrainingSession.on_checkpoint_end
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: on_checkpoint_end
+  source:
+    id: on_checkpoint_end
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2745
+  syntax:
+    content: on_checkpoint_end(arg0)
+    parameters:
+    - id: self
+    - id: arg0
+  type: method
+  uid: cntk.cntk_py.TrainingSession.on_checkpoint_end
+- class: cntk.cntk_py.TrainingSession
+  fullName: cntk.cntk_py.TrainingSession.on_checkpoint_start
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: on_checkpoint_start
+  source:
+    id: on_checkpoint_start
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2742
+  syntax:
+    content: on_checkpoint_start(arg2)
+    parameters:
+    - id: self
+    - id: arg2
+  type: method
+  uid: cntk.cntk_py.TrainingSession.on_checkpoint_start
+- class: cntk.cntk_py.TrainingSession
+  fullName: cntk.cntk_py.TrainingSession.on_cross_validation_end
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: on_cross_validation_end
+  source:
+    id: on_cross_validation_end
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2751
+  syntax:
+    content: on_cross_validation_end(arg0, arg1, arg2, arg3)
+    parameters:
+    - id: self
+    - id: arg0
+    - id: arg1
+    - id: arg2
+    - id: arg3
+  type: method
+  uid: cntk.cntk_py.TrainingSession.on_cross_validation_end
+- class: cntk.cntk_py.TrainingSession
+  fullName: cntk.cntk_py.TrainingSession.on_cross_validation_start
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: on_cross_validation_start
+  source:
+    id: on_cross_validation_start
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2748
+  syntax:
+    content: on_cross_validation_start(arg0)
+    parameters:
+    - id: self
+    - id: arg0
+  type: method
+  uid: cntk.cntk_py.TrainingSession.on_cross_validation_start
+- class: cntk.cntk_py.TrainingSession
+  fullName: cntk.cntk_py.TrainingSession.on_minibatch_end
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: on_minibatch_end
+  source:
+    id: on_minibatch_end
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2739
+  syntax:
+    content: on_minibatch_end()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.TrainingSession.on_minibatch_end
+- class: cntk.cntk_py.TrainingSession
+  fullName: cntk.cntk_py.TrainingSession.on_minibatch_start
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: on_minibatch_start
+  source:
+    id: on_minibatch_start
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2736
+  syntax:
+    content: on_minibatch_start()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.cntk_py.TrainingSession.on_minibatch_start
+- class: cntk.cntk_py.TrainingSession
+  fullName: cntk.cntk_py.TrainingSession.restore_from_checkpoint
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: restore_from_checkpoint
+  source:
+    id: restore_from_checkpoint
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2728
+  syntax:
+    content: restore_from_checkpoint(checkpointFileName)
+    parameters:
+    - id: self
+    - id: checkpointFileName
+  type: method
+  uid: cntk.cntk_py.TrainingSession.restore_from_checkpoint
+- class: cntk.cntk_py.TrainingSession
+  fullName: cntk.cntk_py.TrainingSession.train
+  langs:
+  - python
+  module: cntk.cntk_py
+  name: train
+  source:
+    id: train
+    path: bindings/python/cntk\cntk_py.py
+    remote:
+      branch: release/2.0.rc1
+      path: bindings/python/cntk\cntk_py.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2725
+  syntax:
+    content: train(computeDevice)
+    parameters:
+    - id: self
+    - id: computeDevice
+  type: method
+  uid: cntk.cntk_py.TrainingSession.train
+references:
+- fullName: cntk.cntk_py.TrainingSession.get_minibatch_size
+  isExternal: false
+  name: get_minibatch_size
+  parent: cntk.cntk_py.TrainingSession
+  uid: cntk.cntk_py.TrainingSession.get_minibatch_size
+- fullName: cntk.cntk_py.TrainingSession.on_checkpoint_end
+  isExternal: false
+  name: on_checkpoint_end
+  parent: cntk.cntk_py.TrainingSession
+  uid: cntk.cntk_py.TrainingSession.on_checkpoint_end
+- fullName: cntk.cntk_py.TrainingSession.on_checkpoint_start
+  isExternal: false
+  name: on_checkpoint_start
+  parent: cntk.cntk_py.TrainingSession
+  uid: cntk.cntk_py.TrainingSession.on_checkpoint_start
+- fullName: cntk.cntk_py.TrainingSession.on_cross_validation_end
+  isExternal: false
+  name: on_cross_validation_end
+  parent: cntk.cntk_py.TrainingSession
+  uid: cntk.cntk_py.TrainingSession.on_cross_validation_end
+- fullName: cntk.cntk_py.TrainingSession.on_cross_validation_start
+  isExternal: false
+  name: on_cross_validation_start
+  parent: cntk.cntk_py.TrainingSession
+  uid: cntk.cntk_py.TrainingSession.on_cross_validation_start
+- fullName: cntk.cntk_py.TrainingSession.on_minibatch_end
+  isExternal: false
+  name: on_minibatch_end
+  parent: cntk.cntk_py.TrainingSession
+  uid: cntk.cntk_py.TrainingSession.on_minibatch_end
+- fullName: cntk.cntk_py.TrainingSession.on_minibatch_start
+  isExternal: false
+  name: on_minibatch_start
+  parent: cntk.cntk_py.TrainingSession
+  uid: cntk.cntk_py.TrainingSession.on_minibatch_start
+- fullName: cntk.cntk_py.TrainingSession.restore_from_checkpoint
+  isExternal: false
+  name: restore_from_checkpoint
+  parent: cntk.cntk_py.TrainingSession
+  uid: cntk.cntk_py.TrainingSession.restore_from_checkpoint
+- fullName: cntk.cntk_py.TrainingSession.train
+  isExternal: false
+  name: train
+  parent: cntk.cntk_py.TrainingSession
+  uid: cntk.cntk_py.TrainingSession.train
