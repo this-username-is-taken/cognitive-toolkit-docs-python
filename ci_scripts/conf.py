@@ -29,6 +29,7 @@ extensions = ['sphinx.ext.autodoc',
               'docfx_yaml.extension']
 
 napoleon_use_admonition_for_examples = True 
+remove_inheritance_for_notfound_class = True
 
 exclude_patterns = [
   '_build',
