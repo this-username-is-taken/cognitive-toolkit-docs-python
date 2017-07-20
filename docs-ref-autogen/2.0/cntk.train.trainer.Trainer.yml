@@ -18,12 +18,6 @@ items:
   - cntk.train.trainer.Trainer.train_minibatch
   class: cntk.train.trainer.Trainer
   fullName: cntk.train.trainer.Trainer
-  inheritance:
-  - inheritance:
-    - inheritance:
-      - type: builtins.object
-      type: cntk.cntk_py.Evaluator
-    type: cntk.cntk_py.Trainer
   langs:
   - python
   module: cntk.train.trainer

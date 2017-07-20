@@ -6,12 +6,6 @@ items:
   - cntk.train.distributed.DistributedLearner.total_number_of_samples_seen
   class: cntk.train.distributed.DistributedLearner
   fullName: cntk.train.distributed.DistributedLearner
-  inheritance:
-  - inheritance:
-    - inheritance:
-      - type: builtins.object
-      type: cntk.cntk_py.Learner
-    type: cntk.cntk_py.DistributedLearner
   langs:
   - python
   module: cntk.train.distributed

@@ -20,11 +20,6 @@ items:
   - inheritance:
     - type: builtins.object
     type: cntk.tensor.TensorOpsMixin
-  - inheritance:
-    - inheritance:
-      - type: builtins.object
-      type: cntk.cntk_py.Variable
-    type: cntk.cntk_py.Parameter
   langs:
   - python
   module: cntk.variables
