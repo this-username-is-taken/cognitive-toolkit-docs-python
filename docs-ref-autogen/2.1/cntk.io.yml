@@ -43,11 +43,12 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 502
   summary: "Configures the CNTK text-format reader that reads text-based files with\
-    \ lines of the form:\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"names\"\
-    : [], \"xml:space\": \"preserve\", \"backrefs\": [], \"dupnames\": []} -->\n\n\
-    ````\n\n   [Sequence_Id] (Sample)+\n   ````\n\nwhere:\n\n<!-- literal_block {\"\
-    ids\": [], \"classes\": [], \"names\": [], \"xml:space\": \"preserve\", \"backrefs\"\
-    : [], \"dupnames\": []} -->\n\n````\n\n   Sample=|Input_Name (Value )*\n   ````\n"
+    \ lines of the form:\n\n<!-- literal_block {\"xml:space\": \"preserve\", \"ids\"\
+    : [], \"classes\": [], \"dupnames\": [], \"names\": [], \"backrefs\": []} -->\n\
+    \n````\n\n   [Sequence_Id] (Sample)+\n   ````\n\nwhere:\n\n<!-- literal_block\
+    \ {\"xml:space\": \"preserve\", \"ids\": [], \"classes\": [], \"dupnames\": [],\
+    \ \"names\": [], \"backrefs\": []} -->\n\n````\n\n   Sample=|Input_Name (Value\
+    \ )*\n   ````\n"
   syntax:
     content: CTFDeserializer(filename, streams)
     parameters:
@@ -140,11 +141,11 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 463
   summary: "Configures the image reader that reads images and corresponding\nlabels\
-    \ from a file of the form:\n\n<!-- literal_block {\"ids\": [], \"classes\": [],\
-    \ \"names\": [], \"xml:space\": \"preserve\", \"backrefs\": [], \"dupnames\":\
-    \ []} -->\n\n````\n\n   <full path to image> <tab> <numerical label (0-based class\
-    \ id)>\n   ````\n\nor:\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"\
-    names\": [], \"xml:space\": \"preserve\", \"backrefs\": [], \"dupnames\": []}\
+    \ from a file of the form:\n\n<!-- literal_block {\"xml:space\": \"preserve\"\
+    , \"ids\": [], \"classes\": [], \"dupnames\": [], \"names\": [], \"backrefs\"\
+    : []} -->\n\n````\n\n   <full path to image> <tab> <numerical label (0-based class\
+    \ id)>\n   ````\n\nor:\n\n<!-- literal_block {\"xml:space\": \"preserve\", \"\
+    ids\": [], \"classes\": [], \"dupnames\": [], \"names\": [], \"backrefs\": []}\
     \ -->\n\n````\n\n   sequenceId <tab> path <tab> label\n   ````\n"
   syntax:
     content: ImageDeserializer(filename, streams)
