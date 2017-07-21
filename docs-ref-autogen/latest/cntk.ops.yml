@@ -214,7 +214,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2329
+    startLine: 2345
   summary: 'Computes the argmax of the input tensor''s elements across the specified
     axis.
 
@@ -273,7 +273,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2362
+    startLine: 2378
   summary: 'Computes the argmin of the input tensor''s elements across the specified
     axis.
 
@@ -431,7 +431,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2841
+    startLine: 2857
   summary: 'Assign the value in input to ref and return the new value, ref need to
     be the same layout as input.
 
@@ -903,7 +903,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2772
+    startLine: 2788
   summary: 'It creates a constant tensor initialized from a numpy array
 
     '
@@ -1247,7 +1247,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2563
+    startLine: 2579
   summary: 'Each element of the input is independently set to 0 with probabily `dropout_rate`
 
     or to 1 / (1 - `dropout_rate`) times its original value (with probability 1-`dropout_rate`).
@@ -1878,7 +1878,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2056
+    startLine: 2072
   summary: 'Retrieves the elements of indices in the tensor reference.
 
     '
@@ -2103,7 +2103,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2620
+    startLine: 2636
   summary: 'DEPRECATED.
 
 
@@ -2171,7 +2171,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2646
+    startLine: 2662
   summary: 'It creates an input in the network: a place where data,
 
     such as features and labels, should be provided.
@@ -2747,7 +2747,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2024
+    startLine: 2040
   summary: 'Create one hot tensor based on the input tensor
 
     '
@@ -2835,7 +2835,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2681
+    startLine: 2697
   summary: 'It creates an output variable that is used to define a user defined function.
 
     '
@@ -2956,7 +2956,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2738
+    startLine: 2754
   summary: 'It creates a parameter tensor.
 
     '
@@ -3026,7 +3026,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2807
+    startLine: 2823
   summary: 'Computes per dimension mean-variance normalization of the specified input
     operand.
 
@@ -3074,7 +3074,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2709
+    startLine: 2725
   summary: 'It creates a placeholder variable that has to be later bound to an actual
     variable.
 
@@ -3348,7 +3348,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2461
+    startLine: 2477
   summary: 'Estimates inclusion frequencies for random sampling with or without
 
     replacement.
@@ -3476,7 +3476,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2501
+    startLine: 2517
   summary: 'For weighted sampling with the specifed sample size (*num_samples*)
 
     this operation computes the expected number of occurrences of each class
@@ -3633,7 +3633,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2161
+    startLine: 2177
   summary: 'Computes the log of the sum of the exponentiations of the input tensor''s
 
     elements across the specified axis.
@@ -3666,7 +3666,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2228
+    startLine: 2244
   summary: 'Computes the max of the input tensor''s elements across the specified
     axis.
 
@@ -3698,7 +3698,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2194
+    startLine: 2210
   summary: 'Computes the mean of the input tensor''s elements across the specified
     axis.
 
@@ -3730,7 +3730,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2262
+    startLine: 2278
   summary: 'Computes the min of the input tensor''s elements across the specified
     axis.
 
@@ -3762,7 +3762,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2296
+    startLine: 2312
   summary: 'Computes the min of the input tensor''s elements across the specified
     axis.
 
@@ -3806,7 +3806,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2089
+    startLine: 2105
   summary: 'Computes the sum of the input tensor''s elements across one axis. If the
     axis parameter
 
@@ -4264,20 +4264,25 @@ items:
     <BLANKLINE>\n>>> # slice index 0 (first) at second axis\n>>> C.slice(x1, 1, 0,\
     \ 1).eval({x1: np.asarray([[[1,2,-3],\n...                                   \
     \          [4, 5, 6]]],dtype=np.float32)})\narray([[[ 1.],\n        [ 4.]]], dtype=float32)\n\
-    >>> # slice along multiple axes\n>>> C.slice(x1, [0,1], [1,0], [2,1]).eval({x1:\
-    \ np.asarray([[[1, 2, -3],\n...                                              \
-    \           [4, 5, 6]]],dtype=np.float32)})\narray([[[ 4.]]], dtype=float32)\n\
-    <BLANKLINE>\n>>> # slice using constant\n>>> data = np.asarray([[1, 2, -3],\n\
-    ...                    [4, 5,  6]], dtype=np.float32)\n>>> x = C.constant(value=data)\n\
-    >>> C.slice(x, 0, 1, 2).eval()\narray([[ 4.,  5.,  6.]], dtype=float32)\n>>> C.slice(x,\
-    \ 1, 0, 1).eval()\narray([[ 1.],\n       [ 4.]], dtype=float32)\n>>> C.slice(x,\
-    \ [0,1], [1,0], [2,1]).eval()\narray([[ 4.]], dtype=float32)\n<BLANKLINE>\n>>>\
-    \ # slice using the index overload\n>>> data = np.asarray([[1, 2, -3],\n...  \
-    \                  [4, 5,  6]], dtype=np.float32)\n>>> x = C.constant(value=data)\n\
-    >>> x[0].eval()\narray([[ 1.,  2.,  -3.]], dtype=float32)\n>>> x[0, [1,2]].eval()\n\
-    array([[ 2.,  -3.]], dtype=float32)\n<BLANKLINE>\n>>> x[1].eval()\narray([[ 4.,\
-    \  5.,  6.]], dtype=float32)\n>>> x[:,:2,:].eval()\narray([[ 1.,  2.],\n     \
-    \  [ 4.,  5.]], dtype=float32)\n```\n"
+    >>> # slice with strides\n>>> C.slice(x1, 0, 0, 2, 2).eval({x1: np.asarray([[[1,2,-3],\n\
+    ...                                                [4, 5, 6]]],dtype=np.float32)})\n\
+    array([[[ 1.,  2., -3.]]], dtype=float32)\n<BLANKLINE>\n>>> # reverse\n>>> C.slice(x1,\
+    \ 0, 0, 2, -1).eval({x1: np.asarray([[[1,2,-3],\n...                         \
+    \                        [4, 5, 6]]],dtype=np.float32)})\narray([[[ 4.,  5., \
+    \ 6.],\n[ 1.,  2., -3.]]], dtype=float32)\n<BLANKLINE>\n>>> # slice along multiple\
+    \ axes\n>>> C.slice(x1, [0,1], [1,0], [2,1]).eval({x1: np.asarray([[[1, 2, -3],\n\
+    ...                                                         [4, 5, 6]]],dtype=np.float32)})\n\
+    array([[[ 4.]]], dtype=float32)\n<BLANKLINE>\n>>> # slice using constant\n>>>\
+    \ data = np.asarray([[1, 2, -3],\n...                    [4, 5,  6]], dtype=np.float32)\n\
+    >>> x = C.constant(value=data)\n>>> C.slice(x, 0, 1, 2).eval()\narray([[ 4., \
+    \ 5.,  6.]], dtype=float32)\n>>> C.slice(x, 1, 0, 1).eval()\narray([[ 1.],\n \
+    \      [ 4.]], dtype=float32)\n>>> C.slice(x, [0,1], [1,0], [2,1]).eval()\narray([[\
+    \ 4.]], dtype=float32)\n<BLANKLINE>\n>>> # slice using the index overload\n>>>\
+    \ data = np.asarray([[1, 2, -3],\n...                    [4, 5,  6]], dtype=np.float32)\n\
+    >>> x = C.constant(value=data)\n>>> x[0].eval()\narray([[ 1.,  2.,  -3.]], dtype=float32)\n\
+    >>> x[0, [1,2]].eval()\narray([[ 2.,  -3.]], dtype=float32)\n<BLANKLINE>\n>>>\
+    \ x[1].eval()\narray([[ 4.,  5.,  6.]], dtype=float32)\n>>> x[:,:2,:].eval()\n\
+    array([[ 1.,  2.],\n       [ 4.,  5.]], dtype=float32)\n```\n"
   fullName: cntk.ops.slice
   langs:
   - python
@@ -4297,7 +4302,7 @@ items:
 
     '
   syntax:
-    content: slice(x, axis, begin_index, end_index, name='')
+    content: slice(x, axis, begin_index, end_index, strides=None, name='')
     return:
       description: '@cntk.ops.functions.Function
 
@@ -4481,7 +4486,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1979
+    startLine: 1995
   summary: 'Concatenate the input tensors along an axis.
 
     '
@@ -4623,7 +4628,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2825
+    startLine: 2841
   summary: 'Outputs its input as it is and prevents any gradient contribution from
     its output to its input.
 
@@ -4774,11 +4779,11 @@ items:
     \ matrix.\nThe operator '@' has been overloaded such that in Python 3.5 and later\
     \ X @ W equals times(X, W).\n\nFor better performance on times operation on sequence\
     \ which is followed by sequence.reduce_sum, use\ninfer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK,\
-    \ i.e. replace following:\n\n<!-- literal_block {\"backrefs\": [], \"ids\": [],\
-    \ \"names\": [], \"classes\": [], \"xml:space\": \"preserve\", \"dupnames\": []}\
+    \ i.e. replace following:\n\n<!-- literal_block {\"ids\": [], \"backrefs\": [],\
+    \ \"names\": [], \"xml:space\": \"preserve\", \"dupnames\": [], \"classes\": []}\
     \ -->\n\n````\n\n   sequence.reduce_sum(times(seq1, seq2))\n   ````\n\nwith:\n\
-    \n<!-- literal_block {\"backrefs\": [], \"ids\": [], \"names\": [], \"classes\"\
-    : [], \"xml:space\": \"preserve\", \"dupnames\": []} -->\n\n````\n\n   times(seq1,\
+    \n<!-- literal_block {\"ids\": [], \"backrefs\": [], \"names\": [], \"xml:space\"\
+    : \"preserve\", \"dupnames\": [], \"classes\": []} -->\n\n````\n\n   times(seq1,\
     \ seq2, infer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK)\n\
     \   ````\n"
   syntax:
@@ -4898,7 +4903,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2395
+    startLine: 2411
   summary: 'This function converts ''x'' to a sequence using the most significant
 
     static axis [0] as the sequence axis.
@@ -4959,7 +4964,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2430
+    startLine: 2446
   summary: 'This function converts ''x'' to a sequence using the most significant
 
     static axis [0] as the sequence axis. The length of the sequences are
