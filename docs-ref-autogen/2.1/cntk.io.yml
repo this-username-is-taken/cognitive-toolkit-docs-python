@@ -43,11 +43,11 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 502
   summary: "Configures the CNTK text-format reader that reads text-based files with\
-    \ lines of the form:\n\n<!-- literal_block {\"xml:space\": \"preserve\", \"backrefs\"\
-    : [], \"names\": [], \"ids\": [], \"classes\": [], \"dupnames\": []} -->\n\n````\n\
-    \n   [Sequence_Id] (Sample)+\n   ````\n\nwhere:\n\n<!-- literal_block {\"xml:space\"\
-    : \"preserve\", \"backrefs\": [], \"names\": [], \"ids\": [], \"classes\": [],\
-    \ \"dupnames\": []} -->\n\n````\n\n   Sample=|Input_Name (Value )*\n   ````\n"
+    \ lines of the form:\n\n<!-- literal_block {\"names\": [], \"ids\": [], \"xml:space\"\
+    : \"preserve\", \"classes\": [], \"dupnames\": [], \"backrefs\": []} -->\n\n````\n\
+    \n   [Sequence_Id] (Sample)+\n   ````\n\nwhere:\n\n<!-- literal_block {\"names\"\
+    : [], \"ids\": [], \"xml:space\": \"preserve\", \"classes\": [], \"dupnames\"\
+    : [], \"backrefs\": []} -->\n\n````\n\n   Sample=|Input_Name (Value )*\n   ````\n"
   syntax:
     content: CTFDeserializer(filename, streams)
     parameters:
@@ -140,12 +140,12 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 463
   summary: "Configures the image reader that reads images and corresponding\nlabels\
-    \ from a file of the form:\n\n<!-- literal_block {\"xml:space\": \"preserve\"\
-    , \"backrefs\": [], \"names\": [], \"ids\": [], \"classes\": [], \"dupnames\"\
+    \ from a file of the form:\n\n<!-- literal_block {\"names\": [], \"ids\": [],\
+    \ \"xml:space\": \"preserve\", \"classes\": [], \"dupnames\": [], \"backrefs\"\
     : []} -->\n\n````\n\n   <full path to image> <tab> <numerical label (0-based class\
-    \ id)>\n   ````\n\nor:\n\n<!-- literal_block {\"xml:space\": \"preserve\", \"\
-    backrefs\": [], \"names\": [], \"ids\": [], \"classes\": [], \"dupnames\": []}\
-    \ -->\n\n````\n\n   sequenceId <tab> path <tab> label\n   ````\n"
+    \ id)>\n   ````\n\nor:\n\n<!-- literal_block {\"names\": [], \"ids\": [], \"xml:space\"\
+    : \"preserve\", \"classes\": [], \"dupnames\": [], \"backrefs\": []} -->\n\n````\n\
+    \n   sequenceId <tab> path <tab> label\n   ````\n"
   syntax:
     content: ImageDeserializer(filename, streams)
     parameters:
