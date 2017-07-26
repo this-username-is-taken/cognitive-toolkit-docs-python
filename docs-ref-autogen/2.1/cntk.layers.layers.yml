@@ -83,7 +83,7 @@ items:
   syntax:
     content: Activation(activation=identity, name='')
     parameters:
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DF1048>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE9F080>
       description: 'function to apply at the end, e.g. *relu*
 
         '
@@ -169,7 +169,7 @@ items:
       id: strides
       type:
       - int or tuple of ints, defaults to 1
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEAF60>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98F98>
       description: 'if *False*, then the pooling operation will be shifted over the
         "valid"
 
@@ -247,7 +247,7 @@ items:
     content: BatchNormalization(map_rank=None, init_scale=1, normalization_time_constant=5000,
       blend_time_constant=0, epsilon=0.00001, use_cntk_engine=False, name='')
     parameters:
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DF1080>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE9F0B8>
       description: 'passing 1 means spatially-pooled batch-normalization, where normalization
         values will be tied across all pixel positions; while `None`
 
@@ -264,7 +264,7 @@ items:
       id: init_scale
       type:
       - float, default 1
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DF10B8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE9F0F0>
       description: 'time constant for smoothing the batch statistics in order to compute
         aggregate estimates for inference.
 
@@ -279,14 +279,14 @@ items:
       id: epsilon
       type:
       - float, default 0.00001
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DF10F0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE9F128>
       description: 'if `True` then use CNTK''s own engine instead of NVidia''s.
 
         '
       id: use_cntk_engine
       type:
       - bool, default False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DF1128>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE9F160>
       description: 'the name of the function instance in the network
 
         '
@@ -429,7 +429,7 @@ items:
       id: sequential
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA4A8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE984E0>
       description: 'optional function to apply at the end, e.g. *relu*
 
         '
@@ -438,7 +438,7 @@ items:
       - 'cntk.ops.functions.Function
 
         , defaults to identity'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA518>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98550>
       description: 'initial value of weights *W*
 
         '
@@ -449,7 +449,7 @@ items:
         , defaults to @cntk.initializer.glorot_uniform
 
         '
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA550>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98588>
       description: 'if *False*, then the filter will be shifted over the "valid"
 
         area of input, that is, no value outside the area is used. If `pad=True` on
@@ -481,14 +481,14 @@ items:
       id: sharing
       type:
       - bool, defaults to True
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA588>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE985C0>
       description: 'the layer will have no bias if *False* is passed here
 
         '
       id: bias
       type:
       - bool, optional, defaults to True
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA5C0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE985F8>
       description: 'initial value of weights *b*
 
         '
@@ -581,7 +581,7 @@ items:
       id: num_filters
       type:
       - int, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA5F8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98630>
       description: 'optional function to apply at the end, e.g. *relu*
 
         '
@@ -590,7 +590,7 @@ items:
       - 'cntk.ops.functions.Function
 
         , defaults to identity'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA668>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE986A0>
       description: 'initial value of weights *W*
 
         '
@@ -601,7 +601,7 @@ items:
         , defaults to @cntk.initializer.glorot_uniform
 
         '
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA6A0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE986D8>
       description: 'if *False*, then the filter will be shifted over the "valid"
 
         area of input, that is, no value outside the area is used. If `pad=True` on
@@ -624,14 +624,14 @@ items:
       id: strides
       type:
       - int or tuple of ints, defaults to 1
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA6D8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98710>
       description: 'the layer will have no bias if *False* is passed here
 
         '
       id: bias
       type:
       - bool, defaults to True
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA710>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98748>
       description: 'initial value of weights *b*
 
         '
@@ -706,7 +706,7 @@ items:
       id: num_filters
       type:
       - int, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA748>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98780>
       description: 'optional function to apply at the end, e.g. *relu*
 
         '
@@ -715,7 +715,7 @@ items:
       - 'cntk.ops.functions.Function
 
         , defaults to identity'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA7B8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE987F0>
       description: 'initial value of weights *W*
 
         '
@@ -726,7 +726,7 @@ items:
         , defaults to @cntk.initializer.glorot_uniform
 
         '
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA7F0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98828>
       description: 'if *False*, then the filter will be shifted over the "valid"
 
         area of input, that is, no value outside the area is used. If `pad=True` on
@@ -749,14 +749,14 @@ items:
       id: strides
       type:
       - int or tuple of ints, defaults to 1
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA828>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98860>
       description: 'the layer will have no bias if *False* is passed here
 
         '
       id: bias
       type:
       - bool, defaults to True
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA860>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98898>
       description: 'initial value of weights *b*
 
         '
@@ -831,7 +831,7 @@ items:
       id: num_filters
       type:
       - int, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA898>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE988D0>
       description: 'optional function to apply at the end, e.g. *relu*
 
         '
@@ -840,7 +840,7 @@ items:
       - 'cntk.ops.functions.Function
 
         , defaults to identity'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA908>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98940>
       description: 'initial value of weights *W*
 
         '
@@ -851,7 +851,7 @@ items:
         , defaults to @cntk.initializer.glorot_uniform
 
         '
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA940>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98978>
       description: 'if *False*, then the filter will be shifted over the "valid"
 
         area of input, that is, no value outside the area is used. If `pad=True` on
@@ -874,14 +874,14 @@ items:
       id: strides
       type:
       - int or tuple of ints, defaults to 1
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA978>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE989B0>
       description: 'the layer will have no bias if *False* is passed here
 
         '
       id: bias
       type:
       - bool, defaults to True
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA9B0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE989E8>
       description: 'initial value of weights *b*
 
         '
@@ -1015,7 +1015,7 @@ items:
       id: num_filters
       type:
       - int
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA9E8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98A20>
       description: 'optional function to apply at the end, e.g. *relu*
 
         '
@@ -1024,7 +1024,7 @@ items:
       - 'cntk.ops.functions.Function
 
         , optional'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEAA58>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98A90>
       description: 'initial value of weights *W*
 
         '
@@ -1035,7 +1035,7 @@ items:
         , default @cntk.initializer.glorot_uniform
 
         '
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEAA90>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98AC8>
       description: 'if *False*, then the filter will be shifted over the "valid"
 
         area of input, that is, no value outside the area is used. If `pad=True` on
@@ -1065,14 +1065,14 @@ items:
       id: sharing
       type:
       - bool, default True
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEAAC8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98B00>
       description: 'the layer will have no bias if *False* is passed here
 
         '
       id: bias
       type:
       - bool, optional, default True
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEAB00>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98B38>
       description: 'initial value of weights *b*
 
         '
@@ -1152,17 +1152,17 @@ items:
     parameters:
     - id: filter_shape
     - id: num_filters
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEAB38>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98B70>
       id: activation
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEABA8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98BE0>
       id: init
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEABE0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98C18>
       id: pad
     - defaultValue: '1'
       id: strides
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEAC18>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98C50>
       id: bias
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEAC50>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98C88>
       id: init_bias
     - defaultValue: None
       id: output_shape
@@ -1198,17 +1198,17 @@ items:
     parameters:
     - id: filter_shape
     - id: num_filters
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEAC88>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98CC0>
       id: activation
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEACF8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98D30>
       id: init
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEAD30>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98D68>
       id: pad
     - defaultValue: '1'
       id: strides
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEAD68>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98DA0>
       id: bias
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEADA0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98DD8>
       id: init_bias
     - defaultValue: None
       id: output_shape
@@ -1244,17 +1244,17 @@ items:
     parameters:
     - id: filter_shape
     - id: num_filters
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEADD8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98E10>
       id: activation
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEAE48>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98E80>
       id: init
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEAE80>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98EB8>
       id: pad
     - defaultValue: '1'
       id: strides
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEAEB8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98EF0>
       id: bias
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEAEF0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98F28>
       id: init_bias
     - defaultValue: None
       id: output_shape
@@ -1304,7 +1304,7 @@ items:
       id: shape
       type:
       - int or tuple of ints
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA2E8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98320>
       description: 'optional function to apply at the end, e.g. *relu*
 
         '
@@ -1313,7 +1313,7 @@ items:
       - 'cntk.ops.functions.Function
 
         , defaults to identity'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA358>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98390>
       description: 'initial value of weights *W*
 
         '
@@ -1339,14 +1339,14 @@ items:
       id: map_rank
       type:
       - int, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA390>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE983C8>
       description: 'the layer will have no bias if *False* is passed here
 
         '
       id: bias
       type:
       - bool, optional, defaults to True
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA3C8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98400>
       description: 'initial value of weights *b*
 
         '
@@ -1491,8 +1491,8 @@ items:
     \ lookup if the input is sparse.\n\nThe lookup table in this layer is learnable,\n\
     unless a user-specified one is supplied through the `weights` parameter.\nFor\
     \ example, to use an existing embedding table from a file in numpy format, use\
-    \ this:\n\n<!-- literal_block {\"names\": [], \"classes\": [], \"ids\": [], \"\
-    dupnames\": [], \"xml:space\": \"preserve\", \"backrefs\": []} -->\n\n````\n\n\
+    \ this:\n\n<!-- literal_block {\"dupnames\": [], \"classes\": [], \"ids\": [],\
+    \ \"names\": [], \"backrefs\": [], \"xml:space\": \"preserve\"} -->\n\n````\n\n\
     \   Embedding(weights=np.load('PATH.npy'))\n   ````\n\nTo initialize a learnable\
     \ lookup table with a given numpy array that is to be used as\nthe initial value,\
     \ pass that array to the `init` parameter (not `weights`).\n\nAn `Embedding` instance\
@@ -1507,7 +1507,7 @@ items:
       id: shape
       type:
       - int or tuple of ints
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEA438>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98470>
       description: '(learnable embedding only) initial value of weights *E*
 
         '
@@ -1723,7 +1723,7 @@ items:
       id: initial_bias
       type:
       - float, default 0
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DF1160>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE9F198>
       description: 'epsilon added to the standard deviation to avoid division by 0
 
         '
@@ -1807,7 +1807,7 @@ items:
       id: strides
       type:
       - int or tuple of ints, defaults to 1
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009BB7DEAF28>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000045CBE98F60>
       description: 'if *False*, then the pooling operation will be shifted over the
         "valid"
 
