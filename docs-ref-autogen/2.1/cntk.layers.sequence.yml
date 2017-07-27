@@ -66,7 +66,7 @@ items:
       id: T
       type:
       - int
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009D2C5BF3C8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000096B832EEF0>
       description: 'tensor or scalar representing the initial value to be used when
         the input tensor is shifted in time.
 
@@ -164,7 +164,7 @@ items:
       id: folder_function
       type:
       - "cntk.ops.functions.Function\n or equivalent Python function"
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009D2C5BF4E0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000096B8339048>
       description: 'if `True` then run the recurrence from the end of the sequence
         to the start.
 
@@ -172,7 +172,7 @@ items:
       id: go_backwards
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009D2C5BF518>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000096B8339080>
       description: 'the initial value for the state. This can be a constant or a learnable
         parameter.
 
@@ -282,7 +282,7 @@ items:
       - 'int or @cntk.axis.Axis
 
         , optional, keyword only'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009D2C5BF400>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000096B832EF28>
       description: 'the name of the Function instance in the network
 
         '
@@ -406,7 +406,7 @@ items:
       id: step_function
       type:
       - "cntk.ops.functions.Function\n or equivalent Python function"
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009D2C5BF470>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000096B832EF98>
       description: 'if `True` then run the recurrence from the end of the sequence
         to the start.
 
@@ -414,7 +414,7 @@ items:
       id: go_backwards
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009D2C5BF4A8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000096B832EFD0>
       description: 'the initial value for the state. This can be a constant or a learnable
         parameter.
 
@@ -564,7 +564,7 @@ items:
       id: step_function
       type:
       - "cntk.ops.functions.Function\n or equivalent Python function"
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009D2C5BF438>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000096B832EF60>
       description: 'if `True` then run the recurrence from the end of the sequence
         to the start.
 
