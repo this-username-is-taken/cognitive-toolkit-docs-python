@@ -1,0 +1,122 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing.output_shape
+  - cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing.preprocess
+  - cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing.reset
+  class: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing
+  fullName: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.preprocessing
+  name: Preprocessing
+  source:
+    id: Preprocessing
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 15
+  summary: 'Base class for defining preprocessing.
+
+
+    All subclass constructors will take input_shape as the first argument.
+
+
+
+
+    '
+  syntax:
+    content: Preprocessing(input_shape)
+  type: class
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing
+- class: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing
+  fullName: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing.output_shape
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.preprocessing
+  name: output_shape
+  source:
+    id: output_shape
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 27
+  summary: 'Return shape of preprocessed observation.
+
+    '
+  syntax:
+    content: output_shape()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing.output_shape
+- class: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing
+  fullName: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing.preprocess
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.preprocessing
+  name: preprocess
+  source:
+    id: preprocess
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 37
+  summary: 'Return preprocessed observation.
+
+    '
+  syntax:
+    content: preprocess(observation)
+    parameters:
+    - id: self
+    - id: observation
+  type: method
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing.preprocess
+- class: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing
+  fullName: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing.reset
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.preprocessing
+  name: reset
+  source:
+    id: reset
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 32
+  summary: 'Reset preprocessing pipeline for new episode.
+
+    '
+  syntax:
+    content: reset()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing.reset
+references:
+- fullName: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing.output_shape
+  isExternal: false
+  name: output_shape
+  parent: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing.output_shape
+- fullName: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing.preprocess
+  isExternal: false
+  name: preprocess
+  parent: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing.preprocess
+- fullName: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing.reset
+  isExternal: false
+  name: reset
+  parent: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing.reset

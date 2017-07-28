@@ -13,10 +13,6 @@ items:
   - cntk.core.NDArrayView.slice_view
   class: cntk.core.NDArrayView
   fullName: cntk.core.NDArrayView
-  inheritance:
-  - inheritance:
-    - type: builtins.object
-    type: cntk.cntk_py.NDArrayView
   langs:
   - python
   module: cntk.core
@@ -25,10 +21,10 @@ items:
     id: NDArrayView
     path: bindings/python/cntk\core.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 26
+    startLine: 33
   summary: 'Creates an empty dense internal data representation of a
 
     @cntk.core.Value object.
@@ -82,7 +78,7 @@ items:
     id: device
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -102,7 +98,7 @@ items:
     id: dtype
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -122,18 +118,18 @@ items:
     id: from_csr
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 82
-  summary: 'Create a @cntk.core.NDArrayView instance from a SciPy sparse array in
+    startLine: 92
+  summary: 'Create an @cntk.core.NDArrayView instance from a SciPy sparse array in
     CSR
 
     format.
 
     '
   syntax:
-    content: from_csr(csr_array, device=None, read_only=False, borrow=False)
+    content: from_csr(csr_array, device=None, read_only=False, borrow=False, shape=None)
     parameters:
     - description: 'SciPy sparse matrix in CSR
 
@@ -159,7 +155,7 @@ items:
       id: read_only
       type:
       - bool, optional
-    - description: 'whether nd_arrary memory can be
+    - description: 'whether nd_array memory can be
 
         borrowed internally to speed up the data creation
 
@@ -167,6 +163,19 @@ items:
       id: borrow
       type:
       - bool, default False
+    - description: 'shape of the created NDArrayView.
+
+        If unspecified, the created NDArrayView has the same shape as the csr_matrix.
+
+        Otherwise, an NDArrayView object of specified shape is created using csr_data.
+
+        The total size and number of rows of csr_data must match specified NDArrayView
+        shape.
+
+        '
+      id: shape
+      type:
+      - tuple, default None
     return:
       description: '@cntk.core.NDArrayView instance
 
@@ -183,11 +192,11 @@ items:
     id: from_data
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 113
-  summary: 'Create a @cntk.core.NDArrayView instance from a NumPy or SciPy sparse
+    startLine: 143
+  summary: 'Create an @cntk.core.NDArrayView instance from a NumPy or SciPy sparse
 
     array in CSR format.
 
@@ -217,7 +226,7 @@ items:
       id: read_only
       type:
       - bool, optional
-    - description: 'whether nd_arrary memory can be
+    - description: 'whether nd_array memory can be
 
         borrowed internally to speed up the data creation
 
@@ -241,11 +250,11 @@ items:
     id: from_dense
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 49
-  summary: 'Create a @cntk.core.NDArrayView instance from a NumPy array.
+    startLine: 57
+  summary: 'Create an @cntk.core.NDArrayView instance from a NumPy array.
 
     '
   syntax:
@@ -265,7 +274,7 @@ items:
       id: device
       type:
       - cntk.device.DeviceDescriptor
-    - description: 'whether nd_arrary memory can be
+    - description: 'whether nd_array memory can be
 
         borrowed internally to speed up the data creation
 
@@ -297,7 +306,7 @@ items:
     id: is_read_only
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -317,7 +326,7 @@ items:
     id: is_sparse
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -337,7 +346,7 @@ items:
     id: shape
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -363,10 +372,10 @@ items:
     id: slice_view
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 156
+    startLine: 186
   summary: 'Returns a sliced view of the instance.
 
     '

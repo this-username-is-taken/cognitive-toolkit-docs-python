@@ -1,0 +1,66 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalkcaffe.convert.CaffeConverter.from_model
+  class: cntk.contrib.crosstalkcaffe.convert.CaffeConverter
+  fullName: cntk.contrib.crosstalkcaffe.convert.CaffeConverter
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.convert
+  name: CaffeConverter
+  source:
+    id: CaffeConverter
+    path: bindings/python/cntk\contrib\crosstalkcaffe\convert.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\crosstalkcaffe\convert.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 15
+  summary: 'Convert Caffe CNN into CNTK formats
+
+
+    '
+  syntax: {}
+  type: class
+  uid: cntk.contrib.crosstalkcaffe.convert.CaffeConverter
+- class: cntk.contrib.crosstalkcaffe.convert.CaffeConverter
+  fullName: cntk.contrib.crosstalkcaffe.convert.CaffeConverter.from_model
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.convert
+  name: from_model
+  source:
+    id: from_model
+    path: bindings/python/cntk\contrib\crosstalkcaffe\convert.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\crosstalkcaffe\convert.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 19
+  summary: '   Convert a Caffe model to a CNTK model
+
+    '
+  syntax:
+    content: from_model(conf_path)
+    parameters:
+    - description: 'Path to the configuration file
+
+        '
+      id: conf_path
+      type:
+      - str
+    return:
+      description: 'None
+
+        '
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.convert.CaffeConverter.from_model
+references:
+- fullName: cntk.contrib.crosstalkcaffe.convert.CaffeConverter.from_model
+  isExternal: false
+  name: from_model
+  parent: cntk.contrib.crosstalkcaffe.convert.CaffeConverter
+  uid: cntk.contrib.crosstalkcaffe.convert.CaffeConverter.from_model

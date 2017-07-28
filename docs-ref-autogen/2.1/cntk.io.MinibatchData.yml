@@ -10,13 +10,9 @@ items:
   - cntk.io.MinibatchData.num_samples
   - cntk.io.MinibatchData.num_sequences
   - cntk.io.MinibatchData.shape
-  - cntk.io.MinibatchData.value
   class: cntk.io.MinibatchData
   fullName: cntk.io.MinibatchData
   inheritance:
-  - inheritance:
-    - type: builtins.object
-    type: cntk.cntk_py.MinibatchData
   - inheritance:
     - type: builtins.object
     type: cntk.tensor.ArrayMixin
@@ -28,10 +24,10 @@ items:
     id: MinibatchData
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 23
+    startLine: 32
   summary: 'Holds a minibatch of input data. This is never directly created, but
 
     only returned by @cntk.io.MinibatchSource instances.
@@ -44,10 +40,9 @@ items:
 
 
 
-
     '
   syntax:
-    content: MinibatchData(*args)
+    content: MinibatchData(value, num_sequences, num_samples, sweep_end)
   type: class
   uid: cntk.io.MinibatchData
 - class: cntk.io.MinibatchData
@@ -60,10 +55,10 @@ items:
     id: as_sequences
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 43
+    startLine: 57
   summary: 'Convert the value of this minibatch instance to a sequence of NumPy
 
     arrays that have their masked entries removed.
@@ -91,7 +86,7 @@ items:
     id: data
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -111,7 +106,7 @@ items:
     id: end_of_sweep
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -135,7 +130,7 @@ items:
     id: is_sparse
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -155,7 +150,7 @@ items:
     id: mask
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -179,7 +174,7 @@ items:
     id: num_samples
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -199,7 +194,7 @@ items:
     id: num_sequences
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -219,7 +214,7 @@ items:
     id: shape
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -229,26 +224,6 @@ items:
   syntax: {}
   type: attribute
   uid: cntk.io.MinibatchData.shape
-- class: cntk.io.MinibatchData
-  fullName: cntk.io.MinibatchData.value
-  langs:
-  - python
-  module: cntk.io
-  name: value
-  source:
-    id: value
-    path: null
-    remote:
-      branch: release/2.0.rc1
-      path: null
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: null
-  summary: 'The value of the minibatch as a NumPy array.
-
-    '
-  syntax: {}
-  type: attribute
-  uid: cntk.io.MinibatchData.value
 references:
 - fullName: cntk.io.MinibatchData.as_sequences
   isExternal: false
@@ -290,8 +265,3 @@ references:
   name: shape
   parent: cntk.io.MinibatchData
   uid: cntk.io.MinibatchData.shape
-- fullName: cntk.io.MinibatchData.value
-  isExternal: false
-  name: value
-  parent: cntk.io.MinibatchData
-  uid: cntk.io.MinibatchData.value

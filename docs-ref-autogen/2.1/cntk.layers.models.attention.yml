@@ -12,11 +12,11 @@ items:
     id: attention
     path: bindings/python/cntk\layers\models\attention.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\layers\models\attention.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  summary: 'attention -- standard attention model
+  summary: 'Standard attention model.
 
     '
   type: module
@@ -30,10 +30,10 @@ items:
     id: AttentionModel
     path: bindings/python/cntk\layers\models\attention.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\layers\models\attention.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 18
+    startLine: 23
   summary: 'Layer factory function to create a function object that implements an
     attention model
 
@@ -50,11 +50,11 @@ items:
       id: attention_span
     - defaultValue: None
       id: attention_axis
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009FB9AC6F28>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA7F080>
       id: init
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009FB9AC6F60>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA7F0B8>
       id: go_backwards
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009FB9AC6F98>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA7F0F0>
       id: enable_self_stabilization
     - defaultValue: ''
       id: name

@@ -1,0 +1,58 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalkcaffe.validation.validcaffe.ValidCore.execute
+  class: cntk.contrib.crosstalkcaffe.validation.validcaffe.ValidCore
+  fullName: cntk.contrib.crosstalkcaffe.validation.validcaffe.ValidCore
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.validation.validcaffe
+  name: ValidCore
+  source:
+    id: ValidCore
+    path: bindings/python/cntk\contrib\crosstalkcaffe\validation\validcaffe.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\crosstalkcaffe\validation\validcaffe.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 15
+  summary: 'The abstract class to support different validation methods
+
+
+    '
+  syntax: {}
+  type: class
+  uid: cntk.contrib.crosstalkcaffe.validation.validcaffe.ValidCore
+- class: cntk.contrib.crosstalkcaffe.validation.validcaffe.ValidCore
+  fullName: cntk.contrib.crosstalkcaffe.validation.validcaffe.ValidCore.execute
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.validation.validcaffe
+  name: execute
+  source:
+    id: execute
+    path: bindings/python/cntk\contrib\crosstalkcaffe\validation\validcaffe.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\crosstalkcaffe\validation\validcaffe.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 21
+  summary: 'execute the validation
+
+    '
+  syntax:
+    content: execute(source_solver, valid_dir)
+    parameters:
+    - id: source_solver
+    - id: valid_dir
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.validation.validcaffe.ValidCore.execute
+references:
+- fullName: cntk.contrib.crosstalkcaffe.validation.validcaffe.ValidCore.execute
+  isExternal: false
+  name: execute
+  parent: cntk.contrib.crosstalkcaffe.validation.validcaffe.ValidCore
+  uid: cntk.contrib.crosstalkcaffe.validation.validcaffe.ValidCore.execute

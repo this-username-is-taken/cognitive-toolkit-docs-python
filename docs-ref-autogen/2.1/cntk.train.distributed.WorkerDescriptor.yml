@@ -6,10 +6,6 @@ items:
   - cntk.train.distributed.WorkerDescriptor.host_id
   class: cntk.train.distributed.WorkerDescriptor
   fullName: cntk.train.distributed.WorkerDescriptor
-  inheritance:
-  - inheritance:
-    - type: builtins.object
-    type: cntk.cntk_py.DistributedWorkerDescriptor
   langs:
   - python
   module: cntk.train.distributed
@@ -18,7 +14,7 @@ items:
     id: WorkerDescriptor
     path: bindings/python/cntk\train\distributed.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 22
@@ -42,7 +38,7 @@ items:
     id: global_rank
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -62,7 +58,7 @@ items:
     id: host_id
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null

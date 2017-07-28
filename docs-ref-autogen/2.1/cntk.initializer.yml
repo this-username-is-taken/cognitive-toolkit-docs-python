@@ -9,6 +9,7 @@ items:
   - cntk.initializer.he_uniform
   - cntk.initializer.initializer_with_rank
   - cntk.initializer.normal
+  - cntk.initializer.truncated_normal
   - cntk.initializer.uniform
   - cntk.initializer.xavier
   fullName: cntk.initializer
@@ -20,10 +21,13 @@ items:
     id: initializer
     path: bindings/python/cntk\initializer.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
+  summary: 'Initializers of parameters.
+
+    '
   type: module
   uid: cntk.initializer
 - fullName: cntk.initializer.bilinear
@@ -35,10 +39,10 @@ items:
     id: bilinear
     path: bindings/python/cntk\initializer.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 149
+    startLine: 153
   summary: 'initializer
 
     '
@@ -74,10 +78,10 @@ items:
     id: glorot_normal
     path: bindings/python/cntk\initializer.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 89
+    startLine: 93
   summary: 'initializer
 
     '
@@ -132,10 +136,10 @@ items:
     id: glorot_uniform
     path: bindings/python/cntk\initializer.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 69
+    startLine: 73
   summary: 'Glorot initializer
 
     '
@@ -190,10 +194,10 @@ items:
     id: he_normal
     path: bindings/python/cntk\initializer.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 129
+    startLine: 133
   summary: 'initializer
 
     '
@@ -247,10 +251,10 @@ items:
     id: he_uniform
     path: bindings/python/cntk\initializer.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 109
+    startLine: 113
   summary: 'initializer
 
     '
@@ -304,10 +308,10 @@ items:
     id: initializer_with_rank
     path: bindings/python/cntk\initializer.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 163
+    startLine: 167
   summary: 'override output_rank and filter_rank specification in a random initializer
 
     constructed without an explicit output_rank and filter_rank specification
@@ -351,10 +355,10 @@ items:
     id: normal
     path: bindings/python/cntk\initializer.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 30
+    startLine: 34
   summary: 'Normal initializer
 
     '
@@ -396,6 +400,50 @@ items:
         '
   type: function
   uid: cntk.initializer.normal
+- fullName: cntk.initializer.truncated_normal
+  langs:
+  - python
+  module: cntk.initializer
+  name: truncated_normal
+  source:
+    id: truncated_normal
+    path: bindings/python/cntk\initializer.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\initializer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 187
+  summary: 'Truncated normal initializer. The resulting values are drawn from
+
+    a truncated normal distribution and are always within two
+
+    standard deviations from the mean (which is 0).
+
+    '
+  syntax:
+    content: truncated_normal(stdev, seed=None)
+    parameters:
+    - description: 'standard deviation
+
+        '
+      id: stdev
+      type:
+      - float
+    - defaultValue: None
+      description: 'random seed
+
+        '
+      id: seed
+      type:
+      - int
+    return:
+      description: 'initializer for @cntk.variables.Parameter
+
+        initialized to truncated Gaussian distribution between *2*stdev[-1, 1]*
+
+        '
+  type: function
+  uid: cntk.initializer.truncated_normal
 - fullName: cntk.initializer.uniform
   langs:
   - python
@@ -405,10 +453,10 @@ items:
     id: uniform
     path: bindings/python/cntk\initializer.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 12
+    startLine: 16
   summary: 'Uniform initializer
 
     '
@@ -431,9 +479,9 @@ items:
     return:
       description: 'initializer for @cntk.variables.Parameter
 
-        initialized to uniform distribution between *scale*[-1.0, 1.0]*
+        initialized to uniform distribution between *scale*[-1.0, 1.0]*.
 
-        note this maps to the "uniform1" distribution in BrainScript.
+        Note: this maps to the "uniform1" distribution in BrainScript.
 
         '
   type: function
@@ -447,10 +495,10 @@ items:
     id: xavier
     path: bindings/python/cntk\initializer.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\initializer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 49
+    startLine: 53
   summary: 'Xavier initializer
 
     '
@@ -531,6 +579,11 @@ references:
   name: normal
   parent: cntk.initializer
   uid: cntk.initializer.normal
+- fullName: cntk.initializer.truncated_normal
+  isExternal: false
+  name: truncated_normal
+  parent: cntk.initializer
+  uid: cntk.initializer.truncated_normal
 - fullName: cntk.initializer.uniform
   isExternal: false
   name: uniform

@@ -8,7 +8,6 @@ items:
   - cntk.device.cpu
   - cntk.device.get_gpu_properties
   - cntk.device.gpu
-  - cntk.device.set_default_device
   - cntk.device.set_excluded_devices
   - cntk.device.try_set_default_device
   - cntk.device.use_default_device
@@ -21,10 +20,13 @@ items:
     id: device
     path: bindings/python/cntk\device.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
+  summary: 'Utilities to specify device on which CNTK computation can be executed.
+
+    '
   type: module
   uid: cntk.device
 - fullName: cntk.device.all_devices
@@ -36,10 +38,10 @@ items:
     id: all_devices
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 71
+    startLine: 66
   summary: 'Returns a device descriptor list with all the available devices
 
     '
@@ -62,10 +64,10 @@ items:
     id: cpu
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 82
+    startLine: 77
   summary: 'Returns CPU device descriptor
 
     '
@@ -88,10 +90,10 @@ items:
     id: get_gpu_properties
     path: bindings/python/cntk\device.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 181
+    startLine: 169
   summary: 'Retrieves and returns additional properties (total memory, number of CUDA
 
     cores, etc.) for the specified GPU device. This method will raise an
@@ -119,10 +121,10 @@ items:
     id: gpu
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 93
+    startLine: 88
   summary: 'Returns GPU device descriptor
 
     '
@@ -136,28 +138,6 @@ items:
       - cntk.device.DeviceDescriptor
   type: function
   uid: cntk.device.gpu
-- fullName: cntk.device.set_default_device
-  langs:
-  - python
-  module: cntk.device
-  name: set_default_device
-  source:
-    id: set_default_device
-    path: bindings/python/cntk\device.py
-    remote:
-      branch: release/2.0.rc1
-      path: bindings/python/cntk\device.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 122
-  summary: 'See @cntk.device.try_set_default_device
-
-    '
-  syntax:
-    content: set_default_device(new_default_device)
-    parameters:
-    - id: new_default_device
-  type: function
-  uid: cntk.device.set_default_device
 - fullName: cntk.device.set_excluded_devices
   langs:
   - python
@@ -167,10 +147,10 @@ items:
     id: set_excluded_devices
     path: bindings/python/cntk\device.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 164
+    startLine: 152
   summary: 'Allows to specify a list of excluded devices that cannot be used as
 
     globally default (neither auto-selected nor explicitly specified by
@@ -210,22 +190,26 @@ items:
     id: try_set_default_device
     path: bindings/python/cntk\device.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 133
+    startLine: 117
   summary: "Tries to set the specified device as the globally default, optionally\n\
     acquiring an exclusive (cooperative) lock on the device (only a GPU device\ncan\
     \ be locked).\n\nThe default device can only be changed if it has not yet been\
     \ frozen by\nbeing implicitly used in any previous CNTK operation.\n\nCNTK uses\
-    \ a cooperative synchronization for the device access, whereby only\na single\
-    \ process can acquire a device lock. However, if exclusivity is not\nrequired,\
-    \ the same device can still be accessed without acquiring any locks\n(in which\
-    \ case, any existing lock corresponding to the device will be\nignored).\n\nReturns:\
-    \ *False* if\n   * the specified device appears in the list of excluded devices;\
-    \ \n\n   * *acquire_device_lock* is *True* and another process already holds a\
-    \ lock on the device; \n\n   * *acquire_device_lock* is *True* and *new_default_device*\
-    \ corresponds to a CPU device (which cannot be locked). \n"
+    \ cooperative locking for the device access, whereby only a single\nprocess can\
+    \ acquire a device lock. This locking mechanism allows CNTK\nprocesses to avoid\
+    \ device oversubscription only if they collectively\nchoose so. In other words,\
+    \ the device locked by one CNTK process, can\nstill be accessed by another CNTK\
+    \ process without acquiring any locks\n(i.e, the existing device lock can be ignored\
+    \ by other CNTK processes).\nThis cooperative locking mechanism does not guarantee\
+    \ any kind of\nexclusive access to the device. The proper way to ensure exclusivity\
+    \  is\nto use tools provided by NVIDIA (nvidia smi).\n\nReturns: *False* if\n\
+    \   * the specified device appears in the list of excluded devices; \n\n   * *acquire_device_lock*\
+    \ is *True* and another process already holds a lock on the device; \n\n   * *acquire_device_lock*\
+    \ is *True* and *new_default_device* corresponds to a CPU device (which cannot\
+    \ be locked). \n"
   syntax:
     content: try_set_default_device(new_default_device, acquire_device_lock=False)
     parameters:
@@ -257,10 +241,10 @@ items:
     id: use_default_device
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 104
+    startLine: 99
   summary: 'Freezes the default device of the current CNTK process disallowing further
 
     changes through calls to @cntk.device.try_set_default_device. This default
@@ -319,11 +303,6 @@ references:
   name: gpu
   parent: cntk.device
   uid: cntk.device.gpu
-- fullName: cntk.device.set_default_device
-  isExternal: false
-  name: set_default_device
-  parent: cntk.device
-  uid: cntk.device.set_default_device
 - fullName: cntk.device.set_excluded_devices
   isExternal: false
   name: set_excluded_devices

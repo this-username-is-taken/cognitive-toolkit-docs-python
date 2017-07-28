@@ -7,10 +7,6 @@ items:
   - cntk.eval.evaluator.Evaluator.test_minibatch
   class: cntk.eval.evaluator.Evaluator
   fullName: cntk.eval.evaluator.Evaluator
-  inheritance:
-  - inheritance:
-    - type: builtins.object
-    type: cntk.cntk_py.Evaluator
   langs:
   - python
   module: cntk.eval.evaluator
@@ -19,7 +15,7 @@ items:
     id: Evaluator
     path: bindings/python/cntk\eval\evaluator.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\eval\evaluator.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 15
@@ -58,7 +54,7 @@ items:
     id: evaluation_function
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -78,7 +74,7 @@ items:
     id: summarize_test_progress
     path: bindings/python/cntk\eval\evaluator.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\eval\evaluator.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 86
@@ -104,7 +100,7 @@ items:
     id: test_minibatch
     path: bindings/python/cntk\eval\evaluator.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\eval\evaluator.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 38
@@ -119,8 +115,11 @@ items:
     - defaultValue: None
       id: device
     return:
-      description: "the average evaluation criterion value per sample for the\n  \
-        \ tested minibatch.\n"
+      description: 'the average evaluation criterion value per sample for the
+
+        tested minibatch.
+
+        '
       type:
       - '*float*'
   type: method

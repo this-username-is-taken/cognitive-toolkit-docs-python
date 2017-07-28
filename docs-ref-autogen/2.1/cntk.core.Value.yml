@@ -9,15 +9,12 @@ items:
   - cntk.core.Value.dtype
   - cntk.core.Value.is_read_only
   - cntk.core.Value.is_sparse
+  - cntk.core.Value.is_valid
   - cntk.core.Value.mask
   - cntk.core.Value.one_hot
   - cntk.core.Value.shape
   class: cntk.core.Value
   fullName: cntk.core.Value
-  inheritance:
-  - inheritance:
-    - type: builtins.object
-    type: cntk.cntk_py.Value
   langs:
   - python
   module: cntk.core
@@ -26,11 +23,12 @@ items:
     id: Value
     path: bindings/python/cntk\core.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 214
+    startLine: 244
   summary: 'Internal representation of minibatch data.
+
 
 
 
@@ -86,10 +84,10 @@ items:
     id: as_sequences
     path: bindings/python/cntk\core.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\core.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 249
+    startLine: 280
   summary: 'Convert a Value to a sequence of NumPy arrays that have their masked
 
     entries removed.
@@ -122,10 +120,10 @@ items:
     id: create
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 335
+    startLine: 366
   summary: 'Creates a @cntk.core.Value object.
 
     '
@@ -190,7 +188,7 @@ items:
     id: data
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -210,7 +208,7 @@ items:
     id: device
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -230,7 +228,7 @@ items:
     id: dtype
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -250,7 +248,7 @@ items:
     id: is_read_only
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -270,7 +268,7 @@ items:
     id: is_sparse
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -280,6 +278,27 @@ items:
   syntax: {}
   type: attribute
   uid: cntk.core.Value.is_sparse
+- class: cntk.core.Value
+  fullName: cntk.core.Value.is_valid
+  langs:
+  - python
+  module: cntk.core
+  name: is_valid
+  source:
+    id: is_valid
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Whether the value is valid or has been invalidated by another forward
+    and/or backward pass
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.core.Value.is_valid
 - class: cntk.core.Value
   example:
   - 'A mask of `[[2, 1, 1], [1, 1, 0]]` describes a batch of two
@@ -304,7 +323,7 @@ items:
     id: mask
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -318,19 +337,24 @@ items:
 - class: cntk.core.Value
   example:
   - "\n```\n\n>>> num_classes = 6\n>>> sparse_indices = [[1,C.Value.ONE_HOT_SKIP,5],[4]]\n\
-    >>> i0 = C.sequence.input(shape=num_classes, is_sparse=True)\n>>> z = C.times(i0,\
-    \ np.eye(num_classes))\n>>> value = C.Value.one_hot(sparse_indices, num_classes)\n\
-    >>> z.eval({i0: value})\n[array([[ 0.,  1.,  0.,  0.,  0.,  0.],\n        [ 0.,\
-    \  0.,  0.,  0.,  0.,  0.],\n        [ 0.,  0.,  0.,  0.,  0.,  1.]], dtype=float32),\n\
-    \ array([[ 0.,  0.,  0.,  0.,  1.,  0.]], dtype=float32)]\n<BLANKLINE>\n>>> num_classes\
-    \ = 6\n>>> sample_shape = (2, num_classes)\n>>> sparse_indices = [[1,5,3,2],[4,1]]\n\
-    >>> i0 = C.sequence.input(shape=sample_shape, is_sparse=True)\n>>> z = C.times(i0,\
-    \ np.eye(num_classes))\n>>> value = C.Value.one_hot(sparse_indices, sample_shape)\n\
-    >>> z.eval({i0: value})\n[array([[[ 0.,  1.,  0.,  0.,  0.,  0.],\n         [\
-    \ 0.,  0.,  0.,  0.,  0.,  1.]],\n        [[ 0.,  0.,  0.,  1.,  0.,  0.],\n \
-    \        [ 0.,  0.,  1.,  0.,  0.,  0.]]], dtype=float32),\n array([[[ 0.,  0.,\
-    \  0.,  0.,  1.,  0.],\n         [ 0.,  1.,  0.,  0.,  0.,  0.]]], dtype=float32)]\n\
-    ```\n"
+    >>> i0 = C.sequence.input_variable(shape=num_classes, is_sparse=True)\n>>> z =\
+    \ C.times(i0, np.eye(num_classes))\n>>> value = C.Value.one_hot(sparse_indices,\
+    \ num_classes)\n>>> z.eval({i0: value})\n[array([[ 0.,  1.,  0.,  0.,  0.,  0.],\n\
+    \        [ 0.,  0.,  0.,  0.,  0.,  0.],\n        [ 0.,  0.,  0.,  0.,  0.,  1.]],\
+    \ dtype=float32),\n array([[ 0.,  0.,  0.,  0.,  1.,  0.]], dtype=float32)]\n\
+    <BLANKLINE>\n>>> num_classes = 6\n>>> sample_shape = (2, num_classes)\n>>> sparse_indices\
+    \ = [[1,5,3,2],[4,1]]\n>>> i0 = C.sequence.input_variable(shape=sample_shape,\
+    \ is_sparse=True)\n>>> z = C.times(i0, np.eye(num_classes))\n>>> value = C.Value.one_hot(sparse_indices,\
+    \ sample_shape)\n>>> z.eval({i0: value})\n[array([[[ 0.,  1.,  0.,  0.,  0., \
+    \ 0.],\n         [ 0.,  0.,  0.,  0.,  0.,  1.]],\n        [[ 0.,  0.,  0.,  1.,\
+    \  0.,  0.],\n         [ 0.,  0.,  1.,  0.,  0.,  0.]]], dtype=float32),\n array([[[\
+    \ 0.,  0.,  0.,  0.,  1.,  0.],\n         [ 0.,  1.,  0.,  0.,  0.,  0.]]], dtype=float32)]\n\
+    >>> # this example has no sequence axis:\n>>> num_classes = 6\n>>> sample_shape\
+    \ = (num_classes,)\n>>> sparse_indices = [1,5,3,2]\n>>> i0 = C.input_variable(shape=sample_shape,\
+    \ is_sparse=True)\n>>> z = C.times(i0, np.eye(num_classes))\n>>> value = C.Value.one_hot(sparse_indices,\
+    \ sample_shape)\n>>> z.eval({i0: value})\narray([[ 0.,  1.,  0.,  0.,  0.,  0.],\n\
+    \       [ 0.,  0.,  0.,  0.,  0.,  1.],\n       [ 0.,  0.,  0.,  1.,  0.,  0.],\n\
+    \       [ 0.,  0.,  1.,  0.,  0.,  0.]], dtype=float32)\n```\n"
   fullName: cntk.core.Value.one_hot
   langs:
   - python
@@ -340,10 +364,10 @@ items:
     id: one_hot
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 430
+    startLine: 472
   summary: 'Converts `batch` into a @cntk.core.Value object of `dtype`
 
     such that the integer data in `batch` is interpreted as the indices
@@ -360,8 +384,9 @@ items:
       id: batch
       type:
       - list of lists of integers
-    - description: 'number of classes or shape of each sample whose trailing axis
-        is one_hot
+    - description: 'number of classes or shape of each
+
+        sample whose trailing axis is one_hot
 
         '
       id: sample_shape
@@ -402,7 +427,7 @@ items:
     id: shape
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -452,6 +477,11 @@ references:
   name: is_sparse
   parent: cntk.core.Value
   uid: cntk.core.Value.is_sparse
+- fullName: cntk.core.Value.is_valid
+  isExternal: false
+  name: is_valid
+  parent: cntk.core.Value
+  uid: cntk.core.Value.is_valid
 - fullName: cntk.core.Value.mask
   isExternal: false
   name: mask

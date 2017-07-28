@@ -1,0 +1,296 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.deeprl.agent.qlearning.QLearning.end
+  - cntk.contrib.deeprl.agent.qlearning.QLearning.enter_evaluation
+  - cntk.contrib.deeprl.agent.qlearning.QLearning.save
+  - cntk.contrib.deeprl.agent.qlearning.QLearning.save_parameter_settings
+  - cntk.contrib.deeprl.agent.qlearning.QLearning.set_as_best_model
+  - cntk.contrib.deeprl.agent.qlearning.QLearning.start
+  - cntk.contrib.deeprl.agent.qlearning.QLearning.step
+  class: cntk.contrib.deeprl.agent.qlearning.QLearning
+  fullName: cntk.contrib.deeprl.agent.qlearning.QLearning
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.qlearning
+  name: QLearning
+  source:
+    id: QLearning
+    path: bindings/python/cntk\contrib\deeprl\agent\qlearning.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\qlearning.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 22
+  summary: 'Q-learning agent.
+
+
+    Including:
+
+    - DQN [https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
+
+    - Prioritized Experience Replay [https://arxiv.org/pdf/1511.05952.pdf](https://arxiv.org/pdf/1511.05952.pdf)
+
+    - Dueling Network [https://arxiv.org/pdf/1511.06581.pdf](https://arxiv.org/pdf/1511.06581.pdf)
+
+    - Double Q Learning [https://arxiv.org/pdf/1509.06461.pdf](https://arxiv.org/pdf/1509.06461.pdf)
+
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: QLearning(config_filename, o_space, a_space)
+  type: class
+  uid: cntk.contrib.deeprl.agent.qlearning.QLearning
+- class: cntk.contrib.deeprl.agent.qlearning.QLearning
+  fullName: cntk.contrib.deeprl.agent.qlearning.QLearning.end
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.qlearning
+  name: end
+  source:
+    id: end
+    path: bindings/python/cntk\contrib\deeprl\agent\qlearning.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\qlearning.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 190
+  summary: 'Last observed reward/state of the episode (which then terminates).
+
+    '
+  syntax:
+    content: end(reward, next_state)
+    parameters:
+    - description: 'amount of reward returned after previous action.
+
+        '
+      id: reward
+      type:
+      - float
+    - description: 'observation provided by the environment.
+
+        '
+      id: next_state
+      type:
+      - object
+  type: method
+  uid: cntk.contrib.deeprl.agent.qlearning.QLearning.end
+- class: cntk.contrib.deeprl.agent.qlearning.QLearning
+  fullName: cntk.contrib.deeprl.agent.qlearning.QLearning.enter_evaluation
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.qlearning
+  name: enter_evaluation
+  source:
+    id: enter_evaluation
+    path: bindings/python/cntk\contrib\deeprl\agent\qlearning.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\qlearning.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 215
+  summary: 'Setup before evaluation.
+
+    '
+  syntax:
+    content: enter_evaluation()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.deeprl.agent.qlearning.QLearning.enter_evaluation
+- class: cntk.contrib.deeprl.agent.qlearning.QLearning
+  fullName: cntk.contrib.deeprl.agent.qlearning.QLearning.save
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.qlearning
+  name: save
+  source:
+    id: save
+    path: bindings/python/cntk\contrib\deeprl\agent\qlearning.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\qlearning.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 255
+  summary: 'Save model to file.
+
+    '
+  syntax:
+    content: save(filename)
+    parameters:
+    - id: self
+    - id: filename
+  type: method
+  uid: cntk.contrib.deeprl.agent.qlearning.QLearning.save
+- class: cntk.contrib.deeprl.agent.qlearning.QLearning
+  fullName: cntk.contrib.deeprl.agent.qlearning.QLearning.save_parameter_settings
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.qlearning
+  name: save_parameter_settings
+  source:
+    id: save_parameter_settings
+    path: bindings/python/cntk\contrib\deeprl\agent\qlearning.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\qlearning.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 259
+  summary: 'Save parameter settings to file.
+
+    '
+  syntax:
+    content: save_parameter_settings(filename)
+    parameters:
+    - id: self
+    - id: filename
+  type: method
+  uid: cntk.contrib.deeprl.agent.qlearning.QLearning.save_parameter_settings
+- class: cntk.contrib.deeprl.agent.qlearning.QLearning
+  fullName: cntk.contrib.deeprl.agent.qlearning.QLearning.set_as_best_model
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.qlearning
+  name: set_as_best_model
+  source:
+    id: set_as_best_model
+    path: bindings/python/cntk\contrib\deeprl\agent\qlearning.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\qlearning.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 211
+  summary: 'Copy current model to best model.
+
+    '
+  syntax:
+    content: set_as_best_model()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.deeprl.agent.qlearning.QLearning.set_as_best_model
+- class: cntk.contrib.deeprl.agent.qlearning.QLearning
+  fullName: cntk.contrib.deeprl.agent.qlearning.QLearning.start
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.qlearning
+  name: start
+  source:
+    id: start
+    path: bindings/python/cntk\contrib\deeprl\agent\qlearning.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\qlearning.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 133
+  summary: 'Start a new episode.
+
+    '
+  syntax:
+    content: start(state)
+    parameters:
+    - description: 'observation provided by the environment.
+
+        '
+      id: state
+      type:
+      - object
+    return:
+      description: 'action choosen by agent.
+
+        debug_info (dict): auxiliary diagnostic information.
+
+        '
+      type:
+      - action (int)
+  type: method
+  uid: cntk.contrib.deeprl.agent.qlearning.QLearning.start
+- class: cntk.contrib.deeprl.agent.qlearning.QLearning
+  fullName: cntk.contrib.deeprl.agent.qlearning.QLearning.step
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.qlearning
+  name: step
+  source:
+    id: step
+    path: bindings/python/cntk\contrib\deeprl\agent\qlearning.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\qlearning.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 156
+  summary: 'Observe one transition and choose an action.
+
+    '
+  syntax:
+    content: step(reward, next_state)
+    parameters:
+    - description: 'amount of reward returned after previous action.
+
+        '
+      id: reward
+      type:
+      - float
+    - description: 'observation provided by the environment.
+
+        '
+      id: next_state
+      type:
+      - object
+    return:
+      description: 'action choosen by agent.
+
+        debug_info (dict): auxiliary diagnostic information.
+
+        '
+      type:
+      - action (int)
+  type: method
+  uid: cntk.contrib.deeprl.agent.qlearning.QLearning.step
+references:
+- fullName: cntk.contrib.deeprl.agent.qlearning.QLearning.end
+  isExternal: false
+  name: end
+  parent: cntk.contrib.deeprl.agent.qlearning.QLearning
+  uid: cntk.contrib.deeprl.agent.qlearning.QLearning.end
+- fullName: cntk.contrib.deeprl.agent.qlearning.QLearning.enter_evaluation
+  isExternal: false
+  name: enter_evaluation
+  parent: cntk.contrib.deeprl.agent.qlearning.QLearning
+  uid: cntk.contrib.deeprl.agent.qlearning.QLearning.enter_evaluation
+- fullName: cntk.contrib.deeprl.agent.qlearning.QLearning.save
+  isExternal: false
+  name: save
+  parent: cntk.contrib.deeprl.agent.qlearning.QLearning
+  uid: cntk.contrib.deeprl.agent.qlearning.QLearning.save
+- fullName: cntk.contrib.deeprl.agent.qlearning.QLearning.save_parameter_settings
+  isExternal: false
+  name: save_parameter_settings
+  parent: cntk.contrib.deeprl.agent.qlearning.QLearning
+  uid: cntk.contrib.deeprl.agent.qlearning.QLearning.save_parameter_settings
+- fullName: cntk.contrib.deeprl.agent.qlearning.QLearning.set_as_best_model
+  isExternal: false
+  name: set_as_best_model
+  parent: cntk.contrib.deeprl.agent.qlearning.QLearning
+  uid: cntk.contrib.deeprl.agent.qlearning.QLearning.set_as_best_model
+- fullName: cntk.contrib.deeprl.agent.qlearning.QLearning.start
+  isExternal: false
+  name: start
+  parent: cntk.contrib.deeprl.agent.qlearning.QLearning
+  uid: cntk.contrib.deeprl.agent.qlearning.QLearning.start
+- fullName: cntk.contrib.deeprl.agent.qlearning.QLearning.step
+  isExternal: false
+  name: step
+  parent: cntk.contrib.deeprl.agent.qlearning.QLearning
+  uid: cntk.contrib.deeprl.agent.qlearning.QLearning.step

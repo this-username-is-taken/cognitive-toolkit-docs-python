@@ -18,12 +18,6 @@ items:
   - cntk.train.trainer.Trainer.train_minibatch
   class: cntk.train.trainer.Trainer
   fullName: cntk.train.trainer.Trainer
-  inheritance:
-  - inheritance:
-    - inheritance:
-      - type: builtins.object
-      type: cntk.cntk_py.Evaluator
-    type: cntk.cntk_py.Trainer
   langs:
   - python
   module: cntk.train.trainer
@@ -32,10 +26,10 @@ items:
     id: Trainer
     path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 19
+    startLine: 22
   summary: 'Class for training the model parameters of a models'' specified loss function,
     using the
 
@@ -61,6 +55,8 @@ items:
 
 
 
+
+
     '
   syntax:
     content: Trainer(model, criterion, parameter_learners, progress_writers=None)
@@ -71,29 +67,34 @@ items:
       id: model
       type:
       - cntk.ops.functions.Function
-    - description: 'Function with one or two outputs,
+    - description: 'Function with one or two outputs, representing loss and, if given,
+        evaluation metric
 
-        representing loss and, if given, evaluation metric (in this order).
+        (in this order). Alternatively, a tuple(loss Function, evaluation Function)
+        is also
 
-        Alternatively, a tuple(loss Function, evaluation Function) is also accepted.
+        accepted.
 
         '
       id: criterion
       type:
-      - "Python tuple of @cntk.ops.functions.Function\n, or @cntk.ops.functions.Function\n\
-        \ or"
-    - description: 'list of learners from @cntk.learner
+      - "tuple of @cntk.ops.functions.Function\n or @cntk.variables.Variable\n"
+    - description: 'list of learners from @cntk.learners
 
         '
       id: parameter_learners
       type:
       - list
-    - description: "optionally, list of progress writers from @cntk.utils to automatically\
-        \ track\n   training progress.\n\nTODO: Would be great to allow to skip some\
-        \ parameters that should not be updated.\n"
+    - description: 'optionally, list of
+
+        progress writers from @cntk.logging to automatically track training
+
+        progress.
+
+        '
       id: progress_writers
       type:
-      - list
+      - progress writer or list of them
   type: class
   uid: cntk.train.trainer.Trainer
 - class: cntk.train.trainer.Trainer
@@ -106,7 +107,7 @@ items:
     id: evaluation_function
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -126,7 +127,7 @@ items:
     id: loss_function
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -146,7 +147,7 @@ items:
     id: model
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -166,7 +167,7 @@ items:
     id: parameter_learners
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -186,7 +187,7 @@ items:
     id: previous_minibatch_evaluation_average
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -207,7 +208,7 @@ items:
     id: previous_minibatch_loss_average
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -227,7 +228,7 @@ items:
     id: previous_minibatch_sample_count
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -247,10 +248,10 @@ items:
     id: restore_from_checkpoint
     path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 236
+    startLine: 240
   summary: 'Restores a checkpoint of the model and Trainer state from the
 
     specified file location.
@@ -277,10 +278,10 @@ items:
     id: save_checkpoint
     path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 222
+    startLine: 225
   summary: 'Saves a checkpoint of the model and other Trainer state at the
 
     specified file location.
@@ -301,7 +302,12 @@ items:
       type:
       - str
     - defaultValue: '{}'
+      description: 'additional external state, default is empty.
+
+        '
       id: external_state
+      type:
+      - dict
   type: method
   uid: cntk.train.trainer.Trainer.save_checkpoint
 - class: cntk.train.trainer.Trainer
@@ -314,10 +320,10 @@ items:
     id: summarize_test_progress
     path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 314
+    startLine: 318
   summary: 'Updates the progress writers with the summary of test progress since start
     and resets the internal
 
@@ -340,10 +346,10 @@ items:
     id: summarize_training_progress
     path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 307
+    startLine: 311
   summary: 'Updates the progress writers with the summary of training progress since
     start and resets the internal
 
@@ -366,10 +372,10 @@ items:
     id: test_minibatch
     path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 174
+    startLine: 177
   summary: "Test the model on the specified batch of samples using the evaluation\n\
     Function specified during construction of the Trainer.\n\nNote: See @cntk.ops.functions.Function.forward\
     \ for examples on passing input data. \n"
@@ -381,8 +387,11 @@ items:
     - defaultValue: None
       id: device
     return:
-      description: "the average evaluation criterion value per sample for the\n  \
-        \ tested minibatch.\n"
+      description: 'the average evaluation criterion value per sample for the
+
+        tested minibatch.
+
+        '
       type:
       - '*float*'
   type: method
@@ -397,7 +406,7 @@ items:
     id: total_number_of_samples_seen
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -418,10 +427,10 @@ items:
     id: train_minibatch
     path: bindings/python/cntk\train\trainer.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\train\trainer.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 93
+    startLine: 96
   summary: "Optimize model parameters using the specified 'arguments' minibatch of\
     \ training samples.\n\nNote: See @cntk.ops.functions.Function.forward for examples\
     \ on passing input data. \n"

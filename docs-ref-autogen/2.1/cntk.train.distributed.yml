@@ -7,6 +7,7 @@ items:
   - cntk.train.distributed.WorkerDescriptor
   - cntk.train.distributed.block_momentum_distributed_learner
   - cntk.train.distributed.data_parallel_distributed_learner
+  - cntk.train.distributed.mpi_communicator
   fullName: cntk.train.distributed
   langs:
   - python
@@ -16,7 +17,7 @@ items:
     id: distributed
     path: bindings/python/cntk\train\distributed.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\train\distributed.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -38,10 +39,10 @@ items:
     id: block_momentum_distributed_learner
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 141
+    startLine: 148
   summary: 'Creates a block momentum distributed learner. See [1] for more
 
     information.
@@ -117,10 +118,10 @@ items:
     id: data_parallel_distributed_learner
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 115
+    startLine: 122
   summary: 'Creates a data parallel distributed learner
 
     '
@@ -156,6 +157,26 @@ items:
         '
   type: function
   uid: cntk.train.distributed.data_parallel_distributed_learner
+- fullName: cntk.train.distributed.mpi_communicator
+  langs:
+  - python
+  module: cntk.train.distributed
+  name: mpi_communicator
+  source:
+    id: mpi_communicator
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 199
+  summary: 'Creates a non quantized MPI communicator.
+
+    '
+  syntax:
+    content: mpi_communicator()
+  type: function
+  uid: cntk.train.distributed.mpi_communicator
 references:
 - fullName: cntk.train.distributed.Communicator
   isExternal: false
@@ -182,3 +203,8 @@ references:
   name: data_parallel_distributed_learner
   parent: cntk.train.distributed
   uid: cntk.train.distributed.data_parallel_distributed_learner
+- fullName: cntk.train.distributed.mpi_communicator
+  isExternal: false
+  name: mpi_communicator
+  parent: cntk.train.distributed
+  uid: cntk.train.distributed.mpi_communicator

@@ -14,7 +14,6 @@ items:
   - cntk.variables.VariableMixin.needs_gradient
   - cntk.variables.VariableMixin.owner
   - cntk.variables.VariableMixin.shape
-  - cntk.variables.VariableMixin.type
   - cntk.variables.VariableMixin.uid
   class: cntk.variables.VariableMixin
   fullName: cntk.variables.VariableMixin
@@ -28,15 +27,13 @@ items:
     id: VariableMixin
     path: bindings/python/cntk\variables.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 48
+    startLine: 65
   summary: 'Standard properties for @cntk.variables.Variable and its derived classes
 
     @cntk.variables.Parameter and @cntk.variables.Constant.
-
-
 
 
 
@@ -65,7 +62,7 @@ items:
     id: dtype
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -85,7 +82,7 @@ items:
     id: dynamic_axes
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -105,7 +102,7 @@ items:
     id: is_constant
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -125,7 +122,7 @@ items:
     id: is_input
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -145,7 +142,7 @@ items:
     id: is_output
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -165,7 +162,7 @@ items:
     id: is_parameter
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -185,7 +182,7 @@ items:
     id: is_placeholder
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -205,7 +202,7 @@ items:
     id: is_sparse
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -225,7 +222,7 @@ items:
     id: name
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -245,7 +242,7 @@ items:
     id: needs_gradient
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -265,7 +262,7 @@ items:
     id: owner
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -285,7 +282,7 @@ items:
     id: shape
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -296,27 +293,6 @@ items:
   type: attribute
   uid: cntk.variables.VariableMixin.shape
 - class: cntk.variables.VariableMixin
-  fullName: cntk.variables.VariableMixin.type
-  langs:
-  - python
-  module: cntk.variables
-  name: type
-  source:
-    id: type
-    path: null
-    remote:
-      branch: release/2.0.rc1
-      path: null
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: null
-  summary: 'The complete type of the data represented by this Variable as a single
-    Variable.Type instance.
-
-    '
-  syntax: {}
-  type: attribute
-  uid: cntk.variables.VariableMixin.type
-- class: cntk.variables.VariableMixin
   fullName: cntk.variables.VariableMixin.uid
   langs:
   - python
@@ -326,7 +302,7 @@ items:
     id: uid
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -397,11 +373,6 @@ references:
   name: shape
   parent: cntk.variables.VariableMixin
   uid: cntk.variables.VariableMixin.shape
-- fullName: cntk.variables.VariableMixin.type
-  isExternal: false
-  name: type
-  parent: cntk.variables.VariableMixin
-  uid: cntk.variables.VariableMixin.type
 - fullName: cntk.variables.VariableMixin.uid
   isExternal: false
   name: uid

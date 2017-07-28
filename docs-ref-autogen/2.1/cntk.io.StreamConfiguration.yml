@@ -4,10 +4,6 @@ items:
 - children: []
   class: cntk.io.StreamConfiguration
   fullName: cntk.io.StreamConfiguration
-  inheritance:
-  - inheritance:
-    - type: builtins.object
-    type: cntk.cntk_py.StreamConfiguration
   langs:
   - python
   module: cntk.io
@@ -16,15 +12,15 @@ items:
     id: StreamConfiguration
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 525
+    startLine: 938
   summary: 'Configuration of a stream in a text format reader.
 
     '
   syntax:
-    content: StreamConfiguration(name, dim, is_sparse=False, stream_alias='')
+    content: StreamConfiguration(name, dim, is_sparse=False, stream_alias='', defines_mb_size=False)
     parameters:
     - description: 'name of this stream
 
@@ -42,9 +38,9 @@ items:
       id: dim
       type:
       - int
-    - description: 'whether the provided data is sparse
+    - description: 'whether the provided data is
 
-        (*False* by default)
+        sparse (*False* by default)
 
         '
       id: is_sparse
@@ -56,6 +52,14 @@ items:
       id: stream_alias
       type:
       - str, defaults to ''
+    - description: 'whether this stream defines
+
+        the minibatch size.
+
+        '
+      id: defines_mb_size
+      type:
+      - bool, defaults to False
   type: class
   uid: cntk.io.StreamConfiguration
 references: []

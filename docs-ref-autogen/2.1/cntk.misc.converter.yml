@@ -1,0 +1,67 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.misc.converter.convert
+  fullName: cntk.misc.converter
+  langs:
+  - python
+  module: cntk.misc.converter
+  name: converter
+  source:
+    id: converter
+    path: bindings/python/cntk\misc\converter.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\misc\converter.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: module
+  uid: cntk.misc.converter
+- fullName: cntk.misc.converter.convert
+  langs:
+  - python
+  module: cntk.misc.converter
+  name: convert
+  source:
+    id: convert
+    path: bindings/python/cntk\misc\converter.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\misc\converter.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 8
+  summary: 'Clones the graph underlying root_func and in the clone substitutes
+
+    all Functions obtained by applying ''filter'', with a new Function obtained by
+    calling the specified ''converter''
+
+    '
+  syntax:
+    content: convert(root_func, filter, converter)
+    parameters:
+    - description: 'a root function of a graph to be cloned and converted
+
+        '
+      id: root_func
+    - description: 'a lambda for filtering out the Functions to be converted
+
+        '
+      id: filter
+    - description: 'a lambda for obtaining the substitute for each of the Functions
+        to be converted
+
+        '
+      id: converter
+    return:
+      description: 'Cloned and converted Function (graph)
+
+        '
+  type: function
+  uid: cntk.misc.converter.convert
+references:
+- fullName: cntk.misc.converter.convert
+  isExternal: false
+  name: convert
+  parent: cntk.misc.converter
+  uid: cntk.misc.converter.convert

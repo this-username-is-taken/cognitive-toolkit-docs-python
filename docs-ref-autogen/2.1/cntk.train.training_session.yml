@@ -17,7 +17,7 @@ items:
     id: training_session
     path: bindings/python/cntk\train\training_session.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -88,10 +88,10 @@ items:
     id: minibatch_size_schedule
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 211
+    startLine: 296
   summary: 'Creates a minibatch size schedule.
 
     '
@@ -131,10 +131,10 @@ items:
     id: training_session
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 254
+    startLine: 339
   summary: 'A factory function to create a training session object.
 
     '

@@ -2,10 +2,10 @@
 api_name: []
 items:
 - children:
-  - cntk.layers.blocks.BlockFunction
   - cntk.layers.blocks.ForwardDeclaration
   - cntk.layers.blocks.GRU
   - cntk.layers.blocks.LSTM
+  - cntk.layers.blocks.RNNStep
   - cntk.layers.blocks.RNNUnit
   - cntk.layers.blocks.Stabilizer
   - cntk.layers.blocks.UntestedBranchError
@@ -18,48 +18,28 @@ items:
     id: blocks
     path: bindings/python/cntk\layers\blocks.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  summary: "blocks -- basic building blocks that are semantically not layers (not\
-    \ used in a layered fashion)\n          e.g. the LSTM\n"
-  type: module
-  uid: cntk.layers.blocks
-- fullName: cntk.layers.blocks.BlockFunction
-  langs:
-  - python
-  module: cntk.layers.blocks
-  name: BlockFunction
-  source:
-    id: BlockFunction
-    path: bindings/python/cntk\layers\blocks.py
-    remote:
-      branch: release/2.0.rc1
-      path: bindings/python/cntk\layers\blocks.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 69
-  summary: 'Decorator for defining a @Function as a BlockFunction. Same as @Function,
-    but wrap the content into an as_block().
+  summary: 'Basic building blocks that are semantically not layers (not used in a
+    layered fashion),
+
+    e.g. the LSTM block.
 
     '
-  syntax:
-    content: BlockFunction(op_name, name)
-    parameters:
-    - id: op_name
-    - id: name
-  type: function
-  uid: cntk.layers.blocks.BlockFunction
+  type: module
+  uid: cntk.layers.blocks
 - example:
   - "\n```\n\n>>> # create a graph with a recurrent loop to compute the length of\
-    \ an input sequence\n>>> from cntk.layers.typing import *\n>>> x = C.input(**Sequence[Tensor[2]])\n\
-    >>> ones_like_input = sequence.broadcast_as(1, x)  # sequence of scalar ones of\
-    \ same length as input\n>>> out_fwd = ForwardDeclaration()  # placeholder for\
-    \ the state variables\n>>> out = sequence.past_value(out_fwd, initial_state=0)\
-    \ + ones_like_input\n>>> out_fwd.resolve_to(out)\n>>> length = sequence.last(out)\n\
+    \ an input sequence\n>>> from cntk.layers.typing import *\n>>> x = C.input_variable(**Sequence[Tensor[2]])\n\
+    >>> ones_like_input = C.sequence.broadcast_as(1, x)  # sequence of scalar ones\
+    \ of same length as input\n>>> out_fwd = ForwardDeclaration()  # placeholder for\
+    \ the state variables\n>>> out = C.sequence.past_value(out_fwd, initial_state=0)\
+    \ + ones_like_input\n>>> out_fwd.resolve_to(out)\n>>> length = C.sequence.last(out)\n\
     >>> x0 = np.reshape(np.arange(6,dtype=np.float32),(1,3,2))\n>>> x0\n    array([[[\
     \ 0.,  1.],\n            [ 2.,  3.],\n            [ 4.,  5.]]], dtype=float32)\n\
-    >>> length(x0)\n    array([[ 3.]], dtype=float32)\n```\n"
+    >>> length(x0)\n    array([ 3.], dtype=float32)\n```\n"
   fullName: cntk.layers.blocks.ForwardDeclaration
   langs:
   - python
@@ -69,13 +49,13 @@ items:
     id: ForwardDeclaration
     path: bindings/python/cntk\layers\blocks.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 86
+    startLine: 83
   summary: 'Helper for recurrent network declarations.
 
-    Returns a placeholder variable with an added method resolve_to() to be called
+    Returns a placeholder variable with an added method `resolve_to()` to be called
 
     at the end to close the loop.
 
@@ -92,6 +72,8 @@ items:
         it to another variable
 
         '
+      type:
+      - cntk.variables.Variable
   type: function
   uid: cntk.layers.blocks.ForwardDeclaration
 - example:
@@ -118,10 +100,10 @@ items:
     id: GRU
     path: bindings/python/cntk\layers\blocks.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 443
+    startLine: 468
   summary: 'Layer factory function to create a GRU block for use inside a recurrence.
 
     The GRU block implements one step of the recurrence and is stateless. It accepts
@@ -149,7 +131,7 @@ items:
       id: cell_shape
       type:
       - tuple, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009FB9AB24A8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA686A0>
       description: 'function to apply at the end, e.g. *relu*
 
         '
@@ -158,25 +140,25 @@ items:
       - 'cntk.ops.functions.Function
 
         , defaults to @cntk.ops.tanh'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009FB9AB2518>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA68710>
       description: 'initial value of weights *W*
 
         '
       id: init
       type:
-      - 'scalar or NumPy array or @cntk
+      - 'scalar or NumPy array or @cntk.initializer
 
         , defaults to glorot_uniform'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009FB9AB2550>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA68748>
       description: 'initial value of weights *b*
 
         '
       id: init_bias
       type:
-      - 'scalar or NumPy array or @cntk
+      - 'scalar or NumPy array or @cntk.initializer
 
         , defaults to 0'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009FB9AB2588>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA68780>
       description: 'if *True* then add a @cntk.layers.blocks.Stabilizer
 
         to all state-related projections (but not the data input)
@@ -225,7 +207,7 @@ items:
     id: LSTM
     path: bindings/python/cntk\layers\blocks.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 356
@@ -256,7 +238,7 @@ items:
       id: cell_shape
       type:
       - tuple, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009FB9AB2320>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA68400>
       description: 'function to apply at the end, e.g. *relu*
 
         '
@@ -265,30 +247,30 @@ items:
       - 'cntk.ops.functions.Function
 
         , defaults to @cntk.ops.tanh'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009FB9AB20B8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA68198>
       description: ''
       id: use_peepholes
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009FB9AB2278>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA68358>
       description: 'initial value of weights *W*
 
         '
       id: init
       type:
-      - 'scalar or NumPy array or @cntk
+      - 'scalar or NumPy array or @cntk.initializer
 
         , defaults to glorot_uniform'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009FB9AB22B0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA68390>
       description: 'initial value of weights *b*
 
         '
       id: init_bias
       type:
-      - 'scalar or NumPy array or @cntk
+      - 'scalar or NumPy array or @cntk.initializer
 
         , defaults to 0'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009FB9AB2358>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA68438>
       description: 'if *True* then add a @cntk.layers.blocks.Stabilizer
 
         to all state-related projections (but not the data input)
@@ -323,24 +305,24 @@ items:
 
     >>> from cntk.layers import *
 
-    >>> relu_rnn_layer = Recurrence(RNNUnit(500, activation=C.relu))
+    >>> relu_rnn_layer = Recurrence(RNNStep(500, activation=C.relu))
 
     ```
 
     '
-  fullName: cntk.layers.blocks.RNNUnit
+  fullName: cntk.layers.blocks.RNNStep
   langs:
   - python
   module: cntk.layers.blocks
-  name: RNNUnit
+  name: RNNStep
   source:
-    id: RNNUnit
+    id: RNNStep
     path: bindings/python/cntk\layers\blocks.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 401
+    startLine: 400
   summary: 'Layer factory function to create a plain RNN block for use inside a recurrence.
 
     The RNN block implements one step of the recurrence and is stateless. It accepts
@@ -350,7 +332,7 @@ items:
 
     '
   syntax:
-    content: RNNUnit(shape, cell_shape=None, activation=sigmoid, init=glorot_uniform(),
+    content: RNNStep(shape, cell_shape=None, activation=sigmoid, init=glorot_uniform(),
       init_bias=0, enable_self_stabilization=False, name='')
     parameters:
     - description: 'vector or tensor dimension of the output of this layer
@@ -368,7 +350,7 @@ items:
       id: cell_shape
       type:
       - tuple, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009FB9AB2390>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA68470>
       description: 'function to apply at the end, e.g. *relu*
 
         '
@@ -377,25 +359,25 @@ items:
       - 'cntk.ops.functions.Function
 
         , defaults to signmoid'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009FB9AB2400>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA684E0>
       description: 'initial value of weights *W*
 
         '
       id: init
       type:
-      - 'scalar or NumPy array or @cntk
+      - 'scalar or NumPy array or @cntk.initializer
 
         , defaults to glorot_uniform'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009FB9AB2438>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA68518>
       description: 'initial value of weights *b*
 
         '
       id: init_bias
       type:
-      - 'scalar or NumPy array or @cntk
+      - 'scalar or NumPy array or @cntk.initializer
 
         , defaults to 0'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009FB9AB2470>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA68550>
       description: 'if *True* then add a @cntk.layers.blocks.Stabilizer
 
         to all state-related projections (but not the data input)
@@ -418,6 +400,42 @@ items:
         '
       type:
       - cntk.ops.functions.Function
+  type: function
+  uid: cntk.layers.blocks.RNNStep
+- fullName: cntk.layers.blocks.RNNUnit
+  langs:
+  - python
+  module: cntk.layers.blocks
+  name: RNNUnit
+  source:
+    id: RNNUnit
+    path: bindings/python/cntk\layers\blocks.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\layers\blocks.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 444
+  summary: 'This is a deprecated name for @cntk.layers.blocks.RNNStep. Use that name
+    instead.
+
+    '
+  syntax:
+    content: RNNUnit(shape, cell_shape=None, activation=sigmoid, init=glorot_uniform(),
+      init_bias=0, enable_self_stabilization=False, name='')
+    parameters:
+    - id: shape
+    - defaultValue: None
+      id: cell_shape
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA68588>
+      id: activation
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA685F8>
+      id: init
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA68630>
+      id: init_bias
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA68668>
+      id: enable_self_stabilization
+    - defaultValue: ''
+      id: name
   type: function
   uid: cntk.layers.blocks.RNNUnit
 - example:
@@ -460,43 +478,24 @@ items:
     id: Stabilizer
     path: bindings/python/cntk\layers\blocks.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 140
-  summary: 'Layer factory function to create a [Droppo self-stabilizer](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/11/SelfLR.pdf).
-
-    It multiplies its input with a scalar that is learned.
-
-
-    This takes *enable_self_stabilization* as a flag that allows to disable itself.
-    Useful if this is a global default.
-
-
-    Note: Some other layers (specifically, recurrent units like @cntk.layers.blocks.LSTM)
-    also have the option to
-
-    use the `Stabilizer()` layer internally. That is enabled by passing *enable_self_stabilization=True*
-
-    to those layers. In conjunction with those, the rule is that an explicit `Stabilizer()`
-    must be
-
-    inserted by the user for the main data input, whereas the recurrent layer will
-    own the stabilizer(s)
-
-    for the internal recurrent connection(s).
-
-    Note: Unlike the original paper, which proposed a linear or exponential scalar,
-
-    CNTK uses a sharpened Softplus: 1/steepness ln(1+e^{steepness*beta}).
-
-    The softplus behaves linear for weights around and above 1 (like the linear scalar)
-    while guaranteeing
-
-    positiveness (like the exponentional variant) but is also more robust by avoiding
-    exploding gradients.
-
-    '
+    startLine: 137
+  summary: "Layer factory function to create a [Droppo self-stabilizer](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/11/SelfLR.pdf).\n\
+    It multiplies its input with a scalar that is learned.\n\nThis takes *enable_self_stabilization*\
+    \ as a flag that allows to disable itself. Useful if this is a global default.\n\
+    \nNote: Some other layers (specifically, recurrent units like @cntk.layers.blocks.LSTM)\
+    \ also have the option to use the `Stabilizer()` layer internally. That is enabled\
+    \ by passing *enable_self_stabilization=True* to those layers. In conjunction\
+    \ with those, the rule is that an explicit `Stabilizer()` must be inserted by\
+    \ the user for the main data input, whereas the recurrent layer will own the stabilizer(s)\
+    \ for the internal recurrent connection(s). \n\nNote: Unlike the original paper,\
+    \ which proposed a linear or exponential scalar, CNTK uses a sharpened Softplus:\
+    \ 1/steepness ln(1+e^{steepness*beta}). The softplus behaves linear for weights\
+    \ around and above 1 (like the linear scalar) while guaranteeing positiveness\
+    \ (like the exponentional variant) but is also more robust by avoiding exploding\
+    \ gradients. \n"
   syntax:
     content: Stabilizer(steepness=4, enable_self_stabilization=True, name='')
     parameters:
@@ -505,7 +504,7 @@ items:
       id: steepness
       type:
       - int, defaults to 4
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009FB9AB2208>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000ACEFA682B0>
       description: 'a flag that allows to disable itself. Useful if this is a global
         default
 
@@ -537,10 +536,10 @@ items:
     id: UntestedBranchError
     path: bindings/python/cntk\layers\blocks.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\layers\blocks.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 29
+    startLine: 28
   syntax:
     content: UntestedBranchError(name)
     parameters:
@@ -548,11 +547,6 @@ items:
   type: function
   uid: cntk.layers.blocks.UntestedBranchError
 references:
-- fullName: cntk.layers.blocks.BlockFunction
-  isExternal: false
-  name: BlockFunction
-  parent: cntk.layers.blocks
-  uid: cntk.layers.blocks.BlockFunction
 - fullName: cntk.layers.blocks.ForwardDeclaration
   isExternal: false
   name: ForwardDeclaration
@@ -568,6 +562,11 @@ references:
   name: LSTM
   parent: cntk.layers.blocks
   uid: cntk.layers.blocks.LSTM
+- fullName: cntk.layers.blocks.RNNStep
+  isExternal: false
+  name: RNNStep
+  parent: cntk.layers.blocks
+  uid: cntk.layers.blocks.RNNStep
 - fullName: cntk.layers.blocks.RNNUnit
   isExternal: false
   name: RNNUnit

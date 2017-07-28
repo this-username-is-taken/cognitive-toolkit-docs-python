@@ -15,7 +15,7 @@ items:
     id: profiler
     path: bindings/python/cntk\debugging\profiler.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\debugging\profiler.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -30,10 +30,10 @@ items:
     id: disable_profiler
     path: bindings/python/cntk\debugging\profiler.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\debugging\profiler.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 38
+    startLine: 37
   summary: 'Disable profiler from gathering data.
 
     '
@@ -50,10 +50,10 @@ items:
     id: enable_profiler
     path: bindings/python/cntk\debugging\profiler.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\debugging\profiler.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 31
+    startLine: 30
   summary: 'Enable profiler to gather data. Note that in training_session, profiler
     would be enabled automatically after the first check point
 
@@ -71,7 +71,7 @@ items:
     id: start_profiler
     path: bindings/python/cntk\debugging\profiler.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\debugging\profiler.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 9
@@ -79,7 +79,7 @@ items:
 
     the profiler is not enabled after start
 
-    ([example](https://github.com/Microsoft/CNTK/wiki/Performance-Profiler#for-python)).
+    ([example](https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-and-Python-Performance-Profiler#for-python)).
 
     '
   syntax:
@@ -111,10 +111,10 @@ items:
     id: stop_profiler
     path: bindings/python/cntk\debugging\profiler.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\debugging\profiler.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 24
+    startLine: 23
   summary: 'Stop profiler from gathering performance statistics and flush them to
     file
 

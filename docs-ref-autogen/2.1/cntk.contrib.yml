@@ -1,0 +1,42 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalk
+  - cntk.contrib.crosstalkcaffe
+  - cntk.contrib.deeprl
+  fullName: cntk.contrib
+  langs:
+  - python
+  module: cntk.contrib
+  name: contrib
+  source:
+    id: contrib
+    path: bindings/python/cntk\contrib\__init__.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'Extra utilities for CNTK, e.g. utilities that bridge to other deep learning
+    toolkits.
+
+    '
+  type: package
+  uid: cntk.contrib
+references:
+- fullName: cntk.contrib.crosstalk
+  isExternal: false
+  name: crosstalk
+  parent: cntk.contrib
+  uid: cntk.contrib.crosstalk
+- fullName: cntk.contrib.crosstalkcaffe
+  isExternal: false
+  name: crosstalkcaffe
+  parent: cntk.contrib
+  uid: cntk.contrib.crosstalkcaffe
+- fullName: cntk.contrib.deeprl
+  isExternal: false
+  name: deeprl
+  parent: cntk.contrib
+  uid: cntk.contrib.deeprl

@@ -15,11 +15,6 @@ items:
   - inheritance:
     - type: builtins.object
     type: cntk.tensor.TensorOpsMixin
-  - inheritance:
-    - inheritance:
-      - type: builtins.object
-      type: cntk.cntk_py.Variable
-    type: cntk.cntk_py.Constant
   langs:
   - python
   module: cntk.variables
@@ -28,10 +23,10 @@ items:
     id: Constant
     path: bindings/python/cntk\variables.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 348
+    startLine: 424
   summary: 'A constant value. It can be a scalar, vector, matrix, or tensor
 
     of floating point numbers that cannot be modified.
@@ -40,14 +35,14 @@ items:
     A Constant is a @cntk.variables.Variable and therefore inherits all its methods.
 
 
+
+
     '
   syntax:
-    content: Constant(value=None, shape=None, dtype=<cntk.default_options.default_override_or
-      object>, device=None, name='')
+    content: Constant(self, value=None, shape=None, dtype=np.float32, device=None,
+      name='')
     parameters:
     - description: 'Initial value.
-
-        BUGBUG: Document initializers
 
         '
       id: value
@@ -83,7 +78,7 @@ items:
     id: value
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null

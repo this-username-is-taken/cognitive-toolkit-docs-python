@@ -1,0 +1,71 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl.CaffeResolver
+  - cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl.singleton
+  fullName: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl
+  name: caffeimpl
+  source:
+    id: caffeimpl
+    path: bindings/python/cntk\contrib\crosstalkcaffe\adapter\bvlccaffe\caffeimpl.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\crosstalkcaffe\adapter\bvlccaffe\caffeimpl.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: module
+  uid: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl
+- fullName: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl.CaffeResolver
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl
+  name: CaffeResolver
+  source:
+    id: CaffeResolver
+    path: bindings/python/cntk\contrib\crosstalkcaffe\adapter\bvlccaffe\caffeimpl.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\crosstalkcaffe\adapter\bvlccaffe\caffeimpl.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 32
+  syntax:
+    content: CaffeResolver(*args, **kwargs)
+  type: function
+  uid: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl.CaffeResolver
+- fullName: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl.singleton
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl
+  name: singleton
+  source:
+    id: singleton
+    path: bindings/python/cntk\contrib\crosstalkcaffe\adapter\bvlccaffe\caffeimpl.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\crosstalkcaffe\adapter\bvlccaffe\caffeimpl.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 26
+  summary: 'singleton instace
+
+    '
+  syntax:
+    content: singleton(class_)
+    parameters:
+    - id: class_
+  type: function
+  uid: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl.singleton
+references:
+- fullName: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl.CaffeResolver
+  isExternal: false
+  name: CaffeResolver
+  parent: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl
+  uid: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl.CaffeResolver
+- fullName: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl.singleton
+  isExternal: false
+  name: singleton
+  parent: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl
+  uid: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl.singleton

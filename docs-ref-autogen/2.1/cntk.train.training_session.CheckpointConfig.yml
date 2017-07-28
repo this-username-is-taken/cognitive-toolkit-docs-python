@@ -4,10 +4,6 @@ items:
 - children: []
   class: cntk.train.training_session.CheckpointConfig
   fullName: cntk.train.training_session.CheckpointConfig
-  inheritance:
-  - inheritance:
-    - type: builtins.object
-    type: cntk.cntk_py.CheckpointConfig
   langs:
   - python
   module: cntk.train.training_session
@@ -16,10 +12,10 @@ items:
     id: CheckpointConfig
     path: bindings/python/cntk\train\training_session.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 15
+    startLine: 14
   summary: 'A checkpoint configuration for the training session.
 
     '
@@ -32,8 +28,8 @@ items:
       id: filename
       type:
       - str
-    - description: 'checkpoint frequency in samples. If 0, no checkpointing takes
-        place.
+    - description: 'checkpointing period (number samples between checkpoints). If
+        *None*, no checkpointing takes place.
 
         If `sys.maxsize`, a single checkpoint is taken at the end of the training.
 
@@ -41,18 +37,18 @@ items:
       id: frequency
       type:
       - int
-    - description: 'saves all checkpoints, using `filename` as prefix and checkpoint
-        index as a suffix.
-
-        '
-      id: preserve_all
-      type:
-      - bool
     - description: 'flag, indicating whether to restore from available checkpoint
         before the start of the training
 
         '
       id: restore
+      type:
+      - bool
+    - description: 'saves all checkpoints, using `filename` as prefix and checkpoint
+        index as a suffix.
+
+        '
+      id: preserve_all
       type:
       - bool
   type: class

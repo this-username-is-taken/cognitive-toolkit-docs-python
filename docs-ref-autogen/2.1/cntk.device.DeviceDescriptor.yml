@@ -7,10 +7,6 @@ items:
   - cntk.device.DeviceDescriptor.type
   class: cntk.device.DeviceDescriptor
   fullName: cntk.device.DeviceDescriptor
-  inheritance:
-  - inheritance:
-    - type: builtins.object
-    type: cntk.cntk_py.DeviceDescriptor
   langs:
   - python
   module: cntk.device
@@ -19,11 +15,11 @@ items:
     id: DeviceDescriptor
     path: bindings/python/cntk\device.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 32
-  summary: 'Describes a device by an unique id and its type. If the device corresponds
+    startLine: 34
+  summary: 'Describes a device by a unique id and its type. If the device corresponds
 
     to a GPU its type is 1, otherwise, it is 0
 
@@ -45,10 +41,10 @@ items:
     id: id
     path: bindings/python/cntk\device.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 38
+    startLine: 40
   summary: 'Returns id of device descriptor
 
     '
@@ -61,7 +57,7 @@ items:
 
         '
       type:
-      - '*int*'
+      - int
   type: method
   uid: cntk.device.DeviceDescriptor.id
 - class: cntk.device.DeviceDescriptor
@@ -74,10 +70,10 @@ items:
     id: is_locked
     path: bindings/python/cntk\device.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 63
+    startLine: 58
   summary: 'Returns *True* if another CNTK process already holds an exclusive lock
 
     on this device.
@@ -99,10 +95,10 @@ items:
     id: type
     path: bindings/python/cntk\device.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\device.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 47
+    startLine: 49
   summary: 'Returns type of device descriptor. 1 if it is a GPU device or 0 if CPU.
 
     '
@@ -115,7 +111,7 @@ items:
 
         '
       type:
-      - '*int*'
+      - int
   type: method
   uid: cntk.device.DeviceDescriptor.type
 references:

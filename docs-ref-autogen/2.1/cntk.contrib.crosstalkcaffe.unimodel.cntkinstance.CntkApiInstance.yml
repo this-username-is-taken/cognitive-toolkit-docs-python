@@ -1,0 +1,223 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.export_model
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.get_functions
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.get_model
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.instance_functions
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.instance_input
+  class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: CntkApiInstance
+  source:
+    id: CntkApiInstance
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 390
+  summary: 'Instace CNTK ops and network
+
+
+
+
+
+
+    '
+  syntax:
+    content: CntkApiInstance(cntk_uni_model, global_conf)
+  type: class
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance
+- class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.export_model
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: export_model
+  source:
+    id: export_model
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 449
+  summary: '   Save instanced CNTK model
+
+    '
+  syntax:
+    content: export_model()
+    parameters:
+    - description: ''
+      id: None
+    return:
+      description: 'None
+
+        '
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.export_model
+- class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.get_functions
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: get_functions
+  source:
+    id: get_functions
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 474
+  summary: '   Return the functions of CNTK network
+
+    '
+  syntax:
+    content: get_functions()
+    parameters:
+    - description: ''
+      id: None
+    return:
+      description: 'the instaced functions of CNTK
+
+        '
+      type:
+      - list
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.get_functions
+- class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.get_model
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: get_model
+  source:
+    id: get_model
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 462
+  summary: '   Get instaced CNTK model
+
+    '
+  syntax:
+    content: get_model()
+    parameters:
+    - description: ''
+      id: None
+    return:
+      description: 'the output node of CNTK
+
+        '
+      type:
+      - cntk.ops.functions.Function
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.get_model
+- class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.instance_functions
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: instance_functions
+  source:
+    id: instance_functions
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 424
+  summary: '   Instace all nodes into CNTK ops
+
+    '
+  syntax:
+    content: instance_functions(cntk_sorted_layers, cntk_layers)
+    parameters:
+    - description: 'the list contains the name of instaced layers with
+
+        traversal order
+
+        '
+      id: cntk_sorted_layers
+      type:
+      - list
+    - description: 'the dict contains all layers definition
+
+        '
+      id: cntk_layers
+      type:
+      - dict
+    return:
+      description: 'None
+
+        '
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.instance_functions
+- class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.instance_input
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: instance_input
+  source:
+    id: instance_input
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 405
+  summary: '   Instace the inputs into CNTK variable
+
+    '
+  syntax:
+    content: instance_input(data_providers)
+    parameters:
+    - description: 'the list contains the definition of inputs
+
+        '
+      id: data_providers
+      type:
+      - list
+    return:
+      description: 'None
+
+        '
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.instance_input
+references:
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.export_model
+  isExternal: false
+  name: export_model
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.export_model
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.get_functions
+  isExternal: false
+  name: get_functions
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.get_functions
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.get_model
+  isExternal: false
+  name: get_model
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.get_model
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.instance_functions
+  isExternal: false
+  name: instance_functions
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.instance_functions
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.instance_input
+  isExternal: false
+  name: instance_input
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance.instance_input

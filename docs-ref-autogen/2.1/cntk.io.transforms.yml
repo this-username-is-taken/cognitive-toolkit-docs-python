@@ -15,7 +15,7 @@ items:
     id: transforms
     path: bindings/python/cntk\io\transforms.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\io\transforms.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -30,10 +30,10 @@ items:
     id: color
     path: bindings/python/cntk\io\transforms.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\io\transforms.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 96
+    startLine: 107
   summary: 'Color transform that can be used to pass to *map_features* for data augmentation.
 
     '
@@ -97,10 +97,10 @@ items:
     id: crop
     path: bindings/python/cntk\io\transforms.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\io\transforms.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 9
+    startLine: 10
   summary: 'Crop transform that can be used to pass to *map_features*
 
     '
@@ -113,7 +113,17 @@ items:
 
         or ''multiview10''.  ''randomside'' and ''randomarea'' are usually used during
 
-        training, while ''center'' and ''multiview10'' are usually used during testing.
+        training.  If either ''randomside'' and ''randomarea'' are set, Horizontal
+
+        flipping will be enabled and the image will be randomly flipped in
+
+        horizontal direction. Horizontal flipping is another popular data augmentation
+
+        technique and should be used if images exhibit vertical symmetry,
+
+        for example, like many real-world objects.
+
+        ''center'' and ''multiview10'' are usually used during testing.
 
         Random cropping is a popular data augmentation technique used to improve
 
@@ -130,7 +140,8 @@ items:
 
         window of size 256x256 pixels will be taken. If one want to crop with
 
-        non-square shapes, specify crop_size=256:224 will crop 256x224 (width x height)
+        non-square shapes, specify crop_size=(256,224) will crop 256x224 (width x
+        height)
 
         pixels. *When crop_size is specified, side_ratio, area_ratio and aspect_ratio
 
@@ -153,7 +164,7 @@ items:
 
         equal to 0.5*min(640, 480) = 240. To enable scale jitter (a popular data
 
-        augmentation technique), use colon-delimited values like side_ratio=0.5:0.75,
+        augmentation technique), use tuple like side_ratio=(0.5,0.75),
 
         which means the crop will have size between 240 (0.5*min(640, 480)) and 360
 
@@ -175,7 +186,7 @@ items:
 
         aspect_ratio is 1.0) with width and height equal to sqrt(30,000*0.3333)=100.
 
-        To enable scale jitter, use colon-delimited values such as area_ratio=0.3333:0.8,
+        To enable scale jitter, use tuple such as area_ratio=(0.3333,0.8),
 
         which means the crop will have size between 100 (sqrt(30,000*0.3333)) and
 
@@ -196,8 +207,7 @@ items:
 
         chance. Note the area of the crop window does not change. To enable aspect
 
-        ratio jitter, use colon-delimited values such as aspect_ratio=0.64:1.0, which
-        means
+        ratio jitter, use tuple such as aspect_ratio=(0.64,1.0), which means
 
         the crop will have size between 192x300 (or euqally likely 300x192) and 240x240.
 
@@ -232,10 +242,10 @@ items:
     id: mean
     path: bindings/python/cntk\io\transforms.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\io\transforms.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 82
+    startLine: 93
   summary: 'Mean transform that can be used to pass to *map_features* for data augmentation.
 
     '
@@ -267,10 +277,10 @@ items:
     id: scale
     path: bindings/python/cntk\io\transforms.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\io\transforms.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 59
+    startLine: 70
   summary: 'Scale transform that can be used to pass to *map_features* for data augmentation.
 
     '

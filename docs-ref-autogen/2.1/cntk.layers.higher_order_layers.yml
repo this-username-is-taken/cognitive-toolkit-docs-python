@@ -3,7 +3,6 @@ api_name: []
 items:
 - children:
   - cntk.layers.higher_order_layers.For
-  - cntk.layers.higher_order_layers.LayerStack
   - cntk.layers.higher_order_layers.ResNetBlock
   - cntk.layers.higher_order_layers.Sequential
   - cntk.layers.higher_order_layers.SequentialClique
@@ -16,13 +15,15 @@ items:
     id: higher_order_layers
     path: bindings/python/cntk\layers\higher_order_layers.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\layers\higher_order_layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  summary: 'higher_order_layers -- higher-order functions, like Sequential() and ResNetBlock().
+  summary: 'Higher-order functions, like :func:`Sequential` and :func:`ResNetBlock`.
+    Note that
 
-    Note that sequential higher-order functions like Recurrence() are in sequence.py.
+    sequential higher-order functions like :func:`~cntk.layers.sequence.Recurrence`
+    are in :mod:`cntk.layers.sequence`.
 
     '
   type: module
@@ -56,7 +57,7 @@ items:
     id: For
     path: bindings/python/cntk\layers\higher_order_layers.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\layers\higher_order_layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 95
@@ -101,26 +102,6 @@ items:
       - cntk.ops.functions.Function
   type: function
   uid: cntk.layers.higher_order_layers.For
-- fullName: cntk.layers.higher_order_layers.LayerStack
-  langs:
-  - python
-  module: cntk.layers.higher_order_layers
-  name: LayerStack
-  source:
-    id: LayerStack
-    path: bindings/python/cntk\layers\higher_order_layers.py
-    remote:
-      branch: release/2.0.rc1
-      path: bindings/python/cntk\layers\higher_order_layers.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 163
-  syntax:
-    content: LayerStack(N, constructor)
-    parameters:
-    - id: N
-    - id: constructor
-  type: function
-  uid: cntk.layers.higher_order_layers.LayerStack
 - example:
   - '
 
@@ -148,10 +129,10 @@ items:
     id: ResNetBlock
     path: bindings/python/cntk\layers\higher_order_layers.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\layers\higher_order_layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 192
+    startLine: 204
   summary: 'Layer factory function to create a composite that adds a skip connection
     to a function.
 
@@ -185,8 +166,8 @@ items:
     \ layer allows to access the final hidden layer by name.\n>>> model = Sequential([Embedding(300),\
     \ Fold(LSTM(500)), Label('hidden'), Dense(1, activation=sigmoid)])\n>>> model.update_signature(Sequence[Tensor[30000]])\n\
     >>> model.hidden.shape\n    (500,)\n```\n\n\n```\n\n>>> # simple example that\
-    \ squares an input value\n>>> f = Sequential([log, lambda x: 2 * x, exp])  # the\
-    \ second function is a Python lambda\n>>> f.update_signature(1)\n>>> f([np.array([2])])\
+    \ squares an input value\n>>> f = Sequential([C.log, lambda x: 2 * x, C.exp])\
+    \  # the second function is a Python lambda\n>>> f.update_signature(1)\n>>> f([np.array([2])])\
     \     # log, times 2, exp is the same as computing the square\n    array([[ 4.]],\
     \ dtype=float32)\n```\n\n\n```\n\n>>> # using function tuples to implement a bidirectional\
     \ LSTM\n>>> bi_lstm = Sequential([(Recurrence(LSTM(250)),                    \
@@ -217,7 +198,7 @@ items:
     id: Sequential
     path: bindings/python/cntk\layers\higher_order_layers.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\layers\higher_order_layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 20
@@ -271,7 +252,12 @@ items:
       - cntk.ops.functions.Function
   type: function
   uid: cntk.layers.higher_order_layers.Sequential
-- fullName: cntk.layers.higher_order_layers.SequentialClique
+- example:
+  - "\n```\n\n>>> from cntk.layers import *\n>>> from cntk.ops import abs, sqrt, square\n\
+    >>> x = C.input_variable(2)\n>>> seq_clique = SequentialClique([abs, sqrt, square])\n\
+    >>> seq_clique(x).eval(np.array([2, 8], np.float32)) # 400 = square((8 + abs(8))\
+    \ + sqrt(8 + abs(8)))\n    array([[  36.,  400.]], dtype=float32)\n```\n"
+  fullName: cntk.layers.higher_order_layers.SequentialClique
   langs:
   - python
   module: cntk.layers.higher_order_layers
@@ -280,12 +266,12 @@ items:
     id: SequentialClique
     path: bindings/python/cntk\layers\higher_order_layers.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\layers\higher_order_layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 170
+    startLine: 167
   summary: 'Layer factory function to create a composite that applies a sequence of
-    or any functions onto an input,
+    functions onto an input,
 
     with skip connections between all function. I.e. each function receives a sum
     of the input and all
@@ -296,9 +282,23 @@ items:
   syntax:
     content: SequentialClique(functions, name='')
     parameters:
-    - id: functions
+    - description: 'functions to be applied.
+
+        '
+      id: functions
+      type:
+      - 'single or list of @cntk.ops.functions.Function
+
+        '
     - defaultValue: ''
       id: name
+    return:
+      description: 'A function that accepts one argument and applies the sequence
+        of functions.
+
+        '
+      type:
+      - cntk.ops.functions.Function
   type: function
   uid: cntk.layers.higher_order_layers.SequentialClique
 references:
@@ -307,11 +307,6 @@ references:
   name: For
   parent: cntk.layers.higher_order_layers
   uid: cntk.layers.higher_order_layers.For
-- fullName: cntk.layers.higher_order_layers.LayerStack
-  isExternal: false
-  name: LayerStack
-  parent: cntk.layers.higher_order_layers
-  uid: cntk.layers.higher_order_layers.LayerStack
 - fullName: cntk.layers.higher_order_layers.ResNetBlock
   isExternal: false
   name: ResNetBlock

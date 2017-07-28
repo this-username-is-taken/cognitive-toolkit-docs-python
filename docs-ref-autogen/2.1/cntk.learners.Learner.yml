@@ -8,10 +8,6 @@ items:
   - cntk.learners.Learner.update
   class: cntk.learners.Learner
   fullName: cntk.learners.Learner
-  inheritance:
-  - inheritance:
-    - type: builtins.object
-    type: cntk.cntk_py.Learner
   langs:
   - python
   module: cntk.learners
@@ -20,10 +16,10 @@ items:
     id: Learner
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 107
+    startLine: 114
   summary: 'Abstraction for learning a subset of parameters of a learnable function
     using first order gradient values.
 
@@ -53,11 +49,11 @@ items:
     id: learning_rate
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 156
-  summary: 'Current learning rate.
+    startLine: 163
+  summary: 'Current learning rate schedule.
 
     '
   syntax:
@@ -76,7 +72,7 @@ items:
     id: parameters
     path: null
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -96,10 +92,10 @@ items:
     id: reset_learning_rate
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 142
+    startLine: 149
   summary: 'Resets the learning rate. The new schedule is adjusted to be relative
 
     to the current number of elapsed samples/sweeps: the 0 offset in
@@ -132,10 +128,10 @@ items:
     id: update
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 116
+    startLine: 123
   summary: 'Update the parameters associated with this learner.
 
     '
@@ -163,6 +159,8 @@ items:
         associated with this learner
 
         '
+      type:
+      - bool
   type: method
   uid: cntk.learners.Learner.update
 references:

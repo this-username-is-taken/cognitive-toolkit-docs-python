@@ -1,0 +1,128 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing.output_shape
+  - cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing.preprocess
+  - cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing.reset
+  class: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing
+  fullName: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.preprocessing
+  name: AtariPreprocessing
+  source:
+    id: AtariPreprocessing
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 43
+  summary: 'Preprocess screen images from Atari 2600 games.
+
+
+    The image is represented by an array of shape (210, 160, 3). See
+
+    [https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf)
+
+    for more details.
+
+
+
+
+    '
+  syntax:
+    content: AtariPreprocessing(input_shape, history_len=4)
+  type: class
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing
+- class: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing
+  fullName: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing.output_shape
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.preprocessing
+  name: output_shape
+  source:
+    id: output_shape
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 57
+  summary: 'Return shape of preprocessed Atari images.
+
+    '
+  syntax:
+    content: output_shape()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing.output_shape
+- class: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing
+  fullName: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing.preprocess
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.preprocessing
+  name: preprocess
+  source:
+    id: preprocess
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 68
+  summary: 'Return preprocessed screen images from Atari 2600 games.
+
+    '
+  syntax:
+    content: preprocess(image)
+    parameters:
+    - id: self
+    - id: image
+  type: method
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing.preprocess
+- class: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing
+  fullName: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing.reset
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.preprocessing
+  name: reset
+  source:
+    id: reset
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 61
+  summary: 'Reset preprocessing pipeline for new episode.
+
+    '
+  syntax:
+    content: reset()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing.reset
+references:
+- fullName: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing.output_shape
+  isExternal: false
+  name: output_shape
+  parent: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing.output_shape
+- fullName: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing.preprocess
+  isExternal: false
+  name: preprocess
+  parent: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing.preprocess
+- fullName: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing.reset
+  isExternal: false
+  name: reset
+  parent: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing.reset

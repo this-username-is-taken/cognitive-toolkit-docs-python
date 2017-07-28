@@ -6,7 +6,6 @@ items:
   - cntk.logging.graph.find_all_with_name
   - cntk.logging.graph.find_by_name
   - cntk.logging.graph.get_node_outputs
-  - cntk.logging.graph.output_function_graph
   - cntk.logging.graph.plot
   fullName: cntk.logging.graph
   langs:
@@ -17,7 +16,7 @@ items:
     id: graph
     path: bindings/python/cntk\logging\graph.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -32,10 +31,10 @@ items:
     id: depth_first_search
     path: bindings/python/cntk\logging\graph.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 11
+    startLine: 12
   summary: 'Generic function that walks through the graph starting at `root` and
 
     uses function `visitor` on each node to check whether it should be
@@ -86,10 +85,10 @@ items:
     id: find_all_with_name
     path: bindings/python/cntk\logging\graph.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 76
+    startLine: 79
   summary: 'Finds functions in the graph starting from `node` and doing a depth-first
 
     search.
@@ -136,10 +135,10 @@ items:
     id: find_by_name
     path: bindings/python/cntk\logging\graph.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 97
+    startLine: 100
   summary: 'Finds a function in the graph starting from `node` and doing a depth-first
 
     search. It assumes that the name occurs only once.
@@ -184,10 +183,10 @@ items:
     id: get_node_outputs
     path: bindings/python/cntk\logging\graph.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 358
+    startLine: 347
   summary: 'Walks through every node of the graph starting at `node`
 
     and returns a list of all node outputs.
@@ -210,29 +209,6 @@ items:
         '
   type: function
   uid: cntk.logging.graph.get_node_outputs
-- fullName: cntk.logging.graph.output_function_graph
-  langs:
-  - python
-  module: cntk.logging.graph
-  name: output_function_graph
-  source:
-    id: output_function_graph
-    path: bindings/python/cntk\logging\graph.py
-    remote:
-      branch: release/2.0.rc1
-      path: bindings/python/cntk\logging\graph.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 344
-  syntax:
-    content: output_function_graph(node, dot_file_path=None, png_file_path=None)
-    parameters:
-    - id: node
-    - defaultValue: None
-      id: dot_file_path
-    - defaultValue: None
-      id: png_file_path
-  type: function
-  uid: cntk.logging.graph.output_function_graph
 - fullName: cntk.logging.graph.plot
   langs:
   - python
@@ -242,10 +218,10 @@ items:
     id: plot
     path: bindings/python/cntk\logging\graph.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\logging\graph.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 133
+    startLine: 136
   summary: "Walks through every node of the graph starting at `root`,\ncreates a network\
     \ graph, and returns a network description. If `filename` is\nspecified, it outputs\
     \ a DOT, PNG, PDF, or SVG file depending on the file name's suffix.\n\nRequirements:\n\
@@ -300,11 +276,6 @@ references:
   name: get_node_outputs
   parent: cntk.logging.graph
   uid: cntk.logging.graph.get_node_outputs
-- fullName: cntk.logging.graph.output_function_graph
-  isExternal: false
-  name: output_function_graph
-  parent: cntk.logging.graph
-  uid: cntk.logging.graph.output_function_graph
 - fullName: cntk.logging.graph.plot
   isExternal: false
   name: plot

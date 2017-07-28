@@ -9,6 +9,7 @@ items:
   - cntk.learners.adagrad
   - cntk.learners.adam
   - cntk.learners.default_unit_gain_value
+  - cntk.learners.default_use_mean_gradient_value
   - cntk.learners.fsadagrad
   - cntk.learners.learning_rate_schedule
   - cntk.learners.momentum_as_time_constant_schedule
@@ -17,8 +18,10 @@ items:
   - cntk.learners.nesterov
   - cntk.learners.rmsprop
   - cntk.learners.set_default_unit_gain_value
+  - cntk.learners.set_default_use_mean_gradient_value
   - cntk.learners.sgd
   - cntk.learners.training_parameter_schedule
+  - cntk.learners.universal
   fullName: cntk.learners
   langs:
   - python
@@ -28,11 +31,11 @@ items:
     id: learners
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  summary: 'Learner tunes a set of parameters during the training process. One can
+  summary: 'A learner tunes a set of parameters during the training process. One can
     use
 
     different learners for different sets of parameters. Currently, CNTK supports
@@ -41,43 +44,23 @@ items:
 
 
 
-    +------------------------+
+    - :func:`AdaDelta <adadelta>`
 
-    | Learning algorithms    |
+    - :func:`AdaGrad <adagrad>`
 
-    +========================+
+    - :func:`FSAdaGrad <fsadagrad>`
 
-    | AdaDelta               |
+    - :func:`Adam <adam>`
 
-    +------------------------+
+    - :func:`MomentumSGD <momentum_sgd>`
 
-    | AdaGrad                |
+    - :func:`Nesterov <nesterov>`
 
-    +------------------------+
+    - :func:`RMSProp <rmsprop>`
 
-    | FSAdaGrad              |
+    - :func:`SGD <sgd>`
 
-    +------------------------+
-
-    | Adam                   |
-
-    +------------------------+
-
-    | MomentumSGD            |
-
-    +------------------------+
-
-    | Nesterov               |
-
-    +------------------------+
-
-    | RMSProp                |
-
-    +------------------------+
-
-    | SGD                    |
-
-    +------------------------+
+    - :func:`Learner with a customized update function <universal>`
 
     '
   type: package
@@ -87,16 +70,16 @@ items:
   - python
   module: cntk.learners
   name: adadelta
-  seealsoContent: "See also: [1]  Matthew D. Zeiler1, [ADADELTA: AN ADAPTIVE LEARNING\
-    \ RATE METHOD](https://arxiv.org/pdf/1212.5701.pdf). \n"
+  seealsoContent: "See also: [1]  Matthew D. Zeiler, [ADADELTA: An Adaptive Learning\
+    \ Rate Method](https://arxiv.org/pdf/1212.5701.pdf). \n"
   source:
     id: adadelta
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 562
+    startLine: 577
   summary: 'Creates an AdaDelta learner instance to learn the parameters. See [1]
     for
 
@@ -104,7 +87,7 @@ items:
 
     '
   syntax:
-    content: adadelta(parameters, rho, epsilon, l1_regularization_weight=0, l2_regularization_weight=0,
+    content: adadelta(parameters, lr, rho, epsilon, l1_regularization_weight=0, l2_regularization_weight=0,
       gaussian_noise_injection_std_dev=0, gradient_clipping_threshold_per_sample=np.inf,
       gradient_clipping_with_truncation=True)
     parameters:
@@ -116,6 +99,14 @@ items:
       id: parameters
       type:
       - list of parameters
+    - description: 'learning rate schedule.
+
+        '
+      id: lr
+      type:
+      - 'output of @cntk.learners.learning_rate_schedule
+
+        '
     - description: 'exponential smooth factor for each minibatch.
 
         '
@@ -168,11 +159,22 @@ items:
       id: gradient_clipping_with_truncation
       type:
       - bool, default True
-    return:
-      description: 'Instance of a @cntk.learners.Learner that can be passed to the
-        @cntk.train.trainer.Trainer
+    - description: 'use averaged gradient as input to learner.
+
+        Defaults to the value returned by @cntk.learners.default_use_mean_gradient_value.
 
         '
+      id: use_mean_gradient
+      type:
+      - bool, default False
+    return:
+      description: 'learner instance that can be passed to
+
+        the @cntk.train.trainer.Trainer
+
+        '
+      type:
+      - cntk.learners.Learner
   type: function
   uid: cntk.learners.adadelta
 - fullName: cntk.learners.adagrad
@@ -187,10 +189,10 @@ items:
     id: adagrad
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 609
+    startLine: 629
   summary: 'Creates an AdaGrad learner instance to learn the parameters. See [1] for
 
     more information.
@@ -261,11 +263,22 @@ items:
       id: gradient_clipping_with_truncation
       type:
       - bool, default True
-    return:
-      description: 'Instance of a @cntk.learners.Learner that can be passed to the
-        @cntk.train.trainer.Trainer
+    - description: 'use averaged gradient as input to learner.
+
+        Defaults to the value returned by @cntk.learners.default_use_mean_gradient_value.
 
         '
+      id: use_mean_gradient
+      type:
+      - bool, default False
+    return:
+      description: 'learner instance that can be passed to
+
+        the @cntk.train.trainer.Trainer
+
+        '
+      type:
+      - cntk.learners.Learner
   type: function
   uid: cntk.learners.adagrad
 - fullName: cntk.learners.adam
@@ -280,10 +293,10 @@ items:
     id: adam
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 712
+    startLine: 739
   summary: 'Creates an Adam learner instance to learn the parameters. See [1] for
     more
 
@@ -293,7 +306,8 @@ items:
   syntax:
     content: adam(parameters, lr, momentum, unit_gain=default_unit_gain_value(), variance_momentum=momentum_as_time_constant_schedule(720000),
       l1_regularization_weight=0, l2_regularization_weight=0, gaussian_noise_injection_std_dev=0,
-      gradient_clipping_threshold_per_sample=np.inf, gradient_clipping_with_truncation=True)
+      gradient_clipping_threshold_per_sample=np.inf, gradient_clipping_with_truncation=True,
+      epsilon=1e-8, adamax=False)
     parameters:
     - description: 'list of network parameters to tune.
 
@@ -313,7 +327,7 @@ items:
         '
     - description: 'momentum schedule.
 
-        For additional information, please refer to the [wiki](https://github.com/Microsoft/CNTK/wiki/BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits).
+        For additional information, please refer to the [this CNTK Wiki article](https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits).
 
         '
       id: momentum
@@ -373,11 +387,37 @@ items:
       id: gradient_clipping_with_truncation
       type:
       - bool, default True
-    return:
-      description: 'Instance of a @cntk.learners.Learner that can be passed to the
-        @cntk.train.trainer.Trainer
+    - description: 'use averaged gradient as input to learner.
+
+        Defaults to the value returned by @cntk.learners.default_use_mean_gradient_value.
 
         '
+      id: use_mean_gradient
+      type:
+      - bool, default False
+    - description: 'numerical stability constant,
+
+        defaults to 1e-8
+
+        '
+      id: epsilon
+      type:
+      - float, optional
+    - description: 'when `True`, use infinity-norm variance momentum update instead
+        of L2. Defaults
+
+        to False
+
+        '
+      id: adamax
+    return:
+      description: 'learner instance that can be passed to
+
+        the @cntk.train.trainer.Trainer
+
+        '
+      type:
+      - cntk.learners.Learner
   type: function
   uid: cntk.learners.adam
 - fullName: cntk.learners.default_unit_gain_value
@@ -389,10 +429,10 @@ items:
     id: default_unit_gain_value
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 62
+    startLine: 56
   summary: 'Returns true if by default momentum is applied in the unit-gain fashion.
 
     '
@@ -400,6 +440,26 @@ items:
     content: default_unit_gain_value()
   type: function
   uid: cntk.learners.default_unit_gain_value
+- fullName: cntk.learners.default_use_mean_gradient_value
+  langs:
+  - python
+  module: cntk.learners
+  name: default_use_mean_gradient_value
+  source:
+    id: default_use_mean_gradient_value
+    path: bindings/python/cntk\learners\__init__.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\learners\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 69
+  summary: 'Returns true if by default input gradient to learner is averaged.
+
+    '
+  syntax:
+    content: default_use_mean_gradient_value()
+  type: function
+  uid: cntk.learners.default_use_mean_gradient_value
 - fullName: cntk.learners.fsadagrad
   langs:
   - python
@@ -409,10 +469,10 @@ items:
     id: fsadagrad
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 659
+    startLine: 683
   summary: 'Creates an FSAdaGrad learner instance to learn the parameters.
 
     '
@@ -440,7 +500,7 @@ items:
         '
     - description: 'momentum schedule.
 
-        For additional information, please refer to the [wiki](https://github.com/Microsoft/CNTK/wiki/BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits).
+        For additional information, please refer to the [this CNTK Wiki article](https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits).
 
         '
       id: momentum
@@ -500,11 +560,22 @@ items:
       id: gradient_clipping_with_truncation
       type:
       - bool, default True
-    return:
-      description: 'Instance of a @cntk.learners.Learner that can be passed to the
-        @cntk.train.trainer.Trainer
+    - description: 'use averaged gradient as input to learner.
+
+        Defaults to the value returned by @cntk.learners.default_use_mean_gradient_value.
 
         '
+      id: use_mean_gradient
+      type:
+      - bool, default False
+    return:
+      description: 'learner instance that can be passed to
+
+        the @cntk.train.trainer.Trainer
+
+        '
+      type:
+      - cntk.learners.Learner
   type: function
   uid: cntk.learners.fsadagrad
 - fullName: cntk.learners.learning_rate_schedule
@@ -517,10 +588,10 @@ items:
     id: learning_rate_schedule
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 295
+    startLine: 302
   summary: 'Create a learning rate schedule (using the same semantics as
 
     @cntk.learners.training_parameter_schedule).
@@ -594,10 +665,10 @@ items:
     id: momentum_as_time_constant_schedule
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 356
+    startLine: 363
   summary: 'Create a momentum schedule in a minibatch-size agnostic way
 
     (using the same semantics as @cntk.learners.training_parameter_schedule
@@ -685,10 +756,10 @@ items:
     id: momentum_schedule
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 318
+    startLine: 325
   summary: 'Create a per-minibatch momentum schedule (using the same semantics as
 
     @cntk.learners.training_parameter_schedule with the *unit=UnitType.minibatch*).
@@ -716,10 +787,10 @@ items:
     id: momentum_sgd
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 454
+    startLine: 465
   summary: 'Creates a Momentum SGD learner instance to learn the parameters.
 
     '
@@ -746,7 +817,7 @@ items:
         '
     - description: 'momentum schedule.
 
-        For additional information, please refer to the [wiki](https://github.com/Microsoft/CNTK/wiki/BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits).
+        For additional information, please refer to the [this CNTK Wiki article](https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits).
 
         '
       id: momentum
@@ -798,12 +869,22 @@ items:
       id: gradient_clipping_with_truncation
       type:
       - bool, default True
-    return:
-      description: 'Instance of a @cntk.learners.Learner that can be passed to the
+    - description: 'use averaged gradient as input to learner.
 
-        @cntk.train.trainer.Trainer
+        Defaults to the value returned by @cntk.learners.default_use_mean_gradient_value.
 
         '
+      id: use_mean_gradient
+      type:
+      - bool, default False
+    return:
+      description: 'learner instance that can be passed to
+
+        the @cntk.train.trainer.Trainer
+
+        '
+      type:
+      - cntk.learners.Learner
   type: function
   uid: cntk.learners.momentum_sgd
 - fullName: cntk.learners.nesterov
@@ -820,10 +901,10 @@ items:
     id: nesterov
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 503
+    startLine: 516
   summary: 'Creates a Nesterov SGD learner instance to learn the parameters. This
     was
 
@@ -855,7 +936,7 @@ items:
         '
     - description: 'momentum schedule.
 
-        For additional information, please refer to the [wiki](https://github.com/Microsoft/CNTK/wiki/BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits).
+        For additional information, please refer to the [this CNTK Wiki article](https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-SGD-Block#converting-learning-rate-and-momentum-parameters-from-other-toolkits).
 
         '
       id: momentum
@@ -907,12 +988,22 @@ items:
       id: gradient_clipping_with_truncation
       type:
       - bool, default True
-    return:
-      description: 'Instance of a @cntk.learners.Learner that can be passed to the
+    - description: 'use averaged gradient as input to learner.
 
-        @cntk.train.trainer.Trainer.
+        Defaults to the value returned by @cntk.learners.default_use_mean_gradient_value.
 
         '
+      id: use_mean_gradient
+      type:
+      - bool, default False
+    return:
+      description: 'learner instance that can be passed to
+
+        the @cntk.train.trainer.Trainer
+
+        '
+      type:
+      - cntk.learners.Learner
   type: function
   uid: cntk.learners.nesterov
 - fullName: cntk.learners.rmsprop
@@ -924,10 +1015,10 @@ items:
     id: rmsprop
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 770
+    startLine: 804
   summary: 'Creates an RMSProp learner instance to learn the parameters.
 
     '
@@ -953,31 +1044,35 @@ items:
 
         '
     - description: 'Trade-off factor for current and previous gradients. Common value
-        is 0.95
+        is 0.95. Should be in range (0.0, 1.0)
 
         '
       id: gamma
       type:
       - float
-    - description: 'Increasing factor when trying to adjust current learning_rate
+    - description: 'Increasing factor when trying to adjust current learning_rate.
+        Should be greater than 1
 
         '
       id: inc
       type:
       - float
-    - description: 'Decreasing factor when trying to adjust current learning_rate
+    - description: 'Decreasing factor when trying to adjust current learning_rate.
+        Should be in range (0.0, 1.0)
 
         '
       id: dec
       type:
       - float
-    - description: 'Maximum scale allowed for the initial learning_rate
+    - description: 'Maximum scale allowed for the initial learning_rate. Should be
+        greater than zero and min
 
         '
       id: max
       type:
       - float
-    - description: 'Minimum scale allowed for the initial learning_rate
+    - description: 'Minimum scale allowed for the initial learning_rate. Should be
+        greater than zero
 
         '
       id: min
@@ -1027,11 +1122,22 @@ items:
       id: gradient_clipping_with_truncation
       type:
       - bool, default True
-    return:
-      description: 'Instance of a @cntk.learners.Learner that can be passed to the
-        @cntk.train.trainer.Trainer
+    - description: 'use averaged gradient as input to learner.
+
+        Defaults to the value returned by @cntk.learners.default_use_mean_gradient_value.
 
         '
+      id: use_mean_gradient
+      type:
+      - bool, default False
+    return:
+      description: 'learner instance that can be passed to
+
+        the @cntk.train.trainer.Trainer
+
+        '
+      type:
+      - cntk.learners.Learner
   type: function
   uid: cntk.learners.rmsprop
 - fullName: cntk.learners.set_default_unit_gain_value
@@ -1043,10 +1149,10 @@ items:
     id: set_default_unit_gain_value
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 69
+    startLine: 63
   summary: 'Sets globally default unit-gain flag value.
 
     '
@@ -1056,6 +1162,28 @@ items:
     - id: value
   type: function
   uid: cntk.learners.set_default_unit_gain_value
+- fullName: cntk.learners.set_default_use_mean_gradient_value
+  langs:
+  - python
+  module: cntk.learners
+  name: set_default_use_mean_gradient_value
+  source:
+    id: set_default_use_mean_gradient_value
+    path: bindings/python/cntk\learners\__init__.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\learners\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 76
+  summary: 'Sets globally default use_mean_gradient_value.
+
+    '
+  syntax:
+    content: set_default_use_mean_gradient_value(value)
+    parameters:
+    - id: value
+  type: function
+  uid: cntk.learners.set_default_use_mean_gradient_value
 - fullName: cntk.learners.sgd
   langs:
   - python
@@ -1067,10 +1195,10 @@ items:
     id: sgd
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 406
+    startLine: 413
   summary: 'Creates an SGD learner instance to learn the parameters. See [1] for more
 
     information on how to set the parameters.
@@ -1139,11 +1267,22 @@ items:
       id: gradient_clipping_with_truncation
       type:
       - bool, default True
-    return:
-      description: 'Instance of a @cntk.learners.Learner that can be passed to the
-        @cntk.train.trainer.Trainer
+    - description: 'use averaged gradient as input to learner.
+
+        Defaults to the value returned by @cntk.learners.default_use_mean_gradient_value.
 
         '
+      id: use_mean_gradient
+      type:
+      - bool, default False
+    return:
+      description: 'learner instance that can be passed to
+
+        the @cntk.train.trainer.Trainer
+
+        '
+      type:
+      - cntk.learners.Learner
   type: function
   uid: cntk.learners.sgd
 - example:
@@ -1206,10 +1345,10 @@ items:
     id: training_parameter_schedule
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0.rc1
+      branch: release/2.1
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 223
+    startLine: 230
   summary: 'Create a training parameter schedule containing either per-sample (default)
 
     or per-minibatch values.
@@ -1265,6 +1404,98 @@ items:
         '
   type: function
   uid: cntk.learners.training_parameter_schedule
+- example:
+  - '
+
+    ```
+
+
+    >>> def my_adagrad(parameters, gradients):
+
+    ...     accumulators = [C.constant(0, shape=p.shape, dtype=p.dtype, name=''accum'')
+    for p in parameters]
+
+    ...     update_funcs = []
+
+    ...     for p, g, a in zip(parameters, gradients, accumulators):
+
+    ...         accum_new = C.assign(a, g * g)
+
+    ...         update_funcs.append(C.assign(p, p - 0.01 * g / C.sqrt(accum_new +
+    1e-6)))
+
+    ...     return C.combine(update_funcs)
+
+    ...
+
+    >>> x = C.input_variable((10,))
+
+    >>> y = C.input_variable((2,))
+
+    >>> z = C.layers.Sequential([C.layers.Dense(100, activation=C.relu), C.layers.Dense(2)])(x)
+
+    >>> loss = C.cross_entropy_with_softmax(z, y)
+
+    >>> learner = C.universal(my_adagrad, z.parameters)
+
+    >>> trainer = C.Trainer(z, loss, learner)
+
+    >>> # now trainer can be used as any other Trainer
+
+    ```
+
+    '
+  fullName: cntk.learners.universal
+  langs:
+  - python
+  module: cntk.learners
+  name: universal
+  source:
+    id: universal
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 858
+  summary: 'Creates a learner which uses a CNTK function to update the parameters.
+
+    '
+  syntax:
+    content: universal(update_func, parameters)
+    parameters:
+    - description: 'function that takes parameters and gradients as arguments and
+
+        returns a @cntk.ops.functions.Function that performs the
+
+        desired updates. The returned function updates the parameters by
+
+        means of containing @cntk.ops.assign operations.
+
+        If `update_func` does not contain @cntk.ops.assign operations
+
+        the parameters will not be updated.
+
+        '
+      id: update_func
+    - description: 'list of network parameters to tune.
+
+        These can be obtained by the root operator''s *parameters*.
+
+        '
+      id: parameters
+      type:
+      - list
+    return:
+      description: 'learner instance that can be passed to
+
+        the @cntk.train.trainer.Trainer
+
+        '
+      type:
+      - cntk.learners.Learner
+  type: function
+  uid: cntk.learners.universal
 references:
 - fullName: cntk.learners.Learner
   isExternal: false
@@ -1301,6 +1532,11 @@ references:
   name: default_unit_gain_value
   parent: cntk.learners
   uid: cntk.learners.default_unit_gain_value
+- fullName: cntk.learners.default_use_mean_gradient_value
+  isExternal: false
+  name: default_use_mean_gradient_value
+  parent: cntk.learners
+  uid: cntk.learners.default_use_mean_gradient_value
 - fullName: cntk.learners.fsadagrad
   isExternal: false
   name: fsadagrad
@@ -1341,6 +1577,11 @@ references:
   name: set_default_unit_gain_value
   parent: cntk.learners
   uid: cntk.learners.set_default_unit_gain_value
+- fullName: cntk.learners.set_default_use_mean_gradient_value
+  isExternal: false
+  name: set_default_use_mean_gradient_value
+  parent: cntk.learners
+  uid: cntk.learners.set_default_use_mean_gradient_value
 - fullName: cntk.learners.sgd
   isExternal: false
   name: sgd
@@ -1351,3 +1592,8 @@ references:
   name: training_parameter_schedule
   parent: cntk.learners
   uid: cntk.learners.training_parameter_schedule
+- fullName: cntk.learners.universal
+  isExternal: false
+  name: universal
+  parent: cntk.learners
+  uid: cntk.learners.universal
