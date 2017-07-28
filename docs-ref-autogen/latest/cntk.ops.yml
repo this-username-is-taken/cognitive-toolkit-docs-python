@@ -84,9 +84,11 @@ items:
   - cntk.ops.tanh
   - cntk.ops.times
   - cntk.ops.times_transpose
+  - cntk.ops.to_batch
   - cntk.ops.to_sequence
   - cntk.ops.to_sequence_like
   - cntk.ops.transpose
+  - cntk.ops.unpack_batch
   - cntk.ops.unpooling
   - cntk.ops.functions
   - cntk.ops.sequence
@@ -216,7 +218,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2389
+    startLine: 2477
   summary: 'Computes the argmax of the input tensor''s elements across the specified
     axis.
 
@@ -275,7 +277,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2422
+    startLine: 2510
   summary: 'Computes the argmin of the input tensor''s elements across the specified
     axis.
 
@@ -433,7 +435,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2901
+    startLine: 2989
   summary: 'Assign the value in input to ref and return the new value, ref need to
     be the same layout as input.
 
@@ -905,7 +907,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2832
+    startLine: 2920
   summary: 'It creates a constant tensor initialized from a numpy array
 
     '
@@ -1291,7 +1293,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2623
+    startLine: 2711
   summary: 'Each element of the input is independently set to 0 with probabily `dropout_rate`
 
     or to 1 / (1 - `dropout_rate`) times its original value (with probability 1-`dropout_rate`).
@@ -1922,7 +1924,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2116
+    startLine: 2169
   summary: 'Retrieves the elements of indices in the tensor reference.
 
     '
@@ -2147,7 +2149,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2680
+    startLine: 2768
   summary: 'DEPRECATED.
 
 
@@ -2215,7 +2217,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2706
+    startLine: 2794
   summary: 'It creates an input in the network: a place where data,
 
     such as features and labels, should be provided.
@@ -2791,7 +2793,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2084
+    startLine: 2137
   summary: 'Create one hot tensor based on the input tensor
 
     '
@@ -2879,7 +2881,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2741
+    startLine: 2829
   summary: 'It creates an output variable that is used to define a user defined function.
 
     '
@@ -3000,7 +3002,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2798
+    startLine: 2886
   summary: 'It creates a parameter tensor.
 
     '
@@ -3070,7 +3072,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2867
+    startLine: 2955
   summary: 'Computes per dimension mean-variance normalization of the specified input
     operand.
 
@@ -3118,7 +3120,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2769
+    startLine: 2857
   summary: 'It creates a placeholder variable that has to be later bound to an actual
     variable.
 
@@ -3392,7 +3394,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2521
+    startLine: 2609
   summary: 'Estimates inclusion frequencies for random sampling with or without
 
     replacement.
@@ -3520,7 +3522,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2561
+    startLine: 2649
   summary: 'For weighted sampling with the specifed sample size (*num_samples*)
 
     this operation computes the expected number of occurrences of each class
@@ -3642,34 +3644,23 @@ items:
   type: function
   uid: cntk.ops.reconcile_dynamic_axes
 - example:
-  - '
-
-    ```
-
-
-    >>> x = C.input_variable(shape=(3,2))
-
-    >>> val = np.reshape(np.arange(6.0, dtype=np.float32), (3,2))
-
-    >>> lse = C.reduce_log_sum_exp(x)
-
-    >>> lse.eval({x:[val]})
-
-    array([ 5.456193], dtype=float32)
-
-    >>> np.log(np.sum(np.exp(val)))
-
-    5.4561934
-
-    ```
-
-    '
+  - "\n```\n\n>>> # create 3x2x2 matrix in a sequence of length 1 in a batch of one\
+    \ sample\n>>> data = np.array([[[5,1], [20,2]],[[30,1], [40,2]],[[55,1], [60,2]]],\
+    \ dtype=np.float32)\n```\n\n\n```\n\n>>> C.reduce_log_sum_exp(data, axis=0).eval().round(4)\n\
+    array([[[ 55.      ,   2.0986],\n        [ 60.      ,   3.0986]]], dtype=float32)\n\
+    >>> np.log(np.sum(np.exp(data), axis=0)).round(4)\narray([[ 55.      ,   2.0986],\n\
+    \       [ 60.      ,   3.0986]], dtype=float32)\n>>> C.reduce_log_sum_exp(data,\
+    \ axis=(0,2)).eval().round(4)\narray([[[ 55.],\n        [ 60.]]], dtype=float32)\n\
+    >>> np.log(np.sum(np.exp(data), axis=(0,2))).round(4)\narray([ 55.,  60.], dtype=float32)\n\
+    ```\n\n\n```\n\n>>> x = C.input_variable(shape=(2,2))\n>>> lse = C.reduce_log_sum_exp(x,\
+    \ axis=[C.axis.Axis.default_batch_axis(), 1])\n>>> lse.eval({x:data}).round(4)\n\
+    array([[ 55.],\n       [ 60.]], dtype=float32)\n>>> np.log(np.sum(np.exp(data),\
+    \ axis=(0,2))).round(4)\narray([ 55.,  60.], dtype=float32)\n```\n"
   fullName: cntk.ops.reduce_log_sum_exp
   langs:
   - python
   module: cntk.ops
   name: reduce_log_sum_exp
-  seealsoContent: "See also: @cntk.ops.reduce_sum for more details and examples. \n"
   source:
     id: reduce_log_sum_exp
     path: bindings/python/cntk\internal\swig_helper.py
@@ -3677,14 +3668,35 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2221
+    startLine: 2252
   summary: 'Computes the log of the sum of the exponentiations of the input tensor''s
 
-    elements across the specified axis.
+    elements across a specified axis or a list of specified axes.
+
+
+    Note that CNTK keeps the shape of the resulting tensors when reducing over multiple
+    static axes.
 
     '
   syntax:
     content: reduce_log_sum_exp(x, axis=None, name='')
+    parameters:
+    - description: 'input tensor
+
+        '
+      id: x
+    - description: 'axis along which the reduction will be performed
+
+        '
+      id: axis
+      type:
+      - "int or @cntk.axis.Axis\n or a @list\n or @tuple\n of int or @cntk.axis.Axis\n"
+    - description: 'the name of the Function instance in the network
+
+        '
+      id: name
+      type:
+      - str
     return:
       description: '@cntk.ops.functions.Function
 
@@ -3692,17 +3704,20 @@ items:
   type: function
   uid: cntk.ops.reduce_log_sum_exp
 - example:
-  - "\n```\n\n>>> # create 3x2 matrix in a sequence of length 1 in a batch of one\
-    \ sample\n>>> data = [[10, 20],[30, 40],[50, 60]]\n```\n\n\n```\n\n>>> C.reduce_max(data,\
-    \ 0).eval()\narray([[ 50.,  60.]], dtype=float32)\n```\n\n\n```\n\n>>> C.reduce_max(data,\
-    \ 1).eval()\narray([[ 20.],\n       [ 40.],\n       [ 60.]], dtype=float32)\n\
-    ```\n"
+  - "\n```\n\n>>> # create 3x2x2 matrix in a sequence of length 1 in a batch of one\
+    \ sample\n>>> data = np.array([[[5,1], [20,2]],[[30,1], [40,2]],[[55,1], [60,2]]],\
+    \ dtype=np.float32)\n```\n\n\n```\n\n>>> C.reduce_max(data, 0).eval().round(4)\n\
+    array([[[ 55.,   1.],\n        [ 60.,   2.]]], dtype=float32)\n>>> C.reduce_max(data,\
+    \ 1).eval().round(4)\narray([[[ 20.,   2.]],\n<BLANKLINE>\n       [[ 40.,   2.]],\n\
+    <BLANKLINE>\n       [[ 60.,   2.]]], dtype=float32)\n>>> C.reduce_max(data, (0,2)).eval().round(4)\n\
+    array([[[ 55.],\n        [ 60.]]], dtype=float32)\n```\n\n\n```\n\n>>> x = C.input_variable((2,2))\n\
+    >>> C.reduce_max( x * 1.0, (C.Axis.default_batch_axis(), 1)).eval({x: data}).round(4)\n\
+    array([[ 55.],\n       [ 60.]], dtype=float32)\n```\n"
   fullName: cntk.ops.reduce_max
   langs:
   - python
   module: cntk.ops
   name: reduce_max
-  seealsoContent: "See also: @cntk.ops.reduce_sum for more details and examples. \n"
   source:
     id: reduce_max
     path: bindings/python/cntk\internal\swig_helper.py
@@ -3710,13 +3725,34 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2288
-  summary: 'Computes the max of the input tensor''s elements across the specified
-    axis.
+    startLine: 2349
+  summary: 'Computes the max of the input tensor''s elements across a specified axis
+    or a list of specified axes.
+
+
+    Note that CNTK keeps the shape of the resulting tensors when reducing over multiple
+    static axes.
 
     '
   syntax:
     content: reduce_max(x, axis=None, name='')
+    parameters:
+    - description: 'input tensor
+
+        '
+      id: x
+    - description: 'axis along which the reduction will be performed
+
+        '
+      id: axis
+      type:
+      - "int or @cntk.axis.Axis\n or a @list\n or @tuple\n of int or @cntk.axis.Axis\n"
+    - description: 'the name of the Function instance in the network
+
+        '
+      id: name
+      type:
+      - str
     return:
       description: '@cntk.ops.functions.Function
 
@@ -3724,17 +3760,23 @@ items:
   type: function
   uid: cntk.ops.reduce_max
 - example:
-  - "\n```\n\n>>> # create 3x2 matrix in a sequence of length 1 in a batch of one\
-    \ sample\n>>> data = [[5, 20],[30, 40],[55, 60]]\n```\n\n\n```\n\n>>> C.reduce_mean(data,\
-    \ 0).eval()\narray([[ 30.,  40.]], dtype=float32)\n```\n\n\n```\n\n>>> C.reduce_mean(data,\
-    \ 1).eval()\narray([[ 12.5],\n       [ 35. ],\n       [ 57.5]], dtype=float32)\n\
-    ```\n"
+  - "\n```\n\n>>> # create 3x2x2 matrix in a sequence of length 1 in a batch of one\
+    \ sample\n>>> data = np.array([[[5,1], [20,2]],[[30,1], [40,2]],[[55,1], [60,2]]],\
+    \ dtype=np.float32)\n```\n\n\n```\n\n>>> C.reduce_mean(data, 0).eval().round(4)\n\
+    array([[[ 30.,   1.],\n        [ 40.,   2.]]], dtype=float32)\n>>> np.mean(data,\
+    \ axis=0).round(4)\narray([[ 30.,   1.],\n       [ 40.,   2.]], dtype=float32)\n\
+    >>> C.reduce_mean(data, 1).eval().round(4)\narray([[[ 12.5,   1.5]],\n<BLANKLINE>\n\
+    \       [[ 35. ,   1.5]],\n<BLANKLINE>\n       [[ 57.5,   1.5]]], dtype=float32)\n\
+    >>> np.mean(data, axis=1).round(4)\narray([[ 12.5,   1.5],\n       [ 35. ,   1.5],\n\
+    \       [ 57.5,   1.5]], dtype=float32)\n>>> C.reduce_mean(data, (0,2)).eval().round(4)\n\
+    array([[[ 15.5],\n        [ 21. ]]], dtype=float32)\n```\n\n\n```\n\n>>> x = C.input_variable((2,2))\n\
+    >>> C.reduce_mean( x * 1.0, (C.Axis.default_batch_axis(), 1)).eval({x: data}).round(4)\n\
+    array([[ 15.5],\n       [ 21.      ]], dtype=float32)\n```\n"
   fullName: cntk.ops.reduce_mean
   langs:
   - python
   module: cntk.ops
   name: reduce_mean
-  seealsoContent: "See also: @cntk.ops.reduce_sum for more details and examples. \n"
   source:
     id: reduce_mean
     path: bindings/python/cntk\internal\swig_helper.py
@@ -3742,31 +3784,55 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2254
-  summary: 'Computes the mean of the input tensor''s elements across the specified
-    axis.
+    startLine: 2299
+  summary: 'Computes the mean of the input tensor''s elements across a specified axis
+    or a list of specified axes.
 
     '
   syntax:
     content: reduce_mean(x, axis=None, name='')
+    parameters:
+    - description: 'input tensor
+
+        '
+      id: x
+    - description: 'axis along which the reduction will be performed
+
+        '
+      id: axis
+      type:
+      - "int or @cntk.axis.Axis\n or a @list\n or @tuple\n of int or @cntk.axis.Axis\n"
+    - description: 'the name of the Function instance in the network
+
+        '
+      id: name
+      type:
+      - str, optional
     return:
       description: '@cntk.ops.functions.Function
+
+
+        Note that CNTK keeps the shape of the resulting tensors when reducing over
+        multiple static axes.
 
         '
   type: function
   uid: cntk.ops.reduce_mean
 - example:
-  - "\n```\n\n>>> # create 3x2 matrix in a sequence of length 1 in a batch of one\
-    \ sample\n>>> data = [[10, 20],[30, 40],[50, 60]]\n```\n\n\n```\n\n>>> C.reduce_min(data,\
-    \ 0).eval()\narray([[ 10.,  20.]], dtype=float32)\n```\n\n\n```\n\n>>> C.reduce_min(data,\
-    \ 1).eval()\narray([[ 10.],\n       [ 30.],\n       [ 50.]], dtype=float32)\n\
-    ```\n"
+  - "\n```\n\n>>> # create 3x2x2 matrix in a sequence of length 1 in a batch of one\
+    \ sample\n>>> data = np.array([[[5,1], [20,2]],[[30,1], [40,2]],[[55,1], [60,2]]],\
+    \ dtype=np.float32)\n```\n\n\n```\n\n>>> C.reduce_min(data, 0).eval().round(4)\n\
+    array([[[  5.,   1.],\n        [ 20.,   2.]]], dtype=float32)\n>>> C.reduce_min(data,\
+    \ 1).eval().round(4)\narray([[[  5.,   1.]],\n<BLANKLINE>\n       [[ 30.,   1.]],\n\
+    <BLANKLINE>\n       [[ 55.,   1.]]], dtype=float32)\n>>> C.reduce_min(data, (0,2)).eval().round(4)\n\
+    array([[[ 1.],\n        [ 2.]]], dtype=float32)\n```\n\n\n```\n\n>>> x = C.input_variable((2,2))\n\
+    >>> C.reduce_min( x * 1.0, (C.Axis.default_batch_axis(), 1)).eval({x: data}).round(4)\n\
+    array([[ 1.],\n       [ 2.]], dtype=float32)\n```\n"
   fullName: cntk.ops.reduce_min
   langs:
   - python
   module: cntk.ops
   name: reduce_min
-  seealsoContent: "See also: @cntk.ops.reduce_sum for more details and examples. \n"
   source:
     id: reduce_min
     path: bindings/python/cntk\internal\swig_helper.py
@@ -3774,31 +3840,56 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2322
-  summary: 'Computes the min of the input tensor''s elements across the specified
-    axis.
+    startLine: 2392
+  summary: 'Computes the min of the input tensor''s elements across a specified axis
+    or a list of specified axes.
 
     '
   syntax:
     content: reduce_min(x, axis=None, name='')
+    parameters:
+    - description: 'input tensor
+
+        '
+      id: x
+    - description: 'axis along which the reduction will be performed
+
+        '
+      id: axis
+      type:
+      - "int or @cntk.axis.Axis\n or a list of integers or a list of @cntk.axis.Axis\n"
+    - description: 'the name of the Function instance in the network
+
+        '
+      id: name
+      type:
+      - str
     return:
       description: '@cntk.ops.functions.Function
+
+
+        Note that CNTK keeps the shape of the resulting tensors when reducing over
+        multiple static axes.
 
         '
   type: function
   uid: cntk.ops.reduce_min
 - example:
-  - "\n```\n\n>>> # create 3x2 matrix in a sequence of length 1 in a batch of one\
-    \ sample\n>>> data = [[1, 2],[3, 4],[5, 6]]\n```\n\n\n```\n\n>>> C.reduce_prod(data,\
-    \ 0).eval()\narray([[ 15.,  48.]], dtype=float32)\n```\n\n\n```\n\n>>> C.reduce_prod(data,\
-    \ 1).eval()\narray([[  2.],\n       [ 12.],\n       [ 30.]], dtype=float32)\n\
-    ```\n"
+  - "\n```\n\n>>> # create 3x2x2 matrix in a sequence of length 1 in a batch of one\
+    \ sample\n>>> data = np.array([[[5,1], [20,2]],[[30,1], [40,2]],[[55,1], [60,2]]],\
+    \ dtype=np.float32)\n```\n\n\n```\n\n>>> C.reduce_prod(data, 0).eval().round(4)\n\
+    array([[[  8250.,      1.],\n        [ 48000.,      8.]]], dtype=float32)\n>>>\
+    \ C.reduce_prod(data, 1).eval().round(4)\narray([[[  100.,     2.]],\n<BLANKLINE>\n\
+    \       [[ 1200.,     2.]],\n<BLANKLINE>\n       [[ 3300.,     2.]]], dtype=float32)\n\
+    >>> C.reduce_prod(data, (0,2)).eval().round(4)\narray([[[   8250.],\n        [\
+    \ 384000.]]], dtype=float32)\n```\n\n\n```\n\n>>> x = C.input_variable((2,2))\n\
+    >>> C.reduce_prod( x * 1.0, (C.Axis.default_batch_axis(), 1)).eval({x: data}).round(4)\n\
+    array([[   8250.],\n       [ 384000.]], dtype=float32)\n```\n"
   fullName: cntk.ops.reduce_prod
   langs:
   - python
   module: cntk.ops
   name: reduce_prod
-  seealsoContent: "See also: @cntk.ops.reduce_sum for more details and examples. \n"
   source:
     id: reduce_prod
     path: bindings/python/cntk\internal\swig_helper.py
@@ -3806,13 +3897,34 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2356
+    startLine: 2435
   summary: 'Computes the min of the input tensor''s elements across the specified
     axis.
+
+
+    Note that CNTK keeps the shape of the resulting tensors when reducing over multiple
+    static axes.
 
     '
   syntax:
     content: reduce_prod(x, axis=None, name='')
+    parameters:
+    - description: 'input tensor
+
+        '
+      id: x
+    - description: 'axis along which the reduction will be performed
+
+        '
+      id: axis
+      type:
+      - "int or @cntk.axis.Axis\n or a @list\n or @tuple\n of int or @cntk.axis.Axis\n"
+    - description: 'the name of the Function instance in the network
+
+        '
+      id: name
+      type:
+      - str
     return:
       description: '@cntk.ops.functions.Function
 
@@ -3820,24 +3932,16 @@ items:
   type: function
   uid: cntk.ops.reduce_prod
 - example:
-  - "\n```\n\n>>> x = C.sequence.input_variable((2,2))\n>>> # create a batch of 2\
-    \ sequences each containing 2 2x2 matrices\n>>> x0 = np.arange(16,dtype=np.float32).reshape(2,2,2,2)\n\
-    >>> # reduce over all static axes\n>>> C.reduce_mean(x).eval({x:x0})\n[array([\
-    \  1.5,   5.5], dtype=float32),\n array([  9.5,  13.5], dtype=float32)]\n>>> #\
-    \ reduce over specified axes\n>>> C.reduce_mean(x,axis=0).eval({x:x0})\n[array([[[\
-    \  1.,   2.]],\n<BLANKLINE>\n        [[  5.,   6.]]], dtype=float32),\n<BLANKLINE>\n\
-    <BLANKLINE>\n array([[[  9.,  10.]],\n<BLANKLINE>\n        [[ 13.,  14.]]], dtype=float32)]\n\
-    >>> C.reduce_mean(x,axis=1).eval({x:x0})\n[array([[[  0.5],\n         [  2.5]],\n\
-    <BLANKLINE>\n        [[  4.5],\n         [  6.5]]], dtype=float32),\n<BLANKLINE>\n\
-    <BLANKLINE>\n array([[[  8.5],\n         [ 10.5]],\n<BLANKLINE>\n        [[ 12.5],\n\
-    \         [ 14.5]]], dtype=float32)]\n>>> # reduce over all axes\n>>> np.round(C.reduce_mean(x,\
-    \ axis=C.Axis.all_axes()).eval({x:x0}),5)\n7.5\n>>> # reduce over all axes when\
-    \ the batch has sequences of different length\n>>> x1 = np.arange(4,dtype=np.float32).reshape(1,2,2)\n\
-    >>> x2 = np.arange(12,dtype=np.float32).reshape(3,2,2)\n>>> np.round(C.reduce_mean(x,\
-    \ axis=C.Axis.all_axes()).eval({x:[x1,x2]}),5)\n4.5\n>>> (np.sum(x1)+np.sum(x2))/(x1.size+x2.size)\n\
-    4.5\n>>> # reduce over batch axis\n>>> xv = C.input_variable((2,2))\n>>> xd =\
-    \ np.arange(8,dtype=np.float32).reshape(2,2,2)\n>>> C.reduce_sum(xv,axis=C.Axis.default_batch_axis()).eval({xv:xd})\n\
-    array([[  4.,   6.],\n       [  8.,  10.]], dtype=float32)\n```\n"
+  - "\n```\n\n>>> # create 3x2x2 matrix in a sequence of length 1 in a batch of one\
+    \ sample\n>>> data = np.array([[[5,1], [20,2]],[[30,1], [40,2]],[[55,1], [60,2]]],\
+    \ dtype=np.float32)\n```\n\n\n```\n\n>>> C.reduce_sum(data, 0).eval().round(4)\n\
+    array([[[  90.,    3.],\n        [ 120.,    6.]]], dtype=float32)\n>>> np.sum(data,\
+    \ axis=0).round(4)\narray([[  90.,    3.],\n       [ 120.,    6.]], dtype=float32)\n\
+    >>> C.reduce_sum(data, 1).eval().round(4)\narray([[[  25.,    3.]],\n<BLANKLINE>\n\
+    \       [[  70.,    3.]],\n<BLANKLINE>\n       [[ 115.,    3.]]], dtype=float32)\n\
+    >>> np.sum(data, axis=1).round(4)\narray([[  25.,    3.],\n       [  70.,    3.],\n\
+    \       [ 115.,    3.]], dtype=float32)\n>>> C.reduce_sum(data, (0,2)).eval().round(4)\n\
+    array([[[  93.],\n        [ 126.]]], dtype=float32)\n```\n"
   fullName: cntk.ops.reduce_sum
   langs:
   - python
@@ -3850,9 +3954,9 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2149
-  summary: 'Computes the sum of the input tensor''s elements across one axis. If the
-    axis parameter
+    startLine: 2202
+  summary: 'Computes the sum of the input tensor''s elements across one axis or a
+    list of axes. If the axis parameter
 
     is not specified then the sum will be computed over all static axes, which is
 
@@ -3865,6 +3969,10 @@ items:
     then the reduction
 
     will happen across the batch axis (In this case the input must not be a sequence).
+
+
+    Note that CNTK keeps the shape of the resulting tensors when reducing over multiple
+    static axes.
 
     '
   syntax:
@@ -3879,9 +3987,7 @@ items:
         '
       id: axis
       type:
-      - 'int or @cntk.axis.Axis
-
-        '
+      - "int or @cntk.axis.Axis\n or a @list\n or @tuple\n of int or @cntk.axis.Axis\n"
     - description: 'the name of the Function instance in the network
 
         '
@@ -4714,7 +4820,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2885
+    startLine: 2973
   summary: 'Outputs its input as it is and prevents any gradient contribution from
     its output to its input.
 
@@ -4865,11 +4971,11 @@ items:
     \ matrix.\nThe operator '@' has been overloaded such that in Python 3.5 and later\
     \ X @ W equals times(X, W).\n\nFor better performance on times operation on sequence\
     \ which is followed by sequence.reduce_sum, use\ninfer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK,\
-    \ i.e. replace following:\n\n<!-- literal_block {\"ids\": [], \"xml:space\": \"\
-    preserve\", \"names\": [], \"classes\": [], \"backrefs\": [], \"dupnames\": []}\
-    \ -->\n\n````\n\n   sequence.reduce_sum(times(seq1, seq2))\n   ````\n\nwith:\n\
-    \n<!-- literal_block {\"ids\": [], \"xml:space\": \"preserve\", \"names\": [],\
-    \ \"classes\": [], \"backrefs\": [], \"dupnames\": []} -->\n\n````\n\n   times(seq1,\
+    \ i.e. replace following:\n\n<!-- literal_block {\"classes\": [], \"names\": [],\
+    \ \"dupnames\": [], \"backrefs\": [], \"ids\": [], \"xml:space\": \"preserve\"\
+    } -->\n\n````\n\n   sequence.reduce_sum(times(seq1, seq2))\n   ````\n\nwith:\n\
+    \n<!-- literal_block {\"classes\": [], \"names\": [], \"dupnames\": [], \"backrefs\"\
+    : [], \"ids\": [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   times(seq1,\
     \ seq2, infer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK)\n\
     \   ````\n"
   syntax:
@@ -4977,6 +5083,59 @@ items:
         '
   type: function
   uid: cntk.ops.times_transpose
+- example:
+  - '
+
+    ```
+
+
+    >>> data = np.arange(12).reshape((3,2,2))
+
+    >>> x = C.constant(value=data)
+
+    >>> y = C.to_batch(x)
+
+    >>> y.shape
+
+    (2, 2)
+
+    ```
+
+    '
+  fullName: cntk.ops.to_batch
+  langs:
+  - python
+  module: cntk.ops
+  name: to_batch
+  source:
+    id: to_batch
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: master
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2114
+  summary: 'Concatenate the input tensor''s first axis to batch axis.
+
+    '
+  syntax:
+    content: to_batch(x, name='')
+    parameters:
+    - description: 'a tensor with dynamic axis
+
+        '
+      id: x
+    - description: '(str, optional, keyword only): the name of the Function instance
+        in the network
+
+        '
+      id: name
+    return:
+      description: '@cntk.ops.functions.Function
+
+        '
+  type: function
+  uid: cntk.ops.to_batch
 - fullName: cntk.ops.to_sequence
   langs:
   - python
@@ -4989,7 +5148,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2455
+    startLine: 2543
   summary: 'This function converts ''x'' to a sequence using the most significant
 
     static axis [0] as the sequence axis.
@@ -5050,7 +5209,7 @@ items:
       branch: master
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 2490
+    startLine: 2578
   summary: 'This function converts ''x'' to a sequence using the most significant
 
     static axis [0] as the sequence axis. The length of the sequences are
@@ -5147,6 +5306,47 @@ items:
         '
   type: function
   uid: cntk.ops.transpose
+- example:
+  - "\n```\n\n>>> data = np.arange(12).reshape((3,2,2))\n>>> x = C.input((2,2))\n\
+    >>> C.unpack_batch(x).eval({x:data})\narray([[[  0.,   1.],\n        [  2.,  \
+    \ 3.]],\n<BLANKLINE>\n       [[  4.,   5.],\n        [  6.,   7.]],\n<BLANKLINE>\n\
+    \       [[  8.,   9.],\n        [ 10.,  11.]]], dtype=float32)\n```\n"
+  fullName: cntk.ops.unpack_batch
+  langs:
+  - python
+  module: cntk.ops
+  name: unpack_batch
+  source:
+    id: unpack_batch
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: master
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 2084
+  summary: 'Concatenate the input tensor''s last dynamic axis to static axis.
+
+    Only tensors with batch axis are supported now.
+
+    '
+  syntax:
+    content: unpack_batch(x, name='')
+    parameters:
+    - description: 'a tensor with dynamic axis
+
+        '
+      id: x
+    - description: '(str, optional, keyword only): the name of the Function instance
+        in the network
+
+        '
+      id: name
+    return:
+      description: '@cntk.ops.functions.Function
+
+        '
+  type: function
+  uid: cntk.ops.unpack_batch
 - example:
   - "\n```\n\n>>> img = np.reshape(np.arange(16, dtype = np.float32), [1, 4, 4])\n\
     >>> x = C.input_variable(img.shape)\n>>> y = C.pooling(x, C.MAX_POOLING, (2,2),\
@@ -5632,6 +5832,11 @@ references:
   name: times_transpose
   parent: cntk.ops
   uid: cntk.ops.times_transpose
+- fullName: cntk.ops.to_batch
+  isExternal: false
+  name: to_batch
+  parent: cntk.ops
+  uid: cntk.ops.to_batch
 - fullName: cntk.ops.to_sequence
   isExternal: false
   name: to_sequence
@@ -5647,6 +5852,11 @@ references:
   name: transpose
   parent: cntk.ops
   uid: cntk.ops.transpose
+- fullName: cntk.ops.unpack_batch
+  isExternal: false
+  name: unpack_batch
+  parent: cntk.ops
+  uid: cntk.ops.unpack_batch
 - fullName: cntk.ops.unpooling
   isExternal: false
   name: unpooling

@@ -59,7 +59,7 @@ items:
       branch: master
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 485
+    startLine: 528
   summary: 'This wraps in-memory data as a CNTK MinibatchSource object (aka "reader"),
     used to feed the data into a TrainingSession.
 
@@ -146,7 +146,7 @@ items:
       branch: master
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 703
+    startLine: 746
   summary: 'Gets the checkpoint state of the MinibatchSource.
 
     '
@@ -177,7 +177,7 @@ items:
       branch: master
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 648
+    startLine: 691
   syntax:
     content: next_minibatch(num_samples, number_of_workers=1, worker_rank=0, device=None)
     parameters:
@@ -204,7 +204,7 @@ items:
       branch: master
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 714
+    startLine: 757
   summary: 'Restores the MinibatchSource state from the specified checkpoint.
 
     '
@@ -232,7 +232,7 @@ items:
       branch: master
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 643
+    startLine: 686
   syntax:
     content: stream_infos()
     parameters:
