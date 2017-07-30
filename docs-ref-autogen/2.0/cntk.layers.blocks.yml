@@ -131,7 +131,7 @@ items:
       id: cell_shape
       type:
       - tuple, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009E7DAE7CF8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000C9F4CC7E48>
       description: 'function to apply at the end, e.g. *relu*
 
         '
@@ -140,7 +140,7 @@ items:
       - 'cntk.ops.functions.Function
 
         , defaults to @cntk.ops.tanh'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009E7DAE7D68>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000C9F4CC7EB8>
       description: 'initial value of weights *W*
 
         '
@@ -149,7 +149,7 @@ items:
       - 'scalar or NumPy array or @cntk.initializer
 
         , defaults to glorot_uniform'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009E7DAE7DA0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000C9F4CC7EF0>
       description: 'initial value of weights *b*
 
         '
@@ -158,7 +158,7 @@ items:
       - 'scalar or NumPy array or @cntk.initializer
 
         , defaults to 0'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009E7DAE7DD8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000C9F4CC7F28>
       description: 'if *True* then add a @cntk.layers.blocks.Stabilizer
 
         to all state-related projections (but not the data input)
@@ -238,7 +238,7 @@ items:
       id: cell_shape
       type:
       - tuple, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009E7DAE7A58>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000C9F4CC7BA8>
       description: 'function to apply at the end, e.g. *relu*
 
         '
@@ -247,12 +247,12 @@ items:
       - 'cntk.ops.functions.Function
 
         , defaults to @cntk.ops.tanh'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009E7DAE7828>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000C9F4CC7978>
       description: ''
       id: use_peepholes
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009E7DAE79B0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000C9F4CC7B00>
       description: 'initial value of weights *W*
 
         '
@@ -261,7 +261,7 @@ items:
       - 'scalar or NumPy array or @cntk.initializer
 
         , defaults to glorot_uniform'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009E7DAE79E8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000C9F4CC7B38>
       description: 'initial value of weights *b*
 
         '
@@ -270,7 +270,7 @@ items:
       - 'scalar or NumPy array or @cntk.initializer
 
         , defaults to 0'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009E7DAE7A90>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000C9F4CC7BE0>
       description: 'if *True* then add a @cntk.layers.blocks.Stabilizer
 
         to all state-related projections (but not the data input)
@@ -350,7 +350,7 @@ items:
       id: cell_shape
       type:
       - tuple, defaults to None
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009E7DAE7AC8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000C9F4CC7C18>
       description: 'function to apply at the end, e.g. *relu*
 
         '
@@ -359,7 +359,7 @@ items:
       - 'cntk.ops.functions.Function
 
         , defaults to signmoid'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009E7DAE7B38>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000C9F4CC7C88>
       description: 'initial value of weights *W*
 
         '
@@ -368,7 +368,7 @@ items:
       - 'scalar or NumPy array or @cntk.initializer
 
         , defaults to glorot_uniform'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009E7DAE7B70>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000C9F4CC7CC0>
       description: 'initial value of weights *b*
 
         '
@@ -377,7 +377,7 @@ items:
       - 'scalar or NumPy array or @cntk.initializer
 
         , defaults to 0'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009E7DAE7BA8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000C9F4CC7CF8>
       description: 'if *True* then add a @cntk.layers.blocks.Stabilizer
 
         to all state-related projections (but not the data input)
@@ -426,13 +426,13 @@ items:
     - id: shape
     - defaultValue: None
       id: cell_shape
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009E7DAE7BE0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000C9F4CC7D30>
       id: activation
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009E7DAE7C50>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000C9F4CC7DA0>
       id: init
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009E7DAE7C88>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000C9F4CC7DD8>
       id: init_bias
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009E7DAE7CC0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000C9F4CC7E10>
       id: enable_self_stabilization
     - defaultValue: ''
       id: name
@@ -504,7 +504,7 @@ items:
       id: steepness
       type:
       - int, defaults to 4
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000009E7DAE7940>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000C9F4CC7A90>
       description: 'a flag that allows to disable itself. Useful if this is a global
         default
 
