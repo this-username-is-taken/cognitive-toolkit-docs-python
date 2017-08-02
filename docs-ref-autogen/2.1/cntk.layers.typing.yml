@@ -1,0 +1,178 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.layers.typing.ParameterTensor
+  - cntk.layers.typing.Sequence
+  - cntk.layers.typing.SequenceOver
+  - cntk.layers.typing.SequenceOverMeta
+  - cntk.layers.typing.Signature
+  - cntk.layers.typing.SparseTensor
+  - cntk.layers.typing.Tensor
+  fullName: cntk.layers.typing
+  langs:
+  - python
+  module: cntk.layers.typing
+  name: typing
+  source:
+    id: typing
+    path: bindings/python/cntk\layers\typing.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\layers\typing.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: "The CNTK typing module contains basic CNTK type meta-classes for :func:`~cntk.functions.Function.update_signature`\
+    \ and type signatures for the CNTK :class:`~cntk.ops.functions.Function` decorator.\n\
+    \n\nThe type of a CNTK :class:`~cntk.variables.Variable` is defined by five properties:\
+    \ `shape`, `dynamic_axes`, `is_sparse`, `dtype`, and `needs_gradient`.\nSome API\
+    \ functions accept these variables as independent arguments, e.g. :class:`~cntk.input`.\n\
+    The typing module provides a Pythonic way to represent the variable type properties\
+    \ as a single data object.\n\n\nPython type syntax can be used to create such\
+    \ a record for the three main properties, `shape`, `dynamic_axes`, and `is_sparse`,\n\
+    using :class:`~cntk.layers.typing.Tensor`,  :class:`~cntk.layers.typing.SparseTensor`,\
+    \  :class:`~cntk.layers.typing.ParameterTensor`,\n:class:`~cntk.layers.typing.Sequence`,\
+    \  and :class:`~cntk.layers.typing.SequenceOver`.\n\n\nNote: This new type system\
+    \ may undergo changes. Please give us feedback on github or stackoverflow\n\n\n\
+    ### Example\n\n\n\n    >>> # Tensor[...] denotes a data variable (with implied\
+    \ batch dimension)\n    >>> from cntk.layers.typing import *\n    >>> tp = Tensor[13,42]\n\
+    \    >>> tp.shape\n    (13, 42)\n    >>> tp.is_sparse\n    False\n    >>> [str(axis.name)\
+    \ for axis in tp.dynamic_axes]\n    ['defaultBatchAxis']\n\n\n    >>> # SparseTensor[...]\
+    \ is a sparse Tensor\n    >>> tp = SparseTensor[9000]\n    >>> tp.is_sparse\n\
+    \    True\n\n\n    >>> # if the first argument is np.float32 or np.float64, then\
+    \ this sets the dtype\n    >>> tp = Tensor[np.float32,13,42]\n    >>> print(tp.dtype\
+    \ == np.float32)\n    True\n\n\nThis record can be directly passed to update_signature().\n\
+    \n\n### Example\n\n\n\n    >>> from cntk.layers import *\n    >>> f = Dense(500)\n\
+    \    >>> f.update_signature(Tensor[13,42])\n    >>> f.shape\n    (500,)\n\n\n\
+    \    >>> # This is just the same as saying\n    >>> f = Dense(500)\n    >>> _\
+    \ = f.replace_placeholders({f.arguments[0]: C.input_variable(shape=(13,42), dynamic_axes=[Axis.default_batch_axis()])})\n\
+    \    >>> f.shape\n    (500,)\n\n\nScalars can be just specified as float, np.float32,\
+    \ or np.float64.\n\n\n### Example\n\n\n\n    >>> @Function\n    ... def f(x):\n\
+    \    ...    return x+1\n    >>> f.update_signature(np.float64)\n    >>> print(f.dtype\
+    \ == np.float64)\n    True\n\n\nTo specify types with a dynamic axis, use `Sequence[]`.\n\
+    \n\n### Example\n\n\n\n    >>> tp = Sequence[SparseTensor[9000]]\n    >>> [str(axis.name)\
+    \ for axis in tp.dynamic_axes]\n    ['defaultBatchAxis', 'defaultDynamicAxis']\n\
+    \n\nThis will refer to the default dynamic axis. If your model uses multiple dynamic\
+    \ axes, such as a sequence-to-sequence model,\nyou use `SequenceOver[]` to define\
+    \ your own sequence type for each.\n\n\n### Example\n\n\n\n    >>> InputSequence\
+    \ = SequenceOver[Axis('input')]\n    >>> tp = InputSequence[SparseTensor[9000]]\n\
+    \    >>> [str(axis.name) for axis in tp.dynamic_axes]\n    ['defaultBatchAxis',\
+    \ 'input']\n\n\nThe typing syntax can be used to directly define CNTK functions\
+    \ with their input types.\nThis is often done for the criterion function.\n\n\n\
+    ### Example\n\n\n\n    >>> from cntk import debugging, cross_entropy_with_softmax\n\
+    \    >>> model = Sequential([Embedding(300), Fold(GRU(128)), Dense(10)])\n   \
+    \ >>> print(model)\n    Composite(keep: Sequence[tensor]) -> Sequence[tensor]\n\
+    \    >>> inputAxis = Axis('inputAxis')\n    >>> @Function\n    ... @Signature(input=SequenceOver[inputAxis][Tensor[128]],\
+    \ label=Tensor[10])\n    ... def criterion(input, label):\n    ...     output\
+    \ = model(input)\n    ...     return cross_entropy_with_softmax(output, label)\n\
+    \    >>> print(criterion)\n    Composite(input: SequenceOver[inputAxis][Tensor[128]],\
+    \ label: Tensor[10]) -> Tensor[1]\n\n\nThe following lists a few common errors\
+    \ with CNTK type objects:\n\n\n### Example\n\n\n\n    >>> # types are abstract,\
+    \ they cannot be instantiated directly\n    >>> from cntk.layers.typing import\
+    \ Tensor\n    >>> try:\n    ...     inp = Tensor[32]()   # attempt to create an\
+    \ instance of type Tensor[32]\n    ... except TypeError as e:\n    ...     print('ERROR:\
+    \ ' + str(e))\n    ERROR: abstract type Tensor[32] cannot be instantiated; use\
+    \ 'input_variable(**Tensor[32])' instead\n\n\n    >>> # types are not inputs\n\
+    \    >>> try:\n    ...     inp = Tensor[32]\n    ...     y = sigmoid(inp)\n  \
+    \  ... except ValueError as e:\n    ...     print('ERROR: ' + str(e))\n    ERROR:\
+    \ Input is a type object (Tensor[32]). Did you mean to pass 'input_variable(**Tensor[32])'?\n\
+    \n\n    >>> # nested sequences are currently not supported\n    >>> try:\n   \
+    \ ...     t = Sequence[Sequence[Tensor[32]]]\n    ... except TypeError as e:\n\
+    \    ...     print('ERROR: ' + str(e))\n    ERROR: sequences over sequences are\
+    \ currently not supported\n\n\n    >>> # a function with specified type gets passed\
+    \ a differently-shaped input\n    >>> @Function\n    ... @Signature(x=Tensor[13])\n\
+    \    ... def f(x):\n    ...    return sigmoid(x)\n    >>> try:\n    ...     x\
+    \ = C.input_variable((42,))\n    ...     y = f(x)\n    ... except TypeError as\
+    \ e:\n    ...     print('ERROR: ' + str(e))\n    ERROR: argument x's type Tensor[13]\
+    \ is incompatible with the type Tensor[42] of the passed Variable\n\n\nUsing Python\
+    \ type syntax, besides being more concise and easier to memorize, has the added\
+    \ benefit of beign able to more easily talk about types of CNTK objects,\nvery\
+    \ similar to how one would talk about the types of Python objects (e.g. `List[Tuple[int,float]]`).\n\
+    This is particularly beneficial for the functional-programming style of the Layers\
+    \ library, where functions are also reasoned about by their types.\nIn functional\
+    \ programming, it has been observed that getting the types of functions right\
+    \ is a critical step towards correct code.\n\n\nNote that the type syntax does\
+    \ not allow to specify the special-purpose type property `needs_gradient`,\nnor\
+    \ to `dtype` which instead should be specified as a global setting.\nIf these\
+    \ properties are needed on a type object, please use construct an input using\
+    \ :func:`~cntk.input_var` and get its `type` property.\n"
+  type: module
+  uid: cntk.layers.typing
+- fullName: cntk.layers.typing.Signature
+  langs:
+  - python
+  module: cntk.layers.typing
+  name: Signature
+  source:
+    id: Signature
+    path: bindings/python/cntk\layers\typing.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\layers\typing.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 210
+  summary: "`@Signature` is a decorator to implement the function-argument annotations\
+    \ in Python-2.7,\nas needed by the `@Function` decorator.\nThis is only needed\
+    \ when you have not yet migrated to Python 3.x.\n\nNote: Although this is aimed\
+    \ at enabling `@Function` syntax with type annotations\nin Python 2.7, `@Signature`\
+    \ is independent of CNTK and can be used for any argument annotation.\n\nExample:\n\
+    \n<!-- literal_block {\"dupnames\": [], \"ids\": [], \"classes\": [], \"xml:space\"\
+    : \"preserve\", \"backrefs\": [], \"names\": []} -->\n\n````\n\n   # Python 3:\n\
+    \   @Function\n   def f(x: Tensor[42]):\n       return sigmoid(x)\n\n   # Python\
+    \ 2.7:\n   @Function\n   @Signature(Tensor[42])\n   def f(x):\n       return sigmoid(x)\n\
+    \n   # note that this:\n   @Function\n   @Signature(x:int)\n   def sqr(x):\n \
+    \      return x*x\n   # is identical to:\n   def sqr(x):\n       return x*x\n\
+    \   sqr.__annotations__ = {'x': int}\n   ````\n"
+  syntax:
+    content: Signature(*args, **kwargs)
+    parameters:
+    - description: 'types of arguments of the function that this decorator is applied
+        to, in the same order.
+
+        '
+      id: '*args'
+    - description: 'types of arguments with optional names, e.g. *x=Tensor[42]*. Use
+        this second form for
+
+        longer argument lists.
+
+        '
+      id: '**kwargs'
+  type: function
+  uid: cntk.layers.typing.Signature
+references:
+- fullName: cntk.layers.typing.ParameterTensor
+  isExternal: false
+  name: ParameterTensor
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.ParameterTensor
+- fullName: cntk.layers.typing.Sequence
+  isExternal: false
+  name: Sequence
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.Sequence
+- fullName: cntk.layers.typing.SequenceOver
+  isExternal: false
+  name: SequenceOver
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.SequenceOver
+- fullName: cntk.layers.typing.SequenceOverMeta
+  isExternal: false
+  name: SequenceOverMeta
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.SequenceOverMeta
+- fullName: cntk.layers.typing.Signature
+  isExternal: false
+  name: Signature
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.Signature
+- fullName: cntk.layers.typing.SparseTensor
+  isExternal: false
+  name: SparseTensor
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.SparseTensor
+- fullName: cntk.layers.typing.Tensor
+  isExternal: false
+  name: Tensor
+  parent: cntk.layers.typing
+  uid: cntk.layers.typing.Tensor

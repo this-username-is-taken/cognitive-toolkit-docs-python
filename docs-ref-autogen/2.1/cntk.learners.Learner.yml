@@ -1,0 +1,186 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.learners.Learner.learning_rate
+  - cntk.learners.Learner.parameters
+  - cntk.learners.Learner.reset_learning_rate
+  - cntk.learners.Learner.update
+  class: cntk.learners.Learner
+  fullName: cntk.learners.Learner
+  langs:
+  - python
+  module: cntk.learners
+  name: Learner
+  source:
+    id: Learner
+    path: bindings/python/cntk\learners\__init__.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\learners\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 114
+  summary: 'Abstraction for learning a subset of parameters of a learnable function
+    using first order gradient values.
+
+    For example momentum, AdaGrad, RMSProp, etc. are different types of learners with
+    their own algorithms for
+
+    learning parameter values using first order gradients.
+
+    To instantiate a concrete learner, use the factory methods in this module.
+
+
+
+
+
+    '
+  syntax:
+    content: Learner(parameters, learningRateSchedule)
+  type: class
+  uid: cntk.learners.Learner
+- class: cntk.learners.Learner
+  fullName: cntk.learners.Learner.learning_rate
+  langs:
+  - python
+  module: cntk.learners
+  name: learning_rate
+  source:
+    id: learning_rate
+    path: bindings/python/cntk\learners\__init__.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\learners\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 163
+  summary: 'Current learning rate schedule.
+
+    '
+  syntax:
+    content: learning_rate()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.learners.Learner.learning_rate
+- class: cntk.learners.Learner
+  fullName: cntk.learners.Learner.parameters
+  langs:
+  - python
+  module: cntk.learners
+  name: parameters
+  source:
+    id: parameters
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'The set of parameters associated with this learner.
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.learners.Learner.parameters
+- class: cntk.learners.Learner
+  fullName: cntk.learners.Learner.reset_learning_rate
+  langs:
+  - python
+  module: cntk.learners
+  name: reset_learning_rate
+  source:
+    id: reset_learning_rate
+    path: bindings/python/cntk\learners\__init__.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\learners\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 149
+  summary: 'Resets the learning rate. The new schedule is adjusted to be relative
+
+    to the current number of elapsed samples/sweeps: the 0 offset in
+
+    the new schedule corresponds to the current value of elapsed samples/sweeps,
+
+    and it takes effect from the current position in the training process onwards.
+
+    '
+  syntax:
+    content: reset_learning_rate(learning_rate)
+    parameters:
+    - description: 'learning rate to reset to
+
+        '
+      id: learning_rate
+      type:
+      - 'output of @cntk.learners.learning_rate_schedule
+
+        '
+  type: method
+  uid: cntk.learners.Learner.reset_learning_rate
+- class: cntk.learners.Learner
+  fullName: cntk.learners.Learner.update
+  langs:
+  - python
+  module: cntk.learners
+  name: update
+  source:
+    id: update
+    path: bindings/python/cntk\learners\__init__.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\learners\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 123
+  summary: 'Update the parameters associated with this learner.
+
+    '
+  syntax:
+    content: update(gradient_values, training_sample_count)
+    parameters:
+    - description: 'maps @cntk.variables.Parameter to
+
+        a NumPy array containing the first order gradient values for the
+
+        Parameter w.r.t. the training objective.
+
+        '
+      id: gradient_values
+      type:
+      - dict
+    - description: 'number of samples in the minibatch
+
+        '
+      id: training_sample_count
+      type:
+      - int
+    return:
+      description: '*False* to indicate that learning has stopped for all of the parameters
+        associated with this learner
+
+        '
+      type:
+      - bool
+  type: method
+  uid: cntk.learners.Learner.update
+references:
+- fullName: cntk.learners.Learner.learning_rate
+  isExternal: false
+  name: learning_rate
+  parent: cntk.learners.Learner
+  uid: cntk.learners.Learner.learning_rate
+- fullName: cntk.learners.Learner.parameters
+  isExternal: false
+  name: parameters
+  parent: cntk.learners.Learner
+  uid: cntk.learners.Learner.parameters
+- fullName: cntk.learners.Learner.reset_learning_rate
+  isExternal: false
+  name: reset_learning_rate
+  parent: cntk.learners.Learner
+  uid: cntk.learners.Learner.reset_learning_rate
+- fullName: cntk.learners.Learner.update
+  isExternal: false
+  name: update
+  parent: cntk.learners.Learner
+  uid: cntk.learners.Learner.update

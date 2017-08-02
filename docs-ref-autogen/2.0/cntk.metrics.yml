@@ -12,10 +12,10 @@ items:
   name: metrics
   source:
     id: metrics
-    path: bindings/python\cntk\metrics\__init__.py
+    path: bindings/python/cntk\metrics\__init__.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\metrics\__init__.py
+      path: bindings/python/cntk\metrics\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   summary: 'Evaluation metrics.
@@ -67,12 +67,12 @@ items:
   name: classification_error
   source:
     id: classification_error
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python/cntk\internal\swig_helper.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 67
+    startLine: 61
   summary: 'This operation computes the classification error. It finds the index of
     the highest
 
@@ -107,7 +107,7 @@ items:
         '
       id: axis
       type:
-      - 'int or @cntk.axis
+      - 'int or @cntk.axis.Axis
 
         '
     - description: 'the name of the Function instance in the network
@@ -141,12 +141,12 @@ items:
   name: edit_distance_error
   source:
     id: edit_distance_error
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python/cntk\internal\swig_helper.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 67
+    startLine: 100
   summary: 'Edit distance error evaluation node with the option of specifying penalty
     of substitution, deletion and insertion, as well as squashing the input sequences
     and ignoring certain samples.
@@ -270,12 +270,12 @@ items:
   name: ndcg_at_1
   source:
     id: ndcg_at_1
-    path: bindings/python\cntk\internal\swig_helper.py
+    path: bindings/python/cntk\internal\swig_helper.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\internal\swig_helper.py
+      path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 67
+    startLine: 15
   summary: 'Groups samples according to `group`, sorts
 
     them within each group based on `output` and

@@ -1,0 +1,56 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.deeprl.agent.shared.policy_gradient_parameters.PolicyGradientParameters.save
+  class: cntk.contrib.deeprl.agent.shared.policy_gradient_parameters.PolicyGradientParameters
+  fullName: cntk.contrib.deeprl.agent.shared.policy_gradient_parameters.PolicyGradientParameters
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.policy_gradient_parameters
+  name: PolicyGradientParameters
+  source:
+    id: PolicyGradientParameters
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\policy_gradient_parameters.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\policy_gradient_parameters.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 11
+  summary: 'Parameters used by Policy Gradient algorithms.
+
+
+    '
+  syntax:
+    content: PolicyGradientParameters(config_file)
+  type: class
+  uid: cntk.contrib.deeprl.agent.shared.policy_gradient_parameters.PolicyGradientParameters
+- class: cntk.contrib.deeprl.agent.shared.policy_gradient_parameters.PolicyGradientParameters
+  fullName: cntk.contrib.deeprl.agent.shared.policy_gradient_parameters.PolicyGradientParameters.save
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.policy_gradient_parameters
+  name: save
+  source:
+    id: save
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\policy_gradient_parameters.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\policy_gradient_parameters.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 111
+  syntax:
+    content: save(config_file)
+    parameters:
+    - id: self
+    - id: config_file
+  type: method
+  uid: cntk.contrib.deeprl.agent.shared.policy_gradient_parameters.PolicyGradientParameters.save
+references:
+- fullName: cntk.contrib.deeprl.agent.shared.policy_gradient_parameters.PolicyGradientParameters.save
+  isExternal: false
+  name: save
+  parent: cntk.contrib.deeprl.agent.shared.policy_gradient_parameters.PolicyGradientParameters
+  uid: cntk.contrib.deeprl.agent.shared.policy_gradient_parameters.PolicyGradientParameters.save

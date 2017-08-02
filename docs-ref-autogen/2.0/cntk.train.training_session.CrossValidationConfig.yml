@@ -4,20 +4,16 @@ items:
 - children: []
   class: cntk.train.training_session.CrossValidationConfig
   fullName: cntk.train.training_session.CrossValidationConfig
-  inheritance:
-  - inheritance:
-    - type: builtins.object
-    type: cntk.cntk_py.CrossValidationConfig
   langs:
   - python
   module: cntk.train.training_session
   name: CrossValidationConfig
   source:
     id: CrossValidationConfig
-    path: bindings/python\cntk\train\training_session.py
+    path: bindings/python/cntk\train\training_session.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\train\training_session.py
+      path: bindings/python/cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 52
   summary: 'A cross validation configuration for the training session.
@@ -33,7 +29,7 @@ items:
         '
       id: minibatch_source
       type:
-      - cntk.io
+      - cntk.io.MinibatchSource
     - description: 'frequency in samples for cross validation
 
         If None or `sys.maxsize`, a single cross validation is performed at the end
@@ -86,13 +82,13 @@ items:
         '
       id: criterion
       type:
-      - cntk.ops.functions
+      - cntk.ops.functions.Function
     - description: 'DEPRECATED, use minibatch_source instead
 
         '
       id: source
       type:
-      - cntk.io
+      - cntk.io.MinibatchSource
     - description: 'DEPRECATED, use minibatch_size instead
 
         '

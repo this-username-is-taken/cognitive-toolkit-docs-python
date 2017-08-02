@@ -1,0 +1,142 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.sample_installer.default_sample_dir
+  - cntk.sample_installer.default_sample_url
+  - cntk.sample_installer.install_samples
+  - cntk.sample_installer.module_is_unreleased
+  fullName: cntk.sample_installer
+  langs:
+  - python
+  module: cntk.sample_installer
+  name: sample_installer
+  source:
+    id: sample_installer
+    path: bindings/python/cntk\sample_installer.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\sample_installer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'Utilities for fetching CNTK samples data.
+
+    '
+  type: module
+  uid: cntk.sample_installer
+- fullName: cntk.sample_installer.default_sample_dir
+  langs:
+  - python
+  module: cntk.sample_installer
+  name: default_sample_dir
+  source:
+    id: default_sample_dir
+    path: bindings/python/cntk\sample_installer.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\sample_installer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 28
+  syntax:
+    content: default_sample_dir()
+  type: function
+  uid: cntk.sample_installer.default_sample_dir
+- fullName: cntk.sample_installer.default_sample_url
+  langs:
+  - python
+  module: cntk.sample_installer
+  name: default_sample_url
+  source:
+    id: default_sample_url
+    path: bindings/python/cntk\sample_installer.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\sample_installer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 35
+  syntax:
+    content: default_sample_url()
+  type: function
+  uid: cntk.sample_installer.default_sample_url
+- fullName: cntk.sample_installer.install_samples
+  langs:
+  - python
+  module: cntk.sample_installer
+  name: install_samples
+  source:
+    id: install_samples
+    path: bindings/python/cntk\sample_installer.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\sample_installer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 38
+  summary: 'Fetch the CNTK samples from a URL, extract to local directory, and install
+
+    Python package requirements.
+
+    '
+  syntax:
+    content: install_samples(url=None, directory=None, quiet=False)
+    parameters:
+    - defaultValue: None
+      description: 'the URL of the sample zip file (if passed `None`, which is default,
+
+        the sample URL matching the CNTK module release is chosen)
+
+        '
+      id: url
+    - defaultValue: None
+      description: 'the directory to extract the samples into (if passed
+
+        `None`, which is default, a name matching the CNTK module release is
+
+        chosen, `CNTK-Samples-<version>`)
+
+        '
+      id: directory
+    - defaultValue: 'False'
+      description: 'whether to suppress all output (defaults to `False`)
+
+        '
+      id: quiet
+  type: function
+  uid: cntk.sample_installer.install_samples
+- fullName: cntk.sample_installer.module_is_unreleased
+  langs:
+  - python
+  module: cntk.sample_installer
+  name: module_is_unreleased
+  source:
+    id: module_is_unreleased
+    path: bindings/python/cntk\sample_installer.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\sample_installer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 25
+  syntax:
+    content: module_is_unreleased()
+  type: function
+  uid: cntk.sample_installer.module_is_unreleased
+references:
+- fullName: cntk.sample_installer.default_sample_dir
+  isExternal: false
+  name: default_sample_dir
+  parent: cntk.sample_installer
+  uid: cntk.sample_installer.default_sample_dir
+- fullName: cntk.sample_installer.default_sample_url
+  isExternal: false
+  name: default_sample_url
+  parent: cntk.sample_installer
+  uid: cntk.sample_installer.default_sample_url
+- fullName: cntk.sample_installer.install_samples
+  isExternal: false
+  name: install_samples
+  parent: cntk.sample_installer
+  uid: cntk.sample_installer.install_samples
+- fullName: cntk.sample_installer.module_is_unreleased
+  isExternal: false
+  name: module_is_unreleased
+  parent: cntk.sample_installer
+  uid: cntk.sample_installer.module_is_unreleased

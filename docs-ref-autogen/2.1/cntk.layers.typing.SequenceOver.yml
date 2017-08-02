@@ -1,0 +1,28 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children: []
+  class: cntk.layers.typing.SequenceOver
+  fullName: cntk.layers.typing.SequenceOver
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.layers.typing
+  name: SequenceOver
+  source:
+    id: SequenceOver
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Meta-meta-meta class to denote a sequence of data tensors over a custom
+    axis. Example: `userAxis = Axis(); SequenceOver[userAxis][Tensor[13,42]]`
+
+    '
+  syntax: {}
+  type: class
+  uid: cntk.layers.typing.SequenceOver
+references: []

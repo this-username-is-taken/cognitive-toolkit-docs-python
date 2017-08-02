@@ -1,0 +1,166 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.sample_minibatch
+  - cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.size
+  - cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.store
+  - cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.update_priority
+  class: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory
+  fullName: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.replay_memory
+  name: ReplayMemory
+  source:
+    id: ReplayMemory
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\replay_memory.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\replay_memory.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 28
+  summary: 'Replay memory to store samples of experience.
+
+
+    Each transition is represented as (state, action, reward, next_state,
+
+    priority) tuple. ''priority'' is ignored for non-prioritized experience
+
+    replay.
+
+
+
+
+
+    '
+  syntax:
+    content: ReplayMemory(capacity, prioritized=False)
+  type: class
+  uid: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory
+- class: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory
+  fullName: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.sample_minibatch
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.replay_memory
+  name: sample_minibatch
+  source:
+    id: sample_minibatch
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\replay_memory.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\replay_memory.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 126
+  summary: 'Sample minibatch of size batch_size.
+
+    '
+  syntax:
+    content: sample_minibatch(batch_size)
+    parameters:
+    - id: self
+    - id: batch_size
+  type: method
+  uid: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.sample_minibatch
+- class: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory
+  fullName: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.size
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.replay_memory
+  name: size
+  source:
+    id: size
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\replay_memory.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\replay_memory.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 119
+  summary: 'Return the current number of transitions.
+
+    '
+  syntax:
+    content: size()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.size
+- class: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory
+  fullName: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.store
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.replay_memory
+  name: store
+  source:
+    id: store
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\replay_memory.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\replay_memory.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 49
+  summary: 'Store a transition in replay memory.
+
+
+    If the memory is full, the oldest one gets overwritten.
+
+    '
+  syntax:
+    content: store(*args)
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.store
+- class: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory
+  fullName: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.update_priority
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.replay_memory
+  name: update_priority
+  source:
+    id: update_priority
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\replay_memory.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\replay_memory.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 65
+  summary: 'Update priority of transitions.
+
+    '
+  syntax:
+    content: update_priority(map_from_position_to_priority)
+    parameters:
+    - description: 'dictionary mapping position of
+
+        transition to its new priority. position should come from
+
+        tuples returned by sample_minibatch().
+
+        '
+      id: map_from_position_to_priority
+  type: method
+  uid: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.update_priority
+references:
+- fullName: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.sample_minibatch
+  isExternal: false
+  name: sample_minibatch
+  parent: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory
+  uid: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.sample_minibatch
+- fullName: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.size
+  isExternal: false
+  name: size
+  parent: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory
+  uid: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.size
+- fullName: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.store
+  isExternal: false
+  name: store
+  parent: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory
+  uid: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.store
+- fullName: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.update_priority
+  isExternal: false
+  name: update_priority
+  parent: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory
+  uid: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory.update_priority

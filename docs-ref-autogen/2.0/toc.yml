@@ -11,11 +11,6 @@
           uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
         name: cntk.contrib.crosstalk.crosstalk_cntk
         uid: cntk.contrib.crosstalk.crosstalk_cntk
-      - items:
-        - name: cntk.contrib.crosstalk.crosstalk_tensorflow.TensorFlowCrosstalk
-          uid: cntk.contrib.crosstalk.crosstalk_tensorflow.TensorFlowCrosstalk
-        name: cntk.contrib.crosstalk.crosstalk_tensorflow
-        uid: cntk.contrib.crosstalk.crosstalk_tensorflow
       - name: cntk.contrib.crosstalk.Conv2DArgs
         uid: cntk.contrib.crosstalk.Conv2DArgs
       - name: cntk.contrib.crosstalk.Conv2DAttr
@@ -166,13 +161,7 @@
       uid: cntk.ops.sequence
     name: ops
     uid: cntk.ops
-  - items:
-    - items:
-      - name: cntk.random.tests.random_ops_tests
-        uid: cntk.random.tests.random_ops_tests
-      name: cntk.random.tests
-      uid: cntk.random.tests
-    name: random
+  - name: random
     uid: cntk.random
   - name: sample_installer
     uid: cntk.sample_installer

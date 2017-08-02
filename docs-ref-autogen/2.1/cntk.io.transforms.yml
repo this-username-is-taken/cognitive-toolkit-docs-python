@@ -1,0 +1,368 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.io.transforms.color
+  - cntk.io.transforms.crop
+  - cntk.io.transforms.mean
+  - cntk.io.transforms.scale
+  fullName: cntk.io.transforms
+  langs:
+  - python
+  module: cntk.io.transforms
+  name: transforms
+  source:
+    id: transforms
+    path: bindings/python/cntk\io\transforms.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\io\transforms.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: module
+  uid: cntk.io.transforms
+- fullName: cntk.io.transforms.color
+  langs:
+  - python
+  module: cntk.io.transforms
+  name: color
+  source:
+    id: color
+    path: bindings/python/cntk\io\transforms.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\io\transforms.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 107
+  summary: 'Color transform that can be used to pass to *map_features* for data augmentation.
+
+    '
+  syntax:
+    content: color(brightness_radius=0.0, contrast_radius=0.0, saturation_radius=0.0)
+    parameters:
+    - defaultValue: '0.0'
+      description: 'Radius for brightness change. Must be
+
+        set within [0.0, 1.0]. For example, assume brightness_radius = 0.2, a random
+
+        number *x* is uniformly drawn from [-0.2, 0.2], and every pixel''s value is
+
+        added by *x*meanVal*, where meanVal is the mean of the image pixel intensity
+
+        combining all color channels.
+
+        '
+      id: brightness_radius
+      type:
+      - float, default 0.0
+    - defaultValue: '0.0'
+      description: 'Radius for contrast change. Must be
+
+        set within [0.0, 1.0]. For example, assume contrast_radius = 0.2, a random
+
+        number *x* is uniformly drawn from [-0.2, 0.2], and every pixel''s value is
+
+        multiplied by *1+x*.
+
+        '
+      id: contrast_radius
+      type:
+      - float, default 0.0
+    - defaultValue: '0.0'
+      description: 'Radius for saturation change. Only for
+
+        color images and must be set within [0.0, 1.0]. For example, assume
+
+        saturation_radius = 0.2, a random number *x* is uniformly drawn from [-0.2,
+        0.2],
+
+        and every pixel''s saturation is multiplied by *1+x*.
+
+        '
+      id: saturation_radius
+      type:
+      - float, default 0.0
+    return:
+      description: 'A dictionary-like object describing the mean transform
+
+        '
+  type: function
+  uid: cntk.io.transforms.color
+- fullName: cntk.io.transforms.crop
+  langs:
+  - python
+  module: cntk.io.transforms
+  name: crop
+  source:
+    id: crop
+    path: bindings/python/cntk\io\transforms.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\io\transforms.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 10
+  summary: 'Crop transform that can be used to pass to *map_features*
+
+    '
+  syntax:
+    content: crop(crop_type='center', crop_size=0, side_ratio=0.0, area_ratio=0.0,
+      aspect_ratio=1.0, jitter_type='none')
+    parameters:
+    - defaultValue: center
+      description: '''center'', ''randomside'', ''randomarea'',
+
+        or ''multiview10''.  ''randomside'' and ''randomarea'' are usually used during
+
+        training.  If either ''randomside'' and ''randomarea'' are set, Horizontal
+
+        flipping will be enabled and the image will be randomly flipped in
+
+        horizontal direction. Horizontal flipping is another popular data augmentation
+
+        technique and should be used if images exhibit vertical symmetry,
+
+        for example, like many real-world objects.
+
+        ''center'' and ''multiview10'' are usually used during testing.
+
+        Random cropping is a popular data augmentation technique used to improve
+
+        generalization of the DNN.
+
+        '
+      id: crop_type
+      type:
+      - str, default 'center'
+    - defaultValue: '0'
+      description: 'crop size in pixels. Ignored if set to 0.
+
+        When crop_size is non-zero, for example, crop_size=256, it means a cropping
+
+        window of size 256x256 pixels will be taken. If one want to crop with
+
+        non-square shapes, specify crop_size=(256,224) will crop 256x224 (width x
+        height)
+
+        pixels. *When crop_size is specified, side_ratio, area_ratio and aspect_ratio
+
+        will be ignored.*
+
+        '
+      id: crop_size
+      type:
+      - int, default 0
+    - defaultValue: '0.0'
+      description: 'It specifies the ratio of final image
+
+        side (width or height) with respect to the original image. Ignored if set
+
+        to 0.0. Otherwise, must be set within *(0,1]*. For example, with an input
+
+        image size of 640x480, side_ratio of 0.5 means we crop a square region
+
+        (if aspect_ratio is 1.0) of the input image, whose width and height are
+
+        equal to 0.5*min(640, 480) = 240. To enable scale jitter (a popular data
+
+        augmentation technique), use tuple like side_ratio=(0.5,0.75),
+
+        which means the crop will have size between 240 (0.5*min(640, 480)) and 360
+
+        (0.75*min(640, 480)).
+
+        '
+      id: side_ratio
+      type:
+      - float, default 0.0
+    - defaultValue: '0.0'
+      description: 'It specifies the area ratio of final image
+
+        with respect to the original image. Ignored if set to 0.0. Otherwise, must
+        be
+
+        set within *(0,1]*. For example, for an input image size of 200x150 pixels,
+
+        the area is 30,000. If area_ratio is 0.3333, we crop a square region (if
+
+        aspect_ratio is 1.0) with width and height equal to sqrt(30,000*0.3333)=100.
+
+        To enable scale jitter, use tuple such as area_ratio=(0.3333,0.8),
+
+        which means the crop will have size between 100 (sqrt(30,000*0.3333)) and
+
+        155 (sqrt(30,000*0.8)).
+
+        '
+      id: area_ratio
+      type:
+      - float, default 0.0
+    - defaultValue: '1.0'
+      description: 'It specifies the aspect ratio (width/height
+
+        or height/width) of the crop window. Must be set within *(0,1]*. For example,
+
+        if due to size_ratio the crop size is 240x240, an aspect_ratio of 0.64 will
+
+        change the window size to non-square: 192x300 or 300x192, each having 50%
+
+        chance. Note the area of the crop window does not change. To enable aspect
+
+        ratio jitter, use tuple such as aspect_ratio=(0.64,1.0), which means
+
+        the crop will have size between 192x300 (or euqally likely 300x192) and 240x240.
+
+        '
+      id: aspect_ratio
+      type:
+      - float, default 1.0
+    - defaultValue: none
+      description: 'crop scale jitter type, possible
+
+        values are ''none'' and ''uniratio''. ''uniratio'' means uniform distributed
+        jitter
+
+        scale between the minimum and maximum ratio values.
+
+        '
+      id: jitter_type
+      type:
+      - str, default 'none'
+    return:
+      description: 'A dictionary-like object describing the crop transform
+
+        '
+  type: function
+  uid: cntk.io.transforms.crop
+- fullName: cntk.io.transforms.mean
+  langs:
+  - python
+  module: cntk.io.transforms
+  name: mean
+  source:
+    id: mean
+    path: bindings/python/cntk\io\transforms.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\io\transforms.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 93
+  summary: 'Mean transform that can be used to pass to *map_features* for data augmentation.
+
+    '
+  syntax:
+    content: mean(filename)
+    parameters:
+    - description: 'file that stores the mean values for each pixel
+
+        in OpenCV matrix XML format
+
+        '
+      id: filename
+      type:
+      - str
+    return:
+      description: 'A dictionary-like object describing the mean transform
+
+        '
+      type:
+      - dict
+  type: function
+  uid: cntk.io.transforms.mean
+- fullName: cntk.io.transforms.scale
+  langs:
+  - python
+  module: cntk.io.transforms
+  name: scale
+  source:
+    id: scale
+    path: bindings/python/cntk\io\transforms.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\io\transforms.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 70
+  summary: 'Scale transform that can be used to pass to *map_features* for data augmentation.
+
+    '
+  syntax:
+    content: scale(width, height, channels, interpolations='linear', scale_mode='fill',
+      pad_value=-1)
+    parameters:
+    - description: 'width of the image in pixels
+
+        '
+      id: width
+      type:
+      - int
+    - description: 'height of the image in pixels
+
+        '
+      id: height
+      type:
+      - int
+    - description: 'channels of the image
+
+        '
+      id: channels
+      type:
+      - int
+    - defaultValue: linear
+      description: 'possible values are
+
+        ''nearest'', ''linear'', ''cubic'', and ''lanczos''
+
+        '
+      id: interpolations
+      type:
+      - str, default 'linear'
+    - defaultValue: fill
+      description: '''fill'', ''crop'' or ''pad''.
+
+        ''fill'' - warp the image to the given target size.
+
+        ''crop'' - resize the image''s shorter side to the given target size and crop
+        the overlap.
+
+        ''pad''  - resize the image''s larger side to the given target size, center
+        it and pad the rest
+
+        '
+      id: scale_mode
+      type:
+      - str, default 'fill'
+    - defaultValue: '-1'
+      description: '-1 or int value. The pad value used for the ''pad'' mode.
+
+        If set to -1 then the border will be replicated.
+
+        '
+      id: pad_value
+      type:
+      - int, default -1
+    return:
+      description: 'A dictionary-like object describing the scale transform
+
+        '
+  type: function
+  uid: cntk.io.transforms.scale
+references:
+- fullName: cntk.io.transforms.color
+  isExternal: false
+  name: color
+  parent: cntk.io.transforms
+  uid: cntk.io.transforms.color
+- fullName: cntk.io.transforms.crop
+  isExternal: false
+  name: crop
+  parent: cntk.io.transforms
+  uid: cntk.io.transforms.crop
+- fullName: cntk.io.transforms.mean
+  isExternal: false
+  name: mean
+  parent: cntk.io.transforms
+  uid: cntk.io.transforms.mean
+- fullName: cntk.io.transforms.scale
+  isExternal: false
+  name: scale
+  parent: cntk.io.transforms
+  uid: cntk.io.transforms.scale

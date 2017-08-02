@@ -1,0 +1,220 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.ops.functions.BlockFunction
+  - cntk.ops.functions.CloneMethod
+  - cntk.ops.functions.Function
+  - cntk.ops.functions.UserFunction
+  - cntk.ops.functions.load_model
+  - cntk.ops.functions.native_user_function
+  - cntk.ops.functions.register_native_user_function
+  fullName: cntk.ops.functions
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: functions
+  source:
+    id: functions
+    path: bindings/python/cntk\ops\functions.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\ops\functions.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'CNTK function constructs. This is the core abstraction of all primitive
+    operators in the CNTK computational graph.
+
+    '
+  type: module
+  uid: cntk.ops.functions
+- fullName: cntk.ops.functions.BlockFunction
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: BlockFunction
+  source:
+    id: BlockFunction
+    path: bindings/python/cntk\ops\functions.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\ops\functions.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 1550
+  summary: 'Decorator for defining a @Function as a BlockFunction. Same as @Function,
+    but wrap the content into an @cntk.ops.as_block.
+
+    '
+  syntax:
+    content: BlockFunction(op_name, name)
+    parameters:
+    - id: op_name
+    - id: name
+  type: function
+  uid: cntk.ops.functions.BlockFunction
+- fullName: cntk.ops.functions.load_model
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: load_model
+  source:
+    id: load_model
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 1599
+  summary: 'Alias for @cntk.ops.functions.Function.load.
+
+    '
+  syntax:
+    content: load_model(model, device=None)
+  type: function
+  uid: cntk.ops.functions.load_model
+- fullName: cntk.ops.functions.native_user_function
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: native_user_function
+  source:
+    id: native_user_function
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 1576
+  summary: 'Creates an instance of a user-defined Function previously registered using
+    the
+
+    ''register_native_user_function'' method.
+
+    '
+  syntax:
+    content: native_user_function(op_id, operands, attributes=None, user_function_instance_name='')
+    parameters:
+    - description: 'Id of the native user-defined Function to instantiate.
+
+        This must be the id that was used when registering the native user-function
+
+        with the ''register_native_user_function'' method.
+
+        '
+      id: op_id
+      type:
+      - str
+    - description: 'input operands of the new instance of the native user-defined
+        Function.
+
+        '
+      id: operands
+      type:
+      - list
+    - description: 'Name of the instance of the created native
+
+        user-defined Function.
+
+        '
+      id: user_function_instance_name
+      type:
+      - str
+    return:
+      description: '@cntk.ops.functions.Function
+
+        '
+  type: function
+  uid: cntk.ops.functions.native_user_function
+- fullName: cntk.ops.functions.register_native_user_function
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: register_native_user_function
+  source:
+    id: register_native_user_function
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 1556
+  summary: 'Registers a native user-defined Function that can be subsequently instantiated
+
+    using the ''native_user_function'' method.
+
+    '
+  syntax:
+    content: register_native_user_function(op_id, module_name, factory_method_name)
+    parameters:
+    - description: 'Unique id of the native user-defined Function to register.
+
+        This id must be unique and an error will be reported if it matches
+
+        the ''op_id'' specified for any other registered native user-defined Function.
+
+        '
+      id: op_id
+      type:
+      - str
+    - description: 'Name of the module containing the factory method for creating
+
+        instances of the native user-defined Function being registered. This is typically
+
+        the name of a DLL/so which exports a factory method for creating instances
+        of the
+
+        native user-defined Function.
+
+        '
+      id: module_name
+      type:
+      - str
+    - description: 'Name of the factory method for creating instances of the native
+
+        user-defined Function being registered. This method must be an exported method
+        of the
+
+        specified module.
+
+        '
+      id: factory_method_name
+      type:
+      - str
+  type: function
+  uid: cntk.ops.functions.register_native_user_function
+references:
+- fullName: cntk.ops.functions.BlockFunction
+  isExternal: false
+  name: BlockFunction
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.BlockFunction
+- fullName: cntk.ops.functions.CloneMethod
+  isExternal: false
+  name: CloneMethod
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.CloneMethod
+- fullName: cntk.ops.functions.Function
+  isExternal: false
+  name: Function
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.Function
+- fullName: cntk.ops.functions.UserFunction
+  isExternal: false
+  name: UserFunction
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.UserFunction
+- fullName: cntk.ops.functions.load_model
+  isExternal: false
+  name: load_model
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.load_model
+- fullName: cntk.ops.functions.native_user_function
+  isExternal: false
+  name: native_user_function
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.native_user_function
+- fullName: cntk.ops.functions.register_native_user_function
+  isExternal: false
+  name: register_native_user_function
+  parent: cntk.ops.functions
+  uid: cntk.ops.functions.register_native_user_function

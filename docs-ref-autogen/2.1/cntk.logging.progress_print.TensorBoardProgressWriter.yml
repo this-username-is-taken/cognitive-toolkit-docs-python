@@ -1,0 +1,299 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.logging.progress_print.TensorBoardProgressWriter.close
+  - cntk.logging.progress_print.TensorBoardProgressWriter.flush
+  - cntk.logging.progress_print.TensorBoardProgressWriter.on_write_test_summary
+  - cntk.logging.progress_print.TensorBoardProgressWriter.on_write_test_update
+  - cntk.logging.progress_print.TensorBoardProgressWriter.on_write_training_summary
+  - cntk.logging.progress_print.TensorBoardProgressWriter.on_write_training_update
+  - cntk.logging.progress_print.TensorBoardProgressWriter.write_value
+  class: cntk.logging.progress_print.TensorBoardProgressWriter
+  fullName: cntk.logging.progress_print.TensorBoardProgressWriter
+  langs:
+  - python
+  module: cntk.logging.progress_print
+  name: TensorBoardProgressWriter
+  source:
+    id: TensorBoardProgressWriter
+    path: bindings/python/cntk\logging\progress_print.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\logging\progress_print.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 429
+  summary: 'Allows writing various statistics (e.g. loss and metric) to TensorBoard
+    event files during training/evaluation.
+
+    The generated files can be opened in TensorBoard to visualize the progress.
+
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: TensorBoardProgressWriter(freq=None, log_dir='.', rank=None, model=None)
+    parameters:
+    - description: 'frequency at which training progress is written.
+
+        None indicates that progress is logged only at the end of training.
+
+        Must be a positive integer otherwise.
+
+        '
+      id: freq
+      type:
+      - int or None, default None
+    - description: 'directory where to create a TensorBoard event file.
+
+        '
+      id: log_dir
+      type:
+      - string, default '.'
+    - description: 'rank of a worker when using distributed training, or *None* if
+
+        training locally. If not *None*, event files will be created only by rank
+        0.
+
+        '
+      id: rank
+      type:
+      - int or None, default None
+    - description: 'model graph to plot.
+
+        '
+      id: model
+      type:
+      - "cntk.ops.functions.Function\n or None, default None"
+  type: class
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter
+- class: cntk.logging.progress_print.TensorBoardProgressWriter
+  fullName: cntk.logging.progress_print.TensorBoardProgressWriter.close
+  langs:
+  - python
+  module: cntk.logging.progress_print
+  name: close
+  source:
+    id: close
+    path: bindings/python/cntk\logging\progress_print.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\logging\progress_print.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 481
+  summary: 'Make sure that any outstanding records are immediately persisted, then
+    close any open files.
+
+    Any subsequent attempt to use the object will cause a RuntimeError.
+
+    '
+  syntax:
+    content: close()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.close
+- class: cntk.logging.progress_print.TensorBoardProgressWriter
+  fullName: cntk.logging.progress_print.TensorBoardProgressWriter.flush
+  langs:
+  - python
+  module: cntk.logging.progress_print
+  name: flush
+  source:
+    id: flush
+    path: bindings/python/cntk\logging\progress_print.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\logging\progress_print.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 473
+  summary: 'Make sure that any outstanding records are immediately persisted.
+
+    '
+  syntax:
+    content: flush()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.flush
+- class: cntk.logging.progress_print.TensorBoardProgressWriter
+  fullName: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_test_summary
+  langs:
+  - python
+  module: cntk.logging.progress_print
+  name: on_write_test_summary
+  source:
+    id: on_write_test_summary
+    path: bindings/python/cntk\logging\progress_print.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\logging\progress_print.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 511
+  syntax:
+    content: on_write_test_summary(samples, updates, summaries, aggregate_metric,
+      elapsed_milliseconds)
+    parameters:
+    - id: self
+    - id: samples
+    - id: updates
+    - id: summaries
+    - id: aggregate_metric
+    - id: elapsed_milliseconds
+  type: method
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_test_summary
+- class: cntk.logging.progress_print.TensorBoardProgressWriter
+  fullName: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_test_update
+  langs:
+  - python
+  module: cntk.logging.progress_print
+  name: on_write_test_update
+  source:
+    id: on_write_test_update
+    path: bindings/python/cntk\logging\progress_print.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\logging\progress_print.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 498
+  syntax:
+    content: on_write_test_update(samples, updates, aggregate_metric)
+    parameters:
+    - id: self
+    - id: samples
+    - id: updates
+    - id: aggregate_metric
+  type: method
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_test_update
+- class: cntk.logging.progress_print.TensorBoardProgressWriter
+  fullName: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_training_summary
+  langs:
+  - python
+  module: cntk.logging.progress_print
+  name: on_write_training_summary
+  source:
+    id: on_write_training_summary
+    path: bindings/python/cntk\logging\progress_print.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\logging\progress_print.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 505
+  syntax:
+    content: on_write_training_summary(samples, updates, summaries, aggregate_loss,
+      aggregate_metric, elapsed_milliseconds)
+    parameters:
+    - id: self
+    - id: samples
+    - id: updates
+    - id: summaries
+    - id: aggregate_loss
+    - id: aggregate_metric
+    - id: elapsed_milliseconds
+  type: method
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_training_summary
+- class: cntk.logging.progress_print.TensorBoardProgressWriter
+  fullName: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_training_update
+  langs:
+  - python
+  module: cntk.logging.progress_print
+  name: on_write_training_update
+  source:
+    id: on_write_training_update
+    path: bindings/python/cntk\logging\progress_print.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\logging\progress_print.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 493
+  syntax:
+    content: on_write_training_update(samples, updates, aggregate_loss, aggregate_metric)
+    parameters:
+    - id: self
+    - id: samples
+    - id: updates
+    - id: aggregate_loss
+    - id: aggregate_metric
+  type: method
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_training_update
+- class: cntk.logging.progress_print.TensorBoardProgressWriter
+  fullName: cntk.logging.progress_print.TensorBoardProgressWriter.write_value
+  langs:
+  - python
+  module: cntk.logging.progress_print
+  name: write_value
+  source:
+    id: write_value
+    path: bindings/python/cntk\logging\progress_print.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\logging\progress_print.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 458
+  summary: 'Record value of a scalar variable at the given time step.
+
+    '
+  syntax:
+    content: write_value(name, value, step)
+    parameters:
+    - description: 'name of a variable.
+
+        '
+      id: name
+      type:
+      - string
+    - description: 'value of the variable.
+
+        '
+      id: value
+      type:
+      - float
+    - description: 'time step at which the value is recorded.
+
+        '
+      id: step
+      type:
+      - int
+  type: method
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.write_value
+references:
+- fullName: cntk.logging.progress_print.TensorBoardProgressWriter.close
+  isExternal: false
+  name: close
+  parent: cntk.logging.progress_print.TensorBoardProgressWriter
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.close
+- fullName: cntk.logging.progress_print.TensorBoardProgressWriter.flush
+  isExternal: false
+  name: flush
+  parent: cntk.logging.progress_print.TensorBoardProgressWriter
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.flush
+- fullName: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_test_summary
+  isExternal: false
+  name: on_write_test_summary
+  parent: cntk.logging.progress_print.TensorBoardProgressWriter
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_test_summary
+- fullName: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_test_update
+  isExternal: false
+  name: on_write_test_update
+  parent: cntk.logging.progress_print.TensorBoardProgressWriter
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_test_update
+- fullName: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_training_summary
+  isExternal: false
+  name: on_write_training_summary
+  parent: cntk.logging.progress_print.TensorBoardProgressWriter
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_training_summary
+- fullName: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_training_update
+  isExternal: false
+  name: on_write_training_update
+  parent: cntk.logging.progress_print.TensorBoardProgressWriter
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.on_write_training_update
+- fullName: cntk.logging.progress_print.TensorBoardProgressWriter.write_value
+  isExternal: false
+  name: write_value
+  parent: cntk.logging.progress_print.TensorBoardProgressWriter
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter.write_value

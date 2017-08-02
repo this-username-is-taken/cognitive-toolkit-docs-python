@@ -1,0 +1,59 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalkcaffe.adapter.baseadapter.Adapter.load_model
+  class: cntk.contrib.crosstalkcaffe.adapter.baseadapter.Adapter
+  fullName: cntk.contrib.crosstalkcaffe.adapter.baseadapter.Adapter
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.adapter.baseadapter
+  name: Adapter
+  source:
+    id: Adapter
+    path: bindings/python/cntk\contrib\crosstalkcaffe\adapter\baseadapter.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\crosstalkcaffe\adapter\baseadapter.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 10
+  summary: 'The abstact class of model reader
+
+
+    '
+  syntax:
+    content: Adapter()
+  type: class
+  uid: cntk.contrib.crosstalkcaffe.adapter.baseadapter.Adapter
+- class: cntk.contrib.crosstalkcaffe.adapter.baseadapter.Adapter
+  fullName: cntk.contrib.crosstalkcaffe.adapter.baseadapter.Adapter.load_model
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.adapter.baseadapter
+  name: load_model
+  source:
+    id: load_model
+    path: bindings/python/cntk\contrib\crosstalkcaffe\adapter\baseadapter.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\crosstalkcaffe\adapter\baseadapter.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 19
+  summary: 'load the network weights
+
+    '
+  syntax:
+    content: load_model(global_conf)
+    parameters:
+    - id: self
+    - id: global_conf
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.adapter.baseadapter.Adapter.load_model
+references:
+- fullName: cntk.contrib.crosstalkcaffe.adapter.baseadapter.Adapter.load_model
+  isExternal: false
+  name: load_model
+  parent: cntk.contrib.crosstalkcaffe.adapter.baseadapter.Adapter
+  uid: cntk.contrib.crosstalkcaffe.adapter.baseadapter.Adapter.load_model

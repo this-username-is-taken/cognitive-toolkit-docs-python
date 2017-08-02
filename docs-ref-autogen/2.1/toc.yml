@@ -1,0 +1,395 @@
+- items:
+  - items:
+    - name: cntk.axis.Axis
+      uid: cntk.axis.Axis
+    name: axis
+    uid: cntk.axis
+  - items:
+    - items:
+      - items:
+        - name: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+          uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+        name: cntk.contrib.crosstalk.crosstalk_cntk
+        uid: cntk.contrib.crosstalk.crosstalk_cntk
+      - name: cntk.contrib.crosstalk.Conv2DArgs
+        uid: cntk.contrib.crosstalk.Conv2DArgs
+      - name: cntk.contrib.crosstalk.Conv2DAttr
+        uid: cntk.contrib.crosstalk.Conv2DAttr
+      - name: cntk.contrib.crosstalk.Crosstalk
+        uid: cntk.contrib.crosstalk.Crosstalk
+      - name: cntk.contrib.crosstalk.EmbedAttr
+        uid: cntk.contrib.crosstalk.EmbedAttr
+      - name: cntk.contrib.crosstalk.RnnArgs
+        uid: cntk.contrib.crosstalk.RnnArgs
+      - name: cntk.contrib.crosstalk.RnnAttr
+        uid: cntk.contrib.crosstalk.RnnAttr
+      name: cntk.contrib.crosstalk
+      uid: cntk.contrib.crosstalk
+    - items:
+      - items:
+        - items:
+          - name: cntk.contrib.crosstalkcaffe.adapter.baseadapter.Adapter
+            uid: cntk.contrib.crosstalkcaffe.adapter.baseadapter.Adapter
+          name: cntk.contrib.crosstalkcaffe.adapter.baseadapter
+          uid: cntk.contrib.crosstalkcaffe.adapter.baseadapter
+        - items:
+          - items:
+            - name: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeadapter.CaffeAdapter
+              uid: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeadapter.CaffeAdapter
+            - name: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeadapter.SetupCaffeParameters
+              uid: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeadapter.SetupCaffeParameters
+            name: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeadapter
+            uid: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeadapter
+          - name: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl
+            uid: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe.caffeimpl
+          name: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe
+          uid: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe
+        name: cntk.contrib.crosstalkcaffe.adapter
+        uid: cntk.contrib.crosstalkcaffe.adapter
+      - items:
+        - name: cntk.contrib.crosstalkcaffe.convert.CaffeConverter
+          uid: cntk.contrib.crosstalkcaffe.convert.CaffeConverter
+        name: cntk.contrib.crosstalkcaffe.convert
+        uid: cntk.contrib.crosstalkcaffe.convert
+      - items:
+        - items:
+          - name: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+            uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+          - name: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup
+            uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup
+          - name: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance
+            uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.CntkApiInstance
+          name: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+          uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+        - items:
+          - name: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkBatchNormParameters
+            uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkBatchNormParameters
+          - name: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkConvolutionParameters
+            uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkConvolutionParameters
+          - name: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkDenseParameters
+            uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkDenseParameters
+          - name: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLRNParameters
+            uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLRNParameters
+          - name: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+            uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+          - name: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayersDefinition
+            uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayersDefinition
+          - name: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkModelDescription
+            uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkModelDescription
+          - name: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkPSROIPoolingParameters
+            uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkPSROIPoolingParameters
+          - name: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkParameters
+            uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkParameters
+          - name: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkPoolingParameters
+            uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkPoolingParameters
+          - name: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkSolver
+            uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkSolver
+          - name: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkSpliceParameters
+            uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkSpliceParameters
+          - name: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkTensorDefinition
+            uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkTensorDefinition
+          name: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel
+          uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel
+        name: cntk.contrib.crosstalkcaffe.unimodel
+        uid: cntk.contrib.crosstalkcaffe.unimodel
+      - items:
+        - name: cntk.contrib.crosstalkcaffe.utils.format
+          uid: cntk.contrib.crosstalkcaffe.utils.format
+        - items:
+          - name: cntk.contrib.crosstalkcaffe.utils.globalconf.GlobalConf
+            uid: cntk.contrib.crosstalkcaffe.utils.globalconf.GlobalConf
+          - name: cntk.contrib.crosstalkcaffe.utils.globalconf.ModelSolverConf
+            uid: cntk.contrib.crosstalkcaffe.utils.globalconf.ModelSolverConf
+          - name: cntk.contrib.crosstalkcaffe.utils.globalconf.ScriptSolverConf
+            uid: cntk.contrib.crosstalkcaffe.utils.globalconf.ScriptSolverConf
+          - name: cntk.contrib.crosstalkcaffe.utils.globalconf.SourceSolverConf
+            uid: cntk.contrib.crosstalkcaffe.utils.globalconf.SourceSolverConf
+          - name: cntk.contrib.crosstalkcaffe.utils.globalconf.ValidConf
+            uid: cntk.contrib.crosstalkcaffe.utils.globalconf.ValidConf
+          name: cntk.contrib.crosstalkcaffe.utils.globalconf
+          uid: cntk.contrib.crosstalkcaffe.utils.globalconf
+        name: cntk.contrib.crosstalkcaffe.utils
+        uid: cntk.contrib.crosstalkcaffe.utils
+      - items:
+        - items:
+          - name: cntk.contrib.crosstalkcaffe.validation.validcaffe.CaffeValidCore
+            uid: cntk.contrib.crosstalkcaffe.validation.validcaffe.CaffeValidCore
+          - name: cntk.contrib.crosstalkcaffe.validation.validcaffe.ValidCore
+            uid: cntk.contrib.crosstalkcaffe.validation.validcaffe.ValidCore
+          name: cntk.contrib.crosstalkcaffe.validation.validcaffe
+          uid: cntk.contrib.crosstalkcaffe.validation.validcaffe
+        - items:
+          - name: cntk.contrib.crosstalkcaffe.validation.validcore.Validator
+            uid: cntk.contrib.crosstalkcaffe.validation.validcore.Validator
+          name: cntk.contrib.crosstalkcaffe.validation.validcore
+          uid: cntk.contrib.crosstalkcaffe.validation.validcore
+        name: cntk.contrib.crosstalkcaffe.validation
+        uid: cntk.contrib.crosstalkcaffe.validation
+      name: cntk.contrib.crosstalkcaffe
+      uid: cntk.contrib.crosstalkcaffe
+    - items:
+      - items:
+        - items:
+          - name: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+            uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+          name: cntk.contrib.deeprl.agent.agent
+          uid: cntk.contrib.deeprl.agent.agent
+        - name: cntk.contrib.deeprl.agent.agent_factory
+          uid: cntk.contrib.deeprl.agent.agent_factory
+        - items:
+          - name: cntk.contrib.deeprl.agent.policy_gradient.ActorCritic
+            uid: cntk.contrib.deeprl.agent.policy_gradient.ActorCritic
+          name: cntk.contrib.deeprl.agent.policy_gradient
+          uid: cntk.contrib.deeprl.agent.policy_gradient
+        - items:
+          - name: cntk.contrib.deeprl.agent.qlearning.QLearning
+            uid: cntk.contrib.deeprl.agent.qlearning.QLearning
+          name: cntk.contrib.deeprl.agent.qlearning
+          uid: cntk.contrib.deeprl.agent.qlearning
+        - items:
+          - name: cntk.contrib.deeprl.agent.random_agent.RandomAgent
+            uid: cntk.contrib.deeprl.agent.random_agent.RandomAgent
+          name: cntk.contrib.deeprl.agent.random_agent
+          uid: cntk.contrib.deeprl.agent.random_agent
+        - items:
+          - name: cntk.contrib.deeprl.agent.shared.cntk_utils
+            uid: cntk.contrib.deeprl.agent.shared.cntk_utils
+          - name: cntk.contrib.deeprl.agent.shared.customized_models
+            uid: cntk.contrib.deeprl.agent.shared.customized_models
+          - items:
+            - name: cntk.contrib.deeprl.agent.shared.discretize.BoxSpaceDiscretizer
+              uid: cntk.contrib.deeprl.agent.shared.discretize.BoxSpaceDiscretizer
+            name: cntk.contrib.deeprl.agent.shared.discretize
+            uid: cntk.contrib.deeprl.agent.shared.discretize
+          - items:
+            - name: cntk.contrib.deeprl.agent.shared.models.Models
+              uid: cntk.contrib.deeprl.agent.shared.models.Models
+            name: cntk.contrib.deeprl.agent.shared.models
+            uid: cntk.contrib.deeprl.agent.shared.models
+          - items:
+            - name: cntk.contrib.deeprl.agent.shared.policy_gradient_parameters.PolicyGradientParameters
+              uid: cntk.contrib.deeprl.agent.shared.policy_gradient_parameters.PolicyGradientParameters
+            name: cntk.contrib.deeprl.agent.shared.policy_gradient_parameters
+            uid: cntk.contrib.deeprl.agent.shared.policy_gradient_parameters
+          - items:
+            - name: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing
+              uid: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing
+            - name: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing
+              uid: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing
+            - name: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow
+              uid: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow
+            name: cntk.contrib.deeprl.agent.shared.preprocessing
+            uid: cntk.contrib.deeprl.agent.shared.preprocessing
+          - items:
+            - name: cntk.contrib.deeprl.agent.shared.qlearning_parameters.QLearningParameters
+              uid: cntk.contrib.deeprl.agent.shared.qlearning_parameters.QLearningParameters
+            name: cntk.contrib.deeprl.agent.shared.qlearning_parameters
+            uid: cntk.contrib.deeprl.agent.shared.qlearning_parameters
+          - items:
+            - name: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory
+              uid: cntk.contrib.deeprl.agent.shared.replay_memory.ReplayMemory
+            name: cntk.contrib.deeprl.agent.shared.replay_memory
+            uid: cntk.contrib.deeprl.agent.shared.replay_memory
+          name: cntk.contrib.deeprl.agent.shared
+          uid: cntk.contrib.deeprl.agent.shared
+        - items:
+          - name: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+            uid: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+          name: cntk.contrib.deeprl.agent.tabular_qlearning
+          uid: cntk.contrib.deeprl.agent.tabular_qlearning
+        name: cntk.contrib.deeprl.agent
+        uid: cntk.contrib.deeprl.agent
+      name: cntk.contrib.deeprl
+      uid: cntk.contrib.deeprl
+    name: contrib
+    uid: cntk.contrib
+  - items:
+    - name: cntk.core.NDArrayView
+      uid: cntk.core.NDArrayView
+    - name: cntk.core.Value
+      uid: cntk.core.Value
+    name: core
+    uid: cntk.core
+  - items:
+    - name: cntk.debugging.debug
+      uid: cntk.debugging.debug
+    - name: cntk.debugging.profiler
+      uid: cntk.debugging.profiler
+    name: debugging
+    uid: cntk.debugging
+  - items:
+    - name: cntk.default_options.default_override_or
+      uid: cntk.default_options.default_override_or
+    name: default_options
+    uid: cntk.default_options
+  - items:
+    - name: cntk.device.DeviceDescriptor
+      uid: cntk.device.DeviceDescriptor
+    - name: cntk.device.DeviceKind
+      uid: cntk.device.DeviceKind
+    name: device
+    uid: cntk.device
+  - items:
+    - items:
+      - name: cntk.eval.evaluator.Evaluator
+        uid: cntk.eval.evaluator.Evaluator
+      name: cntk.eval.evaluator
+      uid: cntk.eval.evaluator
+    name: eval
+    uid: cntk.eval
+  - name: initializer
+    uid: cntk.initializer
+  - items:
+    - name: cntk.io.transforms
+      uid: cntk.io.transforms
+    - name: cntk.io.MinibatchData
+      uid: cntk.io.MinibatchData
+    - name: cntk.io.MinibatchSource
+      uid: cntk.io.MinibatchSource
+    - name: cntk.io.MinibatchSourceFromData
+      uid: cntk.io.MinibatchSourceFromData
+    - name: cntk.io.StreamConfiguration
+      uid: cntk.io.StreamConfiguration
+    - name: cntk.io.StreamInformation
+      uid: cntk.io.StreamInformation
+    - name: cntk.io.UserDeserializer
+      uid: cntk.io.UserDeserializer
+    - name: cntk.io.UserMinibatchSource
+      uid: cntk.io.UserMinibatchSource
+    name: io
+    uid: cntk.io
+  - items:
+    - name: cntk.layers.blocks
+      uid: cntk.layers.blocks
+    - name: cntk.layers.higher_order_layers
+      uid: cntk.layers.higher_order_layers
+    - name: cntk.layers.layers
+      uid: cntk.layers.layers
+    - items:
+      - name: cntk.layers.models.attention
+        uid: cntk.layers.models.attention
+      name: cntk.layers.models
+      uid: cntk.layers.models
+    - name: cntk.layers.sequence
+      uid: cntk.layers.sequence
+    - items:
+      - name: cntk.layers.typing.ParameterTensor
+        uid: cntk.layers.typing.ParameterTensor
+      - name: cntk.layers.typing.Sequence
+        uid: cntk.layers.typing.Sequence
+      - name: cntk.layers.typing.SequenceOver
+        uid: cntk.layers.typing.SequenceOver
+      - name: cntk.layers.typing.SequenceOverMeta
+        uid: cntk.layers.typing.SequenceOverMeta
+      - name: cntk.layers.typing.SparseTensor
+        uid: cntk.layers.typing.SparseTensor
+      - name: cntk.layers.typing.Tensor
+        uid: cntk.layers.typing.Tensor
+      name: cntk.layers.typing
+      uid: cntk.layers.typing
+    name: layers
+    uid: cntk.layers
+  - items:
+    - name: cntk.learners.Learner
+      uid: cntk.learners.Learner
+    - name: cntk.learners.UnitType
+      uid: cntk.learners.UnitType
+    - name: cntk.learners.UserLearner
+      uid: cntk.learners.UserLearner
+    name: learners
+    uid: cntk.learners
+  - items:
+    - name: cntk.logging.graph
+      uid: cntk.logging.graph
+    - items:
+      - name: cntk.logging.progress_print.ProgressPrinter
+        uid: cntk.logging.progress_print.ProgressPrinter
+      - name: cntk.logging.progress_print.TensorBoardProgressWriter
+        uid: cntk.logging.progress_print.TensorBoardProgressWriter
+      - name: cntk.logging.progress_print.TrainingSummaryProgressCallback
+        uid: cntk.logging.progress_print.TrainingSummaryProgressCallback
+      name: cntk.logging.progress_print
+      uid: cntk.logging.progress_print
+    - name: cntk.logging.TraceLevel
+      uid: cntk.logging.TraceLevel
+    name: logging
+    uid: cntk.logging
+  - name: losses
+    uid: cntk.losses
+  - name: metrics
+    uid: cntk.metrics
+  - items:
+    - name: cntk.misc.converter
+      uid: cntk.misc.converter
+    - name: cntk.misc.optimized_rnnstack_converter
+      uid: cntk.misc.optimized_rnnstack_converter
+    name: misc
+    uid: cntk.misc
+  - items:
+    - items:
+      - name: cntk.ops.functions.CloneMethod
+        uid: cntk.ops.functions.CloneMethod
+      - name: cntk.ops.functions.Function
+        uid: cntk.ops.functions.Function
+      - name: cntk.ops.functions.UserFunction
+        uid: cntk.ops.functions.UserFunction
+      name: cntk.ops.functions
+      uid: cntk.ops.functions
+    - name: cntk.ops.sequence
+      uid: cntk.ops.sequence
+    name: ops
+    uid: cntk.ops
+  - name: random
+    uid: cntk.random
+  - name: sample_installer
+    uid: cntk.sample_installer
+  - items:
+    - name: cntk.tensor.ArrayMixin
+      uid: cntk.tensor.ArrayMixin
+    - name: cntk.tensor.TensorOpsMixin
+      uid: cntk.tensor.TensorOpsMixin
+    name: tensor
+    uid: cntk.tensor
+  - items:
+    - items:
+      - name: cntk.train.distributed.Communicator
+        uid: cntk.train.distributed.Communicator
+      - name: cntk.train.distributed.DistributedLearner
+        uid: cntk.train.distributed.DistributedLearner
+      - name: cntk.train.distributed.WorkerDescriptor
+        uid: cntk.train.distributed.WorkerDescriptor
+      name: cntk.train.distributed
+      uid: cntk.train.distributed
+    - items:
+      - name: cntk.train.trainer.Trainer
+        uid: cntk.train.trainer.Trainer
+      name: cntk.train.trainer
+      uid: cntk.train.trainer
+    - items:
+      - name: cntk.train.training_session.CheckpointConfig
+        uid: cntk.train.training_session.CheckpointConfig
+      - name: cntk.train.training_session.CrossValidationConfig
+        uid: cntk.train.training_session.CrossValidationConfig
+      - name: cntk.train.training_session.TestConfig
+        uid: cntk.train.training_session.TestConfig
+      - name: cntk.train.training_session.TrainingSession
+        uid: cntk.train.training_session.TrainingSession
+      name: cntk.train.training_session
+      uid: cntk.train.training_session
+    name: train
+    uid: cntk.train
+  - items:
+    - name: cntk.variables.Constant
+      uid: cntk.variables.Constant
+    - name: cntk.variables.Parameter
+      uid: cntk.variables.Parameter
+    - name: cntk.variables.Record
+      uid: cntk.variables.Record
+    - name: cntk.variables.Variable
+      uid: cntk.variables.Variable
+    - name: cntk.variables.VariableMixin
+      uid: cntk.variables.VariableMixin
+    name: variables
+    uid: cntk.variables
+  name: Reference
+  uid: cntk

@@ -1,0 +1,94 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.learners.UserLearner.update
+  class: cntk.learners.UserLearner
+  fullName: cntk.learners.UserLearner
+  langs:
+  - python
+  module: cntk.learners
+  name: UserLearner
+  source:
+    id: UserLearner
+    path: bindings/python/cntk\learners\__init__.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\learners\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 170
+  summary: 'Base class of all user-defined learners. To implement your own learning
+
+    algorithm, derive from this class and override the @cntk.learners.UserLearner.update.
+
+
+    Certain optimizers (such as AdaGrad) require additional storage.
+
+    This can be allocated and initialized during construction.
+
+
+    '
+  syntax:
+    content: UserLearner(parameters, lr_schedule, as_numpy=True)
+  type: class
+  uid: cntk.learners.UserLearner
+- class: cntk.learners.UserLearner
+  fullName: cntk.learners.UserLearner.update
+  langs:
+  - python
+  module: cntk.learners
+  name: update
+  source:
+    id: update
+    path: bindings/python/cntk\learners\__init__.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\learners\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 211
+  summary: 'Update the parameters associated with this learner.
+
+    '
+  syntax:
+    content: update(gradient_values, training_sample_count, sweep_end)
+    parameters:
+    - description: 'maps @cntk.variables.Parameter to
+
+        a NumPy array containing the first order gradient values for the
+
+        Parameter w.r.t. the training objective.
+
+        '
+      id: gradient_values
+      type:
+      - dict
+    - description: 'number of samples in the minibatch
+
+        '
+      id: training_sample_count
+      type:
+      - int
+    - description: 'if the data is fed by a conforming reader, this indicates
+
+        whether a full pass over the dataset has just occurred.
+
+        '
+      id: sweep_end
+      type:
+      - bool
+    return:
+      description: '*False* to indicate that learning has stopped for all of the
+
+        parameters associated with this learner
+
+        '
+      type:
+      - bool
+  type: method
+  uid: cntk.learners.UserLearner.update
+references:
+- fullName: cntk.learners.UserLearner.update
+  isExternal: false
+  name: update
+  parent: cntk.learners.UserLearner
+  uid: cntk.learners.UserLearner.update

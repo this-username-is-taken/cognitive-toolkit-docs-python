@@ -1,0 +1,243 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.train.distributed.Communicator.barrier
+  - cntk.train.distributed.Communicator.current_worker
+  - cntk.train.distributed.Communicator.finalize
+  - cntk.train.distributed.Communicator.is_main
+  - cntk.train.distributed.Communicator.num_workers
+  - cntk.train.distributed.Communicator.rank
+  - cntk.train.distributed.Communicator.workers
+  class: cntk.train.distributed.Communicator
+  fullName: cntk.train.distributed.Communicator
+  langs:
+  - python
+  module: cntk.train.distributed
+  name: Communicator
+  source:
+    id: Communicator
+    path: bindings/python/cntk\train\distributed.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\train\distributed.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 41
+  summary: 'A communicator interface exposing communication primitives that serve
+    as building blocks
+
+    for distributed training.
+
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: Communicator(*args, **kwargs)
+  type: class
+  uid: cntk.train.distributed.Communicator
+- class: cntk.train.distributed.Communicator
+  fullName: cntk.train.distributed.Communicator.barrier
+  langs:
+  - python
+  module: cntk.train.distributed
+  name: barrier
+  source:
+    id: barrier
+    path: bindings/python/cntk\train\distributed.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\train\distributed.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 67
+  summary: 'Sync point to make sure all workers reach the same state.
+
+    '
+  syntax:
+    content: barrier()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.train.distributed.Communicator.barrier
+- class: cntk.train.distributed.Communicator
+  fullName: cntk.train.distributed.Communicator.current_worker
+  langs:
+  - python
+  module: cntk.train.distributed
+  name: current_worker
+  source:
+    id: current_worker
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 57
+  summary: 'Returns worker descriptor of current process.
+
+    '
+  syntax:
+    content: current_worker()
+    return:
+      description: 'descriptor of current process.
+
+        '
+      type:
+      - cntk.train.distributed.WorkerDescriptor
+  type: method
+  uid: cntk.train.distributed.Communicator.current_worker
+- class: cntk.train.distributed.Communicator
+  fullName: cntk.train.distributed.Communicator.finalize
+  langs:
+  - python
+  module: cntk.train.distributed
+  name: finalize
+  source:
+    id: finalize
+    path: bindings/python/cntk\train\distributed.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\train\distributed.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 79
+  summary: 'Should be called when all communication is finished. No more communication
+    should happen after this call.
+
+    '
+  syntax:
+    content: finalize()
+  type: method
+  uid: cntk.train.distributed.Communicator.finalize
+- class: cntk.train.distributed.Communicator
+  fullName: cntk.train.distributed.Communicator.is_main
+  langs:
+  - python
+  module: cntk.train.distributed
+  name: is_main
+  source:
+    id: is_main
+    path: bindings/python/cntk\train\distributed.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\train\distributed.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 73
+  summary: 'Indicates if the current communicator is instantiated on the main node.
+    The node with rank 0 is considered the main.
+
+    '
+  syntax:
+    content: is_main()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.train.distributed.Communicator.is_main
+- class: cntk.train.distributed.Communicator
+  fullName: cntk.train.distributed.Communicator.num_workers
+  langs:
+  - python
+  module: cntk.train.distributed
+  name: num_workers
+  source:
+    id: num_workers
+    path: bindings/python/cntk\train\distributed.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\train\distributed.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 86
+  summary: 'Returns information about all MPI workers.
+
+    '
+  syntax:
+    content: num_workers()
+  type: method
+  uid: cntk.train.distributed.Communicator.num_workers
+- class: cntk.train.distributed.Communicator
+  fullName: cntk.train.distributed.Communicator.rank
+  langs:
+  - python
+  module: cntk.train.distributed
+  name: rank
+  source:
+    id: rank
+    path: bindings/python/cntk\train\distributed.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\train\distributed.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 93
+  summary: 'Returns rank of current process.
+
+    '
+  syntax:
+    content: rank()
+  type: method
+  uid: cntk.train.distributed.Communicator.rank
+- class: cntk.train.distributed.Communicator
+  fullName: cntk.train.distributed.Communicator.workers
+  langs:
+  - python
+  module: cntk.train.distributed
+  name: workers
+  source:
+    id: workers
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 47
+  summary: 'Returns workers in this communicator.
+
+    '
+  syntax:
+    content: workers()
+    return:
+      description: 'workers in this communicator.
+
+        '
+      type:
+      - (*list*) of @cntk.train.distributed.WorkerDescriptor
+  type: method
+  uid: cntk.train.distributed.Communicator.workers
+references:
+- fullName: cntk.train.distributed.Communicator.barrier
+  isExternal: false
+  name: barrier
+  parent: cntk.train.distributed.Communicator
+  uid: cntk.train.distributed.Communicator.barrier
+- fullName: cntk.train.distributed.Communicator.current_worker
+  isExternal: false
+  name: current_worker
+  parent: cntk.train.distributed.Communicator
+  uid: cntk.train.distributed.Communicator.current_worker
+- fullName: cntk.train.distributed.Communicator.finalize
+  isExternal: false
+  name: finalize
+  parent: cntk.train.distributed.Communicator
+  uid: cntk.train.distributed.Communicator.finalize
+- fullName: cntk.train.distributed.Communicator.is_main
+  isExternal: false
+  name: is_main
+  parent: cntk.train.distributed.Communicator
+  uid: cntk.train.distributed.Communicator.is_main
+- fullName: cntk.train.distributed.Communicator.num_workers
+  isExternal: false
+  name: num_workers
+  parent: cntk.train.distributed.Communicator
+  uid: cntk.train.distributed.Communicator.num_workers
+- fullName: cntk.train.distributed.Communicator.rank
+  isExternal: false
+  name: rank
+  parent: cntk.train.distributed.Communicator
+  uid: cntk.train.distributed.Communicator.rank
+- fullName: cntk.train.distributed.Communicator.workers
+  isExternal: false
+  name: workers
+  parent: cntk.train.distributed.Communicator
+  uid: cntk.train.distributed.Communicator.workers

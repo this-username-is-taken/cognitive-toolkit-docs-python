@@ -1,0 +1,262 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.io.MinibatchSourceFromData.get_checkpoint_state
+  - cntk.io.MinibatchSourceFromData.next_minibatch
+  - cntk.io.MinibatchSourceFromData.restore_from_checkpoint
+  - cntk.io.MinibatchSourceFromData.stream_infos
+  class: cntk.io.MinibatchSourceFromData
+  example:
+  - "\n```\n\n>>> N = 5\n>>> X = np.arange(3*N).reshape(N,3).astype(np.float32) #\
+    \ 6 rows of 3 values\n>>> s = C.io.MinibatchSourceFromData(dict(x=X), max_samples=len(X))\n\
+    >>> mb = s.next_minibatch(3) # get a minibatch of 3\n>>> d = mb[s.streams['x']]\n\
+    >>> d.data.asarray()\narray([[ 0.,  1.,  2.],\n       [ 3.,  4.,  5.],\n     \
+    \  [ 6.,  7.,  8.]], dtype=float32)\n>>> mb = s.next_minibatch(3) # note: only\
+    \ 2 left\n>>> d = mb[s.streams['x']]\n>>> d.data.asarray()\narray([[  9.,  10.,\
+    \  11.],\n       [ 12.,  13.,  14.]], dtype=float32)\n>>> mb = s.next_minibatch(3)\n\
+    >>> mb\n{}\n```\n\n\n```\n\n>>> # example of a sparse input\n>>> Y = np.array([i\
+    \ % 3 == 0 for i in range(N)], np.float32)\n>>> import scipy.sparse\n>>> Y = scipy.sparse.csr_matrix((np.ones(N,np.float32),\
+    \ (range(N), Y)), shape=(N, 2))\n>>> s = C.io.MinibatchSourceFromData(dict(x=X,\
+    \ y=Y)) # also not setting max_samples -> will repeat\n>>> mb = s.next_minibatch(3)\n\
+    >>> d = mb[s.streams['y']]\n>>> d.data.asarray().todense()\nmatrix([[ 0.,  1.],\n\
+    \        [ 1.,  0.],\n        [ 1.,  0.]], dtype=float32)\n>>> mb = s.next_minibatch(3)\
+    \ # at end only 2 sequences\n>>> d = mb[s.streams['y']]\n>>> d.data.asarray().todense()\n\
+    matrix([[ 0.,  1.],\n        [ 1.,  0.]], dtype=float32)\n```\n\n\n```\n\n>>>\
+    \ # if we do not set max_samples, then it will start over once the end is hit\n\
+    >>> mb = s.next_minibatch(3)\n>>> d = mb[s.streams['y']]\n>>> d.data.asarray().todense()\n\
+    matrix([[ 0.,  1.],\n        [ 1.,  0.],\n        [ 1.,  0.]], dtype=float32)\n\
+    ```\n\n\n```\n\n>>> # values can also be GPU-side CNTK Value objects (if everything\
+    \ fits into the GPU at once)\n>>> s = C.io.MinibatchSourceFromData(dict(x=C.Value(X),\
+    \ y=C.Value(Y)))\n>>> mb = s.next_minibatch(3)\n>>> d = mb[s.streams['y']]\n>>>\
+    \ d.data.asarray().todense()\nmatrix([[ 0.,  1.],\n        [ 1.,  0.],\n     \
+    \   [ 1.,  0.]], dtype=float32)\n```\n\n\n```\n\n>>> # data can be sequences\n\
+    >>> import cntk.layers.typing\n>>> XX = [np.array([1,3,2], np.float32),np.array([4,1],\
+    \ np.float32)]  # 2 sequences\n>>> YY = [scipy.sparse.csr_matrix(np.array([[0,1],[1,0],[1,0]],\
+    \ np.float32)), scipy.sparse.csr_matrix(np.array([[1,0],[1,0]], np.float32))]\n\
+    >>> s = cntk.io.MinibatchSourceFromData(dict(xx=(XX, cntk.layers.typing.Sequence[cntk.layers.typing.tensor]),\
+    \ yy=(YY, cntk.layers.typing.Sequence[cntk.layers.typing.tensor])))\n>>> mb =\
+    \ s.next_minibatch(3)\n>>> mb[s.streams['xx']].data.asarray()\narray([[ 1.,  3.,\
+    \  2.]], dtype=float32)\n>>> mb[s.streams['yy']].data.shape # getting sequences\
+    \ out is messy, so we only show the shape\n(1, 3, 2)\n```\n"
+  fullName: cntk.io.MinibatchSourceFromData
+  inheritance:
+  - inheritance:
+    - inheritance:
+      - inheritance:
+        - type: builtins.object
+        type: cntk.cntk_py.MinibatchSource
+      type: cntk.cntk_py.SwigMinibatchSource
+    type: cntk.io.UserMinibatchSource
+  langs:
+  - python
+  module: cntk.io
+  name: MinibatchSourceFromData
+  source:
+    id: MinibatchSourceFromData
+    path: bindings/python/cntk\io\__init__.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 521
+  summary: 'This wraps in-memory data as a CNTK MinibatchSource object (aka "reader"),
+    used to feed the data into a TrainingSession.
+
+
+    Use this if your data is small enough to be loaded into RAM in its entirety, and
+
+    the data is already sufficiently randomized.
+
+
+    While CNTK allows user code to iterate through minibatches by itself and feed
+    data minibatch
+
+    by minibatch through @cntk.train.trainer.Trainer.train_minibatch, the standard
+    way is to iterate
+
+    through data using a MinibatchSource object. For example, the high-level @cntk.train.training_session.TrainingSession
+
+    interface, which manages a full training including checkpointing and cross validation,
+    operates on this level.
+
+
+    A MinibatchSource created as a *MinibatchSourceFromData* linearly iterates through
+    the data provided by
+
+    the caller as numpy arrays or scipy.sparse.csr_matrix objects, without randomization.
+
+    The data is not copied, so if you want to modify the data while being read through
+    a *MinibatchSourceFromData*,
+
+    please pass a copy.
+
+
+
+
+
+    '
+  syntax:
+    content: MinibatchSourceFromData(data_streams, max_samples=18446744073709551615)
+    parameters:
+    - description: 'name-value pairs
+
+        '
+      id: data_streams
+    - description: 'The maximum number of samples
+
+        the reader can produce. If inputs are sequences, and the different streams
+        have different
+
+        lengths, then each sequence counts with the maximum length.
+
+        After this number has been reached, the reader
+
+        returns empty minibatches on subsequent calls to @cntk.io.MinibatchSourceFromData.next_minibatch.
+
+        **Important:**
+
+        Click [here](https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-epochSize-and-Python-epoch_size-in-CNTK)
+
+        for a description of input and label samples.
+
+        '
+      id: max_samples
+      type:
+      - 'int, defaults to @cntk.io.INFINITELY_REPEAT
+
+        '
+    return:
+      description: 'An implementation of a @cntk.io.MinibatchSource that will iterate
+        through the data.
+
+        '
+  type: class
+  uid: cntk.io.MinibatchSourceFromData
+- class: cntk.io.MinibatchSourceFromData
+  fullName: cntk.io.MinibatchSourceFromData.get_checkpoint_state
+  langs:
+  - python
+  module: cntk.io
+  name: get_checkpoint_state
+  source:
+    id: get_checkpoint_state
+    path: bindings/python/cntk\io\__init__.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 739
+  summary: 'Gets the checkpoint state of the MinibatchSource.
+
+    '
+  syntax:
+    content: get_checkpoint_state()
+    parameters:
+    - id: self
+    return:
+      description: 'A @cntk.cntk_py.Dictionary that has the checkpoint state
+
+        of the MinibatchSource
+
+        '
+      type:
+      - cntk.cntk_py.Dictionary
+  type: method
+  uid: cntk.io.MinibatchSourceFromData.get_checkpoint_state
+- class: cntk.io.MinibatchSourceFromData
+  fullName: cntk.io.MinibatchSourceFromData.next_minibatch
+  langs:
+  - python
+  module: cntk.io
+  name: next_minibatch
+  source:
+    id: next_minibatch
+    path: bindings/python/cntk\io\__init__.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 684
+  syntax:
+    content: next_minibatch(num_samples, number_of_workers=1, worker_rank=0, device=None)
+    parameters:
+    - id: self
+    - id: num_samples
+    - defaultValue: '1'
+      id: number_of_workers
+    - defaultValue: '0'
+      id: worker_rank
+    - defaultValue: None
+      id: device
+  type: method
+  uid: cntk.io.MinibatchSourceFromData.next_minibatch
+- class: cntk.io.MinibatchSourceFromData
+  fullName: cntk.io.MinibatchSourceFromData.restore_from_checkpoint
+  langs:
+  - python
+  module: cntk.io
+  name: restore_from_checkpoint
+  source:
+    id: restore_from_checkpoint
+    path: bindings/python/cntk\io\__init__.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 750
+  summary: 'Restores the MinibatchSource state from the specified checkpoint.
+
+    '
+  syntax:
+    content: restore_from_checkpoint(checkpoint)
+    parameters:
+    - description: 'checkpoint to restore from
+
+        '
+      id: checkpoint
+      type:
+      - cntk.cntk_py.Dictionary
+  type: method
+  uid: cntk.io.MinibatchSourceFromData.restore_from_checkpoint
+- class: cntk.io.MinibatchSourceFromData
+  fullName: cntk.io.MinibatchSourceFromData.stream_infos
+  langs:
+  - python
+  module: cntk.io
+  name: stream_infos
+  source:
+    id: stream_infos
+    path: bindings/python/cntk\io\__init__.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 679
+  syntax:
+    content: stream_infos()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.io.MinibatchSourceFromData.stream_infos
+references:
+- fullName: cntk.io.MinibatchSourceFromData.get_checkpoint_state
+  isExternal: false
+  name: get_checkpoint_state
+  parent: cntk.io.MinibatchSourceFromData
+  uid: cntk.io.MinibatchSourceFromData.get_checkpoint_state
+- fullName: cntk.io.MinibatchSourceFromData.next_minibatch
+  isExternal: false
+  name: next_minibatch
+  parent: cntk.io.MinibatchSourceFromData
+  uid: cntk.io.MinibatchSourceFromData.next_minibatch
+- fullName: cntk.io.MinibatchSourceFromData.restore_from_checkpoint
+  isExternal: false
+  name: restore_from_checkpoint
+  parent: cntk.io.MinibatchSourceFromData
+  uid: cntk.io.MinibatchSourceFromData.restore_from_checkpoint
+- fullName: cntk.io.MinibatchSourceFromData.stream_infos
+  isExternal: false
+  name: stream_infos
+  parent: cntk.io.MinibatchSourceFromData
+  uid: cntk.io.MinibatchSourceFromData.stream_infos
