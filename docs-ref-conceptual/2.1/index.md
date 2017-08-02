@@ -5,14 +5,14 @@ ms.topic: conceptual
 ms.service: cognitive-toolkit
 ---
 
-# Cognitive Toolkit Python API (2.0)
+# Cognitive Toolkit Python API (2.1)
 
 [CNTK](https://www.microsoft.com/en-us/cognitive-toolkit/), the Microsoft Cognitive Toolkit, is a system for describing, training,
 and executing computational networks. It is also a framework for describing
 arbitrary learning machines such as deep neural networks (DNNs). CNTK is an
 implementation of computational networks that supports both CPU and GPU.
  
-This page describes the Python API for [CNTK](https://www.microsoft.com/en-us/cognitive-toolkit/) version 2.0.
+This page describes the Python API for [CNTK](https://www.microsoft.com/en-us/cognitive-toolkit/) version 2.1.
 Please give feedback through these [channels](/cognitive-toolkit/feedback-channels).
 
    - [Getting Started](gettingstarted.md)
