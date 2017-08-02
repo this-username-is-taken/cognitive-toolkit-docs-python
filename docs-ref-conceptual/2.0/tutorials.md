@@ -17,7 +17,7 @@ ms.service: cognitive-toolkit
 
 3.  **_Recognize hand written digits (OCR) with MNIST data_**<br>
      CNTK 103 Part A: [MNIST data preparation](https://github.com/Microsoft/CNTK/blob/v2.0/Tutorials/CNTK_103A_MNIST_DataLoader.ipynb),
-     Part B: [Multi-class logistic regression classifier](https://github.com/Microsoft/CNTK/blob/v2.0/Tutorials/CNTK_103B_MNIST_FeedForwardNetwork.ipynb) 
+     Part B: [Multi-class logistic regression classifier](https://github.com/Microsoft/CNTK/blob/v2.0/Tutorials/CNTK_103B_MNIST_LogisticRegression.ipynb) 
      Part C: [Multi-layer perceptron classifier](https://github.com/Microsoft/CNTK/blob/v2.0/Tutorials/CNTK_103C_MNIST_MultiLayerPerceptron.ipynb),
      Part D: [Convolutional neural network classifier](https://github.com/Microsoft/CNTK/blob/v2.0/Tutorials/CNTK_103D_MNIST_ConvolutionalNeuralNetwork.ipynb)
 
@@ -26,7 +26,7 @@ ms.service: cognitive-toolkit
 
 5.  **_Compress (using autoencoder) hand written digits from MNIST data with no human input (unsupervised learning, FFN)_**<br>
      CNTK 105 Part A: [MNIST data preparation](https://github.com/Microsoft/CNTK/blob/v2.0/Tutorials/CNTK_103A_MNIST_DataLoader.ipynb),
-     Part B: [Feed Forward autoencoder](https://github.com/Microsoft/CNTK/blob/v2.0/Tutorials/CNTK_106B_LSTM_Timeseries_with_IOT_Data.ipynb)
+     Part B: [Feed Forward autoencoder](https://github.com/Microsoft/CNTK/blob/v2.0/Tutorials/CNTK_105_Basic_Autoencoder_for_Dimensionality_Reduction.ipynb)
 
 6.  **_Quick tour for those familiar with other deep learning toolkits_**<br>
      CNTK 200: [Guided Tour](https://github.com/Microsoft/CNTK/blob/v2.0/Tutorials/CNTK_200_GuidedTour.ipynb)
