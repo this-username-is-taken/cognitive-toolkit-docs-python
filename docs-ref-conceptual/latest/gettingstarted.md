@@ -9,7 +9,7 @@ ms.service: cognitive-toolkit
 
 You can optionally try the [tutorials](https://notebooks.azure.com/cntk/libraries/tutorials) with pre-installed CNTK running in Azure Notebook hosted environment (for free) if you have not installed the toolkit in your own machine.
 
-> If you are coming from another deep learning toolkit you can start with an [overview for advanced users](https://github.com/Microsoft/CNTK/blob/v2.0/Tutorials/CNTK_200_GuidedTour.ipynb).
+> If you are coming from another deep learning toolkit you can start with an [overview for advanced users](https://github.com/Microsoft/CNTK/blob/master/Tutorials/CNTK_200_GuidedTour.ipynb).
 
 If you have installed CNTK on your machine, after going through the [installation steps](/cognitive-toolkit/Setup-CNTK-on-your-machine),
 you can start using CNTK from Python right away (don't forget to ``activate`` your Python environment if you did not install CNTK into your root environment):
@@ -17,7 +17,7 @@ you can start using CNTK from Python right away (don't forget to ``activate`` yo
 ```python
     >>> import cntk
     >>> cntk.__version__
-    '2.0'
+    '2.1+'
     
     >>> cntk.minus([1, 2, 3], [4, 5, 6]).eval()
     array([-3., -3., -3.], dtype=float32)
@@ -184,7 +184,7 @@ as easy as that!
 
 Now that we've seen some of the basics of setting up and training a network using the CNTK Python API, let's look at a more interesting deep 
 learning problem in more detail (for the full example above along with the function to generate random data, please see 
-[Tutorials/NumpyInterop/FeedForwardNet.py](https://github.com/Microsoft/CNTK/blob/v2.0/Tutorials/NumpyInterop/FeedForwardNet.py)).
+[Tutorials/NumpyInterop/FeedForwardNet.py](https://github.com/Microsoft/CNTK/blob/master/Tutorials/NumpyInterop/FeedForwardNet.py)).
 
 
 
