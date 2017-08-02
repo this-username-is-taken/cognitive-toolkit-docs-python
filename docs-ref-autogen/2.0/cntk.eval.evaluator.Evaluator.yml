@@ -7,20 +7,16 @@ items:
   - cntk.eval.evaluator.Evaluator.test_minibatch
   class: cntk.eval.evaluator.Evaluator
   fullName: cntk.eval.evaluator.Evaluator
-  inheritance:
-  - inheritance:
-    - type: builtins.object
-    type: cntk.cntk_py.Evaluator
   langs:
   - python
   module: cntk.eval.evaluator
   name: Evaluator
   source:
     id: Evaluator
-    path: bindings/python\cntk\eval\evaluator.py
+    path: bindings/python/cntk\eval\evaluator.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\eval\evaluator.py
+      path: bindings/python/cntk\eval\evaluator.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 15
   summary: 'Class for evaluation of minibatches against the specified evaluation function.
@@ -76,10 +72,10 @@ items:
   name: summarize_test_progress
   source:
     id: summarize_test_progress
-    path: bindings/python\cntk\eval\evaluator.py
+    path: bindings/python/cntk\eval\evaluator.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\eval\evaluator.py
+      path: bindings/python/cntk\eval\evaluator.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 86
   summary: 'Updates the progress writers with the summary of test progress since start
@@ -102,10 +98,10 @@ items:
   name: test_minibatch
   source:
     id: test_minibatch
-    path: bindings/python\cntk\eval\evaluator.py
+    path: bindings/python/cntk\eval\evaluator.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\eval\evaluator.py
+      path: bindings/python/cntk\eval\evaluator.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 38
   summary: "Test the evaluation function on the specified batch of samples.\n\nNote:\
@@ -114,10 +110,10 @@ items:
   syntax:
     content: test_minibatch(arguments, device=None)
     parameters:
-    - defaultValue: None
-      id: self
+    - id: self
     - id: arguments
-    - id: device
+    - defaultValue: None
+      id: device
     return:
       description: 'the average evaluation criterion value per sample for the
 
@@ -125,7 +121,7 @@ items:
 
         '
       type:
-      - float
+      - '*float*'
   type: method
   uid: cntk.eval.evaluator.Evaluator.test_minibatch
 references:

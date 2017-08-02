@@ -15,21 +15,16 @@ items:
   - inheritance:
     - type: builtins.object
     type: cntk.tensor.TensorOpsMixin
-  - inheritance:
-    - inheritance:
-      - type: builtins.object
-      type: cntk.cntk_py.Variable
-    type: cntk.cntk_py.Constant
   langs:
   - python
   module: cntk.variables
   name: Constant
   source:
     id: Constant
-    path: bindings/python\cntk\variables.py
+    path: bindings/python/cntk\variables.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\variables.py
+      path: bindings/python/cntk\variables.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 424
   summary: 'A constant value. It can be a scalar, vector, matrix, or tensor
@@ -64,7 +59,7 @@ items:
         '
       id: device
       type:
-      - cntk.device
+      - cntk.device.DeviceDescriptor
     - description: 'an optional name for this constant.
 
         '

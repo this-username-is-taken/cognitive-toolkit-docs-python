@@ -1,0 +1,596 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.initializer.bilinear
+  - cntk.initializer.glorot_normal
+  - cntk.initializer.glorot_uniform
+  - cntk.initializer.he_normal
+  - cntk.initializer.he_uniform
+  - cntk.initializer.initializer_with_rank
+  - cntk.initializer.normal
+  - cntk.initializer.truncated_normal
+  - cntk.initializer.uniform
+  - cntk.initializer.xavier
+  fullName: cntk.initializer
+  langs:
+  - python
+  module: cntk.initializer
+  name: initializer
+  source:
+    id: initializer
+    path: bindings/python/cntk\initializer.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\initializer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'Initializers of parameters.
+
+    '
+  type: module
+  uid: cntk.initializer
+- fullName: cntk.initializer.bilinear
+  langs:
+  - python
+  module: cntk.initializer
+  name: bilinear
+  source:
+    id: bilinear
+    path: bindings/python/cntk\initializer.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\initializer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 153
+  summary: 'initializer
+
+    '
+  syntax:
+    content: bilinear(kernel_width, kernel_height)
+    parameters:
+    - description: 'kernel width
+
+        '
+      id: kernel_width
+      type:
+      - int
+    - description: 'kernel height
+
+        '
+      id: kernel_height
+      type:
+      - int
+    return:
+      description: 'initializer for @cntk.variables.Parameter
+
+        useful for deconvolution layer
+
+        '
+  type: function
+  uid: cntk.initializer.bilinear
+- fullName: cntk.initializer.glorot_normal
+  langs:
+  - python
+  module: cntk.initializer
+  name: glorot_normal
+  source:
+    id: glorot_normal
+    path: bindings/python/cntk\initializer.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\initializer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 93
+  summary: 'initializer
+
+    '
+  syntax:
+    content: glorot_normal(scale=1, output_rank=2147483647, filter_rank=2147483647,
+      seed=None)
+    parameters:
+    - defaultValue: '1'
+      description: 'scale
+
+        '
+      id: scale
+      type:
+      - float
+    - defaultValue: '2147483647'
+      description: 'output rank
+
+        '
+      id: output_rank
+      type:
+      - int
+    - defaultValue: '2147483647'
+      description: 'filter rank
+
+        '
+      id: filter_rank
+      type:
+      - int
+    - defaultValue: None
+      description: 'random seed
+
+        '
+      id: seed
+      type:
+      - int
+    return:
+      description: 'initializer for @cntk.variables.Parameter
+
+        initialized to Gaussian distribution with mean *0* and standard
+
+        deviation $$scale*sqrt(2.0/(fanIn+fanOut))$$
+
+        '
+  type: function
+  uid: cntk.initializer.glorot_normal
+- fullName: cntk.initializer.glorot_uniform
+  langs:
+  - python
+  module: cntk.initializer
+  name: glorot_uniform
+  source:
+    id: glorot_uniform
+    path: bindings/python/cntk\initializer.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\initializer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 73
+  summary: 'Glorot initializer
+
+    '
+  syntax:
+    content: glorot_uniform(scale=1, output_rank=2147483647, filter_rank=2147483647,
+      seed=None)
+    parameters:
+    - defaultValue: '1'
+      description: 'scale
+
+        '
+      id: scale
+      type:
+      - float
+    - defaultValue: '2147483647'
+      description: 'output rank
+
+        '
+      id: output_rank
+      type:
+      - int
+    - defaultValue: '2147483647'
+      description: 'filter rank
+
+        '
+      id: filter_rank
+      type:
+      - int
+    - defaultValue: None
+      description: 'random seed
+
+        '
+      id: seed
+      type:
+      - int
+    return:
+      description: 'initializer for @cntk.variables.Parameter
+
+        initialized to uniform distribution between
+
+        $$scale*sqrt(6.0/(fanIn+fanOut))*[-1,1]$$
+
+        '
+  type: function
+  uid: cntk.initializer.glorot_uniform
+- fullName: cntk.initializer.he_normal
+  langs:
+  - python
+  module: cntk.initializer
+  name: he_normal
+  source:
+    id: he_normal
+    path: bindings/python/cntk\initializer.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\initializer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 133
+  summary: 'initializer
+
+    '
+  syntax:
+    content: he_normal(scale=1, output_rank=2147483647, filter_rank=2147483647, seed=None)
+    parameters:
+    - defaultValue: '1'
+      description: 'scale
+
+        '
+      id: scale
+      type:
+      - float
+    - defaultValue: '2147483647'
+      description: 'output rank
+
+        '
+      id: output_rank
+      type:
+      - int
+    - defaultValue: '2147483647'
+      description: 'filter rank
+
+        '
+      id: filter_rank
+      type:
+      - int
+    - defaultValue: None
+      description: 'random seed
+
+        '
+      id: seed
+      type:
+      - int
+    return:
+      description: 'initializer for @cntk.variables.Parameter
+
+        initialized to Gaussian distribution with mean *0* and standard
+
+        deviation $$scale*sqrt(2.0/fanIn)$$
+
+        '
+  type: function
+  uid: cntk.initializer.he_normal
+- fullName: cntk.initializer.he_uniform
+  langs:
+  - python
+  module: cntk.initializer
+  name: he_uniform
+  source:
+    id: he_uniform
+    path: bindings/python/cntk\initializer.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\initializer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 113
+  summary: 'initializer
+
+    '
+  syntax:
+    content: he_uniform(scale=1, output_rank=2147483647, filter_rank=2147483647, seed=None)
+    parameters:
+    - defaultValue: '1'
+      description: 'scale
+
+        '
+      id: scale
+      type:
+      - float
+    - defaultValue: '2147483647'
+      description: 'output rank
+
+        '
+      id: output_rank
+      type:
+      - int
+    - defaultValue: '2147483647'
+      description: 'filter rank
+
+        '
+      id: filter_rank
+      type:
+      - int
+    - defaultValue: None
+      description: 'random seed
+
+        '
+      id: seed
+      type:
+      - int
+    return:
+      description: 'initializer for @cntk.variables.Parameter
+
+        initialized to uniform distribution between
+
+        $$scale*sqrt(6.0/fanIn)*[-1,1]$$
+
+        '
+  type: function
+  uid: cntk.initializer.he_uniform
+- fullName: cntk.initializer.initializer_with_rank
+  langs:
+  - python
+  module: cntk.initializer
+  name: initializer_with_rank
+  source:
+    id: initializer_with_rank
+    path: bindings/python/cntk\initializer.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\initializer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 167
+  summary: 'override output_rank and filter_rank specification in a random initializer
+
+    constructed without an explicit output_rank and filter_rank specification
+
+    '
+  syntax:
+    content: initializer_with_rank(initializer, output_rank=None, filter_rank=None)
+    parameters:
+    - description: 'initializer whose output_rank and filter_rank parameters are to
+        be overriden
+
+        '
+      id: initializer
+    - defaultValue: None
+      description: 'new output rank value
+
+        '
+      id: output_rank
+      type:
+      - int
+    - defaultValue: None
+      description: 'new filter rank value
+
+        '
+      id: filter_rank
+      type:
+      - int
+    return:
+      description: 'new initializer for @cntk.variables.Parameter with specified output_rank
+        and filter_rank
+
+        '
+  type: function
+  uid: cntk.initializer.initializer_with_rank
+- fullName: cntk.initializer.normal
+  langs:
+  - python
+  module: cntk.initializer
+  name: normal
+  source:
+    id: normal
+    path: bindings/python/cntk\initializer.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\initializer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 34
+  summary: 'Normal initializer
+
+    '
+  syntax:
+    content: normal(scale, output_rank=2147483647, filter_rank=2147483647, seed=None)
+    parameters:
+    - description: 'scale
+
+        '
+      id: scale
+      type:
+      - float
+    - defaultValue: '2147483647'
+      description: 'output rank
+
+        '
+      id: output_rank
+      type:
+      - int
+    - defaultValue: '2147483647'
+      description: 'filter rank
+
+        '
+      id: filter_rank
+      type:
+      - int
+    - defaultValue: None
+      description: 'random seed
+
+        '
+      id: seed
+      type:
+      - int
+    return:
+      description: 'initializer for @cntk.variables.Parameter
+
+        initialized to normal distribution with mean *0* and standard deviation *scale*.
+
+        '
+  type: function
+  uid: cntk.initializer.normal
+- fullName: cntk.initializer.truncated_normal
+  langs:
+  - python
+  module: cntk.initializer
+  name: truncated_normal
+  source:
+    id: truncated_normal
+    path: bindings/python/cntk\initializer.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\initializer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 187
+  summary: 'Truncated normal initializer. The resulting values are drawn from
+
+    a truncated normal distribution and are always within two
+
+    standard deviations from the mean (which is 0).
+
+    '
+  syntax:
+    content: truncated_normal(stdev, seed=None)
+    parameters:
+    - description: 'standard deviation
+
+        '
+      id: stdev
+      type:
+      - float
+    - defaultValue: None
+      description: 'random seed
+
+        '
+      id: seed
+      type:
+      - int
+    return:
+      description: 'initializer for @cntk.variables.Parameter
+
+        initialized to truncated Gaussian distribution between *2*stdev[-1, 1]*
+
+        '
+  type: function
+  uid: cntk.initializer.truncated_normal
+- fullName: cntk.initializer.uniform
+  langs:
+  - python
+  module: cntk.initializer
+  name: uniform
+  source:
+    id: uniform
+    path: bindings/python/cntk\initializer.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\initializer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 16
+  summary: 'Uniform initializer
+
+    '
+  syntax:
+    content: uniform(scale, seed=None)
+    parameters:
+    - description: 'scale
+
+        '
+      id: scale
+      type:
+      - float
+    - defaultValue: None
+      description: 'random seed
+
+        '
+      id: seed
+      type:
+      - int
+    return:
+      description: 'initializer for @cntk.variables.Parameter
+
+        initialized to uniform distribution between *scale*[-1.0, 1.0]*.
+
+        Note: this maps to the "uniform1" distribution in BrainScript.
+
+        '
+  type: function
+  uid: cntk.initializer.uniform
+- fullName: cntk.initializer.xavier
+  langs:
+  - python
+  module: cntk.initializer
+  name: xavier
+  source:
+    id: xavier
+    path: bindings/python/cntk\initializer.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\initializer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 53
+  summary: 'Xavier initializer
+
+    '
+  syntax:
+    content: xavier(scale=1, output_rank=2147483647, filter_rank=2147483647, seed=None)
+    parameters:
+    - defaultValue: '1'
+      description: 'scale
+
+        '
+      id: scale
+      type:
+      - float
+    - defaultValue: '2147483647'
+      description: 'output rank
+
+        '
+      id: output_rank
+      type:
+      - int
+    - defaultValue: '2147483647'
+      description: 'filter rank
+
+        '
+      id: filter_rank
+      type:
+      - int
+    - defaultValue: None
+      description: 'random seed
+
+        '
+      id: seed
+      type:
+      - int
+    return:
+      description: 'initializer for @cntk.variables.Parameter
+
+        initialized to Gaussian distribution with mean *0* and standard
+
+        deviation $$scale*sqrt(3.0/fanIn)$$
+
+        '
+  type: function
+  uid: cntk.initializer.xavier
+references:
+- fullName: cntk.initializer.bilinear
+  isExternal: false
+  name: bilinear
+  parent: cntk.initializer
+  uid: cntk.initializer.bilinear
+- fullName: cntk.initializer.glorot_normal
+  isExternal: false
+  name: glorot_normal
+  parent: cntk.initializer
+  uid: cntk.initializer.glorot_normal
+- fullName: cntk.initializer.glorot_uniform
+  isExternal: false
+  name: glorot_uniform
+  parent: cntk.initializer
+  uid: cntk.initializer.glorot_uniform
+- fullName: cntk.initializer.he_normal
+  isExternal: false
+  name: he_normal
+  parent: cntk.initializer
+  uid: cntk.initializer.he_normal
+- fullName: cntk.initializer.he_uniform
+  isExternal: false
+  name: he_uniform
+  parent: cntk.initializer
+  uid: cntk.initializer.he_uniform
+- fullName: cntk.initializer.initializer_with_rank
+  isExternal: false
+  name: initializer_with_rank
+  parent: cntk.initializer
+  uid: cntk.initializer.initializer_with_rank
+- fullName: cntk.initializer.normal
+  isExternal: false
+  name: normal
+  parent: cntk.initializer
+  uid: cntk.initializer.normal
+- fullName: cntk.initializer.truncated_normal
+  isExternal: false
+  name: truncated_normal
+  parent: cntk.initializer
+  uid: cntk.initializer.truncated_normal
+- fullName: cntk.initializer.uniform
+  isExternal: false
+  name: uniform
+  parent: cntk.initializer
+  uid: cntk.initializer.uniform
+- fullName: cntk.initializer.xavier
+  isExternal: false
+  name: xavier
+  parent: cntk.initializer
+  uid: cntk.initializer.xavier

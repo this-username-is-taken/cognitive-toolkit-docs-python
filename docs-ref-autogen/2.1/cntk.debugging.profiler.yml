@@ -1,0 +1,146 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.debugging.profiler.disable_profiler
+  - cntk.debugging.profiler.enable_profiler
+  - cntk.debugging.profiler.start_profiler
+  - cntk.debugging.profiler.stop_profiler
+  fullName: cntk.debugging.profiler
+  langs:
+  - python
+  module: cntk.debugging.profiler
+  name: profiler
+  source:
+    id: profiler
+    path: bindings/python/cntk\debugging\profiler.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\debugging\profiler.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: module
+  uid: cntk.debugging.profiler
+- fullName: cntk.debugging.profiler.disable_profiler
+  langs:
+  - python
+  module: cntk.debugging.profiler
+  name: disable_profiler
+  source:
+    id: disable_profiler
+    path: bindings/python/cntk\debugging\profiler.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\debugging\profiler.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 37
+  summary: 'Disable profiler from gathering data.
+
+    '
+  syntax:
+    content: disable_profiler()
+  type: function
+  uid: cntk.debugging.profiler.disable_profiler
+- fullName: cntk.debugging.profiler.enable_profiler
+  langs:
+  - python
+  module: cntk.debugging.profiler
+  name: enable_profiler
+  source:
+    id: enable_profiler
+    path: bindings/python/cntk\debugging\profiler.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\debugging\profiler.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 30
+  summary: 'Enable profiler to gather data. Note that in training_session, profiler
+    would be enabled automatically after the first check point
+
+    '
+  syntax:
+    content: enable_profiler()
+  type: function
+  uid: cntk.debugging.profiler.enable_profiler
+- fullName: cntk.debugging.profiler.start_profiler
+  langs:
+  - python
+  module: cntk.debugging.profiler
+  name: start_profiler
+  source:
+    id: start_profiler
+    path: bindings/python/cntk\debugging\profiler.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\debugging\profiler.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 9
+  summary: 'Start profiler to prepare performance statistics gathering. Note that
+
+    the profiler is not enabled after start
+
+    ([example](https://docs.microsoft.com/en-us/cognitive-toolkit/BrainScript-and-Python-Performance-Profiler#for-python)).
+
+    '
+  syntax:
+    content: start_profiler(dir='profiler', sync_gpu=True, reserve_mem=33554432)
+    parameters:
+    - defaultValue: profiler
+      description: 'directory for profiler output
+
+        '
+      id: dir
+    - defaultValue: 'True'
+      description: 'whether profiler syncs CPU with GPU when timing
+
+        '
+      id: sync_gpu
+    - defaultValue: '33554432'
+      description: 'size in byte for profiler memory reserved
+
+        '
+      id: reserve_mem
+  type: function
+  uid: cntk.debugging.profiler.start_profiler
+- fullName: cntk.debugging.profiler.stop_profiler
+  langs:
+  - python
+  module: cntk.debugging.profiler
+  name: stop_profiler
+  source:
+    id: stop_profiler
+    path: bindings/python/cntk\debugging\profiler.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\debugging\profiler.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 23
+  summary: 'Stop profiler from gathering performance statistics and flush them to
+    file
+
+    '
+  syntax:
+    content: stop_profiler()
+  type: function
+  uid: cntk.debugging.profiler.stop_profiler
+references:
+- fullName: cntk.debugging.profiler.disable_profiler
+  isExternal: false
+  name: disable_profiler
+  parent: cntk.debugging.profiler
+  uid: cntk.debugging.profiler.disable_profiler
+- fullName: cntk.debugging.profiler.enable_profiler
+  isExternal: false
+  name: enable_profiler
+  parent: cntk.debugging.profiler
+  uid: cntk.debugging.profiler.enable_profiler
+- fullName: cntk.debugging.profiler.start_profiler
+  isExternal: false
+  name: start_profiler
+  parent: cntk.debugging.profiler
+  uid: cntk.debugging.profiler.start_profiler
+- fullName: cntk.debugging.profiler.stop_profiler
+  isExternal: false
+  name: stop_profiler
+  parent: cntk.debugging.profiler
+  uid: cntk.debugging.profiler.stop_profiler

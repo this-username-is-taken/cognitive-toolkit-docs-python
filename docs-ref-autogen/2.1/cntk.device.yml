@@ -1,0 +1,320 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.device.DeviceDescriptor
+  - cntk.device.DeviceKind
+  - cntk.device.all_devices
+  - cntk.device.cpu
+  - cntk.device.get_gpu_properties
+  - cntk.device.gpu
+  - cntk.device.set_excluded_devices
+  - cntk.device.try_set_default_device
+  - cntk.device.use_default_device
+  fullName: cntk.device
+  langs:
+  - python
+  module: cntk.device
+  name: device
+  source:
+    id: device
+    path: bindings/python/cntk\device.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\device.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'Utilities to specify device on which CNTK computation can be executed.
+
+    '
+  type: module
+  uid: cntk.device
+- fullName: cntk.device.all_devices
+  langs:
+  - python
+  module: cntk.device
+  name: all_devices
+  source:
+    id: all_devices
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 66
+  summary: 'Returns a device descriptor list with all the available devices
+
+    '
+  syntax:
+    content: all_devices()
+    return:
+      description: 'all device descriptors
+
+        '
+      type:
+      - cntk.device.DeviceDescriptor list
+  type: function
+  uid: cntk.device.all_devices
+- fullName: cntk.device.cpu
+  langs:
+  - python
+  module: cntk.device
+  name: cpu
+  source:
+    id: cpu
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 77
+  summary: 'Returns CPU device descriptor
+
+    '
+  syntax:
+    content: cpu()
+    return:
+      description: 'CPU device descriptor
+
+        '
+      type:
+      - cntk.device.DeviceDescriptor
+  type: function
+  uid: cntk.device.cpu
+- fullName: cntk.device.get_gpu_properties
+  langs:
+  - python
+  module: cntk.device
+  name: get_gpu_properties
+  source:
+    id: get_gpu_properties
+    path: bindings/python/cntk\device.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\device.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 169
+  summary: 'Retrieves and returns additional properties (total memory, number of CUDA
+
+    cores, etc.) for the specified GPU device. This method will raise an
+
+    exception if a CPU device is specified as an argument.
+
+    '
+  syntax:
+    content: get_gpu_properties(device)
+    parameters:
+    - description: 'a GPU device
+
+        descriptor.
+
+        '
+      id: device
+  type: function
+  uid: cntk.device.get_gpu_properties
+- fullName: cntk.device.gpu
+  langs:
+  - python
+  module: cntk.device
+  name: gpu
+  source:
+    id: gpu
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 88
+  summary: 'Returns GPU device descriptor
+
+    '
+  syntax:
+    content: gpu(device_id)
+    return:
+      description: 'GPU device descriptor
+
+        '
+      type:
+      - cntk.device.DeviceDescriptor
+  type: function
+  uid: cntk.device.gpu
+- fullName: cntk.device.set_excluded_devices
+  langs:
+  - python
+  module: cntk.device
+  name: set_excluded_devices
+  source:
+    id: set_excluded_devices
+    path: bindings/python/cntk\device.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\device.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 152
+  summary: 'Allows to specify a list of excluded devices that cannot be used as
+
+    globally default (neither auto-selected nor explicitly specified by
+
+    @cntk.device.try_set_default_device). For example, to avoid auto-selecting the
+
+    CPU, invoke `set_excluded_devices([cpu()])`. However, after the default
+
+    device has been selected and frozen (by a call to
+
+    @cntk.device.use_default_device), invoking this methods has no effect, it
+
+    becomes essentially a no-op.
+
+    '
+  syntax:
+    content: set_excluded_devices(excluded_devices)
+    parameters:
+    - description: 'a
+
+        list of device descriptors to exclude.
+
+        '
+      id: excluded_devices
+      type:
+      - 'list of @cntk.device.DeviceDescriptor
+
+        '
+  type: function
+  uid: cntk.device.set_excluded_devices
+- fullName: cntk.device.try_set_default_device
+  langs:
+  - python
+  module: cntk.device
+  name: try_set_default_device
+  source:
+    id: try_set_default_device
+    path: bindings/python/cntk\device.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\device.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 117
+  summary: "Tries to set the specified device as the globally default, optionally\n\
+    acquiring an exclusive (cooperative) lock on the device (only a GPU device\ncan\
+    \ be locked).\n\nThe default device can only be changed if it has not yet been\
+    \ frozen by\nbeing implicitly used in any previous CNTK operation.\n\nCNTK uses\
+    \ cooperative locking for the device access, whereby only a single\nprocess can\
+    \ acquire a device lock. This locking mechanism allows CNTK\nprocesses to avoid\
+    \ device oversubscription only if they collectively\nchoose so. In other words,\
+    \ the device locked by one CNTK process, can\nstill be accessed by another CNTK\
+    \ process without acquiring any locks\n(i.e, the existing device lock can be ignored\
+    \ by other CNTK processes).\nThis cooperative locking mechanism does not guarantee\
+    \ any kind of\nexclusive access to the device. The proper way to ensure exclusivity\
+    \  is\nto use tools provided by NVIDIA (nvidia smi).\n\nReturns: *False* if\n\
+    \   * the specified device appears in the list of excluded devices; \n\n   * *acquire_device_lock*\
+    \ is *True* and another process already holds a lock on the device; \n\n   * *acquire_device_lock*\
+    \ is *True* and *new_default_device* corresponds to a CPU device (which cannot\
+    \ be locked). \n"
+  syntax:
+    content: try_set_default_device(new_default_device, acquire_device_lock=False)
+    parameters:
+    - description: 'a
+
+        descriptor of the device to be used as a globally default.
+
+        '
+      id: new_default_device
+      type:
+      - cntk.device.DeviceDescriptor
+    - defaultValue: 'False'
+      description: 'whether or not a lock
+
+        should be acquired for the specified device.
+
+        '
+      id: acquire_device_lock
+      type:
+      - bool, defaults to False
+  type: function
+  uid: cntk.device.try_set_default_device
+- fullName: cntk.device.use_default_device
+  langs:
+  - python
+  module: cntk.device
+  name: use_default_device
+  source:
+    id: use_default_device
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 99
+  summary: 'Freezes the default device of the current CNTK process disallowing further
+
+    changes through calls to @cntk.device.try_set_default_device. This default
+
+    device will used for all CNTK operations where a device needs to be
+
+    specified and where none was explicitly provided. If no device has been
+
+    specified with a call to @cntk.device.try_set_default_device, on the first
+
+    invocation, this methods will auto-select one of the available (non-locked)
+
+    devices as the default.
+
+    '
+  syntax:
+    content: use_default_device()
+    return:
+      description: 'descriptor of the globally
+
+        default device
+
+        '
+      type:
+      - cntk.device.DeviceDescriptor
+  type: function
+  uid: cntk.device.use_default_device
+references:
+- fullName: cntk.device.DeviceDescriptor
+  isExternal: false
+  name: DeviceDescriptor
+  parent: cntk.device
+  uid: cntk.device.DeviceDescriptor
+- fullName: cntk.device.DeviceKind
+  isExternal: false
+  name: DeviceKind
+  parent: cntk.device
+  uid: cntk.device.DeviceKind
+- fullName: cntk.device.all_devices
+  isExternal: false
+  name: all_devices
+  parent: cntk.device
+  uid: cntk.device.all_devices
+- fullName: cntk.device.cpu
+  isExternal: false
+  name: cpu
+  parent: cntk.device
+  uid: cntk.device.cpu
+- fullName: cntk.device.get_gpu_properties
+  isExternal: false
+  name: get_gpu_properties
+  parent: cntk.device
+  uid: cntk.device.get_gpu_properties
+- fullName: cntk.device.gpu
+  isExternal: false
+  name: gpu
+  parent: cntk.device
+  uid: cntk.device.gpu
+- fullName: cntk.device.set_excluded_devices
+  isExternal: false
+  name: set_excluded_devices
+  parent: cntk.device
+  uid: cntk.device.set_excluded_devices
+- fullName: cntk.device.try_set_default_device
+  isExternal: false
+  name: try_set_default_device
+  parent: cntk.device
+  uid: cntk.device.try_set_default_device
+- fullName: cntk.device.use_default_device
+  isExternal: false
+  name: use_default_device
+  parent: cntk.device
+  uid: cntk.device.use_default_device

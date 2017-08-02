@@ -1,0 +1,65 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children: []
+  class: cntk.io.StreamConfiguration
+  fullName: cntk.io.StreamConfiguration
+  langs:
+  - python
+  module: cntk.io
+  name: StreamConfiguration
+  source:
+    id: StreamConfiguration
+    path: bindings/python/cntk\io\__init__.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 938
+  summary: 'Configuration of a stream in a text format reader.
+
+    '
+  syntax:
+    content: StreamConfiguration(name, dim, is_sparse=False, stream_alias='', defines_mb_size=False)
+    parameters:
+    - description: 'name of this stream
+
+        '
+      id: name
+      type:
+      - str
+    - description: 'dimensions of this stream. A text format reader reads data
+
+        as flat arrays. If you need different shapes you can
+
+        @cntk.ops.reshape it later.
+
+        '
+      id: dim
+      type:
+      - int
+    - description: 'whether the provided data is
+
+        sparse (*False* by default)
+
+        '
+      id: is_sparse
+      type:
+      - bool, defaults to False
+    - description: 'name of the stream in the file
+
+        '
+      id: stream_alias
+      type:
+      - str, defaults to ''
+    - description: 'whether this stream defines
+
+        the minibatch size.
+
+        '
+      id: defines_mb_size
+      type:
+      - bool, defaults to False
+  type: class
+  uid: cntk.io.StreamConfiguration
+references: []

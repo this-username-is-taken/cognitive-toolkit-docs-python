@@ -22,7 +22,7 @@
       ],
       "customized_tasks": {
         "docset_prebuild": [
-          "_dependentPackages/ECMA2Yaml/tools/JoinTOC.ps1"
+          "_dependentPackages/CommonPlugins/tools/JoinTOC.ps1"
         ]
       },
       "version": 0
@@ -36,7 +36,7 @@
     {
       "path_to_root": "_themes",
       "url": "https://github.com/Microsoft/templates.docs.msft",
-      "branch": "master",
+      "branch": "cntk",
       "branch_mapping": {}
     }
   ],
@@ -49,9 +49,9 @@
       "version": "latest"
     },
     {
-      "id": "Microsoft.DocAsCode.ECMA2Yaml",
-      "nuget_feed": "https://www.myget.org/F/op-dev/api/v2",
-      "path_to_root": "_dependentPackages/ECMA2Yaml",
+      "id": "Microsoft.OpenPublishing.CommonPlugins",
+      "nuget_feed": "https://www.myget.org/F/op/api/v2",
+      "path_to_root": "_dependentPackages/CommonPlugins",
       "target_framework": "net45",
       "version": "latest"
     }
@@ -60,8 +60,20 @@
     {
       "TopLevelTOC": "docs-ref-autogen/2.0/toc.yml",
       "ConceptualTOC": "docs-ref-conceptual/2.0/toc.yml",
-      "ReferenceTOCUrl": "/python/api/cognitive-toolkit/toc.json",
-      "ConceptualTOCUrl": "/python/cognitive-toolkit/toc.json"
+      "ReferenceTOCUrl": "/python/api/cognitive-toolkit/toc.json?view=cntk-py-2.0",
+      "ConceptualTOCUrl": "/python/cognitive-toolkit/toc.json?view=cntk-py-2.0"
+    },
+    {
+      "TopLevelTOC": "docs-ref-autogen/2.1/toc.yml",
+      "ConceptualTOC": "docs-ref-conceptual/2.1/toc.yml",
+      "ReferenceTOCUrl": "/python/api/cognitive-toolkit/toc.json?view=cntk-py-2.1",
+      "ConceptualTOCUrl": "/python/cognitive-toolkit/toc.json?view=cntk-py-2.1"
+    },
+    {
+      "TopLevelTOC": "docs-ref-autogen/latest/toc.yml",
+      "ConceptualTOC": "docs-ref-conceptual/latest/toc.yml",
+      "ReferenceTOCUrl": "/python/api/cognitive-toolkit/toc.json?view=cntk-py",
+      "ConceptualTOCUrl": "/python/cognitive-toolkit/toc.json?view=cntk-py"
     }
   ],
   "need_generate_pdf_url_template": false

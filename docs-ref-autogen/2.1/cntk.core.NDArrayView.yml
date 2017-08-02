@@ -1,0 +1,452 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.core.NDArrayView.device
+  - cntk.core.NDArrayView.dtype
+  - cntk.core.NDArrayView.from_csr
+  - cntk.core.NDArrayView.from_data
+  - cntk.core.NDArrayView.from_dense
+  - cntk.core.NDArrayView.is_read_only
+  - cntk.core.NDArrayView.is_sparse
+  - cntk.core.NDArrayView.shape
+  - cntk.core.NDArrayView.slice_view
+  class: cntk.core.NDArrayView
+  fullName: cntk.core.NDArrayView
+  langs:
+  - python
+  module: cntk.core
+  name: NDArrayView
+  source:
+    id: NDArrayView
+    path: bindings/python/cntk\core.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\core.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 33
+  summary: 'Creates an empty dense internal data representation of a
+
+    @cntk.core.Value object.
+
+    To create an NDArrayView from a NumPy array, use @cntk.core.NDArrayView.from_dense.
+
+    To create an NDArrayView from a sparse array, use @cntk.core.NDArrayView.from_csr.
+
+
+
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: NDArrayView(shape, data_type, device=None)
+    parameters:
+    - description: 'shape of the data
+
+        '
+      id: shape
+      type:
+      - tuple
+    - description: 'data type of the data
+
+        '
+      id: data_type
+      type:
+      - np.float32, np.float64
+    - description: 'device this value
+
+        should be put on
+
+        '
+      id: device
+      type:
+      - cntk.device.DeviceDescriptor
+  type: class
+  uid: cntk.core.NDArrayView
+- class: cntk.core.NDArrayView
+  fullName: cntk.core.NDArrayView.device
+  langs:
+  - python
+  module: cntk.core
+  name: device
+  source:
+    id: device
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Retrieves the @cntk.device.DeviceDescriptor instance.
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.core.NDArrayView.device
+- class: cntk.core.NDArrayView
+  fullName: cntk.core.NDArrayView.dtype
+  langs:
+  - python
+  module: cntk.core
+  name: dtype
+  source:
+    id: dtype
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'NumPy data type of the instance
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.core.NDArrayView.dtype
+- class: cntk.core.NDArrayView
+  fullName: cntk.core.NDArrayView.from_csr
+  langs:
+  - python
+  module: cntk.core
+  name: from_csr
+  source:
+    id: from_csr
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 92
+  summary: 'Create an @cntk.core.NDArrayView instance from a SciPy sparse array in
+    CSR
+
+    format.
+
+    '
+  syntax:
+    content: from_csr(csr_array, device=None, read_only=False, borrow=False, shape=None)
+    parameters:
+    - description: 'SciPy sparse matrix in CSR
+
+        format
+
+        '
+      id: csr_array
+      type:
+      - scipy.sparse.csr_matrix
+    - description: 'device this value
+
+        should be put on
+
+        '
+      id: device
+      type:
+      - cntk.device.DeviceDescriptor
+    - description: 'whether the data can be modified or
+
+        not (default False)
+
+        '
+      id: read_only
+      type:
+      - bool, optional
+    - description: 'whether nd_array memory can be
+
+        borrowed internally to speed up the data creation
+
+        '
+      id: borrow
+      type:
+      - bool, default False
+    - description: 'shape of the created NDArrayView.
+
+        If unspecified, the created NDArrayView has the same shape as the csr_matrix.
+
+        Otherwise, an NDArrayView object of specified shape is created using csr_data.
+
+        The total size and number of rows of csr_data must match specified NDArrayView
+        shape.
+
+        '
+      id: shape
+      type:
+      - tuple, default None
+    return:
+      description: '@cntk.core.NDArrayView instance
+
+        '
+  type: method
+  uid: cntk.core.NDArrayView.from_csr
+- class: cntk.core.NDArrayView
+  fullName: cntk.core.NDArrayView.from_data
+  langs:
+  - python
+  module: cntk.core
+  name: from_data
+  source:
+    id: from_data
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 143
+  summary: 'Create an @cntk.core.NDArrayView instance from a NumPy or SciPy sparse
+
+    array in CSR format.
+
+    '
+  syntax:
+    content: from_data(data, device=None, read_only=False, borrow=False)
+    parameters:
+    - description: 'data
+
+        '
+      id: data
+      type:
+      - numpy.ndarray or scipy.sparse.csr_matrix
+    - description: 'device this value
+
+        should be put on
+
+        '
+      id: device
+      type:
+      - cntk.device.DeviceDescriptor
+    - description: 'whether the data can be modified or
+
+        not (default False)
+
+        '
+      id: read_only
+      type:
+      - bool, optional
+    - description: 'whether nd_array memory can be
+
+        borrowed internally to speed up the data creation
+
+        '
+      id: borrow
+      type:
+      - bool, default False
+    return:
+      description: '@cntk.core.NDArrayView instance
+
+        '
+  type: method
+  uid: cntk.core.NDArrayView.from_data
+- class: cntk.core.NDArrayView
+  fullName: cntk.core.NDArrayView.from_dense
+  langs:
+  - python
+  module: cntk.core
+  name: from_dense
+  source:
+    id: from_dense
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 57
+  summary: 'Create an @cntk.core.NDArrayView instance from a NumPy array.
+
+    '
+  syntax:
+    content: from_dense(np_array, device=None, read_only=False, borrow=False)
+    parameters:
+    - description: 'NumPy array
+
+        '
+      id: np_array
+      type:
+      - numpy.ndarray
+    - description: 'device this value
+
+        should be put on
+
+        '
+      id: device
+      type:
+      - cntk.device.DeviceDescriptor
+    - description: 'whether nd_array memory can be
+
+        borrowed internally to speed up the data creation
+
+        '
+      id: borrow
+      type:
+      - bool, default False
+    - description: 'whether the data can be modified or
+
+        not (default False)
+
+        '
+      id: read_only
+      type:
+      - bool, optional
+    return:
+      description: '@cntk.core.NDArrayView instance
+
+        '
+  type: method
+  uid: cntk.core.NDArrayView.from_dense
+- class: cntk.core.NDArrayView
+  fullName: cntk.core.NDArrayView.is_read_only
+  langs:
+  - python
+  module: cntk.core
+  name: is_read_only
+  source:
+    id: is_read_only
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Whether the data is read-only
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.core.NDArrayView.is_read_only
+- class: cntk.core.NDArrayView
+  fullName: cntk.core.NDArrayView.is_sparse
+  langs:
+  - python
+  module: cntk.core
+  name: is_sparse
+  source:
+    id: is_sparse
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Whether the data is sparse or dense
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.core.NDArrayView.is_sparse
+- class: cntk.core.NDArrayView
+  fullName: cntk.core.NDArrayView.shape
+  langs:
+  - python
+  module: cntk.core
+  name: shape
+  source:
+    id: shape
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'The shape of this instance.
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.core.NDArrayView.shape
+- class: cntk.core.NDArrayView
+  example:
+  - "\n```\n\n>>> # Creating an array of shape (1, 1, 2, 3)\n>>> np_array = np.asarray([[[[10,\
+    \ 20, 30], [40, 50, 60]]]],                                       dtype=np.float32)\n\
+    >>> nd = NDArrayView.from_dense(np_array)\n>>> sliced = nd.slice_view([0, 0, 0,\
+    \ 0], [2, 3])\n>>> np_sliced = sliced.asarray()\n>>> # Result is an array of shape\
+    \ (2, 3)\n>>> print(np_sliced)\n[[ 10.  20.  30.]\n [ 40.  50.  60.]]\n```\n"
+  fullName: cntk.core.NDArrayView.slice_view
+  langs:
+  - python
+  module: cntk.core
+  name: slice_view
+  source:
+    id: slice_view
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 186
+  summary: 'Returns a sliced view of the instance.
+
+    '
+  syntax:
+    content: slice_view(start_offset, extent, read_only=True)
+    parameters:
+    - description: 'shape of the same rank as this Value
+
+        instance that denotes the start of the slicing
+
+        '
+      id: start_offset
+      type:
+      - tuple or list
+    - description: 'shape of the right-aligned extent to keep
+
+        '
+      id: extent
+      type:
+      - tuple or list
+    - description: 'whether the returned slice is read only or not
+
+        '
+      id: read_only
+      type:
+      - bool
+  type: method
+  uid: cntk.core.NDArrayView.slice_view
+references:
+- fullName: cntk.core.NDArrayView.device
+  isExternal: false
+  name: device
+  parent: cntk.core.NDArrayView
+  uid: cntk.core.NDArrayView.device
+- fullName: cntk.core.NDArrayView.dtype
+  isExternal: false
+  name: dtype
+  parent: cntk.core.NDArrayView
+  uid: cntk.core.NDArrayView.dtype
+- fullName: cntk.core.NDArrayView.from_csr
+  isExternal: false
+  name: from_csr
+  parent: cntk.core.NDArrayView
+  uid: cntk.core.NDArrayView.from_csr
+- fullName: cntk.core.NDArrayView.from_data
+  isExternal: false
+  name: from_data
+  parent: cntk.core.NDArrayView
+  uid: cntk.core.NDArrayView.from_data
+- fullName: cntk.core.NDArrayView.from_dense
+  isExternal: false
+  name: from_dense
+  parent: cntk.core.NDArrayView
+  uid: cntk.core.NDArrayView.from_dense
+- fullName: cntk.core.NDArrayView.is_read_only
+  isExternal: false
+  name: is_read_only
+  parent: cntk.core.NDArrayView
+  uid: cntk.core.NDArrayView.is_read_only
+- fullName: cntk.core.NDArrayView.is_sparse
+  isExternal: false
+  name: is_sparse
+  parent: cntk.core.NDArrayView
+  uid: cntk.core.NDArrayView.is_sparse
+- fullName: cntk.core.NDArrayView.shape
+  isExternal: false
+  name: shape
+  parent: cntk.core.NDArrayView
+  uid: cntk.core.NDArrayView.shape
+- fullName: cntk.core.NDArrayView.slice_view
+  isExternal: false
+  name: slice_view
+  parent: cntk.core.NDArrayView
+  uid: cntk.core.NDArrayView.slice_view

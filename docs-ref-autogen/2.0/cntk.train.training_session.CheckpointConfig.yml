@@ -4,20 +4,16 @@ items:
 - children: []
   class: cntk.train.training_session.CheckpointConfig
   fullName: cntk.train.training_session.CheckpointConfig
-  inheritance:
-  - inheritance:
-    - type: builtins.object
-    type: cntk.cntk_py.CheckpointConfig
   langs:
   - python
   module: cntk.train.training_session
   name: CheckpointConfig
   source:
     id: CheckpointConfig
-    path: bindings/python\cntk\train\training_session.py
+    path: bindings/python/cntk\train\training_session.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\train\training_session.py
+      path: bindings/python/cntk\train\training_session.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 14
   summary: 'A checkpoint configuration for the training session.

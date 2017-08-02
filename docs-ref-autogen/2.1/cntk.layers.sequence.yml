@@ -1,0 +1,728 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.layers.sequence.Delay
+  - cntk.layers.sequence.Fold
+  - cntk.layers.sequence.PastValueWindow
+  - cntk.layers.sequence.Recurrence
+  - cntk.layers.sequence.RecurrenceFrom
+  - cntk.layers.sequence.UnfoldFrom
+  fullName: cntk.layers.sequence
+  langs:
+  - python
+  module: cntk.layers.sequence
+  name: sequence
+  source:
+    id: sequence
+    path: bindings/python/cntk\layers\sequence.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\layers\sequence.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'First / higher-order functions over sequences, like :func:`Recurrence`.
+
+    '
+  type: module
+  uid: cntk.layers.sequence
+- example:
+  - "\n```\n\n>>> # create example input: one sequence with 4 tensors of shape (3,\
+    \ 2)\n>>> from cntk.layers import Sequential\n>>> from cntk.layers.typing import\
+    \ Tensor, Sequence\n>>> x = C.input_variable(**Sequence[Tensor[2]])\n>>> x0 =\
+    \ np.reshape(np.arange(6,dtype=np.float32),(1,3,2))\n>>> x0\narray([[[ 0.,  1.],\n\
+    \        [ 2.,  3.],\n        [ 4.,  5.]]], dtype=float32)\n>>> # trigram expansion:\
+    \ augment each item of the sequence with its left and right neighbor\n>>> make_trigram\
+    \ = Sequential([tuple(Delay(T) for T in (-1,0,1)),  # create 3 shifted versions\n\
+    ...                            splice])                            # concatenate\
+    \ them\n>>> y = make_trigram(x)\n>>> y(x0)\n[array([[ 2.,  3.,  0.,  1.,  0.,\
+    \  0.],\n        [ 4.,  5.,  2.,  3.,  0.,  1.],\n        [ 0.,  0.,  4.,  5.,\
+    \  2.,  3.]], dtype=float32)]\n>>> #    --(t-1)--  ---t---  --(t+1)--\n```\n"
+  fullName: cntk.layers.sequence.Delay
+  langs:
+  - python
+  module: cntk.layers.sequence
+  name: Delay
+  source:
+    id: Delay
+    path: bindings/python/cntk\layers\sequence.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\layers\sequence.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 17
+  summary: 'Layer factory function to create a layer that delays input the input by
+    a given number of time steps. Negative means future.
+
+    This is provided as a layer that wraps @cntk.ops.sequence.delay so that it can
+    easily be used in a Sequential() expression.
+
+    '
+  syntax:
+    content: Delay(T=1, initial_state=0, name='')
+    parameters:
+    - defaultValue: '1'
+      description: 'the number of time steps to look into the past, where negative
+        values mean to look into the future, and 0 means a no-op (default 1).
+
+        '
+      id: T
+      type:
+      - int
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000AEAC2614A8>
+      description: 'tensor or scalar representing the initial value to be used when
+        the input tensor is shifted in time.
+
+        '
+      id: initial_state
+    - defaultValue: ''
+      description: 'the name of the Function instance in the network
+
+        '
+      id: name
+      type:
+      - str, optional
+    return:
+      description: 'A function that accepts one argument (which must be a sequence)
+        and returns it delayed by `T` steps
+
+        '
+      type:
+      - cntk.ops.functions.Function
+  type: function
+  uid: cntk.layers.sequence.Delay
+- example:
+  - "\n```\n\n>>> from cntk.layers import *\n>>> from cntk.layers.typing import *\n\
+    ```\n\n\n```\n\n>>> # sequence classifier. Maps a one-hot word sequence to a scalar\
+    \ probability value.\n>>> # The recurrence is a Fold(), meaning only the final\
+    \ hidden state is produced.\n>>> # The Label() layer allows to access the final\
+    \ hidden layer by name.\n>>> sequence_classifier = Sequential([ Embedding(300),\n\
+    ...                                    Fold(LSTM(500)),\n...                 \
+    \                   Dense(1, activation=sigmoid) ])\n```\n\n\n```\n\n>>> # element-wise\
+    \ max-pooling over an input sequence\n>>> x = C.input_variable(**Sequence[Tensor[2]])\n\
+    >>> x0 = np.array([[ 1, 2 ],\n...                [ 6, 3 ],\n...              \
+    \  [ 4, 2 ],\n...                [ 8, 1 ],\n...                [ 6, 0 ]])\n>>>\
+    \ seq_max_pool = Fold(C.element_max)\n>>> y = seq_max_pool(x)\n>>> y(x0)\n   \
+    \ array([[ 8.,   3.]], dtype=float32)\n```\n\n\n```\n\n>>> # element-wise sum\
+    \ over an input sequence\n>>> seq_sum = Fold(C.plus)\n>>> y = seq_sum(x)\n>>>\
+    \ y(x0)\n    array([[ 25.,   8.]], dtype=float32)\n```\n"
+  fullName: cntk.layers.sequence.Fold
+  langs:
+  - python
+  module: cntk.layers.sequence
+  name: Fold
+  source:
+    id: Fold
+    path: bindings/python/cntk\layers\sequence.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\layers\sequence.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 421
+  summary: "Layer factory function to create a function that runs a step function\
+    \ recurrently over an input sequence,\nand returns the final state.\nThis is often\
+    \ used for embeddings of sequences, e.g. in a sequence-to-sequence model.\nPseudo-code:\n\
+    \n<!-- literal_block {\"dupnames\": [], \"ids\": [], \"classes\": [], \"xml:space\"\
+    : \"preserve\", \"backrefs\": [], \"names\": []} -->\n\n````\n\n   # pseudo-code\
+    \ for h = Fold(step_function)(x)\n   #  x: input sequence of tensors along the\
+    \ dynamic axis\n   #  h: resulting final step-function output tensor that no longer\
+    \ has a dynamic axis\n   h = initial_state   # h = output of previous step (\"\
+    state\"), and also the final result\n   for x_n in x:       # pseudo-code for\
+    \ looping over all steps of input sequence along its dynamic axis\n       h =\
+    \ step_function(h, x_n)  # pass previous state and new data to step_function ->\
+    \ new state\n   # now h is the result of the final invocation of the step function\n\
+    \   ````\n\n`Fold()` is the same as @cntk.layers.sequence.Recurrence except that\
+    \ only the final state is returned\n(whereas `Recurrence()` returns the entire\
+    \ state sequence).\nHence, this documentation will only focus on the differences\
+    \ to `Recurrence()`,\nplease see @cntk.layers.sequence.Recurrence for a detailed\
+    \ information on parameters.\n\nCommonly, the `folder_function` is a recurrent\
+    \ block such as an LSTM.\nHowever, one can pass any binary function. E.g. passing\
+    \ `plus` will sum\nup all items of a sequence; while `element_max` would perform\
+    \ a max-pooling over all items of the sequence.\n\nNote: CNTK's Fold() is similar\
+    \ to the fold() catamorphism known from functional programming.\n`go_backwards=False`\
+    \ corresponds to a fold-left, and `True` to a fold-right,\nexcept that the `folder_function`\
+    \ signature is always the one of fold-left.\n"
+  syntax:
+    content: Fold(folder_function, go_backwards=False, initial_state=0, return_full_state=False,
+      name='')
+    parameters:
+    - description: 'This function must have N+1 inputs and N outputs, where N is the
+        number of state variables
+
+        (typically 1 for GRU and plain RNNs, and 2 for LSTMs).
+
+        '
+      id: folder_function
+      type:
+      - "cntk.ops.functions.Function\n or equivalent Python function"
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000AEAC2615C0>
+      description: 'if `True` then run the recurrence from the end of the sequence
+        to the start.
+
+        '
+      id: go_backwards
+      type:
+      - bool, defaults to False
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000AEAC2615F8>
+      description: 'the initial value for the state. This can be a constant or a learnable
+        parameter.
+
+        In the latter case, if the step function has more than 1 state variable,
+
+        this parameter must be a tuple providing one initial state for every state
+        variable.
+
+        '
+      id: initial_state
+      type:
+      - scalar or tensor without batch dimension; or a tuple thereof
+    - defaultValue: 'False'
+      description: 'if `True` and the step function has more than one
+
+        state variable, then the layer returns the final value of a all state variables
+        (a tuple of sequences);
+
+        whereas if not given or `False`, only the final value of the first of the
+        state variables is returned to the caller.
+
+        '
+      id: return_full_state
+      type:
+      - bool, defaults to False
+    - defaultValue: ''
+      description: 'the name of the Function instance in the network
+
+        '
+      id: name
+      type:
+      - str, optional
+    return:
+      description: 'A function that accepts one argument (which must be a sequence)
+        and performs the fold operation on it
+
+        '
+      type:
+      - cntk.ops.functions.Function
+  type: function
+  uid: cntk.layers.sequence.Fold
+- example:
+  - "\n```\n\n>>> # create example input: one sequence with 4 tensors of shape (3,\
+    \ 2)\n>>> from cntk.layers import Sequential\n>>> from cntk.layers.typing import\
+    \ Tensor, Sequence\n>>> x = C.input_variable(**Sequence[Tensor[2]])\n>>> x0 =\
+    \ np.reshape(np.arange(6,dtype=np.float32),(1,3,2))\n>>> x0\narray([[[ 0.,  1.],\n\
+    \        [ 2.,  3.],\n        [ 4.,  5.]]], dtype=float32)\n>>> # convert dynamic-length\
+    \ sequence to a static-dimension tensor\n>>> to_static_axis = PastValueWindow(4,\
+    \ axis=-2)  # axis=-2 means second last\n>>> y = to_static_axis(x)\n>>> value,\
+    \ valid = y(x0)\n>>> # 'value' contains the items from the back, padded with 0\n\
+    >>> value\narray([[[ 4.,  5.],\n        [ 2.,  3.],\n        [ 0.,  1.],\n   \
+    \     [ 0.,  0.]]], dtype=float32)\n>>> # 'valid' contains a scalar 1 for each\
+    \ valid item, and 0 for the padded ones\n>>> # E.g., when computing the attention\
+    \ softmax, only items with a 1 should be considered.\n>>> valid\narray([[[ 1.],\n\
+    \        [ 1.],\n        [ 1.],\n        [ 0.]]], dtype=float32)\n```\n"
+  fullName: cntk.layers.sequence.PastValueWindow
+  langs:
+  - python
+  module: cntk.layers.sequence
+  name: PastValueWindow
+  source:
+    id: PastValueWindow
+    path: bindings/python/cntk\layers\sequence.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\layers\sequence.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 72
+  summary: 'Layer factory function to create a function that returns a static, maskable
+    view for N past steps over a sequence along the given ''axis''.
+
+    It returns two matrices: a value matrix, shape=(N,dim), and a valid window, shape=(N,1).
+
+
+    This is used for attention modeling. CNTK presently does not support nested dynamic
+    axes.
+
+    Since attention models require nested axes (encoder hidden state vs. decoder hidden
+    state),
+
+    this layer can be used to map the encoder''s dynamic axis to a static tensor axis.
+
+    The static axis has a maximum length (`window_size`). To account for shorter input
+
+    sequences, this function also returns a validity mask of the same axis dimension.
+
+    Longer sequences will be truncated.
+
+    '
+  syntax:
+    content: PastValueWindow(window_size, axis, go_backwards=False, name='')
+    parameters:
+    - description: 'maximum number of items in sequences. The *axis* will have this
+        dimension.
+
+        '
+      id: window_size
+      type:
+      - int
+    - description: 'axis along which the
+
+        concatenation will be performed
+
+        '
+      id: axis
+      type:
+      - 'int or @cntk.axis.Axis
+
+        , optional, keyword only'
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000AEAC2614E0>
+      description: 'the name of the Function instance in the network
+
+        '
+      id: name
+      type:
+      - str, optional, keyword only
+    - defaultValue: ''
+      id: name
+    return:
+      description: 'A function that accepts one argument, which must be a sequence.
+        It returns a fixed-size window of the last `window_size` items,
+
+        spliced along `axis`.
+
+        '
+      type:
+      - cntk.ops.functions.Function
+  type: function
+  uid: cntk.layers.sequence.PastValueWindow
+- example:
+  - "\n```\n\n>>> from cntk.layers import Sequential\n>>> from cntk.layers.typing\
+    \ import Tensor, Sequence\n```\n\n\n```\n\n>>> # a recurrent LSTM layer\n>>> lstm_layer\
+    \ = Recurrence(LSTM(500))\n```\n\n\n```\n\n>>> # a bidirectional LSTM layer\n\
+    >>> # using function tuples to implement a bidirectional LSTM\n>>> bi_lstm_layer\
+    \ = Sequential([(Recurrence(LSTM(250)),                      # first tuple entry:\
+    \ forward pass\n...                              Recurrence(LSTM(250), go_backwards=True)),\
+    \  # second: backward pass\n...                             splice])         \
+    \                            # splice both on top of each other\n>>> bi_lstm_layer.update_signature(Sequence[Tensor[13]])\n\
+    >>> bi_lstm_layer.shape   # shape reflects concatenation of both output states\n\
+    (500,)\n>>> tuple(str(axis.name) for axis in bi_lstm_layer.dynamic_axes)  # (note:\
+    \ str() needed only for Python 2.7)\n('defaultBatchAxis', 'defaultDynamicAxis')\n\
+    ```\n\n\n```\n\n>>> # custom step function example: using Recurrence() to\n>>>\
+    \ # compute the cumulative sum over an input sequence\n>>> x = C.input_variable(**Sequence[Tensor[2]])\n\
+    >>> x0 = np.array([[   3,    2],\n...                [  13,   42],\n...      \
+    \          [-100, +100]])\n>>> cum_sum = Recurrence(C.plus, initial_state=Constant([0,\
+    \ 0.5]))\n>>> y = cum_sum(x)\n>>> y(x0)\n[array([[   3. ,    2.5],\n        [\
+    \  16. ,   44.5],\n        [ -84. ,  144.5]], dtype=float32)]\n```\n"
+  fullName: cntk.layers.sequence.Recurrence
+  langs:
+  - python
+  module: cntk.layers.sequence
+  name: Recurrence
+  source:
+    id: Recurrence
+    path: bindings/python/cntk\layers\sequence.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\layers\sequence.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 287
+  summary: "Layer factory function that implements a recurrent model, including the\
+    \ common RNN, LSTM, and GRU recurrences.\nThis factory function creates a function\
+    \ that runs a step function recurrently over an input sequence,\nwhere in each\
+    \ step, Recurrence() will pass to the step function a data input as well as the\
+    \ output of the\nprevious step.\nThe following pseudo-code repesents what happens\
+    \ when you call a *Recurrence()* layer:\n\n<!-- literal_block {\"dupnames\": [],\
+    \ \"ids\": [], \"classes\": [], \"xml:space\": \"preserve\", \"backrefs\": [],\
+    \ \"names\": []} -->\n\n````\n\n   # pseudo-code for y = Recurrence(step_function)(x)\n\
+    \   #  x: input sequence of tensors along the dynamic axis\n   #  y: resulting\
+    \ sequence of outputs along the same dynamic axis\n   y = []              # result\
+    \ sequence goes here\n   s = initial_state   # s = output of previous step (\"\
+    state\")\n   for x_n in x:       # pseudo-code for looping over all steps of input\
+    \ sequence along its dynamic axis\n       s = step_function(s, x_n)  # pass previous\
+    \ state and new data to step_function -> new state\n       y.append(s)\n   ````\n\
+    \nThe common step functions are @cntk.layers.blocks.LSTM, @cntk.layers.blocks.GRU,\
+    \ and @cntk.layers.blocks.RNNStep,\nbut the step function can be any @cntk.ops.functions.Function\
+    \ or Python function.\nThe signature of a step function with a single state variable\
+    \ must be\n`(h_prev, x) -> h`, where `h_prev` is the previous state, `x` is the\
+    \ new\ndata input, and the output is the new state.\nThe step function will be\
+    \ called item by item, resulting in a sequence of the same length as the input.\n\
+    \nStep functions can have more than one state output, e.g. @cntk.layers.blocks.LSTM.\n\
+    In this case, the first N arguments are the previous state, followed by one more\
+    \ argument that\nis the data input; and its output must be a tuple of N values.\n\
+    In this case, the recurrence operation will, by default, return the first of the\
+    \ state variables\n(in the LSTM case, the `h`), while additional state variables\
+    \ are internal (like the LSTM's `c`).\nIf all state variables should be returned,\
+    \ pass `return_full_state=True`.\n\nTo provide your own step function, just use\
+    \ any @cntk.ops.functions.Function (or equivalent Python function) that\nhas a\
+    \ signature as described above.\nFor example, a cumulative sum over a sequence\
+    \ can be computed as `Recurrence(plus)`,\nwhere each step consists of *plus(s,x_n)*,\
+    \ where *s* is the output of the previous call\nand hence the cumulative sum of\
+    \ all elements up to *x_n*.\nAnother example is a GRU layer with projection, which\
+    \ could be realized as `Recurrence(GRU(500) >> Dense(200))`,\nwhere the projection\
+    \ is applied to the hidden state as fed back to the next step.\n`F>>G` is a short-hand\
+    \ for `Sequential([F, G])`.\n\nOptionally, the recurrence can run backwards. This\
+    \ is useful for constructing bidirectional models.\n\n`initial_state` must be\
+    \ a constant. To pass initial_state as a data input, e.g. for a sequence-to-sequence\n\
+    model, use @cntk.layers.sequence.RecurrenceFrom instead.\n\nNote: `Recurrence()`\
+    \ is the equivalent to what in functional programming is often called `scanl()`.\n"
+  syntax:
+    content: Recurrence(step_function, go_backwards=False, initial_state=0, return_full_state=False,
+      name='')
+    parameters:
+    - description: 'This function must have N+1 inputs and N outputs, where N is the
+        number of state variables
+
+        (typically 1 for GRU and plain RNNs, and 2 for LSTMs).
+
+        '
+      id: step_function
+      type:
+      - "cntk.ops.functions.Function\n or equivalent Python function"
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000AEAC261550>
+      description: 'if `True` then run the recurrence from the end of the sequence
+        to the start.
+
+        '
+      id: go_backwards
+      type:
+      - bool, defaults to False
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000AEAC261588>
+      description: 'the initial value for the state. This can be a constant or a learnable
+        parameter.
+
+        In the latter case, if the step function has more than 1 state variable,
+
+        this parameter must be a tuple providing one initial state for every state
+        variable.
+
+        '
+      id: initial_state
+      type:
+      - scalar or tensor without batch dimension; or a tuple thereof
+    - defaultValue: 'False'
+      description: 'if `True` and the step function has more than one
+
+        state variable, then the layer returns a all state variables (a tuple of sequences);
+
+        whereas if not given or `False`, only the first state variable is returned
+        to the caller.
+
+        '
+      id: return_full_state
+      type:
+      - bool, defaults to False
+    - defaultValue: ''
+      description: 'the name of the Function instance in the network
+
+        '
+      id: name
+      type:
+      - str, optional
+    return:
+      description: 'A function that accepts one argument (which must be a sequence)
+        and performs the recurrent operation on it
+
+        '
+      type:
+      - cntk.ops.functions.Function
+  type: function
+  uid: cntk.layers.sequence.Recurrence
+- example:
+  - '
+
+    ```
+
+
+    >>> from cntk.layers import *
+
+    >>> from cntk.layers.typing import *
+
+    ```
+
+
+
+    ```
+
+
+    >>> # a plain sequence-to-sequence model in training (where label length is known)
+
+    >>> en = C.input_variable(**SequenceOver[Axis(''m'')][SparseTensor[20000]])  #
+    English input sentence
+
+    >>> fr = C.input_variable(**SequenceOver[Axis(''n'')][SparseTensor[30000]])  #
+    French target sentence
+
+    ```
+
+
+
+    ```
+
+
+    >>> embed = Embedding(300)
+
+    >>> encoder = Recurrence(LSTM(500), return_full_state=True)
+
+    >>> decoder = RecurrenceFrom(LSTM(500))       # decoder starts from a data-dependent
+    initial state, hence -From()
+
+    >>> emit = Dense(30000)
+
+    >>> h, c = encoder(embed(en)).outputs         # LSTM encoder has two outputs (h,
+    c)
+
+    >>> z = emit(decoder(h, c, sequence.past_value(fr)))   # decoder takes encoder
+    outputs as initial state
+
+    >>> loss = C.cross_entropy_with_softmax(z, fr)
+
+    ```
+
+    '
+  fullName: cntk.layers.sequence.RecurrenceFrom
+  langs:
+  - python
+  module: cntk.layers.sequence
+  name: RecurrenceFrom
+  source:
+    id: RecurrenceFrom
+    path: bindings/python/cntk\layers\sequence.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\layers\sequence.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 166
+  summary: "Layer factory function to create a function that runs a step function\
+    \ recurrently over an input sequence, with initial state.\nThis layer is very\
+    \ similar to @cntk.layers.sequence.Recurrence,\nexcept that the initial state\
+    \ is not a constant but computed from input data.\nThus, in *RecurrenceFrom()*,\
+    \ the initial state is passed to the layer function as a data input\nrather than,\
+    \ like *Recurrence()*, as an initialization parameter to the factory function.\n\
+    This form is meant for use in sequence-to-sequence scenarios.\nThis documentation\
+    \ only covers this case; for additional information on parameters, see @cntk.layers.sequence.Recurrence.\n\
+    In pseudo-code:\n\n<!-- literal_block {\"dupnames\": [], \"ids\": [], \"classes\"\
+    : [], \"xml:space\": \"preserve\", \"backrefs\": [], \"names\": []} -->\n\n````\n\
+    \n   # pseudo-code for y = RecurrenceFrom(step_function)(s,x)\n   #  x: input\
+    \ sequence of tensors along the dynamic axis\n   #  s: initial state for the recurrence\
+    \ (computed from input data elsewhew)\n   #  y: resulting sequence of outputs\
+    \ along the same dynamic axis\n   y = []              # result sequence goes here\n\
+    \   for x_n in x:       # pseudo-code for looping over all steps of input sequence\
+    \ along its dynamic axis\n       s = step_function(s, x_n)  # pass previous state\
+    \ and new data to step_function -> new state\n       y.append(s)\n   ````\n\n\
+    The layer function returned by this factory function accepts the initial state\
+    \ as data argument(s).\nThe initial state can be non-sequential data, as one would\
+    \ have for a plain sequence-to-sequence model,\nor sequential data. In the latter\
+    \ case, the last item is the initial state.\n"
+  syntax:
+    content: RecurrenceFrom(step_function, go_backwards=False, return_full_state=False,
+      name='')
+    parameters:
+    - description: 'This function must have N+1 inputs and N outputs, where N is the
+        number of state variables
+
+        (typically 1 for GRU and plain RNNs, and 2 for LSTMs).
+
+        '
+      id: step_function
+      type:
+      - "cntk.ops.functions.Function\n or equivalent Python function"
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000AEAC261518>
+      description: 'if `True` then run the recurrence from the end of the sequence
+        to the start.
+
+        '
+      id: go_backwards
+      type:
+      - bool, defaults to False
+    - defaultValue: 'False'
+      description: 'the initial value for the state. This can be a constant or a learnable
+        parameter.
+
+        In the latter case, if the step function has more than 1 state variable,
+
+        this parameter must be a tuple providing one initial state for every state
+        variable.
+
+        '
+      id: initial_state
+      type:
+      - scalar or tensor without batch dimension; or a tuple thereof
+    - defaultValue: ''
+      description: 'if `True` and the step function has more than one
+
+        state variable, then the layer returns a all state variables (a tuple of sequences);
+
+        whereas if not given or `False`, only the first state variable is returned
+        to the caller.
+
+        '
+      id: return_full_state
+      type:
+      - bool, defaults to False
+    - description: 'the name of the Function instance in the network
+
+        '
+      id: name
+      type:
+      - str, optional
+    return:
+      description: 'A function that accepts arguments `(initial_state_1, initial_state_2,
+        ..., input_sequence)`,
+
+        where the number of initial state variables must match the step function''s.
+
+        The initial state can be a sequence, in which case its last (or first if `go_backwards`)
+        item is used.
+
+        '
+      type:
+      - cntk.ops.functions.Function
+  type: function
+  uid: cntk.layers.sequence.RecurrenceFrom
+- example:
+  - 'TO BE PROVIDED after signature changes.
+
+    '
+  fullName: cntk.layers.sequence.UnfoldFrom
+  langs:
+  - python
+  module: cntk.layers.sequence
+  name: UnfoldFrom
+  source:
+    id: UnfoldFrom
+    path: bindings/python/cntk\layers\sequence.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\layers\sequence.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 515
+  summary: "Layer factory function to create a function that implements a recurrent\
+    \ generator.\nStarting with a seed state, the `UnfoldFrom()` layer\nrepeatedly\
+    \ applies `generator_function` and emits the sequence of results.\nIt stops after\
+    \ a maximum number of steps, or earlier when, if provided, *until_predicate* evaluates\
+    \ to True for the current output.\nThe maximum number of steps is based on a second\
+    \ input from which only the dynamic-axis information is used.\nThis is best explained\
+    \ in pseudo-code:\n\n<!-- literal_block {\"dupnames\": [], \"ids\": [], \"classes\"\
+    : [], \"xml:space\": \"preserve\", \"backrefs\": [], \"names\": []} -->\n\n````\n\
+    \n   # pseudo-code for y = UnfoldFrom(generator_function, until_predicate)(s,axis_like)\n\
+    \   #  s:         initial state for the recurrence (computed from input data elsewhew),\n\
+    \   #  axis_like: any input with a dynamic axis, unfold will happen along the\
+    \ same dynamic axis,\n   #  y:         resulting sequence of outputs along the\
+    \ same dynamic axis\n   y = []               # result sequence goes here\n   for\
+    \ _ in axis_like:  # pseudo-code for looping over all steps of dynamic axis of\
+    \ axis_like\n       s = generator_function(s)  # pass previous state and new data\
+    \ to step_function -> new state\n       y.append(s)\n       if until_predicate(s):\n\
+    \           break\n   # now y is the output of repeatedly applying generator_function()\n\
+    \   ````\n\nA typical application is the decoder of a sequence-to-sequence model,\n\
+    the generator function `f` accepts a two-valued state, with the first\nbeing an\
+    \ emitted word, and the second being an internal recurrent state.\nThe initial\
+    \ state would be a tuple `(w0, h0)`\nwhere `w0` represents the sentence-start\
+    \ symbol,\nand `h0` is a thought vector that encodes the input sequence (as obtained\n\
+    from a @cntk.layers.sequence.Fold operation).\n\nA variant allows the state and\
+    \ the emitted sequence to be different. In that case,\n`f` returns a tuple (output\
+    \ value, new state), and\n`UnfoldFrom(f)(s)`\nwould emit the sequence `f(s)[0],\
+    \ f(f(s)[1])[0], f(f(f(s)[1])[1])[0], ...`.\n\nThe maximum length of the output\
+    \ sequence is not unlimited, but determined by the argument to\nthe layer function,\
+    \ multiplied by an optional increase factor.\n\nOptionally, a function can be\
+    \ provided to denote that the end of the sequence has been reached.\n\nNote: In\
+    \ the context of functional programming, the first form of this operation is known\
+    \ as the unfold() anamorphism.\n"
+  syntax:
+    content: UnfoldFrom(generator_function, until_predicate=None, length_increase=1,
+      name='')
+    parameters:
+    - description: 'This function must have N inputs and a N-tuple-valued output,
+        where N is the number of state variables.
+
+        If the emitted value should be different from the state, then the function
+        should have
+
+        a tuple of N+1 outputs, where the first output is the value to emit, while
+        the others are the state.
+
+        '
+      id: generator_function
+      type:
+      - "cntk.ops.functions.Function\n or equivalent Python function"
+    - defaultValue: None
+      description: 'A function that denotes when the last element of the unfold has
+        been emitted.
+
+        It takes the same number of argments as the generator, and returns a scalar
+        that must be 1
+
+        for the last element of the sequence, and 0 otherwise.
+
+        This is subject to the maximum length as determined by the input sequence
+        and `length_increase`.
+
+        If this parameter is not provided, the output length will be equal to the
+        specified maximum length.
+
+        '
+      id: until_predicate
+      type:
+      - "cntk.ops.functions.Function\n or equivalent Python function"
+    - defaultValue: '1'
+      description: 'the maximum number of output items is equal to the
+
+        number of items of the *dynamic_axis_like* argument to the returned *unfold()*
+        function, multiplied by this factor.
+
+        For example, pass 1.5 here if the output sequence can be at most 50% longer
+        than the input.
+
+        '
+      id: length_increase
+      type:
+      - float, defaults to 1
+    - defaultValue: ''
+      description: 'the name of the Function instance in the network
+
+        '
+      id: name
+      type:
+      - str, optional
+    return:
+      description: 'A function that accepts two arguments (*initial state* and *dynamic_axis_like*),
+        and performs the unfold operation on it.
+
+        The *initial state* argument is the initial state for the recurrence.
+
+        The *dynamic_axis_like* must be a sequence and provides a reference for the
+        maximum length of the output sequence.
+
+        '
+      type:
+      - cntk.ops.functions.Function
+  type: function
+  uid: cntk.layers.sequence.UnfoldFrom
+references:
+- fullName: cntk.layers.sequence.Delay
+  isExternal: false
+  name: Delay
+  parent: cntk.layers.sequence
+  uid: cntk.layers.sequence.Delay
+- fullName: cntk.layers.sequence.Fold
+  isExternal: false
+  name: Fold
+  parent: cntk.layers.sequence
+  uid: cntk.layers.sequence.Fold
+- fullName: cntk.layers.sequence.PastValueWindow
+  isExternal: false
+  name: PastValueWindow
+  parent: cntk.layers.sequence
+  uid: cntk.layers.sequence.PastValueWindow
+- fullName: cntk.layers.sequence.Recurrence
+  isExternal: false
+  name: Recurrence
+  parent: cntk.layers.sequence
+  uid: cntk.layers.sequence.Recurrence
+- fullName: cntk.layers.sequence.RecurrenceFrom
+  isExternal: false
+  name: RecurrenceFrom
+  parent: cntk.layers.sequence
+  uid: cntk.layers.sequence.RecurrenceFrom
+- fullName: cntk.layers.sequence.UnfoldFrom
+  isExternal: false
+  name: UnfoldFrom
+  parent: cntk.layers.sequence
+  uid: cntk.layers.sequence.UnfoldFrom

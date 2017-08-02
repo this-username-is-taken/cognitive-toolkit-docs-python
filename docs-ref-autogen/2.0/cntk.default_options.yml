@@ -16,14 +16,26 @@ items:
   name: default_options
   source:
     id: default_options
-    path: bindings/python\cntk\default_options.py
+    path: bindings/python/cntk\default_options.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\default_options.py
+      path: bindings/python/cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
-  summary: "Default options of CNTK functions. \n\n\n\nUsage: \n\n\n* ``with default_options():``,\
-    \ and\n* ``with default_options_for():``\n"
+  summary: 'Default options of CNTK functions.
+
+
+
+
+    Usage:
+
+
+
+    * ``with default_options():``, and
+
+    * ``with default_options_for():``
+
+    '
   type: module
   uid: cntk.default_options
 - fullName: cntk.default_options.default_options
@@ -33,10 +45,10 @@ items:
   name: default_options
   source:
     id: default_options
-    path: bindings/python\cntk\default_options.py
+    path: bindings/python/cntk\default_options.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\default_options.py
+      path: bindings/python/cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 39
   syntax:
@@ -50,10 +62,10 @@ items:
   name: default_options_for
   source:
     id: default_options_for
-    path: bindings/python\cntk\default_options.py
+    path: bindings/python/cntk\default_options.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\default_options.py
+      path: bindings/python/cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 47
   syntax:
@@ -69,10 +81,10 @@ items:
   name: get_default_override
   source:
     id: get_default_override
-    path: bindings/python\cntk\default_options.py
+    path: bindings/python/cntk\default_options.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\default_options.py
+      path: bindings/python/cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 65
   summary: 'Looks up an option default override.
@@ -84,8 +96,8 @@ items:
     content: get_default_override(function_or_class, **kwargs)
     parameters:
     - description: "the function that calls this.\nFor example:\n\n<!-- literal_block\
-        \ {\"xml:space\": \"preserve\", \"names\": [], \"classes\": [], \"ids\": [],\
-        \ \"backrefs\": [], \"dupnames\": []} -->\n\n````\n\n   def Convolution(args,\
+        \ {\"ids\": [], \"backrefs\": [], \"classes\": [], \"xml:space\": \"preserve\"\
+        , \"names\": [], \"dupnames\": []} -->\n\n````\n\n   def Convolution(args,\
         \ init=default_override_or(glorot_uniform()), activation=default_override_or(identity),\
         \ pad=default_override_or(False)):\n   init = _get_default_override(Convolution,\
         \ init=init) # pass default under the same name\n   ````\n"
@@ -99,10 +111,10 @@ items:
   name: get_global_option
   source:
     id: get_global_option
-    path: bindings/python\cntk\default_options.py
+    path: bindings/python/cntk\default_options.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\default_options.py
+      path: bindings/python/cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 117
   syntax:
@@ -119,10 +131,10 @@ items:
   name: is_default_override
   source:
     id: is_default_override
-    path: bindings/python\cntk\default_options.py
+    path: bindings/python/cntk\default_options.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\default_options.py
+      path: bindings/python/cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 62
   syntax:
@@ -138,10 +150,10 @@ items:
   name: set_global_option
   source:
     id: set_global_option
-    path: bindings/python\cntk\default_options.py
+    path: bindings/python/cntk\default_options.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\default_options.py
+      path: bindings/python/cntk\default_options.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 110
   syntax:

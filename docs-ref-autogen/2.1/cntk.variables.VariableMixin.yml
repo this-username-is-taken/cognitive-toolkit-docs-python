@@ -1,0 +1,380 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.variables.VariableMixin.dtype
+  - cntk.variables.VariableMixin.dynamic_axes
+  - cntk.variables.VariableMixin.is_constant
+  - cntk.variables.VariableMixin.is_input
+  - cntk.variables.VariableMixin.is_output
+  - cntk.variables.VariableMixin.is_parameter
+  - cntk.variables.VariableMixin.is_placeholder
+  - cntk.variables.VariableMixin.is_sparse
+  - cntk.variables.VariableMixin.name
+  - cntk.variables.VariableMixin.needs_gradient
+  - cntk.variables.VariableMixin.owner
+  - cntk.variables.VariableMixin.shape
+  - cntk.variables.VariableMixin.uid
+  class: cntk.variables.VariableMixin
+  fullName: cntk.variables.VariableMixin
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.variables
+  name: VariableMixin
+  source:
+    id: VariableMixin
+    path: bindings/python/cntk\variables.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\variables.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 65
+  summary: 'Standard properties for @cntk.variables.Variable and its derived classes
+
+    @cntk.variables.Parameter and @cntk.variables.Constant.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    '
+  syntax: {}
+  type: class
+  uid: cntk.variables.VariableMixin
+- class: cntk.variables.VariableMixin
+  fullName: cntk.variables.VariableMixin.dtype
+  langs:
+  - python
+  module: cntk.variables
+  name: dtype
+  source:
+    id: dtype
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'The NumPy type of this variable.
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.variables.VariableMixin.dtype
+- class: cntk.variables.VariableMixin
+  fullName: cntk.variables.VariableMixin.dynamic_axes
+  langs:
+  - python
+  module: cntk.variables
+  name: dynamic_axes
+  source:
+    id: dynamic_axes
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'The dynamic axes of this variable.
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.variables.VariableMixin.dynamic_axes
+- class: cntk.variables.VariableMixin
+  fullName: cntk.variables.VariableMixin.is_constant
+  langs:
+  - python
+  module: cntk.variables
+  name: is_constant
+  source:
+    id: is_constant
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Whether this variable is a constant.
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.variables.VariableMixin.is_constant
+- class: cntk.variables.VariableMixin
+  fullName: cntk.variables.VariableMixin.is_input
+  langs:
+  - python
+  module: cntk.variables
+  name: is_input
+  source:
+    id: is_input
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Whether this variable is an input.
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.variables.VariableMixin.is_input
+- class: cntk.variables.VariableMixin
+  fullName: cntk.variables.VariableMixin.is_output
+  langs:
+  - python
+  module: cntk.variables
+  name: is_output
+  source:
+    id: is_output
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Whether this variable is an output.
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.variables.VariableMixin.is_output
+- class: cntk.variables.VariableMixin
+  fullName: cntk.variables.VariableMixin.is_parameter
+  langs:
+  - python
+  module: cntk.variables
+  name: is_parameter
+  source:
+    id: is_parameter
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Whether this variable is a parameter.
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.variables.VariableMixin.is_parameter
+- class: cntk.variables.VariableMixin
+  fullName: cntk.variables.VariableMixin.is_placeholder
+  langs:
+  - python
+  module: cntk.variables
+  name: is_placeholder
+  source:
+    id: is_placeholder
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Whether this variable is a placeholder.
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.variables.VariableMixin.is_placeholder
+- class: cntk.variables.VariableMixin
+  fullName: cntk.variables.VariableMixin.is_sparse
+  langs:
+  - python
+  module: cntk.variables
+  name: is_sparse
+  source:
+    id: is_sparse
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Whether this variable is sparse.
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.variables.VariableMixin.is_sparse
+- class: cntk.variables.VariableMixin
+  fullName: cntk.variables.VariableMixin.name
+  langs:
+  - python
+  module: cntk.variables
+  name: name
+  source:
+    id: name
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'The name of this variable.
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.variables.VariableMixin.name
+- class: cntk.variables.VariableMixin
+  fullName: cntk.variables.VariableMixin.needs_gradient
+  langs:
+  - python
+  module: cntk.variables
+  name: needs_gradient
+  source:
+    id: needs_gradient
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Whether this variable needs gradients.
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.variables.VariableMixin.needs_gradient
+- class: cntk.variables.VariableMixin
+  fullName: cntk.variables.VariableMixin.owner
+  langs:
+  - python
+  module: cntk.variables
+  name: owner
+  source:
+    id: owner
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'The function this variable is an output of.
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.variables.VariableMixin.owner
+- class: cntk.variables.VariableMixin
+  fullName: cntk.variables.VariableMixin.shape
+  langs:
+  - python
+  module: cntk.variables
+  name: shape
+  source:
+    id: shape
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'The shape of this variable as a tuple.
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.variables.VariableMixin.shape
+- class: cntk.variables.VariableMixin
+  fullName: cntk.variables.VariableMixin.uid
+  langs:
+  - python
+  module: cntk.variables
+  name: uid
+  source:
+    id: uid
+    path: null
+    remote:
+      branch: release/2.1
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'The internally generated unique name of the variable.
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.variables.VariableMixin.uid
+references:
+- fullName: cntk.variables.VariableMixin.dtype
+  isExternal: false
+  name: dtype
+  parent: cntk.variables.VariableMixin
+  uid: cntk.variables.VariableMixin.dtype
+- fullName: cntk.variables.VariableMixin.dynamic_axes
+  isExternal: false
+  name: dynamic_axes
+  parent: cntk.variables.VariableMixin
+  uid: cntk.variables.VariableMixin.dynamic_axes
+- fullName: cntk.variables.VariableMixin.is_constant
+  isExternal: false
+  name: is_constant
+  parent: cntk.variables.VariableMixin
+  uid: cntk.variables.VariableMixin.is_constant
+- fullName: cntk.variables.VariableMixin.is_input
+  isExternal: false
+  name: is_input
+  parent: cntk.variables.VariableMixin
+  uid: cntk.variables.VariableMixin.is_input
+- fullName: cntk.variables.VariableMixin.is_output
+  isExternal: false
+  name: is_output
+  parent: cntk.variables.VariableMixin
+  uid: cntk.variables.VariableMixin.is_output
+- fullName: cntk.variables.VariableMixin.is_parameter
+  isExternal: false
+  name: is_parameter
+  parent: cntk.variables.VariableMixin
+  uid: cntk.variables.VariableMixin.is_parameter
+- fullName: cntk.variables.VariableMixin.is_placeholder
+  isExternal: false
+  name: is_placeholder
+  parent: cntk.variables.VariableMixin
+  uid: cntk.variables.VariableMixin.is_placeholder
+- fullName: cntk.variables.VariableMixin.is_sparse
+  isExternal: false
+  name: is_sparse
+  parent: cntk.variables.VariableMixin
+  uid: cntk.variables.VariableMixin.is_sparse
+- fullName: cntk.variables.VariableMixin.name
+  isExternal: false
+  name: name
+  parent: cntk.variables.VariableMixin
+  uid: cntk.variables.VariableMixin.name
+- fullName: cntk.variables.VariableMixin.needs_gradient
+  isExternal: false
+  name: needs_gradient
+  parent: cntk.variables.VariableMixin
+  uid: cntk.variables.VariableMixin.needs_gradient
+- fullName: cntk.variables.VariableMixin.owner
+  isExternal: false
+  name: owner
+  parent: cntk.variables.VariableMixin
+  uid: cntk.variables.VariableMixin.owner
+- fullName: cntk.variables.VariableMixin.shape
+  isExternal: false
+  name: shape
+  parent: cntk.variables.VariableMixin
+  uid: cntk.variables.VariableMixin.shape
+- fullName: cntk.variables.VariableMixin.uid
+  isExternal: false
+  name: uid
+  parent: cntk.variables.VariableMixin
+  uid: cntk.variables.VariableMixin.uid

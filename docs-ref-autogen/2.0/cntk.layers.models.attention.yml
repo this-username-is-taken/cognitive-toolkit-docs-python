@@ -10,10 +10,10 @@ items:
   name: attention
   source:
     id: attention
-    path: bindings/python\cntk\layers\models\attention.py
+    path: bindings/python/cntk\layers\models\attention.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\layers\models\attention.py
+      path: bindings/python/cntk\layers\models\attention.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   summary: 'Standard attention model.
@@ -28,10 +28,10 @@ items:
   name: AttentionModel
   source:
     id: AttentionModel
-    path: bindings/python\cntk\layers\models\attention.py
+    path: bindings/python/cntk\layers\models\attention.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\layers\models\attention.py
+      path: bindings/python/cntk\layers\models\attention.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 23
   summary: 'Layer factory function to create a function object that implements an
@@ -46,17 +46,17 @@ items:
       init=glorot_uniform(), go_backwards=False, enable_self_stabilization=True, name='')
     parameters:
     - id: attention_dim
-    - defaultValue: ''
+    - defaultValue: None
       id: attention_span
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000000543C080>
+    - defaultValue: None
       id: attention_axis
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000000543C048>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000D2D0662CF8>
       id: init
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000000005434FD0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000D2D0662D30>
       id: go_backwards
-    - defaultValue: None
+    - defaultValue: <cntk.default_options.default_override_or object at 0x000000D2D0662D68>
       id: enable_self_stabilization
-    - defaultValue: None
+    - defaultValue: ''
       id: name
   type: function
   uid: cntk.layers.models.attention.AttentionModel

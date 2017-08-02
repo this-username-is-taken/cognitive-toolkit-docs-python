@@ -1,0 +1,156 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.deeprl.agent.shared.models.Models.dueling_network
+  - cntk.contrib.deeprl.agent.shared.models.Models.feedforward_network
+  class: cntk.contrib.deeprl.agent.shared.models.Models
+  fullName: cntk.contrib.deeprl.agent.shared.models.Models
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.models
+  name: Models
+  source:
+    id: Models
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\models.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\models.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 14
+  summary: 'A set of predefined models to approximate Q or log of pi (policy).
+
+
+    The loss function needs to be ''cross_entropy_with_softmax'' for policy
+
+    gradient methods.
+
+
+
+    '
+  syntax: {}
+  type: class
+  uid: cntk.contrib.deeprl.agent.shared.models.Models
+- class: cntk.contrib.deeprl.agent.shared.models.Models
+  fullName: cntk.contrib.deeprl.agent.shared.models.Models.dueling_network
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.models
+  name: dueling_network
+  source:
+    id: dueling_network
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\models.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\models.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 68
+  summary: "Dueling network to approximate Q function.\n\nSee paper at [https://arxiv.org/pdf/1511.06581.pdf](https://arxiv.org/pdf/1511.06581.pdf).\n\
+    \nReturns: a Python dictionary with string-valued keys including\n   'inputs',\
+    \ 'outputs', 'loss' and 'f'.\n"
+  syntax:
+    content: dueling_network(shape_of_inputs, number_of_outputs, model_hidden_layers,
+      loss_function=None, use_placeholder_for_input=False)
+    parameters:
+    - description: 'tuple of array (input) dimensions.
+
+        '
+      id: shape_of_inputs
+    - description: 'dimension of output, equals the number of
+
+        possible actions.
+
+        '
+      id: number_of_outputs
+    - description: 'in the form of "[comma-separated integers,
+
+        [comma-separated integers], [comma-separated integers]]". Each
+
+        integer is the number of nodes in a hidden layer.The
+
+        first set of integers represent the shared component in dueling
+
+        network. The second set correponds to the state value function
+
+        V and the third set correponds to the advantage function A.
+
+        '
+      id: model_hidden_layers
+    - defaultValue: None
+      description: 'if not specified, use squared loss by default.
+
+        '
+      id: loss_function
+    - defaultValue: 'False'
+      description: 'if true, inputs have to be replaced
+
+        later with actual input_variable.
+
+        '
+      id: use_placeholder_for_input
+  type: method
+  uid: cntk.contrib.deeprl.agent.shared.models.Models.dueling_network
+- class: cntk.contrib.deeprl.agent.shared.models.Models
+  fullName: cntk.contrib.deeprl.agent.shared.models.Models.feedforward_network
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.models
+  name: feedforward_network
+  source:
+    id: feedforward_network
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\models.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\models.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 21
+  summary: "Feedforward network to approximate Q or log of pi.\n\nReturns: a Python\
+    \ dictionary with string valued keys including\n   'inputs', 'outputs', 'loss'\
+    \ and 'f'.\n"
+  syntax:
+    content: feedforward_network(shape_of_inputs, number_of_outputs, model_hidden_layers,
+      loss_function=None, use_placeholder_for_input=False)
+    parameters:
+    - description: 'tuple of array (input) dimensions.
+
+        '
+      id: shape_of_inputs
+    - description: 'dimension of output, equals the number of
+
+        possible actions.
+
+        '
+      id: number_of_outputs
+    - description: 'string representing a list of integers
+
+        corresponding to number of nodes in each hidden layer.
+
+        '
+      id: model_hidden_layers
+    - defaultValue: None
+      description: 'if not specified, use squared loss by default.
+
+        '
+      id: loss_function
+    - defaultValue: 'False'
+      description: 'if true, inputs have to be replaced
+
+        later with actual input_variable.
+
+        '
+      id: use_placeholder_for_input
+  type: method
+  uid: cntk.contrib.deeprl.agent.shared.models.Models.feedforward_network
+references:
+- fullName: cntk.contrib.deeprl.agent.shared.models.Models.dueling_network
+  isExternal: false
+  name: dueling_network
+  parent: cntk.contrib.deeprl.agent.shared.models.Models
+  uid: cntk.contrib.deeprl.agent.shared.models.Models.dueling_network
+- fullName: cntk.contrib.deeprl.agent.shared.models.Models.feedforward_network
+  isExternal: false
+  name: feedforward_network
+  parent: cntk.contrib.deeprl.agent.shared.models.Models
+  uid: cntk.contrib.deeprl.agent.shared.models.Models.feedforward_network

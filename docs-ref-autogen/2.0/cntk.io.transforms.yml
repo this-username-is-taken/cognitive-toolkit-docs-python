@@ -13,10 +13,10 @@ items:
   name: transforms
   source:
     id: transforms
-    path: bindings/python\cntk\io\transforms.py
+    path: bindings/python/cntk\io\transforms.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\io\transforms.py
+      path: bindings/python/cntk\io\transforms.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
   type: module
@@ -28,10 +28,10 @@ items:
   name: color
   source:
     id: color
-    path: bindings/python\cntk\io\transforms.py
+    path: bindings/python/cntk\io\transforms.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\io\transforms.py
+      path: bindings/python/cntk\io\transforms.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 107
   summary: 'Color transform that can be used to pass to *map_features* for data augmentation.
@@ -68,7 +68,8 @@ items:
       id: contrast_radius
       type:
       - float, default 0.0
-    - description: 'Radius for saturation change. Only for
+    - defaultValue: '0.0'
+      description: 'Radius for saturation change. Only for
 
         color images and must be set within [0.0, 1.0]. For example, assume
 
@@ -94,10 +95,10 @@ items:
   name: crop
   source:
     id: crop
-    path: bindings/python\cntk\io\transforms.py
+    path: bindings/python/cntk\io\transforms.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\io\transforms.py
+      path: bindings/python/cntk\io\transforms.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 10
   summary: 'Crop transform that can be used to pass to *map_features*
@@ -107,7 +108,7 @@ items:
     content: crop(crop_type='center', crop_size=0, side_ratio=0.0, area_ratio=0.0,
       aspect_ratio=1.0, jitter_type='none')
     parameters:
-    - defaultValue: '1.0'
+    - defaultValue: center
       description: '''center'', ''randomside'', ''randomarea'',
 
         or ''multiview10''.  ''randomside'' and ''randomarea'' are usually used during
@@ -132,7 +133,7 @@ items:
       id: crop_type
       type:
       - str, default 'center'
-    - defaultValue: '0.0'
+    - defaultValue: '0'
       description: 'crop size in pixels. Ignored if set to 0.
 
         When crop_size is non-zero, for example, crop_size=256, it means a cropping
@@ -173,7 +174,7 @@ items:
       id: side_ratio
       type:
       - float, default 0.0
-    - defaultValue: '0'
+    - defaultValue: '0.0'
       description: 'It specifies the area ratio of final image
 
         with respect to the original image. Ignored if set to 0.0. Otherwise, must
@@ -195,7 +196,7 @@ items:
       id: area_ratio
       type:
       - float, default 0.0
-    - defaultValue: center
+    - defaultValue: '1.0'
       description: 'It specifies the aspect ratio (width/height
 
         or height/width) of the crop window. Must be set within *(0,1]*. For example,
@@ -214,7 +215,8 @@ items:
       id: aspect_ratio
       type:
       - float, default 1.0
-    - description: 'crop scale jitter type, possible
+    - defaultValue: none
+      description: 'crop scale jitter type, possible
 
         values are ''none'' and ''uniratio''. ''uniratio'' means uniform distributed
         jitter
@@ -238,10 +240,10 @@ items:
   name: mean
   source:
     id: mean
-    path: bindings/python\cntk\io\transforms.py
+    path: bindings/python/cntk\io\transforms.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\io\transforms.py
+      path: bindings/python/cntk\io\transforms.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 93
   summary: 'Mean transform that can be used to pass to *map_features* for data augmentation.
@@ -273,10 +275,10 @@ items:
   name: scale
   source:
     id: scale
-    path: bindings/python\cntk\io\transforms.py
+    path: bindings/python/cntk\io\transforms.py
     remote:
       branch: release/2.0
-      path: bindings/python\cntk\io\transforms.py
+      path: bindings/python/cntk\io\transforms.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 70
   summary: 'Scale transform that can be used to pass to *map_features* for data augmentation.
@@ -286,15 +288,13 @@ items:
     content: scale(width, height, channels, interpolations='linear', scale_mode='fill',
       pad_value=-1)
     parameters:
-    - defaultValue: fill
-      description: 'width of the image in pixels
+    - description: 'width of the image in pixels
 
         '
       id: width
       type:
       - int
-    - defaultValue: linear
-      description: 'height of the image in pixels
+    - description: 'height of the image in pixels
 
         '
       id: height
@@ -306,7 +306,8 @@ items:
       id: channels
       type:
       - int
-    - description: 'possible values are
+    - defaultValue: linear
+      description: 'possible values are
 
         ''nearest'', ''linear'', ''cubic'', and ''lanczos''
 
@@ -314,7 +315,8 @@ items:
       id: interpolations
       type:
       - str, default 'linear'
-    - description: '''fill'', ''crop'' or ''pad''.
+    - defaultValue: fill
+      description: '''fill'', ''crop'' or ''pad''.
 
         ''fill'' - warp the image to the given target size.
 

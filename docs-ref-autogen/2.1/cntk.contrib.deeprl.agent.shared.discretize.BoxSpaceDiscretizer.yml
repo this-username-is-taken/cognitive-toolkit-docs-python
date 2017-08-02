@@ -1,0 +1,59 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.deeprl.agent.shared.discretize.BoxSpaceDiscretizer.discretize
+  class: cntk.contrib.deeprl.agent.shared.discretize.BoxSpaceDiscretizer
+  fullName: cntk.contrib.deeprl.agent.shared.discretize.BoxSpaceDiscretizer
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.discretize
+  name: BoxSpaceDiscretizer
+  source:
+    id: BoxSpaceDiscretizer
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\discretize.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\discretize.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 11
+  summary: 'Discretize Box space.
+
+
+    '
+  syntax:
+    content: BoxSpaceDiscretizer(space, resolution)
+  type: class
+  uid: cntk.contrib.deeprl.agent.shared.discretize.BoxSpaceDiscretizer
+- class: cntk.contrib.deeprl.agent.shared.discretize.BoxSpaceDiscretizer
+  fullName: cntk.contrib.deeprl.agent.shared.discretize.BoxSpaceDiscretizer.discretize
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.discretize
+  name: discretize
+  source:
+    id: discretize
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\discretize.py
+    remote:
+      branch: release/2.1
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\discretize.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 32
+  summary: 'Discretize box space observation.
+
+    '
+  syntax:
+    content: discretize(value)
+    parameters:
+    - id: self
+    - id: value
+  type: method
+  uid: cntk.contrib.deeprl.agent.shared.discretize.BoxSpaceDiscretizer.discretize
+references:
+- fullName: cntk.contrib.deeprl.agent.shared.discretize.BoxSpaceDiscretizer.discretize
+  isExternal: false
+  name: discretize
+  parent: cntk.contrib.deeprl.agent.shared.discretize.BoxSpaceDiscretizer
+  uid: cntk.contrib.deeprl.agent.shared.discretize.BoxSpaceDiscretizer.discretize
