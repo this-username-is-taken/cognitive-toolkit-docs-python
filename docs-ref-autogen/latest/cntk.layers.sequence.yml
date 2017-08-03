@@ -69,7 +69,7 @@ items:
       id: T
       type:
       - int
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000376559E1D0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000021A50FE048>
       description: 'tensor or scalar representing the initial value to be used when
         the input tensor is shifted in time.
 
@@ -122,8 +122,8 @@ items:
   summary: "Layer factory function to create a function that runs a step function\
     \ recurrently over an input sequence,\nand returns the final state.\nThis is often\
     \ used for embeddings of sequences, e.g. in a sequence-to-sequence model.\nPseudo-code:\n\
-    \n<!-- literal_block {\"dupnames\": [], \"xml:space\": \"preserve\", \"ids\":\
-    \ [], \"backrefs\": [], \"classes\": [], \"names\": []} -->\n\n````\n\n   # pseudo-code\
+    \n<!-- literal_block {\"xml:space\": \"preserve\", \"backrefs\": [], \"dupnames\"\
+    : [], \"classes\": [], \"ids\": [], \"names\": []} -->\n\n````\n\n   # pseudo-code\
     \ for h = Fold(step_function)(x)\n   #  x: input sequence of tensors along the\
     \ dynamic axis\n   #  h: resulting final step-function output tensor that no longer\
     \ has a dynamic axis\n   h = initial_state   # h = output of previous step (\"\
@@ -155,7 +155,7 @@ items:
       id: folder_function
       type:
       - "cntk.ops.functions.Function\n or equivalent Python function"
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000376559E2E8>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000021A50FE160>
       description: 'if `True` then run the recurrence from the end of the sequence
         to the start.
 
@@ -163,7 +163,7 @@ items:
       id: go_backwards
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000376559E320>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000021A50FE198>
       description: 'the initial value for the state. This can be a constant or a learnable
         parameter.
 
@@ -273,7 +273,7 @@ items:
       - 'int or @cntk.axis.Axis
 
         , optional, keyword only'
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000376559E208>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000021A50FE080>
       description: 'the name of the Function instance in the network
 
         '
@@ -329,9 +329,9 @@ items:
     \ that runs a step function recurrently over an input sequence,\nwhere in each\
     \ step, Recurrence() will pass to the step function a data input as well as the\
     \ output of the\nprevious step.\nThe following pseudo-code repesents what happens\
-    \ when you call a *Recurrence()* layer:\n\n<!-- literal_block {\"dupnames\": [],\
-    \ \"xml:space\": \"preserve\", \"ids\": [], \"backrefs\": [], \"classes\": [],\
-    \ \"names\": []} -->\n\n````\n\n   # pseudo-code for y = Recurrence(step_function)(x)\n\
+    \ when you call a *Recurrence()* layer:\n\n<!-- literal_block {\"xml:space\":\
+    \ \"preserve\", \"backrefs\": [], \"dupnames\": [], \"classes\": [], \"ids\":\
+    \ [], \"names\": []} -->\n\n````\n\n   # pseudo-code for y = Recurrence(step_function)(x)\n\
     \   #  x: input sequence of tensors along the dynamic axis\n   #  y: resulting\
     \ sequence of outputs along the same dynamic axis\n   y = []              # result\
     \ sequence goes here\n   s = initial_state   # s = output of previous step (\"\
@@ -376,7 +376,7 @@ items:
       id: step_function
       type:
       - "cntk.ops.functions.Function\n or equivalent Python function"
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000376559E278>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000021A50FE0F0>
       description: 'if `True` then run the recurrence from the end of the sequence
         to the start.
 
@@ -384,7 +384,7 @@ items:
       id: go_backwards
       type:
       - bool, defaults to False
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000376559E2B0>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000021A50FE128>
       description: 'the initial value for the state. This can be a constant or a learnable
         parameter.
 
@@ -498,8 +498,8 @@ items:
     \ like *Recurrence()*, as an initialization parameter to the factory function.\n\
     This form is meant for use in sequence-to-sequence scenarios.\nThis documentation\
     \ only covers this case; for additional information on parameters, see @cntk.layers.sequence.Recurrence.\n\
-    In pseudo-code:\n\n<!-- literal_block {\"dupnames\": [], \"xml:space\": \"preserve\"\
-    , \"ids\": [], \"backrefs\": [], \"classes\": [], \"names\": []} -->\n\n````\n\
+    In pseudo-code:\n\n<!-- literal_block {\"xml:space\": \"preserve\", \"backrefs\"\
+    : [], \"dupnames\": [], \"classes\": [], \"ids\": [], \"names\": []} -->\n\n````\n\
     \n   # pseudo-code for y = RecurrenceFrom(step_function)(s,x)\n   #  x: input\
     \ sequence of tensors along the dynamic axis\n   #  s: initial state for the recurrence\
     \ (computed from input data elsewhew)\n   #  y: resulting sequence of outputs\
@@ -524,7 +524,7 @@ items:
       id: step_function
       type:
       - "cntk.ops.functions.Function\n or equivalent Python function"
-    - defaultValue: <cntk.default_options.default_override_or object at 0x000000376559E240>
+    - defaultValue: <cntk.default_options.default_override_or object at 0x00000021A50FE0B8>
       description: 'if `True` then run the recurrence from the end of the sequence
         to the start.
 
@@ -600,8 +600,8 @@ items:
     \ a maximum number of steps, or earlier when, if provided, *until_predicate* evaluates\
     \ to True for the current output.\nThe maximum number of steps is based on a second\
     \ input from which only the dynamic-axis information is used.\nThis is best explained\
-    \ in pseudo-code:\n\n<!-- literal_block {\"dupnames\": [], \"xml:space\": \"preserve\"\
-    , \"ids\": [], \"backrefs\": [], \"classes\": [], \"names\": []} -->\n\n````\n\
+    \ in pseudo-code:\n\n<!-- literal_block {\"xml:space\": \"preserve\", \"backrefs\"\
+    : [], \"dupnames\": [], \"classes\": [], \"ids\": [], \"names\": []} -->\n\n````\n\
     \n   # pseudo-code for y = UnfoldFrom(generator_function, until_predicate)(s,axis_like)\n\
     \   #  s:         initial state for the recurrence (computed from input data elsewhew),\n\
     \   #  axis_like: any input with a dynamic axis, unfold will happen along the\
