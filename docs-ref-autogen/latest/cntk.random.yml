@@ -10,6 +10,7 @@ items:
   - cntk.random.normal_like
   - cntk.random.uniform
   - cntk.random.uniform_like
+  - cntk.random.tests
   fullName: cntk.random
   langs:
   - python
@@ -591,3 +592,8 @@ references:
   name: uniform_like
   parent: cntk.random
   uid: cntk.random.uniform_like
+- fullName: cntk.random.tests
+  isExternal: false
+  name: tests
+  parent: cntk.random
+  uid: cntk.random.tests

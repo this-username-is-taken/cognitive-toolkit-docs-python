@@ -22,7 +22,7 @@ items:
   summary: "In order to debug a graph one simply needs to wrap the root node as follows::\n\
     \n\n    # ... setting up the model in z\n    from cntk.debugging import debug_model\n\
     \    z = debug_model(z)\n\n\nThen, when ``z`` is evaluated or trained (i.e. when\
-    \ either\n:meth:`~cntk.ops.functions.Function.forward` or\n:meth:`~cntk.ops.functions.Function.backward`\
+    \ either\n@cntk.ops.functions.Function.forward or\n@cntk.ops.functions.Function.backward\
     \ is called, you will see the\nfollowing command-line interface::\n\n\n    ===================================\
     \ forward  ===================================\n    Parameter node with uid='Parameter28'\
     \ shape=[](2,)\n    [CNTK forward] >>> help\n        Commands:\n        n - execute\
@@ -90,7 +90,7 @@ items:
       id: in_stream
       type:
       - object behaving like sys.stdin, default stdin
-    - defaultValue: <colorama.ansitowin32.StreamWrapper object at 0x00000037DF8BE208>
+    - defaultValue: <colorama.ansitowin32.StreamWrapper object at 0x00000233568BA6D8>
       description: '*write()*
 
         and *flush()* will be called on it to output debug info to the user
