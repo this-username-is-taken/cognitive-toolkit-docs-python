@@ -84,11 +84,11 @@ items:
     \ types\nof the arguments. In this case, the @Function decorator creates a CNTK\
     \ Function\nwhose arguments are input variables.\n\nIf you use Python 3, Functions\
     \ with types are declared using Python annotation syntax, e.g.:\n\n<!-- literal_block\
-    \ {\"classes\": [], \"xml:space\": \"preserve\", \"names\": [], \"ids\": [], \"\
-    backrefs\": [], \"dupnames\": []} -->\n\n````\n\n   @Function\n   def f(x:Tensor[13]):\n\
+    \ {\"backrefs\": [], \"xml:space\": \"preserve\", \"classes\": [], \"ids\": [],\
+    \ \"names\": [], \"dupnames\": []} -->\n\n````\n\n   @Function\n   def f(x:Tensor[13]):\n\
     \       return x * x\n   ````\n\nIf you are working with Python 2.7, use CNTK's\
-    \ @cntk.layers.typing.Signature decorator instead:\n\n<!-- literal_block {\"classes\"\
-    : [], \"xml:space\": \"preserve\", \"names\": [], \"ids\": [], \"backrefs\": [],\
+    \ @cntk.layers.typing.Signature decorator instead:\n\n<!-- literal_block {\"backrefs\"\
+    : [], \"xml:space\": \"preserve\", \"classes\": [], \"ids\": [], \"names\": [],\
     \ \"dupnames\": []} -->\n\n````\n\n   >>> from cntk.layers.typing import *\n \
     \  >>> @Function\n   ... @Signature(Tensor[13])\n   ... def f(x):\n   ...    \
     \ return x * x\n   >>> print(f)\n   ElementTimes(x: Tensor[13]) -> Tensor[13]\n\
