@@ -50,12 +50,9 @@ items:
       id: attention_span
     - defaultValue: None
       id: attention_axis
-    - defaultValue: <cntk.default_options.default_override_or object at 0x0000006520640780>
-      id: init
-    - defaultValue: <cntk.default_options.default_override_or object at 0x00000065206407B8>
-      id: go_backwards
-    - defaultValue: <cntk.default_options.default_override_or object at 0x00000065206407F0>
-      id: enable_self_stabilization
+    - id: init
+    - id: go_backwards
+    - id: enable_self_stabilization
     - defaultValue: ''
       id: name
   type: function
