@@ -90,8 +90,7 @@ items:
       id: in_stream
       type:
       - object behaving like sys.stdin, default stdin
-    - defaultValue: <colorama.ansitowin32.StreamWrapper object at 0x000000F09B97E1D0>
-      description: '*write()*
+    - description: '*write()*
 
         and *flush()* will be called on it to output debug info to the user
 
