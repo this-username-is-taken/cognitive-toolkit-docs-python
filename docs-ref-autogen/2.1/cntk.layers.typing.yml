@@ -116,13 +116,13 @@ items:
     \ when you have not yet migrated to Python 3.x.\n\nNote: Although this is aimed\
     \ at enabling `@Function` syntax with type annotations\nin Python 2.7, `@Signature`\
     \ is independent of CNTK and can be used for any argument annotation.\n\nExample:\n\
-    \n<!-- literal_block {\"backrefs\": [], \"ids\": [], \"names\": [], \"classes\"\
-    : [], \"xml:space\": \"preserve\", \"dupnames\": []} -->\n\n````\n\n   # Python\
-    \ 3:\n   @Function\n   def f(x: Tensor[42]):\n       return sigmoid(x)\n\n   #\
-    \ Python 2.7:\n   @Function\n   @Signature(Tensor[42])\n   def f(x):\n       return\
-    \ sigmoid(x)\n\n   # note that this:\n   @Function\n   @Signature(x:int)\n   def\
-    \ sqr(x):\n       return x*x\n   # is identical to:\n   def sqr(x):\n       return\
-    \ x*x\n   sqr.__annotations__ = {'x': int}\n   ````\n"
+    \n<!-- literal_block {\"names\": [], \"classes\": [], \"dupnames\": [], \"backrefs\"\
+    : [], \"ids\": [], \"xml:space\": \"preserve\"} -->\n\n````\n\n   # Python 3:\n\
+    \   @Function\n   def f(x: Tensor[42]):\n       return sigmoid(x)\n\n   # Python\
+    \ 2.7:\n   @Function\n   @Signature(Tensor[42])\n   def f(x):\n       return sigmoid(x)\n\
+    \n   # note that this:\n   @Function\n   @Signature(x:int)\n   def sqr(x):\n \
+    \      return x*x\n   # is identical to:\n   def sqr(x):\n       return x*x\n\
+    \   sqr.__annotations__ = {'x': int}\n   ````\n"
   syntax:
     content: Signature(*args, **kwargs)
     parameters:
