@@ -52,8 +52,8 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 877
   summary: "Configures the image reader that reads base64 encoded images and corresponding\n\
-    labels from a file of the form:\n\n<!-- literal_block {\"classes\": [], \"ids\"\
-    : [], \"backrefs\": [], \"xml:space\": \"preserve\", \"dupnames\": [], \"names\"\
+    labels from a file of the form:\n\n<!-- literal_block {\"xml:space\": \"preserve\"\
+    , \"backrefs\": [], \"names\": [], \"dupnames\": [], \"ids\": [], \"classes\"\
     : []} -->\n\n````\n\n   [sequenceId <tab>] <numerical label (0-based class id)>\
     \ <tab> <base64 encoded image>\n   ````\n\nSimilarly to the ImageDeserializer,\
     \ the sequenceId prefix is optional and can be omitted.\n"
@@ -125,11 +125,11 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 897
   summary: "Configures the CNTK text-format reader that reads text-based files with\n\
-    lines of the form:\n\n<!-- literal_block {\"classes\": [], \"ids\": [], \"backrefs\"\
-    : [], \"xml:space\": \"preserve\", \"dupnames\": [], \"names\": []} -->\n\n````\n\
-    \n   [Sequence_Id] (Sample)+\n   ````\n\nwhere:\n\n<!-- literal_block {\"classes\"\
-    : [], \"ids\": [], \"backrefs\": [], \"xml:space\": \"preserve\", \"dupnames\"\
-    : [], \"names\": []} -->\n\n````\n\n   Sample=|Input_Name (Value )*\n   ````\n"
+    lines of the form:\n\n<!-- literal_block {\"xml:space\": \"preserve\", \"backrefs\"\
+    : [], \"names\": [], \"dupnames\": [], \"ids\": [], \"classes\": []} -->\n\n````\n\
+    \n   [Sequence_Id] (Sample)+\n   ````\n\nwhere:\n\n<!-- literal_block {\"xml:space\"\
+    : \"preserve\", \"backrefs\": [], \"names\": [], \"dupnames\": [], \"ids\": [],\
+    \ \"classes\": []} -->\n\n````\n\n   Sample=|Input_Name (Value )*\n   ````\n"
   syntax:
     content: CTFDeserializer(filename, streams)
     parameters:
@@ -239,11 +239,11 @@ items:
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 855
   summary: "Configures the image reader that reads images and corresponding\nlabels\
-    \ from a file of the form:\n\n<!-- literal_block {\"classes\": [], \"ids\": [],\
-    \ \"backrefs\": [], \"xml:space\": \"preserve\", \"dupnames\": [], \"names\":\
-    \ []} -->\n\n````\n\n   <full path to image> <tab> <numerical label (0-based class\
-    \ id)>\n   ````\n\nor:\n\n<!-- literal_block {\"classes\": [], \"ids\": [], \"\
-    backrefs\": [], \"xml:space\": \"preserve\", \"dupnames\": [], \"names\": []}\
+    \ from a file of the form:\n\n<!-- literal_block {\"xml:space\": \"preserve\"\
+    , \"backrefs\": [], \"names\": [], \"dupnames\": [], \"ids\": [], \"classes\"\
+    : []} -->\n\n````\n\n   <full path to image> <tab> <numerical label (0-based class\
+    \ id)>\n   ````\n\nor:\n\n<!-- literal_block {\"xml:space\": \"preserve\", \"\
+    backrefs\": [], \"names\": [], \"dupnames\": [], \"ids\": [], \"classes\": []}\
     \ -->\n\n````\n\n   sequenceId <tab> path <tab> label\n   ````\n"
   syntax:
     content: ImageDeserializer(filename, streams)
