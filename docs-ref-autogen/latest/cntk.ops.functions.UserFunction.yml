@@ -43,7 +43,7 @@ items:
 
     '
   syntax:
-    content: UserFunction(inputs, as_numpy=True, name='')
+    content: UserFunction(inputs, as_numpy=True, attributes=None, name='')
     parameters:
     - description: 'inputs to this function
 
@@ -82,7 +82,7 @@ items:
       branch: master
       path: bindings/python/cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1766
+    startLine: 1770
   summary: 'Creates a clone of this user-defined function.
 
 
@@ -123,7 +123,7 @@ items:
       branch: master
       path: bindings/python/cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1788
+    startLine: 1792
   summary: 'A stub deserialize method for illustration purposes. User-defined functions
 
     need to provide their own implementation in order for CNTK to be able to
@@ -173,7 +173,7 @@ items:
       branch: master
       path: bindings/python/cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1756
+    startLine: 1760
   summary: 'Returns a list of all output variables this user-defined function
 
     outputs.
@@ -225,7 +225,7 @@ items:
       branch: master
       path: bindings/python/cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1814
+    startLine: 1818
   summary: 'Generates a dictionary that captures the state of this user-defined function.
 
 
