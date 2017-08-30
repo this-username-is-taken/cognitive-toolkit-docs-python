@@ -4979,12 +4979,12 @@ items:
     \ matrix.\nThe operator '@' has been overloaded such that in Python 3.5 and later\
     \ X @ W equals times(X, W).\n\nFor better performance on times operation on sequence\
     \ which is followed by sequence.reduce_sum, use\ninfer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK,\
-    \ i.e. replace following:\n\n<!-- literal_block {\"dupnames\": [], \"backrefs\"\
-    : [], \"xml:space\": \"preserve\", \"classes\": [], \"ids\": [], \"names\": []}\
+    \ i.e. replace following:\n\n<!-- literal_block {\"classes\": [], \"xml:space\"\
+    : \"preserve\", \"dupnames\": [], \"ids\": [], \"backrefs\": [], \"names\": []}\
     \ -->\n\n````\n\n   sequence.reduce_sum(times(seq1, seq2))\n   ````\n\nwith:\n\
-    \n<!-- literal_block {\"dupnames\": [], \"backrefs\": [], \"xml:space\": \"preserve\"\
-    , \"classes\": [], \"ids\": [], \"names\": []} -->\n\n````\n\n   times(seq1, seq2,\
-    \ infer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK)\n\
+    \n<!-- literal_block {\"classes\": [], \"xml:space\": \"preserve\", \"dupnames\"\
+    : [], \"ids\": [], \"backrefs\": [], \"names\": []} -->\n\n````\n\n   times(seq1,\
+    \ seq2, infer_input_rank_to_map=TIMES_REDUCE_SEQUENCE_AXIS_WITHOUT_INFERRED_INPUT_RANK)\n\
     \   ````\n"
   syntax:
     content: times(left, right, output_rank=1, infer_input_rank_to_map=-1, name='')
