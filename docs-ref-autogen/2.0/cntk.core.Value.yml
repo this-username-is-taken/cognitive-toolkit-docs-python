@@ -13,6 +13,7 @@ items:
   - cntk.core.Value.mask
   - cntk.core.Value.one_hot
   - cntk.core.Value.shape
+  - cntk.core.Value.ONE_HOT_SKIP
   class: cntk.core.Value
   fullName: cntk.core.Value
   langs:
@@ -441,6 +442,16 @@ items:
   syntax: {}
   type: attribute
   uid: cntk.core.Value.shape
+- class: cntk.core.Value
+  fullName: cntk.core.Value.ONE_HOT_SKIP
+  langs:
+  - python
+  module: cntk.core
+  name: ONE_HOT_SKIP
+  syntax:
+    content: ONE_HOT_SKIP = 18446744073709551615
+  type: attribute
+  uid: cntk.core.Value.ONE_HOT_SKIP
 references:
 - fullName: cntk.core.Value.as_sequences
   isExternal: false
@@ -497,3 +508,8 @@ references:
   name: shape
   parent: cntk.core.Value
   uid: cntk.core.Value.shape
+- fullName: cntk.core.Value.ONE_HOT_SKIP
+  isExternal: false
+  name: ONE_HOT_SKIP
+  parent: cntk.core.Value
+  uid: cntk.core.Value.ONE_HOT_SKIP
