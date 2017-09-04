@@ -74,4 +74,19 @@ items:
       - cntk.logging.TraceLevel
   type: attribute
   uid: cntk.logging.TraceLevel.Warning
-references: []
+references:
+- fullName: cntk.logging.TraceLevel.Error
+  isExternal: false
+  name: Error
+  parent: cntk.logging.TraceLevel
+  uid: cntk.logging.TraceLevel.Error
+- fullName: cntk.logging.TraceLevel.Info
+  isExternal: false
+  name: Info
+  parent: cntk.logging.TraceLevel
+  uid: cntk.logging.TraceLevel.Info
+- fullName: cntk.logging.TraceLevel.Warning
+  isExternal: false
+  name: Warning
+  parent: cntk.logging.TraceLevel
+  uid: cntk.logging.TraceLevel.Warning

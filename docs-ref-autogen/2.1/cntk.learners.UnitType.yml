@@ -4,8 +4,6 @@ items:
 - children:
   - cntk.learners.UnitType.minibatch
   - cntk.learners.UnitType.sample
-  - cntk.learners.UnitType.minibatch
-  - cntk.learners.UnitType.sample
   class: cntk.learners.UnitType
   fullName: cntk.learners.UnitType
   inheritance:
@@ -37,10 +35,12 @@ items:
   uid: cntk.learners.UnitType
 - class: cntk.learners.UnitType
   fullName: cntk.learners.UnitType.minibatch
+  id: minibatch
   langs:
   - python
   module: cntk.learners
   name: minibatch
+  parent: cntk.learners.UnitType
   source:
     id: minibatch
     path: null
@@ -55,15 +55,21 @@ items:
     using the actual minibatch size in samples).
 
     '
-  syntax: {}
+  syntax:
+    content: minibatch = 'minibatch'
+    return:
+      type:
+      - cntk.learners.UnitType
   type: attribute
   uid: cntk.learners.UnitType.minibatch
 - class: cntk.learners.UnitType
   fullName: cntk.learners.UnitType.sample
+  id: sample
   langs:
   - python
   module: cntk.learners
   name: sample
+  parent: cntk.learners.UnitType
   source:
     id: sample
     path: null
@@ -72,39 +78,6 @@ items:
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
-  summary: 'Schedule contains per-sample values.
-
-    '
-  syntax: {}
-  type: attribute
-  uid: cntk.learners.UnitType.sample
-- fullName: cntk.learners.UnitType.minibatch
-  id: minibatch
-  langs:
-  - python
-  module: cntk.learners
-  name: minibatch
-  parent: cntk.learners.UnitType
-  summary: 'Schedule contains per-minibatch values (and need to be re-scaled by the
-    learner
-
-    using the actual minibatch size in samples).
-
-    '
-  syntax:
-    content: minibatch = 'minibatch'
-    return:
-      type:
-      - cntk.learners.UnitType
-  type: attribute
-  uid: cntk.learners.UnitType.minibatch
-- fullName: cntk.learners.UnitType.sample
-  id: sample
-  langs:
-  - python
-  module: cntk.learners
-  name: sample
-  parent: cntk.learners.UnitType
   summary: 'Schedule contains per-sample values.
 
     '
