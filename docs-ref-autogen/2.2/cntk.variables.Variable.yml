@@ -1,0 +1,136 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.variables.Variable.as_constant
+  - cntk.variables.Variable.as_parameter
+  class: cntk.variables.Variable
+  fullName: cntk.variables.Variable
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: cntk.variables.VariableMixin
+  - inheritance:
+    - type: builtins.object
+    type: cntk.tensor.TensorOpsMixin
+  langs:
+  - python
+  module: cntk.variables
+  name: Variable
+  source:
+    id: Variable
+    path: bindings/python/cntk\variables.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\variables.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 283
+  summary: 'Denotes a symbolic entity corresponding to the inputs and outputs of a
+    Function.
+
+
+
+    '
+  syntax:
+    content: Variable(shape=None, dtype=None, needs_gradient=False, is_sparse=False,
+      dynamic_axes=[Axis.default_batch_axis(), Axis.default_dynamic_axis()], name='')
+    parameters:
+    - description: 'the shape of this variable.
+
+        '
+      id: shape
+      type:
+      - tuple
+    - description: 'data type of the values that will be bound to this variable.
+
+        Default is np.float32
+
+        '
+      id: dtype
+      type:
+      - np.float32 or np.float64
+    - description: 'if set to True any expression that contains this variable
+
+        will also be differentiated with respect to this variable.
+
+        '
+      id: needs_gradient
+      type:
+      - bool
+    - description: 'whether this is a sparse or dense input (or output)
+
+        '
+      id: is_sparse
+      type:
+      - bool
+    - description: 'the dynamic axes of this variable. These
+
+        express dimensions that can vary across examples or minibatches.
+
+        '
+      id: dynamic_axes
+      type:
+      - 'list of @cntk.axis.Axis
+
+        '
+    - description: 'an optional name for this parameter.
+
+        '
+      id: name
+      type:
+      - str
+  type: class
+  uid: cntk.variables.Variable
+- class: cntk.variables.Variable
+  fullName: cntk.variables.Variable.as_constant
+  langs:
+  - python
+  module: cntk.variables
+  name: as_constant
+  source:
+    id: as_constant
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 321
+  summary: 'Converts this instance into a @cntk.variables.Constant
+
+    '
+  syntax:
+    content: as_constant()
+  type: method
+  uid: cntk.variables.Variable.as_constant
+- class: cntk.variables.Variable
+  fullName: cntk.variables.Variable.as_parameter
+  langs:
+  - python
+  module: cntk.variables
+  name: as_parameter
+  source:
+    id: as_parameter
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 311
+  summary: 'Converts this instance into a @cntk.variables.Parameter
+
+    '
+  syntax:
+    content: as_parameter()
+  type: method
+  uid: cntk.variables.Variable.as_parameter
+references:
+- fullName: cntk.variables.Variable.as_constant
+  isExternal: false
+  name: as_constant
+  parent: cntk.variables.Variable
+  uid: cntk.variables.Variable.as_constant
+- fullName: cntk.variables.Variable.as_parameter
+  isExternal: false
+  name: as_parameter
+  parent: cntk.variables.Variable
+  uid: cntk.variables.Variable.as_parameter

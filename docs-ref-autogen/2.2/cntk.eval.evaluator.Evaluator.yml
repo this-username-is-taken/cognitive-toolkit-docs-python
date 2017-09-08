@@ -1,0 +1,142 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.eval.evaluator.Evaluator.evaluation_function
+  - cntk.eval.evaluator.Evaluator.summarize_test_progress
+  - cntk.eval.evaluator.Evaluator.test_minibatch
+  class: cntk.eval.evaluator.Evaluator
+  fullName: cntk.eval.evaluator.Evaluator
+  langs:
+  - python
+  module: cntk.eval.evaluator
+  name: Evaluator
+  source:
+    id: Evaluator
+    path: bindings/python/cntk\eval\evaluator.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\eval\evaluator.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 15
+  summary: 'Class for evaluation of minibatches against the specified evaluation function.
+
+
+
+
+    '
+  syntax:
+    content: Evaluator(eval_function, progress_writers=None)
+    parameters:
+    - description: 'evaluation function.
+
+        '
+      id: eval_function
+      type:
+      - cntk.ops.functions.Function
+    - description: 'optionally, list of progress writers from @cntk.utils to track
+
+        training progress.
+
+        '
+      id: progress_writers
+      type:
+      - list
+  type: class
+  uid: cntk.eval.evaluator.Evaluator
+- class: cntk.eval.evaluator.Evaluator
+  fullName: cntk.eval.evaluator.Evaluator.evaluation_function
+  langs:
+  - python
+  module: cntk.eval.evaluator
+  name: evaluation_function
+  source:
+    id: evaluation_function
+    path: null
+    remote:
+      branch: release/2.0
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'The evaluation function that the evaluator is using.
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.eval.evaluator.Evaluator.evaluation_function
+- class: cntk.eval.evaluator.Evaluator
+  fullName: cntk.eval.evaluator.Evaluator.summarize_test_progress
+  langs:
+  - python
+  module: cntk.eval.evaluator
+  name: summarize_test_progress
+  source:
+    id: summarize_test_progress
+    path: bindings/python/cntk\eval\evaluator.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\eval\evaluator.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 86
+  summary: 'Updates the progress writers with the summary of test progress since start
+    and resets the internal
+
+    accumulators.
+
+    '
+  syntax:
+    content: summarize_test_progress()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.eval.evaluator.Evaluator.summarize_test_progress
+- class: cntk.eval.evaluator.Evaluator
+  fullName: cntk.eval.evaluator.Evaluator.test_minibatch
+  langs:
+  - python
+  module: cntk.eval.evaluator
+  name: test_minibatch
+  source:
+    id: test_minibatch
+    path: bindings/python/cntk\eval\evaluator.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\eval\evaluator.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 38
+  summary: "Test the evaluation function on the specified batch of samples.\n\nNote:\
+    \ See @cntk.ops.functions.Function.forward for examples on passing input data.\
+    \ \n"
+  syntax:
+    content: test_minibatch(arguments, device=None)
+    parameters:
+    - id: self
+    - id: arguments
+    - defaultValue: None
+      id: device
+    return:
+      description: 'the average evaluation criterion value per sample for the
+
+        tested minibatch.
+
+        '
+      type:
+      - '*float*'
+  type: method
+  uid: cntk.eval.evaluator.Evaluator.test_minibatch
+references:
+- fullName: cntk.eval.evaluator.Evaluator.evaluation_function
+  isExternal: false
+  name: evaluation_function
+  parent: cntk.eval.evaluator.Evaluator
+  uid: cntk.eval.evaluator.Evaluator.evaluation_function
+- fullName: cntk.eval.evaluator.Evaluator.summarize_test_progress
+  isExternal: false
+  name: summarize_test_progress
+  parent: cntk.eval.evaluator.Evaluator
+  uid: cntk.eval.evaluator.Evaluator.summarize_test_progress
+- fullName: cntk.eval.evaluator.Evaluator.test_minibatch
+  isExternal: false
+  name: test_minibatch
+  parent: cntk.eval.evaluator.Evaluator
+  uid: cntk.eval.evaluator.Evaluator.test_minibatch

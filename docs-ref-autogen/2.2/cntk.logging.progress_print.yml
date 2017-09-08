@@ -1,0 +1,65 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.logging.progress_print.ProgressPrinter
+  - cntk.logging.progress_print.TensorBoardProgressWriter
+  - cntk.logging.progress_print.TrainingSummaryProgressCallback
+  - cntk.logging.progress_print.log_number_of_parameters
+  fullName: cntk.logging.progress_print
+  langs:
+  - python
+  module: cntk.logging.progress_print
+  name: progress_print
+  source:
+    id: progress_print
+    path: bindings/python/cntk\logging\progress_print.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\logging\progress_print.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: module
+  uid: cntk.logging.progress_print
+- fullName: cntk.logging.progress_print.log_number_of_parameters
+  langs:
+  - python
+  module: cntk.logging.progress_print
+  name: log_number_of_parameters
+  source:
+    id: log_number_of_parameters
+    path: bindings/python/cntk\logging\progress_print.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\logging\progress_print.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 555
+  syntax:
+    content: log_number_of_parameters(model, trace_level=0)
+    parameters:
+    - id: model
+    - defaultValue: '0'
+      id: trace_level
+  type: function
+  uid: cntk.logging.progress_print.log_number_of_parameters
+references:
+- fullName: cntk.logging.progress_print.ProgressPrinter
+  isExternal: false
+  name: ProgressPrinter
+  parent: cntk.logging.progress_print
+  uid: cntk.logging.progress_print.ProgressPrinter
+- fullName: cntk.logging.progress_print.TensorBoardProgressWriter
+  isExternal: false
+  name: TensorBoardProgressWriter
+  parent: cntk.logging.progress_print
+  uid: cntk.logging.progress_print.TensorBoardProgressWriter
+- fullName: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  isExternal: false
+  name: TrainingSummaryProgressCallback
+  parent: cntk.logging.progress_print
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback
+- fullName: cntk.logging.progress_print.log_number_of_parameters
+  isExternal: false
+  name: log_number_of_parameters
+  parent: cntk.logging.progress_print
+  uid: cntk.logging.progress_print.log_number_of_parameters

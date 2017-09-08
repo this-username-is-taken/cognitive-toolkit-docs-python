@@ -1,0 +1,200 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_test_summary
+  - cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_test_update
+  - cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_training_summary
+  - cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_training_update
+  - cntk.logging.progress_print.TrainingSummaryProgressCallback.write
+  class: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  fullName: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  langs:
+  - python
+  module: cntk.logging.progress_print
+  name: TrainingSummaryProgressCallback
+  source:
+    id: TrainingSummaryProgressCallback
+    path: bindings/python/cntk\logging\progress_print.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\logging\progress_print.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 522
+  summary: 'Helper to pass a callback function to be called after each training epoch
+
+    to @cntk.train.trainer.Trainer,
+
+    @cntk.eval.evaluator.Evaluator, and @cntk.train.training_session.TrainingSession,
+
+    as well a @cntk.ops.functions.Function.train, @cntk.ops.functions.Function.test.
+
+
+    This allows the user to add additional logging after each training epoch.
+
+
+
+
+
+
+    '
+  syntax:
+    content: TrainingSummaryProgressCallback(epoch_size, callback)
+    parameters:
+    - description: 'periodically call the callback after processing this many samples
+
+        '
+      id: epoch_size
+      type:
+      - int
+    - description: 'function(epoch_index, epoch_loss, epoch_metric, epoch_samples)
+
+        '
+      id: callback
+      type:
+      - function
+  type: class
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback
+- class: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  fullName: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_test_summary
+  langs:
+  - python
+  module: cntk.logging.progress_print
+  name: on_write_test_summary
+  source:
+    id: on_write_test_summary
+    path: bindings/python/cntk\logging\progress_print.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\logging\progress_print.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 547
+  syntax:
+    content: on_write_test_summary(samples, updates, summaries, aggregate_metric,
+      elapsed_milliseconds)
+    parameters:
+    - id: self
+    - id: samples
+    - id: updates
+    - id: summaries
+    - id: aggregate_metric
+    - id: elapsed_milliseconds
+  type: method
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_test_summary
+- class: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  fullName: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_test_update
+  langs:
+  - python
+  module: cntk.logging.progress_print
+  name: on_write_test_update
+  source:
+    id: on_write_test_update
+    path: bindings/python/cntk\logging\progress_print.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\logging\progress_print.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 542
+  syntax:
+    content: on_write_test_update(*args, **kwargs)
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_test_update
+- class: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  fullName: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_training_summary
+  langs:
+  - python
+  module: cntk.logging.progress_print
+  name: on_write_training_summary
+  source:
+    id: on_write_training_summary
+    path: bindings/python/cntk\logging\progress_print.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\logging\progress_print.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 544
+  syntax:
+    content: on_write_training_summary(samples, updates, summaries, aggregate_loss,
+      aggregate_metric, elapsed_milliseconds)
+    parameters:
+    - id: self
+    - id: samples
+    - id: updates
+    - id: summaries
+    - id: aggregate_loss
+    - id: aggregate_metric
+    - id: elapsed_milliseconds
+  type: method
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_training_summary
+- class: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  fullName: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_training_update
+  langs:
+  - python
+  module: cntk.logging.progress_print
+  name: on_write_training_update
+  source:
+    id: on_write_training_update
+    path: bindings/python/cntk\logging\progress_print.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\logging\progress_print.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 540
+  syntax:
+    content: on_write_training_update(samples, updates, aggregate_loss, aggregate_metric)
+    parameters:
+    - id: self
+    - id: samples
+    - id: updates
+    - id: aggregate_loss
+    - id: aggregate_metric
+  type: method
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_training_update
+- class: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  fullName: cntk.logging.progress_print.TrainingSummaryProgressCallback.write
+  langs:
+  - python
+  module: cntk.logging.progress_print
+  name: write
+  source:
+    id: write
+    path: bindings/python/cntk\logging\progress_print.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\logging\progress_print.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 549
+  syntax:
+    content: write(*args, **kwargs)
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback.write
+references:
+- fullName: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_test_summary
+  isExternal: false
+  name: on_write_test_summary
+  parent: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_test_summary
+- fullName: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_test_update
+  isExternal: false
+  name: on_write_test_update
+  parent: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_test_update
+- fullName: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_training_summary
+  isExternal: false
+  name: on_write_training_summary
+  parent: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_training_summary
+- fullName: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_training_update
+  isExternal: false
+  name: on_write_training_update
+  parent: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback.on_write_training_update
+- fullName: cntk.logging.progress_print.TrainingSummaryProgressCallback.write
+  isExternal: false
+  name: write
+  parent: cntk.logging.progress_print.TrainingSummaryProgressCallback
+  uid: cntk.logging.progress_print.TrainingSummaryProgressCallback.write

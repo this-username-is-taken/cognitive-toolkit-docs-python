@@ -1,0 +1,31 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children: []
+  class: cntk.contrib.crosstalk.Conv2DArgs
+  fullName: cntk.contrib.crosstalk.Conv2DArgs
+  inheritance:
+  - inheritance:
+    - inheritance:
+      - type: builtins.object
+      type: builtins.tuple
+    type: cntk.contrib.crosstalk.Conv2DArgs
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: Conv2DArgs
+  source:
+    id: Conv2DArgs
+    path: bindings/python/cntk\contrib\crosstalk\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 53
+  summary: "Args inside Conv2D variable. Conv2D output is in NCHW format\n\nW\n  \
+    \ The numpy ndarray of filter parameter in shape (num_filters, filter_w, filter_h,))\n\
+    \nb\n   The numpy ndarray of bias parameter in shape (num_filters,)\n"
+  syntax: {}
+  type: class
+  uid: cntk.contrib.crosstalk.Conv2DArgs
+references: []

@@ -1,0 +1,132 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.device.DeviceDescriptor.id
+  - cntk.device.DeviceDescriptor.is_locked
+  - cntk.device.DeviceDescriptor.type
+  class: cntk.device.DeviceDescriptor
+  fullName: cntk.device.DeviceDescriptor
+  langs:
+  - python
+  module: cntk.device
+  name: DeviceDescriptor
+  source:
+    id: DeviceDescriptor
+    path: bindings/python/cntk\device.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\device.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 34
+  summary: 'Describes a device by a unique id and its type. If the device corresponds
+
+    to a GPU its type is 1, otherwise, it is 0
+
+
+
+
+    '
+  syntax:
+    content: DeviceDescriptor(*args, **kwargs)
+  type: class
+  uid: cntk.device.DeviceDescriptor
+- class: cntk.device.DeviceDescriptor
+  fullName: cntk.device.DeviceDescriptor.id
+  langs:
+  - python
+  module: cntk.device
+  name: id
+  source:
+    id: id
+    path: bindings/python/cntk\device.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\device.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 40
+  summary: 'Returns id of device descriptor
+
+    '
+  syntax:
+    content: id()
+    parameters:
+    - id: self
+    return:
+      description: 'id
+
+        '
+      type:
+      - int
+  type: method
+  uid: cntk.device.DeviceDescriptor.id
+- class: cntk.device.DeviceDescriptor
+  fullName: cntk.device.DeviceDescriptor.is_locked
+  langs:
+  - python
+  module: cntk.device
+  name: is_locked
+  source:
+    id: is_locked
+    path: bindings/python/cntk\device.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\device.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 58
+  summary: 'Returns *True* if another CNTK process already holds an exclusive lock
+
+    on this device.
+
+    '
+  syntax:
+    content: is_locked()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.device.DeviceDescriptor.is_locked
+- class: cntk.device.DeviceDescriptor
+  fullName: cntk.device.DeviceDescriptor.type
+  langs:
+  - python
+  module: cntk.device
+  name: type
+  source:
+    id: type
+    path: bindings/python/cntk\device.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\device.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 49
+  summary: 'Returns type of device descriptor. 1 if it is a GPU device or 0 if CPU.
+
+    '
+  syntax:
+    content: type()
+    parameters:
+    - id: self
+    return:
+      description: 'type
+
+        '
+      type:
+      - int
+  type: method
+  uid: cntk.device.DeviceDescriptor.type
+references:
+- fullName: cntk.device.DeviceDescriptor.id
+  isExternal: false
+  name: id
+  parent: cntk.device.DeviceDescriptor
+  uid: cntk.device.DeviceDescriptor.id
+- fullName: cntk.device.DeviceDescriptor.is_locked
+  isExternal: false
+  name: is_locked
+  parent: cntk.device.DeviceDescriptor
+  uid: cntk.device.DeviceDescriptor.is_locked
+- fullName: cntk.device.DeviceDescriptor.type
+  isExternal: false
+  name: type
+  parent: cntk.device.DeviceDescriptor
+  uid: cntk.device.DeviceDescriptor.type

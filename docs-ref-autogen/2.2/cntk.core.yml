@@ -1,0 +1,131 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.core.NDArrayView
+  - cntk.core.Value
+  - cntk.core.asarray
+  - cntk.core.asvalue
+  - cntk.core.user_function
+  fullName: cntk.core
+  langs:
+  - python
+  module: cntk.core
+  name: core
+  source:
+    id: core
+    path: bindings/python/cntk\core.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\core.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'Core numerical constructs.
+
+
+
+    * @NDArrayView
+
+    * @Value
+
+    '
+  type: module
+  uid: cntk.core
+- fullName: cntk.core.asarray
+  langs:
+  - python
+  module: cntk.core
+  name: asarray
+  source:
+    id: asarray
+    path: bindings/python/cntk\core.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\core.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 657
+  summary: 'Converts a Value object to a sequence of NumPy arrays (if dense) or CSR
+    arrays (if sparse).
+
+    '
+  syntax:
+    content: asarray(value, dtype=None)
+    parameters:
+    - id: value
+    - defaultValue: None
+      id: dtype
+  type: function
+  uid: cntk.core.asarray
+- fullName: cntk.core.asvalue
+  langs:
+  - python
+  module: cntk.core
+  name: asvalue
+  source:
+    id: asvalue
+    path: bindings/python/cntk\core.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\core.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 673
+  summary: 'Converts a sequence of NumPy arrays or CSR arrays to a Value object.
+
+    '
+  syntax:
+    content: asvalue(variable, data_array)
+    parameters:
+    - id: variable
+    - id: data_array
+  type: function
+  uid: cntk.core.asvalue
+- fullName: cntk.core.user_function
+  langs:
+  - python
+  module: cntk.core
+  name: user_function
+  source:
+    id: user_function
+    path: bindings/python/cntk\core.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\core.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 648
+  summary: 'Wraps the passed Function to create a composite representing the
+
+    composite Function graph rooted at the passed root Function.
+
+    '
+  syntax:
+    content: user_function(user_func)
+    parameters:
+    - id: user_func
+  type: function
+  uid: cntk.core.user_function
+references:
+- fullName: cntk.core.NDArrayView
+  isExternal: false
+  name: NDArrayView
+  parent: cntk.core
+  uid: cntk.core.NDArrayView
+- fullName: cntk.core.Value
+  isExternal: false
+  name: Value
+  parent: cntk.core
+  uid: cntk.core.Value
+- fullName: cntk.core.asarray
+  isExternal: false
+  name: asarray
+  parent: cntk.core
+  uid: cntk.core.asarray
+- fullName: cntk.core.asvalue
+  isExternal: false
+  name: asvalue
+  parent: cntk.core
+  uid: cntk.core.asvalue
+- fullName: cntk.core.user_function
+  isExternal: false
+  name: user_function
+  parent: cntk.core
+  uid: cntk.core.user_function

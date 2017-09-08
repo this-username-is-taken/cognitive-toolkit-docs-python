@@ -1,0 +1,88 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.train.distributed.DistributedLearner.communicator
+  - cntk.train.distributed.DistributedLearner.total_number_of_samples_seen
+  class: cntk.train.distributed.DistributedLearner
+  fullName: cntk.train.distributed.DistributedLearner
+  langs:
+  - python
+  module: cntk.train.distributed
+  name: DistributedLearner
+  source:
+    id: DistributedLearner
+    path: bindings/python/cntk\train\distributed.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\train\distributed.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 100
+  summary: 'A distributed learner that handles data like gradients/momentums across
+    multiple MPI workers
+
+
+
+    '
+  syntax:
+    content: DistributedLearner(*args, **kwargs)
+  type: class
+  uid: cntk.train.distributed.DistributedLearner
+- class: cntk.train.distributed.DistributedLearner
+  fullName: cntk.train.distributed.DistributedLearner.communicator
+  langs:
+  - python
+  module: cntk.train.distributed
+  name: communicator
+  source:
+    id: communicator
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 105
+  summary: 'Returns the distributed communicator that talks to other MPI workers
+
+    '
+  syntax:
+    content: communicator()
+    return:
+      description: 'descriptor of current process.
+
+        '
+      type:
+      - cntk.train.distributed.Communicator
+  type: method
+  uid: cntk.train.distributed.DistributedLearner.communicator
+- class: cntk.train.distributed.DistributedLearner
+  fullName: cntk.train.distributed.DistributedLearner.total_number_of_samples_seen
+  langs:
+  - python
+  module: cntk.train.distributed
+  name: total_number_of_samples_seen
+  source:
+    id: total_number_of_samples_seen
+    path: null
+    remote:
+      branch: release/2.0
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'The number of samples seen by the distributed learner.
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.train.distributed.DistributedLearner.total_number_of_samples_seen
+references:
+- fullName: cntk.train.distributed.DistributedLearner.communicator
+  isExternal: false
+  name: communicator
+  parent: cntk.train.distributed.DistributedLearner
+  uid: cntk.train.distributed.DistributedLearner.communicator
+- fullName: cntk.train.distributed.DistributedLearner.total_number_of_samples_seen
+  isExternal: false
+  name: total_number_of_samples_seen
+  parent: cntk.train.distributed.DistributedLearner
+  uid: cntk.train.distributed.DistributedLearner.total_number_of_samples_seen

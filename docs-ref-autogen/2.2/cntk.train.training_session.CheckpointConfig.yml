@@ -1,0 +1,56 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children: []
+  class: cntk.train.training_session.CheckpointConfig
+  fullName: cntk.train.training_session.CheckpointConfig
+  langs:
+  - python
+  module: cntk.train.training_session
+  name: CheckpointConfig
+  source:
+    id: CheckpointConfig
+    path: bindings/python/cntk\train\training_session.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\train\training_session.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 14
+  summary: 'A checkpoint configuration for the training session.
+
+    '
+  syntax:
+    content: CheckpointConfig(filename, frequency=None, restore=True, preserve_all=False)
+    parameters:
+    - description: 'checkpoint file name.
+
+        '
+      id: filename
+      type:
+      - str
+    - description: 'checkpointing period (number samples between checkpoints). If
+        *None*, no checkpointing takes place.
+
+        If `sys.maxsize`, a single checkpoint is taken at the end of the training.
+
+        '
+      id: frequency
+      type:
+      - int
+    - description: 'flag, indicating whether to restore from available checkpoint
+        before the start of the training
+
+        '
+      id: restore
+      type:
+      - bool
+    - description: 'saves all checkpoints, using `filename` as prefix and checkpoint
+        index as a suffix.
+
+        '
+      id: preserve_all
+      type:
+      - bool
+  type: class
+  uid: cntk.train.training_session.CheckpointConfig
+references: []

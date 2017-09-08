@@ -1,0 +1,236 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.train.training_session.CheckpointConfig
+  - cntk.train.training_session.CrossValidationConfig
+  - cntk.train.training_session.TestConfig
+  - cntk.train.training_session.TrainingSession
+  - cntk.train.training_session.minibatch_size_schedule
+  - cntk.train.training_session.training_session
+  fullName: cntk.train.training_session
+  langs:
+  - python
+  module: cntk.train.training_session
+  name: training_session
+  source:
+    id: training_session
+    path: bindings/python/cntk\train\training_session.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\train\training_session.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'A training session encapsulates a typical training loop and binds together
+    a minibatch source that is used for training, a @cntk.train.trainer.Trainer and
+    an optional cross validation minibatch source. A training session takes care of
+    consistent checkpointing and progress printing with specified frequencies.
+
+    '
+  type: module
+  uid: cntk.train.training_session
+- example:
+  - '
+
+    ```
+
+
+    >>> # Use a fixed value 32 for all minibatches
+
+    >>> s = minibatch_size_schedule(32)
+
+    >>> s[0], s[1]
+
+    (32, 32)
+
+    ```
+
+
+
+    ```
+
+
+    >>> # Use minibatches of size 32 for the first 1000 samples, then 64 for the remaining
+    ones
+
+    >>> s = minibatch_size_schedule([32, 64], 1000)
+
+    >>> s[0], s[1], s[1000], s[1001]
+
+    (32, 32, 64, 64)
+
+    ```
+
+
+
+    ```
+
+
+    >>> # Use 32 for the first 12 epochs, then 64 for the next 15,
+
+    >>> # followed by 128 for the remaining ones, with a 100 samples in an epoch
+
+    >>> s = minibatch_size_schedule([(12, 32), (15, 64), (1, 128)], 100)
+
+    >>> s[0], s[1199], s[1200], s[2699], s[2700], s[5000]
+
+    (32, 32, 64, 64, 128, 128)
+
+    ```
+
+    '
+  fullName: cntk.train.training_session.minibatch_size_schedule
+  langs:
+  - python
+  module: cntk.train.training_session
+  name: minibatch_size_schedule
+  source:
+    id: minibatch_size_schedule
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 296
+  summary: 'Creates a minibatch size schedule.
+
+    '
+  syntax:
+    content: minibatch_size_schedule(schedule, epoch_size=1)
+    parameters:
+    - description: 'if integer, this minibatch size will be used for the whole training.
+
+        In case of list of integers, the elements are used as the values for `epoch_size`
+        samples.
+
+        If list contains pair, the second element is used as a value for (`epoch_size`
+        x first element) samples
+
+        '
+      id: schedule
+      type:
+      - int or list
+    - description: 'number of samples as a scheduling unit.
+
+        '
+      id: epoch_size
+      type:
+      - int
+    return:
+      description: 'training parameter schedule
+
+        '
+  type: function
+  uid: cntk.train.training_session.minibatch_size_schedule
+- fullName: cntk.train.training_session.training_session
+  langs:
+  - python
+  module: cntk.train.training_session
+  name: training_session
+  source:
+    id: training_session
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 339
+  summary: 'A factory function to create a training session object.
+
+    '
+  syntax:
+    content: training_session(trainer, mb_source, mb_size, model_inputs_to_streams,
+      progress_frequency=None, max_samples=None, checkpoint_config=None, cv_config=None,
+      test_config=None)
+    parameters:
+    - description: 'trainer
+
+        '
+      id: trainer
+      type:
+      - cntk.train.trainer.Trainer
+    - description: 'minibatch source used for training
+
+        '
+      id: mb_source
+      type:
+      - cntk.io.MinibatchSource
+    - description: 'minibatch schedule for training
+
+        '
+      id: mb_size
+      type:
+      - cntk.cntk_py.minibatch_size_schedule
+    - description: 'mapping between input variables and input streams
+
+        '
+      id: model_inputs_to_streams
+      type:
+      - dict
+    - description: 'frequency in samples for aggregated progress printing
+
+        '
+      id: progress_frequency
+      type:
+      - int
+    - description: 'maximum number of samples used for training
+
+        '
+      id: max_samples
+      type:
+      - int
+    - description: 'checkpoint configuration
+
+        '
+      id: checkpoint_config
+      type:
+      - cntk.train.training_session.CheckpointConfig
+    - description: 'cross validation configuration
+
+        '
+      id: cv_config
+      type:
+      - cntk.train.training_session.CrossValidationConfig
+    - description: 'test configuration
+
+        '
+      id: test_config
+      type:
+      - cntk.train.training_session.TestConfig
+    return:
+      description: 'Instance of @cntk.train.training_session.TrainingSession
+
+        '
+  type: function
+  uid: cntk.train.training_session.training_session
+references:
+- fullName: cntk.train.training_session.CheckpointConfig
+  isExternal: false
+  name: CheckpointConfig
+  parent: cntk.train.training_session
+  uid: cntk.train.training_session.CheckpointConfig
+- fullName: cntk.train.training_session.CrossValidationConfig
+  isExternal: false
+  name: CrossValidationConfig
+  parent: cntk.train.training_session
+  uid: cntk.train.training_session.CrossValidationConfig
+- fullName: cntk.train.training_session.TestConfig
+  isExternal: false
+  name: TestConfig
+  parent: cntk.train.training_session
+  uid: cntk.train.training_session.TestConfig
+- fullName: cntk.train.training_session.TrainingSession
+  isExternal: false
+  name: TrainingSession
+  parent: cntk.train.training_session
+  uid: cntk.train.training_session.TrainingSession
+- fullName: cntk.train.training_session.minibatch_size_schedule
+  isExternal: false
+  name: minibatch_size_schedule
+  parent: cntk.train.training_session
+  uid: cntk.train.training_session.minibatch_size_schedule
+- fullName: cntk.train.training_session.training_session
+  isExternal: false
+  name: training_session
+  parent: cntk.train.training_session
+  uid: cntk.train.training_session.training_session

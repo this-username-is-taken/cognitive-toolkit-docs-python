@@ -1,0 +1,71 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.device.DeviceKind.CPU
+  - cntk.device.DeviceKind.GPU
+  class: cntk.device.DeviceKind
+  fullName: cntk.device.DeviceKind
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: enum.Enum
+  langs:
+  - python
+  module: cntk.device
+  name: DeviceKind
+  source:
+    id: DeviceKind
+    path: bindings/python/cntk\device.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\device.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 15
+  summary: 'Describes different device kinds like CPU or GPU.
+
+
+
+    '
+  syntax: {}
+  type: class
+  uid: cntk.device.DeviceKind
+- fullName: cntk.device.DeviceKind.CPU
+  id: CPU
+  langs:
+  - python
+  module: cntk.device
+  name: CPU
+  parent: cntk.device.DeviceKind
+  syntax:
+    content: CPU = 0
+    return:
+      type:
+      - cntk.device.DeviceKind
+  type: attribute
+  uid: cntk.device.DeviceKind.CPU
+- fullName: cntk.device.DeviceKind.GPU
+  id: GPU
+  langs:
+  - python
+  module: cntk.device
+  name: GPU
+  parent: cntk.device.DeviceKind
+  syntax:
+    content: GPU = 1
+    return:
+      type:
+      - cntk.device.DeviceKind
+  type: attribute
+  uid: cntk.device.DeviceKind.GPU
+references:
+- fullName: cntk.device.DeviceKind.CPU
+  isExternal: false
+  name: CPU
+  parent: cntk.device.DeviceKind
+  uid: cntk.device.DeviceKind.CPU
+- fullName: cntk.device.DeviceKind.GPU
+  isExternal: false
+  name: GPU
+  parent: cntk.device.DeviceKind
+  uid: cntk.device.DeviceKind.GPU

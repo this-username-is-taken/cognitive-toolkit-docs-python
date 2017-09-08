@@ -1,0 +1,101 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.learners.UnitType.minibatch
+  - cntk.learners.UnitType.sample
+  class: cntk.learners.UnitType
+  fullName: cntk.learners.UnitType
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: enum.Enum
+  langs:
+  - python
+  module: cntk.learners
+  name: UnitType
+  source:
+    id: UnitType
+    path: bindings/python/cntk\learners\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\learners\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 34
+  summary: 'Indicates whether the values in the schedule are specified on the per-sample
+    or
+
+    per-minibatch basis.
+
+
+
+    '
+  syntax: {}
+  type: class
+  uid: cntk.learners.UnitType
+- class: cntk.learners.UnitType
+  fullName: cntk.learners.UnitType.minibatch
+  id: minibatch
+  langs:
+  - python
+  module: cntk.learners
+  name: minibatch
+  parent: cntk.learners.UnitType
+  source:
+    id: minibatch
+    path: null
+    remote:
+      branch: release/2.0
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Schedule contains per-minibatch values (and need to be re-scaled by the
+    learner
+
+    using the actual minibatch size in samples).
+
+    '
+  syntax:
+    content: minibatch = 'minibatch'
+    return:
+      type:
+      - cntk.learners.UnitType
+  type: attribute
+  uid: cntk.learners.UnitType.minibatch
+- class: cntk.learners.UnitType
+  fullName: cntk.learners.UnitType.sample
+  id: sample
+  langs:
+  - python
+  module: cntk.learners
+  name: sample
+  parent: cntk.learners.UnitType
+  source:
+    id: sample
+    path: null
+    remote:
+      branch: release/2.0
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Schedule contains per-sample values.
+
+    '
+  syntax:
+    content: sample = 'sample'
+    return:
+      type:
+      - cntk.learners.UnitType
+  type: attribute
+  uid: cntk.learners.UnitType.sample
+references:
+- fullName: cntk.learners.UnitType.minibatch
+  isExternal: false
+  name: minibatch
+  parent: cntk.learners.UnitType
+  uid: cntk.learners.UnitType.minibatch
+- fullName: cntk.learners.UnitType.sample
+  isExternal: false
+  name: sample
+  parent: cntk.learners.UnitType
+  uid: cntk.learners.UnitType.sample

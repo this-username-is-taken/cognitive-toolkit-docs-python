@@ -1,0 +1,59 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.misc.optimized_rnnstack_converter.convert_optimized_rnnstack
+  fullName: cntk.misc.optimized_rnnstack_converter
+  langs:
+  - python
+  module: cntk.misc.optimized_rnnstack_converter
+  name: optimized_rnnstack_converter
+  source:
+    id: optimized_rnnstack_converter
+    path: bindings/python/cntk\misc\optimized_rnnstack_converter.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\misc\optimized_rnnstack_converter.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: module
+  uid: cntk.misc.optimized_rnnstack_converter
+- fullName: cntk.misc.optimized_rnnstack_converter.convert_optimized_rnnstack
+  langs:
+  - python
+  module: cntk.misc.optimized_rnnstack_converter
+  name: convert_optimized_rnnstack
+  source:
+    id: convert_optimized_rnnstack
+    path: bindings/python/cntk\misc\optimized_rnnstack_converter.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\misc\optimized_rnnstack_converter.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 139
+  summary: 'Converts model that contains cudnn optimized_rnnstack to use non-cudnn
+    functions,
+
+    so it can be used in non-CUDA environment
+
+    '
+  syntax:
+    content: convert_optimized_rnnstack(cudnn_model)
+    parameters:
+    - description: 'a model that contains optimized_rnnstacks
+
+        '
+      id: cudnn_model
+    return:
+      description: 'Converted model on GEMM based implementation of rnn that can be
+        used on CPU
+
+        '
+  type: function
+  uid: cntk.misc.optimized_rnnstack_converter.convert_optimized_rnnstack
+references:
+- fullName: cntk.misc.optimized_rnnstack_converter.convert_optimized_rnnstack
+  isExternal: false
+  name: convert_optimized_rnnstack
+  parent: cntk.misc.optimized_rnnstack_converter
+  uid: cntk.misc.optimized_rnnstack_converter.convert_optimized_rnnstack

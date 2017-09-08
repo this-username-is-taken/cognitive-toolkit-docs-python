@@ -1,0 +1,34 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.train.trainer.Trainer
+  fullName: cntk.train.trainer
+  langs:
+  - python
+  module: cntk.train.trainer
+  name: trainer
+  source:
+    id: trainer
+    path: bindings/python/cntk\train\trainer.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\train\trainer.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'A trainer encapsulates the overall training process and employs one or
+    more
+
+    @cntk.learners to tune the parameters of a specified model
+
+    using gradients of parameters w.r.t. a training objective.
+
+    '
+  type: module
+  uid: cntk.train.trainer
+references:
+- fullName: cntk.train.trainer.Trainer
+  isExternal: false
+  name: Trainer
+  parent: cntk.train.trainer
+  uid: cntk.train.trainer.Trainer

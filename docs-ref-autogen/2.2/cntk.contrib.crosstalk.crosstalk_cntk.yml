@@ -1,0 +1,87 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+  - cntk.contrib.crosstalk.crosstalk_cntk.find_func_param
+  fullName: cntk.contrib.crosstalk.crosstalk_cntk
+  langs:
+  - python
+  module: cntk.contrib.crosstalk.crosstalk_cntk
+  name: crosstalk_cntk
+  source:
+    id: crosstalk_cntk
+    path: bindings/python/cntk\contrib\crosstalk\crosstalk_cntk.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\crosstalk_cntk.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: module
+  uid: cntk.contrib.crosstalk.crosstalk_cntk
+- fullName: cntk.contrib.crosstalk.crosstalk_cntk.find_func_param
+  langs:
+  - python
+  module: cntk.contrib.crosstalk.crosstalk_cntk
+  name: find_func_param
+  source:
+    id: find_func_param
+    path: bindings/python/cntk\contrib\crosstalk\crosstalk_cntk.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\crosstalk_cntk.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 12
+  summary: 'Find a single parameter in a function by name or by shape when the function
+    has multiple parameters.
+
+    If the function only has one parameter it''s directly returned.
+
+    '
+  syntax:
+    content: find_func_param(func, name=None, shape=None, allow_not_found=False)
+    parameters:
+    - description: 'The function to search parameter for
+
+        '
+      id: func
+      type:
+      - cntk.ops.functions.Function
+    - defaultValue: None
+      description: 'The name of the parameter
+
+        '
+      id: name
+      type:
+      - string
+    - defaultValue: None
+      description: 'The shape of the parameter
+
+        '
+      id: shape
+      type:
+      - tuple
+    - defaultValue: 'False'
+      description: 'Set to True to avoid raising an exception when not found
+
+        '
+      id: allow_not_found
+      type:
+      - bool
+    return:
+      description: 'The @cntk.variables.Parameter that is found
+
+        '
+  type: function
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.find_func_param
+references:
+- fullName: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+  isExternal: false
+  name: CNTKCrosstalk
+  parent: cntk.contrib.crosstalk.crosstalk_cntk
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+- fullName: cntk.contrib.crosstalk.crosstalk_cntk.find_func_param
+  isExternal: false
+  name: find_func_param
+  parent: cntk.contrib.crosstalk.crosstalk_cntk
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.find_func_param

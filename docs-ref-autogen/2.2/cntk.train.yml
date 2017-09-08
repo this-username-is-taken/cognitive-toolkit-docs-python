@@ -1,0 +1,41 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.train.distributed
+  - cntk.train.trainer
+  - cntk.train.training_session
+  fullName: cntk.train
+  langs:
+  - python
+  module: cntk.train
+  name: train
+  source:
+    id: train
+    path: bindings/python/cntk\train\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\train\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'Utilities for training.
+
+    '
+  type: package
+  uid: cntk.train
+references:
+- fullName: cntk.train.distributed
+  isExternal: false
+  name: distributed
+  parent: cntk.train
+  uid: cntk.train.distributed
+- fullName: cntk.train.trainer
+  isExternal: false
+  name: trainer
+  parent: cntk.train
+  uid: cntk.train.trainer
+- fullName: cntk.train.training_session
+  isExternal: false
+  name: training_session
+  parent: cntk.train
+  uid: cntk.train.training_session

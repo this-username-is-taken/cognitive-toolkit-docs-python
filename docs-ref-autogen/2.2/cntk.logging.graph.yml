@@ -1,0 +1,283 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.logging.graph.depth_first_search
+  - cntk.logging.graph.find_all_with_name
+  - cntk.logging.graph.find_by_name
+  - cntk.logging.graph.get_node_outputs
+  - cntk.logging.graph.plot
+  fullName: cntk.logging.graph
+  langs:
+  - python
+  module: cntk.logging.graph
+  name: graph
+  source:
+    id: graph
+    path: bindings/python/cntk\logging\graph.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\logging\graph.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: module
+  uid: cntk.logging.graph
+- fullName: cntk.logging.graph.depth_first_search
+  langs:
+  - python
+  module: cntk.logging.graph
+  name: depth_first_search
+  source:
+    id: depth_first_search
+    path: bindings/python/cntk\logging\graph.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\logging\graph.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 12
+  summary: 'Generic function that walks through the graph starting at `root` and
+
+    uses function `visitor` on each node to check whether it should be
+
+    returned.
+
+    '
+  syntax:
+    content: depth_first_search(root, visitor, depth=0)
+    parameters:
+    - description: 'the root to start the journey from
+
+        '
+      id: root
+      type:
+      - "cntk.ops.functions.Function\n or @cntk.variables.Variable"
+    - description: 'function that takes a node as
+
+        argument and returns `True` if that node should be returned.
+
+        '
+      id: visitor
+      type:
+      - Python function or lambda
+    - defaultValue: '0'
+      description: 'how deep into the block hierarchy the DFS
+
+        algorithm should go into. Set to -1 for infinite depth.
+
+        '
+      id: depth
+      type:
+      - int, default 0
+    return:
+      description: 'List of functions, for which `visitor` was `True`
+
+        '
+  type: function
+  uid: cntk.logging.graph.depth_first_search
+- fullName: cntk.logging.graph.find_all_with_name
+  langs:
+  - python
+  module: cntk.logging.graph
+  name: find_all_with_name
+  seealsoContent: "See also: @cntk.ops.functions.Function.find_all_with_name in class\
+    \ @cntk.ops.functions.Function. \n"
+  source:
+    id: find_all_with_name
+    path: bindings/python/cntk\logging\graph.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\logging\graph.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 79
+  summary: 'Finds functions in the graph starting from `node` and doing a depth-first
+
+    search.
+
+    '
+  syntax:
+    content: find_all_with_name(node, node_name, depth=0)
+    parameters:
+    - description: 'the node to start the journey from
+
+        '
+      id: node
+      type:
+      - "cntk.ops.functions.Function\n or @cntk.variables.Variable"
+    - description: 'name for which we are search nodes
+
+        '
+      id: node_name
+      type:
+      - str
+    - defaultValue: '0'
+      description: 'how deep into the block hierarchy the DFS
+
+        algorithm should go into. Set to -1 for infinite depth.
+
+        '
+      id: depth
+      type:
+      - int, default 0
+    return:
+      description: 'List of primitive (or block) functions having the specified name
+
+        '
+  type: function
+  uid: cntk.logging.graph.find_all_with_name
+- fullName: cntk.logging.graph.find_by_name
+  langs:
+  - python
+  module: cntk.logging.graph
+  name: find_by_name
+  seealsoContent: "See also: @cntk.ops.functions.Function.find_by_name in class @cntk.ops.functions.Function.\
+    \ \n"
+  source:
+    id: find_by_name
+    path: bindings/python/cntk\logging\graph.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\logging\graph.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 100
+  summary: 'Finds a function in the graph starting from `node` and doing a depth-first
+
+    search. It assumes that the name occurs only once.
+
+    '
+  syntax:
+    content: find_by_name(node, node_name, depth=0)
+    parameters:
+    - description: 'the node to start the journey from
+
+        '
+      id: node
+      type:
+      - "cntk.ops.functions.Function\n or @cntk.variables.Variable"
+    - description: 'name for which we are search nodes
+
+        '
+      id: node_name
+      type:
+      - str
+    - defaultValue: '0'
+      description: 'how deep into the block hierarchy the DFS
+
+        algorithm should go into. Set to -1 for infinite depth.
+
+        '
+      id: depth
+      type:
+      - int, default 0
+    return:
+      description: 'Primitive (or block) function having the specified name
+
+        '
+  type: function
+  uid: cntk.logging.graph.find_by_name
+- fullName: cntk.logging.graph.get_node_outputs
+  langs:
+  - python
+  module: cntk.logging.graph
+  name: get_node_outputs
+  source:
+    id: get_node_outputs
+    path: bindings/python/cntk\logging\graph.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\logging\graph.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 347
+  summary: 'Walks through every node of the graph starting at `node`
+
+    and returns a list of all node outputs.
+
+    '
+  syntax:
+    content: get_node_outputs(node, depth=0)
+    parameters:
+    - description: 'the node to start the journey from
+
+        '
+      id: node
+      type:
+      - graph node
+    - defaultValue: '0'
+      id: depth
+    return:
+      description: 'A list of all node outputs
+
+        '
+  type: function
+  uid: cntk.logging.graph.get_node_outputs
+- fullName: cntk.logging.graph.plot
+  langs:
+  - python
+  module: cntk.logging.graph
+  name: plot
+  source:
+    id: plot
+    path: bindings/python/cntk\logging\graph.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\logging\graph.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 136
+  summary: "Walks through every node of the graph starting at `root`,\ncreates a network\
+    \ graph, and returns a network description. If `filename` is\nspecified, it outputs\
+    \ a DOT, PNG, PDF, or SVG file depending on the file name's suffix.\n\nRequirements:\n\
+    \n   * for DOT output: [pydot_ng](https://pypi.python.org/pypi/pydot-ng) \n\n\
+    \   * for PNG, PDF, and SVG output: [pydot_ng](https://pypi.python.org/pypi/pydot-ng)\
+    \ and [graphviz](http://graphviz.org) (GraphViz executable has to be in the system's\
+    \ PATH). \n"
+  syntax:
+    content: plot(root, filename=None)
+    parameters:
+    - description: 'the node to start the journey from
+
+        '
+      id: node
+      type:
+      - graph node
+    - defaultValue: None
+      description: 'file with extension ''.dot'', ''png'', ''pdf'', or ''svg''
+
+        to denote what format should be written. If *None* then nothing
+
+        will be plotted, and the returned string can be used to debug the graph.
+
+        '
+      id: filename
+      type:
+      - str, default None
+    return:
+      description: '*str* describing the graph
+
+        '
+  type: function
+  uid: cntk.logging.graph.plot
+references:
+- fullName: cntk.logging.graph.depth_first_search
+  isExternal: false
+  name: depth_first_search
+  parent: cntk.logging.graph
+  uid: cntk.logging.graph.depth_first_search
+- fullName: cntk.logging.graph.find_all_with_name
+  isExternal: false
+  name: find_all_with_name
+  parent: cntk.logging.graph
+  uid: cntk.logging.graph.find_all_with_name
+- fullName: cntk.logging.graph.find_by_name
+  isExternal: false
+  name: find_by_name
+  parent: cntk.logging.graph
+  uid: cntk.logging.graph.find_by_name
+- fullName: cntk.logging.graph.get_node_outputs
+  isExternal: false
+  name: get_node_outputs
+  parent: cntk.logging.graph
+  uid: cntk.logging.graph.get_node_outputs
+- fullName: cntk.logging.graph.plot
+  isExternal: false
+  name: plot
+  parent: cntk.logging.graph
+  uid: cntk.logging.graph.plot

@@ -1,0 +1,65 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.layers.models.attention.AttentionModel
+  fullName: cntk.layers.models.attention
+  langs:
+  - python
+  module: cntk.layers.models.attention
+  name: attention
+  source:
+    id: attention
+    path: bindings/python/cntk\layers\models\attention.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\layers\models\attention.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'Standard attention model.
+
+    '
+  type: module
+  uid: cntk.layers.models.attention
+- fullName: cntk.layers.models.attention.AttentionModel
+  langs:
+  - python
+  module: cntk.layers.models.attention
+  name: AttentionModel
+  source:
+    id: AttentionModel
+    path: bindings/python/cntk\layers\models\attention.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\layers\models\attention.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 23
+  summary: 'Layer factory function to create a function object that implements an
+    attention model
+
+    as described in Bahdanau, et al., "Neural machine translation by jointly learning
+    to align and translate."
+
+    '
+  syntax:
+    content: AttentionModel(attention_dim, attention_span=None, attention_axis=None,
+      init=glorot_uniform(), go_backwards=False, enable_self_stabilization=True, name='')
+    parameters:
+    - id: attention_dim
+    - defaultValue: None
+      id: attention_span
+    - defaultValue: None
+      id: attention_axis
+    - id: init
+    - id: go_backwards
+    - id: enable_self_stabilization
+    - defaultValue: ''
+      id: name
+  type: function
+  uid: cntk.layers.models.attention.AttentionModel
+references:
+- fullName: cntk.layers.models.attention.AttentionModel
+  isExternal: false
+  name: AttentionModel
+  parent: cntk.layers.models.attention
+  uid: cntk.layers.models.attention.AttentionModel

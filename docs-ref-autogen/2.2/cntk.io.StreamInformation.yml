@@ -1,0 +1,60 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children: []
+  class: cntk.io.StreamInformation
+  fullName: cntk.io.StreamInformation
+  langs:
+  - python
+  module: cntk.io
+  name: StreamInformation
+  source:
+    id: StreamInformation
+    path: bindings/python/cntk\io\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 352
+  summary: 'Stream information container that is used to describe streams when
+
+    implementing custom minibatch source through @cntk.io.UserMinibatchSource.
+
+
+    '
+  syntax:
+    content: StreamInformation(name, stream_id, storage_format, dtype, shape)
+    parameters:
+    - description: 'name of the stream
+
+        '
+      id: name
+      type:
+      - str
+    - description: 'unique ID of the stream
+
+        '
+      id: stream_id
+      type:
+      - int
+    - description: '''dense'' or ''sparse''
+
+        '
+      id: storage_format
+      type:
+      - str
+    - description: 'data type
+
+        '
+      id: dtype
+      type:
+      - NumPy type
+    - description: 'shape of the elements
+
+        '
+      id: shape
+      type:
+      - tuple
+  type: class
+  uid: cntk.io.StreamInformation
+references: []

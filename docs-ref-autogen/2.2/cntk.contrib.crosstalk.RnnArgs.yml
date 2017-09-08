@@ -1,0 +1,37 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children: []
+  class: cntk.contrib.crosstalk.RnnArgs
+  fullName: cntk.contrib.crosstalk.RnnArgs
+  inheritance:
+  - inheritance:
+    - inheritance:
+      - type: builtins.object
+      type: builtins.tuple
+    type: cntk.contrib.crosstalk.RnnArgs
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: RnnArgs
+  source:
+    id: RnnArgs
+    path: bindings/python/cntk\contrib\crosstalk\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 82
+  summary: "Args inside RNN variable.\n\nfw_W\n   The numpy ndarray of input projection\
+    \ parameter for RNN forward in shape (input_dim, num_gates * hidden_dim)\n\nfw_H\n\
+    \   The numpy ndarray of hidden projection parameter for RNN forward in shape\
+    \ (hidden_dim, num_gates * hidden_dim)\n\nfw_b\n   The numpy ndarray of bias parameter\
+    \ for RNN forward in shape (num_gates * hidden_dim,)\n\nbw_W\n   The numpy ndarray\
+    \ of input projection parameter for RNN backward in shape (input_dim, num_gates\
+    \ * hidden_dim)\n\nbw_H\n   The numpy ndarray of hidden projection parameter for\
+    \ RNN backward in shape (hidden_dim, num_gates * hidden_dim)\n\nbw_b\n   The numpy\
+    \ ndarray of bias parameter for RNN backward in shape (num_gates * hidden_dim,)\n"
+  syntax: {}
+  type: class
+  uid: cntk.contrib.crosstalk.RnnArgs
+references: []

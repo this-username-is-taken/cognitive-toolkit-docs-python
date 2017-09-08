@@ -1,0 +1,96 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.variables.Constant.value
+  class: cntk.variables.Constant
+  example:
+  - "\n```\n\n>>> c = C.Constant(1, (2,3))\n>>> c.value\n    array([[ 1.,  1.,  1.],\n\
+    \           [ 1.,  1.,  1.]], dtype=float32)\n```\n"
+  fullName: cntk.variables.Constant
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: cntk.variables.VariableMixin
+  - inheritance:
+    - type: builtins.object
+    type: cntk.tensor.TensorOpsMixin
+  langs:
+  - python
+  module: cntk.variables
+  name: Constant
+  source:
+    id: Constant
+    path: bindings/python/cntk\variables.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\variables.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 424
+  summary: 'A constant value. It can be a scalar, vector, matrix, or tensor
+
+    of floating point numbers that cannot be modified.
+
+
+    A Constant is a @cntk.variables.Variable and therefore inherits all its methods.
+
+
+
+
+    '
+  syntax:
+    content: Constant(self, value=None, shape=None, dtype=np.float32, device=None,
+      name='')
+    parameters:
+    - description: 'Initial value.
+
+        '
+      id: value
+      type:
+      - np.ndarray or list or float or int
+    - description: 'data type to store the values as.
+
+        '
+      id: dtype
+      type:
+      - np.float32 or np.float64
+    - description: 'the device on which the values should reside.
+
+        '
+      id: device
+      type:
+      - cntk.device.DeviceDescriptor
+    - description: 'an optional name for this constant.
+
+        '
+      id: name
+      type:
+      - str
+  type: class
+  uid: cntk.variables.Constant
+- class: cntk.variables.Constant
+  fullName: cntk.variables.Constant.value
+  langs:
+  - python
+  module: cntk.variables
+  name: value
+  source:
+    id: value
+    path: null
+    remote:
+      branch: release/2.0
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'NumPy array of the value
+
+    '
+  syntax: {}
+  type: attribute
+  uid: cntk.variables.Constant.value
+references:
+- fullName: cntk.variables.Constant.value
+  isExternal: false
+  name: value
+  parent: cntk.variables.Constant
+  uid: cntk.variables.Constant.value

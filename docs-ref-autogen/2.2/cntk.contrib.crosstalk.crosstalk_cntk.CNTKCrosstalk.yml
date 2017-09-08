@@ -1,0 +1,158 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.is_param
+  - cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.load_all_params
+  - cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.save_all_params
+  - cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.set_data
+  class: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+  fullName: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: cntk.contrib.crosstalk.Crosstalk
+  langs:
+  - python
+  module: cntk.contrib.crosstalk.crosstalk_cntk
+  name: CNTKCrosstalk
+  source:
+    id: CNTKCrosstalk
+    path: bindings/python/cntk\contrib\crosstalk\crosstalk_cntk.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\crosstalk_cntk.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 205
+  summary: 'CNTK implementation for crosstalk
+
+
+
+
+
+    '
+  syntax:
+    content: CNTKCrosstalk()
+  type: class
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+- class: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+  fullName: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.is_param
+  langs:
+  - python
+  module: cntk.contrib.crosstalk.crosstalk_cntk
+  name: is_param
+  source:
+    id: is_param
+    path: bindings/python/cntk\contrib\crosstalk\crosstalk_cntk.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\crosstalk_cntk.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 227
+  summary: 'Check if var with name is a parameter
+
+    '
+  syntax:
+    content: is_param(name)
+    parameters:
+    - description: 'Variable name to check
+
+        '
+      id: name
+      type:
+      - str
+  type: method
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.is_param
+- class: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+  fullName: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.load_all_params
+  langs:
+  - python
+  module: cntk.contrib.crosstalk.crosstalk_cntk
+  name: load_all_params
+  source:
+    id: load_all_params
+    path: bindings/python/cntk\contrib\crosstalk\crosstalk_cntk.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\crosstalk_cntk.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 237
+  summary: 'Load all parameters from files in working directory
+
+    '
+  syntax:
+    content: load_all_params()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.load_all_params
+- class: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+  fullName: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.save_all_params
+  langs:
+  - python
+  module: cntk.contrib.crosstalk.crosstalk_cntk
+  name: save_all_params
+  source:
+    id: save_all_params
+    path: bindings/python/cntk\contrib\crosstalk\crosstalk_cntk.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\crosstalk_cntk.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 243
+  summary: 'Save all parameters to files in working directory
+
+    '
+  syntax:
+    content: save_all_params()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.save_all_params
+- class: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+  fullName: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.set_data
+  langs:
+  - python
+  module: cntk.contrib.crosstalk.crosstalk_cntk
+  name: set_data
+  source:
+    id: set_data
+    path: bindings/python/cntk\contrib\crosstalk\crosstalk_cntk.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\crosstalk_cntk.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 217
+  summary: 'Set mapped data for variable evaluation
+
+    '
+  syntax:
+    content: set_data(data)
+    parameters:
+    - description: 'The input data as arguments parameter in @cntk.ops.functions.Function.eval
+
+        '
+      id: data
+  type: method
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.set_data
+references:
+- fullName: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.is_param
+  isExternal: false
+  name: is_param
+  parent: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.is_param
+- fullName: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.load_all_params
+  isExternal: false
+  name: load_all_params
+  parent: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.load_all_params
+- fullName: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.save_all_params
+  isExternal: false
+  name: save_all_params
+  parent: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.save_all_params
+- fullName: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.set_data
+  isExternal: false
+  name: set_data
+  parent: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk
+  uid: cntk.contrib.crosstalk.crosstalk_cntk.CNTKCrosstalk.set_data

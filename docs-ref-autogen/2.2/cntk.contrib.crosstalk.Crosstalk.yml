@@ -1,0 +1,518 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalk.Crosstalk.assign
+  - cntk.contrib.crosstalk.Crosstalk.compare
+  - cntk.contrib.crosstalk.Crosstalk.fetch
+  - cntk.contrib.crosstalk.Crosstalk.load
+  - cntk.contrib.crosstalk.Crosstalk.load_raw_value
+  - cntk.contrib.crosstalk.Crosstalk.next_pass
+  - cntk.contrib.crosstalk.Crosstalk.register_funcs
+  - cntk.contrib.crosstalk.Crosstalk.reset
+  - cntk.contrib.crosstalk.Crosstalk.save
+  - cntk.contrib.crosstalk.Crosstalk.save_all
+  - cntk.contrib.crosstalk.Crosstalk.set_workdir
+  - cntk.contrib.crosstalk.Crosstalk.watch
+  class: cntk.contrib.crosstalk.Crosstalk
+  fullName: cntk.contrib.crosstalk.Crosstalk
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: Crosstalk
+  source:
+    id: Crosstalk
+    path: bindings/python/cntk\contrib\crosstalk\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 131
+  summary: 'Base class of Crosstalk.
+
+    Please refer to crosstalk unittests for examples of how to exchange/compare values
+    between different toolkits.
+
+
+
+
+
+
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: Crosstalk()
+  type: class
+  uid: cntk.contrib.crosstalk.Crosstalk
+- class: cntk.contrib.crosstalk.Crosstalk
+  fullName: cntk.contrib.crosstalk.Crosstalk.assign
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: assign
+  source:
+    id: assign
+    path: bindings/python/cntk\contrib\crosstalk\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 203
+  summary: 'Set value to var, with option to load from working directory
+
+    '
+  syntax:
+    content: assign(name, value=None, load=False, load_name=None)
+    parameters:
+    - description: 'Name of the variable to assign
+
+        '
+      id: name
+      type:
+      - str
+    - defaultValue: None
+      description: 'Numpy ndarray of dict of numpy ndarray data to assign to the variable
+
+        '
+      id: value
+    - defaultValue: 'False'
+      description: 'True to Load the data from working directory with the matching
+        name, instead of using value. value has to be None when load=True
+
+        '
+      id: load
+      type:
+      - bool
+    - defaultValue: None
+      description: 'None to load data with the same name, otherwise load with overrided
+        load_name
+
+        '
+      id: load_name
+      type:
+      - str
+  type: method
+  uid: cntk.contrib.crosstalk.Crosstalk.assign
+- class: cntk.contrib.crosstalk.Crosstalk
+  fullName: cntk.contrib.crosstalk.Crosstalk.compare
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: compare
+  source:
+    id: compare
+    path: bindings/python/cntk\contrib\crosstalk\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 242
+  summary: 'Compare var with name to value in file in working directory
+
+    '
+  syntax:
+    content: compare(name, compare_name=None, rtol=1e-05, atol=1e-08, equal_nan=False)
+    parameters:
+    - description: 'Name of the variable to compare
+
+        '
+      id: name
+      type:
+      - str
+    - defaultValue: None
+      description: 'Compare to file with compare_name if specified
+
+        '
+      id: compare_name
+      type:
+      - str
+    - defaultValue: 1e-05
+      description: 'The relative tolerance parameter, as in numpy.isclose()
+
+        '
+      id: rtol
+      type:
+      - float
+    - defaultValue: 1e-08
+      description: 'The absolute tolerance parameter, as in numpy.isclose()
+
+        '
+      id: atol
+      type:
+      - float
+    - defaultValue: 'False'
+      description: 'Whether to compare NaNs as equal, as in numpy.isclose()
+
+        '
+      id: equal_nan
+      type:
+      - bool
+  type: method
+  uid: cntk.contrib.crosstalk.Crosstalk.compare
+- class: cntk.contrib.crosstalk.Crosstalk
+  fullName: cntk.contrib.crosstalk.Crosstalk.fetch
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: fetch
+  source:
+    id: fetch
+    path: bindings/python/cntk\contrib\crosstalk\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 224
+  summary: 'Fetch/evaluate var with name and optionally save to working directory
+
+    '
+  syntax:
+    content: fetch(name, save=False)
+    parameters:
+    - description: 'Name of the variable to fetch
+
+        '
+      id: name
+      type:
+      - str
+    - defaultValue: 'False'
+      description: 'Save the data to working directory
+
+        '
+      id: save
+      type:
+      - bool
+  type: method
+  uid: cntk.contrib.crosstalk.Crosstalk.fetch
+- class: cntk.contrib.crosstalk.Crosstalk
+  fullName: cntk.contrib.crosstalk.Crosstalk.load
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: load
+  source:
+    id: load
+    path: bindings/python/cntk\contrib\crosstalk\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 277
+  summary: 'Load variables in list of names
+
+    '
+  syntax:
+    content: load(names)
+    parameters:
+    - description: 'List of *str* of variable names to load
+
+        '
+      id: names
+  type: method
+  uid: cntk.contrib.crosstalk.Crosstalk.load
+- class: cntk.contrib.crosstalk.Crosstalk
+  fullName: cntk.contrib.crosstalk.Crosstalk.load_raw_value
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: load_raw_value
+  source:
+    id: load_raw_value
+    path: bindings/python/cntk\contrib\crosstalk\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 185
+  summary: 'Load raw value from npy|pkl file in working directory
+
+    '
+  syntax:
+    content: load_raw_value(name)
+    parameters:
+    - description: 'Name of the file to load
+
+        '
+      id: name
+      type:
+      - str
+    return:
+      description: 'loaded data in numpy ndarray or dict of numpy ndarray
+
+        '
+  type: method
+  uid: cntk.contrib.crosstalk.Crosstalk.load_raw_value
+- class: cntk.contrib.crosstalk.Crosstalk
+  fullName: cntk.contrib.crosstalk.Crosstalk.next_pass
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: next_pass
+  source:
+    id: next_pass
+    path: bindings/python/cntk\contrib\crosstalk\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 151
+  summary: 'Bump up passes so save won''t overwrite existing files
+
+    '
+  syntax:
+    content: next_pass()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.crosstalk.Crosstalk.next_pass
+- class: cntk.contrib.crosstalk.Crosstalk
+  fullName: cntk.contrib.crosstalk.Crosstalk.register_funcs
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: register_funcs
+  source:
+    id: register_funcs
+    path: bindings/python/cntk\contrib\crosstalk\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 171
+  summary: 'Register setter/getter functions for a given variable type
+
+    '
+  syntax:
+    content: register_funcs(var_type, setter=None, getter=None)
+    parameters:
+    - description: 'Type of the variable
+
+        '
+      id: var_type
+    - defaultValue: None
+      description: 'Lambda function to set value
+
+        '
+      id: setter
+    - defaultValue: None
+      description: 'Lambda function to get value
+
+        '
+      id: getter
+  type: method
+  uid: cntk.contrib.crosstalk.Crosstalk.register_funcs
+- class: cntk.contrib.crosstalk.Crosstalk
+  fullName: cntk.contrib.crosstalk.Crosstalk.reset
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: reset
+  source:
+    id: reset
+    path: bindings/python/cntk\contrib\crosstalk\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 301
+  summary: 'Reset all variables and passes, setter/getter functions for variable types
+    are kept
+
+    '
+  syntax:
+    content: reset()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.crosstalk.Crosstalk.reset
+- class: cntk.contrib.crosstalk.Crosstalk
+  fullName: cntk.contrib.crosstalk.Crosstalk.save
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: save
+  source:
+    id: save
+    path: bindings/python/cntk\contrib\crosstalk\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 286
+  summary: 'Save variables in list of names
+
+    '
+  syntax:
+    content: save(names)
+    parameters:
+    - description: 'List of *str* of variable names to save
+
+        '
+      id: names
+  type: method
+  uid: cntk.contrib.crosstalk.Crosstalk.save
+- class: cntk.contrib.crosstalk.Crosstalk
+  fullName: cntk.contrib.crosstalk.Crosstalk.save_all
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: save_all
+  source:
+    id: save_all
+    path: bindings/python/cntk\contrib\crosstalk\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 295
+  summary: 'Save all variables
+
+    '
+  syntax:
+    content: save_all()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.crosstalk.Crosstalk.save_all
+- class: cntk.contrib.crosstalk.Crosstalk
+  fullName: cntk.contrib.crosstalk.Crosstalk.set_workdir
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: set_workdir
+  source:
+    id: set_workdir
+    path: bindings/python/cntk\contrib\crosstalk\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 140
+  summary: 'Set up a working directory for save/load numpy values(.npy) or python
+    data (.pkl)
+
+    '
+  syntax:
+    content: set_workdir(dir)
+    parameters:
+    - description: 'Working directory
+
+        '
+      id: dir
+      type:
+      - str
+  type: method
+  uid: cntk.contrib.crosstalk.Crosstalk.set_workdir
+- class: cntk.contrib.crosstalk.Crosstalk
+  fullName: cntk.contrib.crosstalk.Crosstalk.watch
+  langs:
+  - python
+  module: cntk.contrib.crosstalk
+  name: watch
+  source:
+    id: watch
+    path: bindings/python/cntk\contrib\crosstalk\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\contrib\crosstalk\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 157
+  summary: 'Add variables to watch with a unique name.
+
+    '
+  syntax:
+    content: watch(var, name, var_type=None, attr=None)
+    parameters:
+    - description: 'Variable to watch. The type is toolkit specific
+
+        '
+      id: var
+    - description: 'A unique name of the watched variable
+
+        '
+      id: name
+      type:
+      - str
+    - defaultValue: None
+      description: 'Variable type for set/get value callback. would be type of var
+        if None is specified
+
+        '
+      id: var_type
+    - defaultValue: None
+      description: 'attributes for the variable that would be used when getting/setting
+        values. Could be one of Conv2DAttr/EmbedAttr/RnnAttr
+
+        '
+      id: attr
+  type: method
+  uid: cntk.contrib.crosstalk.Crosstalk.watch
+references:
+- fullName: cntk.contrib.crosstalk.Crosstalk.assign
+  isExternal: false
+  name: assign
+  parent: cntk.contrib.crosstalk.Crosstalk
+  uid: cntk.contrib.crosstalk.Crosstalk.assign
+- fullName: cntk.contrib.crosstalk.Crosstalk.compare
+  isExternal: false
+  name: compare
+  parent: cntk.contrib.crosstalk.Crosstalk
+  uid: cntk.contrib.crosstalk.Crosstalk.compare
+- fullName: cntk.contrib.crosstalk.Crosstalk.fetch
+  isExternal: false
+  name: fetch
+  parent: cntk.contrib.crosstalk.Crosstalk
+  uid: cntk.contrib.crosstalk.Crosstalk.fetch
+- fullName: cntk.contrib.crosstalk.Crosstalk.load
+  isExternal: false
+  name: load
+  parent: cntk.contrib.crosstalk.Crosstalk
+  uid: cntk.contrib.crosstalk.Crosstalk.load
+- fullName: cntk.contrib.crosstalk.Crosstalk.load_raw_value
+  isExternal: false
+  name: load_raw_value
+  parent: cntk.contrib.crosstalk.Crosstalk
+  uid: cntk.contrib.crosstalk.Crosstalk.load_raw_value
+- fullName: cntk.contrib.crosstalk.Crosstalk.next_pass
+  isExternal: false
+  name: next_pass
+  parent: cntk.contrib.crosstalk.Crosstalk
+  uid: cntk.contrib.crosstalk.Crosstalk.next_pass
+- fullName: cntk.contrib.crosstalk.Crosstalk.register_funcs
+  isExternal: false
+  name: register_funcs
+  parent: cntk.contrib.crosstalk.Crosstalk
+  uid: cntk.contrib.crosstalk.Crosstalk.register_funcs
+- fullName: cntk.contrib.crosstalk.Crosstalk.reset
+  isExternal: false
+  name: reset
+  parent: cntk.contrib.crosstalk.Crosstalk
+  uid: cntk.contrib.crosstalk.Crosstalk.reset
+- fullName: cntk.contrib.crosstalk.Crosstalk.save
+  isExternal: false
+  name: save
+  parent: cntk.contrib.crosstalk.Crosstalk
+  uid: cntk.contrib.crosstalk.Crosstalk.save
+- fullName: cntk.contrib.crosstalk.Crosstalk.save_all
+  isExternal: false
+  name: save_all
+  parent: cntk.contrib.crosstalk.Crosstalk
+  uid: cntk.contrib.crosstalk.Crosstalk.save_all
+- fullName: cntk.contrib.crosstalk.Crosstalk.set_workdir
+  isExternal: false
+  name: set_workdir
+  parent: cntk.contrib.crosstalk.Crosstalk
+  uid: cntk.contrib.crosstalk.Crosstalk.set_workdir
+- fullName: cntk.contrib.crosstalk.Crosstalk.watch
+  isExternal: false
+  name: watch
+  parent: cntk.contrib.crosstalk.Crosstalk
+  uid: cntk.contrib.crosstalk.Crosstalk.watch

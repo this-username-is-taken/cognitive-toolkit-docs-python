@@ -1,0 +1,122 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.variables.Parameter.value
+  class: cntk.variables.Parameter
+  example:
+  - "\n```\n\n>>> p = C.Parameter((13,42,7), init=C.glorot_uniform())\n>>> p.shape\n\
+    \    (13, 42, 7)\n```\n\n\n```\n\n>>> # example with inferred dimensions\n>>>\
+    \ W = C.Parameter((C.InferredDimension, 42), init=C.glorot_uniform())\n>>> W.shape\
+    \   # -1 indicates dimension yet to be inferred\n    (-1, 42)\n>>> x = C.input_variable(13)\n\
+    >>> y = C.times(x, W)  # times operation now knows that the input dimension of\
+    \ W must be 13\n>>> W.shape          # hence, the shape has been updated\n   \
+    \ (13, 42)\n```\n"
+  fullName: cntk.variables.Parameter
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: cntk.variables.VariableMixin
+  - inheritance:
+    - type: builtins.object
+    type: cntk.tensor.TensorOpsMixin
+  langs:
+  - python
+  module: cntk.variables
+  name: Parameter
+  source:
+    id: Parameter
+    path: bindings/python/cntk\variables.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\variables.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 331
+  summary: 'A trainable parameter. It can be a scalar, vector, matrix, or tensor
+
+    of floating point numbers that can be modified by a training
+
+    procedure.
+
+
+    Parameters are Variables and therefore they inherit all their methods.
+
+
+    '
+  syntax:
+    content: Parameter(self, shape=None, init=None, dtype=np.float32, device=None,
+      name='')
+    parameters:
+    - description: 'the shape of the tensor holding the parameters
+
+        '
+      id: shape
+      type:
+      - tuple
+    - description: '@cntk.initializer: Initial value.
+
+        If a numpy array is specified the shape argument is ignored and
+
+        the tensor gets the shape of this argument. Alternatively, an
+
+        initializer from @cntk.initializer can be specified.
+
+        '
+      id: init
+      type:
+      - value (np.ndarray, list, float, int
+    - description: 'data type of the values stored.
+
+        '
+      id: dtype
+      type:
+      - np.float32 or np.float64
+    - description: 'the device on which the values should reside.
+
+        '
+      id: device
+      type:
+      - cntk.device.DeviceDescriptor
+    - description: 'an optional name for this parameter
+
+        '
+      id: name
+      type:
+      - str
+  type: class
+  uid: cntk.variables.Parameter
+- class: cntk.variables.Parameter
+  fullName: cntk.variables.Parameter.value
+  langs:
+  - python
+  module: cntk.variables
+  name: value
+  source:
+    id: value
+    path: null
+    remote:
+      branch: release/2.0
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Value of the Parameter
+
+    '
+  syntax:
+    parameters:
+    - description: 'gets the Parameter''s value as a NumPy array
+
+        '
+      id: getter
+    - description: 'sets the Parameter''s value to the provided NumPy array
+
+        '
+      id: setter
+  type: attribute
+  uid: cntk.variables.Parameter.value
+references:
+- fullName: cntk.variables.Parameter.value
+  isExternal: false
+  name: value
+  parent: cntk.variables.Parameter
+  uid: cntk.variables.Parameter.value

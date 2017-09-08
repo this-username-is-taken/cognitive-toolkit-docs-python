@@ -1,0 +1,135 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.ops.functions.CloneMethod.clone
+  - cntk.ops.functions.CloneMethod.freeze
+  - cntk.ops.functions.CloneMethod.share
+  class: cntk.ops.functions.CloneMethod
+  fullName: cntk.ops.functions.CloneMethod
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: enum.Enum
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: CloneMethod
+  source:
+    id: CloneMethod
+    path: bindings/python/cntk\ops\functions.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\ops\functions.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 30
+  summary: 'Describes different ways how @cntk.ops.functions.Function.clone
+
+    works.
+
+
+
+
+    '
+  syntax: {}
+  type: class
+  uid: cntk.ops.functions.CloneMethod
+- class: cntk.ops.functions.CloneMethod
+  fullName: cntk.ops.functions.CloneMethod.clone
+  id: clone
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: clone
+  parent: cntk.ops.functions.CloneMethod
+  source:
+    id: clone
+    path: null
+    remote:
+      branch: release/2.0
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'New learnable parameters are created and initialized with the current
+    values of the
+
+    corresponding parameters of the Function being cloned
+
+    '
+  syntax:
+    content: clone = 'clone'
+    return:
+      type:
+      - cntk.ops.functions.CloneMethod
+  type: attribute
+  uid: cntk.ops.functions.CloneMethod.clone
+- class: cntk.ops.functions.CloneMethod
+  fullName: cntk.ops.functions.CloneMethod.freeze
+  id: freeze
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: freeze
+  parent: cntk.ops.functions.CloneMethod
+  source:
+    id: freeze
+    path: null
+    remote:
+      branch: release/2.0
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Parameters are cloned and made immutable; i.e. Constants in the new clone
+
+    (e.g. for use as a fixed feature extractor)
+
+    '
+  syntax:
+    content: freeze = 'freeze'
+    return:
+      type:
+      - cntk.ops.functions.CloneMethod
+  type: attribute
+  uid: cntk.ops.functions.CloneMethod.freeze
+- class: cntk.ops.functions.CloneMethod
+  fullName: cntk.ops.functions.CloneMethod.share
+  id: share
+  langs:
+  - python
+  module: cntk.ops.functions
+  name: share
+  parent: cntk.ops.functions.CloneMethod
+  source:
+    id: share
+    path: null
+    remote:
+      branch: release/2.0
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Parameters are shared between the Function being cloned and the new clone
+
+    '
+  syntax:
+    content: share = 'share'
+    return:
+      type:
+      - cntk.ops.functions.CloneMethod
+  type: attribute
+  uid: cntk.ops.functions.CloneMethod.share
+references:
+- fullName: cntk.ops.functions.CloneMethod.clone
+  isExternal: false
+  name: clone
+  parent: cntk.ops.functions.CloneMethod
+  uid: cntk.ops.functions.CloneMethod.clone
+- fullName: cntk.ops.functions.CloneMethod.freeze
+  isExternal: false
+  name: freeze
+  parent: cntk.ops.functions.CloneMethod
+  uid: cntk.ops.functions.CloneMethod.freeze
+- fullName: cntk.ops.functions.CloneMethod.share
+  isExternal: false
+  name: share
+  parent: cntk.ops.functions.CloneMethod
+  uid: cntk.ops.functions.CloneMethod.share

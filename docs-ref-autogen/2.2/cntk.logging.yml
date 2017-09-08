@@ -1,0 +1,106 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.logging.TraceLevel
+  - cntk.logging.get_trace_level
+  - cntk.logging.set_trace_level
+  - cntk.logging.graph
+  - cntk.logging.progress_print
+  fullName: cntk.logging
+  langs:
+  - python
+  module: cntk.logging
+  name: logging
+  source:
+    id: logging
+    path: bindings/python/cntk\logging\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\logging\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'Utilities for logging.
+
+    '
+  type: package
+  uid: cntk.logging
+- fullName: cntk.logging.get_trace_level
+  langs:
+  - python
+  module: cntk.logging
+  name: get_trace_level
+  source:
+    id: get_trace_level
+    path: bindings/python/cntk\logging\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\logging\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 44
+  summary: 'Returns current logging verbosity level.
+
+    '
+  syntax:
+    content: get_trace_level()
+    return:
+      description: 'current verbosity level.
+
+        '
+      type:
+      - cntk.logging.TraceLevel
+  type: function
+  uid: cntk.logging.get_trace_level
+- fullName: cntk.logging.set_trace_level
+  langs:
+  - python
+  module: cntk.logging
+  name: set_trace_level
+  source:
+    id: set_trace_level
+    path: bindings/python/cntk\logging\__init__.py
+    remote:
+      branch: release/2.0
+      path: bindings/python/cntk\logging\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 32
+  summary: 'Specifies global logging verbosity level.
+
+    '
+  syntax:
+    content: set_trace_level(value)
+    parameters:
+    - description: 'required verbosity level.
+
+        '
+      id: value
+      type:
+      - cntk.logging.TraceLevel
+  type: function
+  uid: cntk.logging.set_trace_level
+references:
+- fullName: cntk.logging.TraceLevel
+  isExternal: false
+  name: TraceLevel
+  parent: cntk.logging
+  uid: cntk.logging.TraceLevel
+- fullName: cntk.logging.get_trace_level
+  isExternal: false
+  name: get_trace_level
+  parent: cntk.logging
+  uid: cntk.logging.get_trace_level
+- fullName: cntk.logging.set_trace_level
+  isExternal: false
+  name: set_trace_level
+  parent: cntk.logging
+  uid: cntk.logging.set_trace_level
+- fullName: cntk.logging.graph
+  isExternal: false
+  name: graph
+  parent: cntk.logging
+  uid: cntk.logging.graph
+- fullName: cntk.logging.progress_print
+  isExternal: false
+  name: progress_print
+  parent: cntk.logging
+  uid: cntk.logging.progress_print
