@@ -1533,12 +1533,12 @@ items:
     \ lookup if the input is sparse.\n\nThe lookup table in this layer is learnable,\n\
     unless a user-specified one is supplied through the `weights` parameter.\nFor\
     \ example, to use an existing embedding table from a file in numpy format, use\
-    \ this:\n\n<!-- literal_block {\"ids\": [], \"backrefs\": [], \"names\": [], \"\
-    dupnames\": [], \"xml:space\": \"preserve\", \"classes\": []} -->\n\n````\n\n\
-    \   Embedding(weights=np.load('PATH.npy'))\n   ````\n\nTo initialize a learnable\
-    \ lookup table with a given numpy array that is to be used as\nthe initial value,\
-    \ pass that array to the `init` parameter (not `weights`).\n\nAn `Embedding` instance\
-    \ owns its weight parameter tensor *E*, and exposes it as an attribute `.E`.\n"
+    \ this:\n\n<!-- literal_block {\"ids\": [], \"names\": [], \"xml:space\": \"preserve\"\
+    , \"backrefs\": [], \"dupnames\": [], \"classes\": []} -->\n\n````\n\n   Embedding(weights=np.load('PATH.npy'))\n\
+    \   ````\n\nTo initialize a learnable lookup table with a given numpy array that\
+    \ is to be used as\nthe initial value, pass that array to the `init` parameter\
+    \ (not `weights`).\n\nAn `Embedding` instance owns its weight parameter tensor\
+    \ *E*, and exposes it as an attribute `.E`.\n"
   syntax:
     content: Embedding(shape=None, init=glorot_uniform(), weights=None, name='')
     parameters:
