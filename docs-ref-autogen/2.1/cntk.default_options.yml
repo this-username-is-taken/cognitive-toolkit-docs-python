@@ -96,8 +96,8 @@ items:
     content: get_default_override(function_or_class, **kwargs)
     parameters:
     - description: "the function that calls this.\nFor example:\n\n<!-- literal_block\
-        \ {\"ids\": [], \"xml:space\": \"preserve\", \"dupnames\": [], \"names\":\
-        \ [], \"backrefs\": [], \"classes\": []} -->\n\n````\n\n   def Convolution(args,\
+        \ {\"xml:space\": \"preserve\", \"backrefs\": [], \"ids\": [], \"classes\"\
+        : [], \"dupnames\": [], \"names\": []} -->\n\n````\n\n   def Convolution(args,\
         \ init=default_override_or(glorot_uniform()), activation=default_override_or(identity),\
         \ pad=default_override_or(False)):\n   init = _get_default_override(Convolution,\
         \ init=init) # pass default under the same name\n   ````\n"
