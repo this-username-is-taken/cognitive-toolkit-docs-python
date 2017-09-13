@@ -1,0 +1,517 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.batch_norm
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.convolution
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.dense
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.dropout
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.lrn
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.plus
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.pooling
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.relu
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.softmax
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.splice
+  class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: ApiSetup
+  source:
+    id: ApiSetup
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 142
+  summary: 'Setup CNTK ops with given parameters
+
+
+
+
+
+
+
+
+
+
+
+    '
+  syntax: {}
+  type: class
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+- class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.batch_norm
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: batch_norm
+  source:
+    id: batch_norm
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 180
+  summary: '   Setup batch normalization op with given parameters
+
+    '
+  syntax:
+    content: batch_norm(cntk_layer, inputs)
+    parameters:
+    - description: 'the layer definition of batch normalization op
+
+        '
+      id: cntk_layer
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayersDefinition
+    - description: 'a list contains all @cntk.ops.functions.Function or
+
+        @cntk.input
+
+        '
+      id: inputs
+      type:
+      - list
+    return:
+      description: 'instaced cntk batch normalization op
+
+        '
+      type:
+      - cntk.ops.functions.Function
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.batch_norm
+- class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.convolution
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: convolution
+  source:
+    id: convolution
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 146
+  summary: '   Setup convolution op with given parameters
+
+    '
+  syntax:
+    content: convolution(cntk_layer, inputs)
+    parameters:
+    - description: 'the layer definition of convolution op
+
+        '
+      id: cntk_layer
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayersDefinition
+    - description: 'a list contains all @cntk.ops.functions.Function or
+
+        @cntk.input
+
+        '
+      id: inputs
+      type:
+      - list
+    return:
+      description: 'instaced cntk convolution op
+
+        '
+      type:
+      - cntk.ops.functions.Function
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.convolution
+- class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.dense
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: dense
+  source:
+    id: dense
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 265
+  summary: '   Setup dense op with given parameters
+
+    '
+  syntax:
+    content: dense(cntk_layer, inputs)
+    parameters:
+    - description: 'the layer definition of dense op
+
+        '
+      id: cntk_layer
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayersDefinition
+    - description: 'a list contains all @cntk.ops.functions.Function or
+
+        @cntk.input
+
+        '
+      id: inputs
+      type:
+      - list
+    return:
+      description: 'instaced cntk dense op
+
+        '
+      type:
+      - cntk.ops.functions.Function
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.dense
+- class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.dropout
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: dropout
+  source:
+    id: dropout
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 320
+  summary: '   Setup dropout op with given parameters
+
+    '
+  syntax:
+    content: dropout(cntk_layer, inputs)
+    parameters:
+    - description: 'the layer definition of dropout op
+
+        '
+      id: cntk_layer
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayersDefinition
+    - description: 'a list contains all @cntk.ops.functions.Function or
+
+        @cntk.input
+
+        '
+      id: inputs
+      type:
+      - list
+    return:
+      description: 'instaced cntk dropout op
+
+        '
+      type:
+      - cntk.ops.functions.Function
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.dropout
+- class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.lrn
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: lrn
+  source:
+    id: lrn
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 337
+  summary: '   Setup lrn op with given parameters
+
+    '
+  syntax:
+    content: lrn(cntk_layer, inputs)
+    parameters:
+    - description: 'the layer definition of lrn op
+
+        '
+      id: cntk_layer
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayersDefinition
+    - description: 'a list contains all @cntk.ops.functions.Function or
+
+        @cntk.input
+
+        '
+      id: inputs
+      type:
+      - list
+    return:
+      description: 'instaced cntk lrn op
+
+        '
+      type:
+      - cntk.ops.functions.Function
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.lrn
+- class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.plus
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: plus
+  source:
+    id: plus
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 302
+  summary: '   Setup plus op with given parameters
+
+    '
+  syntax:
+    content: plus(cntk_layer, inputs)
+    parameters:
+    - description: 'the layer definition of dense op
+
+        '
+      id: cntk_layer
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayersDefinition
+    - description: 'a list contains all @cntk.ops.functions.Function or
+
+        @cntk.input
+
+        '
+      id: inputs
+      type:
+      - list
+    return:
+      description: 'instaced cntk dense op
+
+        '
+      type:
+      - cntk.ops.functions.Function
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.plus
+- class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.pooling
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: pooling
+  source:
+    id: pooling
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 226
+  summary: '   Setup pooling op with given parameters
+
+    '
+  syntax:
+    content: pooling(cntk_layer, inputs)
+    parameters:
+    - description: 'the layer definition of pooling op
+
+        '
+      id: cntk_layer
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayersDefinition
+    - description: 'a list contains all @cntk.ops.functions.Function or
+
+        @cntk.input
+
+        '
+      id: inputs
+      type:
+      - list
+    return:
+      description: 'instaced cntk pooling op
+
+        '
+      type:
+      - cntk.ops.functions.Function
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.pooling
+- class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.relu
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: relu
+  source:
+    id: relu
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 248
+  summary: '   Setup ReLU op with given parameters
+
+    '
+  syntax:
+    content: relu(cntk_layer, inputs)
+    parameters:
+    - description: 'the layer definition of ReLU op
+
+        '
+      id: cntk_layer
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayersDefinition
+    - description: 'a list contains all @cntk.ops.functions.Function or
+
+        @cntk.input
+
+        '
+      id: inputs
+      type:
+      - list
+    return:
+      description: 'instaced cntk ReLU op
+
+        '
+      type:
+      - cntk.ops.functions.Function
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.relu
+- class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.softmax
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: softmax
+  source:
+    id: softmax
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 372
+  summary: '   Setup softmax op with given parameters
+
+    '
+  syntax:
+    content: softmax(cntk_layer, inputs)
+    parameters:
+    - description: 'the layer definition of softmax op
+
+        '
+      id: cntk_layer
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayersDefinition
+    - description: 'a list contains all @cntk.ops.functions.Function or
+
+        @cntk.input
+
+        '
+      id: inputs
+      type:
+      - list
+    return:
+      description: 'instaced cntk softmax op
+
+        '
+      type:
+      - cntk.ops.functions.Function
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.softmax
+- class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.splice
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: splice
+  source:
+    id: splice
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 356
+  summary: '   Setup splice op with given parameters
+
+    '
+  syntax:
+    content: splice(cntk_layer, inputs)
+    parameters:
+    - description: 'the layer definition of splice op
+
+        '
+      id: cntk_layer
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayersDefinition
+    - description: 'a list contains all @cntk.ops.functions.Function or
+
+        @cntk.input
+
+        '
+      id: inputs
+      type:
+      - list
+    return:
+      description: 'instaced cntk splice op
+
+        '
+      type:
+      - cntk.ops.functions.Function
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.splice
+references:
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.batch_norm
+  isExternal: false
+  name: batch_norm
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.batch_norm
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.convolution
+  isExternal: false
+  name: convolution
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.convolution
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.dense
+  isExternal: false
+  name: dense
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.dense
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.dropout
+  isExternal: false
+  name: dropout
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.dropout
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.lrn
+  isExternal: false
+  name: lrn
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.lrn
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.plus
+  isExternal: false
+  name: plus
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.plus
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.pooling
+  isExternal: false
+  name: pooling
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.pooling
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.relu
+  isExternal: false
+  name: relu
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.relu
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.softmax
+  isExternal: false
+  name: softmax
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.softmax
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.splice
+  isExternal: false
+  name: splice
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.ApiSetup.splice

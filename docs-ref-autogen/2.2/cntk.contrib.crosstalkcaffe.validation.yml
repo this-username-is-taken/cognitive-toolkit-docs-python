@@ -1,0 +1,32 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalkcaffe.validation.validcaffe
+  - cntk.contrib.crosstalkcaffe.validation.validcore
+  fullName: cntk.contrib.crosstalkcaffe.validation
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.validation
+  name: validation
+  source:
+    id: validation
+    path: bindings/python/cntk\contrib\crosstalkcaffe\validation\__init__.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\validation\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: package
+  uid: cntk.contrib.crosstalkcaffe.validation
+references:
+- fullName: cntk.contrib.crosstalkcaffe.validation.validcaffe
+  isExternal: false
+  name: validcaffe
+  parent: cntk.contrib.crosstalkcaffe.validation
+  uid: cntk.contrib.crosstalkcaffe.validation.validcaffe
+- fullName: cntk.contrib.crosstalkcaffe.validation.validcore
+  isExternal: false
+  name: validcore
+  parent: cntk.contrib.crosstalkcaffe.validation
+  uid: cntk.contrib.crosstalkcaffe.validation.validcore

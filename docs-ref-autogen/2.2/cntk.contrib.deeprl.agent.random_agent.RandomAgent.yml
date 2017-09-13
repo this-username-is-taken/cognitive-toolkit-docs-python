@@ -1,0 +1,217 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.deeprl.agent.random_agent.RandomAgent.end
+  - cntk.contrib.deeprl.agent.random_agent.RandomAgent.save
+  - cntk.contrib.deeprl.agent.random_agent.RandomAgent.save_parameter_settings
+  - cntk.contrib.deeprl.agent.random_agent.RandomAgent.set_as_best_model
+  - cntk.contrib.deeprl.agent.random_agent.RandomAgent.start
+  - cntk.contrib.deeprl.agent.random_agent.RandomAgent.step
+  class: cntk.contrib.deeprl.agent.random_agent.RandomAgent
+  fullName: cntk.contrib.deeprl.agent.random_agent.RandomAgent
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.random_agent
+  name: RandomAgent
+  source:
+    id: RandomAgent
+    path: bindings/python/cntk\contrib\deeprl\agent\random_agent.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\random_agent.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 13
+  summary: 'Agent that selects action uniformly randomly.
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: RandomAgent(o_space, a_space)
+  type: class
+  uid: cntk.contrib.deeprl.agent.random_agent.RandomAgent
+- class: cntk.contrib.deeprl.agent.random_agent.RandomAgent
+  fullName: cntk.contrib.deeprl.agent.random_agent.RandomAgent.end
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.random_agent
+  name: end
+  source:
+    id: end
+    path: bindings/python/cntk\contrib\deeprl\agent\random_agent.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\random_agent.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 39
+  summary: 'Last observed reward/state of the episode (which then terminates).
+
+    '
+  syntax:
+    content: end(reward, next_state)
+    parameters:
+    - id: self
+    - id: reward
+    - id: next_state
+  type: method
+  uid: cntk.contrib.deeprl.agent.random_agent.RandomAgent.end
+- class: cntk.contrib.deeprl.agent.random_agent.RandomAgent
+  fullName: cntk.contrib.deeprl.agent.random_agent.RandomAgent.save
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.random_agent
+  name: save
+  source:
+    id: save
+    path: bindings/python/cntk\contrib\deeprl\agent\random_agent.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\random_agent.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 47
+  summary: 'Save best model to file.
+
+    '
+  syntax:
+    content: save(filename)
+    parameters:
+    - id: self
+    - id: filename
+  type: method
+  uid: cntk.contrib.deeprl.agent.random_agent.RandomAgent.save
+- class: cntk.contrib.deeprl.agent.random_agent.RandomAgent
+  fullName: cntk.contrib.deeprl.agent.random_agent.RandomAgent.save_parameter_settings
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.random_agent
+  name: save_parameter_settings
+  source:
+    id: save_parameter_settings
+    path: bindings/python/cntk\contrib\deeprl\agent\random_agent.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\random_agent.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 51
+  summary: 'Save parameter settings to file.
+
+    '
+  syntax:
+    content: save_parameter_settings(filename)
+    parameters:
+    - id: self
+    - id: filename
+  type: method
+  uid: cntk.contrib.deeprl.agent.random_agent.RandomAgent.save_parameter_settings
+- class: cntk.contrib.deeprl.agent.random_agent.RandomAgent
+  fullName: cntk.contrib.deeprl.agent.random_agent.RandomAgent.set_as_best_model
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.random_agent
+  name: set_as_best_model
+  source:
+    id: set_as_best_model
+    path: bindings/python/cntk\contrib\deeprl\agent\random_agent.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\random_agent.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 43
+  summary: 'Copy current model to best model.
+
+    '
+  syntax:
+    content: set_as_best_model()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.deeprl.agent.random_agent.RandomAgent.set_as_best_model
+- class: cntk.contrib.deeprl.agent.random_agent.RandomAgent
+  fullName: cntk.contrib.deeprl.agent.random_agent.RandomAgent.start
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.random_agent
+  name: start
+  source:
+    id: start
+    path: bindings/python/cntk\contrib\deeprl\agent\random_agent.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\random_agent.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 27
+  summary: 'Start a new episode.
+
+    '
+  syntax:
+    content: start(state)
+    parameters:
+    - id: self
+    - id: state
+  type: method
+  uid: cntk.contrib.deeprl.agent.random_agent.RandomAgent.start
+- class: cntk.contrib.deeprl.agent.random_agent.RandomAgent
+  fullName: cntk.contrib.deeprl.agent.random_agent.RandomAgent.step
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.random_agent
+  name: step
+  source:
+    id: step
+    path: bindings/python/cntk\contrib\deeprl\agent\random_agent.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\random_agent.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 33
+  summary: 'Observe one transition and choose an action.
+
+    '
+  syntax:
+    content: step(reward, next_state)
+    parameters:
+    - id: self
+    - id: reward
+    - id: next_state
+  type: method
+  uid: cntk.contrib.deeprl.agent.random_agent.RandomAgent.step
+references:
+- fullName: cntk.contrib.deeprl.agent.random_agent.RandomAgent.end
+  isExternal: false
+  name: end
+  parent: cntk.contrib.deeprl.agent.random_agent.RandomAgent
+  uid: cntk.contrib.deeprl.agent.random_agent.RandomAgent.end
+- fullName: cntk.contrib.deeprl.agent.random_agent.RandomAgent.save
+  isExternal: false
+  name: save
+  parent: cntk.contrib.deeprl.agent.random_agent.RandomAgent
+  uid: cntk.contrib.deeprl.agent.random_agent.RandomAgent.save
+- fullName: cntk.contrib.deeprl.agent.random_agent.RandomAgent.save_parameter_settings
+  isExternal: false
+  name: save_parameter_settings
+  parent: cntk.contrib.deeprl.agent.random_agent.RandomAgent
+  uid: cntk.contrib.deeprl.agent.random_agent.RandomAgent.save_parameter_settings
+- fullName: cntk.contrib.deeprl.agent.random_agent.RandomAgent.set_as_best_model
+  isExternal: false
+  name: set_as_best_model
+  parent: cntk.contrib.deeprl.agent.random_agent.RandomAgent
+  uid: cntk.contrib.deeprl.agent.random_agent.RandomAgent.set_as_best_model
+- fullName: cntk.contrib.deeprl.agent.random_agent.RandomAgent.start
+  isExternal: false
+  name: start
+  parent: cntk.contrib.deeprl.agent.random_agent.RandomAgent
+  uid: cntk.contrib.deeprl.agent.random_agent.RandomAgent.start
+- fullName: cntk.contrib.deeprl.agent.random_agent.RandomAgent.step
+  isExternal: false
+  name: step
+  parent: cntk.contrib.deeprl.agent.random_agent.RandomAgent
+  uid: cntk.contrib.deeprl.agent.random_agent.RandomAgent.step

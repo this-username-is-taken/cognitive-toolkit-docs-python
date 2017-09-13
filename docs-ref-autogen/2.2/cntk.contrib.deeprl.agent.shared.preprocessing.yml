@@ -1,0 +1,41 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing
+  - cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing
+  - cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow
+  fullName: cntk.contrib.deeprl.agent.shared.preprocessing
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.preprocessing
+  name: preprocessing
+  source:
+    id: preprocessing
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'Base class for defining preprocessing, as well as two concrete examples.
+
+    '
+  type: module
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing
+references:
+- fullName: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing
+  isExternal: false
+  name: AtariPreprocessing
+  parent: cntk.contrib.deeprl.agent.shared.preprocessing
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.AtariPreprocessing
+- fullName: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing
+  isExternal: false
+  name: Preprocessing
+  parent: cntk.contrib.deeprl.agent.shared.preprocessing
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing
+- fullName: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow
+  isExternal: false
+  name: SlidingWindow
+  parent: cntk.contrib.deeprl.agent.shared.preprocessing
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow

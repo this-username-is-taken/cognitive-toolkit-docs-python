@@ -1,0 +1,354 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.deeprl.agent.agent.AgentBaseClass.end
+  - cntk.contrib.deeprl.agent.agent.AgentBaseClass.enter_evaluation
+  - cntk.contrib.deeprl.agent.agent.AgentBaseClass.evaluate
+  - cntk.contrib.deeprl.agent.agent.AgentBaseClass.exit_evaluation
+  - cntk.contrib.deeprl.agent.agent.AgentBaseClass.save
+  - cntk.contrib.deeprl.agent.agent.AgentBaseClass.save_parameter_settings
+  - cntk.contrib.deeprl.agent.agent.AgentBaseClass.set_as_best_model
+  - cntk.contrib.deeprl.agent.agent.AgentBaseClass.start
+  - cntk.contrib.deeprl.agent.agent.AgentBaseClass.step
+  class: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.agent
+  name: AgentBaseClass
+  source:
+    id: AgentBaseClass
+    path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 17
+  summary: 'Base class for defining an agent.
+
+
+
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: AgentBaseClass(o_space, a_space)
+  type: class
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+- class: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass.end
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.agent
+  name: end
+  source:
+    id: end
+    path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 112
+  summary: 'Last observed reward/state of the episode (which then terminates).
+
+    '
+  syntax:
+    content: end(reward, next_state)
+    parameters:
+    - description: 'amount of reward returned after previous action.
+
+        '
+      id: reward
+      type:
+      - float
+    - description: 'observation provided by the environment.
+
+        '
+      id: next_state
+      type:
+      - object
+  type: method
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass.end
+- class: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass.enter_evaluation
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.agent
+  name: enter_evaluation
+  source:
+    id: enter_evaluation
+    path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 138
+  summary: 'Setup before evaluation.
+
+    '
+  syntax:
+    content: enter_evaluation()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass.enter_evaluation
+- class: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass.evaluate
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.agent
+  name: evaluate
+  source:
+    id: evaluate
+    path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 146
+  summary: 'Choose action for given observation without updating agent''s status.
+
+    '
+  syntax:
+    content: evaluate(o)
+    parameters:
+    - description: 'observation provided by the environment.
+
+        '
+      id: o
+      type:
+      - object
+    return:
+      description: 'action choosen by agent.
+
+        '
+      type:
+      - action (int)
+  type: method
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass.evaluate
+- class: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass.exit_evaluation
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.agent
+  name: exit_evaluation
+  source:
+    id: exit_evaluation
+    path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 142
+  summary: 'Tear-down after evaluation.
+
+    '
+  syntax:
+    content: exit_evaluation()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass.exit_evaluation
+- class: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass.save
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.agent
+  name: save
+  source:
+    id: save
+    path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 123
+  summary: 'Save model to file.
+
+    '
+  syntax:
+    content: save(filename)
+    parameters:
+    - id: self
+    - id: filename
+  type: method
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass.save
+- class: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass.save_parameter_settings
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.agent
+  name: save_parameter_settings
+  source:
+    id: save_parameter_settings
+    path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 128
+  summary: 'Save parameter settings to file.
+
+    '
+  syntax:
+    content: save_parameter_settings(filename)
+    parameters:
+    - id: self
+    - id: filename
+  type: method
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass.save_parameter_settings
+- class: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass.set_as_best_model
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.agent
+  name: set_as_best_model
+  source:
+    id: set_as_best_model
+    path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 133
+  summary: 'Copy current model to best model.
+
+    '
+  syntax:
+    content: set_as_best_model()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass.set_as_best_model
+- class: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass.start
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.agent
+  name: start
+  source:
+    id: start
+    path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 83
+  summary: 'Start a new episode.
+
+    '
+  syntax:
+    content: start(state)
+    parameters:
+    - description: 'observation provided by the environment.
+
+        '
+      id: state
+      type:
+      - object
+    return:
+      description: 'action choosen by agent.
+
+        debug_info (dict): auxiliary diagnostic information.
+
+        '
+      type:
+      - action (int)
+  type: method
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass.start
+- class: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass.step
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.agent
+  name: step
+  source:
+    id: step
+    path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\agent.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 97
+  summary: 'Observe one transition and choose an action.
+
+    '
+  syntax:
+    content: step(reward, next_state)
+    parameters:
+    - description: 'amount of reward returned after previous action.
+
+        '
+      id: reward
+      type:
+      - float
+    - description: 'observation provided by the environment.
+
+        '
+      id: next_state
+      type:
+      - object
+    return:
+      description: 'action choosen by agent.
+
+        debug_info (dict): auxiliary diagnostic information.
+
+        '
+      type:
+      - action (int)
+  type: method
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass.step
+references:
+- fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass.end
+  isExternal: false
+  name: end
+  parent: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass.end
+- fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass.enter_evaluation
+  isExternal: false
+  name: enter_evaluation
+  parent: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass.enter_evaluation
+- fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass.evaluate
+  isExternal: false
+  name: evaluate
+  parent: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass.evaluate
+- fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass.exit_evaluation
+  isExternal: false
+  name: exit_evaluation
+  parent: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass.exit_evaluation
+- fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass.save
+  isExternal: false
+  name: save
+  parent: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass.save
+- fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass.save_parameter_settings
+  isExternal: false
+  name: save_parameter_settings
+  parent: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass.save_parameter_settings
+- fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass.set_as_best_model
+  isExternal: false
+  name: set_as_best_model
+  parent: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass.set_as_best_model
+- fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass.start
+  isExternal: false
+  name: start
+  parent: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass.start
+- fullName: cntk.contrib.deeprl.agent.agent.AgentBaseClass.step
+  isExternal: false
+  name: step
+  parent: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  uid: cntk.contrib.deeprl.agent.agent.AgentBaseClass.step

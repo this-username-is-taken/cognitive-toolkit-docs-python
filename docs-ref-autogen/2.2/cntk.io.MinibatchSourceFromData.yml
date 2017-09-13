@@ -56,10 +56,10 @@ items:
     id: MinibatchSourceFromData
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 482
+    startLine: 528
   summary: 'This wraps in-memory data as a CNTK MinibatchSource object (aka "reader"),
     used to feed the data into a TrainingSession.
 
@@ -108,7 +108,7 @@ items:
         the reader can produce. If inputs are sequences, and the different streams
         have different
 
-        lengths, then each sequence counts with the the maximum length.
+        lengths, then each sequence counts with the maximum length.
 
         After this number has been reached, the reader
 
@@ -143,10 +143,10 @@ items:
     id: get_checkpoint_state
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 700
+    startLine: 746
   summary: 'Gets the checkpoint state of the MinibatchSource.
 
     '
@@ -174,10 +174,10 @@ items:
     id: next_minibatch
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 645
+    startLine: 691
   syntax:
     content: next_minibatch(num_samples, number_of_workers=1, worker_rank=0, device=None)
     parameters:
@@ -201,10 +201,10 @@ items:
     id: restore_from_checkpoint
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 711
+    startLine: 757
   summary: 'Restores the MinibatchSource state from the specified checkpoint.
 
     '
@@ -229,10 +229,10 @@ items:
     id: stream_infos
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 640
+    startLine: 686
   syntax:
     content: stream_infos()
     parameters:

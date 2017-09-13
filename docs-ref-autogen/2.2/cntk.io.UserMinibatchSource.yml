@@ -3,6 +3,7 @@ api_name: []
 items:
 - children:
   - cntk.io.UserMinibatchSource.get_checkpoint_state
+  - cntk.io.UserMinibatchSource.is_infinite
   - cntk.io.UserMinibatchSource.next_minibatch
   - cntk.io.UserMinibatchSource.restore_from_checkpoint
   - cntk.io.UserMinibatchSource.stream_info
@@ -17,11 +18,12 @@ items:
     id: UserMinibatchSource
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 382
+    startLine: 418
   summary: 'Base class of all user minibatch sources.
+
 
 
 
@@ -43,10 +45,10 @@ items:
     id: get_checkpoint_state
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 448
+    startLine: 487
   summary: 'Returns a dictionary describing the current state of the minibatch
 
     source. Needs to be overwritten if the state of the minibatch source
@@ -65,6 +67,30 @@ items:
   type: method
   uid: cntk.io.UserMinibatchSource.get_checkpoint_state
 - class: cntk.io.UserMinibatchSource
+  fullName: cntk.io.UserMinibatchSource.is_infinite
+  langs:
+  - python
+  module: cntk.io
+  name: is_infinite
+  source:
+    id: is_infinite
+    path: bindings/python/cntk\io\__init__.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 521
+  summary: 'Should return true if the user has not specified any limit on the number
+    of sweeps and samples.
+
+    '
+  syntax:
+    content: is_infinite()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.io.UserMinibatchSource.is_infinite
+- class: cntk.io.UserMinibatchSource
   fullName: cntk.io.UserMinibatchSource.next_minibatch
   langs:
   - python
@@ -74,10 +100,10 @@ items:
     id: next_minibatch
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 414
+    startLine: 450
   summary: 'Function to be implemented by the user.
 
     '
@@ -103,7 +129,16 @@ items:
       type:
       - int
     - defaultValue: None
+      description: 'the device
+
+        descriptor that contains the type and id of the device on which the
+
+        computation is performed. If *None*, the default device is used.
+
+        '
       id: device
+      type:
+      - DeviceDescriptor, defaults to None
     return:
       description: 'mapping of @cntk.io.StreamInformation to @cntk.io.MinibatchData
 
@@ -120,10 +155,10 @@ items:
     id: restore_from_checkpoint
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 459
+    startLine: 498
   summary: 'Sets the state of the checkpoint.
 
     '
@@ -148,10 +183,10 @@ items:
     id: stream_info
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 406
+    startLine: 442
   summary: 'Gets the description of the stream with given name.
 
     Throws an exception if there are none or multiple streams with this
@@ -176,10 +211,10 @@ items:
     id: stream_infos
     path: bindings/python/cntk\io\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\io\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 392
+    startLine: 428
   summary: 'Function to be implemented by the user.
 
     '
@@ -199,6 +234,11 @@ references:
   name: get_checkpoint_state
   parent: cntk.io.UserMinibatchSource
   uid: cntk.io.UserMinibatchSource.get_checkpoint_state
+- fullName: cntk.io.UserMinibatchSource.is_infinite
+  isExternal: false
+  name: is_infinite
+  parent: cntk.io.UserMinibatchSource
+  uid: cntk.io.UserMinibatchSource.is_infinite
 - fullName: cntk.io.UserMinibatchSource.next_minibatch
   isExternal: false
   name: next_minibatch

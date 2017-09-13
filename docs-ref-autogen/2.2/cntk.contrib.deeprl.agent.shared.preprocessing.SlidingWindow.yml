@@ -1,0 +1,121 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow.output_shape
+  - cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow.preprocess
+  - cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow.reset
+  class: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow
+  fullName: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: cntk.contrib.deeprl.agent.shared.preprocessing.Preprocessing
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.preprocessing
+  name: SlidingWindow
+  source:
+    id: SlidingWindow
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 92
+  summary: 'Stack windowed inputs (x(t-m+1), ... x(t)).
+
+
+
+
+    '
+  syntax:
+    content: SlidingWindow(input_shape, history_len=4, dtype=<class 'numpy.float32'>)
+  type: class
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow
+- class: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow
+  fullName: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow.output_shape
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.preprocessing
+  name: output_shape
+  source:
+    id: output_shape
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 102
+  summary: 'Return shape of preprocessed input.
+
+    '
+  syntax:
+    content: output_shape()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow.output_shape
+- class: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow
+  fullName: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow.preprocess
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.preprocessing
+  name: preprocess
+  source:
+    id: preprocess
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 112
+  summary: 'Return preprocessed input x.
+
+    '
+  syntax:
+    content: preprocess(x)
+    parameters:
+    - id: self
+    - id: x
+  type: method
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow.preprocess
+- class: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow
+  fullName: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow.reset
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.preprocessing
+  name: reset
+  source:
+    id: reset
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\preprocessing.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 106
+  summary: 'Reset preprocessing pipeline for new episode.
+
+    '
+  syntax:
+    content: reset()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow.reset
+references:
+- fullName: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow.output_shape
+  isExternal: false
+  name: output_shape
+  parent: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow.output_shape
+- fullName: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow.preprocess
+  isExternal: false
+  name: preprocess
+  parent: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow.preprocess
+- fullName: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow.reset
+  isExternal: false
+  name: reset
+  parent: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing.SlidingWindow.reset

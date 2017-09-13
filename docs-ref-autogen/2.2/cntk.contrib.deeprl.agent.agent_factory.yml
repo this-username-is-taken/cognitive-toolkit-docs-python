@@ -1,0 +1,70 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.deeprl.agent.agent_factory.make_agent
+  fullName: cntk.contrib.deeprl.agent.agent_factory
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.agent_factory
+  name: agent_factory
+  source:
+    id: agent_factory
+    path: bindings/python/cntk\contrib\deeprl\agent\agent_factory.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\agent_factory.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'Factory method to create an agent.
+
+    '
+  type: module
+  uid: cntk.contrib.deeprl.agent.agent_factory
+- fullName: cntk.contrib.deeprl.agent.agent_factory.make_agent
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.agent_factory
+  name: make_agent
+  source:
+    id: make_agent
+    path: bindings/python/cntk\contrib\deeprl\agent\agent_factory.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\agent_factory.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 16
+  summary: 'Choose appropriate method to create an agent.
+
+    '
+  syntax:
+    content: make_agent(agent_config, o_space, a_space)
+    parameters:
+    - description: 'configure file specifying the agent type as well as
+
+        training details.
+
+        '
+      id: agent_config
+    - description: 'observation space, gym.spaces.tuple_space.Tuple is not
+
+        supported.
+
+        '
+      id: o_space
+    - description: 'action space, limits to gym.spaces.discrete.Discrete.
+
+        '
+      id: a_space
+    return:
+      description: "QLearning,\n   ActorCritic, TabularQLearning, or RandomAgent.\n"
+      type:
+      - subclass inherited from @cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  type: function
+  uid: cntk.contrib.deeprl.agent.agent_factory.make_agent
+references:
+- fullName: cntk.contrib.deeprl.agent.agent_factory.make_agent
+  isExternal: false
+  name: make_agent
+  parent: cntk.contrib.deeprl.agent.agent_factory
+  uid: cntk.contrib.deeprl.agent.agent_factory.make_agent

@@ -1,0 +1,247 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.end
+  - cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.enter_evaluation
+  - cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.save
+  - cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.save_parameter_settings
+  - cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.set_as_best_model
+  - cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.start
+  - cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.step
+  class: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+  fullName: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: cntk.contrib.deeprl.agent.agent.AgentBaseClass
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.tabular_qlearning
+  name: TabularQLearning
+  source:
+    id: TabularQLearning
+    path: bindings/python/cntk\contrib\deeprl\agent\tabular_qlearning.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\tabular_qlearning.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 16
+  summary: 'Q-learning agent with tabular representation.
+
+
+
+
+
+
+
+
+    '
+  syntax:
+    content: TabularQLearning(cfg_filename, o_space, a_space)
+  type: class
+  uid: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+- class: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+  fullName: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.end
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.tabular_qlearning
+  name: end
+  source:
+    id: end
+    path: bindings/python/cntk\contrib\deeprl\agent\tabular_qlearning.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\tabular_qlearning.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 73
+  summary: 'Last observed reward/state of the episode (which then terminates).
+
+    '
+  syntax:
+    content: end(reward, next_state)
+    parameters:
+    - id: self
+    - id: reward
+    - id: next_state
+  type: method
+  uid: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.end
+- class: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+  fullName: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.enter_evaluation
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.tabular_qlearning
+  name: enter_evaluation
+  source:
+    id: enter_evaluation
+    path: bindings/python/cntk\contrib\deeprl\agent\tabular_qlearning.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\tabular_qlearning.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 95
+  summary: 'Setup before evaluation.
+
+    '
+  syntax:
+    content: enter_evaluation()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.enter_evaluation
+- class: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+  fullName: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.save
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.tabular_qlearning
+  name: save
+  source:
+    id: save
+    path: bindings/python/cntk\contrib\deeprl\agent\tabular_qlearning.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\tabular_qlearning.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 85
+  summary: 'Save best model to file.
+
+    '
+  syntax:
+    content: save(filename)
+    parameters:
+    - id: self
+    - id: filename
+  type: method
+  uid: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.save
+- class: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+  fullName: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.save_parameter_settings
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.tabular_qlearning
+  name: save_parameter_settings
+  source:
+    id: save_parameter_settings
+    path: bindings/python/cntk\contrib\deeprl\agent\tabular_qlearning.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\tabular_qlearning.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 91
+  summary: 'Save parameter settings to file.
+
+    '
+  syntax:
+    content: save_parameter_settings(filename)
+    parameters:
+    - id: self
+    - id: filename
+  type: method
+  uid: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.save_parameter_settings
+- class: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+  fullName: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.set_as_best_model
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.tabular_qlearning
+  name: set_as_best_model
+  source:
+    id: set_as_best_model
+    path: bindings/python/cntk\contrib\deeprl\agent\tabular_qlearning.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\tabular_qlearning.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 81
+  summary: 'Copy current model to best model.
+
+    '
+  syntax:
+    content: set_as_best_model()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.set_as_best_model
+- class: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+  fullName: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.start
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.tabular_qlearning
+  name: start
+  source:
+    id: start
+    path: bindings/python/cntk\contrib\deeprl\agent\tabular_qlearning.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\tabular_qlearning.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 43
+  summary: 'Start a new episode.
+
+    '
+  syntax:
+    content: start(state)
+    parameters:
+    - id: self
+    - id: state
+  type: method
+  uid: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.start
+- class: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+  fullName: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.step
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.tabular_qlearning
+  name: step
+  source:
+    id: step
+    path: bindings/python/cntk\contrib\deeprl\agent\tabular_qlearning.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\tabular_qlearning.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 54
+  summary: 'Observe one transition and choose an action.
+
+    '
+  syntax:
+    content: step(reward, next_state)
+    parameters:
+    - id: self
+    - id: reward
+    - id: next_state
+  type: method
+  uid: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.step
+references:
+- fullName: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.end
+  isExternal: false
+  name: end
+  parent: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+  uid: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.end
+- fullName: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.enter_evaluation
+  isExternal: false
+  name: enter_evaluation
+  parent: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+  uid: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.enter_evaluation
+- fullName: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.save
+  isExternal: false
+  name: save
+  parent: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+  uid: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.save
+- fullName: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.save_parameter_settings
+  isExternal: false
+  name: save_parameter_settings
+  parent: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+  uid: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.save_parameter_settings
+- fullName: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.set_as_best_model
+  isExternal: false
+  name: set_as_best_model
+  parent: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+  uid: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.set_as_best_model
+- fullName: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.start
+  isExternal: false
+  name: start
+  parent: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+  uid: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.start
+- fullName: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.step
+  isExternal: false
+  name: step
+  parent: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning
+  uid: cntk.contrib.deeprl.agent.tabular_qlearning.TabularQLearning.step

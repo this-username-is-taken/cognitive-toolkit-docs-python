@@ -1,0 +1,86 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.deeprl.agent.shared.cntk_utils.huber_loss
+  - cntk.contrib.deeprl.agent.shared.cntk_utils.negative_of_entropy_with_softmax
+  fullName: cntk.contrib.deeprl.agent.shared.cntk_utils
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.cntk_utils
+  name: cntk_utils
+  source:
+    id: cntk_utils
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\cntk_utils.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\cntk_utils.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'Utility functions.
+
+    '
+  type: module
+  uid: cntk.contrib.deeprl.agent.shared.cntk_utils
+- fullName: cntk.contrib.deeprl.agent.shared.cntk_utils.huber_loss
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.cntk_utils
+  name: huber_loss
+  source:
+    id: huber_loss
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\cntk_utils.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\cntk_utils.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 11
+  summary: 'See [https://en.wikipedia.org/wiki/Huber_loss](https://en.wikipedia.org/wiki/Huber_loss)
+    for definition.
+
+
+    delta is set to 1. This is not the right definition if output and target
+
+    differ in more than one dimension.
+
+    '
+  syntax:
+    content: huber_loss(output, target)
+    parameters:
+    - id: output
+    - id: target
+  type: function
+  uid: cntk.contrib.deeprl.agent.shared.cntk_utils.huber_loss
+- fullName: cntk.contrib.deeprl.agent.shared.cntk_utils.negative_of_entropy_with_softmax
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.cntk_utils
+  name: negative_of_entropy_with_softmax
+  source:
+    id: negative_of_entropy_with_softmax
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\cntk_utils.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\cntk_utils.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 22
+  summary: 'See [https://en.wikipedia.org/wiki/Entropy_(information_theory](https://en.wikipedia.org/wiki/Entropy_(information_theory)).
+
+    '
+  syntax:
+    content: negative_of_entropy_with_softmax(p)
+    parameters:
+    - id: p
+  type: function
+  uid: cntk.contrib.deeprl.agent.shared.cntk_utils.negative_of_entropy_with_softmax
+references:
+- fullName: cntk.contrib.deeprl.agent.shared.cntk_utils.huber_loss
+  isExternal: false
+  name: huber_loss
+  parent: cntk.contrib.deeprl.agent.shared.cntk_utils
+  uid: cntk.contrib.deeprl.agent.shared.cntk_utils.huber_loss
+- fullName: cntk.contrib.deeprl.agent.shared.cntk_utils.negative_of_entropy_with_softmax
+  isExternal: false
+  name: negative_of_entropy_with_softmax
+  parent: cntk.contrib.deeprl.agent.shared.cntk_utils
+  uid: cntk.contrib.deeprl.agent.shared.cntk_utils.negative_of_entropy_with_softmax

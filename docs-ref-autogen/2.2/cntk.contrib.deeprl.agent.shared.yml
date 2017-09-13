@@ -1,0 +1,68 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.deeprl.agent.shared.cntk_utils
+  - cntk.contrib.deeprl.agent.shared.customized_models
+  - cntk.contrib.deeprl.agent.shared.discretize
+  - cntk.contrib.deeprl.agent.shared.models
+  - cntk.contrib.deeprl.agent.shared.policy_gradient_parameters
+  - cntk.contrib.deeprl.agent.shared.preprocessing
+  - cntk.contrib.deeprl.agent.shared.qlearning_parameters
+  - cntk.contrib.deeprl.agent.shared.replay_memory
+  fullName: cntk.contrib.deeprl.agent.shared
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared
+  name: shared
+  source:
+    id: shared
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\__init__.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: package
+  uid: cntk.contrib.deeprl.agent.shared
+references:
+- fullName: cntk.contrib.deeprl.agent.shared.cntk_utils
+  isExternal: false
+  name: cntk_utils
+  parent: cntk.contrib.deeprl.agent.shared
+  uid: cntk.contrib.deeprl.agent.shared.cntk_utils
+- fullName: cntk.contrib.deeprl.agent.shared.customized_models
+  isExternal: false
+  name: customized_models
+  parent: cntk.contrib.deeprl.agent.shared
+  uid: cntk.contrib.deeprl.agent.shared.customized_models
+- fullName: cntk.contrib.deeprl.agent.shared.discretize
+  isExternal: false
+  name: discretize
+  parent: cntk.contrib.deeprl.agent.shared
+  uid: cntk.contrib.deeprl.agent.shared.discretize
+- fullName: cntk.contrib.deeprl.agent.shared.models
+  isExternal: false
+  name: models
+  parent: cntk.contrib.deeprl.agent.shared
+  uid: cntk.contrib.deeprl.agent.shared.models
+- fullName: cntk.contrib.deeprl.agent.shared.policy_gradient_parameters
+  isExternal: false
+  name: policy_gradient_parameters
+  parent: cntk.contrib.deeprl.agent.shared
+  uid: cntk.contrib.deeprl.agent.shared.policy_gradient_parameters
+- fullName: cntk.contrib.deeprl.agent.shared.preprocessing
+  isExternal: false
+  name: preprocessing
+  parent: cntk.contrib.deeprl.agent.shared
+  uid: cntk.contrib.deeprl.agent.shared.preprocessing
+- fullName: cntk.contrib.deeprl.agent.shared.qlearning_parameters
+  isExternal: false
+  name: qlearning_parameters
+  parent: cntk.contrib.deeprl.agent.shared
+  uid: cntk.contrib.deeprl.agent.shared.qlearning_parameters
+- fullName: cntk.contrib.deeprl.agent.shared.replay_memory
+  isExternal: false
+  name: replay_memory
+  parent: cntk.contrib.deeprl.agent.shared
+  uid: cntk.contrib.deeprl.agent.shared.replay_memory

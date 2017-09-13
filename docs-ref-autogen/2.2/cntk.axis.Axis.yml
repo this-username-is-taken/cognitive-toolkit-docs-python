@@ -7,7 +7,9 @@ items:
   - cntk.axis.Axis.default_batch_axis
   - cntk.axis.Axis.default_dynamic_axis
   - cntk.axis.Axis.default_input_variable_dynamic_axes
+  - cntk.axis.Axis.is_batch_axis
   - cntk.axis.Axis.is_ordered
+  - cntk.axis.Axis.is_sequence_axis
   - cntk.axis.Axis.is_static_axis
   - cntk.axis.Axis.name
   - cntk.axis.Axis.new_leading_axis
@@ -24,7 +26,7 @@ items:
     id: Axis
     path: bindings/python/cntk\axis.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\axis.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 11
@@ -63,6 +65,8 @@ items:
 
 
 
+
+
     '
   syntax:
     content: Axis(*args)
@@ -78,10 +82,10 @@ items:
     id: all_axes
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 105
+    startLine: 125
   summary: 'Axis object representing all the axes--static and dynamic--of an operand.
 
     '
@@ -105,10 +109,10 @@ items:
     id: all_static_axes
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 94
+    startLine: 114
   summary: 'Axis object representing all the static axes of an operand.
 
     '
@@ -132,10 +136,10 @@ items:
     id: default_batch_axis
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 83
+    startLine: 103
   summary: 'Returns an Axis object representing the batch axis
 
     '
@@ -159,10 +163,10 @@ items:
     id: default_dynamic_axis
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 72
+    startLine: 92
   summary: 'Returns an Axis object representing the default dynamic axis
 
     '
@@ -186,10 +190,10 @@ items:
     id: default_input_variable_dynamic_axes
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 116
+    startLine: 136
   summary: 'Default dynamic axes of the input variable
 
     '
@@ -204,6 +208,32 @@ items:
   type: method
   uid: cntk.axis.Axis.default_input_variable_dynamic_axes
 - class: cntk.axis.Axis
+  fullName: cntk.axis.Axis.is_batch_axis
+  langs:
+  - python
+  module: cntk.axis
+  name: is_batch_axis
+  source:
+    id: is_batch_axis
+    path: null
+    remote:
+      branch: release/2.2
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Returns True if the axis is a batch axis and False otherwise
+
+    '
+  syntax:
+    return:
+      description: 'True if this axis is a batch axis and False otherwise
+
+        '
+      type:
+      - bool
+  type: attribute
+  uid: cntk.axis.Axis.is_batch_axis
+- class: cntk.axis.Axis
   fullName: cntk.axis.Axis.is_ordered
   langs:
   - python
@@ -213,7 +243,7 @@ items:
     id: is_ordered
     path: null
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -231,6 +261,32 @@ items:
   type: attribute
   uid: cntk.axis.Axis.is_ordered
 - class: cntk.axis.Axis
+  fullName: cntk.axis.Axis.is_sequence_axis
+  langs:
+  - python
+  module: cntk.axis
+  name: is_sequence_axis
+  source:
+    id: is_sequence_axis
+    path: null
+    remote:
+      branch: release/2.2
+      path: null
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: null
+  summary: 'Returns True if the axis is a sequence axis and False otherwise
+
+    '
+  syntax:
+    return:
+      description: 'True if this axis is a sequence axis and False otherwise
+
+        '
+      type:
+      - bool
+  type: attribute
+  uid: cntk.axis.Axis.is_sequence_axis
+- class: cntk.axis.Axis
   fullName: cntk.axis.Axis.is_static_axis
   langs:
   - python
@@ -240,7 +296,7 @@ items:
     id: is_static_axis
     path: null
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -266,7 +322,7 @@ items:
     id: name
     path: null
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -292,10 +348,10 @@ items:
     id: new_leading_axis
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 152
+    startLine: 172
   summary: 'Creates an Axis object representing a new leading static axis.
 
     '
@@ -319,10 +375,10 @@ items:
     id: new_unique_dynamic_axis
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 138
+    startLine: 158
   summary: 'Creates an Axis object representing a new unique dynamic axis.
 
     '
@@ -353,10 +409,10 @@ items:
     id: static_axis_index
     path: bindings/python/cntk\axis.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\axis.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 60
+    startLine: 80
   summary: 'Returns the integer with which the static axis is defined. For example,
     0 = first axis, 1 = second axis, etc.
 
@@ -390,10 +446,10 @@ items:
     id: unknown_dynamic_axes
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 127
+    startLine: 147
   summary: 'Unknown dynamic axes
 
     '
@@ -433,11 +489,21 @@ references:
   name: default_input_variable_dynamic_axes
   parent: cntk.axis.Axis
   uid: cntk.axis.Axis.default_input_variable_dynamic_axes
+- fullName: cntk.axis.Axis.is_batch_axis
+  isExternal: false
+  name: is_batch_axis
+  parent: cntk.axis.Axis
+  uid: cntk.axis.Axis.is_batch_axis
 - fullName: cntk.axis.Axis.is_ordered
   isExternal: false
   name: is_ordered
   parent: cntk.axis.Axis
   uid: cntk.axis.Axis.is_ordered
+- fullName: cntk.axis.Axis.is_sequence_axis
+  isExternal: false
+  name: is_sequence_axis
+  parent: cntk.axis.Axis
+  uid: cntk.axis.Axis.is_sequence_axis
 - fullName: cntk.axis.Axis.is_static_axis
   isExternal: false
   name: is_static_axis

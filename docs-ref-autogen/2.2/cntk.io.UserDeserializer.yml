@@ -1,0 +1,142 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.io.UserDeserializer.get_chunk
+  - cntk.io.UserDeserializer.num_chunks
+  - cntk.io.UserDeserializer.stream_infos
+  class: cntk.io.UserDeserializer
+  fullName: cntk.io.UserDeserializer
+  langs:
+  - python
+  module: cntk.io
+  name: UserDeserializer
+  source:
+    id: UserDeserializer
+    path: bindings/python/cntk\io\__init__.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 1126
+  summary: "User deserializer is a base class for all user defined deserializers.\n\
+    To support deserialization of a custom format, please implement the public\nmethods\
+    \ of this class and pass an instance of it to MinibatchSource.\nA UserDeserializer\
+    \ is a plug-in to MinibatchSource for reading data in custom formats.\nReading\
+    \ data through this mechanism provides the following benefits:\n\n   * randomization\
+    \ of data too large to fit into RAM, through CNTK chunked paging algorithm \n\n\
+    \   * distributed reading - only chunks needed by a particular worker are requested\
+    \ \n\n   * composability of transforms (currently composability of user deserializers\
+    \ is not yet supported) \n\n   * transparent support of sequence/frame/truncated\
+    \ BPTT modes \n\n   * automatic chunk and minibatch prefetch \n\n   * checkpointing\
+    \ \n\nThe MinibatchSource uses the information provided by this class to build\
+    \ the timeline and move\nalong it when the next minibatch is requested. The deserializer\
+    \ itself, however, is stateless.\n\n\n\n"
+  syntax:
+    content: UserDeserializer()
+  type: class
+  uid: cntk.io.UserDeserializer
+- class: cntk.io.UserDeserializer
+  fullName: cntk.io.UserDeserializer.get_chunk
+  langs:
+  - python
+  module: cntk.io
+  name: get_chunk
+  source:
+    id: get_chunk
+    path: bindings/python/cntk\io\__init__.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 1170
+  summary: 'Should return a dictionary of stream name -> data of the chunk, where
+    data is csr_matrix/numpy array in sample mode,
+
+    or a list of csr_matrix/numpy array in sequence mode.
+
+    '
+  syntax:
+    content: get_chunk(chunk_id)
+    parameters:
+    - description: 'id of the chunk to be read, 0 <= chunk_id < num_chunks
+
+        '
+      id: chunk_id
+      type:
+      - int
+    return:
+      description: 'dict containing the data
+
+        '
+  type: method
+  uid: cntk.io.UserDeserializer.get_chunk
+- class: cntk.io.UserDeserializer
+  fullName: cntk.io.UserDeserializer.num_chunks
+  langs:
+  - python
+  module: cntk.io
+  name: num_chunks
+  source:
+    id: num_chunks
+    path: bindings/python/cntk\io\__init__.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 1164
+  summary: 'Should return the total number of chunks.
+
+    '
+  syntax:
+    content: num_chunks()
+    parameters:
+    - id: self
+  type: method
+  uid: cntk.io.UserDeserializer.num_chunks
+- class: cntk.io.UserDeserializer
+  fullName: cntk.io.UserDeserializer.stream_infos
+  langs:
+  - python
+  module: cntk.io
+  name: stream_infos
+  source:
+    id: stream_infos
+    path: bindings/python/cntk\io\__init__.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\io\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 1154
+  summary: 'Should return a list of meta information @cntk.io.StreamInformation about
+    all
+
+    streams exposed by the deserializer.
+
+    '
+  syntax:
+    content: stream_infos()
+    parameters:
+    - id: self
+    return:
+      description: 'list of @cntk.io.StreamInformation exposed by the deserializer
+
+        '
+  type: method
+  uid: cntk.io.UserDeserializer.stream_infos
+references:
+- fullName: cntk.io.UserDeserializer.get_chunk
+  isExternal: false
+  name: get_chunk
+  parent: cntk.io.UserDeserializer
+  uid: cntk.io.UserDeserializer.get_chunk
+- fullName: cntk.io.UserDeserializer.num_chunks
+  isExternal: false
+  name: num_chunks
+  parent: cntk.io.UserDeserializer
+  uid: cntk.io.UserDeserializer.num_chunks
+- fullName: cntk.io.UserDeserializer.stream_infos
+  isExternal: false
+  name: stream_infos
+  parent: cntk.io.UserDeserializer
+  uid: cntk.io.UserDeserializer.stream_infos

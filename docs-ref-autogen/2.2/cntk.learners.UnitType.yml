@@ -18,12 +18,14 @@ items:
     id: UnitType
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 34
-  summary: 'Indicates whether the values in the schedule are specified on the per-sample
-    or
+    startLine: 33
+  summary: 'Deprecated:: 2.2
+
+
+    Indicates whether the values in the schedule are specified on the per-sample or
 
     per-minibatch basis.
 
@@ -45,7 +47,7 @@ items:
     id: minibatch
     path: null
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -74,7 +76,7 @@ items:
     id: sample
     path: null
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null

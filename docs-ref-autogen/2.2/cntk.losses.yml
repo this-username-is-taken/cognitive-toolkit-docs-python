@@ -7,6 +7,7 @@ items:
   - cntk.losses.cosine_distance_with_negative_samples
   - cntk.losses.cross_entropy_with_softmax
   - cntk.losses.lambda_rank
+  - cntk.losses.nce_loss
   - cntk.losses.squared_error
   - cntk.losses.weighted_binary_cross_entropy
   fullName: cntk.losses
@@ -18,7 +19,7 @@ items:
     id: losses
     path: bindings/python/cntk\losses\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\losses\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -36,10 +37,10 @@ items:
     id: binary_cross_entropy
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 92
+    startLine: 93
   summary: 'Computes the binary cross entropy (aka logistic loss) between the `output`
     and `target`.
 
@@ -85,10 +86,10 @@ items:
     id: cosine_distance
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 20
+    startLine: 21
   summary: 'Computes the cosine distance between `x` and `y`:
 
     '
@@ -129,10 +130,10 @@ items:
     id: cosine_distance_with_negative_samples
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 49
+    startLine: 50
   summary: 'Given minibatches for `x` and `y`, this function computes for each element
     in *x* the cosine distance between
 
@@ -226,10 +227,10 @@ items:
     id: cross_entropy_with_softmax
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 138
+    startLine: 139
   summary: 'This operation computes the cross entropy between the `target_vector`
     and
 
@@ -303,10 +304,10 @@ items:
     id: lambda_rank
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 210
+    startLine: 211
   summary: 'Groups samples according to `group`, sorts
 
     them within each group based on `output` and
@@ -371,6 +372,190 @@ items:
     ```
 
 
+    >>> import scipy
+
+    >>> # dimensions of input, number of noise labels, batch size, number of classes
+
+    >>> xdim = 10
+
+    >>> samples = 32
+
+    >>> batch = 4
+
+    >>> classes = 100
+
+    >>> # some variables; typically x will be the output of a layer
+
+    >>> x = C.input_variable(xdim)
+
+    >>> y = C.input_variable(classes, is_sparse=True)
+
+    >>> # dummy data
+
+    >>> x0 = np.arange(batch * xdim, dtype=np.float32).reshape((batch, xdim))/(batch
+    * xdim)
+
+    >>> data = np.ones(batch, dtype=np.float32)
+
+    >>> indices = list(range(10, 10*batch+1, 10))
+
+    >>> indptr = list(range(batch + 1))
+
+    >>> y0 = scipy.sparse.csr_matrix((data, indices, indptr), shape=(batch, classes))
+
+    >>> # a dummy noise distribution
+
+    >>> q = np.arange(classes, dtype=np.float32) + 1 # normalization not necessary
+
+    >>> # the parameters
+
+    >>> b = C.parameter((classes, 1), init=-np.log(classes))
+
+    >>> W = C.parameter((classes, C.InferredDimension), init=C.glorot_uniform(seed=98052))
+
+    >>> # the loss
+
+    >>> loss = C.nce_loss(W, b, x, y, q, seed=98052)
+
+    >>> # evaluate the loss at our dummy data
+
+    >>> np.round(loss.eval({x:x0, y:y0}), decimals=3)
+
+    array([ 2.385,  3.035,  3.886,  3.868], dtype=float32)
+
+    >>> # after training, use the logits for predictions
+
+    >>> logits = C.times(W, C.reshape(x, (xdim, 1))) + b
+
+    ```
+
+    '
+  fullName: cntk.losses.nce_loss
+  langs:
+  - python
+  module: cntk.losses
+  name: nce_loss
+  seealsoContent: "See also: [1] C. Dyer. [Notes on Noise Contrastive Estimation and\
+    \ Negative Sampling [pdf]](http://demo.clab.cs.cmu.edu/cdyer/nce_notes.pdf). \n"
+  source:
+    id: nce_loss
+    path: bindings/python/cntk\internal\swig_helper.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\internal\swig_helper.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 267
+  summary: 'Computes the noise contrastive estimation loss. This implementation mostly
+
+    follows Chris Dyer''s notes [1]. At a high level, this layer draws
+
+    *num_samples* random labels from *noise_distribution* and then forms
+
+    *num_samples`+1 binary classification problems where the true label is
+
+    considered a positive example and the random labels are considered negative
+
+    examples. The negatives are shared among all the examples in the
+
+    minibatch. This operation only computes the logits for the labels in the
+
+    minibatch and the random labels drawn from `noise_distribution*. The
+
+    gradients will be sparse if the labels are sparse.
+
+
+    The *noise_distribution* is read once and certain quantities are
+
+    precomputed based on it. This operation will need to be reinstantiated if
+
+    the *noise_distribution* changes.
+
+
+    Shape inference for the weights is currently not supported when inputs are
+
+    placeholders. Either a concrete input must be used or the weights must be
+
+    provided without any inferred dimensions.
+
+    '
+  syntax:
+    content: nce_loss(weights, biases, inputs, labels, noise_distribution, num_samples=32,
+      allow_duplicates=True, seed=auto_select, name='')
+    parameters:
+    - description: 'parameter (or variable in general) containing the weights with
+
+        which inputs will be multiplied. Its shape must be
+
+        (number of classes, dimension of input)
+
+        '
+      id: weights
+    - description: 'parameter (or variable in general) containing the biases that
+
+        will be added to the product of weights and inputs. Its shape must be
+
+        (number of classes, 1)
+
+        '
+      id: biases
+    - description: 'vector of inputs to this layer. Multiplying by the weights and
+
+        adding the biases gives the logits.
+
+        '
+      id: inputs
+    - description: 'a one-hot vector with the ground-truth labels.
+
+        '
+      id: labels
+    - description: 'a constant vector with dimension equal to the number
+
+        of classes. The entries must be positive numbers but do not have to
+
+        sum to 1. random labels will be drawn according to the normalized
+
+        distribution.
+
+        '
+      id: noise_distribution
+    - description: 'number of random labels that will be drawn from the
+
+        *noise_distribution*.
+
+        '
+      id: num_samples
+    - description: 'boolean. If True (default), the random labels can
+
+        contain duplicates. Compared to *allow_duplicates=False* it is faster
+
+        but the quality of the approximations is slightly worse for the same
+
+        number of samples.
+
+        '
+      id: allow_duplicates
+    - description: 'random seed. The default value selects a unique random seed.
+
+        '
+      id: seed
+    - description: 'the name of the Function instance in the network
+
+        '
+      id: name
+      type:
+      - str, optional
+    return:
+      description: '@cntk.ops.functions.Function
+
+        '
+  type: function
+  uid: cntk.losses.nce_loss
+- example:
+  - '
+
+    ```
+
+
     >>> i1 = C.input_variable((1,2))
 
     >>> i2 = C.input_variable((1,2))
@@ -404,10 +589,10 @@ items:
     id: squared_error
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 180
+    startLine: 181
   summary: 'This operation computes the sum of the squared difference between elements
 
     in the two input matrices. The result is a scalar (i.e., one by one matrix).
@@ -449,10 +634,10 @@ items:
     id: weighted_binary_cross_entropy
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 114
+    startLine: 115
   summary: 'This operation computes the weighted binary cross entropy (aka logistic
     loss) between the `output` and `target`.
 
@@ -512,6 +697,11 @@ references:
   name: lambda_rank
   parent: cntk.losses
   uid: cntk.losses.lambda_rank
+- fullName: cntk.losses.nce_loss
+  isExternal: false
+  name: nce_loss
+  parent: cntk.losses
+  uid: cntk.losses.nce_loss
 - fullName: cntk.losses.squared_error
   isExternal: false
   name: squared_error

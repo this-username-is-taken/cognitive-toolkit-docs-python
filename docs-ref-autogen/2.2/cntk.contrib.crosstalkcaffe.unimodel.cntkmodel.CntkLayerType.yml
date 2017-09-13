@@ -1,0 +1,323 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.batch_norm
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.classification_error
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.convolution
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.cross_entropy_with_softmax
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.dense
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.dropout
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.lrn
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.plus
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.pooling
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.psroi_pooling
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.relu
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.softmax
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.splice
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.unknown
+  class: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  inheritance:
+  - inheritance:
+    - type: builtins.object
+    type: enum.Enum
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel
+  name: CntkLayerType
+  source:
+    id: CntkLayerType
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkmodel.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkmodel.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 104
+  summary: 'The enumate of CNTK ops
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    '
+  syntax: {}
+  type: class
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.batch_norm
+  id: batch_norm
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel
+  name: batch_norm
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  syntax:
+    content: batch_norm = 4
+    return:
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  type: attribute
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.batch_norm
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.classification_error
+  id: classification_error
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel
+  name: classification_error
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  syntax:
+    content: classification_error = 10
+    return:
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  type: attribute
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.classification_error
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.convolution
+  id: convolution
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel
+  name: convolution
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  syntax:
+    content: convolution = 2
+    return:
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  type: attribute
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.convolution
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.cross_entropy_with_softmax
+  id: cross_entropy_with_softmax
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel
+  name: cross_entropy_with_softmax
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  syntax:
+    content: cross_entropy_with_softmax = 11
+    return:
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  type: attribute
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.cross_entropy_with_softmax
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.dense
+  id: dense
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel
+  name: dense
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  syntax:
+    content: dense = 6
+    return:
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  type: attribute
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.dense
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.dropout
+  id: dropout
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel
+  name: dropout
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  syntax:
+    content: dropout = 12
+    return:
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  type: attribute
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.dropout
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.lrn
+  id: lrn
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel
+  name: lrn
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  syntax:
+    content: lrn = 13
+    return:
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  type: attribute
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.lrn
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.plus
+  id: plus
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel
+  name: plus
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  syntax:
+    content: plus = 5
+    return:
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  type: attribute
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.plus
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.pooling
+  id: pooling
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel
+  name: pooling
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  syntax:
+    content: pooling = 3
+    return:
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  type: attribute
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.pooling
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.psroi_pooling
+  id: psroi_pooling
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel
+  name: psroi_pooling
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  syntax:
+    content: psroi_pooling = 14
+    return:
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  type: attribute
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.psroi_pooling
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.relu
+  id: relu
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel
+  name: relu
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  syntax:
+    content: relu = 1
+    return:
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  type: attribute
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.relu
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.softmax
+  id: softmax
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel
+  name: softmax
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  syntax:
+    content: softmax = 15
+    return:
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  type: attribute
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.softmax
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.splice
+  id: splice
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel
+  name: splice
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  syntax:
+    content: splice = 7
+    return:
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  type: attribute
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.splice
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.unknown
+  id: unknown
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel
+  name: unknown
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  syntax:
+    content: unknown = 100
+    return:
+      type:
+      - cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  type: attribute
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.unknown
+references:
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.batch_norm
+  isExternal: false
+  name: batch_norm
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.batch_norm
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.classification_error
+  isExternal: false
+  name: classification_error
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.classification_error
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.convolution
+  isExternal: false
+  name: convolution
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.convolution
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.cross_entropy_with_softmax
+  isExternal: false
+  name: cross_entropy_with_softmax
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.cross_entropy_with_softmax
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.dense
+  isExternal: false
+  name: dense
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.dense
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.dropout
+  isExternal: false
+  name: dropout
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.dropout
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.lrn
+  isExternal: false
+  name: lrn
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.lrn
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.plus
+  isExternal: false
+  name: plus
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.plus
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.pooling
+  isExternal: false
+  name: pooling
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.pooling
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.psroi_pooling
+  isExternal: false
+  name: psroi_pooling
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.psroi_pooling
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.relu
+  isExternal: false
+  name: relu
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.relu
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.softmax
+  isExternal: false
+  name: softmax
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.softmax
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.splice
+  isExternal: false
+  name: splice
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.splice
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.unknown
+  isExternal: false
+  name: unknown
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkmodel.CntkLayerType.unknown

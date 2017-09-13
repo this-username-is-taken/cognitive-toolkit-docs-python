@@ -1,0 +1,247 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup.convolution
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup.linear
+  - cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup.lrn
+  class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup
+  inheritance:
+  - type: builtins.object
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: BlockApiSetup
+  source:
+    id: BlockApiSetup
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 19
+  summary: 'Implement some special requirement ops
+
+
+
+
+    '
+  syntax: {}
+  type: class
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup
+- class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup.convolution
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: convolution
+  source:
+    id: convolution
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 23
+  summary: '   Implement convolution ops
+
+    '
+  syntax:
+    content: convolution(output, kernel, stride, pad, kernel_init, bias_init, group,
+      dilation, name)
+    parameters:
+    - description: 'the output channel size
+
+        '
+      id: output
+      type:
+      - int
+    - description: 'the kernel size of filter, with format [width, height]
+
+        '
+      id: kernel
+      type:
+      - list
+    - description: 'the stride of convolution, with format [w_stride, h_stride]
+
+        '
+      id: stride
+      type:
+      - list
+    - description: 'auto padding or not
+
+        '
+      id: pad
+      type:
+      - bool
+    - description: 'the tensor saving initialize values of filter
+
+        '
+      id: kernel_init
+      type:
+      - np.array
+    - description: 'the tensor saving initialize values of bias
+
+        '
+      id: bias_init
+      type:
+      - np.array
+    - description: 'the group size in the convolution
+
+        '
+      id: group
+      type:
+      - int
+    - description: 'the dilation of convolution, with format [w_dilation, h_dilation]
+
+        '
+      id: dilation
+      type:
+      - list
+    - description: 'the name of ops
+
+        '
+      id: name
+      type:
+      - str
+    return:
+      description: 'the function contains convolution ops
+
+        '
+      type:
+      - cntk.ops.as_block
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup.convolution
+- class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup.linear
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: linear
+  source:
+    id: linear
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 88
+  summary: '   Implement linear ops, also known as full connection in Caffe
+
+    '
+  syntax:
+    content: linear(output_shape, input_shape, scale_init, bias_init, name)
+    parameters:
+    - description: 'the output channel size
+
+        '
+      id: output_shape
+      type:
+      - tuple
+    - description: 'the input channel size
+
+        '
+      id: input_shape
+      type:
+      - tuple
+    - description: 'the tensor saving initialize values of scale
+
+        '
+      id: scale_init
+      type:
+      - np.array
+    - description: 'the tensor saving initialize values of bias
+
+        '
+      id: bias_init
+      type:
+      - np.array
+    - description: 'the name of ops
+
+        '
+      id: name
+      type:
+      - str
+    return:
+      description: 'the function contains linear ops
+
+        '
+      type:
+      - cntk.ops.as_block
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup.linear
+- class: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup
+  fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup.lrn
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance
+  name: lrn
+  source:
+    id: lrn
+    path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\unimodel\cntkinstance.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 113
+  summary: '   Implement LRN ops
+
+    '
+  syntax:
+    content: lrn(k, n, alpha, beta, name)
+    parameters:
+    - description: 'the factor k in LRN
+
+        '
+      id: k
+      type:
+      - int
+    - description: 'the normalization radius
+
+        '
+      id: n
+      type:
+      - int
+    - description: 'alpha factor in LRN
+
+        '
+      id: alpha
+      type:
+      - float
+    - description: 'beta factor in LRN
+
+        '
+      id: beta
+      type:
+      - float
+    - description: 'the name of ops
+
+        '
+      id: name
+      type:
+      - str
+    return:
+      description: 'the function contains lrn ops
+
+        '
+      type:
+      - cntk.ops.as_block
+  type: method
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup.lrn
+references:
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup.convolution
+  isExternal: false
+  name: convolution
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup.convolution
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup.linear
+  isExternal: false
+  name: linear
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup.linear
+- fullName: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup.lrn
+  isExternal: false
+  name: lrn
+  parent: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup
+  uid: cntk.contrib.crosstalkcaffe.unimodel.cntkinstance.BlockApiSetup.lrn

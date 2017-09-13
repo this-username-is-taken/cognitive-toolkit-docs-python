@@ -13,7 +13,7 @@ items:
     id: crosstalk_cntk
     path: bindings/python/cntk\contrib\crosstalk\crosstalk_cntk.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\contrib\crosstalk\crosstalk_cntk.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -28,7 +28,7 @@ items:
     id: find_func_param
     path: bindings/python/cntk\contrib\crosstalk\crosstalk_cntk.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\contrib\crosstalk\crosstalk_cntk.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 12
@@ -62,7 +62,7 @@ items:
       type:
       - tuple
     - defaultValue: 'False'
-      description: 'Set to True to avoid raising an exception when not found
+      description: 'Set to True to avoid raise exception when not found
 
         '
       id: allow_not_found

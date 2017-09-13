@@ -18,7 +18,7 @@ items:
     id: functions
     path: bindings/python/cntk\ops\functions.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -37,10 +37,10 @@ items:
     id: BlockFunction
     path: bindings/python/cntk\ops\functions.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\ops\functions.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1550
+    startLine: 1553
   summary: 'Decorator for defining a @Function as a BlockFunction. Same as @Function,
     but wrap the content into an @cntk.ops.as_block.
 
@@ -61,10 +61,10 @@ items:
     id: load_model
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1599
+    startLine: 1602
   summary: 'Alias for @cntk.ops.functions.Function.load.
 
     '
@@ -81,10 +81,10 @@ items:
     id: native_user_function
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1576
+    startLine: 1579
   summary: 'Creates an instance of a user-defined Function previously registered using
     the
 
@@ -134,10 +134,10 @@ items:
     id: register_native_user_function
     path: bindings/python/cntk\internal\swig_helper.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\internal\swig_helper.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1556
+    startLine: 1559
   summary: 'Registers a native user-defined Function that can be subsequently instantiated
 
     using the ''native_user_function'' method.

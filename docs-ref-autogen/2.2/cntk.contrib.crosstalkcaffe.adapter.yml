@@ -1,0 +1,32 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalkcaffe.adapter.baseadapter
+  - cntk.contrib.crosstalkcaffe.adapter.bvlccaffe
+  fullName: cntk.contrib.crosstalkcaffe.adapter
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.adapter
+  name: adapter
+  source:
+    id: adapter
+    path: bindings/python/cntk\contrib\crosstalkcaffe\adapter\__init__.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\adapter\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: package
+  uid: cntk.contrib.crosstalkcaffe.adapter
+references:
+- fullName: cntk.contrib.crosstalkcaffe.adapter.baseadapter
+  isExternal: false
+  name: baseadapter
+  parent: cntk.contrib.crosstalkcaffe.adapter
+  uid: cntk.contrib.crosstalkcaffe.adapter.baseadapter
+- fullName: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe
+  isExternal: false
+  name: bvlccaffe
+  parent: cntk.contrib.crosstalkcaffe.adapter
+  uid: cntk.contrib.crosstalkcaffe.adapter.bvlccaffe

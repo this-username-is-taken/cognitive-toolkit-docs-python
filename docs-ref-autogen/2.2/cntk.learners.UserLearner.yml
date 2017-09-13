@@ -13,10 +13,10 @@ items:
     id: UserLearner
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 170
+    startLine: 172
   summary: 'Base class of all user-defined learners. To implement your own learning
 
     algorithm, derive from this class and override the @cntk.learners.UserLearner.update.
@@ -42,10 +42,10 @@ items:
     id: update
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 211
+    startLine: 213
   summary: 'Update the parameters associated with this learner.
 
     '

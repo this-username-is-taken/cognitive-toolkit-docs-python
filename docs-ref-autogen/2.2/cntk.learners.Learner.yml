@@ -16,10 +16,10 @@ items:
     id: Learner
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 114
+    startLine: 108
   summary: 'Abstraction for learning a subset of parameters of a learnable function
     using first order gradient values.
 
@@ -36,7 +36,7 @@ items:
 
     '
   syntax:
-    content: Learner(parameters, learningRateSchedule)
+    content: Learner(*args)
   type: class
   uid: cntk.learners.Learner
 - class: cntk.learners.Learner
@@ -49,10 +49,10 @@ items:
     id: learning_rate
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 163
+    startLine: 161
   summary: 'Current learning rate schedule.
 
     '
@@ -72,7 +72,7 @@ items:
     id: parameters
     path: null
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: null
       repo: https://github.com/Microsoft/CNTK.git
     startLine: null
@@ -92,10 +92,10 @@ items:
     id: reset_learning_rate
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 149
+    startLine: 143
   summary: 'Resets the learning rate. The new schedule is adjusted to be relative
 
     to the current number of elapsed samples/sweeps: the 0 offset in
@@ -113,7 +113,7 @@ items:
         '
       id: learning_rate
       type:
-      - 'output of @cntk.learners.learning_rate_schedule
+      - 'output of @cntk.learners.learning_parameter_schedule
 
         '
   type: method
@@ -128,10 +128,10 @@ items:
     id: update
     path: bindings/python/cntk\learners\__init__.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\learners\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 123
+    startLine: 117
   summary: 'Update the parameters associated with this learner.
 
     '

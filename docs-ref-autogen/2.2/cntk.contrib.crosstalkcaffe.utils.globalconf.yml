@@ -1,0 +1,87 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalkcaffe.utils.globalconf.GlobalConf
+  - cntk.contrib.crosstalkcaffe.utils.globalconf.ModelSolverConf
+  - cntk.contrib.crosstalkcaffe.utils.globalconf.ScriptSolverConf
+  - cntk.contrib.crosstalkcaffe.utils.globalconf.SourceSolverConf
+  - cntk.contrib.crosstalkcaffe.utils.globalconf.ValidConf
+  - cntk.contrib.crosstalkcaffe.utils.globalconf.load_conf
+  fullName: cntk.contrib.crosstalkcaffe.utils.globalconf
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.utils.globalconf
+  name: globalconf
+  source:
+    id: globalconf
+    path: bindings/python/cntk\contrib\crosstalkcaffe\utils\globalconf.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\utils\globalconf.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: module
+  uid: cntk.contrib.crosstalkcaffe.utils.globalconf
+- fullName: cntk.contrib.crosstalkcaffe.utils.globalconf.load_conf
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.utils.globalconf
+  name: load_conf
+  source:
+    id: load_conf
+    path: bindings/python/cntk\contrib\crosstalkcaffe\utils\globalconf.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\utils\globalconf.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 81
+  summary: '   Analysis global configuration file into dict
+
+    '
+  syntax:
+    content: load_conf(conf_path)
+    parameters:
+    - description: 'the path to global configuration file
+
+        '
+      id: conf_path
+      type:
+      - str
+    return:
+      description: '@cntk.contrib.crosstalkcaffe.utils.GlobalConf
+
+        '
+  type: function
+  uid: cntk.contrib.crosstalkcaffe.utils.globalconf.load_conf
+references:
+- fullName: cntk.contrib.crosstalkcaffe.utils.globalconf.GlobalConf
+  isExternal: false
+  name: GlobalConf
+  parent: cntk.contrib.crosstalkcaffe.utils.globalconf
+  uid: cntk.contrib.crosstalkcaffe.utils.globalconf.GlobalConf
+- fullName: cntk.contrib.crosstalkcaffe.utils.globalconf.ModelSolverConf
+  isExternal: false
+  name: ModelSolverConf
+  parent: cntk.contrib.crosstalkcaffe.utils.globalconf
+  uid: cntk.contrib.crosstalkcaffe.utils.globalconf.ModelSolverConf
+- fullName: cntk.contrib.crosstalkcaffe.utils.globalconf.ScriptSolverConf
+  isExternal: false
+  name: ScriptSolverConf
+  parent: cntk.contrib.crosstalkcaffe.utils.globalconf
+  uid: cntk.contrib.crosstalkcaffe.utils.globalconf.ScriptSolverConf
+- fullName: cntk.contrib.crosstalkcaffe.utils.globalconf.SourceSolverConf
+  isExternal: false
+  name: SourceSolverConf
+  parent: cntk.contrib.crosstalkcaffe.utils.globalconf
+  uid: cntk.contrib.crosstalkcaffe.utils.globalconf.SourceSolverConf
+- fullName: cntk.contrib.crosstalkcaffe.utils.globalconf.ValidConf
+  isExternal: false
+  name: ValidConf
+  parent: cntk.contrib.crosstalkcaffe.utils.globalconf
+  uid: cntk.contrib.crosstalkcaffe.utils.globalconf.ValidConf
+- fullName: cntk.contrib.crosstalkcaffe.utils.globalconf.load_conf
+  isExternal: false
+  name: load_conf
+  parent: cntk.contrib.crosstalkcaffe.utils.globalconf
+  uid: cntk.contrib.crosstalkcaffe.utils.globalconf.load_conf

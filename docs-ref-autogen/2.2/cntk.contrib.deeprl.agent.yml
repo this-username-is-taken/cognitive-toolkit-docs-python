@@ -1,0 +1,62 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.deeprl.agent.agent
+  - cntk.contrib.deeprl.agent.agent_factory
+  - cntk.contrib.deeprl.agent.policy_gradient
+  - cntk.contrib.deeprl.agent.qlearning
+  - cntk.contrib.deeprl.agent.random_agent
+  - cntk.contrib.deeprl.agent.shared
+  - cntk.contrib.deeprl.agent.tabular_qlearning
+  fullName: cntk.contrib.deeprl.agent
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent
+  name: agent
+  source:
+    id: agent
+    path: bindings/python/cntk\contrib\deeprl\agent\__init__.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\__init__.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  type: package
+  uid: cntk.contrib.deeprl.agent
+references:
+- fullName: cntk.contrib.deeprl.agent.agent
+  isExternal: false
+  name: agent
+  parent: cntk.contrib.deeprl.agent
+  uid: cntk.contrib.deeprl.agent.agent
+- fullName: cntk.contrib.deeprl.agent.agent_factory
+  isExternal: false
+  name: agent_factory
+  parent: cntk.contrib.deeprl.agent
+  uid: cntk.contrib.deeprl.agent.agent_factory
+- fullName: cntk.contrib.deeprl.agent.policy_gradient
+  isExternal: false
+  name: policy_gradient
+  parent: cntk.contrib.deeprl.agent
+  uid: cntk.contrib.deeprl.agent.policy_gradient
+- fullName: cntk.contrib.deeprl.agent.qlearning
+  isExternal: false
+  name: qlearning
+  parent: cntk.contrib.deeprl.agent
+  uid: cntk.contrib.deeprl.agent.qlearning
+- fullName: cntk.contrib.deeprl.agent.random_agent
+  isExternal: false
+  name: random_agent
+  parent: cntk.contrib.deeprl.agent
+  uid: cntk.contrib.deeprl.agent.random_agent
+- fullName: cntk.contrib.deeprl.agent.shared
+  isExternal: false
+  name: shared
+  parent: cntk.contrib.deeprl.agent
+  uid: cntk.contrib.deeprl.agent.shared
+- fullName: cntk.contrib.deeprl.agent.tabular_qlearning
+  isExternal: false
+  name: tabular_qlearning
+  parent: cntk.contrib.deeprl.agent
+  uid: cntk.contrib.deeprl.agent.tabular_qlearning

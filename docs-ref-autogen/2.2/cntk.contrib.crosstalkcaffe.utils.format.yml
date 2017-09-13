@@ -1,0 +1,99 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.crosstalkcaffe.utils.format.camel_to_snake
+  - cntk.contrib.crosstalkcaffe.utils.format.json_parser
+  fullName: cntk.contrib.crosstalkcaffe.utils.format
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.utils.format
+  name: format
+  source:
+    id: format
+    path: bindings/python/cntk\contrib\crosstalkcaffe\utils\format.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\utils\format.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'The script contains some basic format ops
+
+    '
+  type: module
+  uid: cntk.contrib.crosstalkcaffe.utils.format
+- fullName: cntk.contrib.crosstalkcaffe.utils.format.camel_to_snake
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.utils.format
+  name: camel_to_snake
+  source:
+    id: camel_to_snake
+    path: bindings/python/cntk\contrib\crosstalkcaffe\utils\format.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\utils\format.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 14
+  summary: '   Convert a string from camel style to snake style
+
+    '
+  syntax:
+    content: camel_to_snake(camel_string)
+    parameters:
+    - description: 'the camel style string
+
+        '
+      id: camel_string
+      type:
+      - str
+    return:
+      description: 'the snake style string
+
+        '
+      type:
+      - (str)
+  type: function
+  uid: cntk.contrib.crosstalkcaffe.utils.format.camel_to_snake
+- fullName: cntk.contrib.crosstalkcaffe.utils.format.json_parser
+  langs:
+  - python
+  module: cntk.contrib.crosstalkcaffe.utils.format
+  name: json_parser
+  source:
+    id: json_parser
+    path: bindings/python/cntk\contrib\crosstalkcaffe\utils\format.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\crosstalkcaffe\utils\format.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 41
+  summary: '   Parse a json file into dict
+
+    '
+  syntax:
+    content: json_parser(path)
+    parameters:
+    - description: 'the path to json file
+
+        '
+      id: path
+    return:
+      description: 'the parsed dict
+
+        '
+      type:
+      - (dict)
+  type: function
+  uid: cntk.contrib.crosstalkcaffe.utils.format.json_parser
+references:
+- fullName: cntk.contrib.crosstalkcaffe.utils.format.camel_to_snake
+  isExternal: false
+  name: camel_to_snake
+  parent: cntk.contrib.crosstalkcaffe.utils.format
+  uid: cntk.contrib.crosstalkcaffe.utils.format.camel_to_snake
+- fullName: cntk.contrib.crosstalkcaffe.utils.format.json_parser
+  isExternal: false
+  name: json_parser
+  parent: cntk.contrib.crosstalkcaffe.utils.format
+  uid: cntk.contrib.crosstalkcaffe.utils.format.json_parser

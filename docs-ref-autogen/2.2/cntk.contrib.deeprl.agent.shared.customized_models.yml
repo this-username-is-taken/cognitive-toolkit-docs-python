@@ -1,0 +1,89 @@
+### YamlMime:UniversalReference
+api_name: []
+items:
+- children:
+  - cntk.contrib.deeprl.agent.shared.customized_models.conv_dqn
+  fullName: cntk.contrib.deeprl.agent.shared.customized_models
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.customized_models
+  name: customized_models
+  source:
+    id: customized_models
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\customized_models.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\customized_models.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 0
+  summary: 'Customized Q function or (unnormalized) log of policy function.
+
+
+
+    If models from cntk.contrib.deeprl.agent.shared.models are not adequate, write
+
+    your own model as a function, which takes two required arguments
+
+    ''shape_of_inputs'', ''number_of_outputs'', and two optional arguments
+
+    ''loss_function'', ''use_placeholder_for_input'', and outputs a dictionary
+
+    containing ''inputs'', ''outputs'', ''f'' and ''loss''. In the config file, set
+
+    QRepresentation or PolicyRepresentation to path (module_name.function_name) of
+
+    the function. QLearning/PolicyGradient will then automatically search for it.
+
+    '
+  type: module
+  uid: cntk.contrib.deeprl.agent.shared.customized_models
+- fullName: cntk.contrib.deeprl.agent.shared.customized_models.conv_dqn
+  langs:
+  - python
+  module: cntk.contrib.deeprl.agent.shared.customized_models
+  name: conv_dqn
+  source:
+    id: conv_dqn
+    path: bindings/python/cntk\contrib\deeprl\agent\shared\customized_models.py
+    remote:
+      branch: release/2.2
+      path: bindings/python/cntk\contrib\deeprl\agent\shared\customized_models.py
+      repo: https://github.com/Microsoft/CNTK.git
+    startLine: 21
+  summary: "Example convolutional neural network for approximating the Q value function.\n\
+    \nThis is the model used in the original DQN paper\n[https://storage.googleapis.com/deepmind-data/assets/papers/DeepMindNature14236Paper.pdf](https://storage.googleapis.com/deepmind-data/assets/papers/DeepMindNature14236Paper.pdf).\n\
+    \nReturns: a Python dictionary with string-valued keys including\n   'inputs',\
+    \ 'outputs', 'loss' and 'f'.\n"
+  syntax:
+    content: conv_dqn(shape_of_inputs, number_of_outputs, loss_function=None, use_placeholder_for_input=False)
+    parameters:
+    - description: 'tuple of array (input) dimensions.
+
+        '
+      id: shape_of_inputs
+    - description: 'dimension of output, equals the number of
+
+        possible actions.
+
+        '
+      id: number_of_outputs
+    - defaultValue: None
+      description: 'if not specified, use squared loss by default.
+
+        '
+      id: loss_function
+    - defaultValue: 'False'
+      description: 'if true, inputs have to be replaced
+
+        later with actual input_variable.
+
+        '
+      id: use_placeholder_for_input
+  type: function
+  uid: cntk.contrib.deeprl.agent.shared.customized_models.conv_dqn
+references:
+- fullName: cntk.contrib.deeprl.agent.shared.customized_models.conv_dqn
+  isExternal: false
+  name: conv_dqn
+  parent: cntk.contrib.deeprl.agent.shared.customized_models
+  uid: cntk.contrib.deeprl.agent.shared.customized_models.conv_dqn

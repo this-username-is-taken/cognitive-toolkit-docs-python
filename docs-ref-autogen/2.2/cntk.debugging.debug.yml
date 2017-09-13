@@ -15,7 +15,7 @@ items:
     id: debug
     path: bindings/python/cntk\debugging\debug.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -62,7 +62,7 @@ items:
     id: debug_model
     path: bindings/python/cntk\debugging\debug.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 402
@@ -122,7 +122,7 @@ items:
     id: save_as_legacy_model
     path: bindings/python/cntk\debugging\debug.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 84
@@ -157,12 +157,12 @@ items:
     id: set_checked_mode
     path: bindings/python/cntk\debugging\debug.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 107
   summary: "   Checked mode enables additional runtime verification such as:\n   \
-    \   * Tracking NaN occurences in sequence gaps. \n\n      * Function graph verification\
+    \   * Tracking NaN occurrences in sequence gaps. \n\n      * Function graph verification\
     \ after binding of free static axes to actual values at runtime \n\n   Enabling\
     \ checked mode incurs additional runtime costs and is meant to be used as a debugging\
     \ aid.\n"
@@ -186,7 +186,7 @@ items:
     id: set_computation_network_trace_level
     path: bindings/python/cntk\debugging\debug.py
     remote:
-      branch: release/2.0
+      branch: release/2.2
       path: bindings/python/cntk\debugging\debug.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 121
