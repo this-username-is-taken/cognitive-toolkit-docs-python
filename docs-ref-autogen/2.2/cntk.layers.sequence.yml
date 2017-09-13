@@ -17,7 +17,7 @@ items:
     id: sequence
     path: bindings/python/cntk\layers\sequence.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -47,7 +47,7 @@ items:
     id: Delay
     path: bindings/python/cntk\layers\sequence.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 17
@@ -114,15 +114,15 @@ items:
     id: Fold
     path: bindings/python/cntk\layers\sequence.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 421
   summary: "Layer factory function to create a function that runs a step function\
     \ recurrently over an input sequence,\nand returns the final state.\nThis is often\
     \ used for embeddings of sequences, e.g. in a sequence-to-sequence model.\nPseudo-code:\n\
-    \n<!-- literal_block {\"backrefs\": [], \"ids\": [], \"names\": [], \"xml:space\"\
-    : \"preserve\", \"classes\": [], \"dupnames\": []} -->\n\n````\n\n   # pseudo-code\
+    \n<!-- literal_block {\"ids\": [], \"classes\": [], \"dupnames\": [], \"xml:space\"\
+    : \"preserve\", \"names\": [], \"backrefs\": []} -->\n\n````\n\n   # pseudo-code\
     \ for h = Fold(step_function)(x)\n   #  x: input sequence of tensors along the\
     \ dynamic axis\n   #  h: resulting final step-function output tensor that no longer\
     \ has a dynamic axis\n   h = initial_state   # h = output of previous step (\"\
@@ -225,7 +225,7 @@ items:
     id: PastValueWindow
     path: bindings/python/cntk\layers\sequence.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 72
@@ -316,7 +316,7 @@ items:
     id: Recurrence
     path: bindings/python/cntk\layers\sequence.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 287
@@ -325,9 +325,9 @@ items:
     \ that runs a step function recurrently over an input sequence,\nwhere in each\
     \ step, Recurrence() will pass to the step function a data input as well as the\
     \ output of the\nprevious step.\nThe following pseudo-code repesents what happens\
-    \ when you call a *Recurrence()* layer:\n\n<!-- literal_block {\"backrefs\": [],\
-    \ \"ids\": [], \"names\": [], \"xml:space\": \"preserve\", \"classes\": [], \"\
-    dupnames\": []} -->\n\n````\n\n   # pseudo-code for y = Recurrence(step_function)(x)\n\
+    \ when you call a *Recurrence()* layer:\n\n<!-- literal_block {\"ids\": [], \"\
+    classes\": [], \"dupnames\": [], \"xml:space\": \"preserve\", \"names\": [], \"\
+    backrefs\": []} -->\n\n````\n\n   # pseudo-code for y = Recurrence(step_function)(x)\n\
     \   #  x: input sequence of tensors along the dynamic axis\n   #  y: resulting\
     \ sequence of outputs along the same dynamic axis\n   y = []              # result\
     \ sequence goes here\n   s = initial_state   # s = output of previous step (\"\
@@ -480,7 +480,7 @@ items:
     id: RecurrenceFrom
     path: bindings/python/cntk\layers\sequence.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 166
@@ -492,19 +492,19 @@ items:
     \ like *Recurrence()*, as an initialization parameter to the factory function.\n\
     This form is meant for use in sequence-to-sequence scenarios.\nThis documentation\
     \ only covers this case; for additional information on parameters, see @cntk.layers.sequence.Recurrence.\n\
-    In pseudo-code:\n\n<!-- literal_block {\"backrefs\": [], \"ids\": [], \"names\"\
-    : [], \"xml:space\": \"preserve\", \"classes\": [], \"dupnames\": []} -->\n\n\
-    ````\n\n   # pseudo-code for y = RecurrenceFrom(step_function)(s,x)\n   #  x:\
-    \ input sequence of tensors along the dynamic axis\n   #  s: initial state for\
-    \ the recurrence (computed from input data elsewhew)\n   #  y: resulting sequence\
-    \ of outputs along the same dynamic axis\n   y = []              # result sequence\
-    \ goes here\n   for x_n in x:       # pseudo-code for looping over all steps of\
-    \ input sequence along its dynamic axis\n       s = step_function(s, x_n)  # pass\
-    \ previous state and new data to step_function -> new state\n       y.append(s)\n\
-    \   ````\n\nThe layer function returned by this factory function accepts the initial\
-    \ state as data argument(s).\nThe initial state can be non-sequential data, as\
-    \ one would have for a plain sequence-to-sequence model,\nor sequential data.\
-    \ In the latter case, the last item is the initial state.\n"
+    In pseudo-code:\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"dupnames\"\
+    : [], \"xml:space\": \"preserve\", \"names\": [], \"backrefs\": []} -->\n\n````\n\
+    \n   # pseudo-code for y = RecurrenceFrom(step_function)(s,x)\n   #  x: input\
+    \ sequence of tensors along the dynamic axis\n   #  s: initial state for the recurrence\
+    \ (computed from input data elsewhew)\n   #  y: resulting sequence of outputs\
+    \ along the same dynamic axis\n   y = []              # result sequence goes here\n\
+    \   for x_n in x:       # pseudo-code for looping over all steps of input sequence\
+    \ along its dynamic axis\n       s = step_function(s, x_n)  # pass previous state\
+    \ and new data to step_function -> new state\n       y.append(s)\n   ````\n\n\
+    The layer function returned by this factory function accepts the initial state\
+    \ as data argument(s).\nThe initial state can be non-sequential data, as one would\
+    \ have for a plain sequence-to-sequence model,\nor sequential data. In the latter\
+    \ case, the last item is the initial state.\n"
   syntax:
     content: RecurrenceFrom(step_function, go_backwards=False, return_full_state=False,
       name='')
@@ -583,7 +583,7 @@ items:
     id: UnfoldFrom
     path: bindings/python/cntk\layers\sequence.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\sequence.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 515
@@ -593,9 +593,9 @@ items:
     \ a maximum number of steps, or earlier when, if provided, *until_predicate* evaluates\
     \ to True for the current output.\nThe maximum number of steps is based on a second\
     \ input from which only the dynamic-axis information is used.\nThis is best explained\
-    \ in pseudo-code:\n\n<!-- literal_block {\"backrefs\": [], \"ids\": [], \"names\"\
-    : [], \"xml:space\": \"preserve\", \"classes\": [], \"dupnames\": []} -->\n\n\
-    ````\n\n   # pseudo-code for y = UnfoldFrom(generator_function, until_predicate)(s,axis_like)\n\
+    \ in pseudo-code:\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"dupnames\"\
+    : [], \"xml:space\": \"preserve\", \"names\": [], \"backrefs\": []} -->\n\n````\n\
+    \n   # pseudo-code for y = UnfoldFrom(generator_function, until_predicate)(s,axis_like)\n\
     \   #  s:         initial state for the recurrence (computed from input data elsewhew),\n\
     \   #  axis_like: any input with a dynamic axis, unfold will happen along the\
     \ same dynamic axis,\n   #  y:         resulting sequence of outputs along the\
@@ -639,7 +639,7 @@ items:
       description: 'A function that denotes when the last element of the unfold has
         been emitted.
 
-        It takes the same number of arguments as the generator, and returns a scalar
+        It takes the same number of argments as the generator, and returns a scalar
         that must be 1
 
         for the last element of the sequence, and 0 otherwise.

@@ -31,7 +31,7 @@ items:
     id: layers
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
@@ -71,10 +71,10 @@ items:
     id: Activation
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1144
+    startLine: 1114
   summary: 'Layer factory function to create an activation layer.
 
     Activation functions can be used directly in CNTK, so there is no difference between
@@ -134,10 +134,10 @@ items:
     id: AveragePooling
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 966
+    startLine: 936
   summary: 'Layer factory function to create an average-pooling layer.
 
 
@@ -219,10 +219,10 @@ items:
     id: BatchNormalization
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1177
+    startLine: 1147
   summary: 'Layer factory function to create a batch-normalization layer.
 
 
@@ -330,10 +330,10 @@ items:
     id: Convolution
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 286
+    startLine: 287
   summary: 'Layer factory function to create a convolution layer.
 
 
@@ -510,13 +510,6 @@ items:
       id: transpose_weight
       type:
       - bool, defaults to False
-    - defaultValue: '1'
-      description: 'the dilation value along each axis, default 1 mean no dilation.
-
-        '
-      id: dilation
-      type:
-      - tuple, optional
     - defaultValue: '0'
       description: 'Limits the amount of memory for intermediate convolution results.  A
         value of 0 means, memory is automatically managed.
@@ -552,10 +545,10 @@ items:
     id: Convolution1D
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 496
+    startLine: 495
   summary: 'Layer factory function to create a 1D convolution layer with optional
     non-linearity.
 
@@ -647,13 +640,6 @@ items:
       id: reduction_rank
       type:
       - int, defaults to 1
-    - defaultValue: '1'
-      description: 'the dilation value along each axis, default 1 mean no dilation.
-
-        '
-      id: dilation
-      type:
-      - tuple, optional
     - defaultValue: ''
       description: 'the name of the function instance in the network
 
@@ -679,10 +665,10 @@ items:
     id: Convolution2D
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 547
+    startLine: 544
   summary: 'Layer factory function to create a 2D convolution layer with optional
     non-linearity.
 
@@ -774,13 +760,6 @@ items:
       id: reduction_rank
       type:
       - int, defaults to 1
-    - defaultValue: '1'
-      description: 'the dilation value along each axis, default 1 mean no dilation.
-
-        '
-      id: dilation
-      type:
-      - tuple, optional
     - defaultValue: ''
       description: 'the name of the function instance in the network
 
@@ -806,10 +785,10 @@ items:
     id: Convolution3D
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 599
+    startLine: 594
   summary: 'Layer factory function to create a 3D convolution layer with optional
     non-linearity.
 
@@ -901,13 +880,6 @@ items:
       id: reduction_rank
       type:
       - int, defaults to 1
-    - defaultValue: '1'
-      description: 'the dilation value along each axis, default 1 mean no dilation.
-
-        '
-      id: dilation
-      type:
-      - tuple, optional
     - defaultValue: ''
       description: 'the name of the function instance in the network
 
@@ -939,10 +911,10 @@ items:
     id: ConvolutionTranspose
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 653
+    startLine: 646
   summary: 'Layer factory function to create a convolution transpose layer.
 
 
@@ -1092,27 +1064,19 @@ items:
         from the output with the same setting, the result must have same shape as
         the input.
 
-        that is stored with tensor shape (H,W) instead of (1,H,W)
-
         '
       id: output_shape
       type:
       - int or tuple of ints
     - defaultValue: '1'
-      description: 'set to 0 if input items are scalars (input has no depth axis),
-        e.g. an audio signal or a black-and-white image.
+      description: 'must be 1 for now.
+
+        that is stored with tensor shape (H,W) instead of (1,H,W)
 
         '
       id: reduction_rank
       type:
-      - int, defaults to 1
-    - defaultValue: '1'
-      description: 'the dilation value along each axis, default 1 mean no dilation.
-
-        '
-      id: dilation
-      type:
-      - tuple, optional
+      - int, default 1
     - defaultValue: '0'
       description: 'set to a positive number to define the maximum workspace memory
         for convolution.
@@ -1144,10 +1108,10 @@ items:
     id: ConvolutionTranspose1D
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 797
+    startLine: 773
   summary: 'Layer factory function to create a 1D convolution transpose layer with
     optional non-linearity.
 
@@ -1172,10 +1136,6 @@ items:
     - id: init_bias
     - defaultValue: None
       id: output_shape
-    - defaultValue: '1'
-      id: reduction_rank
-    - defaultValue: '1'
-      id: dilation
     - defaultValue: ''
       id: name
   type: function
@@ -1189,10 +1149,10 @@ items:
     id: ConvolutionTranspose2D
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 827
+    startLine: 801
   summary: 'Layer factory function to create a 2D convolution transpose layer with
     optional non-linearity.
 
@@ -1217,10 +1177,6 @@ items:
     - id: init_bias
     - defaultValue: None
       id: output_shape
-    - defaultValue: '1'
-      id: reduction_rank
-    - defaultValue: '1'
-      id: dilation
     - defaultValue: ''
       id: name
   type: function
@@ -1234,10 +1190,10 @@ items:
     id: ConvolutionTranspose3D
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 858
+    startLine: 830
   summary: 'Layer factory function to create a 3D convolution transpose layer with
     optional non-linearity.
 
@@ -1262,10 +1218,6 @@ items:
     - id: init_bias
     - defaultValue: None
       id: output_shape
-    - defaultValue: '1'
-      id: reduction_rank
-    - defaultValue: '1'
-      id: dilation
     - defaultValue: ''
       id: name
   type: function
@@ -1333,7 +1285,7 @@ items:
     id: Dense
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 24
@@ -1429,7 +1381,7 @@ items:
       type:
       - 'scalar or NumPy array or @cntk.initializer
 
-        , defaults to 0'
+        , defualts to 0'
     - defaultValue: ''
       description: 'the name of the function instance in the network
 
@@ -1483,10 +1435,10 @@ items:
     id: Dropout
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1095
+    startLine: 1065
   summary: 'Layer factory function to create a drop-out layer.
 
 
@@ -1566,13 +1518,13 @@ items:
     id: Embedding
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 154
   summary: "Layer factory function to create a embedding layer.\n\nAn embedding is\
     \ conceptually a lookup table. For every input token (e.g. a word or any category\
-    \ label), the corresponding\nentry in the lookup table is returned.\n\nIn CNTK,\
+    \ label), the corresponding\nentry in in the lookup table is returned.\n\nIn CNTK,\
     \ discrete items such as words are represented as one-hot vectors.\nThe table\
     \ lookup is realized as a matrix product, with a matrix\nwhose rows are the embedding\
     \ vectors.\nNote that multiplying a matrix from the left with a one-hot vector\
@@ -1581,8 +1533,8 @@ items:
     \ lookup if the input is sparse.\n\nThe lookup table in this layer is learnable,\n\
     unless a user-specified one is supplied through the `weights` parameter.\nFor\
     \ example, to use an existing embedding table from a file in numpy format, use\
-    \ this:\n\n<!-- literal_block {\"backrefs\": [], \"ids\": [], \"names\": [], \"\
-    xml:space\": \"preserve\", \"classes\": [], \"dupnames\": []} -->\n\n````\n\n\
+    \ this:\n\n<!-- literal_block {\"ids\": [], \"classes\": [], \"dupnames\": [],\
+    \ \"xml:space\": \"preserve\", \"names\": [], \"backrefs\": []} -->\n\n````\n\n\
     \   Embedding(weights=np.load('PATH.npy'))\n   ````\n\nTo initialize a learnable\
     \ lookup table with a given numpy array that is to be used as\nthe initial value,\
     \ pass that array to the `init` parameter (not `weights`).\n\nAn `Embedding` instance\
@@ -1648,10 +1600,10 @@ items:
     id: GlobalAveragePooling
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1048
+    startLine: 1018
   summary: 'Layer factory function to create a global average-pooling layer.
 
 
@@ -1696,10 +1648,10 @@ items:
     id: GlobalMaxPooling
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1018
+    startLine: 988
   summary: 'Layer factory function to create a global max-pooling layer.
 
 
@@ -1742,10 +1694,10 @@ items:
     id: Label
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1292
+    startLine: 1262
   summary: 'Layer factory function to create a dummy layer with a given name.
 
     This can be used to access an intermediate value flowing through computation.
@@ -1778,10 +1730,10 @@ items:
     id: LayerNormalization
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1244
+    startLine: 1214
   summary: 'Layer factory function to create a function that implements layer normalization.
 
 
@@ -1855,10 +1807,10 @@ items:
     id: MaxPooling
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 914
+    startLine: 884
   summary: 'Layer factory function to create a max-pooling layer.
 
 
@@ -1935,10 +1887,10 @@ items:
     id: MaxUnpooling
     path: bindings/python/cntk\layers\layers.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\layers\layers.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 1080
+    startLine: 1050
   syntax:
     content: MaxUnpooling(filter_shape, strides=1, pad=False, name='')
     parameters:

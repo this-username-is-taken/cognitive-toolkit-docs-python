@@ -4,7 +4,6 @@ items:
 - children:
   - cntk.debugging.dump_function
   - cntk.debugging.dump_signature
-  - cntk.debugging.force_deterministic
   - cntk.debugging.debug
   - cntk.debugging.profiler
   fullName: cntk.debugging
@@ -16,10 +15,13 @@ items:
     id: debugging
     path: bindings/python/cntk\debugging\__init__.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\debugging\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
     startLine: 0
+  summary: 'Helper functions for debugging graphs.
+
+    '
   type: package
   uid: cntk.debugging
 - fullName: cntk.debugging.dump_function
@@ -31,10 +33,10 @@ items:
     id: dump_function
     path: bindings/python/cntk\debugging\__init__.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\debugging\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 35
+    startLine: 23
   syntax:
     content: dump_function(root, tag=None)
     parameters:
@@ -52,10 +54,10 @@ items:
     id: dump_signature
     path: bindings/python/cntk\debugging\__init__.py
     remote:
-      branch: release/2.2
+      branch: release/2.0
       path: bindings/python/cntk\debugging\__init__.py
       repo: https://github.com/Microsoft/CNTK.git
-    startLine: 29
+    startLine: 17
   summary: 'Debug helper that prints the signature of a Function.
 
     '
@@ -67,33 +69,6 @@ items:
       id: tag
   type: function
   uid: cntk.debugging.dump_signature
-- fullName: cntk.debugging.force_deterministic
-  langs:
-  - python
-  module: cntk.debugging
-  name: force_deterministic
-  source:
-    id: force_deterministic
-    path: bindings/python/cntk\debugging\__init__.py
-    remote:
-      branch: release/2.2
-      path: bindings/python/cntk\debugging\__init__.py
-      repo: https://github.com/Microsoft/CNTK.git
-    startLine: 14
-  summary: 'Force most of the computation nodes to run deterministically.
-
-    '
-  syntax:
-    content: force_deterministic(seed)
-    parameters:
-    - description: 'set the random seed for all random ops in the graph and readers.
-
-        '
-      id: seed
-      type:
-      - int
-  type: function
-  uid: cntk.debugging.force_deterministic
 references:
 - fullName: cntk.debugging.dump_function
   isExternal: false
@@ -105,11 +80,6 @@ references:
   name: dump_signature
   parent: cntk.debugging
   uid: cntk.debugging.dump_signature
-- fullName: cntk.debugging.force_deterministic
-  isExternal: false
-  name: force_deterministic
-  parent: cntk.debugging
-  uid: cntk.debugging.force_deterministic
 - fullName: cntk.debugging.debug
   isExternal: false
   name: debug
