@@ -42,7 +42,6 @@ build: off
 test: off
 
 on_finish:
-    - cd c:\projects\source
     - "%PYTHON%/python.exe -m pip install %WHLPATH%"
     - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/conf.py -Destination c:/projects/cntk/bindings/python/doc/conf.py -force
 
