@@ -32,11 +32,11 @@ clone_script:
     
     # get cntk 
     - cd c:\projects
-    - git clone -q --branch=%SOURCE_REPO_BRANCH% https://github.com/Microsoft/CNTK.git
+    # git clone -q --branch=%SOURCE_REPO_BRANCH% https://github.com/Microsoft/CNTK.git
  
     # get MicrosoftDocs/cognitive-toolkit-docs-python
     - cd c:\projects
-    - git clone -q --branch=%PROCESS_REPO_BRANCH% https://github.com/MicrosoftDocs/cognitive-toolkit-docs-python.git
+    # git clone -q --branch=%PROCESS_REPO_BRANCH% https://github.com/MicrosoftDocs/cognitive-toolkit-docs-python.git
 
 build: off
 
