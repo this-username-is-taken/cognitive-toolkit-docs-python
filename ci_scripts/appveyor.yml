@@ -1,76 +1,54 @@
 version: 1.0.{build}
 skip_tags: true
-build_cloud: cntk-python-ci-build
-image: appveyor-build
-configuration: Release
 
 environment:
+  PYTHON: "C:/Python35"
+  SPHINXBUILD: "%PYTHON%/scripts/sphinx-build.exe"
+
   github_access_token:
     secure: DpN0M7pZDocpyv+muc15qHDKz9lMJ7Zr34aMC0HtOdeVkbTERuKkxq4WHAd3S33v
 
+init:
+    - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+    - "%PYTHON%/python.exe -m pip --version"
+    - "%PYTHON%/python.exe -m pip install --upgrade pip"
+
+    # Install sphinx (1.5.5) and its extensions
+    - "%PYTHON%/python.exe -m pip install sphinx==1.5.5"
+    - "%PYTHON%/python.exe -m pip install sphinx-docfx-yaml"
+    - "%PYTHON%/python.exe -m pip install sphinx_rtd_theme"
+    - "%PYTHON%/python.exe -m pip show sphinx"
+    - ps: pip show sphinx-docfx-yaml
+
 clone_script:
-    - echo %SOURCE_REPO_BRANCH%
-    - echo %SOURCE_REPO_VERSION%
-    - echo %PROCESS_REPO_BRANCH%
-    - dir c:\projects
-    
     - git config --global core.autocrlf true
     - git config core.autocrlf
-
-    # get cntk 
-    - cd c:\projects
-    - git clone -q --branch=%SOURCE_REPO_BRANCH% https://github.com/Microsoft/CNTK.git
-    - cd c:\projects\cntk
-    - git submodule update --init -- Source/Multiverso
+    
+    # get cntk 2.1 whl file
+    - mkdir c:\projects\source
+    - ps: (New-Object System.Net.WebClient).DownloadFile("https://cntk.ai/PythonWheel/GPU/cntk-2.1-cp35-cp35m-win_amd64.whl", "c:\projects\source\cntk-2.1-cp35-cp35m-win_amd64.whl")
  
     # get MicrosoftDocs/cognitive-toolkit-docs-python
     - cd c:\projects
     - git clone -q --branch=%PROCESS_REPO_BRANCH% https://github.com/MicrosoftDocs/cognitive-toolkit-docs-python.git
-    
 
-before_build:
-    - cd c:\projects\cntk\Tools\devInstall\Windows
-    - ps: .\DevInstall.ps1 -NoConfirm
-    - git checkout %SOURCE_REPO_BRANCH%
-    - git config --global credential.helper store
-    - ps: ac "$env:USERPROFILE\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
-    - ps: Write-Host "appveyor.xml in cntk_yml docs repo"
+build: off
 
-    # in case of cuda dll missing
-    - mkdir c:\\projects\\cntk\\x64\\Release
-    - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/nvml.dll -Destination c:\\projects\\cntk\\x64\\Release\\nvml.dll -force
-    - echo %CNTK_ENABLE_ASGD%
-    - set CNTK_ENABLE_ASGD=true
-    - echo %CNTK_ENABLE_ASGD%
-    
-build:
-  project: c:\projects\cntk\CNTK.sln
-  parallel: true
-  verbosity: minimal
-  
 test: off
 
 on_finish:
-    - ps: Write-Host "appveyor.xml on_finish"
-    - cd c:\projects\CNTK\x64\Release\Python
-    - dir
-    - ps: $files = gci -name *.whl
-    - ps: pip install $files
-    - cd c:\projects\cntk\bindings\python\doc
-    - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/conf.py -Destination c:/projects/cntk/bindings/python/doc/conf.py -force
-    
-    # Install sphinx-docfx-yaml
-    - ps: pip uninstall -y sphinx-docfx-yaml
-    - ps: pip install sphinx-docfx-yaml
-    - ps: pip show sphinx-docfx-yaml
-    
+    - cd c:\projects\source
+    - ps: pip install "c:\projects\source\cntk-2.1-cp35-cp35m-win_amd64.whl"
+    - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/conf.py -Destination c:/projects/source/conf.py -force
+    - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/build.bat -Destination c:/projects/source/build.bat -force
+
     # generate rst files
     - call build.bat
-    - sphinx-build.exe . _build
+    - "%SPHINXBUILD% . _build"
 
     # postprocess for toc.yml
-    - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/postprocess_toc_yml.py -Destination c:/projects/cntk/bindings/python/doc/postprocess_toc_yml.py -force
-    - cd c:\projects\cntk\bindings\python\doc
+    - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/postprocess_toc_yml.py -Destination c:/projects/source/postprocess_toc_yml.py -force
+    - cd c:\projects\source
     - dir _build\docfx_yaml
     - python postprocess_toc_yml.py
 
@@ -78,7 +56,7 @@ on_finish:
     - ps: Remove-Item c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\$env:SOURCE_REPO_VERSION\* -recurse
 
     # copy yml fils generated
-    - ps: Copy-Item -Path C:\projects\CNTK\bindings\python\doc\_build\docfx_yaml\* -Destination c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\$env:SOURCE_REPO_VERSION\ -recurse -force
+    - ps: Copy-Item -Path C:\projects\source\_build\docfx_yaml\* -Destination c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\$env:SOURCE_REPO_VERSION\ -recurse -force
 
     # upload yml to MicrosoftDocs/cognitive-toolkit-docs-python
     - git config --global credential.helper store
