@@ -10,6 +10,7 @@ environment:
     secure: DpN0M7pZDocpyv+muc15qHDKz9lMJ7Zr34aMC0HtOdeVkbTERuKkxq4WHAd3S33v
 
 init:
+    - "%PYTHON%/python.exe -V"
     - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
     - "%PYTHON%/python.exe -m pip --version"
     - "%PYTHON%/python.exe -m pip install --upgrade pip"
