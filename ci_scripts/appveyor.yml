@@ -43,35 +43,8 @@ build: off
 test: off
 
 on_finish:
-    - "%PYTHON%/python.exe -m pip install %WHLPATH%"
-    - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/conf.py -Destination c:/projects/cntk/bindings/python/doc/conf.py -force
+    # if want to RDP, uncomment below command
+    - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
-    # generate rst files and build
-    - cd c:\projects\cntk\bindings\python\doc
-    - call build.bat
-    - "%SPHINXBUILD% . _build"
-
-    # postprocess for toc.yml
-    - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/postprocess_toc_yml.py -Destination c:/projects/cntk/bindings/python/doc/postprocess_toc_yml.py -force
-    - cd c:\projects\cntk\bindings\python\doc
-    - dir _build\docfx_yaml
-    - "%PYTHON%/python.exe postprocess_toc_yml.py"
-
-    # remove old yml fils
-    - ps: Remove-Item c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\$env:SOURCE_REPO_VERSION\* -recurse
-
-    # copy yml fils generated
-    - ps: Copy-Item -Path C:\projects\CNTK\bindings\python\doc\_build\docfx_yaml\* -Destination c:\projects\cognitive-toolkit-docs-python\docs-ref-autogen\$env:SOURCE_REPO_VERSION\ -recurse -force
-
-    # upload yml to MicrosoftDocs/cognitive-toolkit-docs-python
-    - git config --global credential.helper store
-    - ps: ac "$env:USERPROFILE\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
-    - cd c:\projects\cognitive-toolkit-docs-python
-    - git status
-    - git config --global user.name "VSC-Service-Account"
-    - git config --global user.email "vscavu@microsoft.com"
-    - git add . 
-    - git commit -a -m "appveyor ci - update yml files" 
-    - git push -u origin %PROCESS_REPO_BRANCH%:%PROCESS_REPO_BRANCH% -f
 
   
