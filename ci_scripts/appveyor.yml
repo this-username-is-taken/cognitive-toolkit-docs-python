@@ -27,7 +27,7 @@ clone_script:
     
     # get cntk 2.1 whl file
     - mkdir c:\projects\source
-    - ps: (New-Object System.Net.WebClient).DownloadFile("https://cntk.ai/PythonWheel/GPU/cntk-2.1-cp35-cp35m-win_amd64.whl", "c:\projects\source\cntk-2.1-cp35-cp35m-win_amd64.whl")
+    - ps: (New-Object System.Net.WebClient).DownloadFile("https://cntk.ai/PythonWheel/CPU-Only/cntk-2.1-cp35-cp35m-win_amd64.whl", "c:\projects\source\cntk-2.1-cp35-cp35m-win_amd64.whl")
     
     # get cntk 
     - cd c:\projects
