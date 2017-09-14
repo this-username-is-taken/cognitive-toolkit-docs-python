@@ -46,6 +46,7 @@ on_finish:
     - ps: Copy-Item c:/projects/cognitive-toolkit-docs-python/ci_scripts/conf.py -Destination c:/projects/cntk/bindings/python/doc/conf.py -force
 
     # generate rst files and build
+    - cd c:\projects\cntk\bindings\python\doc
     - call build.bat
     - "%SPHINXBUILD% . _build"
 
