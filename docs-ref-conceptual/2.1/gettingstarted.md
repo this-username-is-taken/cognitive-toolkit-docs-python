@@ -179,7 +179,7 @@ learning rate of 0.02.
 Finally, we manually perform the training loop. We run through the data for the specific number of epochs (`num_minibatches_to_train`), get the ``features`` 
 and `labels` that will be used during this training step, and call the trainer's `train_minibatch` function which maps the input and label variables that 
 we setup previously to the current `features` and `labels` data (numpy arrays) that we are using in this minibatch. We use the convenience function 
-`print_training_progress` to display our loss and error every 20 steps and then finally we test our network again using the `trainer` object. It's 
+`progress_printer` to display our loss and error every 20 steps and then finally we test our network again using the `trainer` object. It's 
 as easy as that!
 
 Now that we've seen some of the basics of setting up and training a network using the CNTK Python API, let's look at a more interesting deep 
