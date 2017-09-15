@@ -5,6 +5,7 @@ environment:
   PYTHON: "C:/Python35"
   SPHINXBUILD: "%PYTHON%/scripts/sphinx-build.exe"
   WHLPATH: "https://cntk.ai/PythonWheel/CPU-Only/cntk-2.1-cp35-cp35m-win_amd64.whl"
+  ANACONDAPATH: "c:/projects/Anaconda3-4.1.1-Windows-x86_64"
 
   github_access_token:
     secure: DpN0M7pZDocpyv+muc15qHDKz9lMJ7Zr34aMC0HtOdeVkbTERuKkxq4WHAd3S33v
@@ -25,6 +26,9 @@ init:
 clone_script:
     - git config --global core.autocrlf true
     - git config core.autocrlf
+    
+    - ps: (New-Object System.Net.WebClient).DownloadFile("https://repo.continuum.io/archive/Anaconda3-4.1.1-Windows-x86_64.exe", "c:\projects\Anaconda3-4.1.1-Windows-x86_64.exe")
+    - c:\projects\Anaconda3-4.1.1-Windows-x86_64.exe /AddToPath=0 /S /D=%ANACONDAPATH%
     
     # get cntk 2.1 whl file
     # mkdir c:\projects\source
