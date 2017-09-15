@@ -28,7 +28,7 @@ clone_script:
     - git config core.autocrlf
     
     - ps: (New-Object System.Net.WebClient).DownloadFile("https://repo.continuum.io/archive/Anaconda3-4.1.1-Windows-x86_64.exe", "c:\projects\Anaconda3-4.1.1-Windows-x86_64.exe")
-    - start /wait "" c:\projects\Anaconda3-4.1.1-Windows-x86_64.exe /AddToPath=0 /S /D=%ANACONDAPATH%
+    - start /wait "" c:\projects\Anaconda3-4.1.1-Windows-x86_64.exe /AddToPath=0 /S /D=c:/projects/Anaconda3-4.1.1
     # call c:\projects\Anaconda3-4.1.1-Windows-x86_64.exe /AddToPath=0 /S /D=%ANACONDAPATH%
     
     # get cntk 2.1 whl file
